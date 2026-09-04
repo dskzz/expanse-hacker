@@ -1,6 +1,8 @@
 extends VBoxContainer
 
 const VFSLoader := preload("res://scripts/tools/vfs_loader.gd")
+const ContentLoader := preload("res://scripts/tools/content_loader.gd")
+const DBJson := preload("res://scripts/tools/db_json.gd")
 const DEFAULT_INSTANCE := "relay-pallas-07"
 
 @onready var output: RichTextLabel = $Output
@@ -15,6 +17,7 @@ var _history_index: int = -1
 var _hostname := "unknown-host"
 var _lineage_label := "unknown-lineage"
 var _user := "tech"
+var _hardware_state: Dictionary = {}
 
 func _ready() -> void:
 	_load_vfs(DEFAULT_INSTANCE)
@@ -30,6 +33,7 @@ func _load_vfs(instance_id: String) -> void:
 	_hostname = identity.get("hostname", instance_id.to_upper())
 	_lineage_label = identity.get("lineage_label", "unknown-lineage")
 	_user = identity.get("user", "tech")
+	_hardware_state = loaded.get("hardware", {})
 	_vfs = {"kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "", "children": loaded["tree"]}
 
 func _prompt() -> String:
@@ -116,7 +120,98 @@ func _run_command(line: String) -> void:
 		"cat":
 			_cmd_cat(args)
 		_:
-			_print_line("%s: command not found" % cmd)
+			if not _try_software_bank(cmd, args):
+				_print_line("%s: command not found" % cmd)
+
+func _try_software_bank(cmd: String, args: PackedStringArray) -> bool:
+	# usr/bin fallthrough per docs/systems/console-commands.md: unknown
+	# builtin -> check usr/bin (PATH-style, absolute regardless of cwd) for a
+	# Software Bank entry -> run its effect. This is the mechanism that makes
+	# "filling up bin/" a content task (db/software/) instead of a code task.
+	var node = _lookup(PackedStringArray(["usr", "bin", cmd]))
+	if node == null or typeof(node) != TYPE_DICTIONARY or not node.has("software_ref"):
+		return false
+	var tool := ContentLoader.load_software(node["software_ref"])
+	if tool.is_empty():
+		_print_line("%s: software bank entry missing" % cmd)
+		return true
+	_run_software_effect(tool, args)
+	return true
+
+func _run_software_effect(tool: Dictionary, args: PackedStringArray) -> void:
+	var effect: Dictionary = tool.get("effect", {})
+	match effect.get("type", ""):
+		"spec_lookup":
+			_effect_spec_lookup(args)
+		"probe_lookup":
+			_effect_probe_lookup(args)
+		"root_claim":
+			_effect_root_claim(tool)
+		_:
+			_print_line("%s: no handler for effect '%s'" % [tool.get("id", "?"), effect.get("type", "?")])
+
+func _effect_spec_lookup(args: PackedStringArray) -> void:
+	if args.is_empty():
+		_print_line("usage: spec <protocol> [--full]")
+		return
+	var protocol := ContentLoader.find_protocol_by_rfc(args[0])
+	if protocol.is_empty():
+		_print_line("spec: unknown protocol '%s'" % args[0])
+		return
+	var excerpt: Dictionary = protocol.get("spec_excerpt", {})
+	if excerpt.is_empty():
+		_print_line("spec: no curated excerpt for %s yet" % protocol.get("rfc", args[0]))
+		return
+	_print_line(excerpt.get("citation", ""))
+	_print_line("  " + excerpt.get("section", ""))
+	_print_line("    " + excerpt.get("quote", ""))
+	if args.has("--full"):
+		var text = DBJson.read_text(excerpt.get("vault_source", ""))
+		if text == null:
+			_print_line("spec: --full source not found")
+		else:
+			_print_line("")
+			_print_line(text)
+
+func _effect_probe_lookup(args: PackedStringArray) -> void:
+	if args.is_empty():
+		_print_line("usage: probe <protocol> --node <target>")
+		return
+	var protocol := ContentLoader.find_protocol_by_rfc(args[0])
+	if protocol.is_empty():
+		_print_line("probe: unknown protocol '%s'" % args[0])
+		return
+	var target := _hostname
+	var node_flag := args.find("--node")
+	if node_flag != -1 and node_flag + 1 < args.size():
+		target = args[node_flag + 1]
+
+	var admission_mode := "unknown"
+	var policy_node = _lookup(PackedStringArray(["etc", "duty-policy.conf"]))
+	if policy_node != null and typeof(policy_node) == TYPE_DICTIONARY and policy_node.has("content"):
+		for line in String(policy_node["content"]).split("\n"):
+			if line.begins_with("ADMISSION_MODE="):
+				admission_mode = line.trim_prefix("ADMISSION_MODE=")
+
+	_print_line("%s: %s, ADMISSION_MODE=%s" % [target, protocol.get("id", "?"), admission_mode])
+	_print_line("  (local override, see /etc/duty-policy.conf)")
+
+	var hardware := ContentLoader.load_hardware(_hardware_state.get("type_ref", ""))
+	var buffer_state: Dictionary = _hardware_state.get("installed_components", {}).get("buffer", {})
+	var component := ContentLoader.load_component(buffer_state.get("component_ref", ""))
+	if not hardware.is_empty() and not component.is_empty():
+		var rated = hardware.get("slots", {}).get("power", {}).get("duty_limit_pct_per_hour", "?")
+		var locked = component.get("locked_duty_limit_pct_per_hour", "?")
+		var degraded_str := "degraded" if buffer_state.get("degraded", false) else "nominal"
+		var sub_str := str(buffer_state.get("subscription_current", false)).to_lower()
+		_print_line("  buffer hardware: %s, %s (subscription_current: %s, duty_limit_pct_per_hour: %s -- rated, not the VARS-locked %s)" % [
+			component.get("sku", "?"), degraded_str, sub_str, str(rated), str(locked)
+		])
+
+func _effect_root_claim(tool: Dictionary) -> void:
+	var required = tool.get("effect", {}).get("quorum_required", 3)
+	_print_line("root claim submitted -- awaiting union quorum (need %s, have 1 -- yours)" % str(required))
+	_print_line("no seconds received yet.")
 
 func _cmd_cd(path: String) -> void:
 	var segments := _resolve_path(_cwd, path)

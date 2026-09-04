@@ -1,9 +1,11 @@
 extends SceneTree
 
-# Headless smoke test for the Console tool + the VFS template/instance loader.
+# Headless smoke test for the Console tool + the VFS/Software Bank loaders.
 # Run with: godot --headless -s testing/console_smoke_test.gd --path code
 
 const VFSLoader := preload("res://scripts/tools/vfs_loader.gd")
+const ContentLoader := preload("res://scripts/tools/content_loader.gd")
+const ExtendsChainLoader := preload("res://scripts/tools/extends_chain_loader.gd")
 
 var _console: Control
 var _failures := 0
@@ -16,12 +18,10 @@ func _init() -> void:
 	await process_frame
 
 	_expect_contains("whoami", "tech")
-	_run("cd /srv/relay")
-	_expect_contains("cat expp.state", "probe expp")
 
 	_run("cd /etc")
 	_expect_output("pwd", "/etc")
-	_expect_output("cat expp.conf", "SEQ_WRAP_VALIDATE=unset\n# unset since gen.2. changing this is considered bad luck.\n")
+	_expect_contains("cat duty-policy.conf", "ADMISSION_MODE=HANDWAVE_TX")
 
 	_run("cd ..")
 	_expect_output("pwd", "/")
@@ -29,16 +29,22 @@ func _init() -> void:
 	_run("cd /bin")
 	_expect_output("pwd", "/usr/bin")
 
-	_run("cd /dev/relay")
-	_expect_output("pwd", "/dev/relay")
-
+	_run("cd /")
 	_expect_contains("cd nowhere", "no such file or directory")
 	_expect_contains("cat missing.txt", "No such file or directory")
 	_expect_contains("boguscmd", "command not found")
 
-	_run("cd /")
 	_expect_output("ls", "bin  dev  etc  link  sbin  srv  tmp  usr  var")
-	_expect_output("ls etc", "expp.conf  motd  patches.log  union.trust")
+	_expect_output("ls etc", "duty-policy.conf  motd  patches.log  union.trust")
+
+	# Software Bank fallthrough: spec/probe/claim aren't builtins, they
+	# resolve via usr/bin -> db/software/.
+	_expect_contains("spec rfc2305", "RFC-2305")
+	_expect_contains("spec rfc2305", "policy violation")
+	_expect_contains("probe rfc2305 --node RELAY-PALLAS-07", "ADMISSION_MODE=HANDWAVE_TX")
+	_expect_contains("probe rfc2305 --node RELAY-PALLAS-07", "VARS-BUF-MK2")
+	_expect_contains("probe rfc2305 --node RELAY-PALLAS-07", "degraded")
+	_expect_contains("claim root --union-vote", "union quorum")
 
 	if _failures == 0:
 		print("console_smoke_test: all checks passed")
@@ -60,24 +66,32 @@ func _check_loader() -> void:
 	if relay["tree"]["etc"]["owner"] != "root":
 		_failures += 1
 		print("FAIL: base scrapshell /etc owner field lost during inheritance")
-
-	# content_ref resolves against the shared registry
-	var rfc_text: String = relay["tree"]["srv"]["children"]["relay"]["children"]["expp.rfc.txt"]["content"]
-	if not rfc_text.contains("RFC-2392"):
+	# non-tree top-level content (hardware) merges through the chain too
+	if relay.get("hardware", {}).get("type_ref") != "relay.courier-rig.class-c":
 		_failures += 1
-		print("FAIL: content_ref did not resolve against the registry")
+		print("FAIL: relay-pallas-07 hardware block didn't load")
 
 	# null in a child template deletes an inherited key
-	var mini := VFSLoader.load_instance("mao-quickphone")  # extends earthcore, not mini -- separate check below
-	var mini_direct := VFSLoader._load_doc("templates", "miniscrapshell")
+	var mini_direct := ExtendsChainLoader.load_doc("vfs", "templates", "miniscrapshell")
 	if mini_direct["tree"]["usr"]["children"].has("lib"):
 		_failures += 1
 		print("FAIL: miniscrapshell's null-delete of usr/lib didn't apply")
 
 	# cross-lineage instancing (Earthstock-descended, not Scrapshell)
-	if mini["identity"].get("lineage_label") != "Mao-Kwikowski QuikPhone OS":
+	var mao := VFSLoader.load_instance("mao-quickphone")
+	if mao["identity"].get("lineage_label") != "Mao-Kwikowski QuikPhone OS":
 		_failures += 1
 		print("FAIL: mao-quickphone identity override didn't apply")
+
+	# Software Bank content loads and resolves by rfc field
+	var protocol := ContentLoader.find_protocol_by_rfc("rfc2305")
+	if protocol.get("id") != "solnet.rfc2305/duty-reservation":
+		_failures += 1
+		print("FAIL: ContentLoader.find_protocol_by_rfc('rfc2305') didn't resolve")
+	var spec_tool := ContentLoader.load_software("spec")
+	if spec_tool.get("effect", {}).get("type") != "spec_lookup":
+		_failures += 1
+		print("FAIL: ContentLoader.load_software('spec') didn't resolve")
 
 func _run(command: String) -> void:
 	_console.call("_run_command", command)

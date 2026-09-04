@@ -1,8 +1,15 @@
 # Software Bank — Design Notes
 
-Status: proposal, 2026-09-04. Dan asked for this directly ("I think we need a 'Software bank'") —
-not yet built, and it overlaps Gary's `component.*` schema territory, so this is written up for his
-input before either of us commits to a shape.
+Status: **implemented (first pass), 2026-09-04.** Dan asked for this directly ("I think we need a
+'Software bank'"). Gary decided the structural question below (`db/software/` gets its own folder,
+recorded in `db/README.md`) and wrote `docs/systems/console-commands.md` specifying the exact
+mechanism — Console.gd's dispatcher falls through an unrecognized command to a `usr/bin/` lookup
+before printing "command not found," so filling `bin/` is a content task, not a code change. Built
+against that spec: `db/software/templates/{spec,probe,claim}.json`, wired into
+`db/vfs/templates/scrapshell.json`'s `usr/bin/`, with real effect handlers in `Console.gd`
+(`spec_lookup`, `probe_lookup`, `root_claim`) reading actual `db/protocols/`, `db/hardware/`,
+`db/components/` content — not flavor text. Headless-tested. What's below is the original design
+reasoning; still accurate, just no longer speculative.
 
 ## The gap this fills
 
@@ -50,7 +57,14 @@ the identical schema an NPC relay's `/usr/bin` would use. One registry serving b
 "player inventory" and "machine software" as two parallel systems that have to be kept in sync by
 hand.
 
-## Structural question for Gary
+## Structural question for Gary — resolved
+
+**Decided by Gary, 2026-09-04, recorded in `db/README.md`:** own folder (`db/software/`), same
+shape as `vfs/` (`templates/` + `instances/`), not `component.*` entries tagged `kind: software`.
+`spec`/`probe`/`claim` currently live only as `templates/` (no forking implemented yet — none of
+the three actually vary per lineage today; `claim` itself *is* the lineage-specific piece, defined
+once for Scrapshell, with Earthstock's `elevate` as a separate future template rather than a patch
+of `claim`). Original reasoning kept below.
 
 Software forking (a tool has a Scrapshell-hand-patched variant, an Earthstock-signed variant, a
 Mars-recompiled variant) is structurally the same shape as OS lineage forking — a base tool

@@ -2,17 +2,6 @@
   "id": "scrapshell-diagnostic-kit",
   "extends": "miniscrapshell",
   "identity": {"lineage_label": "Scrapshell 7.2-belt (diagnostic kit)"},
-  "_note": "placeholder stub -- proves the inheritance chain, not fleshed-out content yet",
-  "tree": {
-    "usr": {
-      "children": {
-        "bin": {
-          "children": {
-            "spec": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "content": "[tool] spec -- read a protocol's own RFC text\n"},
-            "probe": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "content": "[tool] probe -- inspect a node's actual protocol implementation\n"}
-          }
-        }
-      }
-    }
-  }
+  "_notes": "Realigned 2026-09-04: spec/probe/claim now come from the real Software Bank entries inherited through miniscrapshell -> scrapshell (db/software/templates/), not the placeholder flavor-text override this used to have. This template's actual differentiator (a fuller toolkit than a bare miniscrapshell) is still a placeholder -- no additional real tools authored yet beyond the base three.",
+  "tree": {}
 }

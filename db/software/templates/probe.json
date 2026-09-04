@@ -1,0 +1,7 @@
+{
+  "_notes": "See spec.json's _notes -- same first-real-entry rationale. probe reports plain, bounded facts (protocol, local policy override, hardware state) the way a real technician reads them off a panel, per docs/lore/os-lineages.md section 6 -- not a vuln scanner.",
+  "id": "probe",
+  "kind": "software",
+  "help": "probe <protocol> --node <target> -- show a node's live protocol/hardware state",
+  "effect": {"type": "probe_lookup"}
+}

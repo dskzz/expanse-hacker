@@ -1,0 +1,7 @@
+{
+  "_notes": "First real db/software/ entry, validating the shape per docs/systems/console-commands.md -- reuses component.*'s installed_effect idea but structurally its own thing (own folder, per db/README.md 2026-09-04 decision). Styled like tldr per console-commands.md 'spec, restyled': a short curated hit by default, --full for the complete vault RFC text.",
+  "id": "spec",
+  "kind": "software",
+  "help": "spec <protocol> [--full] -- show a protocol's curated spec excerpt (or the full RFC text with --full)",
+  "effect": {"type": "spec_lookup"}
+}

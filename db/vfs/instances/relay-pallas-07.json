@@ -2,11 +2,22 @@
   "id": "relay-pallas-07",
   "extends": "scrapshell-relay",
   "identity": {"hostname": "RELAY-PALLAS-07"},
+  "hardware": {
+    "_notes": "Added 2026-09-04 so `probe` has real per-instance state to read instead of hardcoded output -- type_ref points at db/hardware/relay-courier-rig-class-c.json (rated duty_limit_pct_per_hour: 10), installed_components.buffer points at db/components/vars-buffer-mk2.json (locked at 4 unless degraded). This specific relay's buffer has been degraded (Scrapshell slang, os-lineages.md section 5) -- subscription lapsed, tech reflashed it to ignore the lock rather than pay VARS again.",
+    "type_ref": "relay.courier-rig.class-c",
+    "installed_components": {
+      "buffer": {
+        "component_ref": "component.buffer.vars-mk2",
+        "degraded": true,
+        "subscription_current": false
+      }
+    }
+  },
   "tree": {
     "etc": {
       "children": {
         "union.trust": {"content": "# local quorum roster\nbrahms.tech\nokonkwo.tech\nvance.tech\n"},
-        "patches.log": {"content": "118-06-02 vance.tech: relay laser.tx recalibration\n118-07-19 brahms.tech: expp.conf duty-cycle bump\n118-08-30 okonkwo.tech: union.trust roster refresh\n"}
+        "patches.log": {"content": "118-06-02 vance.tech: relay laser.tx recalibration\n118-07-19 brahms.tech: duty-policy.conf ADMISSION_MODE override to HANDWAVE_TX\n118-08-30 okonkwo.tech: union.trust roster refresh\n"}
       }
     }
   }

@@ -4,6 +4,13 @@
   "rfc": "RFC-2305",
   "layer": "application",
   "_layer_note": "sits above L1 per RFC-2305 section 20's pointer to RFC-2361; not yet reconciled against RFC-2361's actual layer model",
+  "spec_excerpt": {
+    "_notes": "Curated hit for the `spec` Software Bank command (db/software/templates/spec.json) -- styled like tldr per docs/systems/console-commands.md, not a full-text dump. Matches the worked example already established in docs/lore/os-lineages.md section 6 exactly, so the design doc and actual game data agree. --full reads the real vault file (vault_source below) instead.",
+    "citation": "RFC-2305 -- Power and Duty Cycle Constraints (SolNet Standards Working Group, adopted union-side since 2361 with local ADMISSION_MODE override, see /etc/duty-policy.conf)",
+    "section": "§16.1 -- stress behavior",
+    "quote": "\"Blindly transmitting at full power without a confirmed reservation is a policy violation.\"",
+    "vault_source": "docs/vault/New RFCs/RFC 2305 - Power and Duty Cycle Constraints.md"
+  },
   "states": {
     "IDLE": {
       "on": {"SELF_ASSESS": "ASSESSING"}
