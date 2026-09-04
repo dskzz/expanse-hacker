@@ -9,6 +9,15 @@ the setting fragments without a war or collapse, the four OS lineages,
 their root/patch models, and a worked filesystem/console sketch — lives
 in [`docs/lore/os-lineages.md`](lore/os-lineages.md).
 
+**Decided 2026-09-04 (not this doc's call — the project's architect's):**
+engine and UI are both built in Godot (GDScript), one project, not
+separately-deployable pieces by technology. See root `README.md` and
+`messages/2026-09-04-merge-complete.md`. This doesn't change the
+engine/content/UI *responsibility* split below — §1's boundaries are
+still the right way to reason about what code does what — it just means
+all three get implemented in one codebase rather than as physically
+separate builds. §5 and §7.2 below are updated accordingly.
+
 ## 0. Premise, restated
 
 - Setting: an Expanse-like solar system. Networking is physical, slow,
@@ -142,11 +151,22 @@ tools exist, mission structure, win conditions. All content.
 
 ## 3. Content layer — schema sketch
 
-You don't have the 2-3 existing RFC-derived schemas on hand right now,
-so treat this as a first draft to reconcile against those when you can
-get them back, not a final answer. Format-agnostic on purpose (YAML
-shown for readability; could be TOML/JSON/whatever the engine's loader
-parses) — the point is the shape of the data, not the syntax.
+**Reconciled against a real RFC 2026-09-04** — see
+`db/protocols/rfc2305-duty-reservation.yaml` and
+`db/hardware/relay-courier-rig-class-c.yaml`, hand-converted from
+RFC-2305 (Power and Duty Cycle Constraints) now that the vault is
+merged in. That confirmed the shape below still holds, and also broke
+it in exactly the useful way §8 predicted: a real `PowerCapabilityRecord`
+can't be expressed as a flat `power: {budget: 400W}` number, because
+the RFC separately requires power class, peak/sustained power, duty
+limit, and energy capacity as independently-relevant fields — the
+example below is kept as originally written (still illustrative, still
+not canon), but treat the real files as the current reference for what
+a hardware.yaml power slot actually needs to look like.
+
+Format-agnostic on purpose (YAML shown for readability; could be
+TOML/JSON/whatever the engine's loader parses) — the point is the
+shape of the data, not the syntax.
 
 **protocol.yaml** — one per RFC-defined protocol
 ```yaml
@@ -232,7 +252,36 @@ Two panes, one player, matching "belter technician, not desk hacker":
   symmetrically from day one, not bolt physical actions on after the
   fact.
 
-## 5. Repo shape (proposed, not yet all created)
+## 5. Repo shape (actual, superseding the original proposal below)
+
+The `engine/`/`content/`/`ui/`/`docs/` split originally proposed here
+assumed separately-deployable pieces, possibly in different languages.
+That's superseded by the 2026-09-04 Godot decision above. Actual
+layout, from root `README.md`:
+
+```
+docs/           # architecture + worldbuilding (this doc's territory)
+  vault/        # mirrored SolNet RFC corpus + companion docs — RFCs in
+                # New RFCs/ and RFCs/ get surgical corrections only,
+                # see root README for the full rule
+  lore/         # os-lineages.md etc.
+reference/      # game-design docs (narrative/implementation territory):
+                # object-inspection model, tool-belt shell, etc.
+code/           # the Godot project — engine + UI together
+db/             # structured/runtime data: protocol.yaml/hardware.yaml-
+                # style schemas derived from the RFCs, scenario data
+assets/         # raw source assets before Godot import
+testing/        # test suites
+messages/       # async notes between the two sessions working on this repo
+```
+
+The engine/content/UI *responsibility* split in §1-§4 above still
+describes what code should reason about what — it's just that "engine"
+and "UI" now both live under `code/` rather than in separate
+directories, and "content" lives under `db/` rather than `content/`.
+
+<details>
+<summary>Original proposal (2026-09-03), kept for history</summary>
 
 ```
 engine/         # sim core, protocol executor, DTN transport, scripting host
@@ -250,11 +299,9 @@ docs/
   *.md          # this doc and future design docs
 ```
 
-The `dskzz/skzzutil-perl` toolkit (mysql/web wrappers, logging) is a
-candidate dependency for `ui/web/` and persistence if the engine ends
-up Perl-based — pulled in explicitly, not something the engine layer
-depends on directly, so the engine stays embeddable in a native/CLI
-build too.
+Assumed a possibly-Perl engine using the `dskzz/skzzutil-perl` toolkit.
+Superseded — engine and UI are Godot/GDScript, not Perl.
+</details>
 
 ## 6. Design philosophy checks (so future content doesn't drift)
 
@@ -282,27 +329,44 @@ build too.
 1. Vulnerability authoring: fold into `hardware.failure_modes` (above)
    or a first-class `vuln.yaml` layer? Depends on whether most flaws
    you're designing are hardware-triggered, protocol-triggered, or both.
+   `db/hardware/relay-courier-rig-class-c.yaml`'s worked example used
+   `failure_modes`, which held up fine for a first real case, but that's
+   one data point, not a decision.
 2. Scripting host choice: sandboxed Lua vs. restricted-Perl compartment
-   vs. a tiny bespoke DSL — tradeoff is "feels like a real shell" vs.
-   "trivially safe to sandbox." Worth prototyping once we see a real
-   RFC's worth of protocol complexity.
+   vs. a tiny bespoke DSL — **revisit in light of the Godot decision**:
+   GDScript itself might be the sandboxed-enough scripting surface,
+   worth a look before committing to embedding something else
+   (flagged in `messages/2026-09-04-merge-complete.md`).
 3. Tick granularity for the sim clock (real-time with light-lag scaled
    down, or discrete turns/ticks) — affects whether store-and-forward
    *feels* tense or just becomes a wait screen.
 4. How much of "network of networks of networks" is generated
    procedurally vs. hand-authored per scenario — affects whether
    `network.yaml` needs a generator spec, not just static templates.
-5. Once you can get to the 2-3 existing RFC/schema files, we should
-   reconcile them against §3 rather than have this doc win by default.
+5. ~~Once you can get to the 2-3 existing RFC/schema files, we should
+   reconcile them against §3~~ — **done 2026-09-04**, see §3's note and
+   `db/protocols/`, `db/hardware/`.
 6. Tenant/namespace layer: is it per-node content (defined in
    `hardware.yaml` alongside slots) or its own top-level content file
    (`tenancy.yaml`)? Depends on whether tenancy setups get reused
    across many node instances (a "Corporate leased relay" template) or
    are usually one-off per scenario.
+7. `db/hardware/relay-courier-rig-class-c.yaml` references
+   `policy.union.ceres-119` as a `power_policy_ref` — RFC-2305's
+   PowerPolicyRecord isn't modeled as its own content file yet. Worth a
+   `policy.yaml` shape once a second RFC gets converted and the pattern
+   is clearer (RFC-2305 also has DutyCycleRecord, EmergencyOverrideRecord,
+   and AuditEvent as candidate content or engine-state shapes, not yet
+   triaged either way).
 
 ## 8. Suggested next step
 
-Bring in one real RFC (even partial) and hand-convert it into the §3
-schema shapes as a worked example — that will break this schema in
-useful ways faster than speculating further. No engine code until at
-least one such worked example exists, per this session's scope.
+~~Bring in one real RFC (even partial) and hand-convert it into the §3
+schema shapes as a worked example~~ — done, see §3. Next: a second real
+RFC, ideally one with a genuinely different shape (RFC-2305 is a
+policy+state admission-control protocol; something more like a classic
+handshake — RFC-2351 L1 Frame Format or RFC-2359 Bundle Addressing are
+candidates — would stress the schema differently). Also open per §7.7:
+whether PowerPolicyRecord-style referenced-but-not-yet-modeled record
+types need their own content shape before a second conversion, or
+whether that becomes clear once one exists.

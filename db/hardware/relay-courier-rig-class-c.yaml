@@ -1,0 +1,47 @@
+# Companion to db/protocols/rfc2305-duty-reservation.yaml — see that file's
+# header for provenance. This replaces ARCHITECTURE.md §3's placeholder
+# `power: {budget: 400W}` with fields actually named in RFC-2305 §6/§14's
+# PowerCapabilityRecord, for a Class-C constrained courier relay (§2 scope:
+# "constrained devices with strict energy budgets... the usual Belter
+# skiffs, wrist terminals").
+#
+# What changed vs. the placeholder: the RFC deliberately does not mandate
+# specific numbers ("does not mandate specific hardware power amplifiers" —
+# §2) — it mandates which *fields* a PowerCapabilityRecord must expose.
+# So the schema's power slot needed to become a structured record instead
+# of a single budget number; a flat `power: {budget: 400W}` genuinely
+# couldn't express PowerClass, duty limits, or energy capacity as separate,
+# independently-relevant facts. This is the kind of thing ARCHITECTURE.md
+# §8 predicted the real conversion would surface.
+
+id: relay.courier-rig.class-c
+
+slots:
+  power:
+    # RFC-2305 §6 PowerCapabilityRecord fields, §14's required set
+    power_class: C                 # intermittent low power (§6)
+    peak_power_w: 60
+    sustained_power_w: 18
+    duty_limit_pct_per_hour: 10
+    energy_capacity_j: 480000
+    power_policy_ref: policy.union.ceres-119   # placeholder ref, not yet a real content file
+  buffer:
+    accepts: [component.buffer.*]
+    requires_physical_access: true
+
+default_protocols: [solnet.rfc2305/duty-reservation]
+
+failure_modes:
+  - id: stale_provisional_trust
+    trigger:
+      protocol: solnet.rfc2305/duty-reservation
+      condition: provisional_receipt_treated_as_final
+    effect:
+      integrity: -1
+      emit_event: premature_transmit
+    # gameplay shape: a player (or an NPC originator) that skips
+    # re-checking a ProvisionalReceipt before transmitting is acting on
+    # stale trust — exactly the RFC-2305 Companion's Trade-off A
+    # ("mismatches between provisional receipts and final forwarding").
+    # Discoverable via probe/spec on this node's duty-reservation state,
+    # not a scan flag.

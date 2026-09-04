@@ -1,0 +1,65 @@
+# Worked example for ARCHITECTURE.md §3's protocol.yaml shape, hand-converted
+# from a real RFC instead of the placeholder EXPP/RFC-4419 example that
+# preceded it. Source: docs/vault/New RFCs/RFC 2305 - Power and Duty Cycle
+# Constraints.md, §16.1 "Scheduled burst replication under duty limits" and
+# §9's ProvisionalReceipt semantics. Vulnerability sourced from Trade-off A
+# in docs/vault/RFC Companion/RFC 2305 - Power and Duty Cycle Const
+# Exploits.md.
+#
+# First real-RFC test of the schema. What it confirmed: the RFC's own
+# "policy plus state" split (§4) maps directly onto content (this protocol
+# definition, static) vs. engine-tracked live state (PowerStateRecord).
+# What it changed: hardware.yaml's power slot was a flat number
+# (`power: {budget: 400W}`) in the placeholder example — see
+# db/hardware/relay-courier-rig-class-c.yaml for how a real
+# PowerCapabilityRecord actually needs a structured set of fields instead.
+
+id: solnet.rfc2305/duty-reservation
+rfc: RFC-2305
+layer: application  # sits above L1 per RFC-2305 §20's pointer to RFC-2361;
+                     # not yet reconciled against RFC-2361's actual layer model
+
+states:
+  REQUESTED:
+    # originator submits a DutyScheduleRecord (RFC §16.1 step 2)
+    on: {SUBMIT: ADMISSION_PENDING}
+
+  ADMISSION_PENDING:
+    # relay evaluates against PowerPolicyRecord/DutyCycleRecord (§8)
+    on: {ACCEPT: RESERVED, QUEUE: QUEUED, REJECT: REJECTED}
+    emit: [{type: RESERVATION_RECEIPT, delay: link.propagation}]
+
+  QUEUED:
+    on: {ACCEPT: RESERVED, EVICT: EVICTED, EXPIRE: EVICTED}
+    # relay issues a signed ProvisionalReceipt here (§9) — queued, not
+    # forwarded. This is the state the vulnerability lives in.
+    emit: [{type: PROVISIONAL_RECEIPT, delay: link.propagation}]
+
+  RESERVED:
+    on: {TRANSMIT: TRANSMITTING}
+
+  TRANSMITTING:
+    on: {COMPLETE: FORWARDED, THROTTLE: TRANSMITTING, PREEMPT: EVICTED}
+
+  FORWARDED: {terminal: true}
+  EVICTED: {terminal: true}
+  REJECTED: {terminal: true}
+
+security_considerations: |
+  RFC-2305 §9: "Consumers MUST treat such [provisional] records as
+  provisional until replication receipts confirm propagation." §8: relays
+  "MUST implement eviction policies for queued transmissions" and log
+  evictions as AuditEvents.
+
+  Nothing in the RFC bounds *how long* a consumer may keep acting on an
+  unconfirmed ProvisionalReceipt before re-checking whether the record is
+  still queued rather than evicted. This is a genuine MUST in the spec —
+  unlike the placeholder EXPP example's spec-honest MAY-clause gap, an
+  implementation that treats "provisional" and "forwarded" as
+  interchangeable once it holds *a* receipt is spec-noncompliant, not
+  spec-ambiguous. Different flavor of flaw, worth keeping both kinds in
+  the content: some vulnerabilities are the spec leaving a door open on
+  purpose, some are an implementation walking through a door the spec
+  explicitly marked shut, because re-checking costs a round-trip a
+  resource-constrained fork can't always afford. See db/hardware's
+  failure_modes for how this becomes a concrete node-level effect.
