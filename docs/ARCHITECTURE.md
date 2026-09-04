@@ -4,6 +4,11 @@ Status: planning only, no engine code yet. This document exists to fix the
 shape of the system before content (RFCs) or UI get built against it, so
 none of the three layers below leak into each other later.
 
+In-universe worldbuilding that motivated several decisions here — why
+the setting fragments without a war or collapse, the four OS lineages,
+their root/patch models, and a worked filesystem/console sketch — lives
+in [`docs/lore/os-lineages.md`](lore/os-lineages.md).
+
 ## 0. Premise, restated
 
 - Setting: an Expanse-like solar system. Networking is physical, slow,

@@ -13,4 +13,6 @@ belter-technician tools, not just a keyboard).
 Architecture is deliberately split into three independently
 replaceable pieces — engine, content, UI. See
 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the current plan
-(planning stage — no engine code yet).
+(planning stage — no engine code yet), and
+[`docs/lore/os-lineages.md`](docs/lore/os-lineages.md) for the
+in-universe history and OS-fork worldbuilding behind it.
