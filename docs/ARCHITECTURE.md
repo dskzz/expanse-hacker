@@ -95,8 +95,34 @@ Responsibilities, and only these:
   Installing a buffer on a laser relay is: player has physical-access
   capability on that node → content defines what a "buffer" component
   does to that node's link behavior → engine just executes the effect.
-- **Event/observation bus.** Everything the engine does emits typed
-  events; UI subscribes and renders, never pokes engine state directly.
+  Physical access is deliberately *not* the same thing as full access —
+  see the tenant/namespace layer below.
+- **Tenant/namespace layer.** A node's physical shell can host more than
+  one logical tenant — the same isolation-is-a-view idea Linux
+  namespaces/cgroups proved out for containers, applied to a node
+  instead of a kernel. Physical access (jacking into a console/port)
+  gets a player *a* view; content decides whether that node multiplexes
+  tenants at all, and if so what each tenant can see (files, devices,
+  link telemetry) and what resources (power, bandwidth — generalizing
+  the `power: {budget: ...}` field in §3's `hardware.yaml`) are
+  attributed to them. A leased Corporate relay might jail a player to a
+  thin slice of a much bigger physical machine; a Belt station might run
+  flat and single-tenant by cultural choice, trading compartmentalization
+  for simplicity. Escaping a tenant's view into another one is a
+  legitimate, content-defined action — not a bug the engine has to
+  prevent, any more than a real container escape is the kernel's fault
+  for correctly implementing what it was told to isolate.
+- **Event/observation bus, exposed as an inspectable namespace.**
+  Everything the engine does emits typed events; UI subscribes and
+  renders, never pokes engine state directly — but content can also
+  expose live engine state (protocol state-machine position, bundle
+  queue contents, link integrity, tenant resource usage) as a
+  browsable, greppable namespace, the direct descendant of `/proc`:
+  "everything is a file" extended from local process state to
+  networked, delay-tolerant link state. This isn't a UI affordance
+  bolted on after the fact — it's the same event data the bus already
+  carries, given a filesystem-shaped read path alongside the typed one,
+  scoped per-tenant like everything else in this layer.
 - **Action intake.** UI submits typed Actions (see §4); engine validates
   against current sim state and content rules, applies or rejects.
 - **Scripting host.** A sandboxed interpreter (candidate: embed a small
@@ -241,6 +267,10 @@ build too.
   propagation allows.
 - Trust is decentralized by construction — the engine must not grow a
   built-in "the server/admin is always right" concept anywhere.
+- Physical access is not full access. A node's tenant/namespace layer
+  is allowed to legitimately show a player a partial, honest view —
+  the gap between "I'm jacked in" and "I can see the flaw" is
+  gameplay, not a UI bug to be smoothed over.
 
 ## 7. Open questions (need your input / the missing RFC files to close)
 
@@ -259,6 +289,11 @@ build too.
    `network.yaml` needs a generator spec, not just static templates.
 5. Once you can get to the 2-3 existing RFC/schema files, we should
    reconcile them against §3 rather than have this doc win by default.
+6. Tenant/namespace layer: is it per-node content (defined in
+   `hardware.yaml` alongside slots) or its own top-level content file
+   (`tenancy.yaml`)? Depends on whether tenancy setups get reused
+   across many node instances (a "Corporate leased relay" template) or
+   are usually one-off per scenario.
 
 ## 8. Suggested next step
 
