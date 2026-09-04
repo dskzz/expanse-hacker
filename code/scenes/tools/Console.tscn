@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/tools/Console.gd" id="1"]
+
+[node name="Console" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Output" type="RichTextLabel" parent="."]
+size_flags_vertical = 3
+bbcode_enabled = false
+scroll_following = true
+
+[node name="Input" type="LineEdit" parent="."]
+placeholder_text = "type a command..."

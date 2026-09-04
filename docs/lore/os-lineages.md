@@ -1,7 +1,8 @@
 # OS Lineages & the Drift
 
-Status: worldbuilding, not yet reconciled against real RFCs. This
-grew out of a planning conversation working backward from a real
+Status: worldbuilding, reconciled against the vault's real RFC corpus
+as of 2026-09-04 (§7). This grew out of a planning conversation
+working backward from a real
 question — "is Unix/Linux the mousetrap/toilet of computing, a form
 that fits its function so well that 300 years mostly refines it at the
 edges rather than replacing it?" — and landing on an answer with a
@@ -224,11 +225,89 @@ themselves. Both are ordinary content-defined Actions per the engine
 contract in `ARCHITECTURE.md` §1/§4 — nothing here needed new engine
 capability.
 
-## 7. Open threads
+## 7. Vault cross-references (SolNet RFC corpus)
 
-- None of this has been checked against your actual RFC/schema files
-  yet — reconcile when you can get to them (same open item as
-  `ARCHITECTURE.md` §7.5).
+Reconciled 2026-09-04 against the actual vault (`docs/vault/` in this
+repo, mirrored from the design-side session's Obsidian vault). This
+lore holds up well against the real RFCs — nothing here contradicts
+them, and several things it needed have turned out to already exist:
+
+- **RFC-2362 (Trust Domains and Authority Policy)** is the vault's own
+  generic trust primitive (AuthorityWeight, cross-cert chains, no
+  global CA) — the four lineages above are four different concrete
+  implementations of that one primitive, not a competing system. Worth
+  checking whether RFC-2362 as currently drafted can actually express
+  all four (Earthstock's reachable-CA assumption in particular reads
+  as a degenerate case worth calling out explicitly).
+- **Incident Timeline** (`docs/vault/Notes/history/SolNet Incident
+  Timeline.md`) already names the Drift correctly without anyone
+  intending it to: "Drift Years (2330–2336) — relay drift, vendor
+  divergence, inconsistent TLV ordering, legacy nodes accumulate
+  unpatched behavior." No reconciliation needed with a collapse event
+  because §0 above already rejects one — the Drift Years are the
+  visible, RFC-relevant slice of the same ~150-year process this doc
+  describes. "Vesta Blockade Failure" (~2320, "incompatible comms
+  stacks") reads as one symptom of the drift, not its origin. "2337 —
+  Vendor Profile Negotiation Collapse" (vendors attempting "flexible
+  profiles," causing routing ambiguity) reads as a failed attempt at
+  *re-convergence* across already-drifted lineages — a precursor to
+  SolNet's own more disciplined "freeze the substrate, extend via
+  profiles" approach succeeding where an uncoordinated vendor attempt
+  at flexibility didn't.
+- **`RFC 2303 Exploits.md`** (Designer Brief, vault) already catalogs
+  "Replay via delayed relays and buffer eviction windows" (#6) as an
+  abstract vector — the Corporate fork's stale-cached-grant behavior
+  above is a named instance of it with a face and a motive (not
+  malice, optimistic connectivity assumptions never revisited). Same
+  doc's #7 ("Cross-cert chain laundering and weak intermediate
+  signers") is the concrete Earthstock-side attack the chain-of-custody
+  root model in §3 above is exposed to.
+- **`/etc` as "Everyone's To-Change"** (§5 above) is a clean instance
+  of a design principle named but never written up in `TODOv2.md`'s
+  CHANGES section: "logs are testimony, not truth... reconstruction is
+  probabilistic." That principle was scoped to logs/forensics when
+  first written down; a folk-mistaken reading of a config directory's
+  name extends the same unreliability to documentation itself.
+- SolNet's own minimalism doctrine (freeze L0/L1, extend only via
+  profiles, "don't push tons of shit into the base substrate" —
+  `TODOv2.md`) reads, in light of §0 above, as a *treaty-shaped*
+  response to permanent drift its authors assume is irreversible —
+  not "a good protocol design" in-universe so much as the only viable
+  move once no faction has the coordinated trust to unify the software
+  layer above the wire contract.
+
+## 8. Mechanical implications per lineage
+
+Each root model in §3 implies a genuinely different puzzle shape, not
+just flavor text on the same puzzle — this is what makes the physical-
+tool pane and terminal pane both load-bearing rather than one being
+window dressing on the other:
+
+- **Earthstock (chain-of-custody):** a multi-party puzzle. The
+  "two-tech rule" means some targets can't be solved by compromising
+  one credential — a broken/laundered cert-chain link (§7's RFC-2303
+  Exploits #7) plus a witness co-sign. Shape: assemble a chain, don't
+  just break one lock.
+- **Scrapshell (quorum):** social/identity-count, not cryptographic.
+  Interesting mechanic is faking or exploiting *quorum* — spoofing
+  multiple session identities, or exploiting the undermanned-station
+  fallback from §3. Built-in timing-window shape too (`claim root
+  --union-vote` "blocks... within a window").
+- **Mars (capability-fork):** the console alone can't solve it. Root
+  is tied to physical possession of the fob/relay, so a Mars-lineage
+  target should be the one that forces the player out of pure
+  terminal-hacking into the physical-tool pane specifically — that
+  pane stops being redundant with the terminal and becomes load-bearing
+  right here.
+- **Corporate (leased-compute):** the twist is that it's the *simplest*
+  fix technically (roll the clock back, no crypto at all) but only
+  once correctly diagnosed as a trust/clock problem, not a crypto
+  problem. Built-in trap: throwing crypto-breaking tools at a Corporate
+  target wastes the player's time. Reinforces that reading the lineage
+  correctly — not raw tool power — is the actual skill under test.
+
+## 9. Open threads
+
 - `relay.laser.mk3`, `EXPP`/`RFC-4419`, station names, and dates in
   the examples above are all placeholders invented to make the shape
   concrete, not settled canon.

@@ -1,0 +1,16 @@
+# VS Code local history extension
+.history/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Godot
+.godot/
+.import/
+export_presets.cfg
+*.translation
+
+# Build output
+/build/*
+!/build/README.md

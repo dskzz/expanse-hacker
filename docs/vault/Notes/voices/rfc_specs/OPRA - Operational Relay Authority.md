@@ -1,0 +1,4 @@
+
+[Doctrinal Integrity Council]
+
+0. Preface This document defines the Layer‑1 Relay Advertisement Protocol (RAP) used by SolNet relays to announce canonical capability, scheduling capacity, and admission policy hints without violating the non‑exposure doctrine. RelayAdvertisement records SHALL conform to the canonical TLV structure defined herein. All fields SHALL be non‑identifying, non‑correlatable, and invariant under environmental, temporal, or operational variation. Relay behavior defined by this protocol SHALL align with the invariance doctrine established in RFC‑2360 and the metadata minimization requirements of RFC‑2352. Relay capability masks, scheduling capacity classes, and admission policy hints SHALL be interpreted as policy‑derived indicators and SHALL NOT encode internal state. This document is normative for all relays participating in SolNet Layer‑1 routing and SHALL be enforced by the appropriate regulatory bodies.

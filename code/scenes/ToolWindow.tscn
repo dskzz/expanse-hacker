@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ToolWindow.gd" id="1"]
+
+[node name="ToolWindow" type="Panel"]
+custom_minimum_size = Vector2(280, 180)
+offset_right = 520.0
+offset_bottom = 360.0
+script = ExtResource("1")
+
+[node name="TitleBar" type="Panel" parent="."]
+anchor_right = 1.0
+offset_bottom = 28.0
+
+[node name="HBox" type="HBoxContainer" parent="TitleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_right = -6.0
+
+[node name="Title" type="Label" parent="TitleBar/HBox"]
+size_flags_horizontal = 3
+text = "Tool"
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="TitleBar/HBox"]
+text = "x"
+
+[node name="ContentSlot" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 28.0
+
+[node name="ResizeHandle" type="Control" parent="."]
+custom_minimum_size = Vector2(16, 16)
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+mouse_default_cursor_shape = 11

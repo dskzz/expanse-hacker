@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/Shell.gd" id="1"]
+
+[node name="Shell" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.043, 0.055, 0.067, 1)
+
+[node name="ToolBelt" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+offset_bottom = 40.0
+
+[node name="ConsoleButton" type="Button" parent="ToolBelt"]
+text = "Console"
+
+[node name="WindowLayer" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+mouse_filter = 2
