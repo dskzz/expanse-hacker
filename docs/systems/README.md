@@ -32,11 +32,19 @@ the ground truth for what's real vs. still just design notes:
   in that data as real (currently near-empty) directories** — this is
   the literal thing `console-commands.md` is about filling.
 - [`../../reference/software_bank.md`](../../reference/software_bank.md) —
-  the proposed registry for what actually goes in `usr/bin`: installable
-  software with a behavioral effect, forked per lineage the same way
-  `os-lineages.md` §4 already describes patches working. Structural
-  question in that doc (own folder vs. tagged `component.*` entries)
-  is resolved in `db/README.md` — own folder, `db/software/`.
+  **implemented 2026-09-04.** What actually goes in `usr/bin`:
+  installable software with a behavioral effect, forked per lineage the
+  same way `os-lineages.md` §4 already describes patches working.
+  `db/software/templates/{spec,probe,claim}.json` are real, wired in,
+  with working effect handlers in `Console.gd`.
+- [`../../reference/algorithm_backend.md`](../../reference/algorithm_backend.md) —
+  where something like `diff` actually runs: one generic engine
+  interface (`ARCHITECTURE.md` §2), either emulated in the sandboxed
+  scripting host or shelled out to a real binary on desktop builds,
+  never a general process-exec capability exposed to content/mods.
+  Directly answers `console-commands.md`'s open question about which
+  Tier 2 tools need this (mostly none — `delta`/diff is the concrete
+  case, `rg`/`sd`/`jq` are cheap enough to implement natively).
 - [`../../reference/satellite_relay_interaction.md`](../../reference/satellite_relay_interaction.md) —
   the object/hotspot interaction model a physical machine (a relay, a
   satellite) presents beyond its terminal.
