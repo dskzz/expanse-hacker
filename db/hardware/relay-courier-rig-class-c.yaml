@@ -15,6 +15,10 @@
 # §8 predicted the real conversion would surface.
 
 id: relay.courier-rig.class-c
+# PlatformID (a UUID-S7, per db/vocabulary.yaml) is deliberately absent
+# here -- this file is a device *type*, not an instance. A specific
+# node in node.yaml/network.yaml gets its own PlatformID when
+# instantiated from this type.
 
 slots:
   power:

@@ -1,0 +1,71 @@
+# Second real-RFC conversion, and a structurally different one from
+# db/protocols/rfc2305-duty-reservation.yaml on purpose: RFC-2301
+# (Cryptographic Primitives) isn't a stateful protocol, it's a key
+# hierarchy + revocation policy -- the concrete instantiation of
+# ARCHITECTURE.md §2's generic "trust/identity resolution" engine
+# primitive. No protocol.yaml shape fits this; introducing a `kind:
+# trust-model` content shape instead. Content decides how a given
+# network *uses* the engine's generic web-of-trust primitive (per
+# ARCHITECTURE.md §2) -- this file is that decision, made concretely,
+# for whatever network(s) adopt RFC-2301 as-is.
+
+id: solnet.rfc2301/key-hierarchy
+rfc: RFC-2301
+kind: trust-model
+
+key_hierarchy:
+  # ordered highest-to-lowest per RFC-2301 §4; each answers a different
+  # question, matching db/vocabulary.yaml's device_identity_hierarchy
+  - id: hardware_root
+    abbrev: HR
+    required_for: [high-authority-nodes]
+    optional_for: [low-end-devices]
+  - id: anchor_key
+    abbrev: AK
+    binds_to: UUID_S7   # see db/vocabulary.yaml
+    lifetime: years-to-decades
+    signs: [NetworkCert, LedgerTransaction]
+    storage_preference: hardware_root
+  - id: device_key
+    abbrev: DK
+    lifetime: months-to-years
+    subordinate_to: anchor_key   # for operator-owned devices
+  - id: service_key
+    abbrev: SK
+    lifetime: days-to-months
+    signs: ["//info", "//contact", DRE-registrations]
+  - id: session_key
+    lifetime: ephemeral   # per-session or short time window
+    purpose: forward-secrecy
+  - id: one_time_token
+    lifetime: single-use
+    purpose: [emergency-bursts, transient-handoffs]
+
+revocation:
+  canonical_record: LedgerAnchor
+  vectors: [ledger-entry, crl-like-list, short-lived-revocation-token]
+  emergency_unbind:
+    who: trust-domain-authority
+    effect: marks AK revoked, may issue short-lived override token
+    requires: [auditable, justification-metadata]
+
+failure_modes:
+  - id: silent_algorithm_swap
+    trigger: {condition: anchor_key_algorithm_changed_without_ledger_entry}
+    effect: {integrity: -1, emit_event: unlogged_algorithm_swap}
+    # RFC-2301 §11: "Migration windows: define explicit migration windows
+    # for anchors; disallow silent, unlogged algorithm swaps for anchors."
+    # A MUST NOT with no engine-level enforcement described -- a
+    # content-configured domain that skips the ledger entry on an
+    # algorithm swap is spec-noncompliant, same flavor of flaw as
+    # RFC-2305's stale-provisional-receipt trust (db/protocols/
+    # rfc2305-duty-reservation.yaml), not a spec-ambiguity gap like the
+    # original placeholder EXPP example.
+  - id: session_key_reuse_past_window
+    trigger: {condition: session_key_used_outside_negotiated_window}
+    effect: {integrity: -1, emit_event: forward_secrecy_violated}
+    # RFC-2301 §8: "Rotations MUST be atomic from the trust consumer's
+    # perspective... explicit grace periods are required." A node that
+    # keeps accepting a session key past its grace period breaks forward
+    # secrecy quietly -- discoverable via a node's key-rotation log, not
+    # a scan flag.
