@@ -1,0 +1,21 @@
+{
+  "_notes": "First real content file for ARCHITECTURE.md section 3's component content shape (previously only illustrated as a fictional placeholder, component.buffer.overrun_patch). Ties docs/lore/corporations.md's Voss-Achebe Relay Systems (VARS) directly into existing gameplay content rather than leaving it as lore only. A VARS-MK2 buffer's hardware genuinely supports db/hardware/relay-courier-rig-class-c.json's rated duty_limit_pct_per_hour (10) -- the firmware caps it lower (4) unless a subscription check against a reachable licensing server passes. 'Degrading' one (Scrapshell slang for reflashing past the lock) is common enough to be referenced directly in docs/lore/os-lineages.md section 5.",
+  "id": "component.buffer.vars-mk2",
+  "kind": "buffer",
+  "manufacturer": "Voss-Achebe Relay Systems",
+  "sku": "VARS-BUF-MK2",
+  "rated_duty_limit_pct_per_hour": 10,
+  "locked_duty_limit_pct_per_hour": 4,
+  "subscription_gate": {
+    "checked_against": "power_policy_ref",
+    "requires": "subscription_current == true",
+    "on_unreachable_licensing_server": "falls back to locked_duty_limit_pct_per_hour, not rated -- fails closed, not open",
+    "_notes": "the actual check mechanism is intentionally left engine/content-agnostic here -- how a node verifies subscription_current is a policy detail (ties to the tenant/namespace layer in ARCHITECTURE.md section 2), not something this component file should hardcode"
+  },
+  "installed_effect": {
+    "default": "applies locked_duty_limit_pct_per_hour to the host hardware.slots.power.duty_limit_pct_per_hour",
+    "degraded": "reflashed firmware ignores subscription_gate entirely and applies rated_duty_limit_pct_per_hour instead"
+  },
+  "folklore": "Scrapshell folk-knowledge: reflashing a VARS-MK2 to ignore its subscription check is common enough to have a name -- 'degrading' a buffer, ironic since the hardware performs better afterward. Not a scan-and-exploit action: it requires physical access and enough of RFC-2301's key-hierarchy knowledge (db/trust/rfc2301-key-hierarchy.json) to feed the firmware an update it accepts as legitimately signed.",
+  "crafted_from": ["scrap.optics", "printer.time:20m"]
+}

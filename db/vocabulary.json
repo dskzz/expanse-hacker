@@ -1,0 +1,80 @@
+{
+  "_notes": "Shared SolNet vocabulary, hand-extracted from RFC-2300 (Terminology & Concepts), sections 1-7 only. Not itself a protocol/hardware content file -- this is the canonical vocabulary/constants other db/ content files should reference by name rather than reinventing (RFC-2300: 'Lock this first; all RFCs must reference these definitions'). Deliberately excludes RFC-2300 sections 8-15 (TLV Key Registry, Error Handling, Security Considerations, Interoperability, Operational Behavior, Conformance, Document Maintenance, Registry Procedures) -- that content reads like RFC-2350 (Canonical Addressing)'s actual subject, not terminology; flagged in db/CORPUS-STATUS.md rather than corrected, since RFC files get surgical corrections only. Converted from YAML to JSON 2026-09-04 per project format decision (see db/README.md).",
+  "rfc": "RFC-2300",
+  "identifier_class": {
+    "UUID_S7": {
+      "description": "128-bit, time-sortable identifier, UUIDv7-compatible, extended for ledger friendliness. Canonical NetworkID for ledger-anchored identity and cross-domain references. MUST be used at the point identity is anchored, audited, or enforced across domains; local systems MAY use other schemes internally until that point.",
+      "opaque": true
+    }
+  },
+  "address_grammar": {
+    "form": "<LocationChain>//<ServiceChain>",
+    "rule": "exactly one // boundary; parsers MUST enforce it",
+    "LocationChain": {
+      "side": "left",
+      "meaning": "identity authority, trust domain, coarse location",
+      "example": "MCRC:ALPHAFLEET:DONNAGER"
+    },
+    "ServiceChain": {
+      "side": "right",
+      "meaning": "internal domain structure, service path (locally resolved)",
+      "example": "ENGINEERING:ENG-1:Reactor"
+    }
+  },
+  "planes": {
+    "location_plane": {
+      "aka": ["L-stack"],
+      "legacy_alias": "Authority Plane",
+      "concerns": ["global identity", "coarse ephemeris", "beaconing hints", "inter-domain reachability"],
+      "layers": {
+        "L2": {"name": "Identity Resolution", "concerns": ["UUID-S7", "NetworkKeys", "NetworkCerts", "LedgerAnchors"]},
+        "L3": {"name": "Directory and Reachability Endpoints", "concerns": ["//info", "//beacon", "coarse ephemeris hints"]},
+        "L4": {"name": "Routing and Mobility", "concerns": ["DTN", "store-and-forward", "ship-as-router"]},
+        "L5": {"name": "Trust and Policy", "concerns": ["cross-domain rules", "revocation", "jurisdiction"]}
+      }
+    },
+    "service_plane": {
+      "aka": ["S-stack"],
+      "legacy_alias": "Namespace Plane",
+      "concerns": ["local naming", "service discovery", "sessions", "intra-domain policy"],
+      "layers": {
+        "S2": {"name": "Local Service Resolution"},
+        "S3": {"name": "Local Directory / Service Discovery"},
+        "S4": {"name": "Session / Conversation Layer"},
+        "S5": {"name": "Local Security and ACLs"}
+      }
+    }
+  },
+  "substrate": {
+    "L0": {"name": "Physical Substrate", "concerns": ["tightbeam", "RF", "optics", "occlusion", "power"]},
+    "L1": {
+      "name": "Data-Link (Location/Service split)",
+      "L1_L": {"consumer": "location-plane", "carries": ["compressed UUID-S7 hints", "trust tags", "coarse ephemeris", "beacon descriptors", "relay capability metadata"]},
+      "L1_S": {"consumer": "service-plane", "carries": ["service path hashes", "service identifiers", "session tokens", "QoS metadata"]}
+    }
+  },
+  "role_weight": {
+    "fields": ["LocationWeight", "ServiceWeight"],
+    "meaning": "how strongly a node participates in each plane",
+    "mismatch_behavior": "when advertised role weight conflicts with observed behavior, systems log AuditEvents and increase verification steps"
+  },
+  "device_identity_hierarchy": {
+    "_notes": "answers a different question at each layer, per RFC-2300 section 6.1 -- the RFC-2301 key hierarchy (db/trust/rfc2301-key-hierarchy.json) is the concrete cryptographic instantiation of this same layering",
+    "layers": [
+      {"layer": "Hardware Root", "answers": "is the device what it claims to be"},
+      {"layer": "DeviceKey", "answers": "is the device still under expected control"},
+      {"layer": "Session Key", "answers": "is this specific interaction current and authorized"},
+      {"layer": "PNI", "answers": "who/what is the device acting for (no global anchoring required)"},
+      {"layer": "Delegated credential", "answers": "who authorized this action, if the actor isn't the ultimate authority"}
+    ]
+  },
+  "canonical_record_types": {
+    "_notes": "RFC-2300 section 8 (the terminology-appropriate list) -- confirms the record names already used elsewhere in db/ are real canonical names, not invented ones",
+    "types": ["FrameDefinitionRecord", "PowerCapabilityRecord", "AntennaGeometryRecord", "AntennaAlignmentStateRecord", "PowerPolicyRecord", "DutyCycleRecord", "PowerStateRecord", "DutyScheduleRecord", "NetworkCert", "LedgerAnchor", "DelegationToken", "DelegationReceipt", "AuditEvent"],
+    "common_requirement": "all records MUST include provenance and freshness metadata"
+  },
+  "confidence_model": {
+    "states": ["VERIFIED", "UNVERIFIED", "ADVISORY"],
+    "rule": "when freshness is uncertain, consumers treat records as advisory and increase verification steps. Delayed ledger writes force UNVERIFIED mode with reduced privileges (RFC-2300 section 4.2, section 9.1 stress behavior)."
+  }
+}

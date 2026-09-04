@@ -1,5 +1,20 @@
 # Proposed sectional revision — RFC-2392, Sequence Wrap Handling
 
+**Status: superseded, 2026-09-04.** Gary hand-converted RFC-2305 (Power and Duty Cycle
+Constraints — a real, already-drafted RFC) into actual content (`db/protocols/
+rfc2305-duty-reservation.json`, `db/hardware/relay-courier-rig-class-c.json`) with a real
+spec-noncompliance vulnerability, and that replaced the EXPP placeholder everywhere it was used
+(`db/vfs/registry/files.json`, `docs/lore/os-lineages.md` §6, the `relay-pallas-07` instance).
+That's a strictly better fix than this proposal — real content beats a new proposed section. This
+file is kept as a stub rather than deleted, because the underlying observation is still true and
+might matter later: **RFC-2392 (Session and Conversation Layer) is a real planned-but-undrafted RFC
+slot** (`docs/vault/New RFCs/TODOv2.md` line 124), and if a genuine session/handshake-sequencing
+need comes up later that RFC-2305 doesn't cover, this is where that proposal would start from.
+
+Original proposal below, kept for reference, not active.
+
+---
+
 **Status: proposed draft only, not canon.** This is a request for Dan to review, rewrite into
 proper RFC voice/language, and decide whether/how to incorporate — not something added to
 `docs/vault/` directly, per the RFC editing rule.

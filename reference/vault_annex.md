@@ -139,6 +139,25 @@ gap), then use a planned-but-undrafted slot if one exists (RFC-2392 fits — ses
 sequencing is exactly its stated scope), and since no section text exists yet there, propose one
 via a sectional-revision file with justification rather than writing directly into `docs/vault/`.
 
-**Status:** proposal written, citations elsewhere fixed to point at RFC-2392 (marked "proposed,
-draft pending") instead of the fake number. Waiting on Dan for: confirmation this is the right
-RFC/section, and the actual finished section text in proper voice.
+**Status: superseded 2026-09-04.** Gary hand-converted RFC-2305 (real, already-drafted) into
+actual content with a real vulnerability instead, which replaced the EXPP placeholder everywhere.
+No longer waiting on Dan for this specific proposal. RFC-2392 is still real and still undrafted
+though — kept the proposal file as a stub in case a genuine session/handshake need surfaces later.
+
+### 6. RFC-2300 §§8–15 may not belong to RFC-2300
+
+**Where it'd go:** `docs/vault/New RFCs/RFC 2300 - Solnet Terms and Concepts.md` — a possible
+content/assembly error within the file itself, not a missing-content gap.
+
+**Why it matters:** flagged by Gary 2026-09-04 while converting the corpus to schemas — §§8–15 of
+RFC-2300 (Terms and Concepts) read like they actually belong to RFC-2350 (Canonical Addressing):
+TLV registry, ProvenancePointer, AddressRecord grammar, not terminology. There's also a garbled
+line around line 391 ("# Appee without breaking compatibility.") suggestive of a copy/paste
+assembly error. Gary deliberately didn't touch it — this isn't a typo-level surgical correction,
+and per the RFC editing rule that needs your sign-off. `db/vocabulary.json` only drew from §§1–7 to
+sidestep the question for now, but nothing should build on §§8–15 as RFC-2300 content until this
+is resolved.
+
+**Status:** flagged only, not investigated further by either session. Needs your eyes on the
+actual file to confirm whether it's really a mis-assembly and, if so, what the fix is (move the
+content to RFC-2350's file? was RFC-2350 ever meant to absorb it? etc.).

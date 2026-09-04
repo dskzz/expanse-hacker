@@ -36,6 +36,17 @@ Relay Advertisement), a typical relay/satellite object has these hotspot categor
 | Power/duty panel | `PowerBudgetRecord`, `DutyCycleEvent` (RFC-2305) | power class, duty cycle state, emergency override flags |
 | Access/data port | generic — this is the "plug in and get a shell" hotspot | opens the actual terminal UI (TLV/record browser, auth prompt) |
 
+**Terminal-accessibility is per-hotspot, not universal** (clarified 2026-09-04, per Gary's
+cross-check against `docs/lore/os-lineages.md` §8's Mars-lineage note — a Mars-lineage target
+should force the player out of pure terminal-hacking into this physical/hotspot pane specifically,
+which only works if that's a real, possible state rather than every hotspot always also having a
+symmetric `/dev/`-style terminal view). Content should be able to mark a given hotspot
+visual-panel-only — reachable through the object-inspection view, with no matching Console-side
+file/device entry at all — rather than every hotspot needing both a terminal path and a visual
+path by default. Exactly which hotspot categories are terminal-inaccessible on which lineages is
+still open; Mars capability-fork nodes are the clearest candidate given their root model already
+requires physical possession.
+
 Each hotspot has a **visual state** independent of whether the player has opened it: nominal,
 degraded/flickering (something's off), or flagged (mission-relevant). That gives players a
 readable object at a glance before they dig in — same idea as the mechanic-sim genre's
