@@ -13,6 +13,20 @@
 # (`power: {budget: 400W}`) in the placeholder example — see
 # db/hardware/relay-courier-rig-class-c.yaml for how a real
 # PowerCapabilityRecord actually needs a structured set of fields instead.
+#
+# Revised 2026-09-04 per design review (db/CORPUS-STATUS.md's
+# cross-cutting note #2): RFC-2305's literal text specifies a fully
+# confirmed, blocking reservation handshake for EVERY transmission
+# (§16.1 stress behavior: "Blindly transmitting... without a confirmed
+# reservation is a policy violation"). That's a full light-lag round
+# trip before any data moves, on every transmission — heavier than a
+# delay-tolerant network's default shape should be. Split into two
+# paths instead: HANDWAVE_TX (the common case, self-assessed and
+# fire-and-forget) and ADMISSION_PENDING (the original heavier flow,
+# kept for cases RFC-2305's own safety framing — §10, emergency
+# overrides, automatic safety cutoffs — actually justifies). This makes
+# the schema *lighter* than RFC-2305's written text; see this file's
+# open_question field below for what that implies.
 
 id: solnet.rfc2305/duty-reservation
 rfc: RFC-2305
@@ -20,19 +34,39 @@ layer: application  # sits above L1 per RFC-2305 §20's pointer to RFC-2361;
                      # not yet reconciled against RFC-2361's actual layer model
 
 states:
-  REQUESTED:
-    # originator submits a DutyScheduleRecord (RFC §16.1 step 2)
-    on: {SUBMIT: ADMISSION_PENDING}
+  IDLE:
+    on: {SELF_ASSESS: ASSESSING}
+
+  ASSESSING:
+    # originator checks its own cached PowerCapabilityRecord/last-known
+    # DutyCycleRecord — purely local, no round trip. Which branch it
+    # takes is a policy decision (content-defined per network/lineage),
+    # not something the engine arbitrates.
+    on:
+      CLEARED_FOR_HANDWAVE: HANDWAVE_TX
+      REQUIRES_CONFIRMATION: ADMISSION_PENDING
+
+  HANDWAVE_TX:
+    # the common case: transmit now, notify asynchronously, no blocking
+    # wait. RFC-2305's ProvisionalReceipt semantics (§9) reframed as the
+    # normal path's after-the-fact reconciliation record, not an edge
+    # case reached only via queuing.
+    on: {COMPLETE: RECONCILING, PREEMPT: EVICTED}
+    emit: [{type: ADVISORY_NOTICE, delay: 0}]
+
+  RECONCILING:
+    # relay catches up asynchronously; confirms or flags a conflict
+    on: {CONFIRM: FORWARDED, CONFLICT: EVICTED}
+    emit: [{type: RECONCILIATION_RECEIPT, delay: link.propagation}]
 
   ADMISSION_PENDING:
-    # relay evaluates against PowerPolicyRecord/DutyCycleRecord (§8)
+    # the heavier, original path — relay evaluates against
+    # PowerPolicyRecord/DutyCycleRecord (§8) before anything transmits
     on: {ACCEPT: RESERVED, QUEUE: QUEUED, REJECT: REJECTED}
     emit: [{type: RESERVATION_RECEIPT, delay: link.propagation}]
 
   QUEUED:
     on: {ACCEPT: RESERVED, EVICT: EVICTED, EXPIRE: EVICTED}
-    # relay issues a signed ProvisionalReceipt here (§9) — queued, not
-    # forwarded. This is the state the vulnerability lives in.
     emit: [{type: PROVISIONAL_RECEIPT, delay: link.propagation}]
 
   RESERVED:
@@ -46,20 +80,30 @@ states:
   REJECTED: {terminal: true}
 
 security_considerations: |
-  RFC-2305 §9: "Consumers MUST treat such [provisional] records as
-  provisional until replication receipts confirm propagation." §8: relays
-  "MUST implement eviction policies for queued transmissions" and log
-  evictions as AuditEvents.
+  The vulnerability shape moved with the redesign. It's no longer "an
+  implementation quietly cutting a corner the spec forbids" — HANDWAVE_TX
+  is now a legitimate, common, spec-intended path, not a violation. The
+  flaw is now a *discretion* failure: a node — or a technician configuring
+  one — routing traffic down HANDWAVE_TX when policy actually required
+  ADMISSION_PENDING's confirmed path (high power class, a contended link,
+  anything RFC-2305 §10's safety-override language would flag). Nothing
+  in the engine prevents this; content/policy is supposed to gate it, and
+  a misconfigured or corner-cutting gate is the flaw — discoverable by
+  reading which path a node's policy actually routes a given traffic
+  class through (`probe`-style, per docs/lore/os-lineages.md §6), not a
+  scan flag. Still two distinct flavors of flaw worth having in the
+  corpus: this one is "used the fast lane where the slow lane was
+  required," where the original conversion's flaw (see git history) was
+  "held a receipt past the window the spec says to trust it." Both are
+  legitimate; this file only models the first now.
 
-  Nothing in the RFC bounds *how long* a consumer may keep acting on an
-  unconfirmed ProvisionalReceipt before re-checking whether the record is
-  still queued rather than evicted. This is a genuine MUST in the spec —
-  unlike the placeholder EXPP example's spec-honest MAY-clause gap, an
-  implementation that treats "provisional" and "forwarded" as
-  interchangeable once it holds *a* receipt is spec-noncompliant, not
-  spec-ambiguous. Different flavor of flaw, worth keeping both kinds in
-  the content: some vulnerabilities are the spec leaving a door open on
-  purpose, some are an implementation walking through a door the spec
-  explicitly marked shut, because re-checking costs a round-trip a
-  resource-constrained fork can't always afford. See db/hardware's
-  failure_modes for how this becomes a concrete node-level effect.
+open_question: |
+  This makes the schema's default lighter than RFC-2305's actual written
+  text, which requires confirmation for every transmission, not just
+  high-stakes ones. Two ways to resolve, not decided yet: (a) feed this
+  back as a real revision to RFC-2305's prose — needs the user's
+  sign-off, per the vault's surgical-corrections rule, since it's more
+  than a typo; or (b) leave RFC-2305 as written and treat "the actual
+  implemented network runs looser than the spec it claims to follow" as
+  a deliberate, true-to-genre detail rather than something to reconcile
+  away. See db/CORPUS-STATUS.md's cross-cutting design notes.

@@ -36,16 +36,18 @@ slots:
 default_protocols: [solnet.rfc2305/duty-reservation]
 
 failure_modes:
-  - id: stale_provisional_trust
+  - id: handwave_misrouted_high_stakes_traffic
     trigger:
       protocol: solnet.rfc2305/duty-reservation
-      condition: provisional_receipt_treated_as_final
+      condition: handwave_tx_used_where_policy_required_confirmation
     effect:
       integrity: -1
-      emit_event: premature_transmit
-    # gameplay shape: a player (or an NPC originator) that skips
-    # re-checking a ProvisionalReceipt before transmitting is acting on
-    # stale trust — exactly the RFC-2305 Companion's Trade-off A
-    # ("mismatches between provisional receipts and final forwarding").
-    # Discoverable via probe/spec on this node's duty-reservation state,
-    # not a scan flag.
+      emit_event: unconfirmed_high_stakes_transmission
+    # gameplay shape, revised 2026-09-04 alongside the protocol file's
+    # HANDWAVE_TX/ADMISSION_PENDING split: a player (or an NPC
+    # originator) routing traffic down the cheap HANDWAVE_TX path when
+    # this node's policy actually required ADMISSION_PENDING's confirmed
+    # handshake — traces to the RFC-2305 Companion's Trade-off A, now
+    # framed as a discretion failure rather than a receipt-trust-window
+    # bug. Discoverable via probe/spec on this node's duty-reservation
+    # state and its power_policy_ref, not a scan flag.

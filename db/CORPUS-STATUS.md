@@ -28,6 +28,48 @@ time.
   RFC number from `TODOv2.md` in the content file's `rfc:` field, not
   the old file's number.
 
+## Cross-cutting design notes (from 2026-09-04 design review)
+
+Two findings from evaluating the corpus against the "is this actually
+the right form for SolNet, or just the internet reskinned" question —
+see the session transcript for the full evaluation. Verdict was mostly
+favorable (DTN-first design, power/duty as first-class, the federated
+ledger in RFC-2302A explicitly rejects single-root-of-truth thinking),
+but these two are real, worth tracking:
+
+1. **RFC-2302's `AnchorRecord` structurally assumes a persistent AK
+   (Anchor Key) as the root of authority** — that's specifically
+   Earthstock's root model (`docs/lore/os-lineages.md` §3), generalized
+   as if universal. Scrapshell's root is a live quorum vote (no
+   persistent key to bind); Mars's root is physical possession of a
+   fob (the "key" isn't a stored secret at all). Unclear whether
+   `PolicyRecord` can actually express "there is no AK" or "the AK is
+   transient, derived from whoever holds this object" — nothing read
+   so far confirms it can. **Flagged as a blocker to resolve before
+   RFC-2362 (Trust Domains) gets drafted or converted** — that's the
+   RFC where this needs an actual answer, and it isn't written yet, so
+   there's no sunk cost in the way. Needs the user's design call, not
+   a schema-level workaround.
+
+2. **RFC-2305's admission-control flow is a fully confirmed, blocking
+   handshake for every transmission** (§16.1: "Blindly transmitting...
+   without a confirmed reservation is a policy violation") — a full
+   light-lag round trip before any data moves, on every transmission,
+   which is heavier than a delay-tolerant network's default shape
+   should be. **Resolved at the schema level 2026-09-04**: `db/protocols/
+   rfc2305-duty-reservation.yaml` now splits into `HANDWAVE_TX` (the
+   common case — self-assessed, fire-and-forget, reconciled after the
+   fact) and `ADMISSION_PENDING` (the original heavier confirmed path,
+   kept for cases RFC-2305's own safety framing — §10, emergency
+   overrides, automatic safety cutoffs — actually justifies: high power
+   class, contended links). This makes the schema *lighter* than
+   RFC-2305's literal written text. Open question, not yet decided:
+   should this feed back as an actual revision to RFC-2305's prose (a
+   real spec change, needs the user's sign-off per the surgical-
+   corrections rule), or is "implementations drift looser than the
+   spec they claim to follow" itself a nice, true-to-genre detail worth
+   keeping as-is? See the file's own `open_question` field.
+
 ## ⚠️ Flagged, not fixed: RFC-2300 possible content-assembly issue
 
 `New RFCs/RFC 2300 - Solnet Terms and Concepts.md` §§1–7 are
