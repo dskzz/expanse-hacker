@@ -1,0 +1,4 @@
+{
+  "expp_rfc_v1": "EXPP/1 -- Extra-Planetary Propagation Protocol ... RFC-2392 (proposed, draft pending -- see reference/proposed_rfc_content/rfc_2392_sequence_wrap_handling.md)\n  (Earthstock origin, adopted union-side rev. 097)\n  section X.X Sequence Wrap Handling [DRAFT]\n    Implementations MAY validate SEQ wraparound on receipt of an\n    out-of-order DATA frame following HANDSHAKE_WAIT. Validation\n    is RECOMMENDED but not required where buffer hardware performs\n    wrap detection natively.\n",
+  "motd_scrapshell": "Scrapshell -- unregulated, unsupported, mostly working.\n"
+}

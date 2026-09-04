@@ -1,0 +1,10 @@
+{
+  "id": "earthcore",
+  "identity": {"lineage_label": "Earthstock CoreOS 14.2", "user": "operator"},
+  "_note": "placeholder stub -- Earthstock lineage base, not fleshed out yet",
+  "tree": {
+    "etc": {"kind": "dir", "perms": "drwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "091-01-01 00:00", "children": {}},
+    "bin": {"kind": "dir", "perms": "drwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "091-01-01 00:00", "children": {}},
+    "var": {"kind": "dir", "perms": "drwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "091-01-01 00:00", "children": {}}
+  }
+}

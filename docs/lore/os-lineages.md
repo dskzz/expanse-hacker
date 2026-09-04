@@ -203,9 +203,9 @@ drwxrwx---  7 tech   union    340  118-09-02 14:02 .
 -rw-r--r--  1 root   union   9800  091-03-14 09:11 expp.rfc.txt
 
 $ spec expp
-EXPP/1 — Extra-Planetary Propagation Protocol ... RFC-4419
+EXPP/1 — Extra-Planetary Propagation Protocol ... RFC-2392 (proposed, draft pending)
   (Earthstock origin, adopted union-side rev. 097)
-  §7.2 Sequence Wrap Handling
+  §X.X Sequence Wrap Handling [DRAFT]
     Implementations MAY validate SEQ wraparound on receipt of an
     out-of-order DATA frame following HANDSHAKE_WAIT. Validation
     is RECOMMENDED but not required where buffer hardware performs
@@ -308,9 +308,11 @@ window dressing on the other:
 
 ## 9. Open threads
 
-- `relay.laser.mk3`, `EXPP`/`RFC-4419`, station names, and dates in
-  the examples above are all placeholders invented to make the shape
-  concrete, not settled canon.
+- `relay.laser.mk3`, station names, and dates in the examples above are all placeholders invented
+  to make the shape concrete, not settled canon. `EXPP` itself now has a real proposed home
+  (RFC-2392, currently just a planned/undrafted slot) instead of a made-up citation — see
+  `reference/proposed_rfc_content/rfc_2392_sequence_wrap_handling.md` for the actual proposal,
+  pending Dan writing the real section text.
 - Not yet decided: how many lineages actually exist in play (four was
   useful for design discussion, not necessarily the final roster), and
   whether sub-forks within a lineage (e.g. a specific union splitting

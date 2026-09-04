@@ -1,0 +1,13 @@
+{
+  "id": "relay-pallas-07",
+  "extends": "scrapshell-relay",
+  "identity": {"hostname": "RELAY-PALLAS-07"},
+  "tree": {
+    "etc": {
+      "children": {
+        "union.trust": {"content": "# local quorum roster\nbrahms.tech\nokonkwo.tech\nvance.tech\n"},
+        "patches.log": {"content": "118-06-02 vance.tech: relay laser.tx recalibration\n118-07-19 brahms.tech: expp.conf duty-cycle bump\n118-08-30 okonkwo.tech: union.trust roster refresh\n"}
+      }
+    }
+  }
+}

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/tools/Console.gd" id="1"]
+
+[sub_resource type="SystemFont" id="SystemFont_mono"]
+font_names = PackedStringArray("Consolas", "Courier New", "monospace")
 
 [node name="Console" type="VBoxContainer"]
 anchor_right = 1.0
@@ -11,6 +14,20 @@ script = ExtResource("1")
 size_flags_vertical = 3
 bbcode_enabled = false
 scroll_following = true
+theme_override_fonts/normal_font = SubResource("SystemFont_mono")
+theme_override_font_sizes/normal_font_size = 14
 
-[node name="Input" type="LineEdit" parent="."]
+[node name="InputRow" type="HBoxContainer" parent="."]
+
+[node name="PromptLabel" type="Label" parent="InputRow"]
+theme_override_fonts/font = SubResource("SystemFont_mono")
+theme_override_font_sizes/font_size = 14
+text = "$ "
+
+[node name="Input" type="LineEdit" parent="InputRow"]
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_mono")
+theme_override_font_sizes/font_size = 14
 placeholder_text = "type a command..."
+virtual_keyboard_enabled = false
+context_menu_enabled = false

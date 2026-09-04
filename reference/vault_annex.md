@@ -66,11 +66,10 @@ ancestor, should be reserved.
 Also added 2026-09-04: concrete per-lineage root/escalation models (`elevate --cert=...` for
 Earthstock, `claim root --union-vote` for Scrapshell, `invoke cap://...` for Mars,
 `request-entitlement ...` for Corporate) plus a worked console-transcript example demonstrating the
-`spec` / `probe` gameplay loop. That example references a protocol "EXPP — Extra-Planetary
-Propagation Protocol, RFC-4419" — a numbering series distinct from SolNet's own 2300–2499 corpus.
-Treated as illustrative flavor for the example rather than a claim of real canon; worth deciding
-whether EXPP should become an actual RFC (and get folded into the real numbering) or stay a
-one-off example.
+`spec` / `probe` gameplay loop. That example originally cited a made-up "RFC-4419" for its EXPP
+protocol — **caught and corrected 2026-09-04** (see entry #5 below): real citation is now
+RFC-2392 (a real planned-but-undrafted RFC slot, "Session and Conversation Layer"), not an
+invented number.
 
 ### 3. A standard that's universally cited and universally ignored (FHS-style)
 
@@ -125,3 +124,21 @@ pattern worth having a name for.
 
 **Status:** pattern noticed, one instance exists (`/etc`), not proposed as anything to add on its
 own.
+
+### 5. Proposed sectional revision — RFC-2392, Sequence Wrap Handling
+
+**Where it'd go:** RFC-2392 itself (Session and Conversation Layer), currently a planned-but-
+undrafted RFC — only a one-line purpose statement exists in `New RFCs/TODOv2.md` line 124. Full
+proposal (justification + draft section text): `reference/proposed_rfc_content/rfc_2392_sequence_wrap_handling.md`.
+
+**Why it matters:** caught 2026-09-04 — I'd baked Gary's placeholder EXPP/"RFC-4419" text into
+actual shipped game content (`db/vfs/registry/files.json`) as if it were a real citation. Dan
+caught it and asked me to route it properly: check for existing real RFC content first (RFC-2351
+§18.2 covers wraparound but is the wrong mechanism — mandatory MUST-NOT-detect, not a permissive
+gap), then use a planned-but-undrafted slot if one exists (RFC-2392 fits — session/handshake
+sequencing is exactly its stated scope), and since no section text exists yet there, propose one
+via a sectional-revision file with justification rather than writing directly into `docs/vault/`.
+
+**Status:** proposal written, citations elsewhere fixed to point at RFC-2392 (marked "proposed,
+draft pending") instead of the fake number. Waiting on Dan for: confirmation this is the right
+RFC/section, and the actual finished section text in proper voice.

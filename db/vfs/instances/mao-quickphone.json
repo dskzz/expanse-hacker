@@ -1,0 +1,7 @@
+{
+  "id": "mao-quickphone",
+  "extends": "earthcore",
+  "identity": {"hostname": "MAO-QUIKPH-7734", "lineage_label": "Mao-Kwikowski QuikPhone OS", "user": "owner"},
+  "_note": "placeholder stub -- proves cross-lineage instancing works, not fleshed out yet",
+  "tree": {}
+}

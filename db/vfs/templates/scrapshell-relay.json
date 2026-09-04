@@ -1,0 +1,49 @@
+{
+  "id": "scrapshell-relay",
+  "extends": "scrapshell",
+  "tree": {
+    "etc": {
+      "children": {
+        "expp.conf": {"kind": "file", "perms": "-rw-rw-r--", "owner": "root", "group": "union", "size": "62", "mtime": "091-03-14 09:11", "content": "SEQ_WRAP_VALIDATE=unset\n# unset since gen.2. changing this is considered bad luck.\n"}
+      }
+    },
+    "dev": {
+      "children": {
+        "relay": {
+          "kind": "dir", "perms": "drwxrwx---", "owner": "tech", "group": "union", "size": "180", "mtime": "118-09-02 14:02",
+          "children": {
+            "buffer0": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "[buffer0] Kestrel Mk.II -- no native wrap detection (deprecated '093)\n"},
+            "laser.tx": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "[laser.tx] nominal\n"},
+            "laser.rx": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "[laser.rx] nominal\n"},
+            "power": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "budget: 400W\ndraw: 261W\n"}
+          }
+        }
+      }
+    },
+    "link": {
+      "children": {
+        "relay": {
+          "kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-09-02 14:02",
+          "children": {
+            "state": {"kind": "file", "perms": "-r--r--r--", "owner": "root", "group": "root", "size": "0", "mtime": "118-09-02 14:02", "content": "protocol: solnet.expp/1\nstate: ESTABLISHED\n"},
+            "lag": {"kind": "file", "perms": "-r--r--r--", "owner": "root", "group": "root", "size": "0", "mtime": "118-09-02 14:02", "content": "+0.4s\n"},
+            "queue": {"kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-09-02 14:02", "children": {}},
+            "integrity": {"kind": "file", "perms": "-r--r--r--", "owner": "root", "group": "root", "size": "0", "mtime": "118-09-02 14:02", "content": "nominal\n"}
+          }
+        }
+      }
+    },
+    "srv": {
+      "kind": "dir", "perms": "drwxr-xr-x", "owner": "root", "group": "root", "size": "60", "mtime": "091-03-14 09:11",
+      "children": {
+        "relay": {
+          "kind": "dir", "perms": "drwxrwx---", "owner": "tech", "group": "union", "size": "340", "mtime": "118-09-02 14:02",
+          "children": {
+            "expp.state": {"kind": "file", "perms": "-rwx------", "owner": "root", "group": "root", "size": "2200", "mtime": "091-03-14 09:11", "content": "[binary state blob -- use `probe expp --node RELAY-7`]\n"},
+            "expp.rfc.txt": {"kind": "file", "perms": "-rw-r--r--", "owner": "root", "group": "union", "size": "9800", "mtime": "091-03-14 09:11", "content_ref": "expp_rfc_v1"}
+          }
+        }
+      }
+    }
+  }
+}

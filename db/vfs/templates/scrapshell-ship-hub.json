@@ -1,0 +1,13 @@
+{
+  "id": "scrapshell-ship-hub",
+  "extends": "scrapshell",
+  "identity": {"lineage_label": "Scrapshell 7.2-belt (ship hub)"},
+  "_note": "placeholder stub -- proves the inheritance chain, not fleshed-out content yet",
+  "tree": {
+    "dev": {
+      "children": {
+        "hub": {"kind": "dir", "perms": "drwxrwx---", "owner": "tech", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "children": {}}
+      }
+    }
+  }
+}

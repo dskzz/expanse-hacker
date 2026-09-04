@@ -1,0 +1,8 @@
+{
+  "id": "miniscrapshell",
+  "extends": "scrapshell",
+  "identity": {"lineage_label": "Scrapshell 7.2-belt (mini)"},
+  "tree": {
+    "usr": {"children": {"lib": null}}
+  }
+}
