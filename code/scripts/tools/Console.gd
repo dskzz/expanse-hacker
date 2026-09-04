@@ -34,7 +34,11 @@ func _load_vfs(instance_id: String) -> void:
 	_lineage_label = identity.get("lineage_label", "unknown-lineage")
 	_user = identity.get("user", "tech")
 	_hardware_state = loaded.get("hardware", {})
-	_vfs = {"kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "", "children": loaded["tree"]}
+	var tree: Dictionary = loaded["tree"]
+	var synthesized_dev := ContentLoader.synthesize_dev_folder(_hardware_state, _hostname.to_lower())
+	if not synthesized_dev.is_empty() and tree.has("dev") and tree["dev"].has("children"):
+		tree["dev"]["children"][_hostname.to_lower()] = synthesized_dev
+	_vfs = {"kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "", "children": tree}
 
 func _prompt() -> String:
 	return "%s@%s (%s) $ " % [_user, _hostname, _lineage_label]
@@ -205,7 +209,7 @@ func _effect_probe_lookup(args: PackedStringArray) -> void:
 		var degraded_str := "degraded" if buffer_state.get("degraded", false) else "nominal"
 		var sub_str := str(buffer_state.get("subscription_current", false)).to_lower()
 		_print_line("  buffer hardware: %s, %s (subscription_current: %s, duty_limit_pct_per_hour: %s -- rated, not the VARS-locked %s)" % [
-			component.get("sku", "?"), degraded_str, sub_str, str(rated), str(locked)
+			component.get("sku", "?"), degraded_str, sub_str, ContentLoader.fmt_num(rated), ContentLoader.fmt_num(locked)
 		])
 
 func _effect_root_claim(tool: Dictionary) -> void:

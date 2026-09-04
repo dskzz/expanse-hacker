@@ -1,24 +1,11 @@
 {
   "id": "scrapshell-relay",
   "extends": "scrapshell",
-  "_notes": "Realigned 2026-09-04 to match db/protocols/rfc2305-duty-reservation.json and docs/lore/os-lineages.md sections 5-6's real worked example -- previously used placeholder EXPP flavor text (expp.conf/expp.state/expp.rfc.txt). Device folder stays generically named 'relay' rather than instance-specific (os-lineages.md's example shows relay-pallas-07/) -- known simplification, see reference/vfs_template_system.md's open questions; deriving /dev from a hardware spec per instance would resolve this properly later.",
+  "_notes": "Realigned 2026-09-04 to match db/protocols/rfc2305-duty-reservation.json and docs/lore/os-lineages.md sections 5-6's real worked example -- previously used placeholder EXPP flavor text (expp.conf/expp.state/expp.rfc.txt). dev/<hostname>/ is no longer hand-authored here -- Console.gd synthesizes it at load time from db/hardware/ + the instance's own hardware.installed_components (ContentLoader.synthesize_dev_folder), so device files can't drift out of sync with the actual hardware/component data. Only covers slots db/hardware/ actually defines (power, buffer) -- no laser/transceiver slot modeled yet, so laser.tx/laser.rx aren't synthesized; that's a real hardware-schema gap, not papered over here.",
   "tree": {
     "etc": {
       "children": {
         "duty-policy.conf": {"kind": "file", "perms": "-rw-rw-r--", "owner": "root", "group": "union", "size": "62", "mtime": "118-07-19 00:00", "content": "ADMISSION_MODE=HANDWAVE_TX\n# default since 2361 -- the year the union stopped waiting for\n# Earthstock's confirmed-reservation handshake on routine traffic.\n"}
-      }
-    },
-    "dev": {
-      "children": {
-        "relay": {
-          "kind": "dir", "perms": "drwxrwx---", "owner": "tech", "group": "union", "size": "180", "mtime": "118-09-02 14:02",
-          "children": {
-            "buffer0": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "[buffer0] VARS-MK2 -- probe duty-reservation for live status\n"},
-            "laser.tx": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "[laser.tx] nominal\n"},
-            "laser.rx": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "[laser.rx] nominal\n"},
-            "power": {"kind": "file", "perms": "crw-rw----", "owner": "root", "group": "union", "size": "0", "mtime": "118-09-02 14:02", "content": "power_class: C\npeak_power_w: 60\nsustained_power_w: 18\nduty_limit_pct_per_hour: see `probe duty-reservation`\n"}
-          }
-        }
       }
     },
     "link": {

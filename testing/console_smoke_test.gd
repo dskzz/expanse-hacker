@@ -37,6 +37,15 @@ func _init() -> void:
 	_expect_output("ls", "bin  dev  etc  link  sbin  srv  tmp  usr  var")
 	_expect_output("ls etc", "duty-policy.conf  motd  patches.log  union.trust")
 
+	# /dev/<hostname>/ is synthesized from db/hardware/ + installed_components
+	# at load time, not hand-authored -- per Dan's "it needs to pull from the
+	# hardware doc" (2026-09-04).
+	_expect_output("ls dev", "console0  relay-pallas-07")
+	_expect_contains("cat dev/relay-pallas-07/buffer0", "VARS-BUF-MK2")
+	_expect_contains("cat dev/relay-pallas-07/buffer0", "degraded")
+	_expect_contains("cat dev/relay-pallas-07/buffer0", "rated / 4 locked")
+	_expect_contains("cat dev/relay-pallas-07/power", "peak_power_w: 60")
+
 	# Software Bank fallthrough: spec/probe/claim aren't builtins, they
 	# resolve via usr/bin -> db/software/.
 	_expect_contains("spec rfc2305", "RFC-2305")
