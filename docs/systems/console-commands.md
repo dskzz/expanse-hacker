@@ -111,16 +111,16 @@ into decoration.
   sandboxed scripting host) isn't addressed here — still open per
   `ARCHITECTURE.md` §7.2 (GDScript itself vs. something embedded), and
   probably wants its own doc once that's decided.
-- No content exists yet in `db/software/` — this doc is the design
-  target, not an inventory. First real entries worth authoring:
-  `spec`, `probe`, and one lineage's root command, to validate the
-  shape the same way `db/components/vars-buffer-mk2.json` validated
-  `component.*`.
-- Whether `bat`/`rg`/etc. need actual behavioral implementations in
-  Godot or can be thin wrappers around the same lookup `cat`/`grep`
-  would do (with different *output formatting*, which is most of what
-  actually distinguishes them from their ancestors) is an
-  implementation question for whoever builds the Software Bank
-  execution path — flagging that the real value of most of these is
-  presentation, not new capability, which should make them cheap to
-  add once the fallthrough mechanism above exists.
+- ~~No content exists yet in `db/software/`~~ — **done 2026-09-04**:
+  `spec`, `probe`, and `claim` (Scrapshell's root command) are real,
+  wired into `usr/bin`, with working effect handlers in `Console.gd`
+  reading actual `db/protocols/`/`hardware/`/`components/` content.
+  See `reference/software_bank.md`.
+- ~~Whether `bat`/`rg`/etc. need actual behavioral implementations...~~
+  — **answered 2026-09-04** by `ARCHITECTURE.md` §2's generic algorithm
+  backend (Sid's proposal, `reference/algorithm_backend.md`): mostly
+  cheap/native (GDScript's own `RegEx`/JSON cover most of Tier 2), one
+  shared engine-level backend (emulated-sandbox or hosted-real-binary,
+  never a general process-exec capability) reserved for the few where
+  the algorithm itself is genuinely hard — `delta`/diff being the
+  concrete first case, not `rg`/`sd`/`jq`.

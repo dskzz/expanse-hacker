@@ -144,6 +144,35 @@ Responsibilities, and only these:
   and *players* can both target — content defines protocol behavior in
   it, and in-fiction "the player writes a script and runs it on a node"
   is the same execution path, not a fake minigame bolted on top.
+- **Generic algorithm backend** (Sid's refinement, 2026-09-04, of the
+  scripting host above — not a new layer). Same test as everything
+  else here: a diff algorithm doesn't know anything about SolNet, so
+  it's engine, not content — content only decides *what* gets diffed
+  (`spec`'s documented default vs. `probe`'s actual node state, per
+  `docs/lore/os-lineages.md` §6). Two legitimate implementation
+  strategies behind one generic engine interface
+  (`engine.diff(a, b)`, never "the UI happens to know how to shell out
+  to diff"): **emulated** — runs inside the sandboxed scripting host
+  above, portable to any build target including headless/web, at the
+  cost of someone implementing the algorithm correctly inside the
+  sandbox; **hosted** — shells out to the real thing (`OS.execute()`
+  on desktop builds), correctness for free, only viable where process
+  execution is actually available. Which strategy runs for a given
+  algorithm/build is an engine implementation detail, not something
+  content or UI branches on. **Security boundary, decided now rather
+  than left open:** hosted execution is never a general "run this
+  string as a process" capability exposed to content or mods — only a
+  fixed, engine-curated set of specific algorithm bindings (diff today;
+  hashing/pattern-matching/compression are candidates once a second
+  real case shows up, not before). A mod can ask the engine to diff two
+  strings; it can never ask the engine to exec anything. See
+  `reference/algorithm_backend.md` for the full writeup and
+  `docs/systems/console-commands.md` for the motivating case
+  (whether Tier 2 coreutils-successors like `rg`/`sd`/`jq` need this at
+  all, or are cheap enough to implement natively against GDScript's own
+  `RegEx`/JSON support — current read: mostly the latter, this backend
+  is for the few, like `delta`, where the algorithm itself is the hard
+  part).
 
 Explicitly NOT engine responsibilities: what a "router" is, what TCP-
 equivalent-for-SolNet looks like, what counts as a vulnerability, what
