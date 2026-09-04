@@ -118,7 +118,7 @@ Responsibilities, and only these:
   gets a player *a* view; content decides whether that node multiplexes
   tenants at all, and if so what each tenant can see (files, devices,
   link telemetry) and what resources (power, bandwidth — generalizing
-  the `power: {budget: ...}` field in §3's `hardware.yaml`) are
+  the `power: {budget: ...}` field in §3's `hardware.*`) are
   attributed to them. A leased Corporate relay might jail a player to a
   thin slice of a much bigger physical machine; a Belt station might run
   flat and single-tenant by cultural choice, trading compartmentalization
@@ -151,9 +151,18 @@ tools exist, mission structure, win conditions. All content.
 
 ## 3. Content layer — schema sketch
 
+**Format decided 2026-09-04: JSON, not YAML** (Dan's call, relayed by
+Sid) — the sketch below was originally written in YAML back when this
+was still "format-agnostic... the point is the shape of the data, not
+the syntax." Shape didn't change, syntax did. Since JSON has no comment
+syntax, provenance/rationale that would've been a `#` comment lives in
+a `_notes` field instead (top-level and/or sibling to the relevant
+key) — see `db/README.md` and the real files below for the convention
+in practice.
+
 **Reconciled against a real RFC 2026-09-04** — see
-`db/protocols/rfc2305-duty-reservation.yaml` and
-`db/hardware/relay-courier-rig-class-c.yaml`, hand-converted from
+`db/protocols/rfc2305-duty-reservation.json` and
+`db/hardware/relay-courier-rig-class-c.json`, hand-converted from
 RFC-2305 (Power and Duty Cycle Constraints) now that the vault is
 merged in. That confirmed the shape below still holds, and also broke
 it in exactly the useful way §8 predicted: a real `PowerCapabilityRecord`
@@ -161,14 +170,13 @@ can't be expressed as a flat `power: {budget: 400W}` number, because
 the RFC separately requires power class, peak/sustained power, duty
 limit, and energy capacity as independently-relevant fields — the
 example below is kept as originally written (still illustrative, still
-not canon), but treat the real files as the current reference for what
-a hardware.yaml power slot actually needs to look like.
+not canon, still in its original YAML form since rewriting a fictional
+placeholder isn't worth the churn), but treat the real JSON files as
+the current reference for what a hardware power slot actually needs to
+look like.
 
-Format-agnostic on purpose (YAML shown for readability; could be
-TOML/JSON/whatever the engine's loader parses) — the point is the
-shape of the data, not the syntax.
-
-**protocol.yaml** — one per RFC-defined protocol
+**protocol.\*** — one per RFC-defined protocol (original sketch, still YAML;
+real ones are JSON, see `db/protocols/`)
 ```yaml
 id: solnet.expp/1          # "Extra-Planetary Propagation Protocol"
 rfc: RFC-4419               # traceability back to the fictional doc
@@ -190,7 +198,7 @@ security_considerations: |
   herring, exactly like a real spec)
 ```
 
-**hardware.yaml** — device/component types
+**hardware.\*** — device/component types
 ```yaml
 id: relay.laser.mk3
 slots:
@@ -203,7 +211,7 @@ failure_modes:
     effect: {link.integrity: -1, emit_event: relay_desync}
 ```
 
-**component.yaml** — installable physical/software parts (tools double
+**component.\*** — installable physical/software parts (tools double
 as content here too — a "buffer" the player installs is the same schema
 as a stock part)
 ```yaml
@@ -213,19 +221,28 @@ installed_effect: {seq_wrap: validate}   # patches the flaw
 crafted_from: [scrap.optics, printer.time:20m]
 ```
 
-**node.yaml / network.yaml** — templates for populating a scenario:
+**node.\* / network.\*** — templates for populating a scenario:
 station/ship/relay instances, which hardware, which protocols active,
 which trust roots, starting topology.
 
-**vuln.yaml** *(optional separate layer, or folded into failure_modes
+**vuln.\*** *(optional separate layer, or folded into failure_modes
 above — open question, see §7)* — lets a designer define a
 vulnerability without necessarily writing a whole new protocol, for
 lighter-weight authoring.
 
+**Composition/inheritance: open, per Sid's `db/vfs/` system** — the
+Console's filesystem content already uses templates + instances + a
+shared registry composed via JSON Merge Patch (RFC 7386) — e.g.
+`scrapshell.json` → `scrapshell-relay.json` → `relay-pallas-07.json`.
+Not yet decided whether `protocols/`/`hardware/`/`trust/` should adopt
+the same merge-patch model for one consistent inheritance mechanism
+across all content types, or whether they're different enough to
+warrant their own composition rules. See `reference/vfs_template_system.md`.
+
 Content is data-only wherever possible; the only "code" content should
 ever contain is small scripted hooks run inside the engine's sandboxed
 interpreter (§2), never arbitrary host-Perl. That's the moddability
-boundary: a mod that's just new YAML can't touch anything outside the
+boundary: a mod that's just new JSON can't touch anything outside the
 sim; nobody should need engine-repo access to add a network.
 
 ## 4. UI layer
@@ -240,7 +257,7 @@ Two panes, one player, matching "belter technician, not desk hacker":
 - **Physical/tool pane.** Non-PC tools as first-class UI, not a menu
   buried under the terminal: a multitool/meter readout, splice/patch
   actions, a slot view of the current node's hardware (matches the
-  `hardware.yaml` slot graph directly), install/remove component
+  `hardware.*` slot graph directly), install/remove component
   actions. This is where "install a buffer on a laser relay" happens as
   a physical action verb, separate from anything typed.
 - Both panes only ever speak the Action/Observation contract from §1 —
@@ -268,7 +285,7 @@ docs/           # architecture + worldbuilding (this doc's territory)
 reference/      # game-design docs (narrative/implementation territory):
                 # object-inspection model, tool-belt shell, etc.
 code/           # the Godot project — engine + UI together
-db/             # structured/runtime data: protocol.yaml/hardware.yaml-
+db/             # structured/runtime data: protocol.*/hardware.*-
                 # style schemas derived from the RFCs, scenario data
 assets/         # raw source assets before Godot import
 testing/        # test suites
@@ -327,9 +344,9 @@ Superseded — engine and UI are Godot/GDScript, not Perl.
 ## 7. Open questions (need your input / the missing RFC files to close)
 
 1. Vulnerability authoring: fold into `hardware.failure_modes` (above)
-   or a first-class `vuln.yaml` layer? Depends on whether most flaws
+   or a first-class `vuln.*` layer? Depends on whether most flaws
    you're designing are hardware-triggered, protocol-triggered, or both.
-   `db/hardware/relay-courier-rig-class-c.yaml`'s worked example used
+   `db/hardware/relay-courier-rig-class-c.json`'s worked example used
    `failure_modes`, which held up fine for a first real case, but that's
    one data point, not a decision.
 2. Scripting host choice: sandboxed Lua vs. restricted-Perl compartment
@@ -342,19 +359,19 @@ Superseded — engine and UI are Godot/GDScript, not Perl.
    *feels* tense or just becomes a wait screen.
 4. How much of "network of networks of networks" is generated
    procedurally vs. hand-authored per scenario — affects whether
-   `network.yaml` needs a generator spec, not just static templates.
+   `network.*` needs a generator spec, not just static templates.
 5. ~~Once you can get to the 2-3 existing RFC/schema files, we should
    reconcile them against §3~~ — **done 2026-09-04**, see §3's note and
    `db/protocols/`, `db/hardware/`.
 6. Tenant/namespace layer: is it per-node content (defined in
-   `hardware.yaml` alongside slots) or its own top-level content file
-   (`tenancy.yaml`)? Depends on whether tenancy setups get reused
+   `hardware.*` alongside slots) or its own top-level content file
+   (`tenancy.*`)? Depends on whether tenancy setups get reused
    across many node instances (a "Corporate leased relay" template) or
    are usually one-off per scenario.
-7. `db/hardware/relay-courier-rig-class-c.yaml` references
+7. `db/hardware/relay-courier-rig-class-c.json` references
    `policy.union.ceres-119` as a `power_policy_ref` — RFC-2305's
    PowerPolicyRecord isn't modeled as its own content file yet. Worth a
-   `policy.yaml` shape once a second RFC gets converted and the pattern
+   `policy.*` shape once a second RFC gets converted and the pattern
    is clearer (RFC-2305 also has DutyCycleRecord, EmergencyOverrideRecord,
    and AuditEvent as candidate content or engine-state shapes, not yet
    triaged either way).

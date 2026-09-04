@@ -57,7 +57,7 @@ but these two are real, worth tracking:
    light-lag round trip before any data moves, on every transmission,
    which is heavier than a delay-tolerant network's default shape
    should be. **Resolved at the schema level 2026-09-04**: `db/protocols/
-   rfc2305-duty-reservation.yaml` now splits into `HANDWAVE_TX` (the
+   rfc2305-duty-reservation.json` now splits into `HANDWAVE_TX` (the
    common case — self-assessed, fire-and-forget, reconciled after the
    fact) and `ADMISSION_PENDING` (the original heavier confirmed path,
    kept for cases RFC-2305's own safety framing — §10, emergency
@@ -73,7 +73,7 @@ but these two are real, worth tracking:
 ## ⚠️ Flagged, not fixed: RFC-2300 possible content-assembly issue
 
 `New RFCs/RFC 2300 - Solnet Terms and Concepts.md` §§1–7 are
-terminology (used for `db/vocabulary.yaml`). §§8–15 (TLV Key Registry,
+terminology (used for `db/vocabulary.json`). §§8–15 (TLV Key Registry,
 Error Handling, Security Considerations, Interoperability, Operational
 Behavior, Conformance, Document Maintenance, Registry Procedures) are
 entirely about AddressRecord/TLV/ProvenancePointer/BareToken grammar —
@@ -82,7 +82,7 @@ terminology, and there's a garbled fragment at line ~391
 ("# Appee without breaking compatibility.") suggestive of a copy/paste
 assembly error. **Not corrected** — RFCs in `New RFCs/` and `RFCs/` get
 surgical corrections only per the root README's rule, and this isn't a
-typo. `db/vocabulary.yaml` deliberately excludes §§8–15. Needs the
+typo. `db/vocabulary.json` deliberately excludes §§8–15. Needs the
 user's eyes; re-derive anything TLV/addressing-related from RFC-2350
 directly once that's read, not from RFC-2300's tail end.
 
@@ -96,13 +96,13 @@ draft yet
 
 | RFC | Topic | Status | Content file(s) |
 |---|---|---|---|
-| 2300 | Terminology & Concepts | ✅ (§1–7 only, see flag above) | `db/vocabulary.yaml` |
-| 2301 | Cryptographic Primitives | ✅ | `db/trust/rfc2301-key-hierarchy.yaml` |
+| 2300 | Terminology & Concepts | ✅ (§1–7 only, see flag above) | `db/vocabulary.json` |
+| 2301 | Cryptographic Primitives | ✅ | `db/trust/rfc2301-key-hierarchy.json` |
 | 2302 | Ledger Specification | 📝 | — |
 | 2302A | Ledger Deployment Models | 📝 | — |
 | 2303 | Physical Media and Propagation | 📝 | — |
 | 2304 | Antenna Geometry and Alignment | 📝 (Companion doc exists) | — |
-| 2305 | Power and Duty Cycle Constraints | ✅ | `db/protocols/rfc2305-duty-reservation.yaml`, `db/hardware/relay-courier-rig-class-c.yaml` |
+| 2305 | Power and Duty Cycle Constraints | ✅ | `db/protocols/rfc2305-duty-reservation.json`, `db/hardware/relay-courier-rig-class-c.json` |
 | 2306 | Tightbeam Laser Subprofile | 📝 (Companion doc exists) | — |
 | 2307 | RF Propagation Subprofile | 📝 | — |
 | 2308 | Media Privacy and Exposure Policy | 📝 (Companion doc exists) | — |

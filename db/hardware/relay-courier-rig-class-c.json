@@ -1,0 +1,32 @@
+{
+  "_notes": "Companion to db/protocols/rfc2305-duty-reservation.json -- see that file's _notes for provenance. Replaces ARCHITECTURE.md section 3's placeholder 'power: {budget: 400W}' with fields actually named in RFC-2305 section 6/section 14's PowerCapabilityRecord, for a Class-C constrained courier relay (section 2 scope: 'constrained devices with strict energy budgets... the usual Belter skiffs, wrist terminals'). What changed vs. the placeholder: the RFC deliberately does not mandate specific numbers ('does not mandate specific hardware power amplifiers' -- section 2) -- it mandates which fields a PowerCapabilityRecord must expose. So the power slot needed to become a structured record instead of a single budget number; a flat budget number genuinely couldn't express PowerClass, duty limits, or energy capacity as separate, independently-relevant facts. This is the kind of thing ARCHITECTURE.md section 8 predicted the real conversion would surface. Converted from YAML to JSON 2026-09-04 per project format decision.",
+  "id": "relay.courier-rig.class-c",
+  "_platform_id_note": "PlatformID (a UUID-S7, per db/vocabulary.json) is deliberately absent here -- this file is a device type, not an instance. A specific node in node.json/network.json gets its own PlatformID when instantiated from this type.",
+  "slots": {
+    "power": {
+      "_notes": "RFC-2305 section 6 PowerCapabilityRecord fields, section 14's required set",
+      "power_class": "C",
+      "peak_power_w": 60,
+      "sustained_power_w": 18,
+      "duty_limit_pct_per_hour": 10,
+      "energy_capacity_j": 480000,
+      "power_policy_ref": "policy.union.ceres-119"
+    },
+    "buffer": {
+      "accepts": ["component.buffer.*"],
+      "requires_physical_access": true
+    }
+  },
+  "default_protocols": ["solnet.rfc2305/duty-reservation"],
+  "failure_modes": [
+    {
+      "id": "handwave_misrouted_high_stakes_traffic",
+      "trigger": {
+        "protocol": "solnet.rfc2305/duty-reservation",
+        "condition": "handwave_tx_used_where_policy_required_confirmation"
+      },
+      "effect": {"integrity": -1, "emit_event": "unconfirmed_high_stakes_transmission"},
+      "_notes": "gameplay shape, revised 2026-09-04 alongside the protocol file's HANDWAVE_TX/ADMISSION_PENDING split: a player (or an NPC originator) routing traffic down the cheap HANDWAVE_TX path when this node's policy actually required ADMISSION_PENDING's confirmed handshake -- traces to the RFC-2305 Companion's Trade-off A, framed as a discretion failure rather than a receipt-trust-window bug. Discoverable via probe/spec on this node's duty-reservation state and its power_policy_ref, not a scan flag."
+    }
+  ]
+}
