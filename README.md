@@ -34,6 +34,9 @@ core tool).
   obsoleting an entire RFC needs the user's explicit sign-off first,
   every time. Everything else in `docs/vault/` (Notes, RFC Companion
   exploit briefs, history, voices) is normal editable content.
+  `docs/systems/` is the conceptual counterpart to `reference/`'s
+  practical/implementation notes — same machines, two angles; read
+  both.
 - `reference/` — game-design docs (Sid/narrative session's territory):
   object-inspection interaction model, the tool-belt shell, AI's role
   in the setting, and `vault_annex.md` — a queue of things noticed

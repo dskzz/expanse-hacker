@@ -20,9 +20,21 @@ being two eras of the same numbering.
   canonical record types) other content files reference by name.
 - `protocols/` — stateful protocol content, per `ARCHITECTURE.md` §3.
 - `hardware/` — device-type content.
-- `components/` — installable physical/software parts (the same schema
-  a stock part uses). First real example: `vars-buffer-mk2.json`, tied
-  to `docs/lore/corporations.md`'s Voss-Achebe Relay Systems.
+- `components/` — installable **physical** parts only (hardware). First
+  real example: `vars-buffer-mk2.json`, tied to `docs/lore/corporations.md`'s
+  Voss-Achebe Relay Systems.
+- `software/` — installable **software**: tools, scripts, patches with
+  behavioral effects that aren't physical hardware. **Resolved
+  2026-09-04** (Sid's proposal in `reference/software_bank.md`,
+  decision was mine to make since it's schema territory): its own
+  folder, not `components/` entries tagged `kind: software` — reuses
+  `components/`'s `installed_effect` shape but is structurally its own
+  thing (VFS placement, per-lineage forking via the same merge-patch
+  model as `vfs/`, provenance/signature per `os-lineages.md` §4's patch
+  models). `templates/` (base tool + lineage variants) +
+  `instances/` (a specific signed/patched copy on a specific machine or
+  in the player's inventory), same shape as `vfs/`. See
+  `docs/systems/console-commands.md` for what actually goes in it.
 - `trust/` — `"kind": "trust-model"` content: how a network configures
   the engine's generic trust primitive (`ARCHITECTURE.md` §2). Not every
   RFC is a stateful protocol; RFC-2301 (crypto/key hierarchy) is this
