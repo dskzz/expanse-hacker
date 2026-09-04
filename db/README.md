@@ -19,7 +19,10 @@ being two eras of the same numbering.
 - `vocabulary.json` — shared terms/constants (UUID-S7, planes, layers,
   canonical record types) other content files reference by name.
 - `protocols/` — stateful protocol content, per `ARCHITECTURE.md` §3.
-- `hardware/` — device/component-type content.
+- `hardware/` — device-type content.
+- `components/` — installable physical/software parts (the same schema
+  a stock part uses). First real example: `vars-buffer-mk2.json`, tied
+  to `docs/lore/corporations.md`'s Voss-Achebe Relay Systems.
 - `trust/` — `"kind": "trust-model"` content: how a network configures
   the engine's generic trust primitive (`ARCHITECTURE.md` §2). Not every
   RFC is a stateful protocol; RFC-2301 (crypto/key hierarchy) is this
