@@ -833,3 +833,145 @@ either), rather than inventing a new mechanism from scratch.
    clearly leftover from whatever generation process produced the
    draft, never cleaned up before being saved into the vault. Not
    normative content of any kind; purely an editorial leftover.
+
+---
+
+## `docs/vault/RFC Companion/` folder (13 files, 4163 lines total)
+
+**Status:** all 13 read (full for the 8 small ones under 150 lines;
+targeted sampling of the front matter + first major section for the
+5 large ones — RFC 2308, 2309, 2350, 2351, 2352 companions, each
+600-1100+ lines). **This folder is not RFC text at all** — per
+`_companion prompt.md` (the actual prompt template used to generate
+these, preserved as file #13), each companion doc is a **game-design
+brief for one specific RFC**: fictional-but-plausible exploit classes,
+mission/storyline hooks, in-game software tool concepts (with
+faction-specific naming, e.g. "aircrack-ng for Earth" vs. a Belter-slang
+equivalent), all explicitly framed as safe/fictional and non-actionable.
+This is genuinely high-value, largely game-ready content, not a corpus-
+consistency problem to fix — most of the analytical energy here should
+go toward *using* it, not auditing it.
+
+**Content by file:**
+- **4 tiny fragment notes** (`Gravity Standards Poisoning.md`,
+  `L1 Notes.md`, `LO Notes.md`, `RFC 2300 - Solnet terminology and
+  concepts.md`, 10-28 lines each) — leftover scratch notes: L0/L1
+  "optional expansion" number lists (several of which were never
+  drafted and don't match any real RFC number in either corpus folder
+  — treat as abandoned brainstorm, not a forward-pointer) and a short
+  riff on "standards-gravity spoofing" as a conformance-poisoning
+  attack concept.
+- **`Paranoid Routers.md`** (149 lines) — not tied to a specific RFC;
+  a genuinely excellent piece of emergent-behavior design doctrine
+  about AI/router paranoia as a *rational* response to incomplete
+  information + adversarial inference + local-only observation +
+  real consequences for being wrong, tied to the corpus's existing
+  "standards gravity" concept (paranoia is adaptive in low-gravity/
+  low-witness environments, maladaptive in high-gravity ones). Explicitly
+  proposes a doctrine sentence worth locking in somewhere durable:
+  *"Inference systems may develop defensive bias under adversarial
+  conditions. Such bias is a rational response to uncertainty, not a
+  fault. Systems must tolerate conservative and paranoid behavior
+  without collapse."* This reads like strong source material for how
+  Scrapshell NPCs/relay-AI should be allowed to behave — worth a
+  follow-up design note in `docs/` proper, independent of any RFC.
+- **`RFC 2303 Exploits.md`** (60 lines) — 10 concrete vector concepts
+  tied to RFC-2303's ledger/courier/replication mechanics (provisional-
+  promotion race windows, courier manifest tampering, cross-cert chain
+  laundering, bridge-reorg timing windows), each with designer-usage
+  guidance grouping them into scenario types. Ends with a real, useful
+  fork-in-the-road question preserved from the original session:
+  "Permissioned Federation Implementation Guide" vs. "Hybrid Bridge
+  Spec" as the next companion to draft — neither appears to have been
+  drafted since.
+- **`RFC 2304 Antennas Alignment Exploits.md`** (134 lines) — 8 vectors
+  around ephemeris/alignment trust (stale ephemeris injection, single-
+  source alignment trust, under-specified re-acquisition search
+  patterns as stealth-timing exploits).
+- **`RFC 2305 - Power and Duty Cycle Const Exploits.md`** (39 lines) —
+  notably **the one companion doc that explicitly refuses to enumerate
+  attack vectors** ("I cannot assist with creating or enumerating
+  exploit instructions") and reframes everything as defensive design
+  trade-offs instead (provisional-reservation ambiguity, delegated-
+  scheduling single-points-of-failure, weak emergency-override
+  authorization) — a real, visible instance of the generating model
+  applying safety judgment mid-corpus, worth knowing about since it
+  means this file's structure/tone genuinely differs from its 12
+  siblings (design-trade-off framing throughout, not "vector →
+  gameplay use" framing).
+- **`RFC 2308 - Media Privacy and Exposure Policy.md`** (310 lines) —
+  a full "Hacker-Game Summary" with 8 categorized challenge types
+  (Exposure Surface Recon, Provenance Chain Collapse, Profile
+  Enforcement Failure, Non-Compliant Chaos Containment, Exposure
+  Cascade Reconstruction, Legacy System Misbehavior, Operator Shortcut
+  Fallout, Diagnostic Bundle Spill) — clean, well-organized, genuinely
+  ready to drive Scrapshell puzzle design directly.
+- **`RFC 2309 - Timing.md`** (717 lines) — **the most unusual file in
+  the whole corpus**: large stretches are an unedited two-way chat
+  transcript with the document's original author (Dan), user turns
+  included verbatim ("nah lets wrap it up", "what do you mean a full
+  standards suite?"). Contains a real find buried in the transcript: a
+  proposed 7-block "full standards suite" taxonomy (Core Standards /
+  Scenario Suite / Operational Standards / Governance & Authority /
+  Irregularities & Incidents / Extended Domains / Developer & Game
+  Integration) that reads like a direct conceptual ancestor of
+  `New RFCs/TODOv2.md`'s numeric-block plan (L0/L1/Authority/Namespace/
+  Cross-plane/Security/Developer) — worth checking against TODOv2.md
+  directly once that's read (Task #4).
+- **`RFC 2350 - Solnet Canonical Addressing Standard.md`** (1092
+  lines) — 8 designer-brief vectors (ProvenancePointer indexer
+  poisoning, TrustTag forgery, stale DRE cache exploitation) **plus** a
+  large "APPENDIX 2350-INTERNAL — GAME DESIGN MATERIAL" section with
+  named fictional exploit classes (TLV Ordering Drift, ProvenancePointer
+  Blind Spot, Vendor TLV Leakage) written as concrete player actions
+  ("Scan a node → Identify its TLV ordering signature → Craft a spoofed
+  AddressRecord...") — closer to implementable puzzle design than the
+  more abstract briefs in the smaller companion files.
+- **`RFC 2351 - L1 Frame Format.md`** (602 lines) — 8 named fictional
+  exploit classes tied directly to this session's own RFC-2351 findings
+  above (A/N Header Desync, TLV Ordering Ambiguity, Frame-Length
+  Mismatch) plus 8 mission/storyline hooks with titles ("The Split
+  Header," "Profile Zero," "The Vendor Who Didn't Sort," "Fallback at
+  Lagrange-2") — genuinely striking how well these anticipate the exact
+  structural defects (duplicated §8, contradictory Appendix H) this
+  index found independently in the real RFC-2351 text; the fictional
+  "Profile Zero" and "dual-parse" hooks are almost literally about the
+  same asymmetric-interoperability contradiction.
+- **`RFC 2352 - L1 Privacy and Metadata Minimization.md`** (968 lines)
+  — a "fully unified" exploit-class list combining technical privacy-
+  envelope failures (Privacy Envelope Drift, Metadata Re-Emergence,
+  Envelope-Seed Predictability) with social-engineering vectors
+  (Envelope-Override Persuasion, Operator-Assisted Exposure) — the
+  broadest and most systematically organized of the three L1 companion
+  docs.
+- **`_companion prompt.md`** (10 lines) — the actual prompt template
+  Dan used to generate these companion docs per-RFC ("possible rfc
+  related fictional but realism based exploits... missions/storylines...
+  conceptual list of software with a brief description... faction
+  specific names, software that is part of a suite, and software that
+  would be the definitive version"). Explains the whole folder's
+  format and intent in one place — read this file first if picking up
+  this folder cold in a future session.
+
+**Findings — one cross-cutting pattern worth naming once instead of
+per-file, not per-file defects:**
+
+Unlike `New RFCs/` and the old `RFCs/` folder (both meant to *be*
+normative or draft-normative text, where leftover generation artifacts
+are real defects), **most of this folder is closer to a raw, lightly-
+curated chat log than a finished document** — nearly every large file
+opens or closes with a leftover conversational fragment from its
+original generation session ("Which companion document should I draft
+next...", "All right, D — then we're wrapped...", "Absolutely — here is
+the fully unified..."), and `RFC 2309 - Timing.md` preserves extended
+back-and-forth dialogue verbatim, including the user's own casual
+replies. This isn't a defect to fix (nobody is treating this folder as
+normative, and the actual design content inside each file is genuinely
+strong) — it's just useful to know going in: **skim past the first and
+last paragraph of any companion doc before trusting it's the design
+content and not a leftover wrapper.** Consistent with (and a more
+extreme version of) the "RFC-2359 (BAP)'s dangling continue-prompt"
+finding in the old `RFCs/` folder above — across this whole corpus,
+unremoved LLM-generation scaffolding is a real, repeating category of
+"defect," distinct from the numbering/duplication/mislabeling defects
+found in the normative RFC text itself.
