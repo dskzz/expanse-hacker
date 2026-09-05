@@ -140,6 +140,74 @@ func _init() -> void:
 			_failures += 1
 			print("FAIL: running `palette` again didn't close it")
 
+	# Text editor (docs/systems/text-editor.md): engine-level builtin, not
+	# Software Bank -- dispatched by matching Console's loaded _editor_name
+	# ("scredit" on Scrapshell) rather than a fixed command string.
+	_expect_contains("scredit --help", "Usage: scredit <path>")
+	_expect_contains("scredit /etc", "Is a directory")
+	_expect_contains("scredit /nowhere/file.txt", "No such file or directory")
+	_expect_contains("scredit dev/relay-pallas-07/buffer0", "is a device, not editable")
+
+	# New file: overlay opens empty, WRITE OUT creates the file without
+	# closing (real nano semantics), then EXIT with nothing further changed
+	# closes directly (no unsaved-changes prompt).
+	_console.get_node("Output").clear()
+	_run("scredit /etc/newnote.txt")
+	var editor := root.get_node_or_null("TextEditorOverlay")
+	if editor == null:
+		_failures += 1
+		print("FAIL: `scredit /etc/newnote.txt` didn't open the text editor overlay")
+	else:
+		var code_edit: CodeEdit = editor.get_node("Panel/VBox/Editor")
+		if code_edit.text != "":
+			_failures += 1
+			print("FAIL: scredit on a new path should start with an empty buffer, got %s" % JSON.stringify(code_edit.text))
+		code_edit.text = "hello scredit"
+		editor.get_node("Panel/VBox/ButtonRow/WriteButton").pressed.emit()
+		if not _last_output().contains("bytes written"):
+			_failures += 1
+			print("FAIL: WRITE OUT didn't confirm with a 'bytes written' message")
+		if root.get_node_or_null("TextEditorOverlay") == null:
+			_failures += 1
+			print("FAIL: WRITE OUT (Ctrl-O semantics) closed the editor -- it shouldn't")
+		else:
+			_expect_contains("cat /etc/newnote.txt", "hello scredit")
+			editor.get_node("Panel/VBox/ButtonRow/ExitButton").pressed.emit()
+			await process_frame # queue_free() is deferred, not synchronous
+			if root.get_node_or_null("TextEditorOverlay") != null:
+				_failures += 1
+				print("FAIL: EXIT with no unsaved changes since the last write should close directly")
+			if root.get_node_or_null("ConfirmModal") != null:
+				_failures += 1
+				print("FAIL: EXIT with no unsaved changes shouldn't prompt to save")
+
+	# Existing file: overlay opens pre-filled with the file's current
+	# content; exiting with unsaved changes prompts (reuses ConfirmModal)
+	# instead of silently discarding.
+	_run("scredit /etc/motd")
+	editor = root.get_node_or_null("TextEditorOverlay")
+	if editor == null:
+		_failures += 1
+		print("FAIL: `scredit /etc/motd` didn't open the text editor overlay")
+	else:
+		var code_edit: CodeEdit = editor.get_node("Panel/VBox/Editor")
+		if not code_edit.text.contains("unregulated"):
+			_failures += 1
+			print("FAIL: scredit on an existing file should pre-fill the buffer with its content, got %s" % JSON.stringify(code_edit.text))
+		code_edit.text += "\nedited."
+		editor.get_node("Panel/VBox/ButtonRow/ExitButton").pressed.emit()
+		var exit_modal := root.get_node_or_null("ConfirmModal")
+		if exit_modal == null:
+			_failures += 1
+			print("FAIL: EXIT with unsaved changes should prompt to save before exit")
+		else:
+			exit_modal.get_node("Panel/VBox/ButtonRow/ConfirmButton").pressed.emit()
+			await process_frame # queue_free() is deferred, not synchronous
+			_expect_contains("cat /etc/motd", "edited.")
+			if root.get_node_or_null("TextEditorOverlay") != null:
+				_failures += 1
+				print("FAIL: confirming the save-before-exit prompt should close the editor")
+
 	if _failures == 0:
 		print("console_smoke_test: all checks passed")
 	else:

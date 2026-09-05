@@ -6,6 +6,7 @@ const DBJson := preload("res://scripts/tools/db_json.gd")
 const GloveWidgets := preload("res://scripts/tools/glove_widgets.gd")
 const ConfirmModalScene := preload("res://scenes/tools/ConfirmModal.tscn")
 const PaletteOverlayScene := preload("res://scenes/tools/PaletteOverlay.tscn")
+const TextEditorOverlayScene := preload("res://scenes/tools/TextEditorOverlay.tscn")
 const DEFAULT_INSTANCE := "relay-pallas-07"
 
 @onready var output: RichTextLabel = $Output
@@ -26,6 +27,13 @@ var _recent_dirs: Array[String] = []
 var _hostname := "unknown-host"
 var _lineage_label := "unknown-lineage"
 var _user := "tech"
+# Per docs/systems/text-editor.md section 3: one shared editor core/behavior
+# everywhere (nano-shaped), only the command name a lineage types to open it
+# varies -- same split as bash/sash/msh sharing near-identical shell
+# behavior under genuinely different names. "edit" is the generic fallback
+# for lineages that haven't been given a real succession story yet
+# (Earthstock/Mars/Corporate, per the doc's own open question).
+var _editor_name := "edit"
 var _hardware_state: Dictionary = {}
 var _color_scheme: Dictionary = {
 	"COLOR_DIR": "#5c9cff", "COLOR_SYMLINK": "#00d7d7", "COLOR_DEVICE": "#d7d700", "COLOR_EXEC": "#00d700",
@@ -63,6 +71,7 @@ func _load_vfs(instance_id: String) -> void:
 	_hostname = identity.get("hostname", instance_id.to_upper())
 	_lineage_label = identity.get("lineage_label", "unknown-lineage")
 	_user = identity.get("user", "tech")
+	_editor_name = identity.get("editor_name", "edit")
 	_hardware_state = loaded.get("hardware", {})
 	var tree: Dictionary = loaded["tree"]
 	var synthesized_dev := ContentLoader.synthesize_dev_folder(_hardware_state, _hostname.to_lower())
@@ -175,7 +184,7 @@ func _run_command(line: String) -> void:
 	args.remove_at(0)
 	match cmd:
 		"help":
-			_print_line("Commands: help, clear, palette, whoami, pwd, ls [-la] [path], cd [path], cat <path>")
+			_print_line("Commands: help, clear, palette, whoami, pwd, ls [-la] [path], cd [path], cat <path>, %s <path> (text editor)" % _editor_name)
 			_print_line("usr/bin tools: ls /usr/bin to see what this box ships; run any of them with --help for details.")
 		"clear":
 			output.clear()
@@ -192,7 +201,9 @@ func _run_command(line: String) -> void:
 		"cat":
 			_cmd_cat(args)
 		_:
-			if not _try_software_bank(cmd, args):
+			if cmd == _editor_name:
+				_cmd_edit(args)
+			elif not _try_software_bank(cmd, args):
 				_print_line("%s: command not found" % cmd)
 
 func _try_software_bank(cmd: String, args: PackedStringArray) -> bool:
@@ -618,6 +629,67 @@ func _cmd_cat(args: PackedStringArray) -> void:
 		_print_line("cat: %s: Is a directory" % path)
 		return
 	output.append_text(_escape_bbcode(node["content"]))
+
+func _cmd_edit(args: PackedStringArray) -> void:
+	# Engine-level builtin, not Software Bank content, per
+	# docs/systems/text-editor.md's open question ("leaning toward" engine
+	# UI infra since every lineage needs *an* editor, even though the
+	# command name/flavor differs) -- dispatched above by matching
+	# _editor_name rather than a fixed string, so the JSON identity field is
+	# the only thing that varies per lineage.
+	if args.has("--help") or args.has("-h"):
+		_print_line("Usage: %s <path>" % _editor_name)
+		_print_line("")
+		_print_line("Open path in the text editor (creates it if missing). Nano-shaped: always-insert, no modal states.")
+		_print_line("")
+		_print_line("Options:")
+		_print_line("  Ctrl-O                 Write out (save) without closing")
+		_print_line("  Ctrl-X                 Exit (prompts to save if there are unsaved changes)")
+		return
+	if args.is_empty():
+		_print_line("usage: %s <path>" % _editor_name)
+		return
+	var path := args[0]
+	var segments := _resolve_path(_cwd, path)
+	var node = _lookup(segments)
+	if node != null and node["kind"] == "symlink":
+		segments = _resolve_path(segments.slice(0, segments.size() - 1), node["target"])
+		node = _lookup(segments)
+	if node == null:
+		var parent_node = _lookup(segments.slice(0, segments.size() - 1))
+		if parent_node == null or typeof(parent_node) != TYPE_DICTIONARY or parent_node.get("kind", "") != "dir":
+			_print_line("%s: %s: No such file or directory" % [_editor_name, path])
+			return
+	elif node["kind"] == "dir":
+		_print_line("%s: %s: Is a directory" % [_editor_name, path])
+		return
+	elif node["perms"].begins_with("c") or node["perms"].begins_with("b"):
+		_print_line("%s: %s: is a device, not editable" % [_editor_name, path])
+		return
+	var initial_content := "" if node == null else String(node.get("content", ""))
+	var overlay := TextEditorOverlayScene.instantiate()
+	get_parent().add_child(overlay)
+	overlay.setup(path, initial_content, _color_scheme.get("COLOR_ACCENT", ""))
+	overlay.saved.connect(func(new_text: String):
+		# Re-lookup fresh each time rather than closing over `node`/`creating`
+		# -- handles Ctrl-O writing out more than once in a session (first
+		# write creates the file, later writes update the now-existing node)
+		# without relying on GDScript lambda capture semantics for mutation.
+		var existing = _lookup(segments)
+		if existing == null:
+			var parent_node = _lookup(segments.slice(0, segments.size() - 1))
+			parent_node["children"][segments[segments.size() - 1]] = {
+				"kind": "file", "perms": "-rw-r--r--", "owner": _user, "group": _user,
+				"size": str(new_text.length()), "mtime": "(edited this session)", "content": new_text
+			}
+		else:
+			existing["content"] = new_text
+			existing["size"] = str(new_text.length())
+		_print_line("%s: %d bytes written" % [path, new_text.length()])
+	)
+	overlay.closed.connect(func():
+		_reclaim_focus()
+	)
 
 func _resolve_path(base: PackedStringArray, path: String) -> PackedStringArray:
 	var segments := PackedStringArray() if path.begins_with("/") else base.duplicate()

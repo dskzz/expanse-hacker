@@ -4,7 +4,26 @@ Status: drafted 2026-09-05, closing a gap flagged repeatedly but never
 addressed — `scrapshell.json`'s own notes on `/etc/scrapper.profile`
 say "no in-game text editor exists yet to let a player edit this
 live," and `console-commands.md` blocks `sd` on "real file-write
-support, which nothing has yet." Design-only, nothing built.
+support, which nothing has yet."
+
+**Implemented 2026-09-05** (same day): sections 2 (nano-shaped model:
+always-insert, real `Ctrl-O` write-out/`Ctrl-X` exit keybindings as the
+primary path, buttons additive) and the engine-level-builtin resolution
+to section 8's open question — one shared `code/scripts/tools/
+TextEditorOverlay.gd`/`.tscn` (`CodeEdit`-backed), dispatched by
+`Console.gd` matching a per-lineage `identity.editor_name` field
+instead of a fixed command string. Scrapshell's is `scredit`
+(`db/vfs/templates/scrapshell.json`, §3's locked naming/succession
+story); lineages without one yet fall back to a generic `edit`.
+Write-out doesn't close the editor (real nano semantics); exiting with
+unsaved changes reuses `ConfirmModal` to ask save-or-discard rather
+than a bespoke prompt. Headless-tested in
+`testing/console_smoke_test.gd`. **Section 4 (glove-mode sidebar
+rendering of the editor buffer) and section 6 (disk import/export)
+deliberately not built this pass** — both depend on infrastructure
+(`glove-safe-ui.md` §4's sidebar, a `FileDialog` flow) that doesn't
+exist yet, same "cheaper pieces first" sequencing as everywhere else in
+this project.
 
 ## 1. Why one editor, not four
 
@@ -190,10 +209,11 @@ this file sets up for" note).
   Other lineages' editor names/histories are still open — same exercise
   as `os-lineages.md` §2's OS/shell table, not done for Earthstock/
   Mars/Corporate yet.
-- Whether the editor is a builtin (like `cd`) or engine-level UI
-  infrastructure alongside Console itself — leaning toward the latter,
-  since it's not lineage-installable content the way Software Bank
-  commands are, every lineage needs *an* editor even if the typed-mode
-  flavor differs.
+- ~~Whether the editor is a builtin (like `cd`) or engine-level UI
+  infrastructure alongside Console itself~~ — **resolved 2026-09-05**:
+  engine-level, not Software Bank — `Console.gd` dispatches it by
+  matching the loaded lineage's `identity.editor_name` field, so it's
+  neither a fixed builtin string nor `usr/bin` content, just data
+  picking a name for shared code.
 - Import/export scope (§6): scripts only, or any VFS file — not
   decided.

@@ -137,3 +137,16 @@ into decoration.
   real file-write support, which nothing has yet (same gap as editing
   `/etc/scrapper.profile` live). `dust`/`btm` not attempted — lower value
   without the tenant/namespace engine layer they're meant to visualize.
+- ~~Real file-write support, which `sd` and live-editing
+  `/etc/scrapper.profile` were both blocked on~~ — **closed 2026-09-05**:
+  `docs/systems/text-editor.md`'s shared `CodeEdit`-backed editor is
+  real, engine-level (not a Software Bank/`usr/bin` entry — every
+  lineage needs *an* editor even before its own naming/succession story
+  is written), dispatched by matching `Console.gd`'s `_editor_name`
+  (loaded from `identity.editor_name`) rather than a fixed command
+  string, so only the name varies per lineage. Scrapshell's is
+  `scredit` (`scrapshell.json`). Nano-shaped everywhere, real `Ctrl-O`
+  write-out/`Ctrl-X` exit keybindings as the primary path (buttons
+  additive, see `TextEditorOverlay.gd`). `sd` and live `.profile`
+  editing are now both unblocked in principle but still not built —
+  this only landed the editor itself.

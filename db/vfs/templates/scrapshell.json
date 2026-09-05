@@ -2,9 +2,9 @@
   "id": "scrapshell",
   "identity": {
     "lineage_label": "Scrapshell 7.2-belt", "user": "tech",
-    "os_category": "BeltOS", "product": "Scrapshell", "shell": "sash"
+    "os_category": "BeltOS", "product": "Scrapshell", "shell": "sash", "editor_name": "scredit"
   },
-  "_notes": "Naming per docs/lore/os-lineages.md's 'Product and shell names' table (settled 2026-09-05): BeltOS is the category, Scrapshell is the flagship product within it (same relationship as Linux to Ubuntu), and the shell binary itself is `sash` -- eroded from 'Scrapshell sh' over decades of hand-patched use, same folk-erosion mechanic as /etc -> 'Everyone's To-Change'. lineage_label stays product-level for the prompt display (a real bash prompt doesn't announce 'Linux' either); os_category/product/shell are structured fields for tooling (probe, etc.) to read precisely instead of parsing the display string.",
+  "_notes": "Naming per docs/lore/os-lineages.md's 'Product and shell names' table (settled 2026-09-05): BeltOS is the category, Scrapshell is the flagship product within it (same relationship as Linux to Ubuntu), and the shell binary itself is `sash` -- eroded from 'Scrapshell sh' over decades of hand-patched use, same folk-erosion mechanic as /etc -> 'Everyone's To-Change'. lineage_label stays product-level for the prompt display (a real bash prompt doesn't announce 'Linux' either); os_category/product/shell are structured fields for tooling (probe, etc.) to read precisely instead of parsing the display string. editor_name (`scredit`, locked 2026-09-05) is the same idea applied to docs/systems/text-editor.md section 3: one shared, identically-behaving nano-shaped editor core everywhere, only the command name/ownership story differs per lineage -- 'scredit' is BRA-descended techs' free rebuild of the OPRA-era drafting suite after losing licensed access, folk-contracted from 'Screed Editor' the same way 'sash' contracted from 'Scrapshell sh'. See text-editor.md section 3 for the full succession story.",
   "tree": {
     "bin": {"kind": "symlink", "target": "usr/bin", "perms": "lrwxrwxrwx", "owner": "root", "group": "root", "size": "7", "mtime": "091-01-01 00:00"},
     "sbin": {"kind": "symlink", "target": "usr/bin", "perms": "lrwxrwxrwx", "owner": "root", "group": "root", "size": "7", "mtime": "091-01-01 00:00"},

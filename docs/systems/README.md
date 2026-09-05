@@ -31,11 +31,15 @@ one.
   `for`/`if`), not an embedded language — resolves the long-open
   scripting-host question in `ARCHITECTURE.md` §2/§7. Design-only.
 - [`text-editor.md`](text-editor.md) — one editor core with a
-  per-lineage keybinding veneer, nano-shaped by default (not real
-  vi/Emacs engines), glove-mode rendering universal across lineages
-  (same physics-not-politics argument as `glove-safe-ui.md`), typed-
-  mode tribal flavor free to diverge. Closes the file-write gap `sd`
-  and live-editing `/etc/scrapper.profile` were blocked on. Design-only.
+  per-lineage naming/succession veneer, nano-shaped everywhere (not
+  real vi/Emacs engines, no keybinding divergence either), glove-mode
+  rendering universal across lineages (same physics-not-politics
+  argument as `glove-safe-ui.md`), only the name/ownership story free
+  to diverge. **Implemented 2026-09-05** except section 4 (glove-mode
+  sidebar rendering) and section 6 (disk import/export), both deferred
+  pending infrastructure that doesn't exist yet — real code in
+  `TextEditorOverlay.gd`/`.tscn`, dispatched via `Console.gd`'s
+  `_editor_name`, headless-tested. Scrapshell's is `scredit`.
 
 ## The practical/visual counterpart (Sid's side, `reference/`)
 
