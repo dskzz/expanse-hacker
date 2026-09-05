@@ -421,3 +421,100 @@ it (§5.5), consistent with the existing `CORPUS-STATUS.md` blocker.
 QoSClass values 0-7 are attributed to RFC-2351 (§5.6) — plausible given
 RFC-2351's real title ("L1 Frame Format"), not yet confirmed since
 RFC-2351 hasn't been read yet at this point in the index.
+
+---
+
+## RFC-2307 — RF Propagation Subprofile (5519 lines)
+
+**Status:** 📝 not converted. Extremely long, extremely repetitive by
+design — read via headers + representative sampling of every major
+section rather than word-for-word (the repetition is the point: a
+"Contamination Boundary" subsection closes almost every one of its 21
+main sections, restating the same discipline-over-improvisation theme
+applied to a different domain each time). RF counterpart to RFC-2306,
+distinctive voice again (Dr. Arjun Kade, who name-drops and
+collaborates with RFC-2306's Dr. Vargo — a nice small continuity
+detail between two otherwise-independent subprofile documents).
+
+Record types: **RFChannelProfileRecord** (frequency range, bandwidth,
+modulation, noise floor, interference class, beaconing/scheduled-band/
+FHSS eligibility — four canonical profiles: Default, Scheduled-Band,
+FHSS/LPI, High-Interference), **RFReservationReceipt**,
+**RFInterferenceEvent**, **RFLinkQualityRecord**, DRE **RFChannel**
+records, and an **RFChannelHint TLV** for L1. §13's security taxonomy
+is genuinely reusable for game design: spoofed beacons, malicious
+interference, provenance tampering, FHSS desynchronization attacks,
+scheduled-band abuse, and — explicitly named as the single greatest
+risk — **human factors** (operators who believe they understand RF
+better than the system does, producing "temporary" overrides and
+folklore-based troubleshooting that the document treats as
+indistinguishable from an actual attack). Appendix D adds a formal
+security state machine with prohibited transitions and a threat
+matrix (Appendix G) with severity levels.
+
+**Real structural defect found:** the document has no §3 at all — it
+jumps from "§2 Scope" directly to "§4 Canonical RF Channel Profiles."
+Combined with §1's own heading literally reading "Purpose (Rewritten
+in Correct Kade Voice)" (an editorial artifact left in the shipped
+text), this document shows visible signs of an incomplete revision
+pass rather than a deliberate numbering choice.
+
+**Worth noting as flavor, not a defect:** Appendix F is titled
+"Abstract" and sits near the very end of the document rather than at
+the top where an abstract would normally go — reads as a deliberate
+rhetorical choice (a manifesto-style closing restating the thesis)
+given the document's own closing lines lean hard into that register,
+not a misplaced-content problem like RFC-2300's §§8-15.
+
+---
+
+## RFC-2308 — Media Privacy and Exposure Policy (2849 lines)
+
+**Status:** 📝 not converted (Companion doc exists). Distinctive voice
+again (Dr. Mara Ellison, SPEWG chair). Read via headers + full read of
+the two most content-dense appendices (D "Private Notes (Classified)",
+E "DRE State Machine excerpt from RFC-2363").
+
+**Resolves the RFC-2363 confusion from the RFC-2350 entry above, with
+real supporting evidence.** Appendix E is explicitly cross-referenced
+as "**RFC-2363 — Directory & Routing Endpoints (DRE Layer)**," and
+§1.1 independently says the same thing ("RFC-2363 (Directory and
+Routing Endpoints)"). Combined with RFC-2350's own heavy DRE-related
+citations of RFC-2363, that's now three independent documents agreeing
+RFC-2363 is about **Directory & Routing Endpoints** — RFC-2302 and
+RFC-2303's "Identity Resolution" label for the same number looks like
+the actual outlier now, not an equally-weighted alternative.
+
+**Separate, cleaner terminology drift found: "Reachability" vs.
+"Routing."** RFC-2300 §5.3 — the *foundational terminology RFC*,
+whose whole stated purpose is "give every subsequent RFC a common
+foundation so implementers do not have to guess" — calls the concept
+"Directory & **Reachability** Endpoints." RFC-2303, RFC-2308, and
+RFC-2350 (three separate documents) all independently say "Directory &
+**Routing** Endpoints" instead. The term-defining document is the
+actual minority usage here, not the rest of the corpus.
+
+**Real content, reusable for game design almost as-is:**
+PolicyRecord schema (§3) and Domain Privacy Profiles per faction —
+**UN (high regulation), MCRN (military regulation), OPA (mixed
+compliance), Belter (low regulation)** — a real, already-drafted
+four-way regulatory split that's a natural narrative complement to
+this project's own four *OS-lineage* root models (different axis:
+this is about metadata-exposure policy per political faction, not
+authentication/authorization per OS lineage, but the factions line up
+suggestively — UN≈Earthstock, MCRN≈Mars, Belter≈Scrapshell, OPA/
+Corporate less directly mapped). A compliant **DRE state machine**
+(Appendix E): INIT → VERIFY → EVALUATE → (EXPOSE | SUPPRESS) → AUDIT,
+with FAILSAFE as the universal fallback from any failure and SUPPRESS
+as evaluate's default path. Appendix D's "Private Notes (Classified)"
+is genuinely quotable flavor with real design-doctrine value: **"the
+most common phrase preceding an exposure cascade is 'It's just for a
+moment,'"** and **"diagnostic bundles are the most common source of
+catastrophic exposure"** — both excellent, mundane, non-movie-hacking
+vulnerability framing consistent with this project's own stated
+design philosophy. "Non-compliant chaos" (frontier/independent/Belter
+operators who don't implement DREs at all) is treated as a hazard
+class distinct from active adversaries — a useful three-way framing
+(compliant / actively malicious / just chaotic-non-compliant) worth
+carrying into `corporations.md`'s or `os-lineages.md`'s own threat
+framing if it isn't already implicit there.
