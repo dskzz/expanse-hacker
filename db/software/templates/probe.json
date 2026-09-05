@@ -3,5 +3,10 @@
   "id": "probe",
   "kind": "software",
   "help": "probe <protocol> --node <target> -- show a node's live protocol/hardware state",
+  "usage": "probe <protocol> --node <target>",
+  "synopsis": "Show a node's live protocol/hardware state -- local policy override, buffer condition, duty limits.",
+  "options": [
+    {"flag": "--node <target>", "desc": "Node to query. Defaults to this node's own hostname."}
+  ],
   "effect": {"type": "probe_lookup"}
 }

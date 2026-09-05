@@ -3,5 +3,7 @@
   "id": "pin",
   "kind": "software",
   "help": "<command> | pin => <slot-name> -- snapshot a command's output into a named palette slot",
+  "usage": "<command> | pin => <slot-name>",
+  "synopsis": "Snapshot a command's plain-text output into a named palette slot for one-tap recall later. Snapshot only, not a live subscription -- and only a single pipe stage is supported right now.",
   "effect": {"type": "pin_usage"}
 }

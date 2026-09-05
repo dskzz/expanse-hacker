@@ -3,5 +3,7 @@
   "id": "rg",
   "kind": "software",
   "help": "rg <pattern> [path] -- recursively search file contents for a regex pattern",
+  "usage": "rg <pattern> [path]",
+  "synopsis": "Recursively search file contents for a regex pattern. Defaults to the current directory.",
   "effect": {"type": "grep_search"}
 }

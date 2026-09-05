@@ -3,5 +3,7 @@
   "id": "bat",
   "kind": "software",
   "help": "bat <path> -- like cat, but with a header, line numbers, and explicit binary/opaque-content flagging",
+  "usage": "bat <path>",
+  "synopsis": "Like cat, but with a header, line numbers, and explicit binary/opaque-content flagging instead of garbling.",
   "effect": {"type": "bat_view"}
 }

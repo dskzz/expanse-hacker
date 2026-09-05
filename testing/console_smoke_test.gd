@@ -73,6 +73,15 @@ func _init() -> void:
 	_run("cd /")
 	_expect_contains("ll", "drwxr")
 
+	# --help (nix-style, per Dan's ask 2026-09-05): every usr/bin tool's
+	# usage/synopsis/options come straight from its own db/software/ JSON --
+	# Console.gd's renderer is generic, not per-tool text.
+	_expect_contains("rg --help", "Usage: rg <pattern>")
+	_expect_contains("rg --help", "Recursively search file contents")
+	_expect_contains("spec --help", "Options:")
+	_expect_contains("spec --help", "--full")
+	_expect_contains("claim -h", "union quorum")
+
 	# Software Bank fallthrough: spec/probe/claim aren't builtins, they
 	# resolve via usr/bin -> db/software/.
 	_expect_contains("spec rfc2305", "RFC-2305")
