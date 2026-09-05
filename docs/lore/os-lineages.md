@@ -649,3 +649,61 @@ segment, not a personal `@`-PNI) because the message is for the whole
 family, the same way physical mail addresses a household — `@tech-
 Kamal`-style PNI addressing is for singling out one person's own
 device specifically, a different case.
+
+### From addressing to actual file permissions (locked 2026-09-05)
+
+The address hierarchy does **not** become a machine's folder structure
+— those stay genuinely separate trees. There are three trees in play,
+not one: LocationChain (which ship/station), ServiceChain (which
+department/machine within it), and a specific machine's own VFS
+(`/etc`, `/usr/bin`, etc. — already real, per §5 and `Console.gd`).
+ServiceChain gets you to *which machine*; it never becomes the
+nesting *inside* that machine's own filesystem. What ServiceChain
+*does* become is **group existence and membership** (above) — that's
+the actual bridge between the address a node claims and what a file's
+permission bits can reference.
+
+**Not hierarchical-only or per-resource-only — composed, like real
+IAM already does.** AWS/GCP-style IAM never forced that choice: a
+resource inherits whatever's granted at every level above it (org →
+project → resource) *and* can carry its own directly-attached grant on
+top, which adds to (or, with deny-rules, restricts) what's inherited.
+That's the shape here too — a ship-wide grant to `eng` cascades to
+every machine under it by default, and any specific file or console
+can still carry its own extra grant beyond that (one particular
+console granting a one-off role nobody else on the ship has), the same
+way real POSIX ACLs layer on top of the base owner/group/other bits.
+
+**In `ls -l`: reuse the real POSIX convention, don't invent new
+syntax.** A file with nothing beyond the flat owner/group/other bits
+looks exactly as it already does. A file with an extra gradient grant
+gets a trailing `+`, exactly like real Linux ACLs signal today:
+
+```
+-rw-r--r--+  1 root   union    9800  2361-11-02 00:00 rfc2305.txt
+```
+
+`ls -l` doesn't try to explain the `+` inline — same as real Unix,
+that would clutter every line. `probe` (already the "tell me what's
+actually true about this thing" verb — no new command needed) answers
+it on demand, styled the same short/curated way `spec` already is:
+
+```
+$ probe rfc2305.txt --acl
+rfc2305.txt: composed grant chain
+  base:      -rw-r--r-- (root:union)
+  +ship:     RB-CERES-119 -- read (granted 2394-02-01)
+  +dept:     eng -- read/write (granted 2395-11-19)
+```
+
+**The record of who granted what lives on the same RFC-2302 local
+ledger already carrying the quorum-multisig entries (§3)** — not a
+separate mutable grant file, for the identical tamper-evidence reason.
+And the same shape-converges/authority-diverges split from earlier
+applies one more time: the `+` and `probe --acl` display are universal
+across all four lineages, but *who's authorized to grant, and how it's
+recorded*, stays political — Earthstock signs it institutionally,
+Scrapshell ledger-records it the same way `claim` does, Mars bakes it
+into the capability token at minting (same re-minting-ceremony cost as
+any Mars capability change, §4), Corporate makes it a revocable
+leased-entitlement field.
