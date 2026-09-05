@@ -418,9 +418,9 @@ sequencing already proposed there.
 **Confirmed, not contradicted:** RFC-2362 (Trust Domains) is a real,
 concrete dependency — TrustTag values 0-15 are explicitly reserved for
 it (§5.5), consistent with the existing `CORPUS-STATUS.md` blocker.
-QoSClass values 0-7 are attributed to RFC-2351 (§5.6) — plausible given
-RFC-2351's real title ("L1 Frame Format"), not yet confirmed since
-RFC-2351 hasn't been read yet at this point in the index.
+QoSClass values 0-7 are attributed to RFC-2351 (§5.6) — **confirmed
+accurate**: RFC-2351 §17 defines exactly QoSClass values 0-7, see that
+entry below.
 
 ---
 
@@ -518,3 +518,120 @@ class distinct from active adversaries — a useful three-way framing
 (compliant / actively malicious / just chaotic-non-compliant) worth
 carrying into `corporations.md`'s or `os-lineages.md`'s own threat
 framing if it isn't already implicit there.
+
+---
+
+## RFC-2309 — L0 Test and Validation Suite (5692 lines)
+
+**Status:** 📝 not converted (Companion doc exists, "Timing"). Read via
+headers + representative sampling — this document is a structured
+certification catalog (test scenarios, error codes, log field
+definitions) rather than conceptual/narrative content, so it's lower
+density for new inconsistencies but genuinely high-value as a *lookup
+reference* if the game ever wants real fault/failure-mode simulation.
+No internal contradictions found.
+
+Structure: purpose/rationale → validation scope (physical-layer,
+data-link, forensic reconstruction) → test harness architecture →
+synthetic/adversarial/performance test packs → certification workflow
+→ regression/logging/cross-vendor-equivalence requirements →
+compliance levels. **Appendix A** is a real scenario catalog with
+IDs worth reusing directly as content hooks — `SC-0100` (Nominal
+Operation), `SC-0112` (Controlled Occlusion), `SC-1204` (Structured
+Interference Envelope), `SC-2407` (Chaos Envelope Injection),
+`SC-3301` (Thermal Drift Ramp). **Appendix C** is a full error-code
+registry, cleanly banded by domain: 1000s timing/clock, 2000s state
+machine, 3000s environmental reporting, 4000s interference/occlusion,
+5000s logging/forensic, 6000s **security-relevant** (e.g.
+`EC-6005 Unauthorized Emission Detected`, `EC-6013 Log Integrity
+Failure`), 7000s vendor-defined, 8000s reserved. **Appendix D** gives a
+clean 5-state fallback/recovery machine: `nominal → degraded →
+fallback → recovering → nominal`, plus an `initializing` entry state.
+§7's Adversarial Test Pack (malformed emissions, jitter injection,
+partial occlusion/multi-path distortion, structured vs. randomized
+chaos envelopes, contested-channel behavior) is a solid template for
+designing new hardware `failure_modes` content, matching the shape
+`db/hardware/relay-courier-rig-class-c.json` already uses.
+
+---
+
+## RFC-2351 — L1 Frame Format (A/N Header Split) (9071 lines, largest doc in corpus)
+
+**Status:** 📝 not converted (Companion doc exists). Read via extensive
+header-scan (Grep across the full document) plus targeted Read of
+load-bearing sections; this is the single densest document in the
+corpus and repetitive by design (every section restates the same
+"minimal, non-extensible, no state at L1" philosophy from a different
+angle), so full line-by-line reading isn't worth it past the first
+confirmed pattern.
+
+Defines the L1 header split into A-stack (Authority: routing/trust
+metadata) and N-stack (Namespace: local service/discovery metadata).
+**§6** the 7 core header fields: FrameType, QoSClass, FreshnessTag,
+ProvenancePointer, TLVContainerLength, TLVContainer, CompactAuthTag.
+**§7/§8** TLV container format + TLV Key Registry, banding TLV keys by
+range: 0-31 SSWG-reserved, 32-63 A-stack, 64-127 N-stack, 128-255
+vendor. **§11-13** the three header profiles: Minimal, Reduced, Full —
+each profile MUST/MUST NOT a specific field/TLV/QoSClass subset, and
+higher profiles MUST accept lower-profile frames (this asymmetry
+matters, see finding below). **§17** QoSClass Registry: one byte,
+values 0-7 defined (BestEffort, LowLatency, BulkTransfer,
+ControlCritical, Discovery, Keepalive, AuthCritical, ReservedCritical),
+8-255 reserved — **this confirms RFC-2350 §5.2's citation is
+accurate**, resolving the open cross-check flagged in this index's
+RFC-2350 entry. **§18** FreshnessTag semantics: minimal replay/recency
+signal only, explicitly MUST NOT be used for ordering, QoSClass
+interaction, or as a routing-loop/hop-count proxy — consistent with
+the document's overall anti-scope-creep design stance. **§20** N-stack
+TLV misuse prohibitions (explicitly bans using N-stack TLVs as a
+service registry — the Working Group calls this out as a real
+historical implementer mistake). **Appendix B** is the clearest
+distilled design-philosophy statement in the whole corpus: B.1-B.5
+walk through *why* L1 has no reliability, ordering, fragmentation, or
+confidentiality (each rejected for concrete DTN reasons — long delays
+break ACK/window assumptions, buffering costs power, fragmentation
+conflicts with duty-cycle limits, confidentiality needs trust domains
+that belong to A-stack not L1), B.12 "Why Relays Are Dumb," B.13 "Why
+L1 Is Not Extensible." Worth reusing directly as in-game
+flavor/justification text for why L1 tooling in Scrapshell feels so
+bare-metal.
+
+**Findings — two internal duplication defects, one of them a real
+contradiction, not just a repeat:**
+
+1. **§8 "TLV Key Registry" is duplicated verbatim**, out of numeric
+   order: full §8 (with 8.1-8.5, the same 0-31/32-63/64-127/128-255
+   range definitions) appears first at line 247, then §7 "TLV
+   Container Format" appears *after* it at line 304 (so the document
+   reads §8, §7, §8), then §8 repeats verbatim again at line 346 with
+   identical opening text and range definitions. Directly verified by
+   Read, not just Grep header list. Editorial/assembly error — no
+   content difference between the two §8 instances, just a copy-paste
+   duplication with a numbering hiccup.
+
+2. **"Appendix H — Interoperability Matrix" appears twice, and the two
+   versions actually disagree**, not just repeat — this is the more
+   important of the two findings. First instance (line 4977): a 3×3
+   profile matrix (Minimal/Reduced/Full × Minimal/Reduced/Full) where
+   **every cell reads "MUST interoperate"** — i.e., full symmetric
+   interoperability is mandatory across all profile pairs. Second
+   instance (line 5208): a differently-structured table that states
+   interoperability is **"asymmetric by design"** — e.g. Reduced→
+   Minimal is **FORBIDDEN** ("Minimal MUST reject TLVs"), Full→Minimal
+   is **FORBIDDEN** ("Minimal MUST reject TLVs and AuthTag"), Full→
+   Reduced is **CONDITIONAL**. These are not reconcilable as written:
+   the first table's "MUST interoperate" in the Reduced-sends/Minimal-
+   receives cell directly contradicts the second table's "FORBIDDEN"
+   for the same pair. Both instances independently verified by direct
+   Read (not just the Grep header list). This is a real spec defect —
+   worth flagging to the user since it isn't cosmetic (an implementer
+   reading only the first Appendix H would build a Minimal-profile
+   device that's supposed to accept Reduced-profile TLV-bearing frames;
+   reading only the second, they'd reject them, which is also what the
+   Minimal-profile field rules in §11-13 actually require elsewhere in
+   the document). **The second instance's content is consistent with
+   the rest of the document's asymmetric-interoperability framing
+   (§11-13's own MUST/MUST NOT profile rules), so the first instance
+   looks like the stale/incorrect one** — likely an earlier draft of
+   the appendix left in place when it was rewritten, rather than two
+   equally-valid alternatives.
