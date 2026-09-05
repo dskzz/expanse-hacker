@@ -237,6 +237,55 @@ still get an actual second *remotely* — radio a known contact and get
 their vote asynchronously, at the cost of real DTN propagation lag
 (`/link`) — worth keeping as a later option, not a v1 requirement.
 
+**Quorum doesn't have to be re-litigated per action (locked
+2026-09-05):** re-soliciting a full union vote for every routine
+action (updating a hosts list, say) isn't a requirement of the social
+model, it's just how the *record* of a quorum event has been kept so
+far — a local, mutable-if-compromised `patches.log` entry that only
+proves anything as long as you trust the node it's sitting on. Fix the
+record, not the requirement: a successful `claim root --union-vote`
+gets appended as a real **multisig ledger entry** — N genuine
+co-signatures from the seconding union members, hash-chained for
+tamper detection — using the **Local ledgers** deployment mode
+`docs/vault/New RFCs/RFC 2302 - Solnet LEdger Spec.md` §9 already
+specifies for exactly this station-scale case (not yet converted to a
+`db/` schema, but real, drafted content, not invented for this). The
+entry carries a TTL per RFC-2302 §6's own "cache TTL and freshness
+indicators must be present" requirement — root stays valid for that
+window without a fresh vote for every trivial action, then decays back
+to unverified and needs re-quorum. "NFT" was the wrong metaphor for
+this when it came up — an NFT is a tradeable owned asset, and root
+shouldn't be either; a time-boxed, revocable multisig entry (closer to
+a Kerberos ticket) is the right shape.
+
+Important compatibility note with `db/CORPUS-STATUS.md`'s own
+cross-cutting design flag: this deliberately does **not** use
+RFC-2302's `AnchorRecord` type, which that flag already correctly
+identifies as structurally assuming a persistent AK (Anchor Key) as
+*the* root of authority — specifically Earthstock's model, wrongly
+generalized. A quorum-vote entry needs a different record shape
+entirely (call it a witness/quorum record, not yet a formal type in
+the RFC text): N member signatures plus a TTL, with no persistent
+"authority key" implied at all — the signers prove *who agreed*, not
+*who owns root*. That's consistent with, not a fix for, the flagged
+blocker; RFC-2362 (Trust Domains) still needs its own real answer for
+whether `PolicyRecord` can express "there is no AK" before that
+blocker closes.
+
+The line that must not move: **the ledger notarizes that a real social
+vote happened — it does not grant authority on its own.** Validity
+still requires N real, distinct co-signatures; a single compromised
+key can't forge a valid entry alone. That's the whole difference
+between this and Mars's capability-fork model below — Mars's fob *is*
+cryptographic authority by possession, full stop. If a Scrapshell
+ledger entry could be forged by one compromised key, root would have
+quietly become "crypto with extra steps," undermining the entire
+reason Scrapshell's model reads as socially distinct from the other
+three lineages in the first place. The solo-claim fallback above uses
+the identical ledger substrate for consistency — a single-signer entry
+instead of a multisig one, same tamper-evidence, no TTL benefit since
+there was never anyone to solicit to begin with.
+
 **Mars capability-fork — no root at all.** No ambient superuser, only
 unforgeable capability tokens for specific objects
 (`invoke cap://relay-7/buffer.write --token=fob.7A3`). Token-minting

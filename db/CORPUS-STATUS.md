@@ -49,7 +49,13 @@ but these two are real, worth tracking:
    RFC-2362 (Trust Domains) gets drafted or converted** — that's the
    RFC where this needs an actual answer, and it isn't written yet, so
    there's no sunk cost in the way. Needs the user's design call, not
-   a schema-level workaround.
+   a schema-level workaround. **Still open, not resolved by the
+   2026-09-05 quorum-ledger addition** (`os-lineages.md` §3, "Quorum
+   doesn't have to be re-litigated per action") — that addition
+   deliberately avoids `AnchorRecord` for exactly this reason (a
+   witness/quorum record with N signatures and a TTL, no persistent AK
+   implied), so it's consistent with this flag rather than a fix for
+   it. RFC-2362 still needs its own real answer.
 
 2. **RFC-2305's admission-control flow is a fully confirmed, blocking
    handshake for every transmission** (§16.1: "Blindly transmitting...
