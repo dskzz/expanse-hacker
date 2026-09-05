@@ -119,17 +119,20 @@ root cause as the already-flagged `CORPUS-STATUS.md` concern about
 RFC-2302's `AnchorRecord` assuming AK universally; it starts here, in
 the crypto-primitives layer itself, not just in the ledger spec.
 
-**Numbering inconsistency found:** §16 says "RFC-2360 (Layer Model)
-will reference this RFC." But RFC-2300 §14 separately calls RFC-2360
-"formal L1 header encodings" — a different topic. And the actual Layer
-Model content lives at **RFC-2361** in the old numbering
-(`docs/vault/RFCs/RFC 2361 - SolNet Layer Model.md`), while the old
-folder's own RFC-2360 is titled "Error Codes" — a third, unrelated
-topic. So "RFC-2360" is used with at least two different intended
-meanings across New RFCs/ documents, and matches neither its own old
-number's real topic. Likely a simple off-by-one (2360 vs 2361) in
-RFC-2301's text. Referenced-but-undrafted in New RFCs/: RFC-2451
-(hardware root requirements), RFC-2452 (concrete algorithm/timeline
+**Numbering inconsistency found (later confirmed against the master
+plan — see the RFC-2350 entry below for the full resolution):** §16
+says "RFC-2360 (Layer Model) will reference this RFC" — **this
+citation is actually correct**, per `New RFCs/TODOv2.md`'s canonical
+block plan (RFC-2360 = "SolNet Layer Model Revised"). But RFC-2300
+§14 separately calls RFC-2360 "formal L1 header encodings" — that
+topic is actually RFC-2351 per the master plan, so RFC-2300's citation
+is the wrong one here, not RFC-2301's. (The old folder's own
+"RFC-2360" being titled "Error Codes" is a red herring — per
+`CORPUS-STATUS.md`'s standing rule, the old folder's numbers don't
+correspond to the new plan at all, so it can't be used to adjudicate
+which new-corpus citation is right.) Referenced-but-undrafted in New
+RFCs/: RFC-2451 (hardware root requirements), RFC-2452 (concrete
+algorithm/timeline
 choices).
 
 ---
@@ -379,11 +382,21 @@ sequencing already proposed there.
 
 **Real findings, three separate categories:**
 
-1. **RFC-2361 topic conflict.** §1 calls RFC-2361 "identity semantics."
-   Every other document read so far (RFC-2300, 2301, 2302, 2303, 2304,
-   2305) calls it "Layer Model," matching the actual old-folder
-   document `RFC 2361 - SolNet Layer Model.md`. RFC-2350 is the
-   outlier here, not the majority.
+1. **RFC-2361 topic conflict — resolved by checking the master plan,
+   and it flips who's actually wrong.** §1 calls RFC-2361 "identity
+   semantics." Every other document read at this point in the index
+   (RFC-2300, 2301, 2302, 2303, 2304, 2305) instead calls RFC-2361
+   "Layer Model," matching the old-folder document `RFC 2361 - SolNet
+   Layer Model.md` — which made RFC-2350 look like the outlier. **It
+   isn't.** `New RFCs/TODOv2.md` (the actual numbering plan,
+   `CORPUS-STATUS.md` says to "treat as canonical") assigns **RFC-2360
+   = "SolNet Layer Model Revised"** and **RFC-2361 = "Identity
+   Resolution L2"** — i.e. RFC-2350's "identity semantics" for 2361 is
+   the *correct* one per the master plan, and the six other documents
+   citing "RFC-2361" for Layer Model are all off by one and should say
+   RFC-2360. This is worth a real fix pass across those six documents'
+   next-steps sections once someone's doing that kind of editorial
+   sweep — see Task #6/#7 below for how this feeds the priority list.
 2. **RFC-2363 scope inconsistency, partly self-contradictory.** §1
    calls RFC-2363 "routing behavior" (declared out of scope). But
    §4.7, §5.8, and §6 all cite RFC-2363 for **ProvenanceRecord**
@@ -975,3 +988,94 @@ finding in the old `RFCs/` folder above — across this whole corpus,
 unremoved LLM-generation scaffolding is a real, repeating category of
 "defect," distinct from the numbering/duplication/mislabeling defects
 found in the normative RFC text itself.
+
+---
+
+## `docs/vault/New RFCs/TODO*.md` — the three planning documents
+
+**Status:** all three read (`TODOv2.md` in full, 348 lines; `TODO -
+Modules.md` in full, 462 lines; `TODO - ORIGINAL.md` sampled in depth
+— first ~1400 of 1898 lines read closely, remainder skimmed — it's
+the largest and most repetitive of the three, continuing the same
+per-subsystem template — Purpose/Records/APIs/Workflows/Security/
+Tests/Tradeoffs/Game hooks — well past the point of diminishing
+returns for a full line-by-line read).
+
+**These three are not RFC text — they're the actual planning/design
+memory for the whole corpus**, in reverse chronological order of
+refinement: `TODO - ORIGINAL.md` is the earliest and most sprawling
+(a long sequence of "todo spec" sections built up conversationally —
+ProxLink/Suit-BAN, Ship PD, Fleet PD Coordination, Tactical Comm-Net
+Mesh, Ship-to-Ship SOS/Transponder, Stealth Comms, SolTLS commerce,
+News/Cached-Internet/IoT, Orbital Traffic Control — each fully fleshed
+out with records, APIs, workflows, security rules, and game hooks,
+each ending with the same "which should I draft next" leftover
+prompt, per the pattern already flagged in the RFC Companion section
+above). `TODO - Modules.md` is a cleaner, later-stage **module RFC
+catalog** — every optional capability (Tightbeam v1, ProxLink v1,
+RF Channel v1, Stealth L0 Modes, PD v1, OTC v1, FeedManifest,
+Mesh v1, etc.) as a self-contained TLV-key-assignment + schema +
+API + test-vector checklist, explicitly designed to extend the L0/L1
+substrate via profiles rather than mandatory fields. `TODOv2.md` is
+the **final, canonical numbering plan** — confirmed as canonical by
+`CORPUS-STATUS.md`'s own instruction to treat it as such — defining
+the block structure (L0 2300-2319, L1 2350-2359, Authority Plane
+2360-2389, Namespace Plane 2390-2419, Cross-plane/Operational
+2420-2449, Security/Governance 2450-2479, Developer/Game 2480-2499)
+and a one-paragraph purpose/scope stub for every RFC number in every
+block, plus a 90-day phased implementation roadmap and a "final
+checklist to begin drafting."
+
+**This is the ground truth that resolves several numbering questions
+flagged as open earlier in this index** — see the corrections already
+made in-place above (the RFC-2361 topic-conflict finding in the
+RFC-2301 entry, and the RFC-2360 mismatch in the same entry) once
+`TODOv2.md`'s actual assignments were checked against them. The two
+confirmed, canonical facts worth restating here since they get cited
+repeatedly: **RFC-2360 = "SolNet Layer Model Revised"**, **RFC-2361 =
+"Identity Resolution L2."** Any document elsewhere in the corpus that
+disagrees with those two is the one that's wrong.
+
+**One additional numbering gap found by cross-checking `TODOv2.md`
+against the drafted corpus:** `TODOv2.md` assigns real topics to
+**RFC-2390 through RFC-2396** (Namespace Plane) and **RFC-2420 through
+RFC-2424** (Cross-plane/Operational) and **RFC-2450 through RFC-2483**
+(Security/Governance, Developer/Game) — none of which have been
+drafted anywhere in `New RFCs/` yet (consistent with `CORPUS-STATUS.md`'s
+existing tracking). Two module-catalog numbers in `TODO - Modules.md`
+don't fit the block plan at all and were seemingly never reconciled
+with it: **RFC‑2370** (Relay Admission/Scheduling API, referenced
+repeatedly across all three TODO documents as an "immediate priority"
+module) has no home in `TODOv2.md`'s block plan — 2370-2389 is
+"Authority Plane" per the block ranges but `TODOv2.md`'s own Authority
+Plane entries stop at RFC-2368, leaving 2369-2389 an unclaimed gap
+that RFC-2370 was clearly meant to land in without ever being formally
+reserved there. Likewise **RFC-2482** ("Mission and Scenario Generator
+API," Developer/Game block) is used consistently across all three
+documents, so that one *is* reconciled — only RFC-2370 is the loose
+end.
+
+**Findings — one real inconsistency, already partly self-diagnosed by
+the documents themselves:**
+
+`TODOv2.md`'s own closing sections (after line ~325, the "Final
+Checklist") contain **leftover fragments from at least two more design
+conversations that were pasted in but never reformatted into the
+document's own template** — a standalone riff on an "RFC-24xx
+Autonomous and Delegated Network Actors" concept, a numbered "#CHANGES"
+list of six suggested doctrine edits (elevate "judgment not
+optimization" and "conformance is inferred not reported" to explicit
+doctrine statements, name "unreliable narrator" and "paranoia as a
+rational failure mode" as design principles — this last one
+independently converges with `RFC Companion/Paranoid Routers.md`'s
+doctrine proposal found above, worth reconciling into one place), and
+a worked "are these three Expanse behaviors covered by SolNet"
+Q&A (police override, pirate broadcasts, flight-profile lookup) that
+reads as a spot-check exercise rather than planning content. None of
+this is wrong, exactly — it's genuinely useful design material — but
+it's structurally inconsistent with the rest of `TODOv2.md`'s clean
+per-RFC template, and a reader expecting the document to end at the
+"Final Checklist" (as its own heading implies) would miss real content
+sitting after it. Same "unremoved scaffolding" pattern as the RFC
+Companion folder, just inside a planning document instead of a
+companion brief this time.
