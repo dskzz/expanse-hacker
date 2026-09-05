@@ -75,6 +75,24 @@ The Interplanetary Relay Oversight Council—IROC—was formed. Dawes approached
 
 IROC became the seed of the OPA.
 
+---
+
+## Johnson's Long Road
+
+*[Added 2026-09-05, per the user's own timeline reasoning — see `docs/lore/os-lineages.md` §1's "why the gap has to be decades, not years." None of what follows contradicts anything above; it just makes the gap between Anderson and "Ten Years Later" below honest about how long rebuilding a life actually takes.]*
+
+What the record shows as a clean line—disgrace, then IROC, then purpose—took Johnson most of a generation to actually walk.
+
+He did not come to terms with Anderson quickly. For a long stretch after the footage first leaked, he was not a man with purpose; he was a man who had disappeared, drifting between stations that didn't ask questions, doing the kind of quiet, anonymous work that doesn't require a name attached to it. He was, by any honest account, lost.
+
+Dawes found him during that stretch, and did not approach him immediately. He watched him for the better part of a year first—long enough to be sure the man he was looking at wasn't performing his own guilt for an audience.
+
+The reconciliation, when it came, was not a single conversation. It was the start of a working relationship it took years to actually trust. IROC's formation gave Johnson a task, not a redemption—that came later, earned in the slow, unglamorous way reputations actually get rebuilt: real work, on real stations, over real years, until "the man responsible for Anderson" started to share space with "the man who fixed our relay." By the time Tycho Station's operators were willing to hire him outright, put him in charge of standing up new construction, and eventually hand him a contract as consequential as the *Nauvoo*, the disgraced officer of Anderson Station was a long way behind him—not forgotten, never forgotten, but no longer the whole of who he was to the people who worked with him.
+
+None of that fits in ten years. Reckoning, the wilderness years, a year of Dawes watching before he even made contact, the reconciliation, a real rebuilt reputation, the Tycho hire, standing up multiple projects, and the *Nauvoo* nearing completion — that's a chain of a dozen sequential, multi-year phases, and the fact that Johnson is only bitterly resented for *being an Earther* by the time this story picks back up (not for the deaths themselves, which the system has mostly metabolized by then) is itself a sign of how much time has actually passed. Call it thirty-plus years, not ten.
+
+---
+
 And into this chaos stepped Mao‑Kwikowski.
 
 ---
@@ -95,9 +113,11 @@ A backwater research site. Classified. Remote. Perfect for a little extra code.
 
 ---
 
-## Ten Years Later — The Backdoor Wakes
+## Decades Later — The Backdoor Wakes
 
-The backdoor slept. The system evolved around it. New standards were ratified. Old scars were forgotten.
+*[Retimed 2026-09-05 from "Ten Years Later" — see "Johnson's Long Road" above.]*
+
+The backdoor slept for decades. The system evolved around it, standard by standard, until nearly everyone who remembered installing it had moved on, retired, or stopped thinking about it at all. Old scars were forgotten precisely because so much time had passed.
 
 Then, one day, the channel woke up.
 
