@@ -21,15 +21,17 @@ as the biggest lift of the five. Real code, not a stub, for everything
 else: see `code/scripts/tools/Console.gd`, `glove_widgets.gd`,
 `ConfirmModal.gd`/`.tscn`, `PaletteOverlay.gd`/`.tscn`.
 
-**§4 rewritten 2026-09-05 (still design-only, not built)** from a
-follow-on conversation with Dan: what was a single "tile `ls`" idea
-generalized into one **projection** primitive — pulling any output
-(a listing, a previous command's individual tokens, an image, a
-nav chart) out of the flat scrolling text and into a tappable/viewable
-overlay, because trying to cram all of that into a text stream is
-fighting the medium instead of using the right one. Still sequenced
-last per §6, and still nothing new to build until the cheaper pieces
-above prove out.
+**§4 rewritten 2026-09-05 (still design-only, not built)**, twice, from
+a follow-on conversation with Dan. First pass generalized "tile `ls`"
+into a **projection** primitive rendered as on-demand overlays. Second
+pass corrected the architecture: it isn't a series of per-command
+popups, it's a **persistent sidebar beside the console acting as a
+second renderer** over the same Action/Observation data
+`ARCHITECTURE.md` §1 already describes the terminal pane rendering as
+text — see §4 below for why that's a meaningfully better shape. Still
+sequenced last per §6, still nothing new to build until the cheaper
+pieces above prove out, and now includes an in-fiction shell extension
+(§4.2) and a resolved glove-mode toggle (§7).
 
 ## 0. Why this is one standard, not four
 
@@ -148,89 +150,110 @@ on a projected tile. That's a gesture shortcut over this exact `pin`
 primitive, not a parallel mechanism — keeps faith with §1's doctrine
 that every glove-safe shortcut has a real typed command underneath it.
 
-## 4. Projection surfaces: pulling data out of the text stream
+## 4. The sidebar: a second renderer, not a popup
 
-This is the one place where "widgets embedded in a text stream" stops
-being the right mental model. Some things a command produces aren't
-naturally text-shaped at all — a directory listing you want to grab
-and drag, a previous output's individual pieces you want to reference
-directly, an image, a spatial chart — and trying to force all of that
-through the scroll is fighting the medium rather than using the right
-one. Dan's framing for why this is worth doing as its own thing rather
-than cramming further into §1-3: you can't smush an unboundedly large
-or genuinely spatial thing into a space that by definition can't be
-smushed; keeping everything but the bare minimum out of the shell area
-keeps the shell itself legible; and the result — text by default,
-real interactive surfaces on demand — is closer to what a shell would
-actually look like if it had kept evolving for three-plus centuries
-than either "just a terminal" or "replace the terminal with a GUI."
+Real-world grounding for why this doesn't need to be invented from
+whole cloth: personal-device UI in the show routinely renders past the
+edge of the physical screen — Miller's, Kamal's, and others' handheld
+and console displays project content that isn't confined to the
+device's own bezel, and it's still directly interactive (spun, dragged,
+grabbed), not just decorative overflow. A shell that evolved in that
+world would plausibly do the same thing: not "replace the terminal
+with a GUI," and not "cram a graphical widget into a text cell," but a
+genuine second surface the console can hand data to.
 
-A **projection** is triggered on demand (a button on the relevant
-output, not a persistent mode you toggle and leave on) and renders into
-an overlay `Control`, the same kind of surface as the palette in §2 —
-this is one primitive reused several ways, not several separate
-features, which is exactly why it's affordable to build incrementally:
+Concretely: `ARCHITECTURE.md` §1 already establishes that the engine
+emits Action/Observation data and the UI is just a renderer over it —
+the terminal pane rendering that data as scrolling text has always
+been *one* renderer, not the only possible one. The sidebar is a
+**second renderer of the exact same Observation**, standing to the
+right of the console, not a popup summoned per command:
 
-### 4.1 Tile projection (what was "glove-mode `ls`")
+- The console's text output stays the required, complete rendering —
+  the fallback isn't a special case anyone has to remember to build,
+  it's just "the sidebar doesn't exist / doesn't recognize this
+  Observation type," same ignore-unrecognized doctrine as §1's widget
+  tags. A plain terminal with no sidebar loses nothing functionally.
+- When the sidebar *is* present, it echoes the same structured data
+  the console just rendered as text, in whatever graphical form fits
+  that data's shape — a scrollable/tappable list for a directory
+  listing, an image for image data, a diagram for topology data. No
+  command needs bespoke "does the sidebar exist" logic; it emits one
+  Observation, both renderers consume it.
+- Click-and-hold on a sidebar entry pins it (§3's `pin`, same command,
+  gesture-triggered — not a parallel mechanism).
 
-Tap a listing's project button, get a grid of real `Control` tiles (one
-per entry: name, icon/type glyph, size) built from the exact same
-directory-listing data structure `ls` already formats into text —
-generating that grid (`GridContainer`, populated in a loop) is
-ordinary dynamic UI. Drag-and-drop is a built-in `Control` API
-(`_get_drag_data`/`_can_drop_data`/`_drop_data`, no plugin needed) — a
-tile returning its VFS path, a "save spot" accepting it, is a standard
-pattern. The scope increase versus §1-3: `Console.gd` needs to expose
-the *structured* listing data it almost certainly already builds
-internally, to a second consumer (tiles) alongside the existing one
-(text) — a real seam to add, not a rewrite.
+This also settles how the console *looks*, not just how it behaves:
+graphical chrome/decoration around the console frame, and a real,
+visible, physically-sized **glove-mode toggle button** (same big-target
+visual language as §5's confirm buttons) that shows/hides the sidebar
+and switches the console into large-text mode — resolves the "manual
+toggle vs. auto-detect" open question from an earlier draft in favor of
+a big, obvious, deliberate control rather than something ambient.
 
-Making this on-demand rather than a standing "glove mode" that changes
-how `ls` always renders is itself an improvement on the original idea:
-text stays the default and the primary plain-text rendering §1's
-doctrine requires, and the tile view is something you reach for, not
-something imposed.
+### 4.1 Sidebar rendering of listings (what was "tile `ls`")
 
-### 4.2 History-token projection (the glove-mode `!:N`)
+A directory listing renders in the sidebar as a scrollable, tappable
+list — closer to a touchpad selection list than a fixed tile grid,
+built from the exact same structured data `ls` already formats into
+text. `Console.gd` needs to expose that structured data to a second
+consumer (the sidebar) alongside the existing one (text) — a real seam
+to add, not a rewrite, since `ls`'s own logic already resolves a VFS
+node's children.
 
-Real bash reaches for this with history word designators: `!:1`,
-`!:2`, ... reference the Nth word/argument of a previous command
-(`!^`/`!$` are shortcuts for first/last, `!*` is all of them); `$_` is
-a different, narrower thing — just "the last argument of the previous
-command," not indexable, so `$_:1` isn't real syntax. Projecting a
-previous command's output turns each individual token/entry into a
-tappable object instead of something you reference by memorized index:
-tap inserts it into the current input line, tap-and-hold pins it (§3's
-`pin`, same command, gesture-triggered). This generalizes past `ls` to
-anything with output worth grabbing a piece of — `probe`'s node list,
-`spec`'s clause references, whatever comes next.
+### 4.2 `$_:1`, `$_:2` — a real variable, and a deliberate shell extension
 
-### 4.3 Image/media viewer projection
+Real bash has two related but distinct things here: `!:1`, `!:2`, ...
+are history *word designators* — text-expansion tricks that substitute
+the Nth word of a previous command line before execution (`!^`/`!$`
+shortcuts for first/last, `!*` for all); `$_` is a separate, narrower
+special variable — just "the last argument of the previous command,"
+not indexable, so `$_:1` isn't real bash syntax. Worth doing on purpose
+rather than treating that as a limitation to work around: a SolNet-era
+shell finally giving `$_` the indexing real bash always denied it is
+exactly the kind of small, specific "this is what three more centuries
+of shell evolution looks like" detail the whole glove-safe project is
+chasing — invented, but plausible, and worth being explicit that it's
+an invention, not a correction of real Unix. Mechanically it's a real
+live variable (not a text-substitution trick like `!:N`): the sidebar
+shows the current/last command's individual tokens as tappable/pinnable
+entries, and `$_:1`/`$_:2`/etc. address them by typed name too, so the
+gesture and the typed form are the same underlying primitive — same
+doctrine as everywhere else in this doc.
+
+### 4.3 Image/media viewer
 
 Closes a real gap: right now an image or other opaque binary file only
 gets `bat`'s "surface uncertainty, don't hide it" treatment
-(`console-commands.md`'s Tier 2 table) — the right call for genuinely
-unknown data, wrong for "this is a schematic or photo the player
-should be able to look at." Projection gives image files a legitimate
-third option beyond "render as text" or "flag as binary": pop it into
-a viewer. Cheap in Godot — an `Image`/`TextureRect` in a Panel overlay,
-no new engine capability, same overlay surface as everything else here.
+(`console-commands.md`'s Tier 2 table) — right for genuinely unknown
+data, wrong for "this is a schematic or photo the player should be
+able to look at." The sidebar gives image Observations a legitimate
+third option beyond "render as text" or "flag as binary": an
+`Image`/`TextureRect` in the sidebar, no new engine capability.
 
-### 4.4 Spatial/orbital projection — nav/solar charts, one console only
+### 4.4 Network/link topology diagrams
 
-The Alex-Kamal-spinning-the-plot case, confirmed wanted but
-deliberately scoped narrow: **not** a universal glove-safe capability
-every console gets, but something a specific navigation/helm-class
-console has because its hardware and software are built for it — same
-diagnostic logic `console-commands.md` already uses for `bin/`
-presence (a Scrapshell relay-diagnostic box has no business rendering
-an orbital plot; a helm terminal does). Mechanically this is a `Node3D`
-+ `Camera3D` scene in a `SubViewport`, composited into the UI same as
-any texture, with drag input mapped to camera-orbit — a standard
-trackball-control pattern, not exotic, but a genuinely bigger lift than
-4.1-4.3 (real 3D content, not just dynamic 2D `Control`s). Sequence
-this one last, and only once the cheaper tiers above have proven the
-projection idea is fun to use at all.
+Broadly available, not narrowly scoped — this is the same link/DTN
+state `/link` already exposes on every Scrapshell node
+(`os-lineages.md` §5: link state, lag, queues, integrity), rendered
+spatially instead of as files, with drag-to-rotate the same way any
+`SubViewport`/`Camera3D` trackball control works. Directly useful for
+the "nearby nodes" example that motivated `pin` (§3) in the first
+place — seeing that list as an actual topology diagram, not just a
+scrollable list, is the natural upgrade path once 4.1 exists.
+
+### 4.5 Nav/solar plots — a real future mechanic, not scoped yet
+
+Confirmed still wanted, but explicitly future work, not something to
+architect now: the show's actual precedent isn't just visual (spinning
+a pretty globe) — Miller uses the plot functionally, to work out where
+the *Scopuli* would intercept the *Anubis*. That's a mission mechanic
+(compute/visualize an intercept), not a UI widget, and it deserves to
+be designed against a concrete mission that needs it rather than
+pre-scoped to a specific console now. Mechanically it'd still be the
+same `Node3D`/`Camera3D`-in-`SubViewport` approach as 4.4, just with
+orbital-mechanics data instead of network topology — noted for later,
+not blocking anything above.
 
 ## 5. Big confirm/cancel
 
@@ -254,36 +277,40 @@ requires a plugin, an embedded library, or a third-party UI framework.
 The one real distinction worth being precise about: §1 (inline
 button/light/gauge) and §5 (confirm modal) are cheap extensions of
 things Sid's already built (`RichTextLabel` output, popups are stock
-Godot); §2 (palette) and §4.1-4.3 (tile/token/image projection) are a
-step up in that they're real overlay `Control` scenes fed by data
-rather than text tricks — more work, but ordinary game-UI work, not
-R&D. §3 (pin/registry) is almost pure engine-side bookkeeping (a
-dictionary) and barely touches Godot at all. §4.4 (spatial/orbital
-nav charts) is the one genuine step beyond `Control`-node UI into real
-3D content — still standard Godot (`SubViewport`/`Camera3D`, a normal
-trackball-control pattern), just a bigger, narrower-scoped lift, and
-correctly the last thing on the list. None of it argues against doing
-this — it argues for sequencing: §1 and §5 first (cheapest, highest
-payoff), §3 next (unlocks §2), §2 and §4.1-4.3 next (the real
-UI-building effort), §4.4 last and only for the one console that
-actually needs it.
+Godot); §2 (palette) and §4.1-4.3 (sidebar list/variable/image
+rendering) are a step up in that they're real overlay `Control` scenes
+fed by data rather than text tricks — more work, but ordinary game-UI
+work, not R&D. §3 (pin/registry) is almost pure engine-side bookkeeping
+(a dictionary) and barely touches Godot at all. §4.4 (network/link
+topology) is the one genuine step beyond `Control`-node UI into real 3D
+content — still standard Godot (`SubViewport`/`Camera3D`, a normal
+trackball-control pattern) but broadly available rather than narrowly
+scoped, since it's the same `/link` data every node already has. §4.5
+(nav/solar plots) is deliberately not scoped at all yet — real future
+work, not a v1 target. None of it argues against doing this — it
+argues for sequencing: §1 and §5 first (cheapest, highest payoff), §3
+next (unlocks §2), the sidebar (§2, §4.1-4.3) next as the real
+UI-building effort, §4.4 after that once the sidebar exists to render
+into, §4.5 whenever a concrete mission actually needs it.
 
 ## 7. Open questions
 
 - Exact key/gesture to open the quick-access palette (§2) — needs an
   actual input-binding decision, not blocking the design.
-- Whether glove mode is a persistent session-wide toggle, a per-command
-  flag, or auto-detected from some in-fiction signal (suit telemetry
-  saying "gloves on") — leaning toward a manual toggle for v1, the
-  auto-detect version is a nice later flourish, not a v1 requirement.
+- **Resolved 2026-09-05 — glove-mode toggle:** a manual toggle, not
+  auto-detect (suit telemetry saying "gloves on" is still a nice later
+  flourish, not a v1 requirement) — and specifically a real, visible,
+  physically-sized button as part of the console's graphical chrome
+  (§4), not a hidden keybind. Auto-detect stays a possible later
+  addition on top of this, not a replacement for it.
 - Whether `pin` deserves to be a builtin (like `cd`) or a Software Bank
   command — probably Software Bank, per `console-commands.md`'s own
   rule that only things mutating shell state directly need to be
   builtins, and pinning a value doesn't need that.
-- Which actual console gets §4.4's spatial/orbital projection — a ship
-  helm console is the obvious candidate given the Alex Kamal reference
-  point, but nothing's picked a concrete node/hardware class yet. Not
-  blocking, since §4.4 is explicitly sequenced last anyway.
+- §4.5's nav/solar plot mechanic (which console, what mission needs it,
+  how orbital-mechanics data actually gets computed) is deliberately
+  unscoped — explicitly future work per Dan, not something to design
+  ahead of a concrete mission that needs it.
 - **Resolved 2026-09-05 — machine file vs. personal kit:** `/etc/
   scrapper.profile` (the console-commands.md/`Console.gd` file, one per
   node) and a hypothetical portable personal profile that follows a
