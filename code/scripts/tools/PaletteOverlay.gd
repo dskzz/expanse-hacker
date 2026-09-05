@@ -11,9 +11,13 @@ signal value_requested(value: String)
 
 @onready var entries_container: VBoxContainer = $Panel/VBox/Scroll/Entries
 
-func populate(static_entries: Array, registry: Dictionary) -> void:
+func populate(static_entries: Array, registry: Dictionary, accent_color: String = "") -> void:
 	for child in entries_container.get_children():
 		child.queue_free()
+	if accent_color != "":
+		# Same low-effort per-faction reskin surface as ConfirmModal -- one
+		# accent color from /etc/consolerc, not a separate palette per lineage.
+		$Panel/VBox/Title.add_theme_color_override("font_color", Color(accent_color))
 	for entry in static_entries:
 		var btn := Button.new()
 		btn.text = entry.get("label", "?")

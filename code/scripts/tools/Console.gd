@@ -28,7 +28,13 @@ var _lineage_label := "unknown-lineage"
 var _user := "tech"
 var _hardware_state: Dictionary = {}
 var _color_scheme: Dictionary = {
-	"COLOR_DIR": "#5c9cff", "COLOR_SYMLINK": "#00d7d7", "COLOR_DEVICE": "#d7d700", "COLOR_EXEC": "#00d700"
+	"COLOR_DIR": "#5c9cff", "COLOR_SYMLINK": "#00d7d7", "COLOR_DEVICE": "#d7d700", "COLOR_EXEC": "#00d700",
+	# Chrome accent (modal/palette titles, buttons) -- the reskinnable part of
+	# glove-safe UI per faction/lineage. Status-light colors (nominal/degraded/
+	# critical, in glove_widgets.gd) deliberately stay hardcoded/universal --
+	# that's a safety convention, not a faction identity, same reasoning
+	# glove-safe-ui.md section 0 gives for the whole standard being unified.
+	"COLOR_ACCENT": "#00d7d7"
 }
 var _aliases: Dictionary = {}
 
@@ -302,7 +308,7 @@ func _effect_root_claim(tool: Dictionary) -> void:
 	# exactly the kind of consequential action that doc calls out by name.
 	var modal := ConfirmModalScene.instantiate()
 	get_parent().add_child(modal)
-	modal.setup("CLAIM ROOT?\nvia union quorum -- need %s seconds, you have 1 (yours)" % str(required), "CLAIM", "ABORT")
+	modal.setup("CLAIM ROOT?\nvia union quorum -- need %s seconds, you have 1 (yours)" % str(required), "CLAIM", "ABORT", _color_scheme.get("COLOR_ACCENT", ""))
 	modal.confirmed.connect(func():
 		_print_line("root claim submitted -- awaiting union quorum (need %s, have 1 -- yours)" % str(required))
 		_print_line("no seconds received yet.")
@@ -462,7 +468,7 @@ func _toggle_palette() -> void:
 		{"label": "ls /usr/bin", "command": "ls /usr/bin"},
 		{"label": "claim root", "command": "claim root --union-vote"},
 	]
-	_palette.populate(static_entries, _registry)
+	_palette.populate(static_entries, _registry, _color_scheme.get("COLOR_ACCENT", ""))
 	_palette.command_requested.connect(_on_palette_command)
 	_palette.value_requested.connect(_on_palette_value)
 

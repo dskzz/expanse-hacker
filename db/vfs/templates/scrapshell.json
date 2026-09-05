@@ -12,8 +12,8 @@
         "motd": {"kind": "file", "perms": "-rw-r--r--", "owner": "root", "group": "root", "size": "40", "mtime": "091-01-01 00:00", "content_ref": "motd_scrapshell"},
         "consolerc": {
           "kind": "file", "perms": "-rw-r--r--", "owner": "tech", "group": "union", "size": "0", "mtime": "091-01-01 00:00",
-          "_notes": "The console's ls color scheme, as real editable content rather than hardcoded GDScript -- Dan's 'bashrc for this machine' idea, 2026-09-04. No in-game text editor exists yet to let a player edit this live; that's the natural next step this file sets up for. Console.gd reads it at load time (ContentLoader.parse_conf-style key=value) with hardcoded fallbacks if a key or the file itself is missing.",
-          "content": "COLOR_DIR=#5c9cff\nCOLOR_SYMLINK=#00d7d7\nCOLOR_DEVICE=#d7d700\nCOLOR_EXEC=#00d700\n"
+          "_notes": "The console's ls color scheme plus the glove-safe UI chrome accent, as real editable content rather than hardcoded GDScript -- Dan's 'bashrc for this machine' idea, 2026-09-04. COLOR_ACCENT is the low-effort per-faction reskin surface Dan asked for 2026-09-05: it themes the confirm modal and palette chrome, not the universal status-light safety colors (those stay hardcoded on purpose, per glove-safe-ui.md section 0's own reasoning). No in-game text editor exists yet to let a player edit this live; that's the natural next step this file sets up for.",
+          "content": "COLOR_DIR=#5c9cff\nCOLOR_SYMLINK=#00d7d7\nCOLOR_DEVICE=#d7d700\nCOLOR_EXEC=#00d700\nCOLOR_ACCENT=#00d7d7\n"
         },
         "aliases": {
           "kind": "file", "perms": "-rw-r--r--", "owner": "tech", "group": "union", "size": "0", "mtime": "118-09-02 14:02",

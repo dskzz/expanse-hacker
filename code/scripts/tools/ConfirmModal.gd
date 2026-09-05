@@ -16,10 +16,18 @@ func _ready() -> void:
 	confirm_button.pressed.connect(_on_confirm_pressed)
 	cancel_button.pressed.connect(_on_cancel_pressed)
 
-func setup(message: String, confirm_label: String = "CONFIRM", cancel_label: String = "ABORT") -> void:
+func setup(message: String, confirm_label: String = "CONFIRM", cancel_label: String = "ABORT", accent_color: String = "") -> void:
 	message_label.text = message
 	confirm_button.text = confirm_label
 	cancel_button.text = cancel_label
+	if accent_color != "":
+		# The low-effort per-faction reskin surface (Dan, 2026-09-05): one
+		# accent color from /etc/consolerc, not a separate implementation per
+		# lineage. Status-light safety colors elsewhere stay universal on
+		# purpose -- only this chrome accent is meant to vary.
+		var color := Color(accent_color)
+		confirm_button.add_theme_color_override("font_color", color)
+		message_label.add_theme_color_override("font_color", color)
 
 func _on_confirm_pressed() -> void:
 	confirmed.emit()
