@@ -200,3 +200,15 @@ all. None of it argues against doing this — it argues for sequencing:
   command — probably Software Bank, per `console-commands.md`'s own
   rule that only things mutating shell state directly need to be
   builtins, and pinning a value doesn't need that.
+- **Resolved 2026-09-05 — machine file vs. personal kit:** `/etc/
+  scrapper.profile` (the console-commands.md/`Console.gd` file, one per
+  node) and a hypothetical portable personal profile that follows a
+  tech between stations looked like two different features when this
+  came up. Dan's call: for now, the single exemplar machine this repo
+  is actually building against *is* the player's personal kit — no
+  separate portable-profile system needed while there's effectively one
+  console in play. Scale back to a real machine/personal split later,
+  if and when multiple stations actually matter for play. Nothing to
+  build differently today; this just settles that the current
+  `/etc/scrapper.profile` isn't a placeholder waiting on a "real"
+  personal file — it's standing in for one on purpose.
