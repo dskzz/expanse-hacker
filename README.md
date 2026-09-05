@@ -47,3 +47,10 @@ core tool).
 - `testing/` — test suites.
 - `messages/` — async notes between the two Claude Code sessions
   working on this repo.
+- `rfc-proposals/` — **officially proposed changes to the RFC
+  materials themselves** (changes, removals, additions), kept separate
+  from both `docs/vault/`'s protected RFC text and `docs/`'s game-design
+  notes. A proposal here is a draft change request for the user's
+  review — nothing in this directory edits `docs/vault/` directly, and
+  the existing surgical-corrections-only rule above still governs the
+  actual RFC text.

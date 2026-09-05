@@ -557,3 +557,95 @@ window dressing on the other:
   reads as one unified culture, which may undersell how much variation
   a fifty-year-old, hand-patched, no-central-authority lineage should
   actually have station-to-station.
+
+## 10. Groups, permission gradient, and addressing (locked 2026-09-05)
+
+Grounded in real SolNet addressing (RFC-2300's LocationChain//
+ServiceChain, see `rfc-proposals/rfc2350-addressing-grammar.md` for the
+grammar-level corrections proposed alongside this) — the LocationChain/
+ServiceChain hierarchy a node's address already sits in turns out to be
+the natural DN-equivalent for group membership too, not a separate
+thing to invent.
+
+### Who knows who's in a group — split by lineage, same axis as root
+
+The concept of a group (a named collection sharing permission grants)
+is a solved, general problem — it survives everywhere. What diverges is
+*how membership is known*, because maintaining an authoritative synced
+directory is itself a coordination cost, and coordination capacity is
+exactly what's politically fragmented since §0:
+
+- **Earthstock** maintains a real, separately-signed institutional
+  directory — membership is *asserted by the institution*, consistent
+  with their whole "trusts a reachable CA" posture (and its weakness:
+  no connectivity to the directory, no group resolution).
+- **Scrapshell** doesn't bother maintaining a synced directory at all —
+  no coordination capacity for it, same reasoning as §0/§5. Group
+  membership is derived **live, locally, by parsing a member's own
+  claimed LocationChain/ServiceChain** — if your address says
+  `.../ENGINEERING:...`, you're department `eng`, full stop, nothing
+  fetched or synced. Cheap, and honestly weaker: **membership is
+  self-asserted, not verified**, a real sibling to the quorum-spoofing
+  vulnerability in §8 — spoof the claimed chain, get treated as a
+  member. A node can optionally cross-check a claim against a cached
+  RFC-2302 ledger slice when one's available (same substrate as the
+  quorum multisig entries, §3) — another instance of "the honest
+  fallback for the offline case is the actual attack surface."
+- **Mars** bakes group/department scope into the capability token at
+  minting time — changing it requires the same re-minting ceremony §4
+  already describes for any capability change, expensive and
+  infrequent on purpose.
+- **Corporate** treats department/ship-wide scope as just another field
+  in the leased entitlement, changeable unilaterally by the vendor —
+  same "mothership can withdraw functionality" pattern as §4.
+
+### The permission gradient
+
+Flat Unix owner/group/other has no rich inheritance across a hierarchy
+— a real, known limitation, and one of the few places Unix's actual
+real-world descendants already fixed the mousetrap rather than just
+refining its edges: POSIX ACLs (arbitrary named principals per file,
+inheritable defaults) and modern cloud IAM (policy composed down an
+org → project → resource tree, overridable at any level) are both
+real, already-existing answers. Treat the **gradient/inheritance shape
+itself as converged and universal** across all four lineages — like
+`rg`/`fd` keeping their real names, this is a case where the fix
+already happened in the real world and there's no reason any lineage
+regressed from it. What stays politically diverged is *who's
+authorized to grant or override at each level* — the same four root
+models from §3, just applied at ship/department/machine/file scope
+instead of one flat scope, rather than a fifth mechanism to invent.
+
+### User-segment naming convention, per lineage
+
+The trailing personal-identity segment in a ServiceChain (or the PNI
+form proposed in `rfc-proposals/rfc2350-addressing-grammar.md`) is free
+to vary per lineage, and reuses an existing pattern rather than
+inventing a new one — `tech.brahms.sig` (§4) is already surname-based
+for Scrapshell:
+
+| Lineage | Convention | Example |
+|---|---|---|
+| Scrapshell | surname/handle | `tech-Kamal` |
+| Mars | serial/service number for rank-and-file; rank+surname for officers/named roles (matches the existing `MARDET:LtLopez` shape) | `tech-A10332` |
+| Corporate | employee/badge ID | `tech-EMP48291` |
+| Earthstock | formal credential/certification ID | institutional, bureaucratic |
+
+### Worked examples
+
+```
+MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG1:Reactor:TECH-TK421
+MCR:<city>:BREACH-CANDY//DOME-2-6:KAMAL
+```
+The second is a civilian residential address, not a ship — worth being
+explicit that this addressing scheme is about physical/organizational
+*reachability* (getting a message to the right household), a different
+layer from which OS a destination device happens to run. A Mars
+civilian residence's terminal is a device-level fact (probably a
+Tharsis-descended civilian build); the address that reaches it is a
+civil-registry-level fact. Don't conflate the two. Also worth noting:
+the household is addressed as a shared unit (`KAMAL`, a plain trailing
+segment, not a personal `@`-PNI) because the message is for the whole
+family, the same way physical mail addresses a household — `@tech-
+Kamal`-style PNI addressing is for singling out one person's own
+device specifically, a different case.

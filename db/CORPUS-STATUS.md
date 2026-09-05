@@ -102,9 +102,9 @@ draft yet
 
 | RFC | Topic | Status | Content file(s) |
 |---|---|---|---|
-| 2300 | Terminology & Concepts | ✅ (§1–7 only, see flag above) | `db/vocabulary.json` |
+| 2300 | Terminology & Concepts | ✅ (§1–7 only, see flag above) | `db/vocabulary.json`. Two proposed extensions pending review, not yet applied: `rfc-proposals/rfc2300-dre-role-directory.md` (§5.3 DREs, role-based addressing) and `rfc-proposals/rfc2300-2302-reply-path-privacy.md` (§6.1 Session Keys, return-path privacy). |
 | 2301 | Cryptographic Primitives | ✅ | `db/trust/rfc2301-key-hierarchy.json` |
-| 2302 | Ledger Specification | 📝 | — |
+| 2302 | Ledger Specification | 📝 | — . Already has a real mechanical use lined up despite not being converted yet — see `os-lineages.md` §3's quorum-multisig-ledger design and `rfc-proposals/rfc2300-2302-reply-path-privacy.md`'s §7 cross-reference. |
 | 2302A | Ledger Deployment Models | 📝 | — |
 | 2303 | Physical Media and Propagation | 📝 | — |
 | 2304 | Antenna Geometry and Alignment | 📝 (Companion doc exists) | — |
@@ -118,7 +118,7 @@ draft yet
 
 | RFC | Topic | Status | Content file(s) |
 |---|---|---|---|
-| 2350 | Canonical Addressing Standard | 📝 — **high priority**: likely source of RFC-2300's misplaced §§8–15, and a Console dependency (`reference/tool_belt_shell.md`) | — |
+| 2350 | Canonical Addressing Standard | 📝 — **high priority**: likely source of RFC-2300's misplaced §§8–15, and a Console dependency (`reference/tool_belt_shell.md`). A proposed correction to its §4 grammar is pending review, not yet applied — see `rfc-proposals/rfc2350-addressing-grammar.md` (separator mismatch with RFC-2300's own examples, an `@`/ProvenancePointer collision with the older NNS-1.0 draft's PNI shorthand, a dropped chainless-PNI capability). | — |
 | 2351 | L1 Frame Format (A/N Header Split) | 📝 — **9072 lines, huge**. Needs a dedicated pass, not a quick conversion. Companion doc exists. | — |
 | 2352 | L1 Privacy and Metadata Minimization | 📝 (Companion doc exists) | — |
 | 2353 | L1 Relay Advertisement Protocol | 📝 — currently only 25 lines, may be a stub | — |
