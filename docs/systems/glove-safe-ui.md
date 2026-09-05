@@ -21,6 +21,16 @@ as the biggest lift of the five. Real code, not a stub, for everything
 else: see `code/scripts/tools/Console.gd`, `glove_widgets.gd`,
 `ConfirmModal.gd`/`.tscn`, `PaletteOverlay.gd`/`.tscn`.
 
+**§4 rewritten 2026-09-05 (still design-only, not built)** from a
+follow-on conversation with Dan: what was a single "tile `ls`" idea
+generalized into one **projection** primitive — pulling any output
+(a listing, a previous command's individual tokens, an image, a
+nav chart) out of the flat scrolling text and into a tappable/viewable
+overlay, because trying to cram all of that into a text stream is
+fighting the medium instead of using the right one. Still sequenced
+last per §6, and still nothing new to build until the cheaper pieces
+above prove out.
+
 ## 0. Why this is one standard, not four
 
 Every other divergence in this project (`os-lineages.md` §2-3) tracks a
@@ -86,6 +96,12 @@ output. Cheap by ordinary game-UI standards; the reason it's a separate
 line item from §1 is just that it's a different code path in Godot, not
 that it's expensive.
 
+Worth a dedicated **`Variables`** button alongside the `☰` glyph
+specifically for the pinned-slot half of the contents (Dan's request,
+2026-09-05) — same overlay, same data, just a second labeled entry
+point for the case where a player wants their registry specifically,
+not the whole mixed palette.
+
 ## 3. Push-into-variable / the "registry"
 
 Dan's framing: working outside on a relay, you see a list of nearby
@@ -127,36 +143,94 @@ namespace of named values the UI renders as buttons — and it's cheap:
 engine-side it's a dictionary and an emit-on-pin event; UI-side it's
 just another source feeding the same palette from §2.
 
-## 4. Glove mode: large-tile `ls`, drag-and-drop
+§4.2 below adds a second way to trigger the same command: tap-and-hold
+on a projected tile. That's a gesture shortcut over this exact `pin`
+primitive, not a parallel mechanism — keeps faith with §1's doctrine
+that every glove-safe shortcut has a real typed command underneath it.
+
+## 4. Projection surfaces: pulling data out of the text stream
 
 This is the one place where "widgets embedded in a text stream" stops
-being the right mental model. Tap-target-sized file/dir tiles that you
-can drag to a "save spot" aren't an annotation on top of `ls`'s text
-output — they're a genuinely different rendering of the same
-`ls`-shaped data. Concretely: glove mode's `ls` isn't `RichTextLabel`
-text at all, it's a grid of real `Control` nodes (one per entry: name,
-icon/type glyph, size), generated from the exact same directory-listing
-data structure that plain-mode `ls` formats into text.
+being the right mental model. Some things a command produces aren't
+naturally text-shaped at all — a directory listing you want to grab
+and drag, a previous output's individual pieces you want to reference
+directly, an image, a spatial chart — and trying to force all of that
+through the scroll is fighting the medium rather than using the right
+one. Dan's framing for why this is worth doing as its own thing rather
+than cramming further into §1-3: you can't smush an unboundedly large
+or genuinely spatial thing into a space that by definition can't be
+smushed; keeping everything but the bare minimum out of the shell area
+keeps the shell itself legible; and the result — text by default,
+real interactive surfaces on demand — is closer to what a shell would
+actually look like if it had kept evolving for three-plus centuries
+than either "just a terminal" or "replace the terminal with a GUI."
 
-The good news: this is squarely inside what Godot's `Control` node
-already does natively, not exotic.
+A **projection** is triggered on demand (a button on the relevant
+output, not a persistent mode you toggle and leave on) and renders into
+an overlay `Control`, the same kind of surface as the palette in §2 —
+this is one primitive reused several ways, not several separate
+features, which is exactly why it's affordable to build incrementally:
 
-- Drag-and-drop is a built-in `Control` API —
-  `_get_drag_data`/`_can_drop_data`/`_drop_data` — no plugin, no
-  library. A file tile returning its VFS path from `_get_drag_data`,
-  and a "save spot" `Control` accepting it in `_drop_data`, is a normal
-  Godot pattern, not a stretch.
-- Generating a tile grid from data at runtime (N children of a
-  `GridContainer`, built in a loop from the same listing the text `ls`
-  already walks) is bread-and-butter dynamic UI, nothing unusual.
+### 4.1 Tile projection (what was "glove-mode `ls`")
 
-The actual scope increase versus §1-3: `Console.gd` needs to expose the
-*structured* directory-listing data (which it almost certainly already
-has internally to build the text `ls` output) to a UI layer that can
-build tiles from it, rather than only emitting formatted text. That's a
-real seam to add, not a rewrite — `ls`'s existing logic already resolves
-a VFS node's children; glove mode just needs a second consumer of that
-same data (tiles) alongside the existing one (text).
+Tap a listing's project button, get a grid of real `Control` tiles (one
+per entry: name, icon/type glyph, size) built from the exact same
+directory-listing data structure `ls` already formats into text —
+generating that grid (`GridContainer`, populated in a loop) is
+ordinary dynamic UI. Drag-and-drop is a built-in `Control` API
+(`_get_drag_data`/`_can_drop_data`/`_drop_data`, no plugin needed) — a
+tile returning its VFS path, a "save spot" accepting it, is a standard
+pattern. The scope increase versus §1-3: `Console.gd` needs to expose
+the *structured* listing data it almost certainly already builds
+internally, to a second consumer (tiles) alongside the existing one
+(text) — a real seam to add, not a rewrite.
+
+Making this on-demand rather than a standing "glove mode" that changes
+how `ls` always renders is itself an improvement on the original idea:
+text stays the default and the primary plain-text rendering §1's
+doctrine requires, and the tile view is something you reach for, not
+something imposed.
+
+### 4.2 History-token projection (the glove-mode `!:N`)
+
+Real bash reaches for this with history word designators: `!:1`,
+`!:2`, ... reference the Nth word/argument of a previous command
+(`!^`/`!$` are shortcuts for first/last, `!*` is all of them); `$_` is
+a different, narrower thing — just "the last argument of the previous
+command," not indexable, so `$_:1` isn't real syntax. Projecting a
+previous command's output turns each individual token/entry into a
+tappable object instead of something you reference by memorized index:
+tap inserts it into the current input line, tap-and-hold pins it (§3's
+`pin`, same command, gesture-triggered). This generalizes past `ls` to
+anything with output worth grabbing a piece of — `probe`'s node list,
+`spec`'s clause references, whatever comes next.
+
+### 4.3 Image/media viewer projection
+
+Closes a real gap: right now an image or other opaque binary file only
+gets `bat`'s "surface uncertainty, don't hide it" treatment
+(`console-commands.md`'s Tier 2 table) — the right call for genuinely
+unknown data, wrong for "this is a schematic or photo the player
+should be able to look at." Projection gives image files a legitimate
+third option beyond "render as text" or "flag as binary": pop it into
+a viewer. Cheap in Godot — an `Image`/`TextureRect` in a Panel overlay,
+no new engine capability, same overlay surface as everything else here.
+
+### 4.4 Spatial/orbital projection — nav/solar charts, one console only
+
+The Alex-Kamal-spinning-the-plot case, confirmed wanted but
+deliberately scoped narrow: **not** a universal glove-safe capability
+every console gets, but something a specific navigation/helm-class
+console has because its hardware and software are built for it — same
+diagnostic logic `console-commands.md` already uses for `bin/`
+presence (a Scrapshell relay-diagnostic box has no business rendering
+an orbital plot; a helm terminal does). Mechanically this is a `Node3D`
++ `Camera3D` scene in a `SubViewport`, composited into the UI same as
+any texture, with drag input mapped to camera-orbit — a standard
+trackball-control pattern, not exotic, but a genuinely bigger lift than
+4.1-4.3 (real 3D content, not just dynamic 2D `Control`s). Sequence
+this one last, and only once the cheaper tiers above have proven the
+projection idea is fun to use at all.
 
 ## 5. Big confirm/cancel
 
@@ -180,13 +254,19 @@ requires a plugin, an embedded library, or a third-party UI framework.
 The one real distinction worth being precise about: §1 (inline
 button/light/gauge) and §5 (confirm modal) are cheap extensions of
 things Sid's already built (`RichTextLabel` output, popups are stock
-Godot); §2 (palette) and §4 (tile `ls`) are a step up in that they're
-real overlay `Control` scenes fed by data rather than text tricks — more
-work, but ordinary game-UI work, not R&D. §3 (pin/registry) is almost
-pure engine-side bookkeeping (a dictionary) and barely touches Godot at
-all. None of it argues against doing this — it argues for sequencing:
-§1 and §5 first (cheapest, highest payoff), §3 next (unlocks §2), §2 and
-§4 last (the real UI-building effort).
+Godot); §2 (palette) and §4.1-4.3 (tile/token/image projection) are a
+step up in that they're real overlay `Control` scenes fed by data
+rather than text tricks — more work, but ordinary game-UI work, not
+R&D. §3 (pin/registry) is almost pure engine-side bookkeeping (a
+dictionary) and barely touches Godot at all. §4.4 (spatial/orbital
+nav charts) is the one genuine step beyond `Control`-node UI into real
+3D content — still standard Godot (`SubViewport`/`Camera3D`, a normal
+trackball-control pattern), just a bigger, narrower-scoped lift, and
+correctly the last thing on the list. None of it argues against doing
+this — it argues for sequencing: §1 and §5 first (cheapest, highest
+payoff), §3 next (unlocks §2), §2 and §4.1-4.3 next (the real
+UI-building effort), §4.4 last and only for the one console that
+actually needs it.
 
 ## 7. Open questions
 
@@ -200,6 +280,10 @@ all. None of it argues against doing this — it argues for sequencing:
   command — probably Software Bank, per `console-commands.md`'s own
   rule that only things mutating shell state directly need to be
   builtins, and pinning a value doesn't need that.
+- Which actual console gets §4.4's spatial/orbital projection — a ship
+  helm console is the obvious candidate given the Alex Kamal reference
+  point, but nothing's picked a concrete node/hardware class yet. Not
+  blocking, since §4.4 is explicitly sequenced last anyway.
 - **Resolved 2026-09-05 — machine file vs. personal kit:** `/etc/
   scrapper.profile` (the console-commands.md/`Console.gd` file, one per
   node) and a hypothetical portable personal profile that follows a
