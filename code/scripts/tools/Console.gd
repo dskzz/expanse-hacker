@@ -69,31 +69,29 @@ func _load_vfs(instance_id: String) -> void:
 	if not synthesized_dev.is_empty() and tree.has("dev") and tree["dev"].has("children"):
 		tree["dev"]["children"][_hostname.to_lower()] = synthesized_dev
 	_vfs = {"kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "", "children": tree}
-	_load_color_scheme()
-	_load_aliases()
+	_load_profile()
 
-func _load_color_scheme() -> void:
-	# Reads /etc/consolerc as real content instead of hardcoded values -- this
-	# is what a future in-game text editor would let a player customize live,
-	# same "bashrc for this machine" idea as any other dotfile.
-	var conf_node = _lookup(PackedStringArray(["etc", "consolerc"]))
+func _load_profile() -> void:
+	# Reads /etc/scrapper.profile as real content instead of hardcoded values --
+	# this is what a future in-game text editor would let a player customize
+	# live, same "bashrc for this machine" idea as any other dotfile. One
+	# combined file (colors + aliases) rather than splitting a bashrc-
+	# equivalent from a profile-equivalent the way real Unix does -- Scrapshell
+	# never had the coordination to keep those cleanly separate either.
+	# COLOR_* keys go to the color scheme, everything else is an alias.
+	var conf_node = _lookup(PackedStringArray(["etc", "scrapper.profile"]))
 	if conf_node == null or typeof(conf_node) != TYPE_DICTIONARY or not conf_node.has("content"):
 		return
 	for line in String(conf_node["content"]).split("\n"):
 		var eq := line.find("=")
-		if eq > 0:
-			_color_scheme[line.substr(0, eq)] = line.substr(eq + 1)
-
-func _load_aliases() -> void:
-	# Same real-editable-content pattern as consolerc -- /etc/aliases,
-	# key=value, checked against a command's first word before dispatch.
-	var conf_node = _lookup(PackedStringArray(["etc", "aliases"]))
-	if conf_node == null or typeof(conf_node) != TYPE_DICTIONARY or not conf_node.has("content"):
-		return
-	for line in String(conf_node["content"]).split("\n"):
-		var eq := line.find("=")
-		if eq > 0:
-			_aliases[line.substr(0, eq)] = line.substr(eq + 1)
+		if eq <= 0:
+			continue
+		var key := line.substr(0, eq)
+		var value := line.substr(eq + 1)
+		if key.begins_with("COLOR_"):
+			_color_scheme[key] = value
+		else:
+			_aliases[key] = value
 
 func _expand_alias(line: String) -> String:
 	var space := line.find(" ")

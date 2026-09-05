@@ -133,5 +133,5 @@ into decoration.
   recency-only (not true frecency) against a session-local visited-dirs
   list. `delta`/diff and `sd` still not built — `sd` specifically needs
   real file-write support, which nothing has yet (same gap as editing
-  `/etc/consolerc` live). `dust`/`btm` not attempted — lower value
+  `/etc/scrapper.profile` live). `dust`/`btm` not attempted — lower value
   without the tenant/namespace engine layer they're meant to visualize.

@@ -35,15 +35,16 @@ func _init() -> void:
 	_expect_contains("boguscmd", "command not found")
 
 	_expect_output("ls", "bin  dev  etc  link  sbin  srv  tmp  usr  var")
-	_expect_output("ls etc", "aliases  consolerc  duty-policy.conf  motd  patches.log  union.trust")
+	_expect_output("ls etc", "duty-policy.conf  motd  patches.log  scrapper.profile  union.trust")
 
-	# ls coloring reads /etc/consolerc (real content, not hardcoded) -- Dan's
+	# ls coloring + aliases both come from /etc/scrapper.profile now (Belter-
+	# flavored, consolidated from consolerc+aliases 2026-09-05) -- Dan's
 	# "bashrc for this machine" idea, 2026-09-04. get_parsed_text() strips
 	# bbcode for the checks above, so verify the loaded scheme directly.
 	var color_scheme = _console.get("_color_scheme")
 	if typeof(color_scheme) != TYPE_DICTIONARY or color_scheme.get("COLOR_DIR") != "#5c9cff":
 		_failures += 1
-		print("FAIL: /etc/consolerc's COLOR_DIR didn't load into Console's color scheme: %s" % str(color_scheme))
+		print("FAIL: /etc/scrapper.profile's COLOR_DIR didn't load into Console's color scheme: %s" % str(color_scheme))
 
 	# /dev/<hostname>/ is synthesized from db/hardware/ + installed_components
 	# at load time, not hand-authored -- per Dan's "it needs to pull from the
@@ -67,7 +68,7 @@ func _init() -> void:
 	_run("z etc")
 	_expect_output("pwd", "/etc")
 
-	# /etc/aliases -- real editable content, expanded before dispatch.
+	# aliases (also from /etc/scrapper.profile now) -- expanded before dispatch.
 	# ll=ls -la, so this should produce the long format, not the short one.
 	_run("cd /")
 	_expect_contains("ll", "drwxr")

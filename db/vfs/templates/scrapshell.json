@@ -1,6 +1,10 @@
 {
   "id": "scrapshell",
-  "identity": {"lineage_label": "Scrapshell 7.2-belt", "user": "tech"},
+  "identity": {
+    "lineage_label": "Scrapshell 7.2-belt", "user": "tech",
+    "os_category": "BeltOS", "product": "Scrapshell", "shell": "sash"
+  },
+  "_notes": "Naming per docs/lore/os-lineages.md's 'Product and shell names' table (settled 2026-09-05): BeltOS is the category, Scrapshell is the flagship product within it (same relationship as Linux to Ubuntu), and the shell binary itself is `sash` -- eroded from 'Scrapshell sh' over decades of hand-patched use, same folk-erosion mechanic as /etc -> 'Everyone's To-Change'. lineage_label stays product-level for the prompt display (a real bash prompt doesn't announce 'Linux' either); os_category/product/shell are structured fields for tooling (probe, etc.) to read precisely instead of parsing the display string.",
   "tree": {
     "bin": {"kind": "symlink", "target": "usr/bin", "perms": "lrwxrwxrwx", "owner": "root", "group": "root", "size": "7", "mtime": "091-01-01 00:00"},
     "sbin": {"kind": "symlink", "target": "usr/bin", "perms": "lrwxrwxrwx", "owner": "root", "group": "root", "size": "7", "mtime": "091-01-01 00:00"},
@@ -10,15 +14,10 @@
         "union.trust": {"kind": "file", "perms": "-rw-r--r--", "owner": "root", "group": "union", "size": "310", "mtime": "118-08-30 03:17", "content": "# local quorum roster\n"},
         "patches.log": {"kind": "file", "perms": "-rw-r--r--", "owner": "union", "group": "union", "size": "0", "mtime": "118-09-01 22:04", "content": ""},
         "motd": {"kind": "file", "perms": "-rw-r--r--", "owner": "root", "group": "root", "size": "40", "mtime": "091-01-01 00:00", "content_ref": "motd_scrapshell"},
-        "consolerc": {
-          "kind": "file", "perms": "-rw-r--r--", "owner": "tech", "group": "union", "size": "0", "mtime": "091-01-01 00:00",
-          "_notes": "The console's ls color scheme plus the glove-safe UI chrome accent, as real editable content rather than hardcoded GDScript -- Dan's 'bashrc for this machine' idea, 2026-09-04. COLOR_ACCENT is the low-effort per-faction reskin surface Dan asked for 2026-09-05: it themes the confirm modal and palette chrome, not the universal status-light safety colors (those stay hardcoded on purpose, per glove-safe-ui.md section 0's own reasoning). No in-game text editor exists yet to let a player edit this live; that's the natural next step this file sets up for.",
-          "content": "COLOR_DIR=#5c9cff\nCOLOR_SYMLINK=#00d7d7\nCOLOR_DEVICE=#d7d700\nCOLOR_EXEC=#00d700\nCOLOR_ACCENT=#00d7d7\n"
-        },
-        "aliases": {
+        "scrapper.profile": {
           "kind": "file", "perms": "-rw-r--r--", "owner": "tech", "group": "union", "size": "0", "mtime": "118-09-02 14:02",
-          "_notes": "Real shell aliases, same 'editable content, not hardcoded' pattern as consolerc -- Console.gd checks a command's first word against this before normal dispatch. ll/la are the universal muscle-memory ones; the rest are Scrapshell-specific shortcuts for the diagnostic loop this machine actually does day to day.",
-          "content": "ll=ls -la\nla=ls -la\nmydev=ls -la dev\ncheck=probe rfc2305 --node self\n"
+          "_notes": "Belter-flavored config file, renamed from consolerc+aliases 2026-09-05 per Dan's steer: leans into the scrapper/salvage ethos in the naming itself, the way real dotfiles are named for their shell (.bashrc) but Scrapshell's culture would name its own something with more personality -- same instinct as /etc -> 'Everyone's To-Change' (folk-etymology, not official). One combined file (ls colors, glove-safe chrome accent, aliases) rather than splitting bashrc-equivalent from profile-equivalent the way real Unix does -- Scrapshell never had the coordination to keep those cleanly separate either (os-lineages.md section 0/5's whole argument). Real editable content, not hardcoded GDScript -- Dan's 'bashrc for this machine' idea, 2026-09-04; no in-game text editor exists yet to edit it live, this sets up the mechanism that would hook into.",
+          "content": "COLOR_DIR=#5c9cff\nCOLOR_SYMLINK=#00d7d7\nCOLOR_DEVICE=#d7d700\nCOLOR_EXEC=#00d700\nCOLOR_ACCENT=#00d7d7\nll=ls -la\nla=ls -la\nmydev=ls -la dev\ncheck=probe rfc2305 --node self\n"
         }
       }
     },

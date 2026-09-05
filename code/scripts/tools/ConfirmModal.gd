@@ -22,9 +22,10 @@ func setup(message: String, confirm_label: String = "CONFIRM", cancel_label: Str
 	cancel_button.text = cancel_label
 	if accent_color != "":
 		# The low-effort per-faction reskin surface (Dan, 2026-09-05): one
-		# accent color from /etc/consolerc, not a separate implementation per
-		# lineage. Status-light safety colors elsewhere stay universal on
-		# purpose -- only this chrome accent is meant to vary.
+		# accent color from /etc/scrapper.profile (COLOR_ACCENT), not a
+		# separate implementation per lineage. Status-light safety colors
+		# elsewhere stay universal on purpose -- only this chrome accent is
+		# meant to vary.
 		var color := Color(accent_color)
 		confirm_button.add_theme_color_override("font_color", color)
 		message_label.add_theme_color_override("font_color", color)

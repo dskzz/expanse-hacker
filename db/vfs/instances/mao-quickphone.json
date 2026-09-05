@@ -1,7 +1,9 @@
 {
   "id": "mao-quickphone",
-  "extends": "earthcore",
-  "identity": {"hostname": "MAO-QUIKPH-7734", "lineage_label": "Mao-Kwikowski QuikPhone OS", "user": "owner"},
-  "_note": "placeholder stub -- proves cross-lineage instancing works, not fleshed out yet",
+  "identity": {
+    "hostname": "MAO-QUIKPH-7734", "lineage_label": "Mao-Kwikowski QuikPhone OS", "user": "owner",
+    "os_category": "Corporate", "product": "Mao-Kwikowski QuikPhone OS", "shell": "(undisclosed)"
+  },
+  "_note": "Fixed 2026-09-05 -- previously (wrongly) extended earthcore (Earthstock). Mao-Kwikowski is Corporate per docs/lore/corporations.md, and per os-lineages.md's naming table Corporate 'deliberately' has no shared OS/shell name -- real-world grounding Dan gave same day: Android *is* Linux underneath, but so thoroughly corporate-controlled it doesn't present as one to the user. No shared ancestor template to extend for the same reason -- standalone now, tree still a placeholder stub, not fleshed out.",
   "tree": {}
 }

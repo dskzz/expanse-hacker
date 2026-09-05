@@ -16,7 +16,7 @@ func populate(static_entries: Array, registry: Dictionary, accent_color: String 
 		child.queue_free()
 	if accent_color != "":
 		# Same low-effort per-faction reskin surface as ConfirmModal -- one
-		# accent color from /etc/consolerc, not a separate palette per lineage.
+		# accent color from /etc/scrapper.profile, not a separate palette per lineage.
 		$Panel/VBox/Title.add_theme_color_override("font_color", Color(accent_color))
 	for entry in static_entries:
 		var btn := Button.new()
