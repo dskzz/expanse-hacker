@@ -149,14 +149,48 @@ depend on this block yet.
 
 ## Priority queue (for whoever picks this up next)
 
-1. **RFC-2350** (Canonical Addressing) — Console dependency, and
-   reading it should resolve the RFC-2300 §§8–15 question.
-2. **RFC-2351** (L1 Frame Format) — Console dependency, but huge;
-   budget a dedicated session.
-3. **RFC-2362** (Trust Domains) — not drafted yet at all, only a
+**Updated 2026-09-05** after a full corpus read-through — see
+`db/CORPUS-INDEX.md` (per-RFC content + inconsistencies) and
+`docs/NEXT-STEPS.md` (the full consolidated TODO this produced) for
+the detail behind this list. The RFC-2300 §§8-15 question below is
+now resolved: it's RFC-2350's own content, misplaced by an assembly
+error, not something reading RFC-2350 would explain away.
+
+1. **RFC-2350 correction + review** (Canonical Addressing) — Console
+   dependency. The three-issue `rfc-proposals/rfc2350-addressing-
+   grammar.md` proposal is drafted and waiting on the user's sign-off;
+   land that first, since everything downstream (DRE role-directory,
+   reply-path privacy proposals) builds on it.
+2. **RFC-2351 surgical fixes** (L1 Frame Format) — huge (9071 lines)
+   but the two defects found are narrow and real: duplicated §8 TLV
+   Key Registry, and a duplicated Appendix H with **directly
+   contradictory** interoperability rules (one version mandates full
+   symmetric interop, the other says it's asymmetric with FORBIDDEN
+   cases). The second instance matches the rest of the document — fix
+   is likely "delete the first Appendix H," not a full rewrite.
+3. **RFC-2352 surgical fixes** (L1 Privacy & Metadata Minimization) —
+   its own Front Matter title says "RFC-2306" instead of "RFC-2352"
+   (the single most severe mislabeling found anywhere in the corpus,
+   sitting in normative front matter); §39 duplicated with §40
+   missing; Appendix J/K use leftover C./D. subsection prefixes.
+4. **RFC-2362** (Trust Domains) — not drafted yet at all, only a
    `TODOv2.md` stub; `os-lineages.md` already assumes it exists as the
-   four-lineage shared primitive. May need the user to actually draft
-   this RFC before it can be converted.
-4. Remaining L0 RFCs (2302–2304, 2306–2309) — all drafted, none
-   converted yet, lower urgency than the above three since nothing in
-   the current vertical slice blocks on them.
+   four-lineage shared primitive, and it's the RFC that has to answer
+   the still-open `AnchorRecord`/root-model question below. May need
+   the user to actually draft this RFC before it can be converted.
+5. **RFC-2363** (Directory & Routing Endpoints) — also undrafted, but
+   now has a settled scope (confirmed via `TODOv2.md`: DRE, not
+   Identity Resolution as RFC-2302/2303 assumed) and two `rfc-
+   proposals/` documents already targeting it (role-directory
+   addressing, reply-path privacy) — a natural next full draft once
+   RFC-2362 exists to depend on.
+6. **RFC-2360/2361 mislabel sweep** — low-risk, mechanical: six
+   documents cite "RFC-2361" for Layer Model content; `TODOv2.md`
+   confirms that's RFC-2360, and RFC-2361 is actually Identity
+   Resolution. A pure find-and-verify pass, safe to batch with any of
+   the above.
+7. Remaining L0 RFCs (2302–2304, 2306–2309) — all drafted, none
+   converted yet, lower urgency since nothing in the current vertical
+   slice blocks on them. Note: `RFC Companion/` already has ready-made
+   exploit/mission/puzzle content for 2303, 2304, 2305, and 2308 —
+   converting these has a running head start.

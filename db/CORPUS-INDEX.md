@@ -12,7 +12,130 @@ tracks conversion status to `db/` schemas) — this index is about *what
 the RFCs say*; CORPUS-STATUS.md is about *what's been turned into
 game content*. Read both when doing corpus work.
 
-Building incrementally below as the read-through proceeds.
+Full read-through complete as of 2026-09-05: `docs/vault/New RFCs/`
+(all 15 documents + the `wokring/` subfolder), `docs/vault/RFCs/` (all
+16 old/superseded documents), `docs/vault/RFC Companion/` (all 13
+files), and all three TODO documents. See `docs/NEXT-STEPS.md` for the
+consolidated priority list and implementation TODO this read-through
+produced.
+
+---
+
+## Cross-cutting findings summary
+
+Every finding below is detailed in full in its own per-RFC section
+further down this file — this summary exists so a reader (or Sid) can
+scan the *shape* of what's wrong across the whole corpus without
+reading 40+ pages of index. Four genuinely distinct categories emerged,
+each with a different appropriate fix:
+
+### 1. Numbering/topic mislabeling (find-and-fix-able, low risk)
+
+Documents citing an RFC number for the wrong topic, in next-steps or
+cross-reference sections — never in the cited document's own text, so
+these are safe surgical fixes once verified against `TODOv2.md`
+(confirmed canonical numbering ground truth):
+
+- **RFC-2360 vs RFC-2361 swap**, the biggest one: `TODOv2.md` confirms
+  **RFC-2360 = "SolNet Layer Model Revised"** and **RFC-2361 =
+  "Identity Resolution L2."** Six documents (RFC-2300 §14, RFC-2301
+  §16, and four others read early in this index, before the swap was
+  caught) cite "RFC-2361" when they mean Layer Model — all six should
+  say RFC-2360 instead. RFC-2350 §1's "identity semantics" label for
+  RFC-2361 was the one *correct* citation, initially misread as the
+  outlier. See the RFC-2301 entry below for the full resolution.
+- **RFC-2304 mislabeled** by RFC-2303 §19 as "Relay and Courier
+  Operations" (real topic: Antenna Geometry and Alignment).
+- **RFC-2363 has at least three different informally-assigned scopes**
+  across the corpus (Identity Resolution per RFC-2302/2303; Directory &
+  Routing Endpoints + ProvenanceRecord per RFC-2350 §4.7/§6.5/§7.8-9)
+  that were never reconciled — `TODOv2.md` settles this too:
+  **RFC-2363 = "Directory and Routing Endpoints (DRE)."** RFC-2302 and
+  RFC-2303's "Identity Resolution" label is the error.
+- **RFC-2368 in RFC-2305** is a number never referenced by any other
+  document — likely a typo for an adjacent Authority Plane number, not
+  independently confirmed.
+- **RFC-2370** (Relay Admission/Scheduling API) is treated as an
+  "immediate priority" module across all three TODO documents but has
+  no reserved slot in `TODOv2.md`'s block plan — Authority Plane
+  entries stop at RFC-2368, leaving 2369-2389 unclaimed. Needs a
+  formal number reservation, not a citation fix.
+
+### 2. Factual/technical citation errors (checkable, real defects)
+
+- **RFC-2350 §5.2** cites RFC-2301 and RFC-2302 as defining a
+  varint-prefixed binary encoding. Neither document contains any such
+  definition anywhere — confirmed by reading both in full. The most
+  concrete, checkable error found in the corpus: a specific "defined
+  over there" claim that doesn't hold up.
+
+### 3. Structural/editorial defects within a single document
+
+All confirmed by direct Read, not inferred from header scans alone —
+and all concentrated in the corpus's largest documents, which appears
+to be the actual risk factor (more content, more chances for a
+copy-paste/reorder pass to go wrong), not a per-document coincidence:
+
+- **RFC-2300** (2480 lines): Appendix B's ABNF contradicts its own
+  body text; a garbled `# Appee without breaking compatibility.`
+  fragment at line ~391 suggests a copy-paste assembly error; §§8-15
+  are misplaced RFC-2350 content, not terminology (flagged in
+  `CORPUS-STATUS.md` prior to this read-through).
+- **RFC-2307** (5519 lines): missing §3 entirely; a leftover
+  "(Rewritten in Correct Kade Voice)" heading artifact.
+- **RFC-2351** (9071 lines, largest in corpus): §8 "TLV Key Registry"
+  duplicated verbatim out of numeric order (§8, §7, §8); **Appendix H
+  "Interoperability Matrix" duplicated with directly contradictory
+  content** — one instance says full symmetric interoperability is
+  mandatory, the other says it's asymmetric with FORBIDDEN cases (the
+  second instance matches the rest of the document's own profile
+  rules, so the first looks stale).
+- **RFC-2352** (1254 lines): the single most severe defect found —
+  its own **Front Matter title reads "RFC-2306"** instead of
+  "RFC-2352" (RFC-2306 is a real, different, already-indexed
+  document), inside normative front matter rather than body prose;
+  **§39 duplicated verbatim with §40 missing entirely**; **Appendix J
+  and K use leftover C./D. subsection-letter prefixes** instead of
+  J./K., suggesting an unreconciled appendix-reordering pass.
+- **`docs/vault/RFCs/` (old folder)**: not internally self-consistent
+  on numbering at all — three separate number collisions (two
+  different "RFC-2350"s, two different "2354"s, two different
+  "2357"s) coexist in the same folder, a stronger warning than
+  `CORPUS-STATUS.md`'s existing "don't cross-reference by number to
+  the new plan" note. `RFC 2361 - SolNet Layer Model.md` states
+  "seven-layer model" in §1 then enumerates eight layers in §2.
+- **`TODOv2.md`** has unreformatted leftover conversation fragments
+  after its own "Final Checklist" heading (an RFC-24xx autonomous-
+  actors sketch, a doctrine-edit list, an Expanse-behaviors spot
+  check) — genuinely useful content, structurally out of place.
+
+### 4. Unremoved LLM-generation scaffolding (not a defect in normative
+
+text, but worth knowing before trusting a file's framing)
+
+This is its own category because it's a different *kind* of problem
+than #3 — it never appears inside RFC body text itself, only in
+draft/companion/planning material, and doesn't need "fixing" so much
+as recognizing on sight:
+
+- **`RFC 2359 - Bundle Addressing Protocol (BAP 1.0).md`** (old
+  folder) ends with "✔ RFC‑2351 (BAP 1.0) is complete." (wrong number)
+  followed by a dangling "If you want, I can continue with:" —  the
+  clearest raw leftover in the corpus.
+- **`RFC Companion/RFC 2309 - Timing.md`** preserves an entire two-way
+  chat transcript verbatim, including the user's own casual replies.
+- Nearly every large file in `RFC Companion/` opens or closes with a
+  leftover conversational fragment from its generation session.
+- `TODOv2.md`'s tail end (see #3 above) is the same pattern inside a
+  planning document.
+
+**Net read on severity:** categories 1 and 4 are cosmetic/organizational
+— safe, low-priority cleanup whenever someone's doing an editorial
+pass, no design decisions ride on them. Category 2 (the varint
+citation) and category 3's contradictions (RFC-2351's Appendix H
+above all) are the ones that could actually mislead an implementer and
+are worth a deliberate, sign-off'd correction pass — see
+`docs/NEXT-STEPS.md` for where these land in the priority list.
 
 ---
 
