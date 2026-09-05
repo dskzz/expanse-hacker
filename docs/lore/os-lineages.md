@@ -117,6 +117,31 @@ time for genuine, load-bearing dialects to form, nowhere near enough
 time for anyone to have forgotten *why*. Scrapshell's divergence
 should read as recent and felt, not ancient and archaeological (§5).
 
+**Why the gap has to be decades, not years — and what that implies
+about how Anderson is remembered "by now":** the real-world Expanse
+books never hard-pin Anderson Station's date relative to their own
+present day; the show plays it as recent, but the books leave enough
+slack that a gap of up to ~30 years is plausible, not a stretch
+against canon. Two concrete threads support the longer end of that
+range on their own: Johnson's own post-Anderson arc (getting hired by,
+then building up, Tycho Station into what it is by "present day") and
+the *Nauvoo*'s construction state by "present day" — both simply don't
+fit in ten years, independent of the atrocity-cooldown argument below.
+Compare to real history for that second argument: a decade is too
+short for 9/11-scale hostility to cool to the level of settled,
+low-heat resentment "present day" Anderson needs to read as — 30-plus
+years is closer to right. That has a specific consequence worth keeping, not
+just a dating justification: **the animosity that's left by "now"
+isn't really about the deaths anymore.** Enough time has passed that
+the atrocity itself has mostly been metabolized; what's left of
+anti-Johnson sentiment runs more on him being an Earther than on what
+he actually did to the people responsible for it. Grudges outlive
+their own reasons and get re-hosted on tribal lines instead — a
+specific instance of the setting's existing "gravity bends
+expectations and costs, not correctness or virtue" principle
+(`TODOv2.md`'s CHANGES section), applied to people instead of
+protocols.
+
 ## 2. The four lineages
 
 | Lineage | Vibe | Design implication |
@@ -327,16 +352,23 @@ the correction visible rather than quietly rewriting history:
   to trigger the one real consolidation attempt. §1 above now uses the
   Incident Timeline's actual dates and sequence directly instead of
   fitting them into an invented longer process.
-- **Known internal vault inconsistency, not resolved here:** the
-  Incident Timeline (`Notes/history/SolNet Incident Timeline.md`)
-  lists Anderson at ~2330 and "Drift Years (2330–2336)" as a *separate,
-  later* heading, while `Notes/voices/background/The Drift Years and
-  the Birth of the BRA.md` has the Drift Years causing Anderson (Vesta
-  → 15 years of drift → Anderson). §1 above follows the Incident
-  Timeline's dates but the BRA narrative's causal shape (drift causes
-  Anderson) since that's the more load-bearing story; someone should
-  reconcile these properly rather than this doc picking a winner by
-  default.
+- **Internal vault inconsistency — resolved 2026-09-05, by the user
+  directly:** the Incident Timeline (`Notes/history/SolNet Incident
+  Timeline.md`) lists Anderson at ~2330 and "Drift Years (2330–2336)"
+  as a *separate, later* heading, while `Notes/voices/background/The
+  Drift Years and the Birth of the BRA.md` has the Drift Years causing
+  Anderson (Vesta → 15 years of drift → Anderson). **Vesta → Drift →
+  Anderson is the correct order** — the BRA narrative's causal shape
+  wins outright, not just as this doc's default pick. §1 above already
+  used this order; it's now settled, not provisional.
+  Also confirmed: real-world Expanse canon doesn't hard-pin Anderson
+  Station's date relative to the books'/show's present day — the show
+  plays it as recent, but the books leave it vague enough that a gap
+  of up to ~30 years before "present day" is plausible. That's grounds
+  *for* this doc's ~50-year gap between Anderson/the RFCs and "now"
+  (§1), not against it — the real source material has more slack here
+  than a casual "it just happened" reading assumes, so a multi-decade
+  gap isn't a stretch against canon, it's within its actual ambiguity.
 - **RFC-2362 (Trust Domains and Authority Policy)** is the vault's own
   generic trust primitive (AuthorityWeight, cross-cert chains, no
   global CA) — the four lineages above are four different concrete
@@ -417,9 +449,9 @@ window dressing on the other:
   whether sub-forks within a lineage (e.g. a specific union splitting
   from mainline Scrapshell) are worth modeling before there's a
   concrete scenario that needs one.
-- The Incident-Timeline-vs-BRA-narrative sequencing conflict flagged
-  in §7 is still unresolved — needs the user's call, not a default
-  pick.
+- ~~The Incident-Timeline-vs-BRA-narrative sequencing conflict flagged
+  in §7~~ — **resolved 2026-09-05, by the user directly**: Vesta →
+  Drift → Anderson, BRA narrative's order, settled outright.
 - `corporations.md` populates the Corporate lineage with named players
   beyond Mao-Kwikowski; worth checking whether Scrapshell (or any
   other lineage) should get the same treatment — right now Scrapshell
