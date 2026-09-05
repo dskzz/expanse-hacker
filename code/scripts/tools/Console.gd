@@ -34,6 +34,10 @@ var _user := "tech"
 # for lineages that haven't been given a real succession story yet
 # (Earthstock/Mars/Corporate, per the doc's own open question).
 var _editor_name := "edit"
+# Current user's group, for the owner/group/other write check below --
+# empty for lineages that haven't authored one yet, which just means the
+# group tier of that check never matches (falls through to "other").
+var _user_group := ""
 var _hardware_state: Dictionary = {}
 var _color_scheme: Dictionary = {
 	"COLOR_DIR": "#5c9cff", "COLOR_SYMLINK": "#00d7d7", "COLOR_DEVICE": "#d7d700", "COLOR_EXEC": "#00d700",
@@ -72,6 +76,7 @@ func _load_vfs(instance_id: String) -> void:
 	_lineage_label = identity.get("lineage_label", "unknown-lineage")
 	_user = identity.get("user", "tech")
 	_editor_name = identity.get("editor_name", "edit")
+	_user_group = identity.get("group", "")
 	_hardware_state = loaded.get("hardware", {})
 	var tree: Dictionary = loaded["tree"]
 	var synthesized_dev := ContentLoader.synthesize_dev_folder(_hardware_state, _hostname.to_lower())
@@ -609,6 +614,26 @@ func _color_for_entry(node: Dictionary) -> String:
 		return _color_scheme["COLOR_EXEC"]
 	return ""
 
+func _can_write(node: Dictionary) -> bool:
+	# Real unix-style owner/group/other write check -- enforced now for
+	# scredit, the only thing that actually writes to the VFS, after Dan
+	# hit root's own perms (dr-xr-xr-x, 555 -- no write bit anywhere)
+	# unexpectedly succeeding. Standard precedence: owner bit if you own
+	# the node, else group bit if your group matches, else the other/
+	# "global" bit. Group membership is one flat identity.group field, not
+	# a real multi-group model -- there's exactly one player-controlled
+	# user in this game, so one group is enough to make /etc's deliberately
+	# group-writable perms (drwxrwxr-x, union collaboration) mean something
+	# real instead of being decorative.
+	var perms: String = node.get("perms", "")
+	if perms.length() < 10:
+		return false
+	if node.get("owner", "") == _user:
+		return perms[2] == "w"
+	if _user_group != "" and node.get("group", "") == _user_group:
+		return perms[5] == "w"
+	return perms[8] == "w"
+
 func _cmd_cat(args: PackedStringArray) -> void:
 	if args.is_empty():
 		_print_line("usage: cat <path>")
@@ -660,11 +685,17 @@ func _cmd_edit(args: PackedStringArray) -> void:
 		if parent_node == null or typeof(parent_node) != TYPE_DICTIONARY or parent_node.get("kind", "") != "dir":
 			_print_line("%s: %s: No such file or directory" % [_editor_name, path])
 			return
+		if not _can_write(parent_node):
+			_print_line("%s: %s: Permission denied" % [_editor_name, path])
+			return
 	elif node["kind"] == "dir":
 		_print_line("%s: %s: Is a directory" % [_editor_name, path])
 		return
 	elif node["perms"].begins_with("c") or node["perms"].begins_with("b"):
 		_print_line("%s: %s: is a device, not editable" % [_editor_name, path])
+		return
+	elif not _can_write(node):
+		_print_line("%s: %s: Permission denied" % [_editor_name, path])
 		return
 	var initial_content := "" if node == null else String(node.get("content", ""))
 	var overlay := TextEditorOverlayScene.instantiate()

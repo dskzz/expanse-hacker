@@ -148,6 +148,15 @@ func _init() -> void:
 	_expect_contains("scredit /nowhere/file.txt", "No such file or directory")
 	_expect_contains("scredit dev/relay-pallas-07/buffer0", "is a device, not editable")
 
+	# Permission enforcement (Dan, 2026-09-05): root is dr-xr-xr-x (555, no
+	# write bit anywhere) -- creating a file there must now actually fail,
+	# not silently succeed. /etc/motd is root:root -rw-r--r-- (no group/
+	# other write) -- tech isn't the owner and isn't in the "root" group, so
+	# editing it must fail too, even though tech *can* write elsewhere in
+	# /etc via the group bit (drwxrwxr-x, union-writable, checked below).
+	_expect_contains("scredit /newfile.txt", "Permission denied")
+	_expect_contains("scredit /etc/motd", "Permission denied")
+
 	# New file: overlay opens empty, WRITE OUT creates the file without
 	# closing (real nano semantics), then EXIT with nothing further changed
 	# closes directly (no unsaved-changes prompt).
@@ -181,17 +190,17 @@ func _init() -> void:
 				_failures += 1
 				print("FAIL: EXIT with no unsaved changes shouldn't prompt to save")
 
-	# Existing file: overlay opens pre-filled with the file's current
-	# content; exiting with unsaved changes prompts (reuses ConfirmModal)
-	# instead of silently discarding.
-	_run("scredit /etc/motd")
+	# Existing file tech actually owns: overlay opens pre-filled with the
+	# file's current content; exiting with unsaved changes prompts (reuses
+	# ConfirmModal) instead of silently discarding.
+	_run("scredit /etc/scrapper.profile")
 	editor = root.get_node_or_null("TextEditorOverlay")
 	if editor == null:
 		_failures += 1
-		print("FAIL: `scredit /etc/motd` didn't open the text editor overlay")
+		print("FAIL: `scredit /etc/scrapper.profile` didn't open the text editor overlay")
 	else:
 		var code_edit: CodeEdit = editor.get_node("Panel/VBox/Editor")
-		if not code_edit.text.contains("unregulated"):
+		if not code_edit.text.contains("COLOR_DIR"):
 			_failures += 1
 			print("FAIL: scredit on an existing file should pre-fill the buffer with its content, got %s" % JSON.stringify(code_edit.text))
 		code_edit.text += "\nedited."
@@ -203,7 +212,7 @@ func _init() -> void:
 		else:
 			exit_modal.get_node("Panel/VBox/ButtonRow/ConfirmButton").pressed.emit()
 			await process_frame # queue_free() is deferred, not synchronous
-			_expect_contains("cat /etc/motd", "edited.")
+			_expect_contains("cat /etc/scrapper.profile", "edited.")
 			if root.get_node_or_null("TextEditorOverlay") != null:
 				_failures += 1
 				print("FAIL: confirming the save-before-exit prompt should close the editor")
