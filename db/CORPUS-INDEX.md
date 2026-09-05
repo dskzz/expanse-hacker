@@ -635,3 +635,104 @@ contradiction, not just a repeat:**
    looks like the stale/incorrect one** — likely an earlier draft of
    the appendix left in place when it was rewritten, rather than two
    equally-valid alternatives.
+
+---
+
+## RFC-2352 — L1 Privacy and Metadata Minimization (1254 lines)
+
+**Status:** 📝 not converted (Companion doc exists). Read via header-scan
+plus targeted Read of the front matter, structural sections, and every
+appendix. Doctrinal in tone throughout — this is the "physical layer
+MUST be completely uniform/unfingerprintable across every conceivable
+axis" document. §§3-33 are a long, deliberately exhaustive enumeration
+of invariance requirements (metadata minimization, prohibited fields,
+residual handling, side-channel suppression, then a long run of
+increasingly specific invariance requirements — temporal, spatial,
+multi-path, cross-vendor timing, antenna/RF front-end, clock/oscillator,
+environmental noise, power-cycle/boot, manufacturing-batch/aging) all
+repeating the same "no observable variation may correlate with X"
+pattern. §34 defines 3 conformance classes (A Full, B Constrained, C
+presumably a third not fully sampled). §36 "Forbidden Behaviors
+Summary," §37 Security Considerations, §38 Interoperability
+Considerations. §42 References lists forward-pointers worth capturing
+for the priority list: RFC-2360 (Layer Model, cited as "Revised" —
+consistent with the majority naming already flagged in the RFC-2350
+entry above), RFC-2364 (Ephemeris Hint Block), RFC-2421 (Error Codes &
+Diagnostics — a new, never-elsewhere-seen number), RFC-2450 (Trust-
+Domain Enforcement & Auditing — also new), RFC-2481 (Minimal Viable DTN
+for Prototyping — also new), and an MIAP-Series (Martian
+Interoperability & Alignment Protocols) not seen in any other document
+read so far. **Appendices A-K** are genuinely good lore/flavor material:
+introduces **SPERB** (SolNet Physical-Layer Exposure Review Board) as
+the in-universe standards body enforcing this RFC, with a full
+sub-bureaucracy (DEN, NEEB, CBR, CVCO, TSRB, ENAG, RNC, DIC, RCT, CRA)
+— reads like a satirical but internally consistent regulatory apparatus,
+worth mining directly for flavor text/lore if Scrapshell ever wants an
+in-universe "why is L1 like this" voice distinct from the corpus's usual
+Working-Group framing.
+
+**Findings — three real defects, one of them the most severe
+title/identity mismatch found in the corpus so far:**
+
+1. **The document's own Front Matter title does not match its filename,
+   its own H1, or its RFC number.** Lines 6-7 read: "**Title:** SolNet
+   RFC‑2306 — Layer‑1 Invariance Specification" — but the filename is
+   `RFC 2352 - L1 Privacy and Metadata Minimization.md`, the actual H1
+   at line 19 reads "RFC‑2352 — L1 Privacy & Metadata Minimization,"
+   and every cross-reference elsewhere in the corpus (including this
+   document's own §42 References, which cites itself as "[RFC-2352] L1
+   Privacy & Metadata Minimization") agrees it's 2352. "RFC-2306" isn't
+   a stray number either — RFC-2306 is a real, different, already-
+   indexed document in this corpus (Tightbeam Laser Subprofile). This
+   reads like a copy-paste front-matter template that was never updated
+   after being cloned from a different draft. Not a rendering artifact
+   — directly verified by Read. Worth flagging to the user since,
+   unlike the RFC-number-mislabeling-in-prose class of finding
+   documented elsewhere in this index, this is inside the document's
+   own normative front matter, the part most likely to get parsed by
+   tooling.
+2. **§39 "Implementation Guidance (Non-Normative)" is duplicated
+   verbatim** (lines 671 and 687, identical text both times), **and
+   §40 is entirely missing** — the document jumps §38 → §39 → §39 → §41,
+   with no §40 anywhere. Same defect class as RFC-2351's duplicated §8
+   and RFC-2307's missing §3 — a real, repeating pattern across this
+   corpus's largest documents specifically (all three of the longest
+   files read so far have exactly this kind of numbering breakage).
+3. **Appendix J and Appendix K use the wrong letter prefix throughout
+   their own subsections.** Appendix J ("SPERB Organizational
+   Structure," line 1185) labels every subsection C.1 through C.11, not
+   J.1-J.11. Appendix K ("Authorship," line 1220) labels its
+   subsections D.1, D.2 (sampled), not K.1, K.2. (Appendix H, sampled
+   for comparison, correctly uses H.1-H.6.) This looks like J and K
+   were originally drafted as "Appendix C" and "Appendix D" earlier in
+   the document's history, then re-lettered when appendices were
+   inserted/reordered, with only the heading text updated and not the
+   internal subsection numbering — consistent with the copy-paste/
+   reordering pattern already seen in findings #1 and #2 above, and
+   with RFC-2351's Appendix H duplication. Across this corpus, appendix
+   reordering appears to be the single most error-prone editorial
+   operation.
+
+---
+
+## `New RFCs/wokring/` subfolder — superseded working drafts (3 files, 1289 lines total)
+
+**Status:** not part of canonical corpus, sampled only. `2300 new
+combined.md` (315 lines) and `2300 smart doc.md` (361 lines) are both
+earlier/alternate drafts of RFC-2300, superseded by the canonical
+`New RFCs/RFC 2300 - Solnet Terms and Concepts.md` (already indexed
+above) — same core definitions (UUID-S7, LocationChain/ServiceChain,
+L-stack/S-stack), written in a more informal/editorializing voice
+("Anyone mixing the old and new names... deserve the outage that
+follows"). `2300 smart doc.md` is notably the more complete draft:
+it appends a full TLV/profile extension model with its own key-range
+partitioning scheme (`0x00-0x1F` Core hooks, `0x20-0x5F` L0
+subprofiles) that does **not** match RFC-2351's canonical TLV Key
+Registry ranges (0-31 SSWG, 32-63 A-stack, 64-127 N-stack, 128-255
+vendor) — but since this is explicitly superseded draft material, not
+live canonical text, this isn't a corpus inconsistency, just evidence
+of how the TLV scheme evolved. `RFC 2306 - Tighbeam Laser
+Subprofile.md` (613 lines) is a shorter/earlier draft of the canonical
+1496-line RFC-2306 already indexed above. None of the three need
+separate treatment — noted here only so a future reader doesn't
+mistake them for undocumented canonical content.
