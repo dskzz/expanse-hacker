@@ -171,6 +171,28 @@ Mars (confident, doctrinal, 70 years of tightbeam expertise); Scrapshell
 ≈ BRA/IROC/OPA descent; Corporate ≈ Mao-Kwikowski and the other named
 players in [`corporations.md`](corporations.md).
 
+### Product and shell names (settled 2026-09-05)
+
+The four lineage names above are categories, not products — same
+relationship as "Linux" to "Ubuntu." Real product/shell names, worked
+out directly with the user:
+
+| Lineage | Flagship product(s) | Embedded/constrained form | Shell |
+|---|---|---|---|
+| *(common ancestor)* | **SolOS** — the OPRA-era (~2339–42) frozen L0/L1 reference release everything below actually descends from | — | — |
+| **Earthstock** | **Earthstock CoreOS** (official, UN-ID/government — dry, defensible-in-a-meeting, a committee name) **and**, independently forked from the same SolOS ancestor, **GaiaOS** (a university/research consortium's own system — mythological branding fits *that* kind of committee, not a standards body; extra resonance if it's specifically an earth-systems-science network, a direct nod to the real Gaia hypothesis) | **CoreOS-CE** ("Compact Edition") — same compliance/ceremony weight, just smaller, matching how real regulated-industry embedded firmware stays bloated with certification overhead even at tiny footprints | `bash`, unchanged — ceremony-heavy institutional culture preserves precedent faithfully |
+| **BeltOS** | **Scrapshell** — the flagship, our primary player-facing dialect | **miniscrapshell** (real, `db/vfs/templates/miniscrapshell.json` — strips `/usr/lib`) | `sash` — eroded from "Scrapshell sh" over decades of oral/hand-patched use, the same folk-erosion mechanic as `/etc` → "Everyone's To-Change" (§5) |
+| **Tharsis** (Mars — doesn't fragment the way the Belt does, so one product, not a category-vs-flagship split) | **Tharsis** | **Tharsis-TCB** — not a shrink, a structurally different thing: capability systems are already minimal by design in reality (real ones like seL4 are tiny, verified microkernels with nothing to strip), so Mars's constrained-device form is a bare capability-execution stub with **no shell at all** — no `msh`, because a device nobody's meant to sit down and type into doesn't need one | `msh`, pronounced "mash" — plain, undecorated (M + sh), on-brand for Mars's doctrinal voice; rhymes with `bash` as convergent evolution (`bash`/`dash`/`hash`/`cash` are all real short *-ash* words), not a forced pun |
+| **Corporate** | deliberately none — Mao-Kwikowski's own branded firmware, VARS's own, etc. (`corporations.md`) | already real and concrete: `db/components/vars-buffer-mk2.json` *is* one vendor's constrained-device firmware | deliberately none, matches no shared OS name |
+
+`Tharsis`'s own name is real Mars nomenclature, not invented: the
+volcanic plateau hosting the solar system's largest volcanoes, itself
+named by Schiaparelli's 19th-century Mars mapping after the biblical
+Tarshish (the "ships of Tarshish" — a far, wealthy, never-quite-pinned-
+down trading frontier). The volcanoes-gone-dormant-for-eons physical
+reality is a fitting, if coincidental, metaphor for a lineage that
+made one enormous early leap and then froze.
+
 ## 3. Root, four ways
 
 **Earthstock — chain-of-custody.** `elevate --cert=<chain>
