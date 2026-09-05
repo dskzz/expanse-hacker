@@ -3,5 +3,7 @@
   "id": "z",
   "kind": "software",
   "help": "z <fragment> -- jump to the most recently visited directory matching fragment",
+  "usage": "z <fragment>",
+  "synopsis": "Jump to the most recently visited directory whose path contains fragment.",
   "effect": {"type": "zoxide_jump"}
 }

@@ -3,5 +3,10 @@
   "id": "spec",
   "kind": "software",
   "help": "spec <protocol> [--full] -- show a protocol's curated spec excerpt (or the full RFC text with --full)",
+  "usage": "spec <protocol> [--full]",
+  "synopsis": "Show a protocol's curated spec excerpt -- the specific clause that matters, tldr-style, not a full-text dump.",
+  "options": [
+    {"flag": "--full", "desc": "Print the complete RFC text instead of the curated excerpt."}
+  ],
   "effect": {"type": "spec_lookup"}
 }

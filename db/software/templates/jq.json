@@ -3,5 +3,7 @@
   "id": "jq",
   "kind": "software",
   "help": "jq <.dotted.path> <rfc-or-hardware-id> -- query a field out of a protocol/hardware doc",
+  "usage": "jq <.dotted.path> <rfc-or-hardware-id>",
+  "synopsis": "Query a single dotted field path out of a protocol (by RFC id) or hardware document (by id).",
   "effect": {"type": "json_query"}
 }

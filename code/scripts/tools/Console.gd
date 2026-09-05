@@ -176,6 +176,7 @@ func _run_command(line: String) -> void:
 	match cmd:
 		"help":
 			_print_line("Commands: help, clear, palette, whoami, pwd, ls [-la] [path], cd [path], cat <path>")
+			_print_line("usr/bin tools: ls /usr/bin to see what this box ships; run any of them with --help for details.")
 		"clear":
 			output.clear()
 		"palette":
@@ -206,8 +207,29 @@ func _try_software_bank(cmd: String, args: PackedStringArray) -> bool:
 	if tool.is_empty():
 		_print_line("%s: software bank entry missing" % cmd)
 		return true
+	if args.has("--help") or args.has("-h"):
+		_print_tool_help(cmd, tool)
+		return true
 	_run_software_effect(tool, args)
 	return true
+
+func _print_tool_help(cmd: String, tool: Dictionary) -> void:
+	# Standard nix --help formatting (Usage / synopsis / Options), driven
+	# entirely by each tool's JSON (usage/synopsis/options fields) -- new
+	# Software Bank entries get real --help for free, same "data, not code"
+	# pattern as the tools themselves.
+	var usage: String = tool.get("usage", tool.get("help", cmd))
+	_print_line("Usage: %s" % usage)
+	var synopsis: String = tool.get("synopsis", "")
+	if synopsis != "":
+		_print_line("")
+		_print_line(synopsis)
+	var options: Array = tool.get("options", [])
+	if not options.is_empty():
+		_print_line("")
+		_print_line("Options:")
+		for opt in options:
+			_print_line("  %-22s %s" % [opt.get("flag", "?"), opt.get("desc", "")])
 
 func _run_software_effect(tool: Dictionary, args: PackedStringArray) -> void:
 	var effect: Dictionary = tool.get("effect", {})

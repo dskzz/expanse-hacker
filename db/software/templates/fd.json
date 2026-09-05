@@ -3,5 +3,7 @@
   "id": "fd",
   "kind": "software",
   "help": "fd <pattern> [path] -- recursively find files/dirs by name",
+  "usage": "fd <pattern> [path]",
+  "synopsis": "Recursively find files and directories whose name contains pattern. Defaults to the current directory.",
   "effect": {"type": "find_search"}
 }

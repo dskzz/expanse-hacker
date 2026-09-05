@@ -3,5 +3,10 @@
   "id": "claim",
   "kind": "software",
   "help": "claim root --union-vote -- request root via union quorum vote",
+  "usage": "claim root --union-vote",
+  "synopsis": "Request root on this box via Scrapshell's union quorum model -- root is granted by vote, not sudo.",
+  "options": [
+    {"flag": "--union-vote", "desc": "The only supported root model on Scrapshell. Submits your own second and waits on the rest of the quorum."}
+  ],
   "effect": {"type": "root_claim", "root_model": "quorum", "quorum_required": 3}
 }
