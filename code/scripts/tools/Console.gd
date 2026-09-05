@@ -18,6 +18,9 @@ var _hostname := "unknown-host"
 var _lineage_label := "unknown-lineage"
 var _user := "tech"
 var _hardware_state: Dictionary = {}
+var _color_scheme: Dictionary = {
+	"COLOR_DIR": "#5c9cff", "COLOR_SYMLINK": "#00d7d7", "COLOR_DEVICE": "#d7d700", "COLOR_EXEC": "#00d700"
+}
 
 func _ready() -> void:
 	_load_vfs(DEFAULT_INSTANCE)
@@ -39,6 +42,19 @@ func _load_vfs(instance_id: String) -> void:
 	if not synthesized_dev.is_empty() and tree.has("dev") and tree["dev"].has("children"):
 		tree["dev"]["children"][_hostname.to_lower()] = synthesized_dev
 	_vfs = {"kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "", "children": tree}
+	_load_color_scheme()
+
+func _load_color_scheme() -> void:
+	# Reads /etc/consolerc as real content instead of hardcoded values -- this
+	# is what a future in-game text editor would let a player customize live,
+	# same "bashrc for this machine" idea as any other dotfile.
+	var conf_node = _lookup(PackedStringArray(["etc", "consolerc"]))
+	if conf_node == null or typeof(conf_node) != TYPE_DICTIONARY or not conf_node.has("content"):
+		return
+	for line in String(conf_node["content"]).split("\n"):
+		var eq := line.find("=")
+		if eq > 0:
+			_color_scheme[line.substr(0, eq)] = line.substr(eq + 1)
 
 func _prompt() -> String:
 	return "%s@%s (%s) $ " % [_user, _hostname, _lineage_label]
@@ -258,14 +274,17 @@ func _cmd_ls(args: PackedStringArray) -> void:
 	if not long_format:
 		var entry_names = node["children"].keys()
 		entry_names.sort()
-		_print_line("  ".join(entry_names))
+		var colored: Array = []
+		for name in entry_names:
+			colored.append(_colorize_name(node["children"][name], name))
+		_print_bbcode("  ".join(colored))
 		return
-	_print_line(_format_ls_row(node, "."))
+	_print_bbcode(_format_ls_row(node, "."))
 	var children: Dictionary = node["children"]
 	var names := children.keys()
 	names.sort()
 	for entry_name in names:
-		_print_line(_format_ls_row(children[entry_name], entry_name))
+		_print_bbcode(_format_ls_row(children[entry_name], entry_name))
 
 func _format_ls_row(node: Dictionary, entry_name: String) -> String:
 	var link_count := 1
@@ -278,8 +297,31 @@ func _format_ls_row(node: Dictionary, entry_name: String) -> String:
 	if node["kind"] == "symlink":
 		display_name = "%s -> %s" % [entry_name, node["target"]]
 	return "%-11s %2d %-6s %-6s %6s  %s  %s" % [
-		node["perms"], link_count, node["owner"], node["group"], node["size"], node["mtime"], display_name
+		node["perms"], link_count, node["owner"], node["group"], node["size"], node["mtime"], _colorize_name(node, display_name)
 	]
+
+# Real-ls-style coloring: dirs blue, symlinks cyan, device files yellow,
+# executables green, plain files uncolored. Names/content are escaped
+# elsewhere (_print_line/_escape_bbcode) precisely so this is the one place
+# allowed to emit real [color] tags without them getting neutralized.
+func _colorize_name(node: Dictionary, display_name: String) -> String:
+	var color := _color_for_entry(node)
+	if color == "":
+		return display_name
+	return "[color=%s]%s[/color]" % [color, display_name]
+
+func _color_for_entry(node: Dictionary) -> String:
+	var kind: String = node.get("kind", "")
+	var perms: String = node.get("perms", "")
+	if kind == "symlink":
+		return _color_scheme["COLOR_SYMLINK"]
+	if kind == "dir":
+		return _color_scheme["COLOR_DIR"]
+	if perms.begins_with("c") or perms.begins_with("b"):
+		return _color_scheme["COLOR_DEVICE"]
+	if perms.length() >= 10 and (perms[3] == "x" or perms[6] == "x" or perms[9] == "x"):
+		return _color_scheme["COLOR_EXEC"]
+	return ""
 
 func _cmd_cat(args: PackedStringArray) -> void:
 	if args.is_empty():
@@ -300,7 +342,7 @@ func _cmd_cat(args: PackedStringArray) -> void:
 	if node["kind"] == "dir":
 		_print_line("cat: %s: Is a directory" % path)
 		return
-	output.append_text(node["content"])
+	output.append_text(_escape_bbcode(node["content"]))
 
 func _resolve_path(base: PackedStringArray, path: String) -> PackedStringArray:
 	var segments := PackedStringArray() if path.begins_with("/") else base.duplicate()
@@ -336,4 +378,14 @@ func _path_string(segments: PackedStringArray) -> String:
 	return "/" + "/".join(segments)
 
 func _print_line(text: String) -> void:
+	# Escaped by default -- most content (flavor text, error messages, cat'd
+	# files) has never had to worry about literal "[" "]" before bbcode_enabled
+	# was turned on for `ls` coloring. Use _print_bbcode for lines that
+	# deliberately carry real formatting tags (e.g. _format_ls_row's output).
+	output.append_text(_escape_bbcode(text) + "\n")
+
+func _print_bbcode(text: String) -> void:
 	output.append_text(text + "\n")
+
+func _escape_bbcode(text: String) -> String:
+	return text.replace("[", "[lb]").replace("]", "[rb]")
