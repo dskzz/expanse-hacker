@@ -15,6 +15,13 @@ one.
   in a machine's `bin/`: shell builtins vs. installable software,
   the coreutils-succession table (ripgrep over grep, etc.), and how
   command presence/absence is itself lineage-diagnostic content.
+- [`glove-safe-ui.md`](glove-safe-ui.md) — the one interaction-level
+  standard that stays unified across all four lineages (physical
+  constraint, not politics, so it doesn't fragment): inline
+  button/status-light/gauge widgets in the shell, a pop-out quick-
+  access palette, a pin/registry mechanic for pushing live data onto a
+  button, large-tile drag-and-drop `ls` for glove mode, and big-format
+  confirm/cancel — plus a Godot feasibility read on each piece.
 
 ## The practical/visual counterpart (Sid's side, `reference/`)
 

@@ -297,6 +297,18 @@ Two panes, one player, matching "belter technician, not desk hacker":
   standalone — so the contract needs to carry both kinds of action
   symmetrically from day one, not bolt physical actions on after the
   fact.
+- **Glove-safe widgets** (2026-09-05, see `docs/systems/glove-safe-ui.md`
+  for the full design): the terminal pane isn't pure text forever — a
+  small, fixed vocabulary of inline widgets (button, status light,
+  gauge, confirm/select) plus a pop-out quick-access palette, a
+  pin/registry mechanic for pushing live data onto a button, and a
+  large-tile drag-and-drop rendering of `ls` for suited/gloved play.
+  Same TLV-style doctrine as the protocols themselves: an unrecognized
+  widget (or a renderer with no glove-safe support at all) falls back
+  to plain text, never breaks. This is one of the few things that
+  plausibly stayed standardized across all four lineages post-OPRA,
+  since the driver is a physical constraint (a pressure glove), not a
+  political one.
 
 ## 5. Repo shape (actual, superseding the original proposal below)
 
