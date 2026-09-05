@@ -736,3 +736,100 @@ Subprofile.md` (613 lines) is a shorter/earlier draft of the canonical
 1496-line RFC-2306 already indexed above. None of the three need
 separate treatment — noted here only so a future reader doesn't
 mistake them for undocumented canonical content.
+
+---
+
+## `docs/vault/RFCs/` — old/superseded folder (16 files, 5124 lines total)
+
+**Status:** all 16 read in full (each 194-632 lines, small enough for
+direct reading, no header-scan needed). Per `CORPUS-STATUS.md`'s
+standing rule, **treat by topic, not number** — this folder predates
+`New RFCs/TODOv2.md`'s numbering plan and reuses numbers for
+completely different content than the canonical corpus. One
+consolidated entry here rather than 16 separate ones, since the value
+is in the architecture-as-a-whole and specific forward-pointers, not
+per-file minutiae the way the huge `New RFCs/` documents needed.
+
+**The whole folder is one internally consistent draft architecture**,
+different from (and older than) the canonical `New RFCs/` L0-L5
+model: **NNS (Network Namespace System) → UUID → BAP (Bundle
+Addressing Protocol) → DTN routing**, with **PNS (Personal Naming
+Service)** as the identity layer, all federated under loose trust
+domains (HIGH/MEDIUM/LOW/UNKNOWN — Earth/Mars/Luna, Tycho/Ganymede/
+Ceres, independents, unverified). This whole vocabulary (NNS, BAP,
+PNS, AuthorityChain//NamespaceChain) was later replaced by the
+canonical corpus's LocationChain//ServiceChain + UUID-S7 + DRE
+vocabulary — genuinely useful as a "previous iteration" reference for
+understanding *why* the current scheme looks the way it does, and as
+literal source material for topics the canonical corpus hasn't drafted
+yet (Authority Plane, Namespace Plane — see `CORPUS-STATUS.md`'s
+existing per-topic cross-references, which this entry doesn't repeat).
+
+**One genuinely new, valuable finding not yet flagged anywhere: this
+folder already answers Dan's earlier open design question about
+biometric authentication replacing passwords.** `RFC 2355 - Personal
+Device Integration Guidelines.md` and `RFC 2356 - Personal Namespace &
+Identity (PNS + keys).md` **independently and consistently** define
+the standard SolNet personal-identity chain as **Biomarker → Keypair →
+PNS Label(s) → Current NNS Address → BAP Routing** — biometric
+authentication (fingerprint/retinal/voiceprint/DNA-hash) unlocks a
+persistent keypair that *is* the real identity anchor, with human-
+readable labels and routable addresses as disposable/mutable layers on
+top. Explicitly supports disposable/anonymous devices (vending-machine
+handsets), device handoff, and name changes without identity loss.
+This is exactly the "passwords evolved into something biometric"
+answer Dan was reaching for earlier in this session and it's already
+established, twice, as old-draft canon — worth carrying forward into
+whatever RFC eventually formalizes multi-user auth in the canonical
+corpus (currently undrafted; `os-lineages.md` doesn't cover this yet
+either), rather than inventing a new mechanism from scratch.
+
+**Findings — three real defects, plus one instructive non-defect:**
+
+1. **Two unrelated documents both claim to be "RFC-2350," and this
+   pattern repeats for 2354 and 2357.** `RFC 2350 - NNS 1.0.md` (whose
+   own H1 says "SolNet Canonical Addressing Standard," not "NNS 1.0" —
+   a fourth mismatched-title instance, on top of the ones already
+   found in `New RFCs/`) defines `AuthorityChain // NamespaceChain`
+   addressing; `RFC 2350 - Revised SolNet Foundation.md` defines the
+   entire NNS/UUID/BAP/PNS/DTN four-component architecture instead —
+   totally different content under the same number, in the same
+   folder. Same double-booking happens for 2354 (`DTN Routing
+   policy.md` vs `Mobility Hint Block Spec.md`) and 2357
+   (`Internamespace Gateway Protocol.md` vs `PNS Caching and Gossip
+   Protocol.md`). This means the old folder isn't just "differently
+   numbered from the new corpus" (as `CORPUS-STATUS.md` already
+   documents) — **it isn't even internally self-consistent on
+   numbering**, which is a stronger warning than previously recorded:
+   don't just avoid cross-referencing its numbers to the new plan,
+   avoid assuming any single number in this folder picks out one
+   document at all.
+2. **`RFC 2350 - NNS 1.0.md`'s own AuthorityChain//NamespaceChain
+   grammar is the direct textual ancestor of the canonical
+   LocationChain//ServiceChain grammar** — same two-chain-plus-`//`
+   shape, same "left side is global/who, right side is local/what"
+   split, same PNI shorthand (`<Identity>@<AuthorityChain>`), even the
+   same worked examples reused nearly verbatim in the canonical
+   RFC-2350 (`MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG-1:Reactor`).
+   Not a defect — flagged here as confirmation, from primary source
+   material, of what this session's addressing design conversation
+   with Dan had already inferred and built `rfc-proposals/
+   rfc2350-addressing-grammar.md` around.
+3. **`RFC 2361 - SolNet Layer Model.md` miscounts its own layers.**
+   §1 states "This RFC establishes the **seven‑layer model**," but §2
+   then enumerates eight numbered layers (L0 Contact Ecology, L1 NNS,
+   L2 Identity, L2.5 Jurisdiction, L3 BAP, L4 Mobility/Ephemeris, L5
+   Session/Security, L6 Application). Whether L2.5 was meant to not
+   count as a full layer (an inserted half-layer) or the "seven" is
+   simply wrong isn't stated either way — same self-contradicting-
+   count defect class as `New RFCs/RFC 2352`'s missing §40.
+4. **`RFC 2359 - Bundle Addressing Protocol (BAP 1.0).md` ends with an
+   unremoved AI-drafting artifact**, the clearest one found in the
+   whole corpus: the document's closing line reads "# ✔ **RFC‑2351
+   (BAP 1.0) is complete.**" (wrong number — every other reference,
+   including the filename and the document's own H1, agrees it's
+   RFC-2359, not 2351) followed immediately by "If you want, I can
+   continue with:" — a dangling, mid-sentence offer-to-continue,
+   clearly leftover from whatever generation process produced the
+   draft, never cleaned up before being saved into the vault. Not
+   normative content of any kind; purely an editorial leftover.
