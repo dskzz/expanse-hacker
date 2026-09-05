@@ -124,3 +124,14 @@ into decoration.
   never a general process-exec capability) reserved for the few where
   the algorithm itself is genuinely hard — `delta`/diff being the
   concrete first case, not `rg`/`sd`/`jq`.
+- **`rg`, `fd`, `jq`, `bat`, `z` built 2026-09-05** — real Software Bank
+  entries + `Console.gd` effect handlers, confirming the native-GDScript
+  read above: `rg`/`fd` walk the VFS tree with `RegEx`/substring match,
+  `jq` does a single dotted-path lookup against a protocol/hardware doc
+  (not full jq filter syntax), `bat` adds a header/line numbers and
+  explicitly flags opaque/binary content per RFC-2304's doctrine, `z` is
+  recency-only (not true frecency) against a session-local visited-dirs
+  list. `delta`/diff and `sd` still not built — `sd` specifically needs
+  real file-write support, which nothing has yet (same gap as editing
+  `/etc/consolerc` live). `dust`/`btm` not attempted — lower value
+  without the tenant/namespace engine layer they're meant to visualize.

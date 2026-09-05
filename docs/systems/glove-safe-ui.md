@@ -7,6 +7,20 @@ a tech working a splice outside in a suit, gloved, can't rely on
 precision typing or small text. The shell has to fail over to something
 tap/drag-friendly without turning into "a whole GUI."
 
+**Implemented 2026-09-05** (same day): sections 1 (inline widgets:
+button/status-light/gauge, applied to `probe`/`spec`), 5 (big confirm
+modal, applied to `claim`), 3 (pin/registry via `<command> | pin =>
+<name>`, snapshot semantics as recommended), and 2 (pop-out palette,
+static entries + live registry entries, opened via a `☰` button next to
+the prompt or the `palette` command). Headless-tested in
+`testing/console_smoke_test.gd`. **Section 4 (large-tile glove-mode
+`ls`, drag-and-drop) deliberately not built this pass** — per this
+doc's own sequencing advice (§6: "the real UI-building effort, worth
+doing once the cheaper pieces prove the concept is fun") and its status
+as the biggest lift of the five. Real code, not a stub, for everything
+else: see `code/scripts/tools/Console.gd`, `glove_widgets.gd`,
+`ConfirmModal.gd`/`.tscn`, `PaletteOverlay.gd`/`.tscn`.
+
 ## 0. Why this is one standard, not four
 
 Every other divergence in this project (`os-lineages.md` §2-3) tracks a

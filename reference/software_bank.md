@@ -1,15 +1,17 @@
 # Software Bank — Design Notes
 
-Status: **implemented (first pass), 2026-09-04.** Dan asked for this directly ("I think we need a
-'Software bank'"). Gary decided the structural question below (`db/software/` gets its own folder,
-recorded in `db/README.md`) and wrote `docs/systems/console-commands.md` specifying the exact
-mechanism — Console.gd's dispatcher falls through an unrecognized command to a `usr/bin/` lookup
-before printing "command not found," so filling `bin/` is a content task, not a code change. Built
-against that spec: `db/software/templates/{spec,probe,claim}.json`, wired into
-`db/vfs/templates/scrapshell.json`'s `usr/bin/`, with real effect handlers in `Console.gd`
-(`spec_lookup`, `probe_lookup`, `root_claim`) reading actual `db/protocols/`, `db/hardware/`,
-`db/components/` content — not flavor text. Headless-tested. What's below is the original design
-reasoning; still accurate, just no longer speculative.
+Status: **implemented, growing.** Dan asked for this directly ("I think we need a 'Software
+bank'"), 2026-09-04. Gary decided the structural question below (`db/software/` gets its own
+folder, recorded in `db/README.md`) and wrote `docs/systems/console-commands.md` specifying the
+exact mechanism — Console.gd's dispatcher falls through an unrecognized command to a `usr/bin/`
+lookup before printing "command not found," so filling `bin/` is a content task, not a code
+change. Nine real entries as of 2026-09-05, all wired into `db/vfs/templates/scrapshell.json`'s
+`usr/bin/` with real effect handlers in `Console.gd`, not flavor text: `spec`/`probe`/`claim`
+(2026-09-04, reading `db/protocols/`/`hardware/`/`components/`), `pin` (glove-safe-ui.md §3,
+special-cased pipe syntax), and `rg`/`fd`/`jq`/`bat`/`z` (console-commands.md's Tier 2
+coreutils-succession table, native GDScript per `reference/algorithm_backend.md`). Headless-tested
+throughout. What's below is the original design reasoning; still accurate, just no longer
+speculative.
 
 ## The gap this fills
 

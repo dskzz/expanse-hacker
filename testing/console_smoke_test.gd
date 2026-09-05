@@ -35,7 +35,7 @@ func _init() -> void:
 	_expect_contains("boguscmd", "command not found")
 
 	_expect_output("ls", "bin  dev  etc  link  sbin  srv  tmp  usr  var")
-	_expect_output("ls etc", "consolerc  duty-policy.conf  motd  patches.log  union.trust")
+	_expect_output("ls etc", "aliases  consolerc  duty-policy.conf  motd  patches.log  union.trust")
 
 	# ls coloring reads /etc/consolerc (real content, not hardcoded) -- Dan's
 	# "bashrc for this machine" idea, 2026-09-04. get_parsed_text() strips
@@ -54,6 +54,24 @@ func _init() -> void:
 	_expect_contains("cat dev/relay-pallas-07/buffer0", "rated / 4 locked")
 	_expect_contains("cat dev/relay-pallas-07/power", "peak_power_w: 60")
 
+	# Tier 2 coreutils-successors (console-commands.md), native GDScript,
+	# real Software Bank entries in usr/bin.
+	_run("cd /")
+	_expect_contains("rg HANDWAVE /etc/duty-policy.conf", "ADMISSION_MODE=HANDWAVE_TX")
+	_expect_contains("fd conf etc", "etc/duty-policy.conf")
+	_expect_contains("jq slots.power.duty_limit_pct_per_hour relay.courier-rig.class-c", "10")
+	_expect_contains("bat etc/duty-policy.conf", "ADMISSION_MODE=HANDWAVE_TX")
+	_expect_contains("bat srv/relay/duty-reservation.state", "binary or opaque state")
+	_run("cd /etc")
+	_run("cd /dev")
+	_run("z etc")
+	_expect_output("pwd", "/etc")
+
+	# /etc/aliases -- real editable content, expanded before dispatch.
+	# ll=ls -la, so this should produce the long format, not the short one.
+	_run("cd /")
+	_expect_contains("ll", "drwxr")
+
 	# Software Bank fallthrough: spec/probe/claim aren't builtins, they
 	# resolve via usr/bin -> db/software/.
 	_expect_contains("spec rfc2305", "RFC-2305")
@@ -61,7 +79,56 @@ func _init() -> void:
 	_expect_contains("probe rfc2305 --node RELAY-PALLAS-07", "ADMISSION_MODE=HANDWAVE_TX")
 	_expect_contains("probe rfc2305 --node RELAY-PALLAS-07", "VARS-BUF-MK2")
 	_expect_contains("probe rfc2305 --node RELAY-PALLAS-07", "degraded")
-	_expect_contains("claim root --union-vote", "union quorum")
+	# claim shows a big confirm modal (glove-safe-ui.md section 5) instead of
+	# acting immediately -- verify the modal appears and that confirming it
+	# (a real button press, not just calling the effect directly) produces
+	# the expected follow-up output.
+	_console.get_node("Output").clear()
+	_run("claim root --union-vote")
+	var modal := root.get_node_or_null("ConfirmModal")
+	if modal == null:
+		_failures += 1
+		print("FAIL: `claim root --union-vote` didn't show a confirm modal")
+	else:
+		modal.get_node("Panel/VBox/ButtonRow/ConfirmButton").pressed.emit()
+		var claim_output := _last_output()
+		if not claim_output.contains("union quorum"):
+			_failures += 1
+			print("FAIL: confirming claim's modal didn't produce expected output, got %s" % JSON.stringify(claim_output))
+
+	# pin/registry (glove-safe-ui.md section 3): `<command> | pin => <name>`
+	# should capture the left-hand command's plain output (not run it twice,
+	# not print it directly) into Console's registry.
+	_console.get_node("Output").clear()
+	_run("spec rfc2305 | pin => spec.rfc2305")
+	var registry = _console.get("_registry")
+	if typeof(registry) != TYPE_DICTIONARY or not str(registry.get("spec.rfc2305", "")).contains("RFC-2305"):
+		_failures += 1
+		print("FAIL: `spec rfc2305 | pin => spec.rfc2305` didn't populate the registry, got %s" % str(registry))
+	if not _last_output().contains("pinned"):
+		_failures += 1
+		print("FAIL: pin didn't confirm with a 'pinned N chars' message")
+
+	# palette (glove-safe-ui.md section 2): toggles a real overlay Control,
+	# populated with static entries plus whatever's in the registry.
+	_run("palette")
+	var palette := root.get_node_or_null("PaletteOverlay")
+	if palette == null:
+		_failures += 1
+		print("FAIL: `palette` didn't open the quick-access overlay")
+	else:
+		var entries := palette.get_node("Panel/VBox/Scroll/Entries")
+		var found_pin := false
+		for child in entries.get_children():
+			if child is Button and child.text == "spec.rfc2305":
+				found_pin = true
+		if not found_pin:
+			_failures += 1
+			print("FAIL: palette didn't show the pinned 'spec.rfc2305' slot as a button")
+		_run("palette")
+		if _console.get("_palette") != null:
+			_failures += 1
+			print("FAIL: running `palette` again didn't close it")
 
 	if _failures == 0:
 		print("console_smoke_test: all checks passed")

@@ -1,0 +1,7 @@
+{
+  "_notes": "zoxide's real successor per console-commands.md: 'frecency-jump across a DTN filesystem with many relay hops is a bigger real win here than on a laptop.' v1 scope: recency only (most-recently-visited match), not true frecency (frequency + recency) -- session-only history, cleared on reload same as the pin registry.",
+  "id": "z",
+  "kind": "software",
+  "help": "z <fragment> -- jump to the most recently visited directory matching fragment",
+  "effect": {"type": "zoxide_jump"}
+}

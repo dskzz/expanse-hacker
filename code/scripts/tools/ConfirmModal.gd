@@ -1,0 +1,30 @@
+extends Control
+
+# Big confirm/cancel modal for consequential actions, per
+# docs/systems/glove-safe-ui.md section 5 -- oversized tap targets,
+# physically hard to fat-finger. Driven by the same Action/Observation
+# shape as everything else: the UI asks, the player's tap is the answer.
+
+signal confirmed
+signal cancelled
+
+@onready var message_label: Label = $Panel/VBox/MessageLabel
+@onready var confirm_button: Button = $Panel/VBox/ButtonRow/ConfirmButton
+@onready var cancel_button: Button = $Panel/VBox/ButtonRow/CancelButton
+
+func _ready() -> void:
+	confirm_button.pressed.connect(_on_confirm_pressed)
+	cancel_button.pressed.connect(_on_cancel_pressed)
+
+func setup(message: String, confirm_label: String = "CONFIRM", cancel_label: String = "ABORT") -> void:
+	message_label.text = message
+	confirm_button.text = confirm_label
+	cancel_button.text = cancel_label
+
+func _on_confirm_pressed() -> void:
+	confirmed.emit()
+	queue_free()
+
+func _on_cancel_pressed() -> void:
+	cancelled.emit()
+	queue_free()

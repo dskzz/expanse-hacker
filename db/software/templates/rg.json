@@ -1,0 +1,7 @@
+{
+  "_notes": "Per docs/systems/console-commands.md's coreutils-succession table -- grep's real successor, kept its real name since it won on pure mechanical merit (fast, sane defaults), not a Belter folk-name. Native GDScript RegEx, no algorithm-backend needed per reference/algorithm_backend.md.",
+  "id": "rg",
+  "kind": "software",
+  "help": "rg <pattern> [path] -- recursively search file contents for a regex pattern",
+  "effect": {"type": "grep_search"}
+}

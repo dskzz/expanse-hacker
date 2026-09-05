@@ -1,0 +1,7 @@
+{
+  "_notes": "Per docs/systems/glove-safe-ui.md section 3. The real pin mechanism is special-cased in Console.gd's pipe handling (`<command> | pin => <name>`), since pin always appears on the right side of a pipe, not invoked standalone like spec/probe/claim. This entry exists for discoverability (ls /usr/bin, lineage-diagnostic presence per console-commands.md) and to give `pin` typed alone a real usage message instead of silently falling through to `command not found`. Snapshot semantics only for v1, per Gary's explicit recommendation -- no live-updating subscription.",
+  "id": "pin",
+  "kind": "software",
+  "help": "<command> | pin => <slot-name> -- snapshot a command's output into a named palette slot",
+  "effect": {"type": "pin_usage"}
+}

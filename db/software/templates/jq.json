@@ -1,0 +1,7 @@
+{
+  "_notes": "Per console-commands.md: 'content is JSON now, for real, not fictionally -- querying a PowerCapabilityRecord with jq-style syntax is load-bearing.' v1 scope: a single dotted-path lookup against a protocol (by rfc field) or hardware doc (by id), not full jq filter syntax -- e.g. `jq slots.power.duty_limit_pct_per_hour relay.courier-rig.class-c`.",
+  "id": "jq",
+  "kind": "software",
+  "help": "jq <.dotted.path> <rfc-or-hardware-id> -- query a field out of a protocol/hardware doc",
+  "effect": {"type": "json_query"}
+}

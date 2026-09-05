@@ -3,16 +3,25 @@ extends VBoxContainer
 const VFSLoader := preload("res://scripts/tools/vfs_loader.gd")
 const ContentLoader := preload("res://scripts/tools/content_loader.gd")
 const DBJson := preload("res://scripts/tools/db_json.gd")
+const GloveWidgets := preload("res://scripts/tools/glove_widgets.gd")
+const ConfirmModalScene := preload("res://scenes/tools/ConfirmModal.tscn")
+const PaletteOverlayScene := preload("res://scenes/tools/PaletteOverlay.tscn")
 const DEFAULT_INSTANCE := "relay-pallas-07"
 
 @onready var output: RichTextLabel = $Output
 @onready var prompt_label: Label = $InputRow/PromptLabel
 @onready var input: LineEdit = $InputRow/Input
+@onready var palette_button: Button = $InputRow/PaletteButton
 
 var _vfs: Dictionary = {}
 var _cwd: PackedStringArray = []
 var _history: Array[String] = []
 var _history_index: int = -1
+var _registry: Dictionary = {}
+var _capturing := false
+var _capture_buffer: PackedStringArray = []
+var _palette: Control = null
+var _recent_dirs: Array[String] = []
 
 var _hostname := "unknown-host"
 var _lineage_label := "unknown-lineage"
@@ -21,14 +30,26 @@ var _hardware_state: Dictionary = {}
 var _color_scheme: Dictionary = {
 	"COLOR_DIR": "#5c9cff", "COLOR_SYMLINK": "#00d7d7", "COLOR_DEVICE": "#d7d700", "COLOR_EXEC": "#00d700"
 }
+var _aliases: Dictionary = {}
 
 func _ready() -> void:
 	_load_vfs(DEFAULT_INSTANCE)
 	prompt_label.text = _prompt()
 	input.text_submitted.connect(_on_submitted)
 	input.gui_input.connect(_on_input_gui_input)
+	output.meta_clicked.connect(_on_output_meta_clicked)
+	palette_button.pressed.connect(_toggle_palette)
 	_print_line("%s [lag +0.4s]" % _prompt().strip_edges())
 	input.grab_focus()
+
+func _on_output_meta_clicked(meta) -> void:
+	# Fires for glove_widgets.button()'s [url=<command>] tags -- a tap runs
+	# the command exactly as if it had been typed and submitted, per
+	# glove-safe-ui.md section 1.
+	var command := str(meta)
+	_print_line(_prompt() + command)
+	_run_command(command)
+	_reclaim_focus()
 
 func _load_vfs(instance_id: String) -> void:
 	var loaded := VFSLoader.load_instance(instance_id)
@@ -43,6 +64,7 @@ func _load_vfs(instance_id: String) -> void:
 		tree["dev"]["children"][_hostname.to_lower()] = synthesized_dev
 	_vfs = {"kind": "dir", "perms": "dr-xr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "", "children": tree}
 	_load_color_scheme()
+	_load_aliases()
 
 func _load_color_scheme() -> void:
 	# Reads /etc/consolerc as real content instead of hardcoded values -- this
@@ -55,6 +77,25 @@ func _load_color_scheme() -> void:
 		var eq := line.find("=")
 		if eq > 0:
 			_color_scheme[line.substr(0, eq)] = line.substr(eq + 1)
+
+func _load_aliases() -> void:
+	# Same real-editable-content pattern as consolerc -- /etc/aliases,
+	# key=value, checked against a command's first word before dispatch.
+	var conf_node = _lookup(PackedStringArray(["etc", "aliases"]))
+	if conf_node == null or typeof(conf_node) != TYPE_DICTIONARY or not conf_node.has("content"):
+		return
+	for line in String(conf_node["content"]).split("\n"):
+		var eq := line.find("=")
+		if eq > 0:
+			_aliases[line.substr(0, eq)] = line.substr(eq + 1)
+
+func _expand_alias(line: String) -> String:
+	var space := line.find(" ")
+	var first_word := line if space == -1 else line.substr(0, space)
+	if not _aliases.has(first_word):
+		return line
+	var rest := "" if space == -1 else line.substr(space)
+	return _aliases[first_word] + rest
 
 func _prompt() -> String:
 	return "%s@%s (%s) $ " % [_user, _hostname, _lineage_label]
@@ -121,14 +162,20 @@ func _history_step(delta: int) -> void:
 	input.caret_column = input.text.length()
 
 func _run_command(line: String) -> void:
+	line = _expand_alias(line)
+	if line.contains("|"):
+		_run_piped_command(line)
+		return
 	var args := line.split(" ", false)
 	var cmd := args[0]
 	args.remove_at(0)
 	match cmd:
 		"help":
-			_print_line("Commands: help, clear, whoami, pwd, ls [-la] [path], cd [path], cat <path>")
+			_print_line("Commands: help, clear, palette, whoami, pwd, ls [-la] [path], cd [path], cat <path>")
 		"clear":
 			output.clear()
+		"palette":
+			_toggle_palette()
 		"whoami":
 			_print_line(_user)
 		"pwd":
@@ -167,6 +214,18 @@ func _run_software_effect(tool: Dictionary, args: PackedStringArray) -> void:
 			_effect_probe_lookup(args)
 		"root_claim":
 			_effect_root_claim(tool)
+		"pin_usage":
+			_print_line(tool.get("help", "usage: <command> | pin => <slot-name>"))
+		"grep_search":
+			_effect_grep_search(args)
+		"find_search":
+			_effect_find_search(args)
+		"json_query":
+			_effect_json_query(args)
+		"bat_view":
+			_effect_bat_view(args)
+		"zoxide_jump":
+			_effect_zoxide_jump(args)
 		_:
 			_print_line("%s: no handler for effect '%s'" % [tool.get("id", "?"), effect.get("type", "?")])
 
@@ -192,6 +251,8 @@ func _effect_spec_lookup(args: PackedStringArray) -> void:
 		else:
 			_print_line("")
 			_print_line(text)
+	else:
+		_print_bbcode("  " + GloveWidgets.button("(read full text)", "spec %s --full" % args[0]))
 
 func _effect_probe_lookup(args: PackedStringArray) -> void:
 	if args.is_empty():
@@ -222,16 +283,200 @@ func _effect_probe_lookup(args: PackedStringArray) -> void:
 	if not hardware.is_empty() and not component.is_empty():
 		var rated = hardware.get("slots", {}).get("power", {}).get("duty_limit_pct_per_hour", "?")
 		var locked = component.get("locked_duty_limit_pct_per_hour", "?")
-		var degraded_str := "degraded" if buffer_state.get("degraded", false) else "nominal"
+		var is_degraded: bool = buffer_state.get("degraded", false)
+		var degraded_str := "degraded" if is_degraded else "nominal"
 		var sub_str := str(buffer_state.get("subscription_current", false)).to_lower()
 		_print_line("  buffer hardware: %s, %s (subscription_current: %s, duty_limit_pct_per_hour: %s -- rated, not the VARS-locked %s)" % [
 			component.get("sku", "?"), degraded_str, sub_str, ContentLoader.fmt_num(rated), ContentLoader.fmt_num(locked)
 		])
+		# Glove-safe annotation layered on top of the text above, per
+		# glove-safe-ui.md section 1 -- never the only rendering.
+		var rated_num := float(str(rated)) if str(rated).is_valid_float() else 0.0
+		var light := GloveWidgets.status_light("degraded" if is_degraded else "nominal")
+		var bar := GloveWidgets.gauge(rated_num, 100.0, 10, _color_scheme.get("COLOR_EXEC", ""))
+		_print_bbcode("  %s duty [%s] %s%%" % [light, bar, ContentLoader.fmt_num(rated)])
 
 func _effect_root_claim(tool: Dictionary) -> void:
 	var required = tool.get("effect", {}).get("quorum_required", 3)
-	_print_line("root claim submitted -- awaiting union quorum (need %s, have 1 -- yours)" % str(required))
-	_print_line("no seconds received yet.")
+	# Big confirm/cancel per glove-safe-ui.md section 5 -- claiming root is
+	# exactly the kind of consequential action that doc calls out by name.
+	var modal := ConfirmModalScene.instantiate()
+	get_parent().add_child(modal)
+	modal.setup("CLAIM ROOT?\nvia union quorum -- need %s seconds, you have 1 (yours)" % str(required), "CLAIM", "ABORT")
+	modal.confirmed.connect(func():
+		_print_line("root claim submitted -- awaiting union quorum (need %s, have 1 -- yours)" % str(required))
+		_print_line("no seconds received yet.")
+		_reclaim_focus()
+	)
+	modal.cancelled.connect(func():
+		_print_line("claim aborted.")
+		_reclaim_focus()
+	)
+
+func _effect_grep_search(args: PackedStringArray) -> void:
+	if args.is_empty():
+		_print_line("usage: rg <pattern> [path]")
+		return
+	var pattern := args[0]
+	var start_path := args[1] if args.size() > 1 else "."
+	var regex := RegEx.new()
+	if regex.compile(pattern) != OK:
+		_print_line("rg: invalid pattern '%s'" % pattern)
+		return
+	var segments := _resolve_path(_cwd, start_path)
+	var node = _lookup(segments)
+	if node == null:
+		_print_line("rg: cannot access '%s': No such file or directory" % start_path)
+		return
+	var match_count := _grep_recursive(node, segments, regex, 0)
+	if match_count == 0:
+		_print_line("rg: no matches")
+
+func _grep_recursive(node: Dictionary, path_segments: PackedStringArray, regex: RegEx, count: int) -> int:
+	if node["kind"] == "dir":
+		for child_name in node["children"].keys():
+			var child_segments := path_segments.duplicate()
+			child_segments.append(child_name)
+			count = _grep_recursive(node["children"][child_name], child_segments, regex, count)
+	elif node["kind"] == "file" and node.has("content"):
+		var line_num := 0
+		for line in String(node["content"]).split("\n"):
+			line_num += 1
+			if regex.search(line) != null:
+				count += 1
+				_print_line("%s:%d: %s" % [_path_string(path_segments), line_num, line])
+	return count
+
+func _effect_find_search(args: PackedStringArray) -> void:
+	if args.is_empty():
+		_print_line("usage: fd <pattern> [path]")
+		return
+	var pattern := args[0]
+	var start_path := args[1] if args.size() > 1 else "."
+	var segments := _resolve_path(_cwd, start_path)
+	var node = _lookup(segments)
+	if node == null:
+		_print_line("fd: cannot access '%s': No such file or directory" % start_path)
+		return
+	var results: Array = []
+	_find_recursive(node, segments, pattern, results)
+	if results.is_empty():
+		_print_line("fd: no matches")
+	for r in results:
+		_print_line(r)
+
+func _find_recursive(node: Dictionary, path_segments: PackedStringArray, pattern: String, results: Array) -> void:
+	if node["kind"] != "dir":
+		return
+	for child_name in node["children"].keys():
+		var child_segments := path_segments.duplicate()
+		child_segments.append(child_name)
+		if child_name.contains(pattern):
+			results.append(_path_string(child_segments))
+		_find_recursive(node["children"][child_name], child_segments, pattern, results)
+
+func _effect_json_query(args: PackedStringArray) -> void:
+	if args.size() < 2:
+		_print_line("usage: jq <.dotted.path> <rfc-or-hardware-id>")
+		return
+	var path := args[0]
+	var target := args[1]
+	var doc := ContentLoader.find_protocol_by_rfc(target)
+	if doc.is_empty():
+		doc = ContentLoader.load_hardware(target)
+	if doc.is_empty():
+		_print_line("jq: unknown target '%s'" % target)
+		return
+	var value = _jq_walk(doc, path)
+	if value == null:
+		_print_line("jq: path '%s' not found" % path)
+	elif typeof(value) == TYPE_DICTIONARY or typeof(value) == TYPE_ARRAY:
+		_print_line(JSON.stringify(value, "  "))
+	else:
+		_print_line(str(value))
+
+func _jq_walk(doc: Dictionary, path: String):
+	var current = doc
+	var clean := path.lstrip(".")
+	if clean == "":
+		return current
+	for part in clean.split("."):
+		if typeof(current) != TYPE_DICTIONARY or not current.has(part):
+			return null
+		current = current[part]
+	return current
+
+func _effect_bat_view(args: PackedStringArray) -> void:
+	if args.is_empty():
+		_print_line("usage: bat <path>")
+		return
+	var path := args[0]
+	var segments := _resolve_path(_cwd, path)
+	var node = _lookup(segments)
+	if node == null:
+		_print_line("bat: %s: No such file or directory" % path)
+		return
+	if node["kind"] == "symlink":
+		segments = _resolve_path(segments.slice(0, segments.size() - 1), node["target"])
+		node = _lookup(segments)
+		if node == null:
+			_print_line("bat: %s: No such file or directory" % path)
+			return
+	if node["kind"] == "dir":
+		_print_line("bat: %s: Is a directory" % path)
+		return
+	var content: String = node.get("content", "")
+	_print_bbcode("[color=%s]--- %s (%s) ---[/color]" % [_color_scheme.get("COLOR_EXEC", ""), path, node.get("perms", "?")])
+	# RFC-2304 section 4's "surface uncertainty, don't hide it" doctrine,
+	# per console-commands.md's bat entry: flag opaque/binary content
+	# explicitly instead of dumping it garbled.
+	if content.begins_with("[binary") or content.contains("state blob"):
+		_print_line("<binary or opaque state, %s bytes -- use `probe` for a structured read instead>" % node.get("size", "?"))
+		return
+	var line_num := 0
+	for line in content.split("\n"):
+		line_num += 1
+		_print_line("%3d | %s" % [line_num, line])
+
+func _effect_zoxide_jump(args: PackedStringArray) -> void:
+	if args.is_empty():
+		_print_line("usage: z <fragment>")
+		return
+	var fragment := args[0]
+	for i in range(_recent_dirs.size() - 1, -1, -1):
+		if _recent_dirs[i].contains(fragment):
+			_cmd_cd(_recent_dirs[i])
+			return
+	_print_line("z: no visited directory matches '%s'" % fragment)
+
+func _toggle_palette() -> void:
+	if _palette != null:
+		_palette.queue_free()
+		_palette = null
+		return
+	_palette = PaletteOverlayScene.instantiate()
+	get_parent().add_child(_palette)
+	var static_entries := [
+		{"label": "spec rfc2305", "command": "spec rfc2305"},
+		{"label": "probe rfc2305", "command": "probe rfc2305 --node %s" % _hostname},
+		{"label": "ls /usr/bin", "command": "ls /usr/bin"},
+		{"label": "claim root", "command": "claim root --union-vote"},
+	]
+	_palette.populate(static_entries, _registry)
+	_palette.command_requested.connect(_on_palette_command)
+	_palette.value_requested.connect(_on_palette_value)
+
+func _on_palette_command(command: String) -> void:
+	_toggle_palette()
+	_print_line(_prompt() + command)
+	_run_command(command)
+	_reclaim_focus()
+
+func _on_palette_value(value: String) -> void:
+	_toggle_palette()
+	input.text += value
+	input.caret_column = input.text.length()
+	_reclaim_focus()
 
 func _cmd_cd(path: String) -> void:
 	var segments := _resolve_path(_cwd, path)
@@ -250,6 +495,9 @@ func _cmd_cd(path: String) -> void:
 		return
 	_cwd = segments
 	prompt_label.text = _prompt()
+	var visited := _path_string(_cwd)
+	_recent_dirs.erase(visited)
+	_recent_dirs.append(visited)
 
 func _cmd_ls(args: PackedStringArray) -> void:
 	var long_format := false
@@ -297,7 +545,8 @@ func _format_ls_row(node: Dictionary, entry_name: String) -> String:
 	if node["kind"] == "symlink":
 		display_name = "%s -> %s" % [entry_name, node["target"]]
 	return "%-11s %2d %-6s %-6s %6s  %s  %s" % [
-		node["perms"], link_count, node["owner"], node["group"], node["size"], node["mtime"], _colorize_name(node, display_name)
+		node.get("perms", "?"), link_count, node.get("owner", "?"), node.get("group", "?"),
+		node.get("size", "?"), node.get("mtime", "?"), _colorize_name(node, display_name)
 	]
 
 # Real-ls-style coloring: dirs blue, symlinks cyan, device files yellow,
@@ -382,10 +631,56 @@ func _print_line(text: String) -> void:
 	# files) has never had to worry about literal "[" "]" before bbcode_enabled
 	# was turned on for `ls` coloring. Use _print_bbcode for lines that
 	# deliberately carry real formatting tags (e.g. _format_ls_row's output).
+	# When capturing (a `| pin => name` pipeline, see _run_piped_command), the
+	# plain un-escaped text is what actually gets stored under the slot name.
+	if _capturing:
+		_capture_buffer.append(text)
+		return
 	output.append_text(_escape_bbcode(text) + "\n")
 
 func _print_bbcode(text: String) -> void:
+	if _capturing:
+		_capture_buffer.append(text)
+		return
 	output.append_text(text + "\n")
 
 func _escape_bbcode(text: String) -> String:
 	return text.replace("[", "[lb]").replace("]", "[rb]")
+
+func _run_piped_command(line: String) -> void:
+	# Only a single `<command> | pin => <name>` stage is supported for now --
+	# per glove-safe-ui.md section 3, pin is snapshot-only (captures the
+	# left-hand command's plain-text output at pin time), not a live
+	# subscription. Arbitrary multi-stage pipelines aren't a v1 requirement.
+	var parts := line.split("|")
+	if parts.size() != 2:
+		_print_line("pipelines only support one stage right now: <command> | pin => <name>")
+		return
+	var left := parts[0].strip_edges()
+	var right_args := parts[1].strip_edges().split(" ", false)
+	if right_args.is_empty() or right_args[0] != "pin":
+		_print_line("only `<command> | pin => <name>` is supported right now")
+		return
+	var name := ""
+	if right_args.size() >= 3 and right_args[1] == "=>":
+		name = right_args[2]
+	elif right_args.size() >= 2:
+		name = right_args[1]
+	if name == "":
+		_print_line("usage: <command> | pin => <slot-name>")
+		return
+	var captured := _run_command_capturing(left)
+	_registry[name] = captured
+	_print_line("pinned %d chars to %s" % [captured.length(), name])
+	_print_bbcode("  " + GloveWidgets.button("(open palette)", "palette"))
+
+func _run_command_capturing(line: String) -> String:
+	var was_capturing := _capturing
+	var saved_buffer := _capture_buffer
+	_capturing = true
+	_capture_buffer = []
+	_run_command(line)
+	var result := "\n".join(_capture_buffer)
+	_capturing = was_capturing
+	_capture_buffer = saved_buffer
+	return result

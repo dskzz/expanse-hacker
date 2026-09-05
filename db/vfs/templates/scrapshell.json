@@ -2,8 +2,8 @@
   "id": "scrapshell",
   "identity": {"lineage_label": "Scrapshell 7.2-belt", "user": "tech"},
   "tree": {
-    "bin": {"kind": "symlink", "target": "usr/bin"},
-    "sbin": {"kind": "symlink", "target": "usr/bin"},
+    "bin": {"kind": "symlink", "target": "usr/bin", "perms": "lrwxrwxrwx", "owner": "root", "group": "root", "size": "7", "mtime": "091-01-01 00:00"},
+    "sbin": {"kind": "symlink", "target": "usr/bin", "perms": "lrwxrwxrwx", "owner": "root", "group": "root", "size": "7", "mtime": "091-01-01 00:00"},
     "etc": {
       "kind": "dir", "perms": "drwxrwxr-x", "owner": "root", "group": "union", "size": "480", "mtime": "118-09-02 14:02",
       "children": {
@@ -14,6 +14,11 @@
           "kind": "file", "perms": "-rw-r--r--", "owner": "tech", "group": "union", "size": "0", "mtime": "091-01-01 00:00",
           "_notes": "The console's ls color scheme, as real editable content rather than hardcoded GDScript -- Dan's 'bashrc for this machine' idea, 2026-09-04. No in-game text editor exists yet to let a player edit this live; that's the natural next step this file sets up for. Console.gd reads it at load time (ContentLoader.parse_conf-style key=value) with hardcoded fallbacks if a key or the file itself is missing.",
           "content": "COLOR_DIR=#5c9cff\nCOLOR_SYMLINK=#00d7d7\nCOLOR_DEVICE=#d7d700\nCOLOR_EXEC=#00d700\n"
+        },
+        "aliases": {
+          "kind": "file", "perms": "-rw-r--r--", "owner": "tech", "group": "union", "size": "0", "mtime": "118-09-02 14:02",
+          "_notes": "Real shell aliases, same 'editable content, not hardcoded' pattern as consolerc -- Console.gd checks a command's first word against this before normal dispatch. ll/la are the universal muscle-memory ones; the rest are Scrapshell-specific shortcuts for the diagnostic loop this machine actually does day to day.",
+          "content": "ll=ls -la\nla=ls -la\nmydev=ls -la dev\ncheck=probe rfc2305 --node self\n"
         }
       }
     },
@@ -26,7 +31,13 @@
           "children": {
             "spec": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "spec"},
             "probe": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "probe"},
-            "claim": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "claim"}
+            "claim": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "claim"},
+            "pin": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "pin"},
+            "rg": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "rg"},
+            "fd": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "fd"},
+            "jq": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "jq"},
+            "bat": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "bat"},
+            "z": {"kind": "file", "perms": "-rwxr-xr-x", "owner": "root", "group": "root", "size": "0", "mtime": "118-01-01 00:00", "software_ref": "z"}
           }
         },
         "lib": {"kind": "dir", "perms": "drwxr-xr-x", "owner": "root", "group": "root", "size": "40", "mtime": "091-01-01 00:00", "children": {}}

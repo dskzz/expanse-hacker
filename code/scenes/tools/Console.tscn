@@ -31,3 +31,9 @@ theme_override_font_sizes/font_size = 14
 placeholder_text = "type a command..."
 virtual_keyboard_enabled = false
 context_menu_enabled = false
+
+[node name="PaletteButton" type="Button" parent="InputRow"]
+custom_minimum_size = Vector2(32, 0)
+theme_override_fonts/font = SubResource("SystemFont_mono")
+text = "☰"
+tooltip_text = "quick-access palette"

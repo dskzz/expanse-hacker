@@ -1,0 +1,7 @@
+{
+  "_notes": "cat's diagnostic successor per console-commands.md: 'shows corruption/binary/truncation explicitly instead of garbling -- fits RFC-2304 section 4's surface uncertainty, don't hide it doctrine directly.' Console's builtin `cat` stays the plain/fast path; this is the diagnostic one -- adds a header and line numbers, and explicitly flags opaque/binary content instead of dumping it.",
+  "id": "bat",
+  "kind": "software",
+  "help": "bat <path> -- like cat, but with a header, line numbers, and explicit binary/opaque-content flagging",
+  "effect": {"type": "bat_view"}
+}

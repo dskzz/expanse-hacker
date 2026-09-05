@@ -1,0 +1,7 @@
+{
+  "_notes": "find's real successor, per console-commands.md -- kept its real name, same reasoning as rg.json.",
+  "id": "fd",
+  "kind": "software",
+  "help": "fd <pattern> [path] -- recursively find files/dirs by name",
+  "effect": {"type": "find_search"}
+}

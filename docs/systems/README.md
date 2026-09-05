@@ -22,6 +22,10 @@ one.
   access palette, a pin/registry mechanic for pushing live data onto a
   button, large-tile drag-and-drop `ls` for glove mode, and big-format
   confirm/cancel — plus a Godot feasibility read on each piece.
+  **Implemented 2026-09-05** except the large-tile `ls`/drag-and-drop
+  piece (deliberately deferred, per the doc's own sequencing) — real
+  code in `Console.gd`, `glove_widgets.gd`, `ConfirmModal.*`,
+  `PaletteOverlay.*`, headless-tested.
 
 ## The practical/visual counterpart (Sid's side, `reference/`)
 
