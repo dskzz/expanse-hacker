@@ -213,6 +213,30 @@ honestly defines a fallback for undermanned stations — a fallback
 that's quietly weaker. Nobody hid a bug; the spec made a reasonable
 tradeoff for a case it assumed was rare.
 
+**The undermanned fallback, made concrete (locked 2026-09-05):** a
+personal, single-user device (a wrist terminal, a solo tech's own
+rig — as opposed to a shared station box like the exemplar console's
+own `RB-CERES-119` lore identity, which does have other union members
+around) isn't an occasional edge case of "undermanned," it's the
+permanent extreme of it — there's structurally nobody present to
+second a claim, ever. On such a device, `claim root --union-vote`
+degrades to a **solo claim**: instant, self-attested, no vote needed —
+but logged distinctly in the append-only log as `SOLO — unwitnessed`,
+never conflated with a real witnessed quorum claim. This is the
+concrete shape of "quietly weaker" the paragraph above always meant:
+a witnessed claim means compromising one identity isn't enough to get
+root, an attacker also has to fake or coerce two more; a solo claim
+collapses that back to a single point of failure — whoever controls
+the one session controls root, full stop, no social check at all. That
+gives personal-device targets a genuinely different puzzle shape than
+station targets (compromise the one identity and you're done, no
+quorum-spoofing needed), which is the same "root model implies a
+different puzzle shape" principle §8 already applies to the four
+lineages, just one level more specific. A careful solo operator could
+still get an actual second *remotely* — radio a known contact and get
+their vote asynchronously, at the cost of real DTN propagation lag
+(`/link`) — worth keeping as a later option, not a v1 requirement.
+
 **Mars capability-fork — no root at all.** No ambient superuser, only
 unforgeable capability tokens for specific objects
 (`invoke cap://relay-7/buffer.write --token=fob.7A3`). Token-minting
@@ -436,7 +460,11 @@ window dressing on the other:
   Interesting mechanic is faking or exploiting *quorum* — spoofing
   multiple session identities, or exploiting the undermanned-station
   fallback from §3. Built-in timing-window shape too (`claim root
-  --union-vote` "blocks... within a window").
+  --union-vote` "blocks... within a window"). On a personal/solo
+  device specifically (§3's solo-claim fallback), the puzzle shape
+  inverts: no quorum to spoof at all, just one identity to compromise
+  — a real, different texture from the station case, not a lesser
+  version of it.
 - **Mars (capability-fork):** the console alone can't solve it. Root
   is tied to physical possession of the fob/relay, so a Mars-lineage
   target should be the one that forces the player out of pure
