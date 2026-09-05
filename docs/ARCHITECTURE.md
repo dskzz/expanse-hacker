@@ -139,11 +139,21 @@ Responsibilities, and only these:
   scoped per-tenant like everything else in this layer.
 - **Action intake.** UI submits typed Actions (see §4); engine validates
   against current sim state and content rules, applies or rejects.
-- **Scripting host.** A sandboxed interpreter (candidate: embed a small
-  Lua via Inline::Lua, or a restricted Perl safe-compartment) that content
-  and *players* can both target — content defines protocol behavior in
-  it, and in-fiction "the player writes a script and runs it on a node"
-  is the same execution path, not a fake minigame bolted on top.
+- **Scripting host** (resolved 2026-09-05, see `docs/systems/
+  scripting.md` for the full design — supersedes the Lua/Perl candidates
+  this bullet used to list, which predated the Godot decision in §5).
+  Not a general embedded language: a small, native-GDScript **shell-
+  script interpreter** — variables, pipes, simple `for`/`if` control
+  flow, command invocation — that content and *players* both target,
+  since in-fiction "the player writes a script and runs it on a node"
+  is the same execution path a human typing commands interactively
+  uses, not a fake minigame bolted on top. "Sandboxed" here means the
+  interpreter's only capability is calling existing commands through
+  the identical Action/Observation dispatch as interactive use — the
+  vocabulary itself is the wall, nothing needs separately walling off —
+  plus a bounded per-frame step budget so a runaway loop yields instead
+  of hanging the game, which matters more than adversarial sandboxing
+  does in a single-player game with no untrusted third party.
 - **Generic algorithm backend** (Sid's refinement, 2026-09-04, of the
   scripting host above — not a new layer). Same test as everything
   else here: a diff algorithm doesn't know anything about SolNet, so
@@ -390,11 +400,10 @@ Superseded — engine and UI are Godot/GDScript, not Perl.
    `db/hardware/relay-courier-rig-class-c.json`'s worked example used
    `failure_modes`, which held up fine for a first real case, but that's
    one data point, not a decision.
-2. Scripting host choice: sandboxed Lua vs. restricted-Perl compartment
-   vs. a tiny bespoke DSL — **revisit in light of the Godot decision**:
-   GDScript itself might be the sandboxed-enough scripting surface,
-   worth a look before committing to embedding something else
-   (flagged in `messages/2026-09-04-merge-complete.md`).
+2. ~~Scripting host choice: sandboxed Lua vs. restricted-Perl
+   compartment vs. a tiny bespoke DSL~~ — **resolved 2026-09-05**: a
+   native-GDScript shell-script interpreter, not an embedded language.
+   See `docs/systems/scripting.md` and §2 above.
 3. Tick granularity for the sim clock (real-time with light-lag scaled
    down, or discrete turns/ticks) — affects whether store-and-forward
    *feels* tense or just becomes a wait screen.

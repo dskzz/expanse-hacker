@@ -107,10 +107,12 @@ into decoration.
 
 ## Open questions
 
-- Scripting (`sh <script>` or equivalent, running against the
-  sandboxed scripting host) isn't addressed here — still open per
-  `ARCHITECTURE.md` §7.2 (GDScript itself vs. something embedded), and
-  probably wants its own doc once that's decided.
+- ~~Scripting (`sh <script>` or equivalent, running against the
+  sandboxed scripting host) isn't addressed here~~ — **resolved
+  2026-09-05**: see `docs/systems/scripting.md` — a native-GDScript
+  shell-script interpreter, not an embedded language, reusing the same
+  command dispatch and variable primitives (`pin`, `$_:N`) as
+  interactive use.
 - ~~No content exists yet in `db/software/`~~ — **done 2026-09-04**:
   `spec`, `probe`, and `claim` (Scrapshell's root command) are real,
   wired into `usr/bin`, with working effect handlers in `Console.gd`

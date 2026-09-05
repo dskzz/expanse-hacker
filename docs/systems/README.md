@@ -26,6 +26,16 @@ one.
   piece (deliberately deferred, per the doc's own sequencing) — real
   code in `Console.gd`, `glove_widgets.gd`, `ConfirmModal.*`,
   `PaletteOverlay.*`, headless-tested.
+- [`scripting.md`](scripting.md) — `sh <script>`/`sash <script>`: a
+  small native-GDScript shell-script interpreter (variables, pipes,
+  `for`/`if`), not an embedded language — resolves the long-open
+  scripting-host question in `ARCHITECTURE.md` §2/§7. Design-only.
+- [`text-editor.md`](text-editor.md) — one editor core with a
+  per-lineage keybinding veneer, nano-shaped by default (not real
+  vi/Emacs engines), glove-mode rendering universal across lineages
+  (same physics-not-politics argument as `glove-safe-ui.md`), typed-
+  mode tribal flavor free to diverge. Closes the file-write gap `sd`
+  and live-editing `/etc/scrapper.profile` were blocked on. Design-only.
 
 ## The practical/visual counterpart (Sid's side, `reference/`)
 

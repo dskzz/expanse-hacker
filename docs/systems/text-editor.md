@@ -1,0 +1,137 @@
+# Text Editor: One Core, Per-Lineage Veneer
+
+Status: drafted 2026-09-05, closing a gap flagged repeatedly but never
+addressed — `scrapshell.json`'s own notes on `/etc/scrapper.profile`
+say "no in-game text editor exists yet to let a player edit this
+live," and `console-commands.md` blocks `sd` on "real file-write
+support, which nothing has yet." Design-only, nothing built.
+
+## 1. Why one editor, not four
+
+Building four bespoke lineage editors is a lot of surface area for
+something with a well-earned reputation for edge cases. There's
+already a house pattern for exactly this problem — shared substrate,
+thin per-lineage veneer, same shape as Console's dispatch being one
+implementation with per-lineage `usr/bin` contents, or the confirm
+modal being one component with a per-lineage accent color
+(`glove-safe-ui.md` §5). One editor core, backed by Godot's built-in
+`CodeEdit` node (multi-line editing, syntax-highlighting hooks, no
+need to build a text widget from scratch); lineage identity is a
+keybinding/theme *preset* on top of it, not a separate implementation.
+
+## 2. Base editing model: nano-shaped, not real vi or Emacs
+
+Real vi is a full motion/operator composition grammar; real Emacs is
+close to a Lisp machine with an editor attached. Building either
+faithfully would dwarf everything else in this project for a payoff
+that's mostly cultural flavor, not gameplay. Default editing model
+across all lineages: **nano-shaped** — always-insert-mode, on-screen
+key hints, `Ctrl`-key shortcuts. Small surface area, few edge cases,
+and it's the actual typing experience regardless of which lineage's
+box you're on.
+
+## 3. Where the evolved feeling actually lives: naming history, not keybindings
+
+First instinct (below, revised 2026-09-05) was to let Scrapshell's
+editor *feel* modal — `:w`/`:q`-shaped surface vocabulary — without
+implementing real vi's grammar underneath. Dan's catch: even that
+shallow a gesture starts to unravel fast. The moment any vi vocabulary
+shows up at all, copy/paste, visual-mode selection, and count-prefixed
+motions (`3dw`) stop being optional — players expect coherence, and
+those compose combinatorially in a way "just `:w` and `:q`" can't
+honestly promise. Not worth it even as flavor.
+
+Better home for the "this has evolved, this feels lived-in" payoff:
+**the editor's own naming history**, not its keybindings. Real
+precedent, and a good one — pico shipped with Pine (University of
+Washington's mail client) under a restrictive license that kept it out
+of free distros; nano was written from scratch as a free reimplementation
+of *the exact same interface* (originally named "TIP: TIP Isn't Pico").
+The interaction model barely changed across that fork — what changed
+was ownership and licensing, not functionality. That's a real-world
+instance of the same thesis `os-lineages.md` §0 already runs the whole
+project on ("solves a truly general problem, so time refines the edges
+instead of replacing it"), just applied to an editor's *name* instead
+of its behavior.
+
+So: keep the interaction model **identical** across lineages (§2,
+nano-shaped, no vi gesture at all) and let a lineage's editor instead
+carry its own small succession story — renamed or re-forked once or
+twice across the ~50 years of post-OPRA divergence for reasons that are
+political/social/licensing-flavored, not functional (a union fork after
+a dispute, a maintainer's affiliation changing hands), the same way
+`os-lineages.md` §2's OS/shell naming table already gives each lineage
+its own product history. Cheaper than partial-vi, and more honest about
+where "evolution" actually shows up in software that already solved its
+problem once: the changelog is mostly who owns it and what it's called,
+not what it does.
+
+## 4. Glove-mode vs. typed-mode: physics vs. politics, again
+
+The same argument `glove-safe-ui.md` §0 makes for why glove-safe
+interaction stays unified across lineages applies here directly: a
+pressure glove doesn't care whose editor convention you grew up on, and
+Earthers/Martians/Belters doing EVA/hardware work all face the
+identical physical constraint. So:
+
+- **Glove-mode rendering is universal, not lineage-specific.** A big-
+  tap text buffer with on-screen action buttons standing in for
+  keystrokes (save, cut, paste) — this is just the sidebar/projection
+  system from `glove-safe-ui.md` §4 rendering *this* editor's buffer
+  instead of `ls` output, not a new architecture. One editor, two
+  renderers, exactly the same pattern as the sidebar being a second
+  renderer of the same Action/Observation data everywhere else.
+- **Typed/ungloved editing behavior is also unified** now that §3
+  drops the vi-flavor gesture — the actual keybindings are the same
+  nano-shaped set everywhere. What's free to diverge per lineage is
+  the editor's *name and ownership history* (§3), not its behavior —
+  the same split as `bash`/`sash`/`msh` sharing near-identical shell
+  behavior under genuinely different names.
+
+## 5. No wrapping a third-party editor (Notepad++, etc.)
+
+Recommend against. `ARCHITECTURE.md` §2 already decided, on purpose,
+that hosted execution is never a general external-process/application
+surface exposed to content — only a fixed, curated set of specific
+bindings (`diff` today, see `reference/algorithm_backend.md`).
+Launching a real external GUI editor is a much bigger, much less
+curated version of exactly what that decision was written to prevent,
+and it's platform-locked (Notepad++ is Windows-only) in a way that
+breaks the headless/web portability the project's own test suite
+(`testing/console_smoke_test.gd`) depends on.
+
+## 6. Import/export from the player's real filesystem: worth it, scoped narrow
+
+Not really a 4th-wall break if it's framed as an unglamorous QoL
+feature rather than a narrative device — save/load doesn't get an
+in-fiction justification either. Mechanically it's just a file
+read/write through Godot's native `FileDialog`, nothing that touches
+the process-exec boundary §5 above leans on. Real precedent for wanting
+this: Screeps-style "write your actual code in your actual tools" is a
+beloved feature for the exact audience a hacking game attracts.
+
+Scope: an explicit **import script from disk** / **export to disk**
+action pair, not a live-synced folder and not launching an external
+app. Whether this covers any VFS file or just scripts specifically is
+open (§8).
+
+## 7. What this closes
+
+Once a real editor exists and can write back to a VFS node's `content`
+field, two previously-flagged gaps resolve for free: `sd` (needs real
+file-write support, `console-commands.md`'s own blocker) and live-
+editing `/etc/scrapper.profile` (`scrapshell.json`'s own "next step
+this file sets up for" note).
+
+## 8. Open questions
+
+- Scrapshell's (and other lineages') actual editor name/succession
+  story (§3) isn't written yet — a real naming pass, same exercise as
+  `os-lineages.md` §2's OS/shell table, just not done for editors yet.
+- Whether the editor is a builtin (like `cd`) or engine-level UI
+  infrastructure alongside Console itself — leaning toward the latter,
+  since it's not lineage-installable content the way Software Bank
+  commands are, every lineage needs *an* editor even if the typed-mode
+  flavor differs.
+- Import/export scope (§6): scripts only, or any VFS file — not
+  decided.
