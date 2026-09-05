@@ -25,10 +25,24 @@ Real vi is a full motion/operator composition grammar; real Emacs is
 close to a Lisp machine with an editor attached. Building either
 faithfully would dwarf everything else in this project for a payoff
 that's mostly cultural flavor, not gameplay. Default editing model
-across all lineages: **nano-shaped** — always-insert-mode, on-screen
-key hints, `Ctrl`-key shortcuts. Small surface area, few edge cases,
-and it's the actual typing experience regardless of which lineage's
-box you're on.
+across all lineages: **nano-shaped** — always-insert-mode, a small flat
+command set, no modal states to remember. Small surface area, few edge
+cases, and it's the actual typing experience regardless of which
+lineage's box you're on.
+
+Worth being explicit that "nano-shaped" describes the *interaction
+model*, not the literal 1980s-terminal presentation — real nano's
+`^O Write Out  ^X Exit` footer is plain text because that's all a
+terminal could do. This project already has a real answer for
+"discoverable actions, no memorization required" that's better than a
+text hint row: the glove-safe widget vocabulary (`glove-safe-ui.md`
+§1) and the sidebar (§4) both already render actual tappable buttons.
+So the editor's save/cut/paste/quit affordances should just be real
+buttons — bottom bar or sidebar, same rendering path as everything
+else in this doc's §4 — not an ASCII hint row standing in for buttons
+that already exist elsewhere in the UI. Nano's actual contribution
+here is the *model* (flat, modeless, no hidden state), not its 1980s
+rendering constraint, which this project has no reason to keep.
 
 ## 3. Where the evolved feeling actually lives: naming history, not keybindings
 
