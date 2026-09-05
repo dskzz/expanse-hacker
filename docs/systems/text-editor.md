@@ -92,6 +92,40 @@ where "evolution" actually shows up in software that already solved its
 problem once: the changelog is mostly who owns it and what it's called,
 not what it does.
 
+### Scrapshell's editor: `scredit` (locked 2026-09-05)
+
+The OPRA-era joint drafting suite (~2339-42, `os-lineages.md` §1) that
+compiled the L0/L1 RFC text bundled a plain, unremarkable composer for
+the job — dry and forgettable on purpose, the kind of utility an
+institutional coalition never bothers branding because it just works
+(fits Earthstock's naming register: functional, not cute). BRA relay
+techs did much of the actual RFC-compiling grunt work, and being
+dockworker-practical, never called the tool by whatever technical name
+it had — they called the *task*: grinding out a long, tedious technical
+writeup (an incident report, a patch justification, anything destined
+for an append-only log like `patches.log`) was "screeding," Belt slang
+for writing a literal screed.
+
+When BRA got pushed out post-OPRA (~2342-47, same section), it lost
+standing — and with it, licensed/signed access to the official,
+institutionally-administered suite, same mechanism real pico's license
+being tied to an institution actually worked. Locked out, and unwilling
+to lose the one tool they used daily for exactly the kind of writing
+their whole append-only-log culture runs on, BRA-descended engineers
+rebuilt the composer from scratch as free, hand-patched software —
+identical flat, modeless interaction, nothing to relearn. They named
+their own clone honestly, after the only thing anyone ever actually
+called using it: **Screed Editor**. Decades of hand-patched Scrapshell
+maintenance eroded that into **`scredit`** — same folk-contraction
+instinct as `sash` from "Scrapshell sh."
+
+Present day: `scredit` is just what a Scrapshell tech opens to write
+anything — patch justifications, incident writeups, scripts. The
+interaction model never changed; only the name, the ownership, and who
+was allowed to touch it did. The concrete, mundane instance of
+`os-lineages.md` §0's whole thesis, and a direct mirror of real
+pico-to-nano per this section's own argument above.
+
 ## 4. Glove-mode vs. typed-mode: physics vs. politics, again
 
 The same argument `glove-safe-ui.md` §0 makes for why glove-safe
@@ -151,9 +185,11 @@ this file sets up for" note).
 
 ## 8. Open questions
 
-- Scrapshell's (and other lineages') actual editor name/succession
-  story (§3) isn't written yet — a real naming pass, same exercise as
-  `os-lineages.md` §2's OS/shell table, just not done for editors yet.
+- ~~Scrapshell's actual editor name/succession story (§3) isn't written
+  yet~~ — **resolved 2026-09-05**: `scredit` (Screed Editor), see §3.
+  Other lineages' editor names/histories are still open — same exercise
+  as `os-lineages.md` §2's OS/shell table, not done for Earthstock/
+  Mars/Corporate yet.
 - Whether the editor is a builtin (like `cd`) or engine-level UI
   infrastructure alongside Console itself — leaning toward the latter,
   since it's not lineage-installable content the way Software Bank
