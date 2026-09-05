@@ -30,19 +30,31 @@ command set, no modal states to remember. Small surface area, few edge
 cases, and it's the actual typing experience regardless of which
 lineage's box you're on.
 
-Worth being explicit that "nano-shaped" describes the *interaction
-model*, not the literal 1980s-terminal presentation — real nano's
-`^O Write Out  ^X Exit` footer is plain text because that's all a
-terminal could do. This project already has a real answer for
-"discoverable actions, no memorization required" that's better than a
-text hint row: the glove-safe widget vocabulary (`glove-safe-ui.md`
-§1) and the sidebar (§4) both already render actual tappable buttons.
-So the editor's save/cut/paste/quit affordances should just be real
-buttons — bottom bar or sidebar, same rendering path as everything
-else in this doc's §4 — not an ASCII hint row standing in for buttons
-that already exist elsewhere in the UI. Nano's actual contribution
-here is the *model* (flat, modeless, no hidden state), not its 1980s
-rendering constraint, which this project has no reason to keep.
+Worth being explicit about which part of "nano-shaped" is a rendering
+artifact and which part isn't, since it's not all one thing:
+
+- **The visible `^O Write Out  ^X Exit` footer is a rendering
+  artifact** — plain text because that's all a real terminal could do.
+  No reason to keep that specific presentation: the glove-safe widget
+  vocabulary (`glove-safe-ui.md` §1) and the sidebar (§4) already
+  render actual tappable buttons, which are strictly better for
+  discoverability than an ASCII hint row.
+- **The `Ctrl`-key shortcuts underneath are not a rendering artifact —
+  keep them as the real, primary path.** Power users default to
+  keyboard shortcuts because staying on the keyboard preserves flow;
+  reaching for a button on every save/cut breaks that on purpose for
+  no reason. So `Ctrl-O`/`Ctrl-X`/etc. stay live and primary for typed
+  use, exactly as in real nano.
+
+Buttons are additive, not a replacement — same "gesture is sugar over
+a real command" doctrine as `pin`'s tap-and-hold (`glove-safe-ui.md`
+§3) and `$_:N`'s tap-vs-type duality (§4.2): the shortcut is the real
+action, the button is a second, equally real way to trigger the exact
+same thing, there for discoverability and for glove mode specifically
+(where reaching a physical `Ctrl` chord one-handed in a suit glove is
+the actual problem being solved, not a taste preference). Nano's
+genuine contribution here is the *model* — flat, modeless, no hidden
+state — not its keyboard shortcuts being disposable; those stay.
 
 ## 3. Where the evolved feeling actually lives: naming history, not keybindings
 
