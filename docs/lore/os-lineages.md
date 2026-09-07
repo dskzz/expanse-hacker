@@ -707,3 +707,43 @@ Scrapshell ledger-records it the same way `claim` does, Mars bakes it
 into the capability token at minting (same re-minting-ceremony cost as
 any Mars capability change, §4), Corporate makes it a revocable
 leased-entitlement field.
+
+## 11. Belt speech: article-dropping and the "[X] is" tautology (locked 2026-09-06/07)
+
+Surfaced while drafting OPRA (Operational Relay Authority)'s
+institutional voice for RFC-2353 — see `docs/vault/Notes/voices/
+voice_profiles/SPERB Sub-Bureau Voices.md` for the RFC-authorship
+application. Recorded here too because it's culture, not just prose
+style, and belongs where Belt worldbuilding actually lives, not only
+inside a voice card built for one document.
+
+**Article-dropping.** Belt speech drops "a," "the," "an" wherever the
+meaning survives without them — "Authority calls it that," not "the
+Authority calls it that"; "relay pass what come," not "the relay
+passes what comes." In-universe justification: a follow-on habit from
+sign-language and limited-bandwidth comm culture — hand-talk and
+suit-to-suit/tightbeam-constrained speech both reward dropping anything
+that doesn't carry information, and articles are the cheapest thing to
+cut. Generations of that habit under vacuum and thin air, per §0's
+"Darwin in space computers" framing for OS drift, plausibly drifted
+straight into spoken Belt Creole even off-suit, on stations, in casual
+speech generally — the economy stuck around after the original hard
+constraint (a suit mic, a hand-sign channel) stopped being the only
+option.
+
+**The "[X] is" tautology, replacing "it is what it is."** Where a
+standard-English speaker would close on a flat restatement of the
+obvious ("it is what it is," "that's just how it is"), Belt speech
+closes by naming the thing once and ending on a bare "is" — no
+verb-object completion, no repeating the noun. "Lying still is,"
+not "lying is still lying." "Machine lying still is," not
+"machine-made lying is lying just the same." The construction states
+the conclusion once and stops, rather than circling back to restate
+it — the clipped stop is the idiom, not a fragment to read past.
+
+**Scope note:** this is a real Belt-culture-wide speech pattern, not
+something specific to relay operators or OPRA. OPRA's voice card is
+the first RFC-authorship context it's been formalized for (RFC-2353
+§8/§8.5), but it should show up anywhere ordinary Belter dialogue does
+— NPC barks, flavor text, Scrapshell system messages written in a
+Belter operator's voice — not just in institutional RFC prose.

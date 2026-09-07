@@ -125,6 +125,14 @@ pattern worth having a name for.
 **Status:** pattern noticed, one instance exists (`/etc`), not proposed as anything to add on its
 own.
 
+**Second instance now exists, 2026-09-06/07:** Belt speech's article-dropping and "[X] is"
+tautology construction (replacing standard English "it is what it is"), surfaced while drafting
+OPRA's RFC-2353 voice and written up properly in `docs/lore/os-lineages.md` §11 rather than left
+buried in the voice card alone. In-universe justification given there ties it to sign-language/
+limited-bandwidth comm culture under vacuum, generations-old habit outliving the original hard
+constraint — same "functionally/emotionally right, technically drifted" shape as the `/etc` case,
+just linguistic instead of etymological.
+
 ### 5. Proposed sectional revision — RFC-2392, Sequence Wrap Handling
 
 **Where it'd go:** RFC-2392 itself (Session and Conversation Layer), currently a planned-but-
