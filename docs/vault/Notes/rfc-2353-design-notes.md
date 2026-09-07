@@ -132,7 +132,25 @@ Raised during drafting; not yet incorporated into the numbered sections. Flaggin
 - **Possible real-world precedent (unconfirmed):** hop-limited flooding / distance-vector propagation, and historical fixes to distance-vector routing (e.g., stale-route/loop mitigation), were flagged as a possible inspiration — worth verifying specifics before committing RAP's hop-limit design to closely mirror a named real protocol.
 - **Not yet decided:** whether this becomes a new field/section in RFC‑2353 itself (Section 1 currently describes RAP as single-hop/locally-observed) or is deferred to a later revision or companion RFC.
 
-**Status (2026-09-06):** still not incorporated into `rfc-2353-working-draft.md` — this is the next concrete gap to close on that document, per Gary's review of the draft against this map.
+**Status (2026-09-07): resolved and incorporated.** Landed as a new required TLV
+(`HopCount`, 0x0A, §2.1) plus four coordinated additions in `rfc-2353-working-draft.md`:
+§1.6 (RNC) states the one-way/hop-limited propagation model itself, including the
+"handwaves, not handshakes" framing and the dead-end-vs-stale-info tradeoff around
+H_max (an Authority policy parameter, deliberately unpublished here, same treatment
+as T_adv in §6); §5.6 (NEEB) discloses — rather than hides — that HopCount
+necessarily leaks relative distance/topology, framed as a narrow, structurally
+necessary exception that does not extend to any other field; §11 (DIC) reconciles
+this against the section's earlier "satisfies it completely" claim; §10 (NEEB) adds
+HopCount tampering as a fourth named threat category, closing the forward-reference
+§1.6 makes to it. The real-world distance-vector-routing precedent question raised
+below was deliberately left unconfirmed/uncited in the actual RFC text — it's
+useful design inspiration for us, not something the in-universe document needs to
+name-check.
+
+**Known residual gap:** §13 (Test Vectors and Parsing Tests) was not updated to add
+HopCount-specific test cases (e.g. reject-on-increment, reject-on-multi-decrement,
+zero-HopCount-must-not-forward). Flagging rather than silently leaving stale — worth
+closing before this draft graduates to `docs/vault/New RFCs/`.
 
 ## Open Item
 

@@ -64,6 +64,16 @@ Relay behavior SHALL remain invariant with respect to the identity or origin of 
 
 RelayAdvertisement is not itself a routing decision. It is raw material for one, consumed by ServicePlane path selection and, increasingly, by inference layers that weight and correlate advertised fields against observed outcomes rather than treating them as static configuration. This RFC has no opinion on how a consuming layer forms that judgment, and it does not need one — Section 11 (Doctrinal Alignment) states the actual boundary. What this Commission does have an opinion on is the proposal, now arriving in an AI-shaped wrapper instead of a routing-improvement wrapper, that RAP fields should carry finer resolution so that a model downstream can "reason better." The model reasons just as well on a coarse, honest signal as on a precise, exposing one — better, in fact, since a coarse signal is harder to game. This Commission expects to review this proposal again, in a fifth wrapper, before the decade is out.
 
+#### 1.6 Propagation Semantics
+
+A RelayAdvertisement is not addressed to a specific recipient, and it does not solicit one. It is emitted; whatever happens after that is not part of the same exchange. There is no acknowledgment, no reply, and no expectation of either — handwaves, not handshakes. Any response a receiving party eventually generates, including a route forming back toward the origin, is an independently-routed event on its own schedule, governed by whatever RFC actually defines it, not by this one.
+
+A relay MAY forward a RelayAdvertisement it received from a neighboring relay, extending the advertisement's reach beyond the neighbors who directly observed the original emission. A forwarding relay MUST NOT alter any field of a forwarded record other than HopCount (Section 2.1), and MUST NOT re-emit a forwarded record on its own canonical interval as though it were the relay's own advertisement. A record modified in transit, in any field other than the one this section explicitly permits, is not a forwarded advertisement. It is a forged one, and Section 10 already covers what happens to those.
+
+Forwarding is hop-limited. HopCount decrements by exactly one at each forwarding relay; a relay receiving a record with HopCount already at zero MUST NOT forward it further. The maximum value a freshly originated HopCount may carry, denoted H_max, is set by Authority policy and is not published as a protocol constant in this document, for the same reason T_adv (Section 6) is not: it is a deployment parameter, not a wire-format guarantee.
+
+This Commission is aware of the shape of the tradeoff on either side of H_max. Set it too low, and an advertisement dies before reaching anyone who could have used it — a dead end, reachable in principle, invisible in practice. Set it too high, and stale reachability information outlives its usefulness and becomes difficult to correct once the topology it described has moved on — not wrong exactly, just no longer true, and indistinguishable from current at a glance. Both failure modes are real. Neither is solved by picking an extreme. This Commission expects deployments to tune H_max toward the middle of that range and revise it when the sector's actual topology proves the current value wrong, which is a more honest process than pretending a single number would have been correct everywhere from the start.
+
 ---
 
 ### 2. TLV Registry and Field Definitions
@@ -86,12 +96,15 @@ Type codes not listed in this registry are reserved. Unrecognized TLVs encounter
 | 0x04 | AdmissionPolicyHint | 1 byte, fixed | Enumerated admission class (A0–A3) | Yes |
 | 0x05 | MediaProfile | 1 byte, fixed | Enumerated profile identifier | Yes |
 | 0x06 | RelayLoadClass | 1 byte, fixed | Enumerated load class (LOW/MED/HIGH) | Yes |
+| 0x0A | HopCount | 1 byte, fixed | Unsigned integer, decremented per forwarding hop (Section 1.6) | Yes |
 
-Six rows, six required TLVs. A RelayAdvertisement record missing any one of them is not partially compliant. It is invalid in its entirety and MUST be discarded on that basis alone.
+Seven rows, seven required TLVs. A RelayAdvertisement record missing any one of them is not partially compliant. It is invalid in its entirety and MUST be discarded on that basis alone.
 
 RelayLoadClass admits exactly three values: LOW, MED, HIGH. Table 2.1 was exhaustive on this point the last three times an implementer asked whether a fourth value could be accommodated for "finer granularity." It could not then, and it cannot now.
 
 RelayID (0x01) is opaque to every component except those responsible for its assignment and verification under RFC‑2350. It does not encode vendor lineage, hardware class, manufacturing batch, or deployment environment, and this Registry will not entertain a submission that attempts to smuggle any of the four in under a different field name. RelayID is fixed as the first TLV in every RelayAdvertisement, regardless of which optional TLVs are present or absent.
+
+HopCount (0x0A) is a plain unsigned integer, not a coarse-quantized class like the six fields above it. This is not an inconsistency. A hop count decremented by discrete relays is already the coarsest a whole-number counter can be; further quantizing it would only obscure how many hops remain without changing what the field is doing. This Registry sees no reason to smooth a value for the sake of matching a pattern that does not apply to it.
 
 #### 2.2 Optional TLV Registry
 
@@ -120,6 +133,7 @@ The following illustrates a minimal conforming RelayAdvertisement containing onl
 04 01 [1 byte: AdmissionPolicyHint = A2]
 05 01 [1 byte: MediaProfile = RF]
 06 01 [1 byte: RelayLoadClass = MED]
+0A 01 [1 byte: HopCount = H_max]
 ```
 
 Each entry follows Type–Length–Value order. Length fields are informational for parser convenience only; they MUST match the fixed width defined in this registry and MUST NOT be used to justify a differently sized value. A length field disagreeing with the registry-defined width indicates a malformed record, not a permitted variant.
@@ -243,6 +257,12 @@ Namespace Plane caching of RelayAdvertisement records (Section 1.3) remains subj
 
 The prohibitions in this section apply without regard to the sophistication of the analysis attempting to defeat them. A statistical model, a trained classifier, or any other inferential method applied to a sequence of RelayAdvertisement records is held to the same standard as a human analyst with a spreadsheet: if the output permits recovery of queue depth, session count, or vendor lineage, the implementation that produced the underlying records has committed an exposure violation, regardless of how much computation was required to extract it. This Bureau does not grant exemptions for methods it finds impressive.
 
+#### 5.6 HopCount as a Disclosed, Structural Exception
+
+HopCount (Section 2.1) is exempted from the general prohibition on inferable operational state, and this Bureau states that exemption plainly rather than pretending the field does not do what it does. A relay observing HopCount values across multiple advertisements from different points of origin can, with enough patience, reconstruct a coarse map of relative distances within the sector. That is not a defect this Bureau failed to catch. It is the mechanism working as designed — a RelayAdvertisement cannot propagate hop by hop without some field recording how many hops it has already traveled, and a field that records that necessarily discloses it to anyone counting.
+
+This exemption is narrow and does not extend by implication to any other field in this record. HopCount discloses distance. It does not disclose identity, load, capability, or admission state, and an implementation using HopCount correlation to infer any of those has exceeded what this exception covers and has committed an exposure violation under this section like any other. This Bureau permits one leak because the alternative is a protocol that cannot propagate at all. It does not, on that basis, permit a second.
+
 ---
 
 ### 6. Timing & Interval Rules
@@ -329,6 +349,8 @@ For (b): RelayID alone does not provide origin authentication. An implementation
 
 For (c): Namespace Plane caches (Section 1.3) that selectively suppress or delay advertisements from specific relays introduce a bias vector functionally equivalent to the admission-fairness violations Section 8 already addresses at the relay level. This Bureau considers cache-level suppression an exposure and fairness concern in equal measure, and will treat it as such regardless of which layer's document eventually specifies its remedy.
 
+A fourth category is considered here for the first time: (d) a forwarding relay altering HopCount outside the decrement rule Section 1.6 defines. Decrementing by more than one, or by less than one, or not at all, is not a timing anomaly or a rounding choice. It is a forged record under Section 1.6's own terms, whether the intent was to kill an advertisement's reach early or to extend it past what H_max was configured to allow. This Bureau does not distinguish between the two motives for the purpose of certification review; both produce a record that no longer reports what actually happened at that hop, and that is the only fact this Bureau requires to open a case.
+
 #### 10.4 Reliability Assessment Is Not This Document's Concern
 
 *Non-Exposure Enforcement Bureau*
@@ -344,6 +366,8 @@ Whether a relay's advertised posture correlates with its actual behavior over ti
 This document does not introduce new doctrine. It applies existing doctrine to a Layer‑1 advertisement mechanism, and a reader surprised by that application has not read RFC‑2352 or RFC‑2360 with sufficient attention.
 
 The invariance doctrine requires that observable protocol behavior not vary with unstated internal conditions. Sections 4 through 7 satisfy this requirement field by field. Section 5 satisfies it at the structural level. Together they satisfy it completely, which is the only acceptable outcome. The Council notes this once, here, rather than section by section — repeating it there would imply the possibility of a partial pass. There is no partial pass.
+
+Section 5.6's disclosed exception for HopCount does not weaken this conclusion. A doctrine that pretended a hop-limited propagation mechanism could exist without a hop counter would be lying about arithmetic, not preserving purity. Acknowledging a structural necessity is not the same defect as tolerating an avoidable one, and this Council trusts the distinction is not the sort of thing it will need to explain twice.
 
 Where this RFC references RFC‑2370 (Reservation Negotiation) or RFC‑2306/2364 (Tightbeam), those documents govern their own domains. This RFC does not reinterpret them. Any apparent conflict is a defect in this document, correctable, and not evidence that either referenced document requires revision to accommodate this one's convenience.
 
@@ -443,3 +467,15 @@ A conforming implementation SHALL be tested for the absence of the following, no
      tautology-closer discipline now locked for OPRA has NOT been checked against
      any other document in the corpus that uses OPRA (none currently do -- OPRA is
      new to RFC-2353 -- but worth remembering if OPRA gets reused elsewhere). -->
+
+<!-- 2026-09-07 propagation-model gap closed. New required TLV: HopCount (0x0A,
+     Sec 2.1), plus Sec 1.6 (RNC, the propagation model itself -- one-way,
+     hop-limited, "handwaves not handshakes", H_max as an unpublished Authority
+     policy parameter matching T_adv's treatment), Sec 5.6 (NEEB, discloses that
+     HopCount necessarily leaks relative distance -- a narrow, named exception, not
+     an opening for others), Sec 11 addendum (DIC, reconciles the exception against
+     its own earlier "satisfies it completely" claim), and Sec 10 category (d)
+     (NEEB, HopCount tampering as a forgery, closing Sec 1.6's forward-reference).
+     Canonical wire example in Sec 2.4 updated to include the new required field.
+     Sec 13 test vectors NOT yet updated with HopCount-specific cases -- see
+     rfc-2353-design-notes.md's "Known residual gap" note. -->
