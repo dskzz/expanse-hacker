@@ -505,7 +505,19 @@ In order of what this Bureau has found implementers most reliably get wrong, wor
 
 This Bureau does not rank these by theoretical severity. It ranks them by how often it has actually had to open a case.
 
-### Appendix F — Known Non-Compliant Patterns
+### Appendix F — Liability and Dispute Referral
+
+*United Nations Infrastructure Directorate*
+
+This appendix addresses questions this document has, on occasion, been asked to answer and was never going to. Nothing in Sections 1 through 13, or in the preceding appendices, establishes fault, assigns damages, or resolves a dispute arising from a relay's advertised behavior, a forwarding relay's conduct, or the disclosed exception described in Section 5.6. This document defines a protocol. It does not adjudicate what happens when the protocol is used, misused, or exploited by a party this Directorate has no authority over.
+
+Where a RelayAdvertisement is later found to have been forged under Section 10, and that forgery is alleged to have contributed to a loss — of cargo, of contact, of anything a party subsequently wished to hold someone accountable for — responsibility for that loss is a matter for the trust domain, insurer, or jurisdiction the affected parties actually operate under, and not for this specification. This Directorate notes that the technical finding of forgery (Section 10, Section 12) and the question of who bears the resulting cost are, and have always been, two separate determinations, decided by two entirely different bodies, and that conflating them has previously been attributed to insufficient consideration of the distinction.
+
+Section 5.6's disclosed exception is, similarly, a technical acknowledgment, not an assumption of liability. That a field necessarily reveals relative hop-distance does not mean this Directorate, this document, or any institution named in it has accepted responsibility for what a party does with that information once revealed. Readers seeking a remedy for harm arising from lawful use of a disclosed and documented field are referred to the trust-domain policy governing their own deployment, as such matters fall outside the purview of this specification.
+
+This Directorate offers no further guidance on this matter, as none is within its authority to offer.
+
+### Appendix G — Known Non-Compliant Patterns
 
 *Non-Exposure Enforcement Bureau*
 
@@ -517,7 +529,7 @@ This Bureau does not rank these by theoretical severity. It ranks them by how of
 
 **The Optimistic Capacity Class.** More than one vendor has shipped a relay that advertises SchedulingCapacityHint based on theoretical maximum throughput rather than sustained, policy-derived capacity, on the theory that the difference is "close enough in practice." It is not close enough in practice. It is close enough to get a ServicePlane implementation to select a relay that then cannot deliver, which is a worse outcome for everyone than an honest C2 would have been. This Commission has seen this exact justification before. It was wrong then too.
 
-### Appendix G — Historical Context
+### Appendix H — Historical Context
 
 *Doctrinal Integrity Council*
 
@@ -529,79 +541,80 @@ Before RAP, everybody build own way to say what relay do. One sector use signal 
 
 RAP not fix everything out here. Storm still come, relay still die, sector still go quiet sometime with no warning. What RAP fix is smaller, but it matter: now when relay say C2, every relay everywhere mean same thing by C2. That alone save more cargo than any signal-strength trick ever did.
 
-### Appendix H — SPERB Procedural Rules
+### Appendix I — SPERB Procedural Rules
 
 *SolNet Physical‑Layer Exposure Review Board*
 
-**H.1 Scope.** This appendix defines procedural rules governing this Board's review of RAP implementations, supplementing the summary already given in Section 12.
+**I.1 Scope.** This appendix defines procedural rules governing this Board's review of RAP implementations, supplementing the summary already given in Section 12.
 
-**H.2 Review Procedures.** Certification applications, complaints, and Board-initiated reviews are handled under an identical procedure regardless of origin, per Section 12. Applications alleging non-compliance under Section 10(d) (HopCount tampering) SHALL include the full observed sequence of HopCount values across hops, not a single sample; a single sample cannot distinguish tampering from ordinary propagation and this Board will not open a case on one.
+**I.2 Review Procedures.** Certification applications, complaints, and Board-initiated reviews are handled under an identical procedure regardless of origin, per Section 12. Applications alleging non-compliance under Section 10(d) (HopCount tampering) SHALL include the full observed sequence of HopCount values across hops, not a single sample; a single sample cannot distinguish tampering from ordinary propagation and this Board will not open a case on one.
 
-**H.3 Audit Procedures.** Audits of deployed relay populations SHALL sample RelayAdvertisement emissions across at least one full canonical interval and SHALL include at least one forwarding relay, where a candidate for audit forwards traffic at all. An audit that samples only origin advertisements has not audited propagation, regardless of what its final report claims to have found.
+**I.3 Audit Procedures.** Audits of deployed relay populations SHALL sample RelayAdvertisement emissions across at least one full canonical interval and SHALL include at least one forwarding relay, where a candidate for audit forwards traffic at all. An audit that samples only origin advertisements has not audited propagation, regardless of what its final report claims to have found.
 
-**H.4 Enforcement Procedures.** Corrective directives, compliance notices, and revocation notices under Section 12 are issued by this Board and are not delegable to any sub-bureau acting independently. A sub-bureau identifying a violation refers it to this Board; it does not resolve it unilaterally, however confident it is in the finding.
+**I.4 Enforcement Procedures.** Corrective directives, compliance notices, and revocation notices under Section 12 are issued by this Board and are not delegable to any sub-bureau acting independently. A sub-bureau identifying a violation refers it to this Board; it does not resolve it unilaterally, however confident it is in the finding.
 
-**H.5 Communication Protocols.** All formal correspondence regarding RAP conformance SHALL use terminology as defined in this document and, where a term originates elsewhere, as defined in the shared corpus glossary (`solnet-glossary.md`).
+**I.5 Communication Protocols.** All formal correspondence regarding RAP conformance SHALL use terminology as defined in this document and, where a term originates elsewhere, as defined in the shared corpus glossary (`solnet-glossary.md`).
 
-**H.6 Naming and Formal Address Requirements.** All formal correspondence SHALL refer to this Board as SPERB, pronounced SPEAR‑B. Informal or phonetic contractions are discouraged and SHALL NOT appear in conformance claims, certification requests, or audit submissions.
+**I.6 Naming and Formal Address Requirements.** All formal correspondence SHALL refer to this Board as SPERB, pronounced SPEAR‑B. Informal or phonetic contractions are discouraged and SHALL NOT appear in conformance claims, certification requests, or audit submissions.
 
-### Appendix I — Implementation Notes
+### Appendix J — Implementation Notes
 
-**I.1 Scope.** *Operational Relay Authority.* This appendix give practical note for implementing relay in physical, non-simulation deployment — not lab, not test bench, actual sector.
+**J.1 Scope.** *Operational Relay Authority.* This appendix give practical note for implementing relay in physical, non-simulation deployment — not lab, not test bench, actual sector.
 
-**I.2 Hardware Considerations.** *Environmental Neutrality Assessment Group.* Implementations SHALL ensure timing and emission hardware conforms to the canonical interval discipline of Section 6 under the full range of thermal and power conditions the deployment will actually see, not the range the bench happened to have available that week.
+**J.2 Hardware Considerations.** *Environmental Neutrality Assessment Group.* Implementations SHALL ensure timing and emission hardware conforms to the canonical interval discipline of Section 6 under the full range of thermal and power conditions the deployment will actually see, not the range the bench happened to have available that week.
 
-**I.3 Forwarding Relay Considerations.** *Operational Relay Authority.* Relay that forward — not just originate — need buffer enough to hold record long enough to decrement and re-emit without drift creeping into timing Section 6 already forbid. Cheap relay skip this, buffer too small, drop record under load 'stead of forward it clean. That not compliant fallback. That just failure wearing compliant clothes.
+**J.3 Forwarding Relay Considerations.** *Operational Relay Authority.* Relay that forward — not just originate — need buffer enough to hold record long enough to decrement and re-emit without drift creeping into timing Section 6 already forbid. Cheap relay skip this, buffer too small, drop record under load 'stead of forward it clean. That not compliant fallback. That just failure wearing compliant clothes.
 
-**I.4 Sector Topology Considerations.** *Operational Relay Authority.* H_max (Section 1.6) is a policy parameter, not a hardware one, but hardware still constrain what policy is realistic — relay with weak buffer, weak power budget, can't reliably forward at all, no matter what H_max sector authority pick. Know your hardware 'fore you promise your policy.
+**J.4 Sector Topology Considerations.** *Operational Relay Authority.* H_max (Section 1.6) is a policy parameter, not a hardware one, but hardware still constrain what policy is realistic — relay with weak buffer, weak power budget, can't reliably forward at all, no matter what H_max sector authority pick. Know your hardware 'fore you promise your policy.
 
-**I.5 Update and Maintenance Considerations.** *Environmental Neutrality Assessment Group.* Firmware updates MUST NOT alter emission timing, TLV ordering, or HopCount decrement behavior. An update that "improves" any of the three has not improved this protocol. It has left it.
+**J.5 Update and Maintenance Considerations.** *Environmental Neutrality Assessment Group.* Firmware updates MUST NOT alter emission timing, TLV ordering, or HopCount decrement behavior. An update that "improves" any of the three has not improved this protocol. It has left it.
 
-### Appendix J — Organizational Structure
+### Appendix K — Organizational Structure
 
 *SolNet Physical‑Layer Exposure Review Board*
 
-**J.1 Scope.** This appendix defines the internal organizational bodies of SPERB relevant to RAP conformance. Full organizational detail is maintained in RFC-2352 Appendix J; this appendix restates only the bodies with direct RAP jurisdiction, correctly lettered.
+**K.1 Scope.** This appendix defines the internal organizational bodies of SPERB relevant to RAP conformance. Full organizational detail is maintained in RFC-2352 Appendix J; this appendix restates only the bodies with direct RAP jurisdiction, correctly lettered.
 
-**J.2 Directorate of Emission Neutrality (DEN).** Maintains the canonical Layer-1 emission profile RAP inherits. Not directly cited elsewhere in this document, since RAP's own emission discipline is Section 6's, not a fresh grant from DEN — but DEN's doctrine is upstream of Section 6 regardless.
+**K.2 Directorate of Emission Neutrality (DEN).** Maintains the canonical Layer-1 emission profile RAP inherits. Not directly cited elsewhere in this document, since RAP's own emission discipline is Section 6's, not a fresh grant from DEN — but DEN's doctrine is upstream of Section 6 regardless.
 
-**J.3 Non-Exposure Enforcement Bureau (NEEB).** Authors Sections 5, 5.6, and 10 of this document. Investigates exposure events and Section 10(d) forgery findings.
+**K.3 Non-Exposure Enforcement Bureau (NEEB).** Authors Sections 5, 5.6, and 10 of this document. Investigates exposure events and Section 10(d) forgery findings.
 
-**J.4 Canonical Behavior Registry (CBR).** Authors Section 2 and Section 13.1 of this document. Maintains the authoritative TLV registry RAP's field set is drawn from.
+**K.4 Canonical Behavior Registry (CBR).** Authors Section 2 and Section 13.1 of this document. Maintains the authoritative TLV registry RAP's field set is drawn from.
 
-**J.5 Cross-Vendor Convergence Office (CVCO).** Authors Sections 3.2, 3.3, and 9 of this document. Certifies extension registrations and vendor-convergence testing.
+**K.5 Cross-Vendor Convergence Office (CVCO).** Authors Sections 3.2, 3.3, and 9 of this document. Certifies extension registrations and vendor-convergence testing.
 
-**J.6 Temporal Stability Review Board (TSRB).** Authors Section 6 of this document. Reviews canonical-interval compliance and timing-correlation findings.
+**K.6 Temporal Stability Review Board (TSRB).** Authors Section 6 of this document. Reviews canonical-interval compliance and timing-correlation findings.
 
-**J.7 Environmental Neutrality Assessment Group (ENAG).** Authors Section 7 and Appendix I.2/I.5 of this document. Validates media-profile invariance under environmental variation.
+**K.7 Environmental Neutrality Assessment Group (ENAG).** Authors Section 7 and Appendix J.2/J.5 of this document. Validates media-profile invariance under environmental variation.
 
-**J.8 Relay Neutrality Commission (RNC).** Authors Sections 1, 1.5, 1.6, 4, and 13.2 of this document. Reviews relay-behavior conformance and forwarding discipline.
+**K.8 Relay Neutrality Commission (RNC).** Authors Sections 1, 1.5, 1.6, 4, and 13.2 of this document. Reviews relay-behavior conformance and forwarding discipline.
 
-**J.9 Doctrinal Integrity Council (DIC).** Authors Sections 0, 11, and Appendices A and B of this document. Reviews cross-RFC doctrinal alignment.
+**K.9 Doctrinal Integrity Council (DIC).** Authors Sections 0, 11, and Appendices A and B of this document. Reviews cross-RFC doctrinal alignment.
 
-**J.10 Registry of Canonical Terminology (RCT).** Not directly cited in this document's body; maintains the shared corpus glossary (`solnet-glossary.md`) this document footnotes into.
+**K.10 Registry of Canonical Terminology (RCT).** Not directly cited in this document's body; maintains the shared corpus glossary (`solnet-glossary.md`) this document footnotes into.
 
-**J.11 Compliance Revocation Authority (CRA).** Not directly cited in this document's body; exercises the revocation authority Section 12 describes this Board as holding, where revocation is the disposition reached.
+**K.11 Compliance Revocation Authority (CRA).** Not directly cited in this document's body; exercises the revocation authority Section 12 describes this Board as holding, where revocation is the disposition reached.
 
-### Appendix K — Authorship
+### Appendix L — Authorship
 
-**K.1 Editorial Authority.** This document was prepared under the multi-institutional authorship model established for the SolNet Standards Corpus. Authorship reflects institutional roles rather than individual identity, per the convention already established for RFC‑2352.
+**L.1 Editorial Authority.** This document was prepared under the multi-institutional authorship model established for the SolNet Standards Corpus. Authorship reflects institutional roles rather than individual identity, per the convention already established for RFC‑2352.
 
-**K.2 Primary Authors.**
+**L.2 Primary Authors.**
 
 - **Relay Neutrality Commission (RNC)** — relay behavior, forwarding neutrality, propagation semantics, admission policy hints.
 - **Canonical Behavior Registry (CBR)** — TLV registry, capability masks, canonical advertisement structure, HopCount field definition.
 - **Non-Exposure Enforcement Bureau (NEEB)** — prevention of queue-depth, peer-identity, and topology leakage; disclosure and scoping of the HopCount exception.
 - **Doctrinal Integrity Council (DIC)** — invariance doctrine alignment, non-violation of RFC‑2352 and RFC‑2360, reconciliation of disclosed exceptions against doctrine.
 
-**K.3 Contributing Bodies.**
+**L.3 Contributing Bodies.**
 
 - **Temporal Stability Review Board (TSRB)** — interval rules, timing-exposure review.
 - **Environmental Neutrality Assessment Group (ENAG)** — RF/tightbeam environmental-state leakage review, deployment guidance.
 - **Cross-Vendor Convergence Office (CVCO)** — vendor-identity encoding review in capability masks and extension registrations.
 - **Operational Relay Authority (OPRA)** — sparse-topology and Belt-sector operational guidance, admission-fairness review.
+- **United Nations Infrastructure Directorate** — liability scoping and dispute referral (Appendix F), a first appearance in an L0/L1 document rather than this institution's usual identity/governance jurisdiction, included deliberately rather than by default.
 
-**K.4 Custodian of Record.** The Canonical Behavior Registry (CBR) maintains the authoritative TLV registry and capability mask definitions referenced throughout this document.
+**L.4 Custodian of Record.** The Canonical Behavior Registry (CBR) maintains the authoritative TLV registry and capability mask definitions referenced throughout this document.
 
 ---
 ---
@@ -616,15 +629,28 @@ RAP not fix everything out here. Storm still come, relay still die, sector still
 
 ---
 
-<!-- 2026-09-07: Appendices A-K written, per the ownership map in
-     rfc-2353-design-notes.md. Note on Appendix J: this document uses correct J.1-J.11
-     lettering for SPERB's sub-bureau list, unlike the real RFC-2352 canonical text,
-     which uses leftover C.1-C.11 prefixes in its own Appendix J (a real, already-
-     flagged corpus defect -- see db/CORPUS-INDEX.md's RFC-2352 entry and
-     docs/NEXT-STEPS.md Track A2). Not called out inside the RFC text itself since an
-     in-universe document has no reason to reference another document's typo -- noting
-     it here instead so the contrast isn't read as a fluke next time someone reads
-     both appendices side by side.
+<!-- 2026-09-07: Appendices A-L written, per the ownership map in
+     rfc-2353-design-notes.md, plus one addition beyond that map: Appendix F
+     (Liability and Dispute Referral, United Nations Infrastructure Directorate),
+     inserted directly after Appendix E (NEEB, Security Considerations) on purpose --
+     it reframes what NEEB just disclosed bluntly in liability-safe language
+     immediately afterward, a deliberate first-of-its-kind crossover between the
+     top-level institutional voice system (UN-ID) and this document's SPERB
+     sub-bureau cast. Everything from the old Appendix F onward shifted down one
+     letter to make room (F->G, G->H, H->I, I->J, J->K, K->L); the internal
+     cross-reference inside what's now Appendix K (formerly J, Organizational
+     Structure) was updated from "Appendix I.2/I.5" to "Appendix J.2/J.5" to match.
+
+     Note on the (now) Appendix K, Organizational Structure: this document uses
+     correct K.1-K.11 lettering for SPERB's sub-bureau list, unlike the real RFC-2352
+     canonical text, which uses leftover C.1-C.11 prefixes in its own Appendix J (a
+     real, already-flagged corpus defect -- see db/CORPUS-INDEX.md's RFC-2352 entry
+     and docs/NEXT-STEPS.md Track A2). Not called out inside the RFC text itself
+     since an in-universe document has no reason to reference another document's
+     typo -- noting it here instead so the contrast isn't read as a fluke next time
+     someone reads both appendices side by side. (K.1 does still reference "RFC-2352
+     Appendix J" by name -- that's the real RFC-2352's own actual appendix letter,
+     unaffected by this document's internal relettering, and is correct as written.)
 
      Sec 13.4 (RNC + NEEB) added alongside the appendices to close the test-vector
      gap flagged in the previous commit -- HopCount-specific propagation/forgery
