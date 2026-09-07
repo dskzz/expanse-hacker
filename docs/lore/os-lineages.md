@@ -13,11 +13,14 @@ it?" — and landing on an answer with a built-in reason for the exact
 kind of divergence and baked-in vulnerability the
 [architecture plan](../ARCHITECTURE.md) wants.
 
-**Timeline note:** "now" (game-present) is placed here at roughly
-**the 2390s** — about fifty years after the SolNet L0/L1 RFCs were
-actually promulgated (~2340s). That number came from the user directly
-and isn't precisely locked; treat every date below as approximate and
-adjustable, not settled canon.
+**Timeline note (corrected 2026-09-07):** "now" (game-present) is
+placed at **~2350** — pinned to the real-world start of the Expanse
+show/books per the user's own research, and confirmed to land safely
+before the Ring/Eros era. The whole chain below is shifted ~40 years
+earlier than the previous draft of this doc so "now" lands on the
+correct year without losing the fifty-year divergence window the four
+OS lineages need to feel earned (§1's closing entry). Treat every date
+below as approximate and adjustable, not settled canon.
 
 ## 0. Why fragmentation, not a rebuild from zero
 
@@ -51,7 +54,7 @@ standing authority to begin with.
 
 ## 1. Timeline
 
-**~2320 — the Vesta Blockade.** Not humanity's first war, but the
+**~2280 — the Vesta Blockade.** Not humanity's first war, but the
 first one caused by network rot. Timing drift and corrupted diplomatic
 traffic turn a routine standoff into a shooting war — Earth reads
 Mars's silence as defiance, Mars reads Earth's silence as escalation.
@@ -59,7 +62,7 @@ One Martian cruiser cripples five UN destroyers. Everyone blames
 everyone else. No one blames the network. The drift that caused it
 doesn't stop.
 
-**~2320–2330 — the Drift Years** (vault-canonical name, not this doc's
+**~2280–2290 — the Drift Years** (vault-canonical name, not this doc's
 invention). Earth piles on redundancy that overloads Belt relays; Mars
 tightens encryption that breaks Earth's routing; Belt engineers patch
 everything with salvage and improvisation. Firmware diverges, timing
@@ -69,14 +72,14 @@ on their own clock — compressed into a single decade under real
 technical and political strain, not stretched across centuries of
 drift-by-distance the way the original version of this doc had it.
 
-**~2330 — Anderson Station.** The Drift Years' body count. A surrender
+**~2290 — Anderson Station.** The Drift Years' body count. A surrender
 message gets flagged low-priority, drifts through Earth's civilian
 filters, and is silently dropped. Fred Johnson orders an assault based
 on silence the network itself manufactured. This is the setting's
 founding trauma — the moment "the network is unreliable" stops being
 an engineering footnote and becomes something people died over.
 
-**~2330s–2339 — Johnson, Dawes, and the Ceres Broadcast.** Johnson,
+**~2290s–2299 — Johnson, Dawes, and the Ceres Broadcast.** Johnson,
 exiled and haunted, quietly rebuilds a fleet-class broadcast node from
 salvage on Ceres. Anderson Dawes, watching from the docks, confronts
 him instead of turning him in. Together they force the Anderson
@@ -84,7 +87,7 @@ footage onto the network in a way no faction's filters can suppress.
 For the first time, Earth, Mars, the Belt, and the megacorps all see
 the same failure at the same moment.
 
-**~2339–2342 — the OPRA moment: SolNet's real founding.** The one time
+**~2299–2302 — the OPRA moment: SolNet's real founding.** The one time
 everyone actually pulls in the same direction — not out of trust, but
 because the alternative is another Anderson. Earth's institutional
 engineers, Mars's doctrinal timing specialists, Belt relay techs
@@ -96,7 +99,7 @@ broadly enough to matter. Every lineage below is a real descendant of
 this moment, not a superficial resemblance to it: they share an actual
 common ancestor, not just a family of similar ideas.
 
-**~2342–2347 — marginalization, and the birth of the OPA.** The
+**~2302–2307 — marginalization, and the birth of the OPA.** The
 moment the fires are out, the old habits return. Earth bureaucrats
 reclaim the committees; Mars reasserts doctrinal purity; corporate
 vendors flood the standards process; BRA is thanked, praised, and
@@ -106,7 +109,7 @@ institutional memory, and a specific, founded grievance. That's the
 actual seed of the OPA — infrastructure and betrayal, not abstract
 ideology.
 
-**~2342 → now (the 2390s) — roughly fifty years of renewed
+**~2302 → now (~2350) — roughly fifty years of renewed
 divergence.** With the coalition dissolved and no authority left to
 enforce it, the same mechanism from the Drift Years resumes — except
 now it's diverging *away from* a real, once-shared standard instead of
@@ -179,7 +182,7 @@ out directly with the user:
 
 | Lineage | Flagship product(s) | Embedded/constrained form | Shell |
 |---|---|---|---|
-| *(common ancestor)* | **SolOS** — the OPRA-era (~2339–42) frozen L0/L1 reference release everything below actually descends from | — | — |
+| *(common ancestor)* | **SolOS** — the OPRA-era (~2299–2302) frozen L0/L1 reference release everything below actually descends from | — | — |
 | **Earthstock** | **Earthstock CoreOS** (official, UN-ID/government — dry, defensible-in-a-meeting, a committee name) **and**, independently forked from the same SolOS ancestor, **GaiaOS** (a university/research consortium's own system — mythological branding fits *that* kind of committee, not a standards body; extra resonance if it's specifically an earth-systems-science network, a direct nod to the real Gaia hypothesis) | **CoreOS-CE** ("Compact Edition") — same compliance/ceremony weight, just smaller, matching how real regulated-industry embedded firmware stays bloated with certification overhead even at tiny footprints | `bash`, unchanged — ceremony-heavy institutional culture preserves precedent faithfully |
 | **BeltOS** | **Scrapshell** — the flagship, our primary player-facing dialect | **miniscrapshell** (real, `db/vfs/templates/miniscrapshell.json` — strips `/usr/lib`) | `sash` — eroded from "Scrapshell sh" over decades of oral/hand-patched use, the same folk-erosion mechanic as `/etc` → "Everyone's To-Change" (§5) |
 | **Tharsis** (Mars — doesn't fragment the way the Belt does, so one product, not a category-vs-flagship split) | **Tharsis** | **Tharsis-TCB** — not a shrink, a structurally different thing: capability systems are already minimal by design in reality (real ones like seL4 are tiny, verified microkernels with nothing to strip), so Mars's constrained-device form is a bare capability-execution stub with **no shell at all** — no `msh`, because a device nobody's meant to sit down and type into doesn't need one | `msh`, pronounced "mash" — plain, undecorated (M + sh), on-brand for Mars's doctrinal voice; rhymes with `bash` as convergent evolution (`bash`/`dash`/`hash`/`cash` are all real short *-ash* words), not a forced pun |
@@ -335,14 +338,14 @@ all, and the cached grant "hasn't expired yet."
 │   │                       # know exactly why it's like this, and
 │   │                       # it's still a sore subject.
 │   ├── duty-policy.conf    #   ADMISSION_MODE=HANDWAVE_TX default since
-│   │                       #   2361 -- the year the union stopped
+│   │                       #   2321 -- the year the union stopped
 │   │                       #   waiting for Earthstock's confirmed-
 │   │                       #   reservation handshake on routine
 │   │                       #   traffic. Nobody's proud of it. Nobody's
 │   │                       #   reverted it either.
 │   ├── union.trust          #   local quorum roster -- the root model, on disk
 │   └── patches.log          #   append-only: every hand-applied patch, who
-│                             #   signed it, when. Entries go back to 2344 --
+│                             #   signed it, when. Entries go back to 2304 --
 │                             #   two years after the standards shipped.
 ├── usr/{bin,lib}/          # merged long ago, unremarkable -- Scrapshell
 │                             # never had the coordination to move past a
@@ -401,13 +404,13 @@ example from earlier drafts.
 ```
 tech@RB-CERES-119 (Scrapshell 7.2-belt) [lag +0.4s → RELAY-PALLAS-07]
 $ ls -la /srv/relay
-drwxrwx---  7 tech   union    340  2396-03-14 09:11 .
--rwx------  1 root   root    2200  2396-03-14 09:11 duty-reservation.state
--rw-r--r--  1 root   union   9800  2361-11-02 00:00 rfc2305.txt
+drwxrwx---  7 tech   union    340  2356-03-14 09:11 .
+-rwx------  1 root   root    2200  2356-03-14 09:11 duty-reservation.state
+-rw-r--r--  1 root   union   9800  2321-11-02 00:00 rfc2305.txt
 
 $ spec rfc2305
 RFC-2305 -- Power and Duty Cycle Constraints (SolNet Standards Working
-  Group, adopted union-side since 2361 with local ADMISSION_MODE
+  Group, adopted union-side since 2321 with local ADMISSION_MODE
   override, see /etc/duty-policy.conf)
   §16.1 -- stress behavior
     "Blindly transmitting at full power without a confirmed
@@ -415,7 +418,7 @@ RFC-2305 -- Power and Duty Cycle Constraints (SolNet Standards Working
 
 $ probe duty-reservation --node RELAY-PALLAS-07
 RELAY-PALLAS-07: solnet.rfc2305/duty-reservation, ADMISSION_MODE=HANDWAVE_TX
-  (local override since 2361, no re-audit on file)
+  (local override since 2321, no re-audit on file)
   buffer hardware: VARS-MK2, degraded (subscription_current: false,
   duty_limit_pct_per_hour: 10 -- rated, not the VARS-locked 4)
 ```
@@ -464,6 +467,21 @@ the correction visible rather than quietly rewriting history:
   (§1), not against it — the real source material has more slack here
   than a casual "it just happened" reading assumes, so a multi-decade
   gap isn't a stretch against canon, it's within its actual ambiguity.
+- **Anchor re-corrected 2026-09-07, by the user directly:** the user's
+  own research pins the real Expanse show/books' start at **2350**, safely before the
+  Ring/Eros era, and "now" (game-present) needed to land there or
+  earlier, not in the 2390s. Rather than compress the fifty-year
+  divergence window the four lineages above depend on to feel earned,
+  every absolute year in this doc — and in `Notes/history/SolNet
+  Incident Timeline.md`, which shares the same chronology — was shifted
+  uniformly **40 years earlier**: Vesta ~2320→~2280, Anderson
+  ~2330→~2290, the OPRA moment ~2339–42→~2299–2302, OPA founding
+  ~2347→~2307, "now" 2390s→~2350. All *relative* gaps (the ~50-year
+  divergence window, the ~30-plus-year Anderson-to-now cooldown, RFC
+  adoption dates) are unchanged; only the absolute anchor moved.
+  Anywhere above still describing Anderson at ~2330 or "now" at the
+  2390s is describing the pre-2026-09-07 state, not current canon — §1
+  and the Timeline note at the top of this doc are current.
 - **RFC-2362 (Trust Domains and Authority Policy)** is the vault's own
   generic trust primitive (AuthorityWeight, cross-cert chains, no
   global CA) — the four lineages above are four different concrete
@@ -680,7 +698,7 @@ looks exactly as it already does. A file with an extra gradient grant
 gets a trailing `+`, exactly like real Linux ACLs signal today:
 
 ```
--rw-r--r--+  1 root   union    9800  2361-11-02 00:00 rfc2305.txt
+-rw-r--r--+  1 root   union    9800  2321-11-02 00:00 rfc2305.txt
 ```
 
 `ls -l` doesn't try to explain the `+` inline — same as real Unix,
@@ -692,8 +710,8 @@ it on demand, styled the same short/curated way `spec` already is:
 $ probe rfc2305.txt --acl
 rfc2305.txt: composed grant chain
   base:      -rw-r--r-- (root:union)
-  +ship:     RB-CERES-119 -- read (granted 2394-02-01)
-  +dept:     eng -- read/write (granted 2395-11-19)
+  +ship:     RB-CERES-119 -- read (granted 2354-02-01)
+  +dept:     eng -- read/write (granted 2355-11-19)
 ```
 
 **The record of who granted what lives on the same RFC-2302 local

@@ -3,9 +3,15 @@
 
 _(Internal design document — expandable as new RFCs are created)_
 
+_(Dates re-anchored 2026-09-07: shifted 40 years earlier across the
+board so game-present lands at ~2350, matching the real Expanse
+show/books' start, per the user's own research — see
+`docs/lore/os-lineages.md` §1 and its "Timeline note." All relative
+gaps between incidents are unchanged; only the absolute years moved.)_
+
 ## **Pre‑SolNet Failures (Major Canonical Events)**
 
-### **~2320 — Vesta Blockade Failure**
+### **~2280 — Vesta Blockade Failure**
 
 - Catastrophic military miscommunication.
     
@@ -16,7 +22,7 @@ _(Internal design document — expandable as new RFCs are created)_
 - Cited by SSWG, MIAP, and SPERB.
     
 
-### **~2325–2328 — Pallas Exposure Event**
+### **~2285–2288 — Pallas Exposure Event**
 
 - Civilian governance breakdown due to comms desync.
     
@@ -29,7 +35,7 @@ _(Internal design document — expandable as new RFCs are created)_
 - SPERB’s precursor committees formed.
     
 
-### **~2330 — Anderson Station Incident**
+### **~2290 — Anderson Station Incident**
 
 - Fatal escalation caused by delayed, misrouted, and contradictory transmissions.
     
@@ -38,7 +44,7 @@ _(Internal design document — expandable as new RFCs are created)_
 - SSWG and SPERB both treat this as a foundational precedent.
     
 
-## **Drift Years (2330–2336)**
+## **Drift Years (2290–2296)**
 
 - Relay drift, vendor divergence, inconsistent TLV ordering.
     
@@ -49,11 +55,11 @@ _(Internal design document — expandable as new RFCs are created)_
 - Basis for early SolNet L1 drafts.
     
 
-## **SolNet L1 Development Era (2336–2340)**
+## **SolNet L1 Development Era (2296–2300)**
 
 _(These are the incidents referenced in RFC‑2351 and related documents.)_
 
-### **2336 — Early Interoperability Failures**
+### **2296 — Early Interoperability Failures**
 
 - VARINT mis‑encoding.
     
@@ -62,28 +68,28 @@ _(These are the incidents referenced in RFC‑2351 and related documents.)_
 - Relay non‑interference violations.
     
 
-### **2337 — Vendor Profile Negotiation Collapse**
+### **2297 — Vendor Profile Negotiation Collapse**
 
 - Vendors attempt to introduce “flexible profiles.”
     
 - Leads to routing ambiguity and metadata leakage.
     
 
-### **2338 — Testbed Authentication Failures**
+### **2298 — Testbed Authentication Failures**
 
 - CompactAuthTag introduced after repeated failures.
     
 - ProvenancePointer semantics clarified.
     
 
-### **2338 — Reduced Profile Over‑Stripping Event**
+### **2298 — Reduced Profile Over‑Stripping Event**
 
 - Devices strip essential metadata.
     
 - Causes routing loops and impersonation incidents.
     
 
-### **2339 — Metadata Leak of ’39**
+### **2299 — Metadata Leak of ’99**
 
 - Vendor TLV overreach exposes user movement patterns.
     
@@ -92,60 +98,60 @@ _(These are the incidents referenced in RFC‑2351 and related documents.)_
 - Leads to strict metadata minimization doctrine.
     
 
-### **2339 — Relay Rewriting Scandal**
+### **2299 — Relay Rewriting Scandal**
 
 - Several relays caught rewriting TLVs.
     
 - SSWG issues strict MUST NOT language.
     
 
-### **2339 — Dual‑Parse TLV Incident**
+### **2299 — Dual‑Parse TLV Incident**
 
 - Vendor mis‑sorts TLVs, creating dual interpretations.
     
 - Basis for TLV canonicalization rules.
     
 
-## **Post‑Publication Incidents (2340–2350)**
+## **Post‑Publication Incidents (2300–2310)**
 
 _(These are the “little ones” implied by the RFCs and future‑proofed for expansion.)_
 
-### **2341 — Fallback Optical Misfire**
+### **2301 — Fallback Optical Misfire**
 
 - Relay stuck in fallback mode leaks simplified frames.
     
 - SPERB cites this as an exposure risk.
     
 
-### **2343 — Provenance Ghost Chain Event**
+### **2303 — Provenance Ghost Chain Event**
 
 - Legacy node reappears in provenance chains.
     
 - Causes routing confusion.
     
 
-### **2345 — Vendor Annex Breach**
+### **2305 — Vendor Annex Breach**
 
 - Proprietary TLV hides a maintenance channel.
     
 - Operators exploit it to bypass trust‑domain boundaries.
     
 
-### **2346 — Reduced Profile Collapse**
+### **2306 — Reduced Profile Collapse**
 
 - Station forces all traffic into Reduced Profile to hide activity.
     
 - SPERB issues corrective directive.
     
 
-### **2347 — Frame‑Length Mismatch Incident**
+### **2307 — Frame‑Length Mismatch Incident**
 
 - Relay mis‑parses padding regions.
     
 - Leads to partial metadata exposure.
     
 
-### **2349 — A/N Header Divergence Spike**
+### **2309 — A/N Header Divergence Spike**
 
 - Multiple relays show inconsistent A/N header parsing.
     
