@@ -12,7 +12,7 @@ sign-off, per the repo's surgical-corrections-only rule for that folder.)
 
 *Doctrinal Integrity Council*
 
-This RFC SHALL define the Relay Advertisement Protocol (RAP): what a relay discloses, what it withholds, and why the difference is not open to reinterpretation. None of this is complicated. It has simply been explained before, to people who did not want to hear it.
+This RFC SHALL define the Relay Advertisement Protocol (RAP): what a relay discloses, what it withholds, and why the difference is not open to reinterpretation. None of this is complicated. It has been explained before. This Council does not expect that to have helped.
 
 A relay, for readers requiring the reminder, is a SolNet Layer‑1 node that forwards traffic between other nodes without itself being either endpoint of the communication. It is infrastructure, not a participant, and it has no session-layer identity of its own — a property this RFC exists specifically to protect, not merely to mention in passing.
 
