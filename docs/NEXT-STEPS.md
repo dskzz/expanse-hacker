@@ -104,6 +104,26 @@ undrafted. Worth drafting RFC-2394 with this chain as its backbone
 rather than starting from scratch, and it directly informs Track B's
 multi-user-auth item below.
 
+### A7. Build-out: artifact-based editing/review workflow for the whole RFC corpus
+
+Piloted 2026-09-07 on RFC-2353: converted the working-draft Markdown
+into a standalone, styled HTML page (two-column TOC + content layout,
+institutional "stamp" badges per voice, sticky nav) published as a
+live Claude artifact — Dan edits inline or leaves comment threads
+directly on the page, and once a draft is "good" its content gets
+promoted back into the repo as the finished Markdown. Worked well
+enough that Dan wants it done for the rest of the corpus, not just
+this one RFC.
+
+Not yet built: a repeatable pipeline instead of a one-off conversion
+script, and a real home for the output — something like a `build/` or
+`docs/` folder (naming TBD) that holds the generated review pages,
+distinct from the authored Markdown in `docs/vault/New RFCs/` and
+`docs/vault/Notes/`. Worth deciding, when this gets picked up: whether
+that folder holds checked-in generated HTML, or is purely a build
+artifact regenerated on demand from the Markdown source. Low priority,
+explicitly deferred by Dan ("later though, just... todo it").
+
 ---
 
 ## Track B — System-building (Sid's implementation queue)
