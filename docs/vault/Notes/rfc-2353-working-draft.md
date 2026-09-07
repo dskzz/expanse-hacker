@@ -22,7 +22,7 @@ RFC‑2353 is subordinate to RFC‑2352 (Privacy & Metadata Minimization) and RF
 
 RelayAdvertisement is a Layer‑1 behavior. It SHALL NOT be extended to carry ServicePlane routing logic, Namespace Plane resolution semantics, or session-layer identity. Implementers who find this restriction inconvenient are directed to the layer where the desired behavior belongs. It was never going to be this one.
 
-Doctrinal purity SHALL be preserved. This is not a negotiable design goal, and the Council will not be revisiting it because a vendor found it inconvenient.
+Doctrinal purity SHALL be preserved. This is not a negotiable design goal, and the Council will not be revisiting it because a vendor found it inconvenient. Implementers seeking a more permissive interpretation elsewhere are welcome to look. They will not find one issued by this Council.
 
 ---
 
@@ -257,7 +257,7 @@ The canonical interval, denoted T_adv, is the fixed period at which a RelayAdver
 - When T_adv has elapsed, emission follows; exception: a relay in a DTN partition with no reachable peer, which MAY defer emission until connectivity is restored without that deferral constituting non-compliance.
 - Emission cadence MUST NOT vary with load, admission state, or scheduling capacity. A relay experiencing congestion and a relay experiencing none SHALL emit on identical schedules. Anything else converts the schedule itself into a signal Section 5 already prohibits other fields from carrying.
 
-An advertisement issued even slightly ahead of schedule is not a rounding error. It is a data point. This Board has reviewed cases in which a consistent early-emission pattern, aggregated over enough cycles, reconstructed a load curve the relay's other fields were specifically designed not to reveal. The interval exists to prevent exactly this, and it does not stop preventing it just because the deviation was small.
+An advertisement issued even slightly ahead of schedule is not a rounding error. It is a data point. This Board has reviewed cases in which a consistent early-emission pattern, aggregated over enough cycles, reconstructed a load curve the relay's other fields were specifically designed not to reveal. The interval exists to prevent exactly this, and it does not stop preventing it just because the deviation was small. No other institution in this corpus appears to share this Board's concern for what a few dozen milliseconds can reveal over time. This Board finds that, if anything, confirms the point.
 
 Jitter, where introduced for purposes unrelated to this protocol (e.g., collision avoidance at the media layer), MUST be independent of any state this document requires to remain hidden. Jitter correlated with load is not jitter. It is RelayLoadClass, delivered through a side door.
 
@@ -289,13 +289,13 @@ The Hybrid Relay Profile combines RF and tightbeam with multi-media scheduling a
 
 *Operational Relay Authority*
 
-In sparse-topology Belt sectors, relay contact isn't continuous, and pretending otherwise in this section wouldn't help anybody out here. When a relay rejoins the network after a gap — spin-shift, occlusion, DTN partition, whatever the cause — it MAY emit one initial RelayAdvertisement outside the canonical interval, to get visible again fast. After that, it hold to T_adv same as every other relay. That exception belong to relays coming back online, not to relays looking for excuse to update more than policy allow.
+In sparse-topology Belt sectors, relay contact isn't continuous, and pretending otherwise in this section wouldn't help anybody out here. When relay rejoins network after gap — spin-shift, occlusion, DTN partition, whatever cause — it MAY emit one initial RelayAdvertisement outside canonical interval, to get visible again fast. After that, it hold to T_adv same as every other relay. That exception belong to relays coming back online, not to relays looking for excuse to update more than policy allow.
 
-Admission fairness: AdmissionPolicyHint and RelayCapabilityMask MUST NOT bias against low-band nodes, older hardware, or nodes from a particular sector. Relay pass what come, fair-share. A relay quietly favoring high-capability peers while advertising A2 (Open) to everyone else isn't degrading gracefully — it's lying by omission, and this Authority calls it that.
+Admission fairness: AdmissionPolicyHint and RelayCapabilityMask MUST NOT bias against low-band nodes, older hardware, or nodes from particular sector. Relay pass what come, fair-share. Relay quietly favoring high-capability peer while advertising A2 (Open) to everyone else isn't degrading graceful — that's lying by omission. Lying still is.
 
-Hybrid relays in spin-shift zones SHALL degrade smooth, not sharp. A sudden tightbeam drop makes the whole sector go dark if RF fallback isn't standing ready *before* the drop, not scrambled together after. Operators plan for that ahead of time, same as always — you plan for break before break come.
+Hybrid relays in spin-shift zones SHALL degrade smooth, not sharp. Sudden tightbeam drop makes whole sector go dark if RF fallback isn't standing ready *before* drop, not scrambled together after. Operators plan for that ahead of time, same as always — you plan for break before break come.
 
-Vacuum drift hits RF and tightbeam chains different ways, and a hybrid relay serving both media has to account for both — not just whichever medium the vendor happened to test more.
+Vacuum drift hits RF and tightbeam chains different ways, and hybrid relay serving both media has to account for both — not just whichever medium vendor happened to test more.
 
 #### 8.5 Fair Treatment Under Automated Admission Logic
 
@@ -383,7 +383,7 @@ Five cases. A parser passing four of five has not mostly passed — it has faile
 
 *Relay Neutrality Commission*
 
-Given a set of RelayAdvertisement records with varying SchedulingCapacityHint and AdmissionPolicyHint values, a conforming ServicePlane implementation MUST: select among C3–C5/A2–A3 relays preferentially for new sessions; treat C0/A0 relays as unavailable for new sessions regardless of any other advertised capability; and fall back to a lower-capacity relay only when no relay advertising sufficient capacity is reachable. If a selection implementation weights any factor not derivable from the advertised TLVs — inferred load, historical performance, peer reputation — that weighting is out of scope for this RFC and MUST NOT be represented as RAP-conformant behavior.
+Given a set of RelayAdvertisement records with varying SchedulingCapacityHint and AdmissionPolicyHint values, a conforming ServicePlane implementation MUST: select among C3–C5/A2–A3 relays preferentially for new sessions; treat C0/A0 relays as unavailable for new sessions regardless of any other advertised capability; and fall back to a lower-capacity relay only when no relay advertising sufficient capacity is reachable. If a selection implementation weights any factor not derivable from the advertised TLVs — inferred load, historical performance, peer reputation — that weighting is out of scope for this RFC and MUST NOT be represented as RAP-conformant behavior. This Commission has reviewed "peer reputation" as a selection factor before. It did not improve routing then either.
 
 #### 13.3 Minimization Tests
 
@@ -415,6 +415,31 @@ A conforming implementation SHALL be tested for the absence of the following, no
      lying just the same"); §11.4 lightly sharpened for DIC's active public-contempt
      trait (not just weary condescension). Both traits are now recorded in
      voices/voice_profiles/SPERB Sub-Bureau Voices.md so future sections start from
-     the sharpened cards, not the original ones. Existing §8 body (pre-dating this
-     pass) not retrofitted with the stricter article-dropping rule -- flag if a full
-     consistency pass over §8 is wanted. -->
+     the sharpened cards, not the original ones. -->
+
+<!-- 2026-09-06 consistency pass: §8 body (pre-dating the 8.5 addition) retrofitted
+     with the stricter article-dropping rule, and given its own "[X] is" tautology
+     callback ("Lying still is") echoing 8.5's "Machine lying still is" -- deliberate
+     internal rhyme between the two, not a coincidence.
+
+     Voice-intensity review: most sections were already close to their card's ceiling
+     (ENAG's §7 in particular is already at the edge the Calibration Note allows --
+     three separate reminders within one section -- and was left untouched on
+     purpose). Three sections were genuinely underplaying their own tic and got a
+     one-sentence bump (~10-15%, not a rewrite):
+       - §0 (DIC): added a closing dismissal after the "not negotiable" line --
+         "Implementers seeking a more permissive interpretation elsewhere are welcome
+         to look. They will not find one issued by this Council."
+       - §6 (TSRB): added a persecution-complex line after the load-curve
+         reconstruction example -- "No other institution in this corpus appears to
+         share this Board's concern... This Board finds that, if anything, confirms
+         the point."
+       - §13.2 (RNC): added a failure-history callback -- "This Commission has
+         reviewed 'peer reputation' as a selection factor before. It did not improve
+         routing then either." -- reinforces the same grudge already established in
+         §1 and §4 without introducing a new one. -->
+
+<!-- 2026-09-07 corpus-wide flag, not yet actioned: same article-dropping and
+     tautology-closer discipline now locked for OPRA has NOT been checked against
+     any other document in the corpus that uses OPRA (none currently do -- OPRA is
+     new to RFC-2353 -- but worth remembering if OPRA gets reused elsewhere). -->
