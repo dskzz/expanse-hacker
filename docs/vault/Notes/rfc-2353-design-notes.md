@@ -147,10 +147,23 @@ below was deliberately left unconfirmed/uncited in the actual RFC text — it's
 useful design inspiration for us, not something the in-universe document needs to
 name-check.
 
-**Known residual gap:** §13 (Test Vectors and Parsing Tests) was not updated to add
-HopCount-specific test cases (e.g. reject-on-increment, reject-on-multi-decrement,
-zero-HopCount-must-not-forward). Flagging rather than silently leaving stale — worth
-closing before this draft graduates to `docs/vault/New RFCs/`.
+**Residual gap closed, 2026-09-07:** §13.4 (RNC + NEEB) now covers HopCount-specific
+propagation/forgery test cases, and §13.1 picked up a sixth parsing case for the
+seven-required-TLV count change. Nothing in §13 is currently known-stale.
+
+**Appendices A–K: written, 2026-09-07** (`rfc-2353-working-draft.md`), following this
+map exactly except where the map itself only said "may also appear" (Appendix C got
+a short OPRA field note rather than a full OPRA-authored block, which felt more
+honest to "may" than writing OPRA in at full length). One deliberate departure from
+the map worth flagging: Appendix J uses correct J.1–J.11 lettering for SPERB's
+sub-bureau list, where the real canonical RFC-2352 uses leftover C.1–C.11 prefixes
+in its own Appendix J (an already-flagged corpus defect). Not fixed by reference or
+called out inside RFC-2353's own text — an in-universe document doesn't cite another
+document's typo — but worth remembering next time someone reads RFC-2352's real
+Appendix J and RFC-2353's side by side and wonders why they don't match.
+
+**Open Item below (UN-ID-style voice for RFC-2353) remains genuinely unresolved** —
+not addressed by any of this session's work.
 
 ## Open Item
 

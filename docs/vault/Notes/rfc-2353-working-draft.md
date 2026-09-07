@@ -399,9 +399,9 @@ This Board is named the SolNet Physical‑Layer Exposure Review Board, abbreviat
 
 *Canonical Behavior Registry*
 
-A conforming parser MUST be tested against, at minimum: (a) a record with all required TLVs in canonical order — MUST parse successfully; (b) a record missing one required TLV — MUST be rejected as invalid, per Section 2.1; (c) a record with TLVs out of ascending order — MUST be rejected as malformed, per Section 2; (d) a record containing one unrecognized type code — MUST parse successfully, ignoring only the unrecognized TLV, per Section 2; (e) a record containing one TLV with an incorrect length field — MUST discard that TLV and successfully parse the remainder, per Section 2.
+A conforming parser MUST be tested against, at minimum: (a) a record with all required TLVs in canonical order — MUST parse successfully; (b) a record missing one required TLV — MUST be rejected as invalid, per Section 2.1; (c) a record with TLVs out of ascending order — MUST be rejected as malformed, per Section 2; (d) a record containing one unrecognized type code — MUST parse successfully, ignoring only the unrecognized TLV, per Section 2; (e) a record containing one TLV with an incorrect length field — MUST discard that TLV and successfully parse the remainder, per Section 2; (f) a record with all seven required TLVs, including HopCount, in canonical order — MUST parse successfully, restated separately from case (a) because a Registry update that changes a required field count invalidates every existing conformance suite silently, and this Registry does not trust "the old suite still probably works" as a testing philosophy.
 
-Five cases. A parser passing four of five has not mostly passed — it has failed whichever case it failed, and Table 2.1 does not grade on a curve.
+Six cases. A parser passing five of six has not mostly passed — it has failed whichever case it failed, and Table 2.1 does not grade on a curve.
 
 #### 13.2 Admission and Scheduling Decision Tests
 
@@ -414,6 +414,194 @@ Given a set of RelayAdvertisement records with varying SchedulingCapacityHint an
 *Non-Exposure Enforcement Bureau*
 
 A conforming implementation SHALL be tested for the absence of the following, not merely the presence of the required fields: correlation between RelayLoadClass transitions and externally observable traffic events; correlation between advertisement emission timing and load, per Section 6; and recoverability of vendor identity from RelayCapabilityMask or CapabilityExtensions bit patterns across a sample of advertisements from different vendors. A test suite verifying only that required TLVs are present and correctly typed has verified structure. It has not verified compliance, and this Bureau does not consider the two equivalent.
+
+#### 13.4 Propagation and Forwarding Tests
+
+*Relay Neutrality Commission + Non-Exposure Enforcement Bureau*
+
+A conforming relay implementing forwarding (Section 1.6) MUST be tested against, at minimum: (a) forwarding a record with HopCount decremented by exactly one — MUST succeed and MUST NOT alter any other field; (b) receiving a record with HopCount already at zero — MUST NOT forward it under any circumstance; (c) a record whose HopCount has been incremented rather than decremented relative to its previously observed emission — MUST be treated as forged under Section 10(d); (d) a record whose HopCount has decreased by more than one at a single hop — MUST be treated as forged under Section 10(d); (e) a record forwarded with any field other than HopCount altered from its original emission — MUST be treated as forged under Section 10(d), regardless of whether the altered field's new value is independently well-formed.
+
+Cases (c) through (e) exist because a well-formed lie is still a lie. This Bureau has no interest in whether a forged record parses cleanly. It has already failed the test that matters.
+
+---
+
+## Appendices
+
+### Appendix A — Rationale
+
+*Doctrinal Integrity Council*
+
+This appendix explains why RAP takes the shape it does. It is non-normative. A reader who requires this appendix to accept the normative sections has not been persuaded by anything else in this document, and this Council does not expect an appendix to succeed where thirteen sections did not.
+
+RAP is minimal because a relay's advertised state is the one thing every layer above it is tempted to over-trust. The less a relay says, the less there is to over-trust. This is not an accident of drafting economy; it is the entire design principle. Every optional field this document does not define was considered and rejected on this basis, not overlooked.
+
+RAP is one-way because a confirmed exchange implies a relationship, and RAP does not describe one. A relay advertising capability is not entering into an agreement with whoever reads the advertisement. It is speaking into a channel that happens to have listeners. Section 1.6's hop-limited propagation preserves that indifference at every hop: forwarding is a courtesy the network extends to reachability, not a chain of individually-negotiated relationships between relays.
+
+RAP is coarse because precision is a liability disguised as a feature. Every enumerated class in this document (SchedulingCapacityHint, AdmissionPolicyHint, RelayLoadClass — HopCount excepted, for the reason given in Section 5.6) was chosen to answer exactly the question a consuming layer needs answered and no other question. A field that additionally answers questions nobody asked has not been generous. It has exposed something.
+
+None of this required originality. It required declining, repeatedly, to add anything that was not required.
+
+### Appendix B — Formal Proof Sketch
+
+*Doctrinal Integrity Council + Non-Exposure Enforcement Bureau*
+
+This appendix is non-normative and does not constitute a formal verification. It sketches, informally, why the field set defined in Section 2 does not permit reconstruction of any state this document prohibits disclosing, beyond the single disclosed exception in Section 5.6.
+
+**Claim:** For any RelayAdvertisement record R, an observer with access to an arbitrary number of instances of R, and to no other information, cannot recover queue depth, session count, peer identity, vendor identity, or hardware lineage, and can recover only relative hop-distance from R's point of origin.
+
+**Sketch:** Every field in R other than HopCount is drawn from a finite, registry-fixed enumeration (Section 2.1, Section 3.1) whose boundaries are policy-derived, not state-derived (Section 4.1, Section 4.2). A finite enumeration with policy-derived boundaries carries, by construction, no more information than the boundary itself specifies — an observer who recovers the class value has recovered the class, and nothing behind it, because nothing behind it was encoded in the first place. This holds independent of sample size: correlating one thousand instances of a three-valued class recovers, at most, the same three values with more confidence, not a fourth value or the field's underlying cause.
+
+RelayID (Section 2.1) is opaque by registry mandate and carries no structure an observer could decompose. CapabilityExtensions (Section 3.2) is bound by the same non-exposing constraint as the core mask and by the UUID-S7 identity rule (Section 3.3), which severs any link between a bit's registered meaning and any human-readable or vendor-suggestive label.
+
+HopCount is the one field this sketch cannot close. Its value is, by the propagation model in Section 1.6, a direct linear function of hop-distance from origin. No enumeration bound applies to it, and none could without breaking the field's only purpose. Section 5.6 already states this plainly rather than let this appendix discover it.
+
+**Conclusion (informal):** the field set is closed under the minimization doctrine (Section 5) with exactly one disclosed, load-bearing exception. This Bureau considers that an acceptable place for a proof sketch to stop, since a proof sketch that also closed the one gap this document deliberately left open would be proving something false.
+
+### Appendix C — Test Vector Overview
+
+*Canonical Behavior Registry + Relay Neutrality Commission*
+
+This appendix indexes the test vectors required by Section 13. It does not define new tests; a test suite implementing Section 13 in full has already satisfied this appendix, and a test suite that has not implemented Section 13 in full is not made compliant by reading this appendix instead.
+
+| Vector Set | Defined In | Covers |
+|---|---|---|
+| Parsing conformance | Section 13.1 | Canonical ordering, required-field completeness, unrecognized-TLV tolerance, malformed-length handling |
+| Admission and scheduling decisions | Section 13.2 | ServicePlane relay selection under varying capacity/admission classes |
+| Minimization | Section 13.3 | Absence of load, timing, and vendor-identity correlation |
+| Propagation and forwarding | Section 13.4 | HopCount decrement discipline, forgery detection under Section 10(d) |
+
+A vendor may organize its own internal test harness however it likes. This Registry organizes this appendix by section number because that is the one organizing principle guaranteed not to go stale when a vendor reorganizes theirs.
+
+*Operational Relay Authority — field note:* Test lab pass all four, sector still eat relay alive first winter, ya. Table tell you what to test. Table not tell you sector where relay actually sit — that ENAG job, that Authority job, table just table.
+
+### Appendix D — Deployment Guidance
+
+*Operational Relay Authority*
+
+Pick H_max for sector you actually have, not sector you wish you had. Dense cluster near station, low H_max fine — everything close, hop don't need travel far to matter. Deep Belt, sparse relay chain strung out over million kilometer, H_max too low mean advertisement die a few hop out and half the sector never see it exist at all. No table in Appendix C tell you which sector you in. You out there. You know.
+
+Watch H_max after storm season too. Topology that hold steady all year can lose three relay to a bad conjunction and suddenly your old H_max don't reach where it used to. Authority say again — tune it to what is, not what was.
+
+*Environmental Neutrality Assessment Group*
+
+Deployment guidance is not a substitute for Section 7's requirements; it is what implementers ask for after failing to follow Section 7's requirements and wanting a shorter document to blame instead. Test the media profile in the vacuum, thermal cycle, and radiation environment of actual intended deployment. This has been said in Section 7. It is said again here because deployment guidance that omitted it would not be guidance.
+
+*Relay Neutrality Commission*
+
+A relay's advertised capability MUST be configured to match what the relay can actually sustain, not what its hardware specification claims under laboratory conditions. This Commission has reviewed enough post-incident reports attributing a capacity mismatch to "the spec sheet said" to note, once, that the spec sheet is not this document, and this document is not obligated to defer to it.
+
+### Appendix E — Security Considerations
+
+*Non-Exposure Enforcement Bureau*
+
+This appendix consolidates the exposure and forgery risks already stated individually in Sections 5, 5.6, and 10. It adds no new prohibition. It exists because an implementer reviewing this document section by section may fail to notice that these risks compound, and this Bureau has found that failure to notice compounding risk is, itself, a compounding risk.
+
+In order of what this Bureau has found implementers most reliably get wrong, worst first:
+
+1. Treating RelayID as an authentication credential (Section 10(b)) — the single most common failure this Bureau has reviewed, and the one most implementers are most confident they have not made.
+2. Structural or timing side channels introduced by operational-state-dependent record variation (Section 5) — subtle, rarely intentional, and rarely caught by a test suite that only checks field values rather than record shape.
+3. HopCount tampering (Section 10(d)) — the newest category in this document's history, and already, per this Bureau's early review, the fastest-growing one.
+4. Assuming a single advertisement, or a short run of them, establishes reliability (Section 10.4) — not an exposure violation in itself, but the failure mode most likely to make an implementer stop looking for the other three.
+
+This Bureau does not rank these by theoretical severity. It ranks them by how often it has actually had to open a case.
+
+### Appendix F — Known Non-Compliant Patterns
+
+*Non-Exposure Enforcement Bureau*
+
+**The Quantized Leak.** A vendor implementation mapped RelayLoadClass to LOW/MED/HIGH correctly, then logged the underlying raw utilization value locally "for diagnostics only." A subsequent firmware update exposed that diagnostic log through an unrelated debug interface. The class value itself never left compliance. The number it was supposed to replace did, because a device that stores what it wasn't supposed to know will eventually find a door for it. This Bureau does not consider "for diagnostics only" a defense. It never has.
+
+**The Helpful Cache.** A Namespace Plane cache implementation began annotating cached RelayAdvertisement records with a locally-computed "reliability score" derived from advertisement consistency over time, intending it as a convenience for downstream queries. The annotation was never part of the record. It was also, functionally, exactly the kind of inference Section 10.4 already tells implementers to perform elsewhere and not attach to this record. Convenience and compliance are not the same axis, and this Bureau has stopped being surprised at how often that needs restating.
+
+*Relay Neutrality Commission*
+
+**The Optimistic Capacity Class.** More than one vendor has shipped a relay that advertises SchedulingCapacityHint based on theoretical maximum throughput rather than sustained, policy-derived capacity, on the theory that the difference is "close enough in practice." It is not close enough in practice. It is close enough to get a ServicePlane implementation to select a relay that then cannot deliver, which is a worse outcome for everyone than an honest C2 would have been. This Commission has seen this exact justification before. It was wrong then too.
+
+### Appendix G — Historical Context
+
+*Doctrinal Integrity Council*
+
+Before RAP, relay capability was communicated informally, inconsistently, and, in a majority of documented cases, not at all — a ServicePlane implementation either guessed at a relay's suitability from prior experience or discovered it empirically, mid-session, by failing. Neither approach scaled, and both produced routing decisions that were indistinguishable, after the fact, from luck. This document exists because "it worked last time" is not a protocol.
+
+*Operational Relay Authority*
+
+Before RAP, everybody build own way to say what relay do. One sector use signal strength as stand-in for everything — capacity, admission, load, all one number, nobody agree what number mean. Next sector over use something else entire. Ship come through, ship guess wrong, ship lose cargo or lose contact, and everybody call it bad luck 'cause nobody wrote down what actually happen.
+
+RAP not fix everything out here. Storm still come, relay still die, sector still go quiet sometime with no warning. What RAP fix is smaller, but it matter: now when relay say C2, every relay everywhere mean same thing by C2. That alone save more cargo than any signal-strength trick ever did.
+
+### Appendix H — SPERB Procedural Rules
+
+*SolNet Physical‑Layer Exposure Review Board*
+
+**H.1 Scope.** This appendix defines procedural rules governing this Board's review of RAP implementations, supplementing the summary already given in Section 12.
+
+**H.2 Review Procedures.** Certification applications, complaints, and Board-initiated reviews are handled under an identical procedure regardless of origin, per Section 12. Applications alleging non-compliance under Section 10(d) (HopCount tampering) SHALL include the full observed sequence of HopCount values across hops, not a single sample; a single sample cannot distinguish tampering from ordinary propagation and this Board will not open a case on one.
+
+**H.3 Audit Procedures.** Audits of deployed relay populations SHALL sample RelayAdvertisement emissions across at least one full canonical interval and SHALL include at least one forwarding relay, where a candidate for audit forwards traffic at all. An audit that samples only origin advertisements has not audited propagation, regardless of what its final report claims to have found.
+
+**H.4 Enforcement Procedures.** Corrective directives, compliance notices, and revocation notices under Section 12 are issued by this Board and are not delegable to any sub-bureau acting independently. A sub-bureau identifying a violation refers it to this Board; it does not resolve it unilaterally, however confident it is in the finding.
+
+**H.5 Communication Protocols.** All formal correspondence regarding RAP conformance SHALL use terminology as defined in this document and, where a term originates elsewhere, as defined in the shared corpus glossary (`solnet-glossary.md`).
+
+**H.6 Naming and Formal Address Requirements.** All formal correspondence SHALL refer to this Board as SPERB, pronounced SPEAR‑B. Informal or phonetic contractions are discouraged and SHALL NOT appear in conformance claims, certification requests, or audit submissions.
+
+### Appendix I — Implementation Notes
+
+**I.1 Scope.** *Operational Relay Authority.* This appendix give practical note for implementing relay in physical, non-simulation deployment — not lab, not test bench, actual sector.
+
+**I.2 Hardware Considerations.** *Environmental Neutrality Assessment Group.* Implementations SHALL ensure timing and emission hardware conforms to the canonical interval discipline of Section 6 under the full range of thermal and power conditions the deployment will actually see, not the range the bench happened to have available that week.
+
+**I.3 Forwarding Relay Considerations.** *Operational Relay Authority.* Relay that forward — not just originate — need buffer enough to hold record long enough to decrement and re-emit without drift creeping into timing Section 6 already forbid. Cheap relay skip this, buffer too small, drop record under load 'stead of forward it clean. That not compliant fallback. That just failure wearing compliant clothes.
+
+**I.4 Sector Topology Considerations.** *Operational Relay Authority.* H_max (Section 1.6) is a policy parameter, not a hardware one, but hardware still constrain what policy is realistic — relay with weak buffer, weak power budget, can't reliably forward at all, no matter what H_max sector authority pick. Know your hardware 'fore you promise your policy.
+
+**I.5 Update and Maintenance Considerations.** *Environmental Neutrality Assessment Group.* Firmware updates MUST NOT alter emission timing, TLV ordering, or HopCount decrement behavior. An update that "improves" any of the three has not improved this protocol. It has left it.
+
+### Appendix J — Organizational Structure
+
+*SolNet Physical‑Layer Exposure Review Board*
+
+**J.1 Scope.** This appendix defines the internal organizational bodies of SPERB relevant to RAP conformance. Full organizational detail is maintained in RFC-2352 Appendix J; this appendix restates only the bodies with direct RAP jurisdiction, correctly lettered.
+
+**J.2 Directorate of Emission Neutrality (DEN).** Maintains the canonical Layer-1 emission profile RAP inherits. Not directly cited elsewhere in this document, since RAP's own emission discipline is Section 6's, not a fresh grant from DEN — but DEN's doctrine is upstream of Section 6 regardless.
+
+**J.3 Non-Exposure Enforcement Bureau (NEEB).** Authors Sections 5, 5.6, and 10 of this document. Investigates exposure events and Section 10(d) forgery findings.
+
+**J.4 Canonical Behavior Registry (CBR).** Authors Section 2 and Section 13.1 of this document. Maintains the authoritative TLV registry RAP's field set is drawn from.
+
+**J.5 Cross-Vendor Convergence Office (CVCO).** Authors Sections 3.2, 3.3, and 9 of this document. Certifies extension registrations and vendor-convergence testing.
+
+**J.6 Temporal Stability Review Board (TSRB).** Authors Section 6 of this document. Reviews canonical-interval compliance and timing-correlation findings.
+
+**J.7 Environmental Neutrality Assessment Group (ENAG).** Authors Section 7 and Appendix I.2/I.5 of this document. Validates media-profile invariance under environmental variation.
+
+**J.8 Relay Neutrality Commission (RNC).** Authors Sections 1, 1.5, 1.6, 4, and 13.2 of this document. Reviews relay-behavior conformance and forwarding discipline.
+
+**J.9 Doctrinal Integrity Council (DIC).** Authors Sections 0, 11, and Appendices A and B of this document. Reviews cross-RFC doctrinal alignment.
+
+**J.10 Registry of Canonical Terminology (RCT).** Not directly cited in this document's body; maintains the shared corpus glossary (`solnet-glossary.md`) this document footnotes into.
+
+**J.11 Compliance Revocation Authority (CRA).** Not directly cited in this document's body; exercises the revocation authority Section 12 describes this Board as holding, where revocation is the disposition reached.
+
+### Appendix K — Authorship
+
+**K.1 Editorial Authority.** This document was prepared under the multi-institutional authorship model established for the SolNet Standards Corpus. Authorship reflects institutional roles rather than individual identity, per the convention already established for RFC‑2352.
+
+**K.2 Primary Authors.**
+
+- **Relay Neutrality Commission (RNC)** — relay behavior, forwarding neutrality, propagation semantics, admission policy hints.
+- **Canonical Behavior Registry (CBR)** — TLV registry, capability masks, canonical advertisement structure, HopCount field definition.
+- **Non-Exposure Enforcement Bureau (NEEB)** — prevention of queue-depth, peer-identity, and topology leakage; disclosure and scoping of the HopCount exception.
+- **Doctrinal Integrity Council (DIC)** — invariance doctrine alignment, non-violation of RFC‑2352 and RFC‑2360, reconciliation of disclosed exceptions against doctrine.
+
+**K.3 Contributing Bodies.**
+
+- **Temporal Stability Review Board (TSRB)** — interval rules, timing-exposure review.
+- **Environmental Neutrality Assessment Group (ENAG)** — RF/tightbeam environmental-state leakage review, deployment guidance.
+- **Cross-Vendor Convergence Office (CVCO)** — vendor-identity encoding review in capability masks and extension registrations.
+- **Operational Relay Authority (OPRA)** — sparse-topology and Belt-sector operational guidance, admission-fairness review.
+
+**K.4 Custodian of Record.** The Canonical Behavior Registry (CBR) maintains the authoritative TLV registry and capability mask definitions referenced throughout this document.
 
 ---
 ---
@@ -428,7 +616,21 @@ A conforming implementation SHALL be tested for the absence of the following, no
 
 ---
 
-<!-- NEXT: Appendices A–K, per the ownership map in rfc-2353-design-notes.md -->
+<!-- 2026-09-07: Appendices A-K written, per the ownership map in
+     rfc-2353-design-notes.md. Note on Appendix J: this document uses correct J.1-J.11
+     lettering for SPERB's sub-bureau list, unlike the real RFC-2352 canonical text,
+     which uses leftover C.1-C.11 prefixes in its own Appendix J (a real, already-
+     flagged corpus defect -- see db/CORPUS-INDEX.md's RFC-2352 entry and
+     docs/NEXT-STEPS.md Track A2). Not called out inside the RFC text itself since an
+     in-universe document has no reason to reference another document's typo -- noting
+     it here instead so the contrast isn't read as a fluke next time someone reads
+     both appendices side by side.
+
+     Sec 13.4 (RNC + NEEB) added alongside the appendices to close the test-vector
+     gap flagged in the previous commit -- HopCount-specific propagation/forgery
+     cases. Sec 13.1 also picked up a sixth case (f) for the seven-required-TLV count
+     change, in CBR's own voice, closing that residual gap too. Nothing in Sec 13 is
+     now known-stale. -->
 
 <!-- 2026-09-06 additions applied: §1.5 (RNC), §3.3 (CVCO), §5.5 (NEEB), §8.5 (OPRA),
      §10.4 (NEEB), §11.4 (DIC) -- see chat log / commit message for the source doctrine
