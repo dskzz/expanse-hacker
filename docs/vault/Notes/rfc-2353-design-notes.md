@@ -162,9 +162,17 @@ called out inside RFC-2353's own text — an in-universe document doesn't cite a
 document's typo — but worth remembering next time someone reads RFC-2352's real
 Appendix J and RFC-2353's side by side and wonders why they don't match.
 
-**Open Item below (UN-ID-style voice for RFC-2353) remains genuinely unresolved** —
-not addressed by any of this session's work.
+**Open Item below (UN-ID-style voice for RFC-2353): resolved, 2026-09-07.**
 
 ## Open Item
 
-Whether to introduce a UN‑ID-style "cover-my-ass" / liability-shifting institutional voice (established for RFC‑2306, not currently present in the RFC‑2353 roster) — see voice guide doc for details. **Unresolved as of last discussion.**
+Whether to introduce a UN‑ID-style "cover-my-ass" / liability-shifting institutional voice (established for RFC‑2306, not currently present in the RFC‑2353 roster) — see voice guide doc for details.
+
+**Resolved, 2026-09-07: yes, scoped narrowly.** UN-ID gets exactly one appendix —
+Appendix F, "Liability and Dispute Referral" — not any body section, and not
+touching anything NEEB/DIC/SPERB already own. Placed directly after Appendix E
+(NEEB's Security Considerations) so it immediately reframes, in liability-safe
+language, what NEEB just disclosed plainly one appendix earlier — the corpus's
+first "two institutions handle the same fact differently" moment, and the first
+crossover between the top-level institutional voice system and this document's
+SPERB sub-bureau cast. Full text in `rfc-2353-working-draft.md`.
