@@ -161,3 +161,30 @@ is resolved.
 **Status:** flagged only, not investigated further by either session. Needs your eyes on the
 actual file to confirm whether it's really a mis-assembly and, if so, what the fix is (move the
 content to RFC-2350's file? was RFC-2350 ever meant to absorb it? etc.).
+
+### 7. SSWG's cranky engineer as the player's mentor NPC (soon to retire)
+
+**Where it'd go:** `reference/` game-design docs, once there's a home for mentor/tutorial NPCs —
+also touches `docs/vault/Notes/voices/voice_profiles/` since it's the same character as the
+established SSWG author voice, not a new one.
+
+**Why it matters:** raised 2026-09-06 alongside a real, still-open design problem: the player
+needs a Virgil — someone to help them "get" the core premise that every bug in this game lives in
+the RFCs themselves and in misconfigurations, the same way real-world vulnerabilities do, not in a
+separate "hacking minigame" layer bolted on top. SSWG's already-canonical voice (the tired,
+sardonic Earth-side engineer who's "cleaned up after Belters, Martians, and Earth committees
+alike," `Notes/voices/voice_profiles/SSWG- Solnet working group.md`) is a strong candidate to
+double as that mentor, on the theory that a character players already meet as an authorial voice
+across the RFCs becomes a much stronger in-fiction guide than a new, unrelated tutorial NPC — and
+"soon to retire" gives a natural narrative reason for the mentor to be handing off knowledge and
+stepping back rather than staying at the player's side forever.
+
+**Open, unresolved by this note:** how actual exploits (not just misreadings of correct spec text)
+tie in with the in-game editor/tool-belt-shell workflow — this idea surfaces that as a real
+question rather than answering it. Also unresolved: whether "the SSWG voice" as document-author and
+"the mentor NPC" as an in-fiction character with dialogue need to diverge at all, or whether the
+authorial doctrine (dry, universal contempt, never cruel, humor clarifies rather than replaces the
+point) already _is_ the mentor's dialogue voice with no translation needed.
+
+**Status:** idea only, not designed further. Flagging here specifically so it survives to whichever
+session ends up doing mentor/tutorial/onboarding design, rather than getting lost in a chat log.
