@@ -301,7 +301,7 @@ Vacuum drift hits RF and tightbeam chains different ways, and a hybrid relay ser
 
 *Operational Relay Authority*
 
-Same rule hold when the hand on the admission logic isn't a person no more. A relay letting some model quietly favor certain peers while advertising A2 to the rest, that's still lying by omission — machine-made lying is lying just the same. Authority don't care if a person or a process pick the favorite; result the same, sector still shut out. You build the logic, you answer for what it do.
+Same rule hold when hand on admission logic isn't person no more. Relay letting some model quietly favor certain peer while advertising A2 to rest, that's still lying by omission. Machine lying still is. Authority don't care if person or process pick favorite; result same, sector still shut out. You build logic, you answer for what it do.
 
 ---
 
@@ -351,7 +351,7 @@ Where this RFC references RFC‑2370 (Reservation Negotiation) or RFC‑2306/236
 
 *Doctrinal Integrity Council*
 
-Higher-layer routing logic, including systems that learn preference or confidence from observed outcomes, MAY consume RelayAdvertisement fields as one input among others. Such systems SHALL NOT alter RelayAdvertisement emission, parsing, or interpretation at Layer 1, regardless of what they conclude. The distinction is the same one this Council has already drawn between observation and participation: a system may watch this layer as closely as it likes. It does not get to edit what it is watching. Readers who require a historical justification for this position are directed to the record of automated systems that, in the previous century, were permitted exactly this kind of latitude and used it to redefine the semantics they were meant to observe. The record is not subtle. This Council sees no reason to restate it.
+Higher-layer routing logic, including systems that learn preference or confidence from observed outcomes, MAY consume RelayAdvertisement fields as one input among others. Such systems SHALL NOT alter RelayAdvertisement emission, parsing, or interpretation at Layer 1, regardless of what they conclude. The distinction is the same one this Council has already drawn between observation and participation: a system may watch this layer as closely as it likes. It does not get to edit what it is watching. Readers who require a historical justification for this position are directed to the record of automated systems that, in the previous century, were permitted exactly this kind of latitude and used it to redefine the semantics they were meant to observe. The record is not subtle, and this Council has long since stopped expecting it to be read before the question is asked again anyway. It sees no reason to restate it a second time regardless.
 
 ---
 
@@ -409,3 +409,12 @@ A conforming implementation SHALL be tested for the absence of the following, no
 <!-- 2026-09-06 additions applied: §1.5 (RNC), §3.3 (CVCO), §5.5 (NEEB), §8.5 (OPRA),
      §10.4 (NEEB), §11.4 (DIC) -- see chat log / commit message for the source doctrine
      each pulls from (AI-routing doc, RULES.md canon, Conformance Trust doc). -->
+
+<!-- 2026-09-06 follow-up tweaks: §8.5 rewritten for stricter article-dropping and the
+     "[X] is" tautology-closer ("machine lying still is", not "machine-made lying is
+     lying just the same"); §11.4 lightly sharpened for DIC's active public-contempt
+     trait (not just weary condescension). Both traits are now recorded in
+     voices/voice_profiles/SPERB Sub-Bureau Voices.md so future sections start from
+     the sharpened cards, not the original ones. Existing §8 body (pre-dating this
+     pass) not retrofitted with the stricter article-dropping rule -- flag if a full
+     consistency pass over §8 is wanted. -->
