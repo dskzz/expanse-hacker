@@ -14,4 +14,3 @@ export_presets.cfg
 # Build output (Godot game exports)
 /build/*
 !/build/README.md
-!/build/RFCs/
