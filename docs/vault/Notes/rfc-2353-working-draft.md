@@ -1,10 +1,16 @@
+> **SUPERSEDED 2026-09-08.** This working file predates the live-artifact
+> editing pass and is missing the personal foreword, the TSRB/ENAG voice
+> reworks, the real-Lang-Belta OPRA rewrite (§8/§8.5 and its appendices),
+> the footnote/glossary consistency fixes, and the plain-language guide.
+> The graduated, current document is
+> `docs/vault/New RFCs/RFC 2353 - L1 Relay Advertisement Protocol.md`.
+> Retained here only as drafting history.
+
 # RFC‑2353 — L1 Relay Advertisement Protocol
 
 *SolNet Standards Corpus — multi-institutional authorship*
 
-**Status:** Normative (working draft — not yet graduated to `docs/vault/New RFCs/`, which
-currently still holds the earlier ~24-line stub. Graduate only with the user's explicit
-sign-off, per the repo's surgical-corrections-only rule for that folder.)
+**Status:** Superseded working draft — see the graduated document linked above.
 
 ---
 

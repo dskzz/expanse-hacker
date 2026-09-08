@@ -1,8 +1,15 @@
 # RFC‑2353 — Design Notes and Document Map
 
+**Graduated 2026-09-08.** The RFC is complete and promoted to
+`docs/vault/New RFCs/RFC 2353 - L1 Relay Advertisement Protocol.md`. The
+pre-graduation working file this doc used to point to
+(`rfc-2353-working-draft.md`, same folder) is superseded and retained only
+as drafting history — it predates the personal foreword, the TSRB/ENAG
+voice reworks, and the real-Lang-Belta OPRA rewrite that are all in the
+graduated document.
+
 Working reference — preserves the pre-strict design blueprint and the section-by-section
-institutional ownership map. Not part of the RFC deliverable itself; see
-`rfc-2353-working-draft.md` (same folder) for the actual document.
+institutional ownership map. Not part of the RFC deliverable itself.
 
 ## Todo / Scope Summary
 

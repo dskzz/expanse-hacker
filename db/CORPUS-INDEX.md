@@ -468,15 +468,60 @@ already fully specified.
 
 ---
 
-## RFC-2353 — L1 Relay Advertisement Protocol (24 lines)
+## RFC-2353 — L1 Relay Advertisement Protocol (graduated 2026-09-08, full draft)
 
-**Status:** confirmed stub, matches `CORPUS-STATUS.md`'s suspicion.
-Only an Abstract and a Purpose section — the abstract promises a
-`RelayAdvertisement` record with capability masks, scheduling capacity
-fields, and admission policy hooks, but none of that is actually
-defined anywhere in the file. Nothing to extract yet; flag as
-low-hanging fruit if a future drafting pass wants a quick, well-scoped
-win — real content already outlines exactly what's needed.
+**Status:** ✅ Graduated from the earlier 24-line stub to a complete,
+multi-institutional normative document — the first RFC in this corpus
+drafted end-to-end via the live-artifact review workflow (edit as a
+Claude Artifact, iterate against direct feedback, promote to Markdown
+once approved). A polished static HTML copy lives at
+`build/RFCs/RFC-2353-L1-Relay-Advertisement-Protocol.html`; a
+game-design companion doc (exploits, missions, software, structures) is
+at `docs/vault/RFC Companion/RFC 2353 - L1 Relay Advertisement
+Protocol.md`.
+
+Defines the Relay Advertisement Protocol (RAP): the required/optional
+TLV registry a relay uses to announce presence, capability class,
+coarse scheduling/admission posture, and media profile (§2-4);
+RelayCapabilityMask bit assignments and CVCO's vendor-neutral extension
+process (§3); the minimization doctrine bounding what may ever be
+inferred from a record, including the deliberately narrow disclosed
+exception for HopCount-based distance inference (§5, §5.6); the
+canonical emission interval T_adv and why it's a deployment parameter
+rather than a published constant, same as H_max (§6); RF/Tightbeam/
+Hybrid media profiles (§7); sparse-topology and Belt-sector fairness
+rules, voiced in real, primary-source-verified Lang Belta grammar
+rather than invented patois (§8, §8.5); vendor neutrality (§9);
+forgery/spoofing/cache-suppression threat model (§10); doctrinal
+alignment against RFC-2352/2360's invariance doctrine (§11); SPERB
+procedural rules (§12); and a full parsing/admission/minimization/
+forwarding test-vector suite (§13). Twelve appendices (A-L) cover
+rationale, an informal non-exposure proof sketch, deployment guidance,
+known non-compliant patterns (including the "Optimistic Capacity
+Class" vendor-fraud pattern), historical context, SPERB's internal
+organizational structure, and full multi-institutional authorship
+attribution.
+
+Opens with a non-normative **Personal Foreword** from Dr. Mara Ellison
+(reusing the named-individual voice already established for RFC-2308),
+grounding the minimization doctrine in a specific incident history
+(the Pallas Exposure Event, ~2285-2288) rather than only stating it
+doctrinally — the corpus's first RFC to pair an institutional voice
+with a personal one.
+
+Nine institutional voices in this document: RNC, CBR, CVCO, NEEB, DIC,
+TSRB, ENAG, OPRA, SPERB, plus a one-time UN Infrastructure Directorate
+appearance for liability scoping (Appendix F). TSRB and ENAG were
+specifically reworked mid-draft after voice-convergence feedback (both
+had been reading as generic "annoyed committee," indistinguishable
+from RNC/CBR/CVCO/NEEB/DIC) into genuinely distinct registers: TSRB as
+earnest, holy-devotion-to-the-clock timing zealotry; ENAG as a
+low-stakes, repetitive "take out the garbage" nag rather than
+command-voice scolding. See `docs/vault/Notes/voices/voice_profiles/
+SPERB Sub-Bureau Voices.md` for both cards' full update history and for
+OPRA's real Lang Belta grammar notes (sourced to the primary-source
+community dictionary at `docs/lore/Lang Belta 2022-02-15.pdf`, not
+invented).
 
 ---
 

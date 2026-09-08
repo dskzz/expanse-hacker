@@ -11,6 +11,7 @@ Thumbs.db
 export_presets.cfg
 *.translation
 
-# Build output
+# Build output (Godot game exports)
 /build/*
 !/build/README.md
+!/build/RFCs/
