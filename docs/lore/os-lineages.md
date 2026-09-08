@@ -726,42 +726,72 @@ into the capability token at minting (same re-minting-ceremony cost as
 any Mars capability change, §4), Corporate makes it a revocable
 leased-entitlement field.
 
-## 11. Belt speech: article-dropping and the "[X] is" tautology (locked 2026-09-06/07)
+## 11. Belt speech: Lang Belta grammar, article-dropping, and the "[X] be" tautology (locked 2026-09-06/07, revised 2026-09-08)
 
 Surfaced while drafting OPRA (Operational Relay Authority)'s
 institutional voice for RFC-2353 — see `docs/vault/Notes/voices/
 voice_profiles/SPERB Sub-Bureau Voices.md` for the RFC-authorship
-application. Recorded here too because it's culture, not just prose
-style, and belongs where Belt worldbuilding actually lives, not only
-inside a voice card built for one document.
+application and the full grammar notes. Recorded here too because it's
+culture, not just prose style, and belongs where Belt worldbuilding
+actually lives, not only inside a voice card built for one document.
 
-**Article-dropping.** Belt speech drops "a," "the," "an" wherever the
-meaning survives without them — "Authority calls it that," not "the
-Authority calls it that"; "relay pass what come," not "the relay
-passes what comes." In-universe justification: a follow-on habit from
-sign-language and limited-bandwidth comm culture — hand-talk and
-suit-to-suit/tightbeam-constrained speech both reward dropping anything
-that doesn't carry information, and articles are the cheapest thing to
-cut. Generations of that habit under vacuum and thin air, per §0's
-"Darwin in space computers" framing for OS drift, plausibly drifted
-straight into spoken Belt Creole even off-suit, on stations, in casual
-speech generally — the economy stuck around after the original hard
-constraint (a suit mic, a hand-sign channel) stopped being the only
-option.
+**Revision, 2026-09-08: this is real Belter Creole (Lang Belta), not an
+invented-from-scratch dialect.** The original version of this section
+described only an invented article-dropping habit. The user corrected
+this directly, supplying real Lang Belta grammar and vocabulary and
+asking that OPRA's institutional voice (and Belt speech generally) use
+it rather than a from-scratch approximation. Confirmed grammar in active
+use: SVO word order; `gonya`/`gonna` as a preverbal future particle;
+`-lowda` as the plural suffix (`beltalowda` = Belters); `be` (canonical
+`bi`) reserved for the locative/equative copula specifically, not a
+generic filler verb; zero copula elsewhere; `no` for preverbal negation
+in this corpus's usage (canonical Lang Belta uses `na` — the two may
+simply be a register variant, see the gradient note below). Full
+grammar notes, plus a handful of project-specific coinages
+(`fokaso`, `terásheting`, `seleshang`) not independently verified
+against outside Lang Belta references, live in the voice-card file
+above; this section states the culture-level fact, that file states the
+applied grammar.
 
-**The "[X] is" tautology, replacing "it is what it is."** Where a
-standard-English speaker would close on a flat restatement of the
-obvious ("it is what it is," "that's just how it is"), Belt speech
-closes by naming the thing once and ending on a bare "is" — no
-verb-object completion, no repeating the noun. "Lying still is,"
-not "lying is still lying." "Machine lying still is," not
-"machine-made lying is lying just the same." The construction states
-the conclusion once and stops, rather than circling back to restate
-it — the clipped stop is the idiom, not a fragment to read past.
+**Register gradient: Ganymede vs. Pallas.** Belter Creole itself has a
+real in-universe register range — a station like Ganymede, more
+integrated with inner-planet trade, trends back toward intelligible
+English; a station like Pallas runs thick, near-unintelligible to an
+outsider. This is not a detail specific to RFC-2353: it's a property of
+the language as spoken across the Belt, and it means "how thick" a given
+piece of Belt dialogue should read is itself a worldbuilding choice, not
+a fixed dial. OPRA's own institutional voice sits at the Ganymede end on
+purpose, because a normative document has to stay parseable — see the
+voice card for that reasoning. A rougher station's own NPC dialogue, or
+flavor text set closer to the deep Belt, has real license to run much
+thicker toward the Pallas end.
+
+**Article-dropping** still holds under the real grammar: "a," "the,"
+"an" drop wherever the meaning survives without them — "Authority calls
+it that," not "the Authority calls it that." In-universe justification
+unchanged: a follow-on habit from sign-language and limited-bandwidth
+comm culture, where every dropped word is one less thing to transmit or
+sign, plausibly generalizing from suit-to-suit/tightbeam-constrained
+speech into casual speech generally over generations (per §0's "Darwin
+in space computers" framing for OS drift).
+
+**The "[X] be" tautology, replacing "it is what it is."** Updated from
+"[X] is" to match the real copula rule above (`be` is Belt speech's
+actual equative copula, so the tautology-closer uses it too, not a bare
+"is" borrowed from standard English). Where a standard-English speaker
+would close on a flat restatement of the obvious ("it is what it is,"
+"that's just how it is"), Belt speech closes by naming the thing once
+and ending on a bare "be" — no verb-object completion, no repeating the
+noun. "Lying still be," not "lying is still lying." "Machine lying still
+be," not "machine-made lying is lying just the same." The construction
+states the conclusion once and stops, rather than circling back to
+restate it — the clipped stop is the idiom, not a fragment to read past.
 
 **Scope note:** this is a real Belt-culture-wide speech pattern, not
 something specific to relay operators or OPRA. OPRA's voice card is
 the first RFC-authorship context it's been formalized for (RFC-2353
 §8/§8.5), but it should show up anywhere ordinary Belter dialogue does
 — NPC barks, flavor text, Scrapshell system messages written in a
-Belter operator's voice — not just in institutional RFC prose.
+Belter operator's voice — not just in institutional RFC prose, and at
+whatever point on the Ganymede–Pallas gradient the specific
+character/station calls for.

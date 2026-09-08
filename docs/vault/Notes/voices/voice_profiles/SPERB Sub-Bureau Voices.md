@@ -21,6 +21,21 @@ not just weary condescension); OPRA given two new grammatical tics
 (article-dropping, "[X] is" tautology construction) with in-universe
 justification tied to sign-language/limited-bandwidth comms culture.
 
+**2026-09-08 (later same session) — OPRA moved to real Lang Belta,
+superseding the 2026-09-06 "no street Creole" lock.** After the article-
+dropping fix still didn't land ("section 8 doesn't sound like Belters at
+all"), the user supplied their own rewritten sample using actual Lang
+Belta grammar and vocabulary and asked for the rules to be extrapolated
+from it plus outside reference material. New v2 patois rules (see OPRA's
+own card above) add real grams — `gonya`/`gonna` future particle,
+`-lowda` plural suffix, `be` as a job-specific locative/equative copula,
+`no` for negation — on top of the existing article-dropping and
+tautology-closer rules (the closer's form changed from "[X] still is" to
+"[X] still be" to match the new copula). Also established: OPRA's
+institutional register sits at the Ganymede/legible end of a real
+in-universe Belt Creole gradient, not the Pallas/near-unintelligible end
+— that's available elsewhere in the corpus, not in this document.
+
 **2026-09-08 — TSRB reworked, not just sharpened.** Flagged by the user:
 too many of these voices were converging on the same underlying shape —
 weary institutional contempt for vendors/implementers who don't comply,
@@ -231,45 +246,94 @@ few hard rules to keep this from tipping over:
   minimization constraints, doctrinal alignment, timing rules,
   environmental neutrality, compliance/audit sections.
 
-**Patois rules (locked, updated 2026-09-06):** Higher-register
-institutional Belt patois, not dock slang — no "ke/sasa/imala"-style street
-Creole. Contextual, not global — only in sections OPRA owns; never bleeds
-into other institutions' sections.
+**Patois rules v2 (superseding the 2026-09-06 lock), updated 2026-09-08 —
+real Lang Belta now, not just article-dropped English.** The 2026-09-06
+rule explicitly banned real Belter Creole ("no ke/sasa/imala-style street
+Creole") in favor of a "higher-register institutional patois" that turned
+out, on the actual page, to just be English with articles dropped —
+which is exactly why the user caught it reading like nothing at all.
+Reversed: OPRA's prose now uses real Lang Belta grammar and vocabulary,
+woven into an English matrix a non-Belta reader can still parse. Still
+contextual, not global — only in sections OPRA owns; never bleeds into
+other institutions' sections.
 
-- Syntax drift ("Relay must hold steady even when spin go wrong").
-- Lexical seasoning ("room in the pipe" for capacity, "beamline" for
-  tightbeam, "fair-share" for admission fairness), occasional idiom.
-- **Article-dropping.** Belt speech drops "a," "the," "an" wherever the
-  meaning survives without them — "Authority calls it that," not "the
-  Authority calls it that"; "relay pass what come," not "the relay passes
-  what comes." In-universe justification: a follow-on habit from
-  sign-language and limited-bandwidth comm culture, where every dropped
-  word is one less thing to transmit or sign. Use throughout an OPRA
-  passage, not just at the start — this is the tic most likely to fade
-  back toward standard register by the end of a long paragraph, so it
-  needs active attention all the way through, not just an opening flourish.
-  **Correction, 2026-09-08:** the actual failure mode found in RFC-2353's
-  §8 draft ran the other way — topic sentences (the first line of a
-  paragraph, the lead-in before a MUST/MUST NOT clause) were the weakest,
-  reading close to standard English, while only the punchline closers
-  landed the dialect hard. A reader hits the weak opener first and forms
-  the impression before the strong closers arrive. Front-load the drift:
-  the first sentence of an OPRA paragraph needs the dialect at least as
-  much as the last one, not less. Also keep plural marking consistent —
-  don't mix "relay" (bare/generic) with "relays" (marked plural) within
-  the same passage; picking one and holding it reads as dialect, mixing
-  them reads as a typo.
-- **"[X] is" as the tautology-closer**, replacing the standard-English "it
-  is what it is." Where a standard voice would close on a flat restatement
-  of the obvious, OPRA closes by naming the thing and ending on a bare
-  "is" — no verb-object completion, no repetition of the noun. E.g. not
-  "machine-made lying is lying just the same" but "machine lying still
-  is." The construction states the conclusion once, then stops rather than
-  restating it — that clipped stop is the idiom, not a grammar error to
-  read past.
-- **Example (updated to reflect both new rules):** RelayLoadClass keep it
-  simple, ya — three word, no more. Anybody try squeeze queue depth out
-  that, that's on them, not on relay. Relay say what relay say.
+**Register calibration — Ganymede, not Pallas.** Per the user: Belter
+Creole itself has a real register gradient across the Belt — Ganymede
+trends back toward intelligible English (more integrated with the inner
+planets, more trade contact), while somewhere like Pallas runs thick,
+near-unintelligible to an outsider. OPRA's institutional voice, writing
+in a cross-Belt normative document meant to actually be read and
+implemented, sits at the Ganymede end on purpose — real grams and
+vocabulary throughout, but never so thick the normative content stops
+parsing. Deep, Pallas-thick Belta is a real, available register for this
+corpus (NPC dialogue, flavor text, a rougher station's own voice) — just
+not this document's register.
+
+**Confirmed grammar in use (verified against Lang Belta reference
+material where fetchable; some via search-engine summary only — the
+user's own linked sources were blocked by this session's network egress
+policy on the actual fetch, so treat the grammar notes below as
+correction-pending, not gospel):**
+
+- **SVO word order**, same as English — no reordering needed.
+- **`gonya` / `gonna`** — the future-tense particle, placed before the
+  verb. Written `gonna` in this corpus (matches the user's own usage,
+  reads cleaner against an English matrix).
+- **`-lowda`** — plural suffix, attaches to pronouns and nouns
+  (`beltalowda` = Belters/Belter people; `imalowda` = they). Use it as
+  *the* plural marker for Belt-collective nouns instead of English `-s`
+  where the word is taking Belta inflection at all.
+- **Zero copula** as the default: predicate adjectives/nouns drop
+  "is/are/am" entirely ("relay contact isn't continuous" → "relay
+  contact no continuous" is available, though this corpus mostly keeps
+  the English predicate structure and drops the article instead — see
+  below).
+- **`be`** — reserved for the locative/equative copula (real Belta `bi`;
+  spelled `be` in this corpus to match the user's usage), used when the
+  sentence is actually asserting location or equivalence: "Where
+  beltalowda be" (where Belters are), "T_adv be same as every other
+  relay" (T_adv is the same as). Not used as a generic filler verb —
+  it does a specific job, same job every time.
+- **Negation**: this corpus uses `no` before the verb/predicate (the
+  documented Belta particle is `na`; the user's own sample uses `no`
+  throughout, so `no` is this project's form — plausibly itself a
+  register/dialect variant, `no` trending Ganymede-legible, `na` further
+  toward Pallas-thick, though this is this corpus's own extrapolation,
+  not sourced).
+- **Article-dropping** (the 2026-09-06 rule, kept): "a/the/an" drop
+  wherever meaning survives without them. Still needs to be front-loaded
+  through the whole passage, not just the punchline — see the
+  2026-09-08 correction below, which stands.
+- **`wamotim`** — "again" / "more than [needed]," used both as a literal
+  repetition marker and, extended, for "beyond what's warranted" (a
+  relay updating `wamotim` = updating more than policy allows).
+- **Project-specific coinages, not independently verified against
+  outside Lang Belta sources — the user's own usage, adopt and hold
+  consistent rather than re-deriving:** `fokaso` (relay contact
+  breaking down/faltering), `terásheting` (an occlusion-class event,
+  used alongside "occlusion" itself in the same list — likely a
+  spin-shift-adjacent disruption), `seleshang` (another gap-cause
+  alongside DTN partition, exact scope unconfirmed). Reuse these exact
+  words for the exact same concepts each time; don't paraphrase them
+  into new coinages once they're established.
+- **Article-dropping correction, 2026-09-08** (still valid under v2):
+  the failure mode found in RFC-2353's §8 draft was topic sentences
+  reading close to standard register while only punchline closers
+  carried real drift. Front-load the drift: the first sentence of an
+  OPRA paragraph needs it as much as the last one. Keep plural marking
+  consistent within a passage too — don't mix bare-generic and
+  `-s`-marked nouns in the same breath.
+- **"[X] still be" as the tautology-closer**, replacing the
+  standard-English "it is what it is" (previously "[X] still is" — now
+  updated to use the corpus's own copula rule instead of standard "is").
+  Where a standard voice closes on a flat restatement of the obvious,
+  OPRA names the thing and ends on a bare "be" — no verb-object
+  completion, no repetition of the noun. Not "machine-made lying is
+  lying just the same" but "Machine lying still be." States the
+  conclusion once, then stops.
+- **Example (updated for v2 grammar):** RelayLoadClass keep it simple —
+  three word, no more. Anybody gonna try squeeze queue depth out that,
+  that's on them, no on relay. Relay say what relay say. Lying still be.
 
 ## SPERB (pronounced SPEAR-B) — SolNet Physical-Layer Exposure Review Board
 
