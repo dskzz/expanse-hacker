@@ -738,20 +738,27 @@ actually lives, not only inside a voice card built for one document.
 **Revision, 2026-09-08: this is real Belter Creole (Lang Belta), not an
 invented-from-scratch dialect.** The original version of this section
 described only an invented article-dropping habit. The user corrected
-this directly, supplying real Lang Belta grammar and vocabulary and
-asking that OPRA's institutional voice (and Belt speech generally) use
-it rather than a from-scratch approximation. Confirmed grammar in active
-use: SVO word order; `gonya`/`gonna` as a preverbal future particle;
-`-lowda` as the plural suffix (`beltalowda` = Belters); `be` (canonical
-`bi`) reserved for the locative/equative copula specifically, not a
-generic filler verb; zero copula elsewhere; `no` for preverbal negation
-in this corpus's usage (canonical Lang Belta uses `na` — the two may
-simply be a register variant, see the gradient note below). Full
-grammar notes, plus a handful of project-specific coinages
-(`fokaso`, `terásheting`, `seleshang`) not independently verified
-against outside Lang Belta references, live in the voice-card file
-above; this section states the culture-level fact, that file states the
-applied grammar.
+this directly — first supplying a rewritten sample using actual Lang
+Belta grammar, then pushing the real primary source into the repo:
+`docs/lore/Lang Belta 2022-02-15.pdf`, a 361-page dictionary sourced to
+on-screen dialogue and direct quotes from Nick Farmer, the language's
+actual creator. Confirmed grammar, checked against that source: SVO word
+order; adjectives follow the noun they modify for simple cases (French-
+style, not English); `gonya`/`gonna` as a preverbal future particle;
+`-lowda` pluralizes **pronouns only** (`beltalowda` = Belters, treating
+"belta" as a pronoun-adjacent identity root) — Farmer states directly
+"no plural ending on nouns," so ordinary nouns stay bare regardless of
+number; zero copula is the actual default for equative/predicate
+statements — Farmer states directly "the copula is always null" for
+these — with `be` (canonical `bi`) reserved strictly for physical
+location, never as a general filler verb; `na`, not `no`, for preverbal
+negation (Farmer, directly: "na = no/not") — an earlier pass here used
+`no` because that's what a search-engine summary suggested before the
+primary source was available; corrected now that it is. Full grammar
+notes, sourced quotes, and a handful of project-specific coinages
+(`fokaso`, `terásheting`, `seleshang`) not found in the dictionary under
+those spellings, live in the voice-card file above; this section states
+the culture-level fact, that file states the applied grammar.
 
 **Register gradient: Ganymede vs. Pallas.** Belter Creole itself has a
 real in-universe register range — a station like Ganymede, more
@@ -775,10 +782,15 @@ sign, plausibly generalizing from suit-to-suit/tightbeam-constrained
 speech into casual speech generally over generations (per §0's "Darwin
 in space computers" framing for OS drift).
 
-**The "[X] be" tautology, replacing "it is what it is."** Updated from
-"[X] is" to match the real copula rule above (`be` is Belt speech's
-actual equative copula, so the tautology-closer uses it too, not a bare
-"is" borrowed from standard English). Where a standard-English speaker
+**The "[X] be" tautology, replacing "it is what it is."** This is an
+invented-for-this-corpus idiom — "it is what it is" has no attested Lang
+Belta equivalent in the source, so there's no authentic form being
+approximated. It keeps `be` as a deliberate, marked exception to the
+zero-copula default above, not a claim that `be` is a general equative:
+the strictly "correct" zero-copula form ("Lying still," dropping the
+verb) collides with the existing English idiom "lying still" (motionless
+rather than unchanged), so `be` disambiguates on purpose. Where a
+standard-English speaker
 would close on a flat restatement of the obvious ("it is what it is,"
 "that's just how it is"), Belt speech closes by naming the thing once
 and ending on a bare "be" — no verb-object completion, no repeating the
