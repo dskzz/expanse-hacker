@@ -330,6 +330,24 @@ noted):**
   predicate directly). v2 used `no` throughout because that's what the
   user's own draft sample used; the primary source is unambiguous that
   `na` is the real particle, so `na` is now this corpus's form too.
+- **`fo`** — "for"/"to" (preposition), confirmed repeatedly in dialogue
+  ("Fo ademeshang fo da Sonya Gering..." = "For admission to the Green
+  Zone..."). Use `fo` in place of English "to"/"for" wherever they're
+  acting as prepositions — not just for flavor: real Lang Belta's own
+  word **`to` means "you"** (Farmer, directly: "to = you"), so leaving
+  English "to" in as a preposition risks a genuine double-read for
+  anyone who actually knows the language. `fo` disambiguates. (Leave
+  infinitive "to" before a bare verb alone if swapping it would garble
+  the clause — judgment call, not a hard rule.)
+- **`kowl`** — "all" (quantifier, precedes the noun: "kowl belta" = "all
+  Belters"). **`kowlting`** — "everything"/"everyone" (kowl + ting,
+  confirmed in dialogue: "kowlting gonya gut" = "everything's gonna be
+  fine"). Use `kowlting else` for "everyone else," not English "everyone
+  else."
+- **`sili`** — "if," confirmed in dialogue ("Sili to mebi avita..." =
+  "If you resist..."). Can open the conditional clause (matching the
+  source example) or follow the main clause, same flexibility as
+  English "if."
   (v2's guess that `no`/`na` might be a Ganymede/Pallas register split
   was pure speculation and is retracted — no source support.)
 - **`-lowda` pluralizes pronouns ONLY, never ordinary nouns — corrects
