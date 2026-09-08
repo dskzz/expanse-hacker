@@ -121,7 +121,7 @@ draft yet
 | 2350 | Canonical Addressing Standard | 📝 — **high priority**: likely source of RFC-2300's misplaced §§8–15, and a Console dependency (`reference/tool_belt_shell.md`). A proposed correction to its §4 grammar is pending review, not yet applied — see `rfc-proposals/rfc2350-addressing-grammar.md` (separator mismatch with RFC-2300's own examples, an `@`/ProvenancePointer collision with the older NNS-1.0 draft's PNI shorthand, a dropped chainless-PNI capability). | — |
 | 2351 | L1 Frame Format (A/N Header Split) | 📝 — **9072 lines, huge**. Needs a dedicated pass, not a quick conversion. Companion doc exists. | — |
 | 2352 | L1 Privacy and Metadata Minimization | 📝 (Companion doc exists) | — |
-| 2353 | L1 Relay Advertisement Protocol | 📝 — currently only 25 lines, may be a stub | — |
+| 2353 | L1 Relay Advertisement Protocol | 📝 — fully drafted 2026-09-08 (graduated from stub; see `db/CORPUS-INDEX.md`), not yet converted to `db/` schema | — |
 | 2354–2359 | *(not yet in `TODOv2.md`'s detailed entries)* | 📋/unclear | — |
 
 ### Authority Plane (2360–2389) — none drafted in `New RFCs/` yet
