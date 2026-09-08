@@ -73,6 +73,16 @@ card and worked example around that register. Normative MUST/MUST NOT
 language stays precise where an actual requirement exists; only the
 connective tissue around it softened.
 
+**2026-09-08 (later still) — v3 grammar applied corpus-wide within
+RFC-2353, not just §8/§8.5.** OPRA also speaks in Appendix C's field
+note, Appendix D (Deployment Guidance), Appendix H (Historical Context),
+and Appendix J.1/J.3/J.4 (Implementation Notes) — all of it was still on
+the old article-dropped-only register until this pass. Brought all six
+spots up to v3 (`na` negation, `fo` for prepositional "to"/"for",
+`kowl`/`kowlting` for "all"/"everything," zero copula for equatives)
+so the whole document reads as one consistent voice rather than "§8 got
+the good version." Same normative content throughout, register only.
+
 ---
 
 ## Calibration Note: Light Touch (read this before drafting)
