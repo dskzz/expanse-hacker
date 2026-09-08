@@ -21,6 +21,18 @@ not just weary condescension); OPRA given two new grammatical tics
 (article-dropping, "[X] is" tautology construction) with in-universe
 justification tied to sign-language/limited-bandwidth comms culture.
 
+**2026-09-08 — TSRB reworked, not just sharpened.** Flagged by the user:
+too many of these voices were converging on the same underlying shape —
+weary institutional contempt for vendors/implementers who don't comply,
+differing in target but not in feeling (RNC, CBR, CVCO, ENAG, NEEB, DIC
+all run on some version of this). TSRB's old "persecution complex about
+milliseconds" card was the same shape aimed at a different subject.
+Replaced with genuine, guileless devotion — TSRB doesn't resent
+non-compliance, it barely registers non-compliance as a real
+possibility, the way a true believer finds an atheist's position
+inexplicable rather than infuriating. Same normative content (T_adv,
+emission rules, jitter constraints unchanged), register only.
+
 ---
 
 ## Calibration Note: Light Touch (read this before drafting)
@@ -125,19 +137,37 @@ few hard rules to keep this from tipping over:
 ## TSRB — Temporal Stability Review Board
 
 - **Mandate:** Timing intervals, emission cadence, jitter constraints.
-- **Tone:** Clinical, timing-obsessed, deterministic.
+- **Tone:** Reverent, guilelessly earnest, liturgical. Not clinical and
+  not persecuted — genuinely, sincerely devoted, the way a keeper of a
+  vow is devoted, and genuinely puzzled (never defensive, never
+  contemptuous) that devotion to timing precision isn't universally
+  self-evident. Where every other cold-committee voice runs on
+  grievance, TSRB runs on faith that turned out, empirically, to be
+  correct.
 - **Jurisdiction:** Advertisement interval rules, timing invariance,
   drift-resistance notes.
-- **Constraints:** No load-dependent timing. No jitter. No adaptive
-  cadence.
-- **Anchor:** "Timing SHALL remain constant."
-- **Running grudge/tic:** Persecution complex about milliseconds. Treats
-  small timing deviations as the real threat vector everyone else
-  overlooks.
-- **Example:** An update to RelayLoadClass issued forty milliseconds early
-  is not a rounding error. It is a data point. TSRB has reviewed cases in
-  which forty milliseconds, aggregated over thirty days, reconstructed a
-  full load curve. TSRB would like this to stop happening.
+- **Constraints:** No load-dependent timing. No adaptive cadence. Jitter
+  is permitted at the media layer (Section 6 body text) but MUST be
+  independent of any hidden state — TSRB's own voice treats a violation
+  of this as a small, sad category error, not an act of defiance.
+- **Anchor:** "The interval is kept, or it is not. There has never been
+  a third thing."
+- **Running grudge/tic — reframed 2026-09-08, no longer a grudge:** Does
+  not experience non-compliance as defiance to resent. Experiences it as
+  something closer to a category error it cannot quite parse — the way
+  a true believer doesn't get angry at an atheist so much as find the
+  position faintly inexplicable. Assumes compliance the way one assumes
+  gravity: not because either has ever seriously been contested, but
+  because neither could sensibly be otherwise. Never says "you people
+  don't understand" — that would imply TSRB has noticed disagreement is
+  possible. It mostly hasn't.
+- **Example:** An advertisement issued even slightly ahead of schedule is
+  not a rounding error. It is a small unkept promise, and this Board has
+  never found a small one that stayed small. This Board has never
+  understood the reasoning that would treat forty milliseconds as safe
+  to ignore, and does not expect to start now. The interval is kept, or
+  it is not; this Board is aware of no relay that has found a third
+  thing.
 
 ## ENAG — Environmental Neutrality Assessment Group
 
@@ -263,9 +293,11 @@ technical core.*
 
 DIC, OPRA, and SPERB are structurally safe from convergence (contempt,
 patois, and tribunal-menace don't overlap with anything else). The
-remaining six — RNC, CBR, CVCO, NEEB, TSRB, ENAG — all skew "cold technical
+remaining five — RNC, CBR, CVCO, NEEB, ENAG — all skew "cold technical
 committee" and WILL blur together without a distinct reflex, not just a
-distinct adjective:
+distinct adjective. (TSRB used to be a sixth; as of 2026-09-08 it no
+longer runs on grievance at all, see its own card above — it's the
+outlier by design now, not a blur risk.)
 
 - **RNC** — reasons from failure history. Every claim traces back to an
   observed or generalized failure mode.
@@ -275,10 +307,12 @@ distinct adjective:
   never states it.
 - **NEEB** — threatens process, not people. Frames facts as potential
   violations with procedural consequences.
-- **TSRB** — sees everything as a timing leak. Reframes non-timing facts
-  through cadence and drift.
 - **ENAG** — nags. States the obvious, flags that it's stating the
   obvious, promises to say it again later.
+- **TSRB (for contrast, not at risk of blurring)** — reframes everything
+  through cadence and drift, same as before, but as an article of faith
+  rather than a grievance. Doesn't accuse anyone of ignoring the
+  interval; can't quite believe anyone would.
 
 **Working test:** if a paragraph's institution tag were removed, could you
 still tell who wrote it from the sentence shape and reflex alone — not
