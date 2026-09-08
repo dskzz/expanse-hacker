@@ -474,10 +474,8 @@ already fully specified.
 multi-institutional normative document — the first RFC in this corpus
 drafted end-to-end via the live-artifact review workflow (edit as a
 Claude Artifact, iterate against direct feedback, promote to Markdown
-once approved). A polished static HTML copy lives at
-`build/RFCs/RFC-2353-L1-Relay-Advertisement-Protocol.html`; a
-game-design companion doc (exploits, missions, software, structures) is
-at `docs/vault/RFC Companion/RFC 2353 - L1 Relay Advertisement
+once approved). A game-design companion doc (exploits, missions,
+software, structures) is at `docs/vault/RFC Companion/RFC 2353 - L1 Relay Advertisement
 Protocol.md`.
 
 Defines the Relay Advertisement Protocol (RAP): the required/optional
