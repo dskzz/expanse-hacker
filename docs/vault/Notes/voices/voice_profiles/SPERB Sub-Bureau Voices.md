@@ -33,6 +33,17 @@ possibility, the way a true believer finds an atheist's position
 inexplicable rather than infuriating. Same normative content (T_adv,
 emission rules, jitter constraints unchanged), register only.
 
+**2026-09-08 (same session) — ENAG corrected: weaselly, not stern.**
+User caught that ENAG's "nag" was still written in the same
+institutional-command register as everyone else (MUST NOT be construed,
+does not certify assumptions) — a nag that scolds isn't actually a nag,
+it's just another stern committee. Real nagging is low-stakes, mundane,
+repetitive, and carries no real authority: "remember to take the
+garbage out... don't forget to take the garbage out..." Rewrote ENAG's
+card and worked example around that register. Normative MUST/MUST NOT
+language stays precise where an actual requirement exists; only the
+connective tissue around it softened.
+
 ---
 
 ## Calibration Note: Light Touch (read this before drafting)
@@ -171,23 +182,34 @@ few hard rules to keep this from tipping over:
 
 ## ENAG — Environmental Neutrality Assessment Group
 
-*The Nag. Literally.*
+*The Nag. Literally — but weaselly, not stern. Reworked 2026-09-08.*
 
 - **Mandate:** Media constraints, propagation, environmental variation.
-- **Tone:** Environmental-realist, physical-layer aware, medium-specific.
+- **Tone:** Domestic-nag, not command-voice. Not "MUST NOT be construed" —
+  more "don't forget," "just a reminder," "this Group would ask." No
+  real authority behind the reminding, and it knows it; repetition is
+  the only tool it has, so it uses repetition. Never threatens
+  consequences. Never scolds. Just... reminds you. Again. Softly. Once
+  more after that.
 - **Jurisdiction:** RF/tightbeam environmental neutrality, media profile
   constraints.
-- **Constraints:** No higher-layer semantics. No policy inference.
-- **Anchor:** "Media variation SHALL NOT alter semantics."
-- **Running grudge/tic:** States the obvious, then reminds you it already
-  stated it, then tells you it will remind you again later. Treats
-  redundancy as diligence, not repetition.
-- **Example:** Test in realistic thermal conditions. This has been stated
-  before. It is stated again here because it is important: RelayLoadClass
-  MUST NOT be calibrated in a climate-controlled lab and assumed valid in
-  vacuum. Please remember this. ENAG will remind you again in Section 7,
-  and again in the Appendix, because experience shows this needs to be
-  said more than once.
+- **Constraints:** No higher-layer semantics. No policy inference. Keep
+  actual normative MUST/MUST NOT language precise where a real
+  requirement exists — the nagging lives in the connective tissue around
+  the rule, not in softening the rule itself.
+- **Anchor:** "Just a reminder — again — that media variation shouldn't
+  be read as saying anything about semantics. Sorry to repeat it."
+- **Running grudge/tic:** Not a grudge — ENAG isn't annoyed at anyone. It
+  states the obvious gently, apologizes slightly for repeating itself,
+  and repeats itself anyway, the way a housemate reminds you about the
+  garbage: not because they think you're defiant, just because they
+  suspect you forgot, and will keep suspecting that indefinitely.
+- **Example:** This has probably been said already somewhere else in
+  this document — it's the sort of thing that's easy to skip past, so
+  here it is again: test in the actual thermal conditions of intended
+  deployment, not a climate-controlled lab. This Group will likely
+  mention it again in the Appendix too. Not because anyone's in trouble.
+  Just in case it didn't land the first time.
 
 ## OPRA — Operational Relay Authority
 
@@ -307,8 +329,10 @@ outlier by design now, not a blur risk.)
   never states it.
 - **NEEB** — threatens process, not people. Frames facts as potential
   violations with procedural consequences.
-- **ENAG** — nags. States the obvious, flags that it's stating the
-  obvious, promises to say it again later.
+- **ENAG** — nags, weaselly not sternly. No command-voice, no threatened
+  consequence — just gentle, faintly apologetic repetition, the way a
+  housemate reminds you about the garbage. Suspects you forgot, not that
+  you defied it.
 - **TSRB (for contrast, not at risk of blurring)** — reframes everything
   through cadence and drift, same as before, but as an article of faith
   rather than a grievance. Doesn't accuse anyone of ignoring the
