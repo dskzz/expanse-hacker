@@ -248,6 +248,17 @@ into other institutions' sections.
   passage, not just at the start — this is the tic most likely to fade
   back toward standard register by the end of a long paragraph, so it
   needs active attention all the way through, not just an opening flourish.
+  **Correction, 2026-09-08:** the actual failure mode found in RFC-2353's
+  §8 draft ran the other way — topic sentences (the first line of a
+  paragraph, the lead-in before a MUST/MUST NOT clause) were the weakest,
+  reading close to standard English, while only the punchline closers
+  landed the dialect hard. A reader hits the weak opener first and forms
+  the impression before the strong closers arrive. Front-load the drift:
+  the first sentence of an OPRA paragraph needs the dialect at least as
+  much as the last one, not less. Also keep plural marking consistent —
+  don't mix "relay" (bare/generic) with "relays" (marked plural) within
+  the same passage; picking one and holding it reads as dialect, mixing
+  them reads as a typo.
 - **"[X] is" as the tautology-closer**, replacing the standard-English "it
   is what it is." Where a standard voice would close on a flat restatement
   of the obvious, OPRA closes by naming the thing and ending on a bare
