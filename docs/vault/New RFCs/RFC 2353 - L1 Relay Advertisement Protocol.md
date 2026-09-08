@@ -2,7 +2,9 @@
 
 *SolNet Standards Corpus — multi-institutional authorship*
 
-**Status:** Normative — Standards Track
+**Status:** Normative — Standards Track. A styled HTML rendering of this
+document for human readers is maintained at
+`docs/rfc-html/RFC-2353-L1-Relay-Advertisement-Protocol.html`.
 
 ---
 
