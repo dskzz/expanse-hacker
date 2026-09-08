@@ -1,3 +1,36 @@
+# SSWG — SolNet Standards Working Group
+
+**Update log:** 2026-09-08 — recalibrated against the actual deployed
+voice in RFC-2300 (not just this doctrine's own meta-discussion) while
+drafting RFC-2362. The doctrine below was correct but under-applied: a
+first RFC-2362 draft read as generically earnest-committee, missing
+RFC-2300's real, specific texture — recurring dry mockery of a named
+implementer failure ("one early submission handled this by writing in
+a placeholder key and calling it 'good enough for now'"), rigid
+enumeration language ("not a starting point for further creativity"),
+and exactly **one** well-placed faction-textured line per document
+(RFC-2300 §11.6's jury-rigged-Belter-skiff/Martian-orbital-array/
+Earth-side-approval-signature triad appears once, doing real
+interoperability work, not scattered as seasoning). Also added: a
+short italicized aphorism line as a structural device (a one-sentence
+pull-quote closing a key section, e.g. "A domain that has a key can
+prove it. A domain that doesn't shouldn't have to pretend."),
+mirroring RFC-2300's boxed "SSWG Summary" quotes at §9.7/§10.8. Applied
+to RFC-2362 §0/§2/§3/§6.
+
+**2026-09-08 (same pass) — corpus-wide rule, not SSWG-specific, but
+caught here:** an RFC is entirely player-facing and must never cite a
+real repository file path (`docs/lore/os-lineages.md`,
+`db/CORPUS-STATUS.md`, etc.) as though it were an in-universe source.
+Those are our own design/lore notes, invisible in-fiction. Six such
+citations were found and removed from the RFC-2362 draft (rephrased to
+assert the same fact directly — "the four root models each lineage
+already runs under separately" instead of citing the file that
+describes them). Citing another **in-universe RFC by number** (RFC-2350,
+RFC-2301) remains correct and expected; citing a `docs/`, `db/`, or
+`.md` path from this repo is not, regardless of which institutional
+voice is speaking.
+
 ## **SSWG Editorial Doctrine (Canonical)**
 
 **Purpose**
