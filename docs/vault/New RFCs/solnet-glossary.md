@@ -99,6 +99,29 @@ institutions.
 institution controls within SolNet. Prevents overlap and doctrinal
 conflict.
 
+**Authority** (bare, as in "set by Authority policy") — Distinct from
+Authority Plane (the layer, above) and Authority Domain (the
+jurisdictional boundary, above): "the Authority" is the policy-setting
+body whose determinations — a canonical interval, a hop-limit ceiling,
+an admission policy — bind relay behavior within a deployment, without
+those determinations being published as protocol constants in the RFC
+that defines the field they govern (RFC-2353 §6 and §1.6 both handle
+T_adv and H_max this way). Which specific institution or process
+actually constitutes "the Authority" in a given trust domain is a Trust
+Domain / RFC-2362 question — no individual RFC resolves it, and none is
+expected to.
+
+**Invariance Doctrine** — The SolNet-wide principle that observable
+protocol behavior MUST NOT vary based on unstated internal conditions —
+who's asking, what state a relay is actually in, what an implementer
+would prefer to reveal under different circumstances. Enforced
+primarily by DIC. A document satisfies it by holding behavior constant
+field-by-field and structurally, not by any single compliance
+statement (see RFC-2353 §1.4 and §11 for a worked example: the
+doctrine applied to a Layer-1 advertisement mechanism section by
+section, then affirmed once as a whole rather than repeated for each
+section).
+
 ## Technical / Registry Concepts
 
 **Registry** — The canonical source of truth for identifiers, TLV codes,
@@ -114,6 +137,35 @@ registry-aligned and deterministic.
 **Relay** — A communication node operating under deterministic
 constraints, responsible for forwarding frames without adaptive behavior.
 Relay behavior is governed by RNC, NEEB, and TSRB.
+
+**DTN (Delay/Disruption-Tolerant Networking)** — The networking paradigm
+underlying SolNet's Layer-1 design: store-and-forward behavior for links
+with long, variable, or unpredictable delay (light-lag across
+interplanetary distances, intermittent line-of-sight, spin-shift
+occlusion), rather than an assumption of persistent, low-latency
+connectivity. A relay "in a DTN partition" has, at least temporarily, no
+path to forward traffic over — RAP's own propagation model (RFC-2353
+§1.6) and its capability mask's DTN-Aware bit (§3.1) both treat this as
+a normal, expected operating condition, not a failure state.
+
+**Canonical Interval** — A fixed, Authority-set emission period a given
+periodic signal MUST hold to regardless of load or operational state,
+used across SolNet to keep a signal's own timing from becoming a side
+channel. RFC-2353 §6 is the worked example: its canonical interval is
+denoted T_adv, and — consistent with the Authority entry above — is
+never published as a numeric protocol constant, only referenced as a
+per-deployment policy parameter.
+
+## Belt / Environmental
+
+**Spin-Shift** — A rotating station or habitat's own spin periodically
+carrying a relay's antenna or terminal out of alignment, interrupting
+line-of-sight or beam-aimed communication (tightbeam especially) for
+part of every rotation. A normal, cyclical operating condition for
+spin-gravity Belt infrastructure, not a fault. RFC-2353 §8 treats a
+relay's re-advertisement after a spin-shift gap the same as any other
+DTN-partition recovery — one early advertisement allowed, then back to
+the canonical interval like everyone else.
 
 ## Political Geography
 
