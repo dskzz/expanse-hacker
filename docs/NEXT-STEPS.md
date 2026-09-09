@@ -51,19 +51,31 @@ contradictory blocks is correct" or "fix the obvious copy-paste,"
 resolvable by anyone with `db/CORPUS-INDEX.md` open to the relevant
 entry.
 
-### A3. Draft RFC-2362 (Trust Domains and Authority Policy)
+### A3. Draft RFC-2362 (Trust Domains and Authority Policy) — DONE, graduated 2026-09-09
 
-Currently just a `TODOv2.md` stub — no draft text exists anywhere.
-This is the RFC `os-lineages.md` already assumes exists as the shared
-trust primitive across all four OS lineages, and it's the RFC that has
-to actually answer the open question flagged in `CORPUS-STATUS.md`:
-does `PolicyRecord` (RFC-2302) express "there is no persistent AK" or
-"the AK is transient, derived from whoever holds this object" —
-because RFC-2302's `AnchorRecord` structurally assumes Earthstock's
-root model as if it were universal, and Scrapshell/Mars need something
-that isn't that. This needs the user's design call, not a schema
-workaround, and RFC-2362 is where it should be resolved on paper
-before more `db/` content builds on an unstated assumption.
+Drafted, iterated, and promoted: `docs/vault/New RFCs/RFC 2362 - Trust
+Domains and Authority Policy.md`, static reader-facing HTML at
+`docs/rfc-html/RFC-2362-Trust-Domains-and-Authority-Policy.html`, and a
+companion doc at `docs/vault/RFC Companion/RFC 2362 - Trust Domains and
+Authority Policy.md` (exploits, mission hooks, tools, and the schemas
+still to craft).
+
+Resolves the open question this track existed to answer: each Trust
+Domain now declares exactly one of four named root attestation models
+(`CHAIN_OF_CUSTODY`, `QUORUM_WITNESS`, `CAPABILITY_TOKEN`,
+`LEASED_ENTITLEMENT`), mapped onto the four OS lineages, backed by new
+record types (`AnchorRecord`, `WitnessQuorumRecord`,
+`CapabilityMintRecord`, `EntitlementGrantRecord`). RFC-2302's
+`AnchorRecord` was never universal — it's the `CHAIN_OF_CUSTODY` case
+only. The RFC also formally separates local device root (unchanged,
+`os-lineages.md` §3 mechanics) from domain root (network-wide trust
+anchor) — holding root on one machine never implies domain-wide
+standing.
+
+Not yet done: converting the four RFC-2302 record types plus the three
+new ones to real `db/trust/*.json` schemas (tracked in the companion
+doc's Schemas section and in `CORPUS-STATUS.md`'s Authority Plane
+table). RFC-2363 (Track A4) is now unblocked.
 
 ### A4. Draft RFC-2363 (Directory and Routing Endpoints)
 
@@ -197,9 +209,11 @@ have to be re-litigated per action"). A successful multi-user quorum
 claim should persist as a hash-chained multisig ledger entry — RFC-2302's
 "Local ledgers" deployment mode, deliberately **not** the `AnchorRecord`
 type, since `AnchorRecord` structurally assumes a persistent AK that
-Scrapshell's live-quorum root model doesn't have (see Track A3 above —
-this is the same open question, approached from the schema side
-instead of the RFC side). The ledger entry should carry a TTL so root
+Scrapshell's live-quorum root model doesn't have — this is
+Scrapshell's local-root-claim mechanic specifically, distinct from the
+domain-level `WitnessQuorumRecord` RFC-2362 (Track A3) defines for
+QUORUM_WITNESS trust domains; the two must not be conflated. The
+ledger entry should carry a TTL so root
 survives that window without a fresh vote per trivial action, but it
 must only ever notarize that N real co-signatures happened — never
 grant authority by itself. Also blocked on B1.
@@ -306,8 +320,9 @@ suspicious — visible personality from mechanical rules, not scripting.
 5. **B4 + B5** (permission gradient, addressing parser) — these two
    are the actual foundation the rest of the multi-user/multi-domain
    story sits on.
-6. **A3 + A4** (draft RFC-2362, RFC-2363) — bigger lifts, needed before
-   the Authority Plane block can grow further either direction.
+6. **A4** (draft RFC-2363) — A3 is done (graduated 2026-09-09); A4 is
+   now unblocked and is the remaining bigger lift before the Authority
+   Plane block can grow further.
 7. **B6, B7, B8** — content and polish, parallelizable with anything
    above once B4/B5 exist to hang them on.
 8. **A5, A6, A8** — cleanup, backlog, and RFC-2310 (QKD), fold in

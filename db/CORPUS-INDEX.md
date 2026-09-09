@@ -207,8 +207,8 @@ the whole corpus — not a new RFC to draft, but resolving an existing,
 now-confirmed self-contradiction. See "Priority RFC work" section at
 the end of this index.
 
-**Cross-references:** RFC-2362 (Trust Domains, not yet drafted) is
-where L5's cross-domain trust/policy rules need to actually land.
+**Cross-references:** RFC-2362 (Trust Domains, graduated 2026-09-09) is
+where L5's cross-domain trust/policy rules actually landed.
 RFC-2360/2481 (formal L1 encodings, minimal DTN profile) listed as
 next steps in §14, neither exists yet under those numbers in
 `New RFCs/` — worth checking if they were ever started under the old
@@ -421,14 +421,16 @@ digression defining what "signature" means throughout the corpus
 OK) — worth treating as the canonical definition to cite anywhere else
 "signed"/"signature" comes up loosely.
 
-**New reference found, not yet drafted anywhere:** the signature
-digression cites "RFC-2361, RFC-2362, RFC-2368" as the identity/
-authority layers publishing verification keys. RFC-2361 exists (old
-folder, Layer Model). RFC-2362 doesn't exist yet (Trust Domains,
-already the tracked blocker in `CORPUS-STATUS.md`). **RFC-2368 is a
+**Reference found:** the signature digression cites "RFC-2361,
+RFC-2362, RFC-2368" as the identity/authority layers publishing
+verification keys. RFC-2361 exists (old folder, Layer Model). RFC-2362
+now exists too (Trust Domains, graduated 2026-09-09) and did not turn
+out to need anything from RFC-2368 to get there. **RFC-2368 remains a
 new number, referenced here for the first time in this read-through,
-not drafted anywhere** — worth finding out what it's meant to cover
-before RFC-2362 gets drafted, in case it's a real dependency.
+not drafted anywhere** — TODOv2.md's block plan later confirmed it as
+"Revocation & Emergency Unbinding," which RFC-2362 §6.2 extends the
+*concept* of (domain-wide, not just individual-AK) without depending
+on RFC-2368 itself existing yet.
 
 ---
 
@@ -596,9 +598,12 @@ sequencing already proposed there.
    confused about whether "Authority Plane" maps to an architectural
    layer grouping or a specific address substring.
 
-**Confirmed, not contradicted:** RFC-2362 (Trust Domains) is a real,
-concrete dependency — TrustTag values 0-15 are explicitly reserved for
-it (§5.5), consistent with the existing `CORPUS-STATUS.md` blocker.
+**Confirmed, not contradicted:** RFC-2362 (Trust Domains, graduated
+2026-09-09) was a real, concrete dependency — TrustTag values 0-15
+were explicitly reserved for it (§5.5), and RFC-2362 §3 has now
+actually assigned them (0 = self-asserted, 1-4 = the four lineages,
+5 = UN/neutral, 6-15 reserved for sub-domains), closing the
+`CORPUS-STATUS.md` blocker this entry originally flagged.
 QoSClass values 0-7 are attributed to RFC-2351 (§5.6) — **confirmed
 accurate**: RFC-2351 §17 defines exactly QoSClass values 0-7, see that
 entry below.
@@ -893,6 +898,66 @@ title/identity mismatch found in the corpus so far:**
    with RFC-2351's Appendix H duplication. Across this corpus, appendix
    reordering appears to be the single most error-prone editorial
    operation.
+
+---
+
+## RFC-2362 — Trust Domains and Authority Policy (graduated 2026-09-09, full draft)
+
+**Status:** ✅ Graduated from an undrafted `TODOv2.md` stub — the first
+Authority Plane RFC in this corpus, and the second drafted end-to-end
+via the live-artifact review workflow (after RFC-2353). A styled HTML
+rendering for human readers lives at `docs/rfc-html/
+RFC-2362-Trust-Domains-and-Authority-Policy.html`; a game-design and
+implementation companion doc (exploits, tools, and — new this time —
+concrete `db/` schemas to craft) is at `docs/vault/RFC Companion/RFC
+2362 - Trust Domains and Authority Policy.md`.
+
+Resolves the corpus's longest-standing open design blocker: RFC-2302's
+`AnchorRecord` structurally assumes every trust domain has a persistent
+Anchor Key, which is true for Earthstock's chain-of-custody model and
+false for the other three lineages (Scrapshell's quorum root, Mars's
+capability-fork root, Corporate's leased-entitlement root). §2 defines
+**TrustDomain** as a record declaring exactly one of four named **root
+attestation models** (`CHAIN_OF_CUSTODY`, `QUORUM_WITNESS`,
+`CAPABILITY_TOKEN`, `LEASED_ENTITLEMENT`), each pointing to its own
+record shape — `AnchorRecord` unchanged for the first, three new record
+types (`WitnessQuorumRecord`, `CapabilityMintRecord`,
+`EntitlementGrantRecord`, existence and semantics fixed, wire encoding
+deferred) for the rest. §3 discharges RFC-2350 §5.5's TrustTag 0-15
+reservation. §4 locks "trust is not transitive by default" as an
+explicit rule requiring a PolicyRecord for every cross-domain
+acceptance. §5 closes a hook the shared glossary's own "Authority"
+entry had left open since RFC-2353. §6 covers cross-domain revocation
+and a deliberately-hard-to-invoke domain-wide emergency unbind. §7
+(new voice: **UN Trust & Interoperability Governance Council**, the
+corpus's first real deployment of the Dilbert-committee blame-
+laundering register) handles cross-domain liability disputes. §8
+(DIC) confirms no conflict with RFC-2352's invariance doctrine.
+
+A late-session correction is worth flagging for future work: an early
+draft conflated a device's **local root** (who controls one console,
+under each lineage's existing `os-lineages.md` §3 mechanic) with a
+trust domain's **domain root** (the network-wide anchor other domains
+actually check against) — treating a single station's dockworker vote
+as if it were the Belt's own domain-wide identity anchor. §2.4 now
+states the distinction explicitly as its own subsection, and Appendix
+B's four worked examples were rewritten to keep local and domain root
+visibly separate per lineage. Appendix E logs the resulting open item
+honestly: this RFC establishes that the two must be distinct bodies,
+but doesn't yet name what specifically constitutes each lineage's
+domain-root body (the Belt's recognized-representative roster, Mars's
+fleet commissioning office, the arm of the UN holding Earthstock's AK)
+— left for a future revision or companion governance document.
+
+**Findings/notes for future RFC work:** RFC-2362 depends on RFC-2302's
+`AnchorRecord`, `PolicyRecord`, `CrossCertRecord`, and
+`RevocationRecord` staying exactly as this document assumes, but per
+`db/CORPUS-STATUS.md` none of the four have an actual `db/` schema yet
+— see the companion doc's "Schemas to Craft" section for the specific
+prerequisite gap this creates for implementation. RFC-2363 (DRE) has a
+real, direct dependency here too: §5 explicitly defers its own DRE
+trust-decision integration to RFC-2363 once drafted, rather than
+retrofitting it here.
 
 ---
 

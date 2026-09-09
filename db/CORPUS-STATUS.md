@@ -37,25 +37,25 @@ favorable (DTN-first design, power/duty as first-class, the federated
 ledger in RFC-2302A explicitly rejects single-root-of-truth thinking),
 but these two are real, worth tracking:
 
-1. **RFC-2302's `AnchorRecord` structurally assumes a persistent AK
-   (Anchor Key) as the root of authority** — that's specifically
-   Earthstock's root model (`docs/lore/os-lineages.md` §3), generalized
-   as if universal. Scrapshell's root is a live quorum vote (no
-   persistent key to bind); Mars's root is physical possession of a
-   fob (the "key" isn't a stored secret at all). Unclear whether
-   `PolicyRecord` can actually express "there is no AK" or "the AK is
-   transient, derived from whoever holds this object" — nothing read
-   so far confirms it can. **Flagged as a blocker to resolve before
-   RFC-2362 (Trust Domains) gets drafted or converted** — that's the
-   RFC where this needs an actual answer, and it isn't written yet, so
-   there's no sunk cost in the way. Needs the user's design call, not
-   a schema-level workaround. **Still open, not resolved by the
-   2026-09-05 quorum-ledger addition** (`os-lineages.md` §3, "Quorum
-   doesn't have to be re-litigated per action") — that addition
-   deliberately avoids `AnchorRecord` for exactly this reason (a
-   witness/quorum record with N signatures and a TTL, no persistent AK
-   implied), so it's consistent with this flag rather than a fix for
-   it. RFC-2362 still needs its own real answer.
+1. **RESOLVED 2026-09-09 by RFC-2362.** RFC-2302's `AnchorRecord`
+   structurally assumed a persistent AK (Anchor Key) as the root of
+   authority — that was specifically Earthstock's root model
+   (`docs/lore/os-lineages.md` §3), generalized as if universal.
+   Scrapshell's root is a live quorum vote (no persistent key to bind);
+   Mars's root is physical possession of a fob (the "key" isn't a
+   stored secret at all). RFC-2362 §2 answers the question this entry
+   originally posed — can `PolicyRecord`/`TrustDomain` express "there
+   is no AK"? — by defining four named **root attestation models**
+   (`CHAIN_OF_CUSTODY`, `QUORUM_WITNESS`, `CAPABILITY_TOKEN`,
+   `LEASED_ENTITLEMENT`), each with its own record shape:
+   `AnchorRecord` stays exactly as-is for `CHAIN_OF_CUSTODY` only; three
+   new record types (`WitnessQuorumRecord`, `CapabilityMintRecord`,
+   `EntitlementGrantRecord`, semantics fixed, wire encoding still
+   deferred — see the RFC-2362 companion doc's schema list) cover the
+   rest. The 2026-09-05 quorum-ledger addition (`os-lineages.md` §3,
+   "Quorum doesn't have to be re-litigated per action") is now formally
+   the `QUORUM_WITNESS` model's worked example (RFC-2362 Appendix B),
+   not just a workaround alongside the blocker.
 
 2. **RFC-2305's admission-control flow is a fully confirmed, blocking
    handshake for every transmission** (§16.1: "Blindly transmitting...
@@ -125,13 +125,13 @@ draft yet
 | 2353 | L1 Relay Advertisement Protocol | 📝 — fully drafted 2026-09-08 (graduated from stub; see `db/CORPUS-INDEX.md`), not yet converted to `db/` schema | — |
 | 2354–2359 | *(not yet in `TODOv2.md`'s detailed entries)* | 📋/unclear | — |
 
-### Authority Plane (2360–2389) — none drafted in `New RFCs/` yet
+### Authority Plane (2360–2389) — 2362 drafted 2026-09-09, rest not yet
 
 | RFC | Topic | Status | Notes |
 |---|---|---|---|
 | 2360 | Layer Model Revised | 📋 | 🗄️ old `RFCs/RFC 2361 - SolNet Layer Model.md` may be source material (note: old number 2361, new number 2360) |
 | 2361 | Identity Resolution L2 | 📋 | — |
-| 2362 | Trust Domains and Authority Policy | 📋 | `docs/lore/os-lineages.md` already leans on this as the four OS lineages' shared trust primitive — worth drafting soon. 🗄️ old `RFCs/RFC 2362 - SolNet Contact Ecology Level.md` is an unrelated topic, not source material. |
+| 2362 | Trust Domains and Authority Policy | 📝 — fully drafted 2026-09-09 (graduated; see `db/CORPUS-INDEX.md`), not yet converted to `db/` schema. Depends on RFC-2302's AnchorRecord/PolicyRecord/CrossCertRecord/RevocationRecord, none of which are schematized yet either — see the RFC-2362 companion doc's "Schemas to Craft" section. 🗄️ old `RFCs/RFC 2362 - SolNet Contact Ecology Level.md` is an unrelated topic, not source material. |
 | 2363 | Directory and Routing Endpoints (DRE) | 📋 | — |
 | 2364 | Ephemeris Hint Block Spec | 📋 | 🗄️ old `RFCs/RFC 2354 - Mobility Hint Block Spec.md` may be related topic |
 | 2365 | DTN Routing Policy | 📋 | 🗄️ old `RFCs/RFC 2354 - DTN Routing policy.md` may be source material |
@@ -174,17 +174,17 @@ error, not something reading RFC-2350 would explain away.
    (the single most severe mislabeling found anywhere in the corpus,
    sitting in normative front matter); §39 duplicated with §40
    missing; Appendix J/K use leftover C./D. subsection prefixes.
-4. **RFC-2362** (Trust Domains) — not drafted yet at all, only a
-   `TODOv2.md` stub; `os-lineages.md` already assumes it exists as the
-   four-lineage shared primitive, and it's the RFC that has to answer
-   the still-open `AnchorRecord`/root-model question below. May need
-   the user to actually draft this RFC before it can be converted.
-5. **RFC-2363** (Directory & Routing Endpoints) — also undrafted, but
+4. **RFC-2362** (Trust Domains) — drafted and graduated 2026-09-09.
+   Resolves the four-lineage root attestation question (see cross-
+   cutting note #1 above) and formally distinguishes local device
+   root from domain root. Not yet converted to `db/` schema — see
+   the Authority Plane table above for the specific gap.
+5. **RFC-2363** (Directory & Routing Endpoints) — still undrafted, but
    now has a settled scope (confirmed via `TODOv2.md`: DRE, not
    Identity Resolution as RFC-2302/2303 assumed) and two `rfc-
    proposals/` documents already targeting it (role-directory
-   addressing, reply-path privacy) — a natural next full draft once
-   RFC-2362 exists to depend on.
+   addressing, reply-path privacy) — a natural next full draft now
+   that RFC-2362 exists to depend on.
 6. **RFC-2360/2361 mislabel sweep** — low-risk, mechanical: six
    documents cite "RFC-2361" for Layer Model content; `TODOv2.md`
    confirms that's RFC-2360, and RFC-2361 is actually Identity

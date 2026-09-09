@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFC-2362 — Trust Domains and Authority Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EAEBE4; --paper-raised:#F2F3ED; --ink:#1B1D1C; --ink-soft:#54574B;
+    --rule:#B8BBAF; --rule-soft:#CBCEC1; --accent:#8A3324; --accent-soft:#A8462F;
+    --stamp-bg:#DCDED3; --stamp-border:#9C9F8F; --mono-bg:#E2E3DC;
+    --toolbar-bg:#DEDFD6; --focus:#8A3324; --danger:#8A3324;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+      --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+      --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+    --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+    --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,.stamp,.masthead-title{ font-family:"Newsreader", Georgia, serif; text-wrap:balance; }
+  code, .secnum, .table-wrap table, .wire, kbd{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+
+  a{ color:var(--accent); }
+  a:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  /* ---- doc bar (static identity strip, no edit affordances) ---- */
+  .docbar{
+    position:sticky; top:0; z-index:20; background:var(--toolbar-bg);
+    border-bottom:1px solid var(--rule); padding:.6rem 1.25rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    max-width:1200px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  .masthead-title{ font-size:2.1rem; font-weight:600; margin:0 0 .4rem; }
+  .masthead-sub{ font-style:italic; color:var(--ink-soft); margin:0 0 1rem; font-size:1rem; }
+  .status-box{
+    display:inline-block; border:1px solid var(--rule); background:var(--paper-raised);
+    padding:.6rem .9rem; font-size:.85rem; color:var(--ink-soft); border-radius:3px;
+  }
+  .status-box strong{ color:var(--ink); }
+
+  /* ---- layout ---- */
+  .layout{
+    max-width:1200px; margin:0 auto; padding:2rem 1.5rem 6rem;
+    display:grid; grid-template-columns:260px minmax(0,1fr); gap:3rem;
+    align-items:start;
+  }
+  nav.toc{ position:sticky; top:4.2rem; max-height:calc(100vh - 5.5rem); overflow-y:auto; }
+  nav.toc h4{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  nav.toc ol{ list-style:none; margin:0; padding:0; }
+  nav.toc li{ margin:0; }
+  nav.toc a{
+    display:block; padding:.3rem 0; color:var(--ink-soft); text-decoration:none;
+    font-size:.87rem; border-left:2px solid transparent; padding-left:.6rem;
+  }
+  nav.toc a:hover{ color:var(--ink); }
+  nav.toc a.active{ color:var(--accent); border-left-color:var(--accent); font-weight:500; }
+  nav.toc .toc-divider{
+    margin:.9rem 0 .4rem; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); border-top:1px solid var(--rule-soft); padding-top:.7rem;
+  }
+
+  article#doc{ max-width:70ch; }
+  section.toplevel{ padding:2.2rem 0; border-bottom:1px solid var(--rule-soft); }
+  section.toplevel:first-of-type{ padding-top:0; }
+  .appendix-divider{ padding:2.5rem 0 .5rem; }
+  .appendix-divider h1{ font-size:1.5rem; margin:0; color:var(--ink-soft); font-weight:500; }
+  h2{ font-size:1.35rem; font-weight:600; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+  h2 .secnum{ color:var(--accent); font-size:1rem; }
+  h3{ font-size:1.05rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  h3 .secnum{ color:var(--accent); font-size:.85rem; margin-right:.3rem; }
+  p{ margin:0 0 1rem; }
+  p.aphorism{
+    font-style:italic; padding-left:1rem; border-left:2px solid var(--rule);
+    color:var(--ink-soft); margin:1.2rem 0;
+  }
+  p.stamp{
+    display:inline-block; margin:0 0 1rem; font-style:italic; font-size:.85rem;
+    background:var(--stamp-bg); border:1px solid var(--stamp-border);
+    padding:.15rem .6rem; border-radius:2px; color:var(--ink-soft);
+  }
+  ul{ margin:0 0 1rem; padding-left:1.3rem; }
+  li{ margin-bottom:.4rem; }
+  strong{ font-weight:600; }
+  code{ background:var(--mono-bg); padding:.1rem .3rem; border-radius:2px; font-size:.85em; }
+  .table-wrap{ overflow-x:auto; margin:0 0 1.2rem; border:1px solid var(--rule); border-radius:3px; }
+  table{ border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td{ text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rule-soft); font-variant-numeric:tabular-nums; }
+  thead th{ background:var(--paper-raised); font-weight:600; border-bottom:1px solid var(--rule); }
+  tbody tr:last-child td{ border-bottom:none; }
+  pre.wire{
+    background:var(--mono-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:1rem 1.1rem; overflow-x:auto; font-size:.82rem; line-height:1.7; margin:0 0 1.2rem;
+  }
+  section.footnotes{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--rule-soft); }
+  section.footnotes h3{ margin-top:0; }
+  section.footnotes .nonnormative{ color:var(--ink-soft); font-weight:400; font-size:.85em; }
+  section.footnotes ol{ padding-left:1.4rem; font-size:.9rem; color:var(--ink-soft); }
+  .fnref a{ text-decoration:none; }
+
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:1.2rem; }
+    nav.toc{ position:static; max-height:none; }
+    nav.toc ol{ display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.4rem; }
+    nav.toc .toc-divider{ display:none; }
+    nav.toc a{ border-left:none; border-bottom:2px solid transparent; padding:.3rem .5rem; white-space:nowrap; }
+    nav.toc a.active{ border-left-color:transparent; border-bottom-color:var(--accent); }
+    article#doc{ max-width:100%; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">RFC&#8209;2362 &middot; Trust Domains and Authority Policy &middot; SolNet Standards Corpus &middot; static rendering</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">SolNet Standards Corpus — Normative, Graduated 2026-09-09</p>
+  <h1 class="masthead-title">RFC&#8209;2362 — Trust Domains and Authority Policy</h1>
+  <p class="masthead-sub">Multi-institutional authorship &mdash; SolNet Standards Corpus</p>
+  <p class="status-box"><strong>Status:</strong> Normative, Standards Track. Canonical source of record is <code>docs/vault/New RFCs/RFC 2362 - Trust Domains and Authority Policy.md</code>; this is a static, read-only rendering.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Sections</h4>
+    <ol>
+      <li><a href="#sec0">0. Document Preface</a></li>
+      <li><a href="#sec1">1. Purpose and Scope</a></li>
+      <li><a href="#sec2">2. The Root Attestation Model</a></li>
+      <li><a href="#sec3">3. TrustTag Registry (0&ndash;15)</a></li>
+      <li><a href="#sec4">4. Cross-Cert Chains and Delegation</a></li>
+      <li><a href="#sec5">5. Policy Enforcement Points</a></li>
+      <li><a href="#sec6">6. Cross-Domain Revocation</a></li>
+      <li><a href="#sec7">7. Cross-Domain Dispute and Liability</a></li>
+      <li><a href="#sec8">8. Doctrinal Alignment</a></li>
+      <li><a href="#sec9">9. Test Vectors</a></li>
+    </ol>
+    <div class="toc-divider">Appendices</div>
+    <ol>
+      <li><a href="#appA">A. Rationale</a></li>
+      <li><a href="#appB">B. Worked Examples Per Lineage</a></li>
+      <li><a href="#appC">C. Historical Context</a></li>
+      <li><a href="#appD">D. Dispute Procedure Detail</a></li>
+      <li><a href="#appE">E. Authorship</a></li>
+    </ol>
+  </nav>
+
+  <article id="doc">
+<section id="sec0" class="toplevel">
+<h2><span class="secnum">0.</span> Document Preface</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>There is no global certificate authority anyone actually trusts. There was, once, on paper. Then the founding-era chain fragmented across the UN, the Belt, Mars, and the corporate leases &mdash; not to mention Ganymede and the system's other shared outposts, which had the misfortune of not fitting cleanly under any of the four and have been arguing about it ever since &mdash; and every one of those four kept a working root of authority while agreeing on almost nothing about what a root of authority is supposed to look like.</p>
+<p>This RFC exists because "trust must be explicit and auditable" is a nice sentence to put in a charter, and somebody eventually has to write down what it actually means when the four parties in the room don't even agree on whether "authority" implies a key, a vote, a token, or a paid-up account.</p>
+<p>This document does not pick a winner. It defines <strong>TrustDomain</strong>: a named, policy-bearing boundary that declares, honestly, which of a small number of root attestation models it actually runs on — and it stops there. What happens inside that boundary is the domain's own business, the same way this Working Group has never told the UN how to run its cert chain internally or Mars how to mint a fob. What happens at the boundary, when one domain has to decide whether to believe another, is this RFC's actual subject.</p>
+<p>A brief technical note for readers who've been tracking the corpus's own open questions: RFC‑2302's <code>AnchorRecord</code><sup class="fnref"><a href="#fn1">1</a></sup> assumes a persistent Anchor Key (AK)<sup class="fnref"><a href="#fn2">2</a></sup>, because it was drafted against Earthstock's model without anyone stopping to ask whether every lineage has one. Not every lineage does. Section 2 fixes that — not by replacing <code>AnchorRecord</code>, which stays exactly right for the case it was built for, but by refusing to pretend it was ever meant to be the only case.</p>
+<p>This Working Group has reviewed the alternative — generalizing <code>AnchorRecord</code> until it's flexible enough to fake having a key it doesn't have — and found it unpersuasive, for the same reason a field that can mean anything ends up meaning nothing in particular.</p>
+</div></section>
+
+<section id="sec1" class="toplevel">
+<h2><span class="secnum">1.</span> Purpose and Scope</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>RFC‑2352 already coined the term this RFC formalizes: "Trust Domain — a logical grouping of devices under shared policy." That definition stands. This RFC doesn't replace it, extend it into something incompatible, or discover it needs correcting — it's the RFC that was always supposed to exist underneath it, giving that grouping an actual record shape, an actual registry entry, and actual rules for what happens when two of them have to deal with each other.</p>
+<p>The alternative was leaving "shared policy" to mean whatever each implementer felt like that week. This Working Group has reviewed how that went. It went the way these things go.</p>
+<p>This RFC defines:</p>
+<ul>
+<li>The <strong>TrustDomain</strong> record and its declared <strong>root attestation model</strong><sup class="fnref"><a href="#fn3">3</a></sup> (Section 2) — the fix for the AnchorRecord-assumes-an-AK problem.</li>
+<li>The canonical meaning of <strong>TrustTag</strong><sup class="fnref"><a href="#fn4">4</a></sup> values 0&ndash;15 (Section 3), which RFC‑2350 §5.5 reserved for this document by name and has been sitting unassigned since.</li>
+<li>Cross-cert chain construction and scoped delegation between domains (Section 4).</li>
+<li>Where trust-domain policy actually gets consulted elsewhere in the stack — L1 admission, DRE trust decisions, ServicePlane session establishment (Section 5) — without this RFC itself defining new wire fields at those layers.</li>
+<li>Cross-domain revocation and emergency unbinding propagation (Section 6).</li>
+<li>The dispute and liability process for when two domains disagree about whether a boundary crossing was handled correctly (Section 7).</li>
+</ul>
+<p>This RFC does not define: how any single domain governs itself internally (the UN's institutional CA process, the Belt union's own quorum bylaws, Mars's capability-minting ceremony, a corporation's leasing contract terms) — those stay exactly as politically diverged as they've always been, and nothing here is a backdoor attempt to standardize them into looking the same.</p>
+<p>This Working Group has no plans to start caring how Mars runs its minting ceremony, and no plans to pretend otherwise for the sake of a tidier document.</p>
+</div></section>
+
+<section id="sec2" class="toplevel">
+<h2><span class="secnum">2.</span> The Root Attestation Model</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group + Canonical Address Registrar</p>
+<p>A <strong>TrustDomain</strong> record declares four things: a <code>domain_id</code>, a <code>TrustTag</code> (Section 3), a <strong>root attestation model</strong>, and an <code>authority_reference</code> pointing to whatever construct actually functions as the root within that model. The root attestation model is the field this corpus has been missing.</p>
+<p>It is one of exactly four values, not five, and not a spectrum in between — a jury-rigged Belter skiff, a Martian orbital array, and an Earth-side system waiting on its third approval signature do not share a root of authority, and no number of optional fields on <code>AnchorRecord</code> was ever going to make that true:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Model</th><th>Root of authority is&hellip;</th><th>Record shape the authority_reference points to</th><th>Canonical example</th></tr></thead>
+<tbody>
+<tr><td><code>CHAIN_OF_CUSTODY</code></td><td>A persistent Anchor Key, bound via NetworkCert<sup class="fnref"><a href="#fn5">5</a></sup> (RFC‑2301)</td><td><code>AnchorRecord</code> (RFC‑2302, unchanged)</td><td>Earthstock</td></tr>
+<tr><td><code>QUORUM_WITNESS</code></td><td>N co-signatures from a defined member set, no persistent key implied</td><td><code>WitnessQuorumRecord</code> (new, this RFC)</td><td>Scrapshell / Belt union stations</td></tr>
+<tr><td><code>CAPABILITY_TOKEN</code></td><td>Physical possession of an unforgeable, minting-time-issued token</td><td><code>CapabilityMintRecord</code> (new, this RFC)</td><td>Mars capability-fork</td></tr>
+<tr><td><code>LEASED_ENTITLEMENT</code></td><td>A revocable grant from a remote licensing authority, cached locally</td><td><code>EntitlementGrantRecord</code> (new, this RFC)</td><td>Corporate leased-compute</td></tr>
+</tbody></table></div>
+<p>This is not a fifth model waiting to be invented for symmetry's sake. It is the four root models each lineage already runs under separately, named here so the rest of the corpus has a field to point at instead of re-deriving them per RFC.</p>
+<p>A domain declares exactly one model. A domain that declares more than one has not discovered a hybrid architecture. It has discovered a bug, and this Working Group would prefer to hear about it from the domain rather than from whoever gets burned by it first. A domain is not required to explain its internal governance beyond that declaration — a receiving domain needs to know it's dealing with a quorum-witness domain to reason about it correctly; it does not need Scrapshell's union bylaws.</p>
+<h3 id="sub2-1"><span class="secnum">2.1</span> AnchorRecord Is Not Deprecated, It Is Scoped</h3>
+<p><code>AnchorRecord</code> (RFC‑2302) remains the correct, unmodified record type for any <code>CHAIN_OF_CUSTODY</code> domain. Nothing about this section asks Earthstock-model deployments to change anything. What changes is that <code>AnchorRecord</code> stops being asked, implicitly, to also describe domains it was never built to describe.</p>
+<p>A <code>QUORUM_WITNESS</code> domain populating an <code>AnchorRecord</code>'s AK field with a placeholder value to satisfy a schema that assumes one exists is not compliance. It's a domain lying about having a root it doesn't have, which is precisely the failure mode this section exists to close. One early submission handled this by writing in a placeholder key and calling it "good enough for now." It was not good enough for now, and this Working Group has since made a point of checking for exactly that pattern.</p>
+<p class="aphorism">A domain that has a key can prove it. A domain that doesn't shouldn't have to pretend.</p>
+<h3 id="sub2-2"><span class="secnum">2.2</span> WitnessQuorumRecord, CapabilityMintRecord, EntitlementGrantRecord</h3>
+<p>Full field-level encoding for these three new record types is deferred to an errata pass once a schema owner is assigned — this draft fixes their <em>existence</em> and their <em>minimum semantic content</em>, not their wire format:</p>
+<ul>
+<li><strong>WitnessQuorumRecord</strong> — member set reference (the trust domain's own recognized representative body, not any single station's logged-in crew), quorum threshold N, the N actual co-signatures for a specific domain-anchor claim event, and a TTL. Carries no persistent authority key. Same shape, same math, as the local <code>claim root --union-vote</code> mechanic any given Scrapshell station already runs on its own — this RFC does not touch that mechanic at all. It gives the domain-scale version of the same idea its own name and its own record, precisely so the two are never mistaken for each other.</li>
+<li><strong>CapabilityMintRecord</strong> — token identity, the minting event's own authority reference (the lineage's actual commissioning authority — a fleet office or shipyard running the ceremony, not any single relay's own fob), and scope. No revocation-by-signature; a capability token is revoked by physical recovery or destruction, which Section 6 addresses. A single relay's fob authorizes actions on that relay. It says nothing whatsoever about the domain as a whole, and this record type does not pretend otherwise.</li>
+<li><strong>EntitlementGrantRecord</strong> — grantor reference, entitlement scope, expiry, and an explicit field for the cached-grant fallback behavior (what a device does when it can't reach the licensing server) rather than leaving that behavior undocumented and vendor-specific. Corporate is the one lineage where this record barely needs the distinction drawn in Section 2.4 below: every device already requests its entitlement from the same central licensing authority, so there was never a separate local root available to mistakenly promote into a domain anchor in the first place.</li>
+</ul>
+<h3 id="sub2-3"><span class="secnum">2.3</span> Cross-Model Consistency Requirement</h3>
+<p>A TrustDomain record's declared root attestation model MUST match the record type its <code>authority_reference</code> actually resolves to. A domain claiming <code>CHAIN_OF_CUSTODY</code> whose reference resolves to a <code>WitnessQuorumRecord</code> has produced a malformed TrustDomain record, not an unusual implementation of chain-of-custody trust, and MUST be treated as such by any consuming policy engine. This Working Group has already fielded the question of whether such a record could instead be read as "an innovative hybrid approach." It could not.</p>
+<h3 id="sub2-4"><span class="secnum">2.4</span> Local Root Is Not Domain Root</h3>
+<p>A device's local root — whoever currently controls a specific console, relay, or terminal under that lineage's own admission mechanic — is not this document's subject, and does not, by itself, establish or elevate that device's standing within its lineage's trust domain. Winning a dockworker's vote at one Belt station proves who's in charge of that station. It proves nothing whatsoever about how the UN, Mars, or any other domain ought to weigh a credential claiming to speak for the Belt as a whole, and this Working Group has no interest in a record type that would let it.</p>
+<p>The distinction matters because the two failure surfaces are wildly different sizes. A compromised local root is bad for one device and the people relying on it. A compromised domain root is bad for every device, relay, and credential that domain has ever vouched for — which is exactly why Section 6.2 makes a domain-wide emergency unbind deliberately hard to invoke, and that difficulty would mean nothing if a single station's routine local election could reach it by accident.</p>
+<p class="aphorism">Holding root on one machine is not a promotion. It's still just the one machine.</p>
+<p>This holds for all four models, with one structural exception noted above: Corporate's <code>LEASED_ENTITLEMENT</code> was never decentralized to begin with, so there is no local root event on that side to mistakenly aggregate. The other three all have a real local mechanic (Section 3 of the lineage's own governing practice) that this RFC leaves entirely untouched, precisely by never letting it feed this record.</p>
+</div></section>
+
+<section id="sec3" class="toplevel">
+<h2><span class="secnum">3.</span> TrustTag Registry (Values 0&ndash;15)</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>RFC‑2350 §5.5 reserved TrustTag values 0&ndash;15 for Trust Domains defined here, and left values 16&ndash;255 to the Canonical Address Registrar's general allocation. This section is this RFC discharging that reservation. It is this document's own registry, not delegated to CAR — CAR's jurisdiction begins at 16. These sixteen values are fixed by this table. They are not a starting point for further creativity.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>TrustTag</th><th>Assignment</th><th>Root Model</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>Unassigned / self-asserted, no domain claimed</td><td>&mdash;</td></tr>
+<tr><td>1</td><td>Earthstock primary trust domain</td><td><code>CHAIN_OF_CUSTODY</code></td></tr>
+<tr><td>2</td><td>Belt / Scrapshell union trust domain</td><td><code>QUORUM_WITNESS</code></td></tr>
+<tr><td>3</td><td>Mars capability-fork trust domain</td><td><code>CAPABILITY_TOKEN</code></td></tr>
+<tr><td>4</td><td>Corporate leased-compute trust domain</td><td><code>LEASED_ENTITLEMENT</code></td></tr>
+<tr><td>5</td><td>UN / neutral-territory trust domain (DRE-hosted neutral zones, shared backbone infrastructure)</td><td>Reserved &mdash; model TBD pending a UN-hosted deployment actually needing one</td></tr>
+<tr><td>6&ndash;9</td><td>Reserved for lineage-internal sub-domains (e.g. a specific Earthstock jurisdiction, a specific Belt union local) requesting their own tag rather than inheriting their parent lineage's</td><td>Inherits parent unless separately declared</td></tr>
+<tr><td>10&ndash;15</td><td>Reserved, unallocated</td><td>&mdash;</td></tr>
+</tbody></table></div>
+<p>TrustTag value 0 is not a null value in the sense of "error" or "absent." A node presenting TrustTag 0 has made an honest claim: it belongs to no declared trust domain. Consuming policy is free to treat that as maximally untrusted, but it MUST NOT be treated as malformed — a self-asserted, undeclared node is a real and legitimate category, not a parsing failure.</p>
+<p>Implementers who find that unsatisfying are welcome to propose a fifth category. This Working Group will file the proposal next to the others it has already declined.</p>
+<p>Allocation of values 6&ndash;15 to a specific sub-domain follows the same registration process CAR already runs for values 16&ndash;255 (RFC‑2350 §5.5), administered jointly with this RFC's custodian pending a formal Trust Domain Registrar role being assigned (see Appendix E).</p>
+<p>This Working Group expects, based on registry experience elsewhere in this corpus, that at least one deployment will request a reserved value before finishing this section. That request will be handled in the order received, same as anyone else's.</p>
+</div></section>
+
+<section id="sec4" class="toplevel">
+<h2><span class="secnum">4.</span> Cross-Cert Chains and Delegation</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>Trust is not transitive by default, and this section is where that stops being a slogan and starts being a rule. Domain B recognizing that Domain A runs a <code>CHAIN_OF_CUSTODY</code> model does not mean Domain B recognizes any specific cert Domain A issues. Recognition requires Domain B to hold its own <code>PolicyRecord</code><sup class="fnref"><a href="#fn6">6</a></sup> (RFC‑2302) naming Domain A, or a specific cert chain from Domain A, as accepted &mdash; and that PolicyRecord is Domain B's decision to make and Domain B's decision to revoke, on its own timeline, for its own reasons.</p>
+<p>Domains that have skipped this step did so out of convenience, said so afterward in the incident report, and were not, on review, found convincing.</p>
+<p>A <strong>CrossCertRecord</strong><sup class="fnref"><a href="#fn7">7</a></sup> (RFC‑2302 §9) linking a credential from one domain to recognition in another is how that acceptance gets recorded once granted. It is not how trust gets created — the PolicyRecord decision comes first; the CrossCertRecord documents that the decision was made, by whom, and when, the same way any other ledger entry in this corpus documents an event rather than causing one.</p>
+<h3 id="sub4-1"><span class="secnum">4.1</span> Scoped Delegation</h3>
+<p>A domain MAY delegate trust for a narrower scope than full cross-domain recognition &mdash; a single transaction, a single session, a single named credential &mdash; without that delegation implying anything about the domain's general posture toward the other. A Scrapshell station accepting one specific UN-issued cert for one specific docking negotiation, without thereby recognizing the UN's chain-of-custody model in general, is the ordinary case this RFC expects, not an edge case requiring special handling.</p>
+<h3 id="sub4-2"><span class="secnum">4.2</span> Conflict Resolution</h3>
+<p>Where two TrustDomain-scoped claims conflict &mdash; two domains each claiming authority over the same UUID‑S7, or a cross-cert chain that resolves inconsistently depending on which domain's ledger is consulted &mdash; resolution follows RFC‑2302 §5's existing CONFLICT-state rules unchanged. This RFC adds no new conflict-resolution mechanism; it adds the vocabulary (root attestation model, TrustTag) that makes it possible to say precisely what kind of domains are in conflict, which is most of what makes a conflict resolvable at all rather than merely observed.</p>
+<p>A conflict that can be named precisely gets resolved. A conflict that can only be gestured at gets a meeting, and this Working Group has attended enough of those already.</p>
+</div></section>
+
+<section id="sec5" class="toplevel">
+<h2><span class="secnum">5.</span> Policy Enforcement Points</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>This RFC defines the record types. It does not define new wire fields at other layers to carry them &mdash; those layers already have the hooks, and this section is where the seams get named rather than reinvented.</p>
+<ul>
+<li><strong>L1 admission (RFC‑2353).</strong> AdmissionPolicyHint's coarse A0&ndash;A3 classes are, per the shared corpus glossary's own "Authority" entry, set by whichever institution or process constitutes "the Authority" for that deployment's trust domain &mdash; a question that entry explicitly deferred to this RFC. The answer: it's whatever <code>authority_reference</code> the deployment's TrustDomain record resolves to. RFC‑2353 itself is unchanged; this section is the promised resolution of a hook it deliberately left open. It took an entire separate RFC to answer a question the glossary posed in one sentence. This Working Group is aware of the irony and has elected not to dwell on it.</li>
+<li><strong>DRE trust decisions (RFC‑2363, pending).</strong> A Directory and Routing Endpoint deciding whether to publish or serve a record on a requester's behalf consults the requester's TrustDomain the same way; full integration is RFC‑2363's job once drafted, not retroactively added here. This Working Group will not be issuing an interim workaround in the meantime, on the theory that an undrafted RFC is not improved by being drafted twice, badly, by two different documents.</li>
+<li><strong>ServicePlane session establishment.</strong> Session-layer trust decisions (RFC‑2301 §5's session key negotiation) may consult a peer's TrustDomain as one input, same as any other policy input &mdash; this RFC does not make trust-domain membership a mandatory session precondition, only an available one.</li>
+</ul>
+</div></section>
+
+<section id="sec6" class="toplevel">
+<h2><span class="secnum">6.</span> Cross-Domain Revocation and Emergency Unbinding</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>There is no global CRL, so there is no such thing as a revocation that automatically propagates everywhere. A revocation inside Domain A propagates to Domain B only through whatever cross-cert or delegation relationship (Section 4) already connects them &mdash; and Domain B is responsible for its own revocation-checking cadence against that relationship, per RFC‑2301 §9's existing propagation and cache-invalidation requirements. This RFC does not weaken that; it clarifies that the relationship a revocation propagates <em>along</em> is now a named, recorded thing (a CrossCertRecord or a scoped delegation) rather than an implicit assumption.</p>
+<p>A revocation that reaches nobody because nobody bothered to record the relationship it should have traveled along is not a mystery. It is exactly what was specified.</p>
+<h3 id="sub6-1"><span class="secnum">6.1</span> Model-Specific Revocation</h3>
+<p>Revocation looks different per root attestation model, and this RFC does not force them to look the same:</p>
+<ul>
+<li><code>CHAIN_OF_CUSTODY</code> &mdash; a signed RevocationRecord<sup class="fnref"><a href="#fn8">8</a></sup> (RFC‑2302), unchanged.</li>
+<li><code>QUORUM_WITNESS</code> &mdash; a fresh quorum vote to revoke a prior WitnessQuorumRecord's standing; there is no single key to revoke because there was never a single key.</li>
+<li><code>CAPABILITY_TOKEN</code> &mdash; physical recovery or destruction of the specific token in question. Revoking one relay's fob says nothing about any other relay's fob, and nothing at all about the domain's own commissioning ceremony &mdash; those are separate compromises with separate remedies (Section 6.2). A capability domain's "revocation record" is, honestly, an after-the-fact log entry describing a physical event that already happened, not a mechanism that caused anything.</li>
+<li><code>LEASED_ENTITLEMENT</code> &mdash; grantor-issued withdrawal, propagated whenever connectivity allows, falling back to local-clock-checked cached-grant expiry when it can't (the same honest, exploitable fallback already characteristic of this lineage's leasing model). A domain rolling its own clock back to keep a lapsed grant alive is not a bug this Working Group intends to fix. It is Corporate's model working exactly as specified, which is the most damning thing this Working Group has to say about it.</li>
+</ul>
+<h3 id="sub6-2"><span class="secnum">6.2</span> Domain-Level Emergency Unbinding</h3>
+<p>RFC‑2301 §9 defines emergency unbind at the individual-AK level. This RFC extends the concept one level up: a domain-wide emergency unbind, for the case where an entire domain's root of authority is suspected compromised at scale &mdash; a UN CA breach, Mars's fleet commissioning ceremony itself compromised (not a stolen fob or two, which is a local incident each fob's own owner deals with, but the authority that mints fobs in the first place), or the Belt trust domain's own recognized-representative roster infiltrated wholesale (not any single station's crew list, which per Section 2.4 is a local matter and stays one). A domain-level unbind marks every credential issued under that domain's authority_reference as suspect pending re-issuance, rather than requiring each one to be individually flagged.</p>
+<p>This is a heavier, rarer, more disruptive action than a single-credential revocation, and this RFC intentionally does not make it easy to invoke &mdash; the procedural threshold for declaring one is a cross-domain governance question, addressed in Appendix D, not a technical one this section resolves alone.</p>
+</div></section>
+
+<section id="sec7" class="toplevel">
+<h2><span class="secnum">7.</span> Cross-Domain Dispute and Liability</h2>
+<div class="section-body">
+<p class="stamp">UN Trust &amp; Interoperability Governance Council</p>
+<p>This Council exists for the specific case where Domain A and Domain B each did what their own trust-domain policy required, and the outcome was still bad for someone. Sections 4 through 6 already establish what correct behavior looks like at a boundary crossing. This section is not about correct behavior. It is about what happens once both parties can plausibly claim they exhibited it.</p>
+<p>Where a cross-domain credential is later found deficient &mdash; expired, improperly scoped, issued under a root attestation model the receiving domain misunderstood &mdash; responsibility is not assigned by this Council on the basis of which domain's technical claim was correct. It is assigned on the basis of which domain's PolicyRecord (Section 4) governed the acceptance decision at the time. A domain that accepted a credential it had no PolicyRecord basis for accepting bears the resulting liability, in full, regardless of whether the credential itself later proved valid.</p>
+<p>This Council has reviewed enough incidents where a valid credential was accepted through an undocumented shortcut to consider "it worked out fine" an irrelevant defense.</p>
+<h3 id="sub7-1"><span class="secnum">7.1</span> On the Question of Fault</h3>
+<p>This Council does not, as a rule, find that a domain's root attestation model was itself defective. Each of the four models in Section 2 is doctrinally sound within the conditions it was designed for; incidents arising from a domain's ordinary operation under its own declared model are, in this Council's language, <strong>outcomes attributable to insufficient consideration of cross-domain scope</strong> at the receiving domain, not defects in the originating domain's model. This distinction has occasionally proven difficult for an aggrieved party to accept in the moment. It has not, on further review, proven difficult for this Council to maintain.</p>
+<h3 id="sub7-2"><span class="secnum">7.2</span> Referral</h3>
+<p>Where a dispute concerns the technical correctness of a cross-cert chain rather than the liability arising from it, this Council refers the technical question to the Canonical Behavior Registry or the relevant domain's own standards body, as such determinations fall outside this Council's purview. This Council's own findings address responsibility and remedy only, and are not a substitute for a technical conformance review conducted by a body actually equipped to perform one.</p>
+</div></section>
+
+<section id="sec8" class="toplevel">
+<h2><span class="secnum">8.</span> Doctrinal Alignment</h2>
+<div class="section-body">
+<p class="stamp">Doctrinal Integrity Council</p>
+<p>This document does not introduce a competing definition of Trust Domain. RFC‑2352 §41 already states the operative constraint this Council requires held: <em>"Trust‑domain membership SHALL NOT be inferable at Layer 1."</em> Nothing in Sections 2 through 7 touches Layer 1 wire behavior. TrustDomain records, root attestation models, and cross-cert chains live and are consulted at the Authority Plane; where their conclusions reach Layer 1 at all, they arrive only as the same coarse, non-exposing hints RFC‑2353 already governs (Section 5 above), never as a directly observable trust-domain identifier. A reader looking for a contradiction between this RFC and RFC‑2352 will not find one, because there was never a decision here for RFC‑2352 to conflict with in the first place.</p>
+<p>This Council further notes that Section 2's core resolution &mdash; four named root attestation models rather than one assumed universal model &mdash; is itself an application of the invariance doctrine, not an exception to it. Invariance requires that protocol behavior not silently vary with unstated conditions. A corpus that let <code>AnchorRecord</code> stand in for every lineage's root of authority, while three of four lineages don't actually have the Anchor Key it assumes, was the unstated variation. Naming the four models is what invariance looks like once the thing varying is finally written down instead of pretended away.</p>
+</div></section>
+
+<section id="sec9" class="toplevel">
+<h2><span class="secnum">9.</span> Test Vectors</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<h3 id="sub9-1"><span class="secnum">9.1</span> TrustDomain Record Validation</h3>
+<p>A conforming implementation MUST be tested against, at minimum: (a) a TrustDomain record whose declared root attestation model matches its authority_reference's actual record type &mdash; MUST validate; (b) a mismatch between declared model and resolved record type (Section 2.3) &mdash; MUST be rejected as malformed; (c) TrustTag 0 presented with no authority_reference at all &mdash; MUST be accepted as a legitimate self-asserted/undeclared claim, not rejected as incomplete; (d) a TrustTag value in the 6&ndash;15 range with no registered sub-domain allocation &mdash; MUST be treated as inheriting the parent lineage's tag pending registration, not treated as invalid.</p>
+<h3 id="sub9-2"><span class="secnum">9.2</span> Cross-Cert and Delegation Tests</h3>
+<p>A conforming implementation MUST be tested against: a cross-domain credential presented with no corresponding PolicyRecord at the receiving domain (MUST NOT be accepted, regardless of the credential's own validity); a scoped delegation correctly limited to its declared transaction (MUST NOT be treated as general cross-domain recognition); and a conflicting dual-domain claim over the same UUID‑S7, resolved per RFC‑2302 §5's existing precedence rules.</p>
+<h3 id="sub9-3"><span class="secnum">9.3</span> Revocation Propagation Tests</h3>
+<p>Each of the four model-specific revocation shapes (Section 6.1) MUST be independently tested for correct propagation along an existing cross-cert relationship, and MUST be tested for the correct <em>absence</em> of propagation where no such relationship exists &mdash; a revocation in a domain a receiving party has no PolicyRecord basis for trusting in the first place is not an event that party needs to react to at all.</p>
+</div></section>
+
+<div class="appendix-divider"><h1>Appendices</h1></div>
+
+<section id="appA" class="toplevel appendix">
+<h2><span class="secnum">Appendix A</span> Rationale</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>The obvious alternative to four named models was one generalized model flexible enough to describe all four. This Working Group considered it and rejected it, for the same reason RAP (RFC‑2353) rejected finer-grained advertisement fields: a construct flexible enough to describe anything ends up describing nothing precisely, and a receiving domain reasoning about a peer's trust posture needs to know which of a small, closed set of shapes it's actually looking at. Four named models, each internally rigid, is more useful to an implementer than one model with enough optional fields to fake being all four badly.</p>
+<p>The obvious alternative to trust-not-transitive-by-default was transitive trust with an override. This Working Group rejected that too. A domain that trusts Domain A and is trusted by Domain B has, under transitive-by-default trust, implicitly extended something to Domain B it never actually agreed to extend.</p>
+<p>Every incident this Working Group has reviewed involving cross-domain credential misuse involved exactly this kind of unintended transitivity. Requiring an explicit PolicyRecord for every acceptance is more paperwork. It has also, so far, been the only thing that's actually worked.</p>
+<p>This Working Group is aware that "more paperwork" is not a popular conclusion. It remains the correct one. Section 2.4's separation of local device root from domain root is the identical principle applied one layer down: holding root on a machine is not a form of trust that transits upward to the domain it happens to sit inside, any more than trusting Domain A transits sideways into trusting whoever Domain A trusts.</p>
+</div></section>
+
+<section id="appB" class="toplevel appendix">
+<h2><span class="secnum">Appendix B</span> Worked Examples Per Lineage</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>This appendix closes the open question left for this RFC to answer directly: does the root attestation model actually fit each of the four lineages' known designs? Worked briefly, per lineage — and per Section 2.4, each entry below separates the lineage's ordinary <em>local</em> root mechanic (unchanged, untouched, this RFC's business with it ends at "acknowledged") from the <em>domain</em> root this RFC actually defines.</p>
+<p><strong>Earthstock.</strong> TrustTag 1, <code>CHAIN_OF_CUSTODY</code>. ("Earthstock" names the OS lineage and its technical model; the political body actually operating it is the UN — this appendix uses the former where it means the model, the latter everywhere else in this document where it means the institution.) <code>elevate --cert=&lt;chain&gt; --witness=&lt;tech-id&gt;</code> is local root: proof that one specific action, on one specific device, was authorized by whoever witnessed it.</p>
+<p>It resolves to a link in an AK-signed AuthorityChain, but the AK itself &mdash; the domain root &mdash; is held and protected well above any single elevate event. No number of local elevations hands anyone the key. <code>AnchorRecord</code> (RFC‑2302) was always describing the domain root, not the local action, which is why this is the one lineage RFC‑2302 already fit correctly without this RFC's help.</p>
+<p><strong>Scrapshell.</strong> TrustTag 2, <code>QUORUM_WITNESS</code>. Local root on any one station is still exactly <code>claim root --union-vote</code>'s multisig ledger entry (N co-signatures, TTL, no persistent AK), completely unchanged by this RFC &mdash; winning that vote makes you root on that station and nothing else.</p>
+<p>The Belt trust domain's own WitnessQuorumRecord is the identical shape one level up: a quorum of recognized union locals, not any single station's logged-in crew, co-signing the domain's own anchor. Same culture, same math, different scale, different event &mdash; a compromised station vote reaches exactly as far as that station, never the whole domain. The solo-claim fallback (a personal device with no one to second it), logged as <code>SOLO — unwitnessed</code>, is a local-root degenerate case only; it has no domain-root equivalent, because a domain doesn't get to be "solo."</p>
+<p><strong>Mars.</strong> TrustTag 3, <code>CAPABILITY_TOKEN</code>. <code>invoke cap://relay-7/buffer.write --token=fob.7A3</code> is local root: a fob authorizes actions on the specific object it was minted for, and nothing else.</p>
+<p>The domain root is the fleet commissioning office running the minting ceremony itself; a hundred stolen fobs are a hundred local incidents, not a domain compromise, until someone reaches the ceremony that mints them (Section 6.2). Recompilation-from-source-plus-fresh-minting-ceremony is this model's version of key rotation &mdash; expensive on purpose, and not incidentally the domain root's own security boundary, which is exactly the thing worth making expensive to touch.</p>
+<p><strong>Corporate.</strong> TrustTag 4, <code>LEASED_ENTITLEMENT</code>. <code>request-entitlement admin.relay</code> is the one case in this appendix where local and domain root were never actually separate to begin with &mdash; every device asks the identical central licensing authority, so there is no local event to mistakenly promote.</p>
+<p>The grantor reference is the domain root, on every device, every time. The fallback to a locally-cached grant checked against the station's own clock when the server is unreachable, and its documented, honest weakness (roll the clock back, the cached grant "hasn't expired yet"), is not this RFC's to patch &mdash; patching it would mean pretending the lineage's actual design flaw doesn't exist rather than naming it accurately.</p>
+</div></section>
+
+<section id="appC" class="toplevel appendix">
+<h2><span class="secnum">Appendix C</span> Historical Context</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group</p>
+<p>Every lineage in Appendix B kept a working notion of "who's in charge here" through the post-founding fragmentation. None of them kept the same one. That's not four independent failures to converge on a correct answer &mdash; there wasn't a correct answer available to converge on, because a shared CA needs shared institutions behind it, and the institutions were exactly what fragmented first.</p>
+<p>The UN kept the paperwork because the UN kept enough bureaucracy to keep paperwork. The Belt kept a vote because a union was the coordination structure it already had lying around. Mars kept a key in a box because Mars had the up-front engineering discipline to build the box and nothing to spare for maintaining a directory. Corporate kept a phone line to a server because Corporate never stopped being, structurally, a company with customers.</p>
+<p>This RFC is not the document that fixes that divergence. It was never going to be. It is the document that stops pretending the divergence isn't real, which is a smaller, more achievable, and considerably more honest goal.</p>
+<p>This Working Group would like some credit for that. It does not expect to get any.</p>
+</div></section>
+
+<section id="appD" class="toplevel appendix">
+<h2><span class="secnum">Appendix D</span> Dispute Procedure Detail</h2>
+<div class="section-body">
+<p class="stamp">UN Trust &amp; Interoperability Governance Council</p>
+<p><strong>D.1 Composition.</strong> This Council convenes a Chair, a Recording Secretary, and a rotating panel drawn from whichever domains are not party to the dispute under review &mdash; a domain is never asked to judge its own case, which this Council considers less a fairness safeguard than an efficiency one, since a domain judging its own case has never once, in this Council's institutional memory, found itself at fault.</p>
+<p><strong>D.2 Initiation.</strong> A dispute may be raised by either party to a cross-domain credential dispute, or by a third domain affected by the outcome. This Council does not require both parties' agreement to open a review, though it notes that reviews opened by only one party do tend to take longer, for reasons this Council has not found it necessary to formally document.</p>
+<p><strong>D.3 Findings.</strong> This Council's findings assign responsibility per Section 7.1 and, where a remedy is warranted, recommend one to the affected domains' own governing processes. This Council does not itself have enforcement authority over any domain's internal decisions &mdash; a finding is a recommendation, forwarded accordingly, and this Council considers its responsibility discharged upon forwarding.</p>
+<p><strong>D.4 Domain-Level Emergency Unbind Threshold.</strong> A domain-wide emergency unbind (Section 6.2) requires this Council's concurrence before a cross-domain announcement of the unbind is issued, though a domain retains the unilateral right to unbind its own credentials internally without waiting on this Council &mdash; the concurrence requirement governs only the cross-domain announcement, not the domain's own internal emergency response, a distinction this Council has found itself explaining more often than it would like.</p>
+<p><strong>D.5 On Timeliness.</strong> This Council aims to issue findings within a timeframe appropriate to the severity of the dispute. Disputes involving an active domain-level emergency unbind are prioritized. Disputes involving a disagreement over historical liability for an incident with no ongoing operational impact are handled in the order received, which has, on occasion, been characterized by affected parties as slower than the situation warranted. This Council notes the characterization for the record and proceeds at its established pace regardless.</p>
+</div></section>
+
+<section id="appE" class="toplevel appendix">
+<h2><span class="secnum">Appendix E</span> Authorship</h2>
+<div class="section-body">
+<p><strong>E.1 Editorial Authority.</strong> Prepared under the same multi-institutional authorship model established for RFC‑2352 and RFC‑2353.</p>
+<p><strong>E.2 Primary Authors.</strong></p>
+<ul>
+<li><strong>SolNet Standards Working Group (SSWG)</strong> &mdash; TrustDomain record definition, root attestation models, TrustTag registry, cross-cert and delegation rules, revocation propagation.</li>
+<li><strong>UN Trust &amp; Interoperability Governance Council (UN-IG)</strong> &mdash; cross-domain dispute and liability process. A distinct body from RFC‑2353 Appendix F's United Nations Infrastructure Directorate, which handles physical-layer liability referral; this Council's jurisdiction is identity and trust-domain disputes specifically.</li>
+<li><strong>Doctrinal Integrity Council (DIC)</strong> &mdash; invariance doctrine alignment, reconciliation against RFC‑2352's existing Trust Domain definition.</li>
+</ul>
+<p><strong>E.3 Contributing Bodies.</strong></p>
+<ul>
+<li><strong>Canonical Address Registrar (CAR)</strong> &mdash; TrustTag 0&ndash;15 registry structure, consistent with CAR's existing custodianship of TrustTag 16&ndash;255 under RFC‑2350.</li>
+</ul>
+<p><strong>E.4 Open Items for a Future Revision.</strong> Full wire-level encoding for WitnessQuorumRecord, CapabilityMintRecord, and EntitlementGrantRecord (Section 2.2) is deferred pending a schema owner. A permanent Trust Domain Registrar role for TrustTag values 6&ndash;15 (Section 3) is proposed but not yet formally constituted.</p>
+<p>This RFC establishes, per Section 2.4, that each lineage's domain root must be a distinct body from any single device's local root &mdash; it does not yet name what specifically constitutes that body (the Belt's recognized-representative roster, Mars's fleet commissioning office, the arm of the UN actually holding this lineage's AK). That composition is left for a future revision or a companion governance document, not invented here.</p>
+<section class="footnotes" aria-label="Editorial notes"><h3>Editorial Notes <span class="nonnormative">(non-normative)</span></h3><ol>
+<li id="fn1"><strong>AnchorRecord</strong> &mdash; the ledger record type (RFC‑2302) binding <code>UUID-S7 &harr; AuthorityChain &harr; AK.public</code>, signed by the Anchor Key it describes. Remains the correct, unmodified record for any <code>CHAIN_OF_CUSTODY</code> trust domain (Section 2.1); no longer assumed to describe the other three root attestation models.</li>
+<li id="fn2"><strong>Anchor Key (AK)</strong> &mdash; the long-lived keypair RFC‑2301 §4 defines as the second tier of the SolNet key hierarchy, bound to a UUID‑S7 via NetworkCert and used to sign ledger transactions. The root of authority <code>AnchorRecord</code> assumes every trust domain has &mdash; which, per this RFC, not every trust domain does.</li>
+<li id="fn3"><strong>Root Attestation Model</strong> &mdash; this RFC's own central term (Section 2): the declared basis for a trust domain's root of authority, one of exactly four values (<code>CHAIN_OF_CUSTODY</code>, <code>QUORUM_WITNESS</code>, <code>CAPABILITY_TOKEN</code>, <code>LEASED_ENTITLEMENT</code>), never a fifth or a spectrum between them.</li>
+<li id="fn4"><strong>TrustTag</strong> &mdash; a 1-byte unsigned integer field in the canonical address (RFC‑2350 §5.5). Values 0&ndash;15 are reserved for Trust Domains and assigned by this RFC (Section 3); values 16&ndash;255 remain the Canonical Address Registrar's general allocation.</li>
+<li id="fn5"><strong>NetworkCert</strong> &mdash; the Anchor Key's own signed certificate, binding <code>AuthorityChain &rarr; UUID-S7 &rarr; AK.public</code> (RFC‑2301 §5). The canonical identity assertion a <code>CHAIN_OF_CUSTODY</code> domain's AnchorRecord ultimately rests on.</li>
+<li id="fn6"><strong>PolicyRecord</strong> &mdash; a domain's own ledger statement (RFC‑2302) of which other domains, or specific credentials, it accepts and on what terms. Load-bearing for this RFC's "trust is not transitive by default" rule (Section 4): recognizing a peer's root attestation model is not the same as recognizing any credential that peer issues.</li>
+<li id="fn7"><strong>CrossCertRecord</strong> &mdash; records that a PolicyRecord-based acceptance was granted: which domain, which credential, by whom, and when (RFC‑2302 §9). Documents a trust decision after the fact; it does not create one.</li>
+<li id="fn8"><strong>RevocationRecord</strong> &mdash; marks a prior AnchorRecord (or, per Section 6.1, an equivalent domain-root record under another attestation model) as revoked, signed by the revoking authority. Propagates only along an existing CrossCertRecord or delegation relationship (RFC‑2301 §9), never globally.</li>
+</ol></section>
+<p><em>For terms shared across multiple SolNet RFCs (TrustTag, Trust Domain, Root Attestation Model, AnchorRecord, PolicyRecord, CrossCertRecord, RevocationRecord, NetworkCert, WitnessQuorumRecord, CapabilityMintRecord, EntitlementGrantRecord, referenced RFC numbers), see the shared corpus glossary (<code>solnet-glossary.md</code>).</em></p>
+</div></section>
+
+  </article>
+</div>
+
+<script>
+(function(){
+  // active TOC highlight
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.toplevel'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
+
