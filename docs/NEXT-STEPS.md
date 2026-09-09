@@ -153,6 +153,14 @@ rather than smoothing over. Likely reuses RFC-2306's MIAP/Dr. Selene
 Vargo voice, given the shared alignment/occlusion physics culture. Full
 entry logged in `TODOv2.md` and `db/CORPUS-STATUS.md`'s L0 table.
 
+**Suggested, not locked in:** OPRA gets a field-note-style appendix
+aside (same lightweight role it played in most of RFC-2353, not full
+section ownership) covering the honest Belt-operational reality of the
+repeater-cost asymmetry above — a sector that can't afford repeater
+infrastructure doesn't get the same reach as one that can, which is
+exactly OPRA's existing admission-fairness/sparse-topology beat.
+Decide for real once this RFC is actually being drafted.
+
 ---
 
 ## Track B — System-building (Sid's implementation queue)
