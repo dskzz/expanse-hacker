@@ -92,8 +92,30 @@ state, environment, or probing. Prohibited in SolNet's operational layers.
 authority from a SolNet entity. Governed by SPERB and DIC.
 
 **Trust Domain** — A bounded region of authority defining identity,
-routing, and governance relationships. Managed by Authority Plane
-institutions.
+routing, and governance relationships, formalized by RFC-2362 as the
+**TrustDomain** record: a `domain_id`, a TrustTag, a declared Root
+Attestation Model, and an `authority_reference` pointing to whatever
+construct actually functions as that domain's root. Managed by
+Authority Plane institutions. Trust between two domains is never
+transitive by default — recognizing that Domain A runs a given root
+model doesn't mean recognizing any specific credential Domain A
+issues; that requires Domain B's own PolicyRecord (see Trust and
+Identity Records, below).
+
+**Root Attestation Model** — RFC-2362 §2's answer to what a trust
+domain's root of authority actually is: one of exactly four declared
+values, never a fifth or a spectrum between them. `CHAIN_OF_CUSTODY`
+(a persistent Anchor Key, bound via NetworkCert — the classic PKI
+case); `QUORUM_WITNESS` (N co-signatures from a recognized
+representative body, no persistent key implied); `CAPABILITY_TOKEN`
+(physical possession of an unforgeable, minting-time-issued token);
+`LEASED_ENTITLEMENT` (a revocable grant from a remote licensing
+authority, cached locally). Fixed the corpus-wide assumption that
+every trust domain has a persistent Anchor Key the way RFC-2302's
+`AnchorRecord` originally assumed — three of the four models don't.
+A domain's declared local device-root mechanic (who controls one
+console) is explicitly not this, and does not by itself establish
+domain-wide standing — see RFC-2362 §2.4.
 
 **Authority Domain** — A jurisdictional boundary defining what an
 institution controls within SolNet. Prevents overlap and doctrinal
@@ -107,9 +129,13 @@ an admission policy — bind relay behavior within a deployment, without
 those determinations being published as protocol constants in the RFC
 that defines the field they govern (RFC-2353 §6 and §1.6 both handle
 T_adv and H_max this way). Which specific institution or process
-actually constitutes "the Authority" in a given trust domain is a Trust
-Domain / RFC-2362 question — no individual RFC resolves it, and none is
-expected to.
+actually constitutes "the Authority" in a given trust domain is
+answered by RFC-2362 §5: it's whatever a deployment's TrustDomain
+record names as its `authority_reference` — an Anchor Key for a
+CHAIN_OF_CUSTODY domain, a recognized-representative quorum for
+QUORUM_WITNESS, a commissioning ceremony for CAPABILITY_TOKEN, a
+licensing server for LEASED_ENTITLEMENT. See Root Attestation Model,
+above.
 
 **Invariance Doctrine** — The SolNet-wide principle that observable
 protocol behavior MUST NOT vary based on unstated internal conditions —
@@ -126,6 +152,16 @@ section).
 
 **Registry** — The canonical source of truth for identifiers, TLV codes,
 and structured elements. Managed by CBR.
+
+**TrustTag** — A 1-byte unsigned integer field in the canonical address
+(RFC-2350 §5.5), compact enough to travel on the wire without exposing
+anything about the trust domain it names. Values 0–15 are reserved for
+Trust Domains and assigned by RFC-2362 §3 (0 = self-asserted/no domain
+claimed, 1–4 = the four lineages, 5 = UN/neutral territory, 6–15
+reserved for sub-domain allocation); values 16–255 are the Canonical
+Address Registrar's general allocation under RFC-2350. Implementations
+MUST NOT infer trust level from address structure or origin beyond
+what the tag itself declares.
 
 **TLV** — A structured encoding format consisting of Type, Length, and
 Value fields. Used throughout SolNet for canonical, deterministic
@@ -155,6 +191,63 @@ channel. RFC-2353 §6 is the worked example: its canonical interval is
 denoted T_adv, and — consistent with the Authority entry above — is
 never published as a numeric protocol constant, only referenced as a
 per-deployment policy parameter.
+
+## Trust and Identity Records
+
+Ledger record types (RFC-2302, extended by RFC-2362) that back the
+Authority Plane's identity and trust apparatus. All are append-only
+entries on the RFC-2302 ledger substrate, not standalone files.
+
+**AnchorRecord** — Binds `UUID-S7 ↔ AuthorityChain ↔ AK.public`, signed
+by the Anchor Key it describes. The correct, unmodified record type
+for a `CHAIN_OF_CUSTODY` trust domain (RFC-2362 §2.1) — and, per that
+same section, the record type three of the corpus's four root
+attestation models were never supposed to be forced into.
+
+**PolicyRecord** — A domain's own statement of which other domains,
+or specific credentials, it accepts and on what terms. Load-bearing
+for RFC-2362 §4's "trust is not transitive by default" rule: Domain B
+recognizing that Domain A runs a given root attestation model does not
+mean Domain B recognizes any specific credential Domain A issues —
+that acceptance has to exist as Domain B's own PolicyRecord, which
+Domain B alone decides to grant or revoke.
+
+**CrossCertRecord** — Records that a PolicyRecord-based acceptance was
+granted: which domain, which credential or cert chain, by whom, and
+when (RFC-2302 §9). Documents a trust decision after the fact; it does
+not create one — the PolicyRecord decision always comes first.
+
+**RevocationRecord** — Marks a prior AnchorRecord (or, per RFC-2362
+§6.1, an equivalent domain-root record under another attestation
+model) as revoked. Signed by the revoking authority. Propagation is
+never global — it travels only along an existing CrossCertRecord or
+delegation relationship, per RFC-2301 §9.
+
+**NetworkCert** — The Anchor Key's own signed certificate, binding
+`AuthorityChain → UUID-S7 → AK.public` (RFC-2301 §5). The canonical
+identity assertion a `CHAIN_OF_CUSTODY` domain's AnchorRecord ultimately
+rests on.
+
+**WitnessQuorumRecord** — The `QUORUM_WITNESS` root attestation
+model's domain-level record (RFC-2362 §2.2): a recognized
+representative body, a quorum threshold N, the N actual co-signatures
+for a specific domain-anchor claim, and a TTL. Carries no persistent
+authority key by design. Explicitly a different, larger-scale event
+than any single station's own local root-claim vote (RFC-2362 §2.4) —
+same culture, same math, never the same record.
+
+**CapabilityMintRecord** — The `CAPABILITY_TOKEN` root attestation
+model's domain-level record (RFC-2362 §2.2): token identity, the
+minting ceremony's own authority reference, and scope. No
+revocation-by-signature — a capability token is revoked by physical
+recovery or destruction (RFC-2362 §6.1).
+
+**EntitlementGrantRecord** — The `LEASED_ENTITLEMENT` root attestation
+model's record (RFC-2362 §2.2): grantor reference, entitlement scope,
+expiry, and an explicit cached-grant fallback field for when the
+licensing server can't be reached. The one domain-root record type
+with no local/domain split to draw (RFC-2362 §2.4) — every device
+already asks the identical central authority.
 
 ## Belt / Environmental
 
