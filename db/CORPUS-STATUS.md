@@ -113,6 +113,7 @@ draft yet
 | 2307 | RF Propagation Subprofile | 📝 | — |
 | 2308 | Media Privacy and Exposure Policy | 📝 (Companion doc exists) | — |
 | 2309 | L0 Test and Validation Suite | 📝 (Companion doc exists, "Timing") | — |
+| 2310 | Quantum Key Distribution Subprofile | 📋 — queued 2026-09-09, no draft text yet. Session-key-only (RFC-2301 §4 tier 5, symmetric); does not touch AK/DK/SK or the Authority Plane's identity model at all — a QKD-derived key with no independent authentication is exactly as MITM-vulnerable as any other symmetric key. Physically constrained like Tightbeam (RFC-2306): needs a dedicated, uninterrupted quantum channel, entanglement fidelity decays with distance, long-range needs repeaters not every lineage can afford. Eavesdropping-detection is a tripwire, not a shield — it flags a disturbed channel, it doesn't prevent one, and an attacker who can't read the key can still force retries/fallback (a real DoS angle). Likely reuses the MIAP/Dr. Selene Vargo voice from RFC-2306. | — |
 
 ### L1 (2350–2359, only 2350–2353 drafted so far)
 

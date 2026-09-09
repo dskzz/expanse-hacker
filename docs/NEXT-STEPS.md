@@ -124,6 +124,35 @@ that folder holds checked-in generated HTML, or is purely a build
 artifact regenerated on demand from the Markdown source. Low priority,
 explicitly deferred by Dan ("later though, just... todo it").
 
+### A8. Draft RFC-2310 (Quantum Key Distribution Subprofile)
+
+Queued 2026-09-09, undrafted, open slot in the L0 block (2300–2319,
+right after RFC-2309). Came up as a direct question — Dan had read
+about "quantum entanglement for fully secure asymmetric encryption"
+and asked whether the corpus should use it. The real physics is
+narrower and more interesting: entanglement gives you QKD, a way to
+establish a *symmetric* shared secret with physical eavesdropping
+detection, not asymmetric/public-key crypto — and claiming otherwise
+would contradict RFC-2301 §11's already-locked post-quantum migration
+doctrine (which exists because quantum computers threaten classical
+asymmetric crypto, not because entanglement fixes it).
+
+Agreed design, not yet written up as an actual RFC: an L0 media
+subprofile, sibling to Tightbeam (2306) and RF (2307), that produces
+session keys only (RFC-2301 §4 tier 5) — it MUST NOT touch AK/DK/SK or
+any Authority Plane identity record, since a QKD key with no
+independent authentication is exactly as MITM-vulnerable as any other
+symmetric key. Physically constrained the same way Tightbeam is
+(dedicated uninterrupted channel, fidelity decays with distance, needs
+repeaters not every lineage can afford — a quiet reinforcement of the
+existing tech-asymmetry between lineages). Eavesdropping-detection is
+a tripwire, not a shield: it flags a disturbed channel, not a safe key,
+and an attacker who can't read the key can still force retries/fallback
+— a real DoS angle worth keeping as a deliberate, honest weakness
+rather than smoothing over. Likely reuses RFC-2306's MIAP/Dr. Selene
+Vargo voice, given the shared alignment/occlusion physics culture. Full
+entry logged in `TODOv2.md` and `db/CORPUS-STATUS.md`'s L0 table.
+
 ---
 
 ## Track B — System-building (Sid's implementation queue)
@@ -273,4 +302,6 @@ suspicious — visible personality from mechanical rules, not scripting.
    the Authority Plane block can grow further either direction.
 7. **B6, B7, B8** — content and polish, parallelizable with anything
    above once B4/B5 exist to hang them on.
-8. **A5, A6** — cleanup and backlog, fold in opportunistically.
+8. **A5, A6, A8** — cleanup, backlog, and RFC-2310 (QKD), fold in
+   opportunistically — A8 has no dependency on anything else in this
+   list, just needs someone to sit down and draft it.
