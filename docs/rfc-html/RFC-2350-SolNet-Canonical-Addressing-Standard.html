@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFC-2350 — SolNet Canonical Addressing Standard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EAEBE4; --paper-raised:#F2F3ED; --ink:#1B1D1C; --ink-soft:#54574B;
+    --rule:#B8BBAF; --rule-soft:#CBCEC1; --accent:#8A3324; --accent-soft:#A8462F;
+    --stamp-bg:#DCDED3; --stamp-border:#9C9F8F; --mono-bg:#E2E3DC;
+    --toolbar-bg:#DEDFD6; --focus:#8A3324; --danger:#8A3324;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+      --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+      --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+    --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+    --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,.stamp,.masthead-title{ font-family:"Newsreader", Georgia, serif; text-wrap:balance; }
+  code, .secnum, .table-wrap table, .wire, kbd{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+
+  a{ color:var(--accent); }
+  a:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  /* ---- doc bar (static identity strip, no edit affordances) ---- */
+  .docbar{
+    position:sticky; top:0; z-index:20; background:var(--toolbar-bg);
+    border-bottom:1px solid var(--rule); padding:.6rem 1.25rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    max-width:1200px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  .masthead-title{ font-size:2.1rem; font-weight:600; margin:0 0 .4rem; }
+  .masthead-sub{ font-style:italic; color:var(--ink-soft); margin:0 0 1rem; font-size:1rem; }
+  .status-box{
+    display:inline-block; border:1px solid var(--rule); background:var(--paper-raised);
+    padding:.6rem .9rem; font-size:.85rem; color:var(--ink-soft); border-radius:3px;
+  }
+  .status-box strong{ color:var(--ink); }
+
+  /* ---- layout ---- */
+  .layout{
+    max-width:1200px; margin:0 auto; padding:2rem 1.5rem 6rem;
+    display:grid; grid-template-columns:260px minmax(0,1fr); gap:3rem;
+    align-items:start;
+  }
+  nav.toc{ position:sticky; top:4.2rem; max-height:calc(100vh - 5.5rem); overflow-y:auto; }
+  nav.toc h4{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  nav.toc ol{ list-style:none; margin:0; padding:0; }
+  nav.toc li{ margin:0; }
+  nav.toc a{
+    display:block; padding:.3rem 0; color:var(--ink-soft); text-decoration:none;
+    font-size:.87rem; border-left:2px solid transparent; padding-left:.6rem;
+  }
+  nav.toc a:hover{ color:var(--ink); }
+  nav.toc a.active{ color:var(--accent); border-left-color:var(--accent); font-weight:500; }
+  nav.toc .toc-divider{
+    margin:.9rem 0 .4rem; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); border-top:1px solid var(--rule-soft); padding-top:.7rem;
+  }
+
+  article#doc{ max-width:70ch; }
+  section.toplevel{ padding:2.2rem 0; border-bottom:1px solid var(--rule-soft); }
+  section.toplevel:first-of-type{ padding-top:0; }
+  .appendix-divider{ padding:2.5rem 0 .5rem; }
+  .appendix-divider h1{ font-size:1.5rem; margin:0; color:var(--ink-soft); font-weight:500; }
+  h2{ font-size:1.35rem; font-weight:600; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+  h2 .secnum{ color:var(--accent); font-size:1rem; }
+  h3{ font-size:1.05rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  h3 .secnum{ color:var(--accent); font-size:.85rem; margin-right:.3rem; }
+  p{ margin:0 0 1rem; }
+  p.aphorism{
+    font-style:italic; padding-left:1rem; border-left:2px solid var(--rule);
+    color:var(--ink-soft); margin:1.2rem 0;
+  }
+  p.stamp{
+    display:inline-block; margin:0 0 1rem; font-style:italic; font-size:.85rem;
+    background:var(--stamp-bg); border:1px solid var(--stamp-border);
+    padding:.15rem .6rem; border-radius:2px; color:var(--ink-soft);
+  }
+  ul{ margin:0 0 1rem; padding-left:1.3rem; }
+  li{ margin-bottom:.4rem; }
+  strong{ font-weight:600; }
+  code{ background:var(--mono-bg); padding:.1rem .3rem; border-radius:2px; font-size:.85em; }
+  .table-wrap{ overflow-x:auto; margin:0 0 1.2rem; border:1px solid var(--rule); border-radius:3px; }
+  table{ border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td{ text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rule-soft); font-variant-numeric:tabular-nums; }
+  thead th{ background:var(--paper-raised); font-weight:600; border-bottom:1px solid var(--rule); }
+  tbody tr:last-child td{ border-bottom:none; }
+  pre.wire{
+    background:var(--mono-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:1rem 1.1rem; overflow-x:auto; font-size:.82rem; line-height:1.7; margin:0 0 1.2rem;
+  }
+  section.footnotes{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--rule-soft); }
+  section.footnotes h3{ margin-top:0; }
+  section.footnotes .nonnormative{ color:var(--ink-soft); font-weight:400; font-size:.85em; }
+  section.footnotes ol{ padding-left:1.4rem; font-size:.9rem; color:var(--ink-soft); }
+  .fnref a{ text-decoration:none; }
+
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:1.2rem; }
+    nav.toc{ position:static; max-height:none; }
+    nav.toc ol{ display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.4rem; }
+    nav.toc .toc-divider{ display:none; }
+    nav.toc a{ border-left:none; border-bottom:2px solid transparent; padding:.3rem .5rem; white-space:nowrap; }
+    nav.toc a.active{ border-left-color:transparent; border-bottom-color:var(--accent); }
+    article#doc{ max-width:100%; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">RFC&#8209;2350 &middot; SolNet Canonical Addressing Standard &middot; SolNet Standards Corpus &middot; static rendering</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">SolNet Standards Corpus — Normative</p>
+  <h1 class="masthead-title">RFC&#8209;2350 — SolNet Canonical Addressing Standard</h1>
+  <p class="masthead-sub">SolNet Standards Working Group — L1 Addressing Working Group (SSWG&#8209;L1&#8209;AWG) &middot; Custodian: Canonical Address Registrar (CAR) &middot; Layer: L1 Data-Link &middot; Revision 1.0 &middot; Date: 2046-04</p>
+  <p class="status-box"><strong>Status:</strong> Normative, Standards Track. Canonical source of record is <code>docs/vault/New RFCs/RFC 2350 - SolNet Canonical Addressing Standard.md</code>; this is a static, read-only rendering.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Sections</h4>
+    <ol>
+      <li><a href="#sec0">0. Preface (SSWG-L1-AWG Statement)</a></li>
+      <li><a href="#sec1">1. Scope</a></li>
+      <li><a href="#sec2">2. Terminology</a></li>
+      <li><a href="#sec3">3. Canonical Grammar Overview</a></li>
+      <li><a href="#sec4">4. Full Grammar Definition</a></li>
+      <li><a href="#sec5">5. Canonical AddressRecord Structure</a></li>
+      <li><a href="#sec6">6. ProvenancePointer Binary Format</a></li>
+      <li><a href="#sec7">7. Resolution Precedence Rules</a></li>
+    </ol>
+  </nav>
+
+  <article id="doc">
+<section id="sec0" class="toplevel">
+<h2><span class="secnum">0.</span> Preface (SSWG&#8209;L1&#8209;AWG Statement)</h2>
+<div class="section-body">
+<p>This document defines the canonical grammar for SolNet Data‑Link addressing. The Working Group notes, without surprise, that implementers continue to invent incompatible delimiter rules, implicit coercions, and “helpful” parser heuristics. RFC‑2350 exists to eliminate such creativity.</p>
+<p>The <code>&lt;LocationChain&gt;//&lt;ServiceChain&gt;</code> form is the only permitted structure. The delimiter is fixed. Whitespace is forbidden. Canonical ordering is mandatory. Implementations that deviate from this specification produce undefined behavior and are non‑compliant at CL‑3 or higher.</p>
+<p>The Canonical Address Registrar (CAR) maintains exclusive authority over delimiter semantics, TLV key allocations, and grammar stability. Errata that attempt to redefine the delimiter or introduce alternative separators will not be considered.</p>
+<h3 id="sub0-1"><span class="secnum">0.1</span> Terminology Reconciliation Note</h3>
+<p>Earlier SolNet drafts and several legacy deployments refer to the two halves of the canonical address as the <strong>Authority Plane</strong> (left side) and the <strong>Namespace Plane</strong> (right side). These terms are deprecated.</p>
+<p>RFC‑2350 standardizes the terminology as:</p>
+<ul>
+<li><strong>LocationChain (L1‑L)</strong> — formerly “Authority Plane”</li>
+<li><strong>ServiceChain (L1‑S)</strong> — formerly “Namespace Plane”</li>
+</ul>
+<p>The semantics are unchanged; only the names are corrected for clarity and consistency with RFC‑2300 (Terminology &amp; Concepts) and RFC‑2360 (Layer Model).</p>
+<p>Implementations MUST treat the legacy terms as synonyms for the canonical terms but MUST NOT emit them in new records, logs, or wire formats.</p>
+</div></section>
+
+<section id="sec1" class="toplevel">
+<h2><span class="secnum">1.</span> Scope</h2>
+<div class="section-body">
+<p>RFC‑2350 defines:</p>
+<ul>
+<li>the canonical <code>&lt;LocationChain&gt;//&lt;ServiceChain&gt;</code> grammar</li>
+<li>the semantics of the <code>//</code> delimiter</li>
+<li>TrustTag, QoSClass, FreshnessTag, and ProvenancePointer fields</li>
+<li>TLV key allocations for L1‑relevant L0 metadata (BeamID, ProxID, CommNetID, GroupID)</li>
+<li>the canonical AddressRecord structure</li>
+<li>the ProvenancePointer binary format</li>
+<li>resolution precedence rules</li>
+<li>varint and TLV encoding requirements</li>
+<li>parser and resolver test requirements</li>
+</ul>
+<p>RFC‑2350 does <strong>not</strong> define:</p>
+<ul>
+<li>routing behavior (RFC‑2363)</li>
+<li>identity semantics (RFC‑2361)</li>
+<li>namespace resolution (RFC‑2390+)</li>
+<li>session behavior (RFC‑2392)</li>
+<li>media‑specific addressing (L0 subprofiles)</li>
+</ul>
+<p>These are out of scope and remain the responsibility of their respective working groups.</p>
+</div></section>
+
+<section id="sec2" class="toplevel">
+<h2><span class="secnum">2.</span> Terminology</h2>
+<div class="section-body">
+<p>The following terms are used normatively throughout this document. All terms inherit their global definitions from RFC‑2300 unless explicitly refined here.</p>
+<p><strong>Address</strong> — A canonical <code>&lt;LocationChain&gt;//&lt;ServiceChain&gt;</code> identifier. <strong>LocationChain (L1‑L)</strong> — Ordered sequence of location hints, proximity identifiers, or media‑specific TLVs. <strong>ServiceChain (L1‑S)</strong> — Ordered sequence of service identifiers, session hints, or application selectors. <strong>BareToken</strong> — A non‑TLV ASCII token with no whitespace and no delimiter characters. <strong>TrustTag</strong> — Compact indicator of trust domain or authority context. <strong>FreshnessTag</strong> — Varint expressing temporal freshness. <strong>ProvenancePointer</strong> — Canonical reference to the authoritative origin of the address. <strong>TLV Key</strong> — Registry‑allocated identifier for L1‑relevant metadata. <strong>Canonical Form</strong> — The only permitted wire encoding for a given structure. <strong>CAR</strong> — Canonical Address Registrar; custodian of delimiter and grammar stability.</p>
+</div></section>
+
+<section id="sec3" class="toplevel">
+<h2><span class="secnum">3.</span> Canonical Grammar Overview</h2>
+<div class="section-body">
+<p>The canonical address grammar is:</p>
+<pre class="wire"><code>&lt;LocationChain&gt; "//" &lt;ServiceChain&gt;</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>&lt;LocationChain&gt;</code> MUST NOT be empty</li>
+<li><code>&lt;ServiceChain&gt;</code> MAY be empty</li>
+<li><code>//</code> is the only permitted delimiter</li>
+<li>no whitespace is permitted anywhere</li>
+<li>TLV‑encoded elements MUST appear in canonical order</li>
+<li>BareTokens MUST NOT contain <code>/</code> or <code>//</code></li>
+<li>implementations MUST NOT infer missing elements</li>
+</ul>
+<p>The full grammar is defined in Section 4.</p>
+</div></section>
+
+<section id="sec4" class="toplevel">
+<h2><span class="secnum">4.</span> Full Grammar Definition</h2>
+<div class="section-body">
+<p>This section defines the complete canonical grammar for SolNet L1 addresses. The grammar is normative. Implementations MUST parse exactly as specified. Heuristics, contextual inference, and “best‑effort” parsing are prohibited.</p>
+<p>The grammar is expressed using the restricted ABNF subset maintained by the Canonical Address Registrar (CAR). Where ABNF and canonical ordering conflict, canonical ordering prevails.</p>
+<h3 id="sub4-1"><span class="secnum">4.1</span> Top‑Level Structure</h3>
+<pre class="wire"><code>Address          = LocationChain "//" ServiceChain</code></pre>
+<p>Constraints:</p>
+<ul>
+<li><code>LocationChain</code> MUST contain at least one element.</li>
+<li><code>ServiceChain</code> MAY be empty but MUST be syntactically present.</li>
+<li>The delimiter <code>//</code> MUST appear exactly once.</li>
+<li>No whitespace is permitted anywhere in the Address.</li>
+<li>No implicit coercion of missing elements is permitted.</li>
+<li>Implementations MUST NOT attempt to “repair” malformed addresses.</li>
+</ul>
+<h3 id="sub4-2"><span class="secnum">4.2</span> LocationChain</h3>
+<pre class="wire"><code>LocationChain    = LocationElement *( "/" LocationElement )</code></pre>
+<p>Rules:</p>
+<ul>
+<li>Elements MUST appear in canonical order:
+<ol><li>BareTokens</li><li>TLVs</li><li>ProvenancePointer (if present)</li></ol>
+</li>
+<li>TLVs MUST use registry‑assigned keys.</li>
+<li>Duplicate TLVs are prohibited unless explicitly allowed by their key definition.</li>
+<li>LocationChain MUST NOT be empty.</li>
+</ul>
+<h3 id="sub4-3"><span class="secnum">4.3</span> ServiceChain</h3>
+<pre class="wire"><code>ServiceChain     = [ ServiceElement *( "/" ServiceElement ) ]</code></pre>
+<p>Rules:</p>
+<ul>
+<li>ServiceChain MAY be empty, but the <code>//</code> delimiter MUST still be present.</li>
+<li>Elements MUST appear in canonical order:
+<ol><li>BareTokens</li><li>TLVs</li><li>Session selectors (if present)</li></ol>
+</li>
+<li>ServiceChain MUST NOT contain ProvenancePointer.</li>
+</ul>
+<h3 id="sub4-4"><span class="secnum">4.4</span> Elements</h3>
+<pre class="wire"><code>LocationElement  = BareToken / TLV / ProvenancePointer
+ServiceElement   = BareToken / TLV</code></pre>
+<p>Notes:</p>
+<ul>
+<li>ProvenancePointer is restricted to LocationChain.</li>
+<li>TLVs MUST NOT appear before BareTokens.</li>
+<li>BareTokens MUST NOT contain <code>/</code> or <code>//</code>.</li>
+</ul>
+<h3 id="sub4-5"><span class="secnum">4.5</span> BareToken</h3>
+<pre class="wire"><code>BareToken        = 1*( ALPHA / DIGIT / "-" / "_" / "." )</code></pre>
+<p>Restrictions:</p>
+<ul>
+<li>BareTokens MUST NOT contain <code>/</code>, <code>//</code>, whitespace, or control characters.</li>
+<li>BareTokens MUST NOT be interpreted as TLVs or ProvenancePointers.</li>
+<li>BareTokens MUST NOT be coerced into numeric or structured types.</li>
+</ul>
+<h3 id="sub4-6"><span class="secnum">4.6</span> TLV Encoding</h3>
+<pre class="wire"><code>TLV              = "{" TLVKey ":" TLVValue "}"
+TLVKey           = 1*DIGIT
+TLVValue         = 1*( ALPHA / DIGIT / "-" / "_" / "." )</code></pre>
+<p>Rules:</p>
+<ul>
+<li>TLVKey MUST be a registry‑assigned integer.</li>
+<li>TLVValue MUST conform to the canonical form defined by its key.</li>
+<li>TLVs MUST appear in ascending TLVKey order.</li>
+<li>TLVs MUST NOT be nested.</li>
+<li>TLVs MUST NOT appear after ProvenancePointer.</li>
+</ul>
+<h3 id="sub4-7"><span class="secnum">4.7</span> ProvenancePointer</h3>
+<pre class="wire"><code>ProvenancePointer = "@" 1*( ALPHA / DIGIT / "-" / "_" / "." )</code></pre>
+<p>Rules:</p>
+<ul>
+<li>ProvenancePointer MUST appear at most once.</li>
+<li>If present, it MUST be the final element of LocationChain.</li>
+<li>ProvenancePointer MUST NOT appear in ServiceChain.</li>
+<li>The pointer MUST resolve to a valid ProvenanceRecord (RFC‑2363).</li>
+</ul>
+<h3 id="sub4-8"><span class="secnum">4.8</span> Delimiter Rules</h3>
+<pre class="wire"><code>Delimiter        = "//"</code></pre>
+<p>Rules:</p>
+<ul>
+<li>The delimiter MUST appear exactly once.</li>
+<li>The delimiter MUST NOT be escaped, quoted, or substituted.</li>
+<li>The delimiter MUST NOT appear inside BareTokens, TLVs, or ProvenancePointer.</li>
+<li>Implementations MUST NOT interpret <code>/</code> as equivalent to <code>//</code>.</li>
+</ul>
+<h3 id="sub4-9"><span class="secnum">4.9</span> Canonical Ordering Summary</h3>
+<p>Within each chain:</p>
+<ol>
+<li><strong>BareTokens</strong> (zero or more)</li>
+<li><strong>TLVs</strong> (zero or more, ascending TLVKey order)</li>
+<li><strong>ProvenancePointer</strong> (LocationChain only, at most one)</li>
+</ol>
+<p>Any deviation from this ordering renders the Address non‑canonical.</p>
+<h3 id="sub4-10"><span class="secnum">4.10</span> Invalid Forms (Non‑Exhaustive)</h3>
+<p>The following forms are invalid and MUST be rejected:</p>
+<ul>
+<li>missing delimiter: <code>a/b/c</code></li>
+<li>multiple delimiters: <code>a/b//c/d//e</code></li>
+<li>whitespace: <code>a / b // c</code></li>
+<li>TLVs out of order: <code>{5:x}/{3:y}</code></li>
+<li>ProvenancePointer in ServiceChain: <code>a/b//@origin</code></li>
+<li>nested TLVs: <code>{3:{4:x}}</code></li>
+<li>implicit empty LocationChain: <code>//service</code></li>
+</ul>
+<p>The Working Group declines to enumerate all invalid forms, as implementers have demonstrated unlimited creativity in producing them.</p>
+</div></section>
+
+<section id="sec5" class="toplevel">
+<h2><span class="secnum">5.</span> Canonical AddressRecord Structure</h2>
+<div class="section-body">
+<p>This section defines the canonical binary and logical structure of the AddressRecord. The AddressRecord is the authoritative representation of an Address for storage, transmission, hashing, and provenance operations. The textual grammar defined in Section 4 is a human‑readable projection of this structure; the AddressRecord is the normative form.</p>
+<p>Implementations MUST construct, store, and transmit AddressRecords exactly as specified. Partial serialization, field omission, and “lazy” decoding are prohibited.</p>
+<h3 id="sub5-1"><span class="secnum">5.1</span> AddressRecord Overview</h3>
+<p>An AddressRecord consists of the following fields, in canonical order:</p>
+<ol>
+<li><strong>LocationChain</strong></li>
+<li><strong>ServiceChain</strong></li>
+<li><strong>TrustTag</strong></li>
+<li><strong>QoSClass</strong></li>
+<li><strong>FreshnessTag</strong></li>
+<li><strong>ProvenancePointer</strong> (optional)</li>
+<li><strong>TLVContainer</strong> (zero or more TLVs)</li>
+</ol>
+<p>All fields are mandatory unless explicitly marked optional. Fields MUST appear in the order listed above. Implementations MUST NOT reorder fields for convenience, compression, or “optimization.”</p>
+<p>The Working Group notes that several early implementations attempted to reorder fields based on perceived access frequency. This behavior is non‑compliant.</p>
+<h3 id="sub5-2"><span class="secnum">5.2</span> Binary Encoding</h3>
+<p>All AddressRecords MUST use the canonical varint‑prefixed binary encoding defined in RFC‑2301 and RFC‑2302. Each field is encoded as:</p>
+<pre class="wire"><code>Field = VarintLength || FieldBytes</code></pre>
+<p>Where:</p>
+<ul>
+<li><strong>VarintLength</strong> is the length of FieldBytes</li>
+<li><strong>FieldBytes</strong> is the canonical encoding of the field</li>
+<li>zero‑length fields are prohibited unless explicitly permitted</li>
+</ul>
+<p>Implementations MUST NOT use alternative length encodings, fixed‑width prefixes, or implicit termination.</p>
+<h3 id="sub5-3"><span class="secnum">5.3</span> LocationChain Encoding</h3>
+<pre class="wire"><code>LocationChain = VarintCount || LocationElement[0] || ... || LocationElement[n]</code></pre>
+<p>Rules:</p>
+<ul>
+<li>VarintCount MUST equal the number of LocationElements.</li>
+<li>Elements MUST appear in canonical order (BareTokens → TLVs → ProvenancePointer).</li>
+<li>ProvenancePointer, if present, MUST be the final element.</li>
+<li>LocationChain MUST contain at least one element.</li>
+</ul>
+<p>The Working Group declines to accept proposals allowing empty LocationChains, as such proposals universally rely on implicit inference, which is prohibited.</p>
+<h3 id="sub5-4"><span class="secnum">5.4</span> ServiceChain Encoding</h3>
+<pre class="wire"><code>ServiceChain = VarintCount || ServiceElement[0] || ... || ServiceElement[n]</code></pre>
+<p>Rules:</p>
+<ul>
+<li>VarintCount MAY be zero.</li>
+<li>Elements MUST appear in canonical order (BareTokens → TLVs).</li>
+<li>ServiceChain MUST NOT contain ProvenancePointer.</li>
+</ul>
+<h3 id="sub5-5"><span class="secnum">5.5</span> TrustTag</h3>
+<pre class="wire"><code>TrustTag = 1-byte unsigned integer</code></pre>
+<p>Rules:</p>
+<ul>
+<li>Values 0–15 are reserved for Trust Domains defined in RFC‑2362.</li>
+<li>Values 16–255 are allocated by the CAR.</li>
+<li>Implementations MUST NOT infer trust level from address structure or origin.</li>
+</ul>
+<h3 id="sub5-6"><span class="secnum">5.6</span> QoSClass</h3>
+<pre class="wire"><code>QoSClass = 1-byte unsigned integer</code></pre>
+<p>Rules:</p>
+<ul>
+<li>Values 0–7 are defined in RFC‑2351.</li>
+<li>Values 8–255 are reserved.</li>
+<li>QoSClass MUST NOT be repurposed for priority, routing hints, or congestion signaling.</li>
+</ul>
+<h3 id="sub5-7"><span class="secnum">5.7</span> FreshnessTag</h3>
+<pre class="wire"><code>FreshnessTag = Varint</code></pre>
+<p>Rules:</p>
+<ul>
+<li>Expresses temporal freshness in canonical varint form.</li>
+<li>MUST be monotonic within a given ProvenancePointer context.</li>
+<li>MUST NOT be interpreted as a timestamp.</li>
+</ul>
+<p>The Working Group notes that implementers repeatedly attempt to treat FreshnessTag as a timestamp. This behavior is incorrect.</p>
+<h3 id="sub5-8"><span class="secnum">5.8</span> ProvenancePointer</h3>
+<pre class="wire"><code>ProvenancePointer = VarintLength || PointerBytes</code></pre>
+<p>Rules:</p>
+<ul>
+<li>Optional.</li>
+<li>If present, MUST reference a valid ProvenanceRecord (RFC‑2363).</li>
+<li>MUST NOT appear in ServiceChain.</li>
+<li>MUST NOT appear more than once.</li>
+</ul>
+<h3 id="sub5-9"><span class="secnum">5.9</span> TLVContainer</h3>
+<pre class="wire"><code>TLVContainer = VarintCount || TLV[0] || ... || TLV[n]</code></pre>
+<p>Rules:</p>
+<ul>
+<li>TLVs MUST appear in ascending TLVKey order.</li>
+<li>TLVs MUST NOT be nested.</li>
+<li>TLVs MUST NOT duplicate keys unless explicitly allowed by the key definition.</li>
+<li>TLVs MUST NOT appear before ProvenancePointer.</li>
+</ul>
+<h3 id="sub5-10"><span class="secnum">5.10</span> Invalid AddressRecord Forms</h3>
+<p>The following forms are invalid and MUST be rejected:</p>
+<ul>
+<li>missing VarintLength prefixes</li>
+<li>TLVs out of canonical order</li>
+<li>ProvenancePointer appearing before TLVs</li>
+<li>multiple ProvenancePointers</li>
+<li>zero‑length LocationChain</li>
+<li>implicit or inferred field values</li>
+<li>reordered fields</li>
+</ul>
+<p>The Working Group declines to enumerate all invalid binary forms, as implementers have demonstrated unlimited creativity in producing them.</p>
+</div></section>
+
+<section id="sec6" class="toplevel">
+<h2><span class="secnum">6.</span> ProvenancePointer Binary Format</h2>
+<div class="section-body">
+<p>The ProvenancePointer provides a canonical reference to the authoritative origin of an Address. It is optional but, when present, MUST conform exactly to the structure defined in this section. Implementations MUST NOT substitute alternative pointer formats, implicit references, or context‑derived origins.</p>
+<p>The ProvenancePointer is not a timestamp, not a hash of the Address, and not a routing hint. It is a strict reference to a ProvenanceRecord as defined in RFC‑2363.</p>
+<h3 id="sub6-1"><span class="secnum">6.1</span> Structure</h3>
+<p>The ProvenancePointer is encoded as:</p>
+<pre class="wire"><code>ProvenancePointer = VarintLength || PointerBytes</code></pre>
+<p>Where:</p>
+<ul>
+<li><strong>VarintLength</strong> — canonical varint specifying the length of PointerBytes</li>
+<li><strong>PointerBytes</strong> — canonical encoding of the pointer target</li>
+</ul>
+<p>The ProvenancePointer MUST appear at most once and MUST be the final element of the LocationChain.</p>
+<h3 id="sub6-2"><span class="secnum">6.2</span> PointerBytes Format</h3>
+<pre class="wire"><code>PointerBytes = PointerType || PointerValue</code></pre>
+<p>Where:</p>
+<ul>
+<li><strong>PointerType</strong> — 1‑byte unsigned integer</li>
+<li><strong>PointerValue</strong> — type‑specific canonical encoding</li>
+</ul>
+<p>PointerType values:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Value</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><td>0x00</td><td>Reserved (MUST NOT be used)</td></tr>
+<tr><td>0x01</td><td>DirectRecordHash</td></tr>
+<tr><td>0x02</td><td>LedgerEntryRef</td></tr>
+<tr><td>0x03</td><td>DRERecordRef</td></tr>
+<tr><td>0x04–0x7F</td><td>Reserved for SSWG allocation</td></tr>
+<tr><td>0x80–0xFF</td><td>Vendor‑specific (MUST NOT appear on public networks)</td></tr>
+</tbody></table></div>
+<p>Implementations MUST reject PointerType values not explicitly permitted.</p>
+<h3 id="sub6-3"><span class="secnum">6.3</span> DirectRecordHash (PointerType = 0x01)</h3>
+<pre class="wire"><code>PointerValue = HashAlgorithm || HashBytes</code></pre>
+<p>Rules:</p>
+<ul>
+<li><strong>HashAlgorithm</strong> — 1‑byte unsigned integer (see RFC‑2301)</li>
+<li><strong>HashBytes</strong> — canonical hash output for the algorithm</li>
+<li>HashBytes MUST match the hash of a valid ProvenanceRecord</li>
+</ul>
+<p>Implementations MUST NOT accept truncated hashes, partial hashes, or hashes of non‑canonical forms.</p>
+<h3 id="sub6-4"><span class="secnum">6.4</span> LedgerEntryRef (PointerType = 0x02)</h3>
+<pre class="wire"><code>PointerValue = LedgerID || EntryIndex</code></pre>
+<p>Where:</p>
+<ul>
+<li><strong>LedgerID</strong> — varint identifying the ledger (RFC‑2302)</li>
+<li><strong>EntryIndex</strong> — varint identifying the entry within the ledger</li>
+</ul>
+<p>Rules:</p>
+<ul>
+<li>LedgerID MUST reference a known ledger</li>
+<li>EntryIndex MUST reference a valid entry</li>
+<li>Implementations MUST NOT infer ledger identity from network context</li>
+</ul>
+<p>The Working Group notes that several early implementations attempted to “guess” the ledger based on device location. This behavior is non‑compliant.</p>
+<h3 id="sub6-5"><span class="secnum">6.5</span> DRERecordRef (PointerType = 0x03)</h3>
+<pre class="wire"><code>PointerValue = DREID || RecordIndex</code></pre>
+<p>Where:</p>
+<ul>
+<li><strong>DREID</strong> — varint identifying the Directory &amp; Routing Endpoint (RFC‑2363)</li>
+<li><strong>RecordIndex</strong> — varint identifying the record within the DRE</li>
+</ul>
+<p>Rules:</p>
+<ul>
+<li>DREID MUST reference a reachable DRE</li>
+<li>RecordIndex MUST reference a valid ProvenanceRecord</li>
+<li>Implementations MUST NOT treat DRE references as routing hints</li>
+</ul>
+<h3 id="sub6-6"><span class="secnum">6.6</span> Canonical Ordering and Placement</h3>
+<p>The ProvenancePointer:</p>
+<ul>
+<li>MUST appear at most once</li>
+<li>MUST appear only in the LocationChain</li>
+<li>MUST appear after all BareTokens and TLVs</li>
+<li>MUST NOT appear in the ServiceChain</li>
+<li>MUST NOT be followed by any TLVs</li>
+</ul>
+<p>Any violation renders the Address non‑canonical.</p>
+<h3 id="sub6-7"><span class="secnum">6.7</span> Invalid ProvenancePointer Forms</h3>
+<p>The following forms are invalid and MUST be rejected:</p>
+<ul>
+<li>missing VarintLength prefix</li>
+<li>zero‑length PointerBytes</li>
+<li>multiple ProvenancePointers</li>
+<li>ProvenancePointer appearing before TLVs</li>
+<li>ProvenancePointer appearing in ServiceChain</li>
+<li>PointerType = 0x00</li>
+<li>PointerType in vendor range (0x80–0xFF) on public networks</li>
+<li>PointerValue not matching the expected structure for its PointerType</li>
+</ul>
+<p>Implementations encountering malformed ProvenancePointers MUST reject them without attempting repair. Historical attempts to “interpret intent” have produced inconsistent and non‑compliant behavior and MUST NOT be repeated.</p>
+</div></section>
+
+<section id="sec7" class="toplevel">
+<h2><span class="secnum">7.</span> Resolution Precedence Rules</h2>
+<div class="section-body">
+<p>Resolution precedence defines the deterministic order in which an Address is interpreted, validated, and resolved. Implementations MUST follow these rules exactly. Heuristics, contextual inference, and “best‑match” behavior are prohibited.</p>
+<p>Resolution precedence applies to:</p>
+<ul>
+<li>parsing</li>
+<li>TLV interpretation</li>
+<li>ProvenancePointer dereferencing</li>
+<li>chain evaluation</li>
+<li>DRE lookup (RFC‑2363)</li>
+<li>namespace escalation (RFC‑2390+)</li>
+</ul>
+<p>The rules in this section override any conflicting behavior in local implementations.</p>
+<h3 id="sub7-1"><span class="secnum">7.1</span> Precedence Overview</h3>
+<p>Resolution proceeds in the following canonical order:</p>
+<ol>
+<li><strong>Syntactic validation</strong> (Section 4)</li>
+<li><strong>Canonical ordering verification</strong></li>
+<li><strong>LocationChain evaluation</strong></li>
+<li><strong>ServiceChain evaluation</strong></li>
+<li><strong>TLV interpretation</strong></li>
+<li><strong>ProvenancePointer dereference</strong></li>
+<li><strong>DRE resolution</strong></li>
+<li><strong>Namespace escalation</strong></li>
+</ol>
+<p>Implementations MUST NOT reorder these steps.</p>
+<p>The Working Group notes that several early implementations attempted to evaluate ServiceChain elements before LocationChain validation. This behavior is non‑compliant.</p>
+<h3 id="sub7-2"><span class="secnum">7.2</span> Syntactic Validation (Step 1)</h3>
+<p>Before any semantic interpretation occurs, the Address MUST be validated against the grammar in Section 4.</p>
+<p>Rules:</p>
+<ul>
+<li>malformed addresses MUST be rejected immediately</li>
+<li>no partial evaluation is permitted</li>
+<li>no fallback behavior is permitted</li>
+<li>no inference of missing elements is permitted</li>
+</ul>
+<p>If syntactic validation fails, resolution MUST terminate.</p>
+<h3 id="sub7-3"><span class="secnum">7.3</span> Canonical Ordering Verification (Step 2)</h3>
+<p>After syntactic validation, implementations MUST verify canonical ordering:</p>
+<ul>
+<li>BareTokens → TLVs → ProvenancePointer (LocationChain only)</li>
+<li>BareTokens → TLVs (ServiceChain)</li>
+<li>TLVs in ascending TLVKey order</li>
+</ul>
+<p>Any deviation renders the Address non‑canonical and MUST be rejected.</p>
+<h3 id="sub7-4"><span class="secnum">7.4</span> LocationChain Evaluation (Step 3)</h3>
+<p>LocationChain MUST be evaluated before ServiceChain.</p>
+<p>Rules:</p>
+<ul>
+<li>BareTokens are interpreted first</li>
+<li>TLVs are interpreted second</li>
+<li>ProvenancePointer (if present) is interpreted last</li>
+<li>no inference of missing location information is permitted</li>
+</ul>
+<p>LocationChain evaluation MUST NOT depend on ServiceChain content.</p>
+<h3 id="sub7-5"><span class="secnum">7.5</span> ServiceChain Evaluation (Step 4)</h3>
+<p>ServiceChain evaluation occurs only after LocationChain evaluation completes successfully.</p>
+<p>Rules:</p>
+<ul>
+<li>BareTokens are interpreted first</li>
+<li>TLVs are interpreted second</li>
+<li>ProvenancePointer MUST NOT appear</li>
+<li>ServiceChain MUST NOT influence LocationChain interpretation</li>
+</ul>
+<p>Implementations MUST NOT reorder chain evaluation based on “expected usage patterns.”</p>
+<h3 id="sub7-6"><span class="secnum">7.6</span> TLV Interpretation (Step 5)</h3>
+<p>TLVs MUST be interpreted strictly according to their registry definitions.</p>
+<p>Rules:</p>
+<ul>
+<li>TLVs MUST NOT override BareTokens</li>
+<li>TLVs MUST NOT override ProvenancePointer</li>
+<li>TLVs MUST NOT introduce implicit semantics</li>
+<li>TLVs MUST NOT be interpreted out of order</li>
+</ul>
+<p>TLVs that conflict with canonical ordering MUST be rejected.</p>
+<h3 id="sub7-7"><span class="secnum">7.7</span> ProvenancePointer Dereference (Step 6)</h3>
+<p>If a ProvenancePointer is present, it MUST be dereferenced after all chain and TLV evaluation.</p>
+<p>Rules:</p>
+<ul>
+<li>dereferencing MUST NOT occur before TLV interpretation</li>
+<li>dereferencing MUST NOT be skipped</li>
+<li>dereferencing MUST NOT be deferred to higher layers</li>
+<li>dereferencing MUST NOT be treated as a routing hint</li>
+</ul>
+<p>If dereferencing fails, resolution MUST terminate.</p>
+<h3 id="sub7-8"><span class="secnum">7.8</span> DRE Resolution (Step 7)</h3>
+<p>After ProvenancePointer dereference (if present), the Address MAY be submitted to a Directory &amp; Routing Endpoint (RFC‑2363).</p>
+<p>Rules:</p>
+<ul>
+<li>DRE resolution MUST NOT occur before ProvenancePointer dereference</li>
+<li>DRE resolution MUST NOT reorder chain interpretation</li>
+<li>DRE resolution MUST NOT infer missing fields</li>
+<li>DRE resolution MUST NOT modify the Address</li>
+</ul>
+<p>If the DRE returns no result, resolution proceeds to namespace escalation.</p>
+<h3 id="sub7-9"><span class="secnum">7.9</span> Namespace Escalation (Step 8)</h3>
+<p>If DRE resolution fails or returns no authoritative result, namespace escalation MAY occur according to RFC‑2390+.</p>
+<p>Rules:</p>
+<ul>
+<li>escalation MUST NOT occur before DRE resolution</li>
+<li>escalation MUST NOT modify the Address</li>
+<li>escalation MUST NOT infer missing ProvenancePointer values</li>
+<li>escalation MUST NOT bypass syntactic or canonical validation</li>
+</ul>
+<p>Escalation is the final step. If escalation fails, resolution terminates.</p>
+<h3 id="sub7-10"><span class="secnum">7.10</span> Invalid Resolution Behaviors</h3>
+<p>The following behaviors are invalid and MUST be rejected:</p>
+<ul>
+<li>evaluating ServiceChain before LocationChain</li>
+<li>interpreting TLVs before BareTokens</li>
+<li>dereferencing ProvenancePointer before TLVs</li>
+<li>skipping ProvenancePointer dereference</li>
+<li>treating ProvenancePointer as a routing hint</li>
+<li>inferring missing elements</li>
+<li>reordering resolution steps for “performance”</li>
+<li>attempting resolution on non‑canonical addresses</li>
+</ul>
+<p>The Working Group declines to enumerate all invalid behaviors, as implementers have demonstrated unlimited creativity in producing them.</p>
+</div></section>
+
+  </article>
+</div>
+
+<script>
+(function(){
+  // active TOC highlight
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.toplevel'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

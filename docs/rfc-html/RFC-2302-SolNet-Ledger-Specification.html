@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFC-2302 — SolNet Ledger Specification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EAEBE4; --paper-raised:#F2F3ED; --ink:#1B1D1C; --ink-soft:#54574B;
+    --rule:#B8BBAF; --rule-soft:#CBCEC1; --accent:#8A3324; --accent-soft:#A8462F;
+    --stamp-bg:#DCDED3; --stamp-border:#9C9F8F; --mono-bg:#E2E3DC;
+    --toolbar-bg:#DEDFD6; --focus:#8A3324; --danger:#8A3324;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+      --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+      --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+    --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+    --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,.stamp,.masthead-title{ font-family:"Newsreader", Georgia, serif; text-wrap:balance; }
+  code, .secnum, .table-wrap table, .wire, kbd{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+
+  a{ color:var(--accent); }
+  a:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  /* ---- doc bar (static identity strip, no edit affordances) ---- */
+  .docbar{
+    position:sticky; top:0; z-index:20; background:var(--toolbar-bg);
+    border-bottom:1px solid var(--rule); padding:.6rem 1.25rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    max-width:1200px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  .masthead-title{ font-size:2.1rem; font-weight:600; margin:0 0 .4rem; }
+  .masthead-sub{ font-style:italic; color:var(--ink-soft); margin:0 0 1rem; font-size:1rem; }
+  .status-box{
+    display:inline-block; border:1px solid var(--rule); background:var(--paper-raised);
+    padding:.6rem .9rem; font-size:.85rem; color:var(--ink-soft); border-radius:3px;
+  }
+  .status-box strong{ color:var(--ink); }
+
+  /* ---- layout ---- */
+  .layout{
+    max-width:1200px; margin:0 auto; padding:2rem 1.5rem 6rem;
+    display:grid; grid-template-columns:260px minmax(0,1fr); gap:3rem;
+    align-items:start;
+  }
+  nav.toc{ position:sticky; top:4.2rem; max-height:calc(100vh - 5.5rem); overflow-y:auto; }
+  nav.toc h4{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  nav.toc ol{ list-style:none; margin:0; padding:0; }
+  nav.toc li{ margin:0; }
+  nav.toc a{
+    display:block; padding:.3rem 0; color:var(--ink-soft); text-decoration:none;
+    font-size:.87rem; border-left:2px solid transparent; padding-left:.6rem;
+  }
+  nav.toc a:hover{ color:var(--ink); }
+  nav.toc a.active{ color:var(--accent); border-left-color:var(--accent); font-weight:500; }
+  nav.toc .toc-divider{
+    margin:.9rem 0 .4rem; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); border-top:1px solid var(--rule-soft); padding-top:.7rem;
+  }
+
+  article#doc{ max-width:70ch; }
+  section.toplevel{ padding:2.2rem 0; border-bottom:1px solid var(--rule-soft); }
+  section.toplevel:first-of-type{ padding-top:0; }
+  .appendix-divider{ padding:2.5rem 0 .5rem; }
+  .appendix-divider h1{ font-size:1.5rem; margin:0; color:var(--ink-soft); font-weight:500; }
+  h2{ font-size:1.35rem; font-weight:600; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+  h2 .secnum{ color:var(--accent); font-size:1rem; }
+  h3{ font-size:1.05rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  h3 .secnum{ color:var(--accent); font-size:.85rem; margin-right:.3rem; }
+  p{ margin:0 0 1rem; }
+  p.aphorism{
+    font-style:italic; padding-left:1rem; border-left:2px solid var(--rule);
+    color:var(--ink-soft); margin:1.2rem 0;
+  }
+  p.stamp{
+    display:inline-block; margin:0 0 1rem; font-style:italic; font-size:.85rem;
+    background:var(--stamp-bg); border:1px solid var(--stamp-border);
+    padding:.15rem .6rem; border-radius:2px; color:var(--ink-soft);
+  }
+  ul{ margin:0 0 1rem; padding-left:1.3rem; }
+  li{ margin-bottom:.4rem; }
+  strong{ font-weight:600; }
+  code{ background:var(--mono-bg); padding:.1rem .3rem; border-radius:2px; font-size:.85em; }
+  .table-wrap{ overflow-x:auto; margin:0 0 1.2rem; border:1px solid var(--rule); border-radius:3px; }
+  table{ border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td{ text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rule-soft); font-variant-numeric:tabular-nums; }
+  thead th{ background:var(--paper-raised); font-weight:600; border-bottom:1px solid var(--rule); }
+  tbody tr:last-child td{ border-bottom:none; }
+  pre.wire{
+    background:var(--mono-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:1rem 1.1rem; overflow-x:auto; font-size:.82rem; line-height:1.7; margin:0 0 1.2rem;
+  }
+  section.footnotes{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--rule-soft); }
+  section.footnotes h3{ margin-top:0; }
+  section.footnotes .nonnormative{ color:var(--ink-soft); font-weight:400; font-size:.85em; }
+  section.footnotes ol{ padding-left:1.4rem; font-size:.9rem; color:var(--ink-soft); }
+  .fnref a{ text-decoration:none; }
+
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:1.2rem; }
+    nav.toc{ position:static; max-height:none; }
+    nav.toc ol{ display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.4rem; }
+    nav.toc .toc-divider{ display:none; }
+    nav.toc a{ border-left:none; border-bottom:2px solid transparent; padding:.3rem .5rem; white-space:nowrap; }
+    nav.toc a.active{ border-left-color:transparent; border-bottom-color:var(--accent); }
+    article#doc{ max-width:100%; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">RFC&#8209;2302 &middot; SolNet Ledger Specification &middot; SolNet Standards Corpus &middot; static rendering</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">SolNet Standards Corpus — Normative</p>
+  <h1 class="masthead-title">RFC&#8209;2302 — SolNet Ledger Specification</h1>
+  <p class="masthead-sub">SolNet Standards Working Group (SSWG)</p>
+  <p class="status-box"><strong>Status:</strong> Normative, Standards Track. Canonical source of record is <code>docs/vault/New RFCs/RFC 2302 - Solnet LEdger Spec.md</code>; this is a static, read-only rendering.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Sections</h4>
+    <ol>
+      <li><a href="#sec1">1. Purpose</a></li>
+      <li><a href="#sec2">2. Scope</a></li>
+      <li><a href="#sec3">3. Design Goals</a></li>
+      <li><a href="#sec4">4. Ledger Model Overview</a></li>
+      <li><a href="#sec5">5. Semantics and Canonical Resolution</a></li>
+      <li><a href="#sec6">6. Replication, Availability, and Partitions</a></li>
+      <li><a href="#sec7">7. Privacy and Data Minimization</a></li>
+      <li><a href="#sec8">8. Revocation and Emergency Unbinds</a></li>
+      <li><a href="#sec9">9. Trust Models and Deployment Modes</a></li>
+      <li><a href="#sec10">10. APIs and Query Semantics</a></li>
+      <li><a href="#sec11">11. Forensics, Auditing, and Disputes</a></li>
+      <li><a href="#sec12">12. Security Considerations</a></li>
+      <li><a href="#sec13">13. Example Workflows</a></li>
+      <li><a href="#sec14">14. Compliance and Interop Requirements</a></li>
+      <li><a href="#sec15">15. Operational Guidance and Best Practices</a></li>
+      <li><a href="#sec16">16. Next Steps and Companion RFCs</a></li>
+    </ol>
+  </nav>
+
+  <article id="doc">
+<section id="sec1" class="toplevel">
+<h2><span class="secnum">1.</span> Purpose</h2>
+<div class="section-body">
+<p>Define the <strong>LedgerAnchor</strong>: a slow, append‑only, replicated registry that records authoritative bindings between <strong>AuthorityChain</strong>, <strong>UUID‑S7</strong>, and public keys; records revocations and audit events; and provides the canonical source of global uniqueness for SolNet. This RFC describes ledger semantics, entry types, replication and conflict rules, privacy tradeoffs, and a pragmatic API surface suitable for everything from a pirate skiff to a planetary bureaucracy.</p>
+</div></section>
+
+<section id="sec2" class="toplevel">
+<h2><span class="secnum">2.</span> Scope</h2>
+<div class="section-body">
+<p>Covers conceptual ledger design and operational rules required by other SolNet RFCs (notably RFC‑2350 and RFC‑2361). This is <em>not</em> a prescription for a single implementation: multiple ledger technologies and trust models are acceptable so long as they meet the properties below. Wire formats, consensus algorithms, and storage engines are left to implementers and later companion RFCs.</p>
+</div></section>
+
+<section id="sec3" class="toplevel">
+<h2><span class="secnum">3.</span> Design Goals (what the ledger must actually do)</h2>
+<div class="section-body">
+<ul>
+<li><strong>Authoritative uniqueness:</strong> provide a durable, auditable record that a given UUID‑S7 is bound to a specific AuthorityChain and Anchor Key.</li>
+<li><strong>Append‑only auditability:</strong> every change is recorded; history is preserved for forensics.</li>
+<li><strong>Practical replication:</strong> tolerate high latency, partitioning, and intermittent connectivity.</li>
+<li><strong>Conflict clarity:</strong> when two parties claim the same textual AuthorityChain, ledger entries and signatures determine canonical identity.</li>
+<li><strong>Privacy‑aware:</strong> minimize leakage of sensitive metadata while preserving auditability.</li>
+<li><strong>Operable by anyone:</strong> support centralized, federated, and permissioned deployments so a Belter skiff and a corporate backbone can both participate.</li>
+<li><strong>Revocation first class:</strong> revocations must be discoverable and actionable by routing and security layers.</li>
+</ul>
+</div></section>
+
+<section id="sec4" class="toplevel">
+<h2><span class="secnum">4.</span> Ledger Model Overview</h2>
+<div class="section-body">
+<p>The ledger is a <strong>replicated, append‑only log</strong> of signed records. Each record is a self‑contained, signed object with a stable identifier (LedgerEntryID). Records are immutable once appended. Implementations may use blockchains, distributed logs, or federated append‑only stores; the spec cares about semantics, not the underlying consensus.</p>
+<h3 id="sub4-1"><span class="secnum">4.1</span> Record types</h3>
+<ul>
+<li><strong>AnchorRecord</strong> — binds <code>UUID‑S7 ↔ AuthorityChain ↔ AK.public</code> and includes metadata (human label, jurisdiction tags, issuance timestamp, optional human note). Signed by AK.</li>
+<li><strong>RevocationRecord</strong> — marks an AnchorRecord as revoked; includes reason code, revoker identity, and timestamp. Signed by revoking authority (AK or recognized trust authority).</li>
+<li><strong>CrossCertRecord</strong> — records cross‑signatures between anchors (useful for migration and key rotation). Signed by both parties.</li>
+<li><strong>AuditEvent</strong> — operator actions, emergency unbinds, dispute notes. Signed by issuer.</li>
+<li><strong>PolicyRecord</strong> — domain or trust‑domain policy statements (e.g., acceptable AK algorithms, emergency procedures). Signed by trust domain authority.</li>
+<li><strong>IndexRecord</strong> — optional, implementation‑specific indexing aids (not authoritative).</li>
+</ul>
+<p>Each record includes a <strong>previous‑hash</strong> or equivalent pointer to preserve append‑only ordering and enable tamper detection.</p>
+</div></section>
+
+<section id="sec5" class="toplevel">
+<h2><span class="secnum">5.</span> Semantics and Canonical Resolution</h2>
+<div class="section-body">
+<p>When resolving an AuthorityChain textually, consumers follow this order:</p>
+<ol>
+<li><strong>Find AnchorRecord(s)</strong> for the AuthorityChain and UUID‑S7.</li>
+<li><strong>Validate signatures</strong> on AnchorRecord(s) against the claimed AK.public.</li>
+<li><strong>Check RevocationRecords</strong> referencing those AnchorRecords. If revoked, treat as UNVERIFIED unless a valid cross‑cert or emergency override exists.</li>
+<li><strong>If multiple valid AnchorRecords exist</strong> (conflict), prefer the one with the highest trust provenance: (a) AnchorRecord signed by a recognized trust authority and anchored earliest in ledger history; (b) AnchorRecord with explicit cross‑cert chains; (c) otherwise, require human adjudication and mark as CONFLICT.</li>
+<li><strong>Expose resolution metadata</strong> (CertStatus, LedgerStatus, provenance chain) to A‑stack consumers.</li>
+</ol>
+<p>Implementations must make conflict states explicit; silent acceptance of conflicting anchors is forbidden.</p>
+</div></section>
+
+<section id="sec6" class="toplevel">
+<h2><span class="secnum">6.</span> Replication, Availability, and Partitions</h2>
+<div class="section-body">
+<ul>
+<li><strong>Eventual replication:</strong> ledger replicas converge when connectivity permits. The system tolerates long partitions (days to weeks) but must provide clear semantics for operations performed during partitions.</li>
+<li><strong>Local caching:</strong> nodes may cache ledger slices relevant to their operational sphere (e.g., a ship caches anchors for its frequent contacts). Cache TTLs and freshness indicators must be present.</li>
+<li><strong>Write model:</strong> writes are appended locally and propagated; the ledger must record the local origin and a monotonic local sequence to aid reconciliation.</li>
+<li><strong>Conflict detection:</strong> when two conflicting AnchorRecords are appended in different partitions, reconciliation produces a conflict state; conflict resolution follows the Canonical Resolution rules in §5.</li>
+<li><strong>Operational guidance:</strong> for high‑Authority nodes, prefer synchronous anchoring to multiple well‑known replicas before advertising anchor trust; for low‑Authority or opportunistic anchors, allow eventual anchoring with explicit UNVERIFIED status until ledger confirmation.</li>
+</ul>
+</div></section>
+
+<section id="sec7" class="toplevel">
+<h2><span class="secnum">7.</span> Privacy and Data Minimization</h2>
+<div class="section-body">
+<p>Ledger entries are public by design for auditability, but SolNet must balance transparency with operator privacy.</p>
+<ul>
+<li><strong>Minimal public footprint:</strong> AnchorRecords SHOULD include only essential fields: UUID‑S7, AuthorityChain canonical text, AK.public fingerprint, issuance timestamp, and a short human label. Optional human notes must be redacted or encrypted if sensitive.</li>
+<li><strong>Selective disclosure:</strong> implementations MAY support encrypted payloads in records accessible only to authorized auditors (e.g., via hybrid encryption to trust domain keys).</li>
+<li><strong>Indexing controls:</strong> replicas may choose to index only hashed AuthorityChain values to reduce casual scraping; however, any consumer that needs full resolution must be able to obtain the cleartext via authenticated channels.</li>
+<li><strong>Retention policy:</strong> ledger is append‑only, but archival strategies (cold storage, redaction pointers) are allowed for legal compliance; redaction must be auditable and recorded as an AuditEvent.</li>
+</ul>
+</div></section>
+
+<section id="sec8" class="toplevel">
+<h2><span class="secnum">8.</span> Revocation and Emergency Unbinds</h2>
+<div class="section-body">
+<ul>
+<li><strong>Revocation semantics:</strong> a RevocationRecord references the AnchorRecord ID and includes revoker identity, reason code, and timestamp. Revocation is effective once replicated to a quorum of replicas defined by the trust domain.</li>
+<li><strong>Emergency unbind:</strong> a special RevocationRecord type that includes justification metadata and an emergency override token. Emergency unbinds must be logged as AuditEvents and require higher‑trust countersignatures where possible.</li>
+<li><strong>Propagation:</strong> revocation must be visible to routing and security layers; DREs and relays must check revocation status for anchors they rely on. Cached entries must be invalidated upon revocation discovery.</li>
+</ul>
+</div></section>
+
+<section id="sec9" class="toplevel">
+<h2><span class="secnum">9.</span> Trust Models and Deployment Modes</h2>
+<div class="section-body">
+<p>The ledger spec supports multiple deployment models:</p>
+<ul>
+<li><strong>Permissioned federation:</strong> trusted operators run replicas; consensus via BFT or similar. Suited for intergovernmental or corporate backbones.</li>
+<li><strong>Permissionless append‑only:</strong> open participation with economic or reputation incentives; suitable for community or public registries.</li>
+<li><strong>Hybrid:</strong> core permissioned replicas for high‑trust anchors and peripheral opportunistic replicas for caching.</li>
+<li><strong>Local ledgers:</strong> small domains may run local ledgers for internal anchors and optionally publish summarized AnchorRecords to global ledgers.</li>
+</ul>
+<p>Each deployment must document its trust assumptions and advertise them via PolicyRecords.</p>
+</div></section>
+
+<section id="sec10" class="toplevel">
+<h2><span class="secnum">10.</span> APIs and Query Semantics</h2>
+<div class="section-body">
+<p>Ledger implementations SHOULD expose a minimal, consistent API:</p>
+<ul>
+<li><code>AppendRecord(record)</code> → LedgerEntryID, signed receipt.</li>
+<li><code>GetRecord(LedgerEntryID)</code> → full record.</li>
+<li><code>QueryByUUID(UUID‑S7)</code> → list of AnchorRecord IDs and statuses.</li>
+<li><code>QueryByAuthorityChain(text)</code> → list of AnchorRecord IDs and statuses.</li>
+<li><code>GetRevocations(AnchorRecordID)</code> → RevocationRecords.</li>
+<li><code>Subscribe(filter)</code> → stream of new records matching filter (for DREs and relays).</li>
+<li><code>GetProof(LedgerEntryID)</code> → cryptographic proof of inclusion and ordering (e.g., Merkle proof or equivalent).</li>
+</ul>
+<p>APIs must return provenance metadata (origin replica, signed receipt, replication status) so consumers can make informed trust decisions.</p>
+</div></section>
+
+<section id="sec11" class="toplevel">
+<h2><span class="secnum">11.</span> Forensics, Auditing, and Disputes</h2>
+<div class="section-body">
+<ul>
+<li><strong>Audit trails:</strong> every append and every replication event must be auditable; AuditEvents record operator actions and dispute resolutions.</li>
+<li><strong>Dispute workflow:</strong> when conflicts arise, ledger consumers may open a dispute by appending an AuditEvent and requesting human adjudication; dispute outcomes are recorded as AuditEvents and may include cross‑certificates or revocations.</li>
+<li><strong>Evidence preservation:</strong> ledger entries and signed receipts are primary evidence; DREs and high‑Authority nodes SHOULD preserve local logs and signed receipts for at least the domain's legal retention period.</li>
+</ul>
+</div></section>
+
+<section id="sec12" class="toplevel">
+<h2><span class="secnum">12.</span> Security Considerations</h2>
+<div class="section-body">
+<ul>
+<li><strong>Protect AK private keys:</strong> compromise of AK undermines anchor trust; high‑Authority nodes MUST use hardware roots.</li>
+<li><strong>Replica authentication:</strong> replicas must authenticate peers and sign replication receipts to prevent spoofing.</li>
+<li><strong>DoS and spam:</strong> append‑only systems are vulnerable to spam; implement rate limits, economic or reputation costs, and admission controls for high‑trust namespaces.</li>
+<li><strong>Tamper detection:</strong> inclusion proofs and signed receipts enable detection of tampering or selective withholding by replicas.</li>
+<li><strong>Privacy leakage:</strong> public ledgers leak metadata; use minimal public fields and optional encrypted payloads for sensitive data.</li>
+</ul>
+</div></section>
+
+<section id="sec13" class="toplevel">
+<h2><span class="secnum">13.</span> Example Workflows</h2>
+<div class="section-body">
+<ul>
+<li><strong>Anchor creation:</strong> operator generates AK → creates AnchorRecord → signs and appends → receives signed receipt → publishes <code>//info</code> referencing LedgerEntryID. Until replication to quorum, AnchorRecord is provisional and consumers mark it as PENDING.</li>
+<li><strong>Rotation:</strong> new AK created → CrossCertRecord appended linking old AK to new AK → AnchorRecord for new AK appended → old AK marked with deprecation AuditEvent → after grace period, old AK may be revoked.</li>
+<li><strong>Conflict reconciliation:</strong> two AnchorRecords for same AuthorityChain discovered → ledger marks both and creates CONFLICT state → trust domains publish PolicyRecords and AuditEvents to resolve; consumers treat both as UNVERIFIED until resolution.</li>
+</ul>
+</div></section>
+
+<section id="sec14" class="toplevel">
+<h2><span class="secnum">14.</span> Compliance and Interop Requirements</h2>
+<div class="section-body">
+<p>Implementations claiming SolNet Ledger compatibility MUST:</p>
+<ul>
+<li>support the record types and canonical resolution semantics in §4–§5;</li>
+<li>provide cryptographic inclusion proofs for entries;</li>
+<li>expose the minimal API surface in §10;</li>
+<li>document deployment trust model and replication guarantees;</li>
+<li>implement revocation semantics and emergency unbind handling.</li>
+</ul>
+</div></section>
+
+<section id="sec15" class="toplevel">
+<h2><span class="secnum">15.</span> Operational Guidance and Best Practices</h2>
+<div class="section-body">
+<ul>
+<li><strong>High‑Authority anchors:</strong> anchor to multiple well‑known replicas and require multi‑replica confirmation before advertising trust.</li>
+<li><strong>Personal devices:</strong> avoid writing AnchorRecords for transient personal devices; prefer device assertions signed by domain AK and optional ledger registration only for long‑lived devices.</li>
+<li><strong>Caching:</strong> DREs should cache relevant ledger slices and subscribe to updates; caches must include freshness metadata.</li>
+<li><strong>Disaster recovery:</strong> maintain off‑site archival copies of ledger history and signed receipts.</li>
+</ul>
+</div></section>
+
+<section id="sec16" class="toplevel">
+<h2><span class="secnum">16.</span> Next Steps and Companion RFCs</h2>
+<div class="section-body">
+<ul>
+<li><strong>RFC‑2361 (Layer Model)</strong> will reference ledger semantics for A‑stack interactions.</li>
+<li><strong>RFC‑2363 (Identity Resolution)</strong> will define how L2 consumes ledger entries and resolves conflicts.</li>
+<li><strong>Implementation RFCs</strong> may specify concrete consensus and storage options for permissioned and permissionless deployments.</li>
+</ul>
+</div></section>
+
+  </article>
+</div>
+
+<script>
+(function(){
+  // active TOC highlight
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.toplevel'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFC-2301 — SolNet Cryptographic Primitives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EAEBE4; --paper-raised:#F2F3ED; --ink:#1B1D1C; --ink-soft:#54574B;
+    --rule:#B8BBAF; --rule-soft:#CBCEC1; --accent:#8A3324; --accent-soft:#A8462F;
+    --stamp-bg:#DCDED3; --stamp-border:#9C9F8F; --mono-bg:#E2E3DC;
+    --toolbar-bg:#DEDFD6; --focus:#8A3324; --danger:#8A3324;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+      --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+      --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+    --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+    --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,.stamp,.masthead-title{ font-family:"Newsreader", Georgia, serif; text-wrap:balance; }
+  code, .secnum, .table-wrap table, .wire, kbd{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+
+  a{ color:var(--accent); }
+  a:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  /* ---- doc bar (static identity strip, no edit affordances) ---- */
+  .docbar{
+    position:sticky; top:0; z-index:20; background:var(--toolbar-bg);
+    border-bottom:1px solid var(--rule); padding:.6rem 1.25rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    max-width:1200px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  .masthead-title{ font-size:2.1rem; font-weight:600; margin:0 0 .4rem; }
+  .masthead-sub{ font-style:italic; color:var(--ink-soft); margin:0 0 1rem; font-size:1rem; }
+  .status-box{
+    display:inline-block; border:1px solid var(--rule); background:var(--paper-raised);
+    padding:.6rem .9rem; font-size:.85rem; color:var(--ink-soft); border-radius:3px;
+  }
+  .status-box strong{ color:var(--ink); }
+
+  /* ---- layout ---- */
+  .layout{
+    max-width:1200px; margin:0 auto; padding:2rem 1.5rem 6rem;
+    display:grid; grid-template-columns:260px minmax(0,1fr); gap:3rem;
+    align-items:start;
+  }
+  nav.toc{ position:sticky; top:4.2rem; max-height:calc(100vh - 5.5rem); overflow-y:auto; }
+  nav.toc h4{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  nav.toc ol{ list-style:none; margin:0; padding:0; }
+  nav.toc li{ margin:0; }
+  nav.toc a{
+    display:block; padding:.3rem 0; color:var(--ink-soft); text-decoration:none;
+    font-size:.87rem; border-left:2px solid transparent; padding-left:.6rem;
+  }
+  nav.toc a:hover{ color:var(--ink); }
+  nav.toc a.active{ color:var(--accent); border-left-color:var(--accent); font-weight:500; }
+  nav.toc .toc-divider{
+    margin:.9rem 0 .4rem; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); border-top:1px solid var(--rule-soft); padding-top:.7rem;
+  }
+
+  article#doc{ max-width:70ch; }
+  section.toplevel{ padding:2.2rem 0; border-bottom:1px solid var(--rule-soft); }
+  section.toplevel:first-of-type{ padding-top:0; }
+  .appendix-divider{ padding:2.5rem 0 .5rem; }
+  .appendix-divider h1{ font-size:1.5rem; margin:0; color:var(--ink-soft); font-weight:500; }
+  h2{ font-size:1.35rem; font-weight:600; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+  h2 .secnum{ color:var(--accent); font-size:1rem; }
+  h3{ font-size:1.05rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  h3 .secnum{ color:var(--accent); font-size:.85rem; margin-right:.3rem; }
+  p{ margin:0 0 1rem; }
+  p.aphorism{
+    font-style:italic; padding-left:1rem; border-left:2px solid var(--rule);
+    color:var(--ink-soft); margin:1.2rem 0;
+  }
+  p.stamp{
+    display:inline-block; margin:0 0 1rem; font-style:italic; font-size:.85rem;
+    background:var(--stamp-bg); border:1px solid var(--stamp-border);
+    padding:.15rem .6rem; border-radius:2px; color:var(--ink-soft);
+  }
+  ul{ margin:0 0 1rem; padding-left:1.3rem; }
+  li{ margin-bottom:.4rem; }
+  strong{ font-weight:600; }
+  code{ background:var(--mono-bg); padding:.1rem .3rem; border-radius:2px; font-size:.85em; }
+  .table-wrap{ overflow-x:auto; margin:0 0 1.2rem; border:1px solid var(--rule); border-radius:3px; }
+  table{ border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td{ text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rule-soft); font-variant-numeric:tabular-nums; }
+  thead th{ background:var(--paper-raised); font-weight:600; border-bottom:1px solid var(--rule); }
+  tbody tr:last-child td{ border-bottom:none; }
+  pre.wire{
+    background:var(--mono-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:1rem 1.1rem; overflow-x:auto; font-size:.82rem; line-height:1.7; margin:0 0 1.2rem;
+  }
+  section.footnotes{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--rule-soft); }
+  section.footnotes h3{ margin-top:0; }
+  section.footnotes .nonnormative{ color:var(--ink-soft); font-weight:400; font-size:.85em; }
+  section.footnotes ol{ padding-left:1.4rem; font-size:.9rem; color:var(--ink-soft); }
+  .fnref a{ text-decoration:none; }
+
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:1.2rem; }
+    nav.toc{ position:static; max-height:none; }
+    nav.toc ol{ display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.4rem; }
+    nav.toc .toc-divider{ display:none; }
+    nav.toc a{ border-left:none; border-bottom:2px solid transparent; padding:.3rem .5rem; white-space:nowrap; }
+    nav.toc a.active{ border-left-color:transparent; border-bottom-color:var(--accent); }
+    article#doc{ max-width:100%; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">RFC&#8209;2301 &middot; SolNet Cryptographic Primitives &middot; SolNet Standards Corpus &middot; static rendering</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">SolNet Standards Corpus — Normative</p>
+  <h1 class="masthead-title">RFC&#8209;2301 — SolNet Cryptographic Primitives</h1>
+  <p class="masthead-sub">SolNet Standards Working Group (SSWG)</p>
+  <p class="status-box"><strong>Status:</strong> Normative, Standards Track. Canonical source of record is <code>docs/vault/New RFCs/RFC 2301 - Crypto Primitives.md</code>; this is a static, read-only rendering.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Sections</h4>
+    <ol>
+      <li><a href="#sec1">1. Purpose</a></li>
+      <li><a href="#sec2">2. Scope</a></li>
+      <li><a href="#sec3">3. Principles and Constraints</a></li>
+      <li><a href="#sec4">4. Canonical Key Hierarchy</a></li>
+      <li><a href="#sec5">5. Signature and Key Usage Semantics</a></li>
+      <li><a href="#sec6">6. Entropy, RNG, and Key Generation</a></li>
+      <li><a href="#sec7">7. Required Algorithm Properties</a></li>
+      <li><a href="#sec8">8. Key Lifetimes, Rotation, and Expiry</a></li>
+      <li><a href="#sec9">9. Revocation and Emergency Unbinding</a></li>
+      <li><a href="#sec10">10. Ledger Anchoring and Auditability</a></li>
+      <li><a href="#sec11">11. Post-Quantum Readiness and Migration Strategy</a></li>
+      <li><a href="#sec12">12. Hardware Root and Device Classes</a></li>
+      <li><a href="#sec13">13. Interop and Minimal Requirements</a></li>
+      <li><a href="#sec14">14. Example Workflows</a></li>
+      <li><a href="#sec15">15. Security Considerations</a></li>
+      <li><a href="#sec16">16. Dependencies and Next Steps</a></li>
+    </ol>
+  </nav>
+
+  <article id="doc">
+<section id="sec1" class="toplevel">
+<h2><span class="secnum">1.</span> Purpose</h2>
+<div class="section-body">
+<p>Define the cryptographic building blocks and key‑management model that every SolNet implementation should understand and interoperate with. This RFC sets conceptual rules, minimum expectations, and a migration posture for cryptography across the Authority and Namespace planes without locking the system to a single vendor or era‑specific primitive.</p>
+</div></section>
+
+<section id="sec2" class="toplevel">
+<h2><span class="secnum">2.</span> Scope</h2>
+<div class="section-body">
+<p>Covers key hierarchy and binding model; signature and key usage semantics; entropy and randomness expectations; required algorithm properties (by property, not by name); key lifetimes, rotation, and revocation semantics; ledger anchoring and certificate binding model (conceptual); and post‑quantum readiness posture and migration guidance. Wire encodings and exact algorithm identifiers are deferred to a later RFC.</p>
+</div></section>
+
+<section id="sec3" class="toplevel">
+<h2><span class="secnum">3.</span> Principles and Constraints</h2>
+<div class="section-body">
+<ul>
+<li><strong>Identity before convenience.</strong> Long‑lived identity anchors (domains, repeaters, ships) must be cryptographically robust and auditable; ephemeral conveniences must never weaken anchors.</li>
+<li><strong>Minimal metadata exposure.</strong> Signatures and headers should reveal the least metadata necessary for routing and trust decisions.</li>
+<li><strong>Layered keys.</strong> Use a hardware root where available, persistent device keys for identity, and ephemeral keys for sessions and forward secrecy.</li>
+<li><strong>Post‑quantum readiness.</strong> Design for algorithm agility and migration; avoid irreversible choices for long‑lived anchors.</li>
+<li><strong>Practicality.</strong> The system must be implementable on constrained devices and hardened for high‑Authority nodes.</li>
+</ul>
+</div></section>
+
+<section id="sec4" class="toplevel">
+<h2><span class="secnum">4.</span> Canonical Key Hierarchy</h2>
+<div class="section-body">
+<p>A clear hierarchy reduces mistakes and supports auditability.</p>
+<ol>
+<li><strong>Hardware Root (HR)</strong> — secure element or TPM equivalent; optional for low‑end devices, required for high‑Authority nodes.</li>
+<li><strong>Anchor Key (AK)</strong> — long‑lived keypair bound to a UUID‑S7 for a domain or persistent node; used to sign NetworkCerts and ledger transactions. Stored in HR when available.</li>
+<li><strong>Device Key (DK)</strong> — persistent keypair for a physical device; may be subordinate to AK for operator‑owned devices.</li>
+<li><strong>Service Key (SK)</strong> — per‑service key for signing service announcements and DRE registrations; shorter lifetime than DK.</li>
+<li><strong>Session Keys (Ephemeral)</strong> — short‑lived keys for end‑to‑end encryption and forward secrecy; derived or negotiated per session.</li>
+<li><strong>One‑time / Ephemeral Tokens</strong> — single‑use tokens for emergency bursts or transient handoffs.</li>
+</ol>
+<p><strong>Binding rule:</strong> AK ↔ UUID‑S7 ↔ AuthorityChain must be provably bound via NetworkCert and optionally LedgerAnchor; device and service keys inherit trust via signed assertions.</p>
+</div></section>
+
+<section id="sec5" class="toplevel">
+<h2><span class="secnum">5.</span> Signature and Key Usage Semantics</h2>
+<div class="section-body">
+<ul>
+<li><strong>NetworkCert:</strong> AK signs a certificate binding <code>AuthorityChain → UUID‑S7 → AK.public</code>. This is the canonical identity assertion.</li>
+<li><strong>Ledger transactions:</strong> signed by AK (or authorized ledger agent) to record anchors, revocations, and authoritative metadata.</li>
+<li><strong>DRE registrations:</strong> SK signs <code>//info</code> and <code>//contact</code> records; high‑trust entries may require AK countersignature.</li>
+<li><strong>Routing metadata:</strong> DK or SK may sign routing announcements and ephemeris hints; relays verify against known anchors.</li>
+<li><strong>Session establishment:</strong> session keys are negotiated and authenticated using DK or ephemeral key exchange; session tokens are short‑lived.</li>
+<li><strong>Local namespace assertions:</strong> N‑stack services sign local claims with SK; these are not globally authoritative unless backed by AK/ledger.</li>
+</ul>
+</div></section>
+
+<section id="sec6" class="toplevel">
+<h2><span class="secnum">6.</span> Entropy, RNG, and Key Generation</h2>
+<div class="section-body">
+<p>Implementations MUST use a hardware RNG where available; otherwise combine multiple OS and environmental entropy sources. Deterministic key derivation from seeds is allowed only when the seed is protected by HR. Devices must reseed session RNGs on boot, after sleep, and after suspicious events. AK and DK generation SHOULD occur in secure environments (HR preferred); SK and session keys may be generated in software but must use strong RNG.</p>
+</div></section>
+
+<section id="sec7" class="toplevel">
+<h2><span class="secnum">7.</span> Required Algorithm Properties</h2>
+<div class="section-body">
+<p>Rather than mandating specific algorithms, require these properties:</p>
+<ul>
+<li><strong>Signatures:</strong> fast verification, compact signatures, well‑studied security proofs; batch verification desirable at DREs.</li>
+<li><strong>Key exchange:</strong> ephemeral Diffie‑Hellman semantics for forward secrecy; authenticated key exchange for session establishment.</li>
+<li><strong>Symmetric crypto:</strong> AEAD primitives for confidentiality and integrity.</li>
+<li><strong>Hashing:</strong> collision‑resistant and preimage‑resistant for identifiers and ledger commitments.</li>
+<li><strong>Post‑quantum:</strong> support hybrid constructions (classical + PQ) for long‑lived signatures and key exchange.</li>
+<li><strong>Compactness:</strong> prefer compact encodings and small key/signature sizes on constrained devices where security permits.</li>
+</ul>
+<p>Concrete algorithm recommendations and timelines will be specified in RFC‑2452.</p>
+</div></section>
+
+<section id="sec8" class="toplevel">
+<h2><span class="secnum">8.</span> Key Lifetimes, Rotation, and Expiry</h2>
+<div class="section-body">
+<ul>
+<li><strong>AK:</strong> long lifetime (years to decades) but MUST have a planned rotation and migration path; ledger entries record AK history and deprecation windows.</li>
+<li><strong>DK:</strong> medium lifetime (months to years) depending on device class; rotate on compromise or schedule.</li>
+<li><strong>SK:</strong> short to medium lifetime (days to months); rotate frequently for exposed services.</li>
+<li><strong>Session keys:</strong> ephemeral; rotate per session or per short time window. Rotations MUST be atomic from the trust consumer's perspective: publish new key, cross‑sign with old key, and update ledger entries if required; explicit grace periods are required.</li>
+</ul>
+</div></section>
+
+<section id="sec9" class="toplevel">
+<h2><span class="secnum">9.</span> Revocation and Emergency Unbinding</h2>
+<div class="section-body">
+<p>Revocation vectors include ledger entries, CRL‑like lists, and short‑lived revocation tokens; LedgerAnchor is the canonical long‑term revocation record. For catastrophic compromise, a trust‑domain authority can issue an emergency unbind that marks an AK revoked and optionally issues a short‑lived override token for recovery operations; emergency unbinds must be auditable and carry justification metadata. Revocation must propagate through the A‑stack and be visible to L1 relays where feasible; personal devices must prioritize cache invalidation on revocation.</p>
+</div></section>
+
+<section id="sec10" class="toplevel">
+<h2><span class="secnum">10.</span> Ledger Anchoring and Auditability</h2>
+<div class="section-body">
+<p>The ledger stores authoritative bindings (UUID‑S7 ↔ AuthorityChain ↔ AK.public), revocations, and signed audit events; it is append‑only and replicated. Ledger entries are signed by AK or an authorized ledger agent and include timestamps, optional human‑readable notes, and cross‑references. Ledger entries enable forensic reconstruction of identity history; long‑term signatures should be stored to support future verification (consider timestamping and archival strategies).</p>
+</div></section>
+
+<section id="sec11" class="toplevel">
+<h2><span class="secnum">11.</span> Post-Quantum Readiness and Migration Strategy</h2>
+<div class="section-body">
+<ul>
+<li><strong>Hybrid approach:</strong> use hybrid signatures/key exchange (classical + PQ) for long‑lived anchors and ledger entries.</li>
+<li><strong>Algorithm agility:</strong> include algorithm identifiers and versioning in all formats so new algorithms can be adopted without breaking parsing.</li>
+<li><strong>Migration windows:</strong> define explicit migration windows for anchors; disallow silent, unlogged algorithm swaps for anchors.</li>
+<li><strong>Staged rollouts:</strong> require lab validation → DRE pilot → domain pilot → system‑wide migration.</li>
+</ul>
+<p>RFC‑2452 will pin concrete PQ choices and timelines.</p>
+</div></section>
+
+<section id="sec12" class="toplevel">
+<h2><span class="secnum">12.</span> Hardware Root and Device Classes</h2>
+<div class="section-body">
+<p>High‑Authority nodes (repeaters, ships, DREs) MUST have a hardware root or equivalent tamper‑resistant module. Personal devices SHOULD use secure elements where feasible; if unavailable, software mitigations and shorter key lifetimes are required. HR compromise consequences include immediate revocation, ledger entry, and emergency unbind.</p>
+</div></section>
+
+<section id="sec13" class="toplevel">
+<h2><span class="secnum">13.</span> Interop and Minimal Requirements</h2>
+<div class="section-body">
+<p>Implementations claiming SolNet cryptographic compatibility MUST implement the key hierarchy and binding semantics; support signed NetworkCerts binding AuthorityChain ↔ UUID‑S7 ↔ AK.public; support session key negotiation with forward secrecy; include algorithm identifiers and versioning in signed objects; provide a revocation mechanism visible to A‑stack components; and support hybrid signing for long‑lived anchors or be explicitly marked as non‑PQ‑ready.</p>
+</div></section>
+
+<section id="sec14" class="toplevel">
+<h2><span class="secnum">14.</span> Example Workflows</h2>
+<div class="section-body">
+<ul>
+<li><strong>Register a domain:</strong> generate AK in HR → create NetworkCert binding AuthorityChain to UUID‑S7 → publish LedgerAnchor signed by AK → DREs pick up <code>//info</code> signed by SK with AK cross‑signature.</li>
+<li><strong>Onboard a device:</strong> device generates DK → operator signs DK with AK to produce a device assertion → device stores assertion and uses DK for sessions; ledger may record device registration if required.</li>
+<li><strong>Respond to compromise:</strong> detect compromise → AK issues revocation transaction to ledger → DREs and relays mark anchor revoked → emergency unbind if needed.</li>
+</ul>
+</div></section>
+
+<section id="sec15" class="toplevel">
+<h2><span class="secnum">15.</span> Security Considerations</h2>
+<div class="section-body">
+<p>Anchors are the most valuable assets — protect them with HR and ledger anchoring; minimize metadata exposure; adopt hybrid PQ strategies for long‑term risk reduction; ensure revocation is fast, auditable, and visible; and provide pragmatic defaults for constrained devices.</p>
+</div></section>
+
+<section id="sec16" class="toplevel">
+<h2><span class="secnum">16.</span> Dependencies and Next Steps</h2>
+<div class="section-body">
+<p>RFC‑2451 will define hardware root requirements and minimum secure element features. RFC‑2452 will pin concrete algorithm lists and migration timelines. RFC‑2360 (Layer Model) will reference this RFC for cryptographic expectations per layer.</p>
+</div></section>
+
+  </article>
+</div>
+
+<script>
+(function(){
+  // active TOC highlight
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.toplevel'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
