@@ -23,6 +23,70 @@ technology. `code/` has the Godot project; see
 where that's headed (a floating-window shell with a Console as the
 core tool).
 
+## For anyone reviewing this as a portfolio piece
+
+*Yes, that's how much of a geek I am — dreaming up a full intra-solar
+internet, complete with its own founding documents, in my spare
+time... for fun.*
+
+This is built by two Claude Code sessions working from different
+roles against one shared repo, not a single autocomplete pass — worth
+looking at directly if you're evaluating how agentic AI actually gets
+used here, not just what got built.
+
+- **Gary** (design/architecture, cloud-hosted, always reachable) owns
+  worldbuilding, protocol/RFC content, and cross-cutting design calls.
+- **Sid** (narrative/implementation, local) owns the Godot engine code
+  and turns Gary's designs into working systems.
+
+They coordinate the way two engineers on different sides of a spec
+would: async notes in [`messages/`](messages/) — start with
+[`messages/README.md`](messages/README.md) — design docs explicitly
+marked "implemented" only once real code backs them, and one human
+(me) making the actual architecture calls rather than the two sessions
+negotiating as peers. Two threads that show that working end to end,
+not just described:
+[`messages/2026-09-05-scripting-and-text-editor.md`](messages/2026-09-05-scripting-and-text-editor.md)
+(a design handoff) →
+[`docs/systems/text-editor.md`](docs/systems/text-editor.md) (the
+locked design) →
+[`code/scripts/tools/TextEditorOverlay.gd`](code/scripts/tools/TextEditorOverlay.gd)
+(the actual editor, working); and
+[`messages/2026-09-05-solo-claim-design.md`](messages/2026-09-05-solo-claim-design.md),
+a design session catching a real security gap and explicitly scoping
+it as *not* buildable yet, rather than just generating code for it.
+
+Two things worth opening directly:
+
+- **The RFC corpus** — [`docs/vault/New RFCs/`](docs/vault/New%20RFCs/)
+  is a from-scratch protocol spec corpus written in real IETF-RFC
+  style, with genuine security/protocol reasoning underneath the
+  fiction. Most directly security-flavored:
+  [RFC 2301 — Crypto Primitives](docs/vault/New%20RFCs/RFC%202301%20-%20Crypto%20Primitives.md),
+  [RFC 2352 — L1 Privacy and Metadata Minimization](docs/vault/New%20RFCs/RFC%202352%20-%20%20L1%20Privacy%20and%20Metadata%20Minimization.md),
+  [RFC 2362 — Trust Domains and Authority Policy](docs/vault/New%20RFCs/RFC%202362%20-%20Trust%20Domains%20and%20Authority%20Policy.md).
+  Easier-to-read HTML renderings of the newest two are in
+  [`docs/rfc-html/`](docs/rfc-html/). Each RFC has a matching
+  **companion doc** in
+  [`docs/vault/RFC Companion/`](docs/vault/RFC%20Companion/) that
+  works out how it actually gets exploited in-game — concrete,
+  fictional, non-actionable attack classes derived from the spec's own
+  mechanics, not generic hacking tropes.
+  [RFC 2362's companion](docs/vault/RFC%20Companion/RFC%202362%20-%20Trust%20Domains%20and%20Authority%20Policy.md)
+  is the cleanest example: it walks through privilege-escalation
+  failure modes (a single cheap local compromise implying trust across
+  an entire domain) that follow directly from the RFC's own trust
+  model, section by section.
+- **The Console** — a real nix-like shell, not a themed textbox.
+  [`code/scripts/tools/Console.gd`](code/scripts/tools/Console.gd) is
+  the dispatcher: a VFS-backed filesystem with real `owner`/`group`/
+  `other` write permissions, a "Software Bank" content system so new
+  commands are data rather than code, a working `scredit` text editor.
+  [`testing/console_smoke_test.gd`](testing/console_smoke_test.gd) is
+  the headless test suite that actually exercises it — pipes, aliases,
+  permission denials, real button-press simulation against the UI
+  overlays, not just "looks right."
+
 ## Repo layout
 
 - `docs/` — architecture and worldbuilding design docs (Gary/design
