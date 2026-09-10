@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFC-2352 — L1 Privacy and Metadata Minimization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EAEBE4; --paper-raised:#F2F3ED; --ink:#1B1D1C; --ink-soft:#54574B;
+    --rule:#B8BBAF; --rule-soft:#CBCEC1; --accent:#8A3324; --accent-soft:#A8462F;
+    --stamp-bg:#DCDED3; --stamp-border:#9C9F8F; --mono-bg:#E2E3DC;
+    --toolbar-bg:#DEDFD6; --focus:#8A3324; --danger:#8A3324;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+      --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+      --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+    --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+    --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,.stamp,.masthead-title{ font-family:"Newsreader", Georgia, serif; text-wrap:balance; }
+  code, .secnum, .table-wrap table, .wire, kbd{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+
+  a{ color:var(--accent); }
+  a:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  /* ---- doc bar (static identity strip, no edit affordances) ---- */
+  .docbar{
+    position:sticky; top:0; z-index:20; background:var(--toolbar-bg);
+    border-bottom:1px solid var(--rule); padding:.6rem 1.25rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    max-width:1200px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  .masthead-title{ font-size:2.1rem; font-weight:600; margin:0 0 .4rem; }
+  .masthead-sub{ font-style:italic; color:var(--ink-soft); margin:0 0 1rem; font-size:1rem; }
+  .status-box{
+    display:inline-block; border:1px solid var(--rule); background:var(--paper-raised);
+    padding:.6rem .9rem; font-size:.85rem; color:var(--ink-soft); border-radius:3px;
+  }
+  .status-box strong{ color:var(--ink); }
+
+  /* ---- layout ---- */
+  .layout{
+    max-width:1200px; margin:0 auto; padding:2rem 1.5rem 6rem;
+    display:grid; grid-template-columns:260px minmax(0,1fr); gap:3rem;
+    align-items:start;
+  }
+  nav.toc{ position:sticky; top:4.2rem; max-height:calc(100vh - 5.5rem); overflow-y:auto; }
+  nav.toc h4{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  nav.toc ol{ list-style:none; margin:0; padding:0; }
+  nav.toc li{ margin:0; }
+  nav.toc a{
+    display:block; padding:.3rem 0; color:var(--ink-soft); text-decoration:none;
+    font-size:.87rem; border-left:2px solid transparent; padding-left:.6rem;
+  }
+  nav.toc a:hover{ color:var(--ink); }
+  nav.toc a.active{ color:var(--accent); border-left-color:var(--accent); font-weight:500; }
+  nav.toc .toc-divider{
+    margin:.9rem 0 .4rem; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); border-top:1px solid var(--rule-soft); padding-top:.7rem;
+  }
+
+  article#doc{ max-width:70ch; }
+  section.toplevel{ padding:2.2rem 0; border-bottom:1px solid var(--rule-soft); }
+  section.toplevel:first-of-type{ padding-top:0; }
+  .appendix-divider{ padding:2.5rem 0 .5rem; }
+  .appendix-divider h1{ font-size:1.5rem; margin:0; color:var(--ink-soft); font-weight:500; }
+  h2{ font-size:1.35rem; font-weight:600; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+  h2 .secnum{ color:var(--accent); font-size:1rem; }
+  h3{ font-size:1.05rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  h3 .secnum{ color:var(--accent); font-size:.85rem; margin-right:.3rem; }
+  p{ margin:0 0 1rem; }
+  p.aphorism{
+    font-style:italic; padding-left:1rem; border-left:2px solid var(--rule);
+    color:var(--ink-soft); margin:1.2rem 0;
+  }
+  p.stamp{
+    display:inline-block; margin:0 0 1rem; font-style:italic; font-size:.85rem;
+    background:var(--stamp-bg); border:1px solid var(--stamp-border);
+    padding:.15rem .6rem; border-radius:2px; color:var(--ink-soft);
+  }
+  ul{ margin:0 0 1rem; padding-left:1.3rem; }
+  li{ margin-bottom:.4rem; }
+  strong{ font-weight:600; }
+  code{ background:var(--mono-bg); padding:.1rem .3rem; border-radius:2px; font-size:.85em; }
+  .table-wrap{ overflow-x:auto; margin:0 0 1.2rem; border:1px solid var(--rule); border-radius:3px; }
+  table{ border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td{ text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rule-soft); font-variant-numeric:tabular-nums; }
+  thead th{ background:var(--paper-raised); font-weight:600; border-bottom:1px solid var(--rule); }
+  tbody tr:last-child td{ border-bottom:none; }
+  pre.wire{
+    background:var(--mono-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:1rem 1.1rem; overflow-x:auto; font-size:.82rem; line-height:1.7; margin:0 0 1.2rem;
+  }
+  section.footnotes{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--rule-soft); }
+  section.footnotes h3{ margin-top:0; }
+  section.footnotes .nonnormative{ color:var(--ink-soft); font-weight:400; font-size:.85em; }
+  section.footnotes ol{ padding-left:1.4rem; font-size:.9rem; color:var(--ink-soft); }
+  .fnref a{ text-decoration:none; }
+
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:1.2rem; }
+    nav.toc{ position:static; max-height:none; }
+    nav.toc ol{ display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.4rem; }
+    nav.toc .toc-divider{ display:none; }
+    nav.toc a{ border-left:none; border-bottom:2px solid transparent; padding:.3rem .5rem; white-space:nowrap; }
+    nav.toc a.active{ border-left-color:transparent; border-bottom-color:var(--accent); }
+    article#doc{ max-width:100%; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">RFC&#8209;2352 &middot; L1 Privacy and Metadata Minimization &middot; SolNet Standards Corpus &middot; static rendering</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">SolNet Standards Corpus — Normative</p>
+  <h1 class="masthead-title">RFC&#8209;2352 — L1 Privacy &amp; Metadata Minimization</h1>
+  <p class="masthead-sub">Prepared under the authority of the SolNet Physical&#8209;Layer Exposure Review Board (SPERB)</p>
+  <p class="status-box"><strong>Status:</strong> Normative, Standards Track. Canonical source of record is <code>docs/vault/New RFCs/RFC 2352 -  L1 Privacy and Metadata Minimization.md</code>; this is a static, read-only rendering.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Sections</h4>
+    <ol>
+      <li><a href="#frontmatter">Front Matter</a></li>
+      <li><a href="#sec1">1. Introduction</a></li>
+      <li><a href="#sec2">2. Scope and Definitions</a></li>
+      <li><a href="#sec3">3. Mandatory Minimization Requirements</a></li>
+      <li><a href="#sec4">4. Prohibited Metadata Fields</a></li>
+      <li><a href="#sec5">5. Exposure Precedents</a></li>
+      <li><a href="#sec6">6. Enforcement and Compliance</a></li>
+      <li><a href="#sec7">7. Residual Handling Requirements</a></li>
+      <li><a href="#sec8">8. Diagnostic and Debugging Restrictions</a></li>
+      <li><a href="#sec9">9. Side&#8209;Channel Suppression</a></li>
+      <li><a href="#sec10">10. Trust&#8209;Domain Isolation Requirements</a></li>
+      <li><a href="#sec11">11. Inter&#8209;Layer Containment Requirements</a></li>
+      <li><a href="#sec12">12. Prohibited Optional Behaviors</a></li>
+      <li><a href="#sec13">13. Canonical TLV Ordering Requirements</a></li>
+      <li><a href="#sec14">14. Error Handling Requirements</a></li>
+      <li><a href="#sec15">15. Frame Construction Requirements</a></li>
+      <li><a href="#sec16">16. Forwarding Behavior Requirements</a></li>
+      <li><a href="#sec17">17. Relay State Invariance Requirements</a></li>
+      <li><a href="#sec18">18. Power, Thermal, and Environmental Invariance</a></li>
+      <li><a href="#sec19">19. Physical&#8209;Layer Modulation Requirements</a></li>
+      <li><a href="#sec20">20. Hardware Identity Suppression</a></li>
+      <li><a href="#sec21">21. Anti&#8209;Correlation Requirements</a></li>
+      <li><a href="#sec22">22. Temporal Invariance Requirements</a></li>
+      <li><a href="#sec23">23. Spatial Invariance Requirements</a></li>
+      <li><a href="#sec24">24. Multi&#8209;Path and Multi&#8209;Channel Invariance Requirements</a></li>
+      <li><a href="#sec25">25. Multi&#8209;Device Behavioral Convergence Requirements</a></li>
+      <li><a href="#sec26">26. Cross&#8209;Vendor Timing Convergence Requirements</a></li>
+      <li><a href="#sec27">27. Multi&#8209;Rate and Multi&#8209;Modulation Invariance Requirements</a></li>
+      <li><a href="#sec28">28. Duplexing and Directional Invariance Requirements</a></li>
+      <li><a href="#sec29">29. Antenna and RF Front&#8209;End Invariance Requirements</a></li>
+      <li><a href="#sec30">30. Clock and Oscillator Discipline Invariance Requirements</a></li>
+      <li><a href="#sec31">31. Environmental Noise and Interference Invariance Requirements</a></li>
+      <li><a href="#sec32">32. Power&#8209;Cycle and Boot&#8209;Sequence Invariance Requirements</a></li>
+      <li><a href="#sec33">33. Manufacturing&#8209;Batch and Component&#8209;Aging Invariance Requirements</a></li>
+      <li><a href="#sec34">34. Compliance Levels and Conformance Classes</a></li>
+      <li><a href="#sec35">35. Test Vectors and Non&#8209;Exposure Validation Requirements</a></li>
+      <li><a href="#sec36">36. Forbidden Behaviors Summary</a></li>
+      <li><a href="#sec37">37. Security Considerations</a></li>
+      <li><a href="#sec38">38. Interoperability Considerations</a></li>
+      <li><a href="#sec39">39. Implementation Guidance (Non&#8209;Normative)</a></li>
+      <li><a href="#sec39dup">39. Implementation Guidance (Non&#8209;Normative)</a></li>
+      <li><a href="#sec41">41. Glossary</a></li>
+      <li><a href="#sec42">42. References</a></li>
+    </ol>
+    <div class="toc-divider">Appendices</div>
+    <ol>
+      <li><a href="#appA">A. Rationale for Layer&#8209;1 Invariance</a></li>
+      <li><a href="#appB">B. Formal Non&#8209;Exposure Proof Sketch</a></li>
+      <li><a href="#appC">C. Test Vector Overview</a></li>
+      <li><a href="#appD">D. Deployment Guidance</a></li>
+      <li><a href="#appE">E. Security Considerations</a></li>
+      <li><a href="#appF">F. Known Non&#8209;Compliant Patterns</a></li>
+      <li><a href="#appG">G. Historical Context</a></li>
+      <li><a href="#appH">H. SPERB Procedural Rules</a></li>
+      <li><a href="#appI">I. Implementation Notes for Non&#8209;Simulation Environments</a></li>
+      <li><a href="#appJ">J. SPERB Organizational Structure</a></li>
+      <li><a href="#appK">K. Authorship</a></li>
+    </ol>
+  </nav>
+
+  <article id="doc">
+<section id="frontmatter" class="toplevel">
+<h2>Front Matter</h2>
+<div class="section-body">
+<p><strong>Title:</strong><br>SolNet RFC‑2306 — Layer‑1 Invariance Specification</p>
+<p><strong>Status:</strong><br>Active Standard — Canonical and Normative</p>
+<p><strong>Abstract:</strong><br>This document defines the mandatory Layer‑1 invariance requirements for all SolNet devices and relays. It prohibits any observable variation in physical‑layer emissions that could expose identity, state, environment, topology, or implementation details. Compliance ensures indistinguishability across devices, conditions, and operational states.</p>
+<p><strong>Preface:</strong><br>Layer‑1 invariance is the doctrinal foundation of SolNet privacy and interoperability. Conventional RF systems leak metadata through timing, modulation, amplitude, and structural variation. SolNet rejects this model. Instead, all devices emit a single canonical physical‑layer behavior, eliminating fingerprinting vectors and preventing adversarial inference. This specification defines the mandatory requirements, prohibitions, and validation procedures necessary to achieve complete non‑exposure at the physical layer.</p>
+</div></section>
+
+<section id="sec1" class="toplevel">
+<h2><span class="secnum">1.</span> Introduction</h2>
+<div class="section-body">
+<p>SolNet Layer 1 traffic has historically exposed excessive metadata, enabling reconstruction of user behavior, device identity, movement patterns, and trust‑domain relationships. These exposures have contributed directly to multiple system‑wide failures, including the Pallas Exposure Event, the Metadata Leak of ’39, and the residuals recovered after the Anderson Station incident. Each event demonstrated that metadata not strictly required for frame delivery constitutes an unacceptable risk.</p>
+<p>This document defines the mandatory privacy and minimization requirements for all SolNet Layer 1 implementations. It specifies which fields SHALL be suppressed, which metadata SHALL NOT be retained, and which optional behaviors SHALL be prohibited. Devices, relays, and operators are required to remove all non‑essential information prior to emission or forwarding. Retention of metadata beyond the minimum operational interval is forbidden.</p>
+<p>The requirements in this document supersede all vendor‑specific behaviors, performance optimizations, and legacy practices. Interoperability considerations do not justify exposure. Convenience does not justify exposure. Historical precedent confirms that exposure leads to predictable harm.</p>
+<p>Compliance with RFC‑2352 is mandatory for all SolNet‑connected systems. Non‑compliant devices SHALL be removed from the network. Vendor deviations SHALL be treated as exposure events. Operators SHALL verify minimization at deployment and SHALL conduct periodic audits to ensure continued adherence.</p>
+<p>The default state is absence.<br>Emission requires justification.<br>Retention is prohibited.</p>
+</div></section>
+
+<section id="sec2" class="toplevel">
+<h2><span class="secnum">2.</span> Scope and Definitions</h2>
+<div class="section-body">
+<p>This document applies to all SolNet Layer 1 devices, relays, terminals, and communication systems operating within any trust‑domain. The requirements herein supersede all vendor‑specific behaviors, legacy implementations, and optional extensions. No device is exempt.</p>
+<p>The scope of this document is limited to metadata generated, retained, or emitted at Layer 1. Higher‑layer identifiers, routing constructs, and trust‑domain policies are addressed in separate specifications and SHALL NOT expand the metadata permitted at Layer 1.</p>
+<p>For the purposes of this document, the following definitions apply:</p>
+<p><strong>Metadata</strong><br>Any information not strictly required for the delivery of a frame. This includes, but is not limited to, origin identifiers, device characteristics, timestamps, hop histories, hardware serials, vendor fields, and any data that enables reconstruction of user behavior or network topology.</p>
+<p><strong>Exposure</strong><br>The emission, retention, or derivation of metadata beyond the minimum required for frame delivery. Exposure is a violation regardless of intent, duration, or operational context.</p>
+<p><strong>Minimization</strong><br>The removal of all metadata not explicitly mandated by this specification. Minimization is the default state. Emission requires justification. Retention is prohibited.</p>
+<p><strong>Residuals</strong><br>Metadata remaining after processing or forwarding. Residuals SHALL be eliminated prior to emission. Devices SHALL NOT store residuals for any purpose.</p>
+<p><strong>Over‑collection</strong><br>The generation or retention of metadata beyond the minimum required for operation. Over‑collection constitutes an exposure event and SHALL be treated accordingly.</p>
+<p><strong>Optional Fields</strong><br>Fields not required for frame delivery. Optional fields are prohibited unless explicitly authorized by this specification. Vendor‑defined optional fields are not permitted.</p>
+<p><strong>Operational Interval</strong><br>The minimum time required for a device to process and forward a frame. Metadata SHALL NOT be retained beyond this interval.</p>
+<p><strong>Trust‑Domain Policy</strong><br>Rules governing identity, routing, or access control at higher layers. Trust‑domain policy SHALL NOT introduce additional metadata at Layer 1.</p>
+<p>These definitions SHALL be used consistently throughout this document.<br>Ambiguity does not justify exposure.<br>Interpretation does not justify exposure.<br>Historical precedent confirms that exposure leads to predictable harm.</p>
+</div></section>
+
+<section id="sec3" class="toplevel">
+<h2><span class="secnum">3.</span> Mandatory Minimization Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL emit only the metadata explicitly required for the delivery of a frame. All other metadata constitutes exposure and is prohibited. The following requirements apply to all Layer 1 implementations without exception.</p>
+<p>Devices SHALL remove all non‑essential fields prior to emission. Devices SHALL NOT generate, retain, or forward metadata beyond the minimum required for operational correctness. Vendor‑defined extensions, optional fields, and diagnostic identifiers SHALL NOT appear in any Layer 1 frame.</p>
+<p>Relays SHALL NOT preserve metadata from previous hops. Residuals SHALL be eliminated before forwarding. Hop identifiers, processing timestamps, and device characteristics SHALL NOT be retained or derived.</p>
+<p>Devices SHALL NOT include origin identifiers, hardware serials, manufacturing data, or vendor‑specific markers in any TLV. These fields are unnecessary for frame delivery and constitute over‑collection.</p>
+<p>Frame construction SHALL NOT introduce additional metadata for convenience, debugging, or performance optimization. Any metadata not mandated by this specification SHALL be suppressed.</p>
+<p>Minimization SHALL occur prior to emission, not after forwarding. Devices SHALL NOT rely on downstream relays to remove prohibited metadata. Each device is independently responsible for ensuring that no exposure occurs.</p>
+<p>Metadata retention beyond the operational interval is prohibited. Devices SHALL NOT store, cache, or archive metadata for later analysis, optimization, or correlation. Retention constitutes exposure regardless of duration.</p>
+<p>Trust‑domain policy SHALL NOT expand the metadata permitted at Layer 1. Identity, routing, and access‑control constructs defined at higher layers SHALL NOT introduce additional fields into Layer 1 frames.</p>
+<p>Compliance with these requirements is mandatory. Non‑compliant devices SHALL be removed from SolNet. Vendor deviations SHALL be treated as exposure events. Operators SHALL verify minimization at deployment and SHALL conduct periodic audits to ensure continued adherence.</p>
+</div></section>
+
+<section id="sec4" class="toplevel">
+<h2><span class="secnum">4.</span> Prohibited Metadata Fields</h2>
+<div class="section-body">
+<p>The following metadata fields SHALL NOT appear in any Layer 1 frame. These prohibitions apply regardless of device role, trust‑domain policy, vendor implementation, or operational context. No exceptions are permitted.</p>
+<p>Devices SHALL NOT emit origin identifiers of any form. This includes device IDs, user IDs, account references, or any construct that enables attribution of a frame to a specific entity.</p>
+<p>Devices SHALL NOT emit hardware serial numbers, manufacturing data, firmware identifiers, or vendor‑specific markers. These fields enable correlation across frames and constitute over‑collection.</p>
+<p>Devices SHALL NOT emit timestamps, clock values, or temporal markers. Temporal metadata enables reconstruction of movement patterns and SHALL be suppressed.</p>
+<p>Devices SHALL NOT emit hop histories, relay identifiers, or intermediate processing information. Layer 1 forwarding does not require these fields, and their presence constitutes exposure.</p>
+<p>Devices SHALL NOT emit geographic, positional, or ephemeris‑derived metadata. Location information is unnecessary for frame delivery and SHALL NOT be present at Layer 1.</p>
+<p>Devices SHALL NOT emit diagnostic fields, debugging markers, or performance metrics. These fields are prohibited regardless of vendor justification.</p>
+<p>Devices SHALL NOT emit trust‑domain identifiers, access‑control markers, or routing hints originating from higher layers. Trust‑domain policy SHALL NOT introduce additional metadata at Layer 1.</p>
+<p>Devices SHALL NOT emit user‑agent strings, software versions, or implementation details. These fields enable fingerprinting and SHALL be suppressed.</p>
+<p>Devices SHALL NOT emit optional fields unless explicitly authorized by this specification. Vendor‑defined optional fields are not permitted.</p>
+<p>Any metadata not explicitly required for frame delivery is prohibited. Emission constitutes exposure. Retention constitutes exposure. Derivation constitutes exposure.</p>
+</div></section>
+
+<section id="sec5" class="toplevel">
+<h2><span class="secnum">5.</span> Exposure Precedents</h2>
+<div class="section-body">
+<p>The requirements in this document are informed by repeated exposure events across multiple decades. Each event demonstrated that metadata not strictly required for frame delivery enables reconstruction of user behavior, device identity, or network topology. The following precedents establish the necessity of strict minimization at Layer 1.</p>
+<p><strong>Vesta Blockade Failure</strong><br>Excessive metadata enabled correlation of military traffic, revealing operational intent and contributing to escalation. Origin identifiers and temporal markers present in Layer 1 frames were used to reconstruct movement patterns. These fields SHALL NOT appear in any implementation.</p>
+<p><strong>Pallas Exposure Event</strong><br>Retention of device characteristics and hop histories enabled reconstruction of civilian movement patterns during a period of governance instability. Metadata retained beyond the operational interval contributed directly to loss of station control. Retention of such metadata is prohibited.</p>
+<p><strong>Anderson Station Exposure Failure</strong><br>Civilian surrender messages were unable to reach the UN fleet due to centralized relay control. All transmissions were routed through Fleet Command, where messages were delayed, altered, or not retransmitted. Metadata retention and relay‑side decision‑making enabled selective suppression of traffic and contributed directly to misinterpretation of intent. Devices SHALL NOT rely on centralized authorities for retransmission, and SHALL NOT retain metadata that enables selective forwarding.</p>
+<p><strong>Metadata Leak of ’39</strong><br>Vendor‑defined TLVs exposed user behavior, device identity, and trust‑domain relationships. Optional fields and proprietary extensions were used to derive patterns not intended for disclosure. Vendor‑defined optional fields are prohibited.</p>
+<p><strong>Dual‑Parse TLV Incident</strong><br>Incorrect TLV ordering created frames that parsed differently across vendor implementations, exposing internal device characteristics and processing behavior. Canonical ordering SHALL be enforced to prevent exposure through divergent interpretation.</p>
+<p><strong>Fallback Optical Misfire</strong><br>A relay operating in fallback mode emitted simplified frames containing diagnostic markers and temporal metadata. These fields enabled correlation across frames and constituted exposure. Diagnostic metadata SHALL NOT be emitted under any circumstances.</p>
+<p>These precedents confirm that metadata not explicitly required for frame delivery leads to predictable harm. Minimization is mandatory. Emission, retention, or derivation of prohibited metadata constitutes exposure.</p>
+</div></section>
+
+<section id="sec6" class="toplevel">
+<h2><span class="secnum">6.</span> Enforcement and Compliance</h2>
+<div class="section-body">
+<p>Compliance with this specification is mandatory for all SolNet Layer 1 devices, relays, and operators. Devices SHALL implement minimization at emission and SHALL NOT rely on downstream systems to remove prohibited metadata. Each device is independently responsible for preventing exposure.</p>
+<p>Vendors SHALL implement this specification without modification. Vendor‑defined extensions, optional fields, and diagnostic behaviors SHALL NOT introduce additional metadata at Layer 1. Any deviation from the requirements in this document constitutes an exposure event.</p>
+<p>Operators SHALL verify compliance prior to deployment. Devices SHALL undergo periodic audits to confirm continued adherence. Audit procedures SHALL include verification of emitted frames, inspection of device configurations, and confirmation that no metadata is retained beyond the operational interval.</p>
+<p>Relays SHALL NOT perform selective forwarding based on metadata not required for frame delivery. Retention or evaluation of such metadata enables suppression, correlation, or misinterpretation of traffic and is prohibited.</p>
+<p>Devices found to emit, retain, or derive prohibited metadata SHALL be removed from SolNet. Operators SHALL isolate non‑compliant systems immediately upon detection. Vendors SHALL provide corrective updates within the remediation interval defined by governing trust‑domain policy.</p>
+<p>Exposure events SHALL be reported to the appropriate oversight body. Reports SHALL include a description of the prohibited metadata, the duration of exposure, and the corrective actions taken. Failure to report exposure events constitutes non‑compliance.</p>
+<p>Compliance is not optional. Minimization is not advisory. Exposure is a violation.</p>
+</div></section>
+
+<section id="sec7" class="toplevel">
+<h2><span class="secnum">7.</span> Residual Handling Requirements</h2>
+<div class="section-body">
+<p>Devices SHALL eliminate all residual metadata prior to emission. Residuals include any information derived from previous processing steps, intermediate states, or internal device behavior. Residuals SHALL NOT be preserved, forwarded, or made observable through any field, TLV, or side channel.</p>
+<p>Relays SHALL NOT retain metadata from prior hops. Processing timestamps, queue positions, retry counters, and internal routing decisions constitute residuals and SHALL be removed before forwarding. Retention of such metadata enables correlation across frames and is prohibited.</p>
+<p>Devices SHALL NOT expose internal state transitions, fallback indicators, diagnostic markers, or error conditions through Layer 1 metadata. These fields enable reconstruction of device behavior and SHALL NOT appear in any implementation.</p>
+<p>Residual metadata SHALL NOT be used to influence forwarding decisions. Devices SHALL NOT evaluate or interpret metadata not required for frame delivery. Selective forwarding based on residuals constitutes exposure.</p>
+<p>Devices SHALL ensure that minimization occurs before emission, regardless of operational mode. Fallback, degraded, or maintenance states SHALL NOT introduce additional metadata. All modes of operation are subject to the same minimization requirements.</p>
+<p>Residuals SHALL NOT persist across power cycles, configuration changes, or trust‑domain transitions. Devices SHALL NOT store residual metadata for analysis, optimization, or correlation. Retention beyond the operational interval constitutes exposure.</p>
+<p>Elimination of residuals is mandatory. Any device that emits, retains, or derives residual metadata is non‑compliant.</p>
+</div></section>
+
+<section id="sec8" class="toplevel">
+<h2><span class="secnum">8.</span> Diagnostic and Debugging Restrictions</h2>
+<div class="section-body">
+<p>Devices SHALL NOT emit diagnostic metadata at Layer 1. Debugging markers, error codes, performance metrics, fallback indicators, and implementation details enable correlation across frames and constitute exposure. These fields are prohibited in all operational modes.</p>
+<p>Devices SHALL NOT expose internal state transitions through TLVs, padding regions, timing variations, or side channels. Any metadata that reveals processing behavior, queue depth, retry attempts, or hardware condition SHALL be suppressed.</p>
+<p>Diagnostic functionality SHALL NOT rely on Layer 1 metadata. Vendors SHALL implement debugging and maintenance procedures through out‑of‑band mechanisms that do not modify, annotate, or influence Layer 1 frames.</p>
+<p>Relays operating in degraded, fallback, or maintenance modes SHALL continue to enforce full minimization. These modes SHALL NOT introduce additional metadata, simplified frame formats, or diagnostic markers. All operational states are subject to identical minimization requirements.</p>
+<p>Devices SHALL NOT emit metadata for testing, profiling, or performance evaluation. Test harnesses, benchmarking tools, and vendor instrumentation SHALL NOT modify Layer 1 behavior. Any metadata generated for diagnostic purposes constitutes exposure.</p>
+<p>Devices SHALL NOT provide configuration options that enable or disable minimization. Minimization is mandatory and SHALL NOT be user‑selectable, operator‑selectable, or vendor‑selectable.</p>
+<p>Diagnostic metadata SHALL NOT be retained beyond the operational interval. Devices SHALL NOT store logs, traces, or internal metrics that include Layer 1 metadata. Retention constitutes exposure regardless of duration or intent.</p>
+<p>Debugging SHALL NOT compromise minimization. Any device that emits or retains diagnostic metadata at Layer 1 is non‑compliant.</p>
+</div></section>
+
+<section id="sec9" class="toplevel">
+<h2><span class="secnum">9.</span> Side‑Channel Suppression</h2>
+<div class="section-body">
+<p>Devices SHALL NOT emit, derive, or permit side‑channel metadata at Layer 1. Any observable variation in timing, frame structure, padding behavior, or error handling that enables inference of device identity, internal state, or processing characteristics constitutes exposure and is prohibited.</p>
+<p>Devices SHALL ensure that emission timing does not reveal queue depth, processing load, retry attempts, or fallback transitions. Timing variations that enable correlation across frames SHALL be suppressed. Devices SHALL implement constant‑time emission where required to prevent inference.</p>
+<p>Frame padding SHALL NOT encode information, intentionally or unintentionally. Padding regions SHALL contain no distinguishable patterns, markers, or implementation artifacts. Devices SHALL NOT use padding for diagnostics, alignment, or vendor‑specific signaling.</p>
+<p>Error behavior SHALL NOT expose internal state. Devices SHALL NOT emit distinct error patterns, retry sequences, or malformed‑frame signatures that enable fingerprinting. All error conditions SHALL be handled without introducing observable metadata.</p>
+<p>Devices SHALL NOT expose hardware characteristics through modulation artifacts, amplitude variations, or spectral signatures. Physical‑layer behavior SHALL NOT reveal device identity or implementation details.</p>
+<p>Side‑channel suppression is mandatory. Any device that emits or enables inference of metadata through timing, structure, or physical characteristics is non‑compliant.</p>
+</div></section>
+
+<section id="sec10" class="toplevel">
+<h2><span class="secnum">10.</span> Trust‑Domain Isolation Requirements</h2>
+<div class="section-body">
+<p>Trust‑domain policy SHALL NOT introduce additional metadata at Layer 1. Identity, authorization, and routing constructs defined at higher layers SHALL remain confined to their respective layers and SHALL NOT modify, annotate, or influence Layer 1 frames.</p>
+<p>Devices operating within a trust‑domain SHALL NOT emit identifiers that reveal domain membership, access level, or policy state. Domain‑specific markers, role indicators, and privilege attributes constitute exposure and are prohibited.</p>
+<p>Relays SHALL NOT perform Layer 1 differentiation based on trust‑domain affiliation. Forwarding decisions SHALL NOT depend on identity, authorization state, or any metadata not required for frame delivery. Selective forwarding based on trust‑domain information constitutes exposure.</p>
+<p>Trust‑domain transitions SHALL NOT introduce additional metadata. Devices SHALL NOT emit markers indicating entry, exit, or traversal of a domain boundary. Boundary‑specific behavior SHALL NOT modify Layer 1 frames.</p>
+<p>Devices SHALL NOT retain metadata associated with trust‑domain policy. Authorization decisions, identity assertions, and access‑control evaluations SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Trust‑domain isolation is mandatory. Any device that emits, derives, or retains trust‑domain metadata at Layer 1 is non‑compliant.</p>
+</div></section>
+
+<section id="sec11" class="toplevel">
+<h2><span class="secnum">11.</span> Inter‑Layer Containment Requirements</h2>
+<div class="section-body">
+<p>Layer 1 SHALL operate independently of higher‑layer semantics. Information originating from Layers 2 through 5 SHALL NOT modify, annotate, or influence Layer 1 frame construction, emission, or forwarding. Inter‑layer leakage constitutes exposure.</p>
+<p>Devices SHALL NOT embed identity, session state, routing context, or authorization data from higher layers into Layer 1 fields or TLVs. These constructs are not required for frame delivery and SHALL remain confined to their respective layers.</p>
+<p>Higher‑layer protocols SHALL NOT rely on Layer 1 metadata for correctness, optimization, or policy enforcement. Any design that depends on Layer 1 exposure of identifiers, timestamps, or behavioral markers is non‑compliant.</p>
+<p>Devices SHALL NOT derive Layer 1 behavior from higher‑layer state. Session transitions, namespace changes, trust‑domain evaluations, and routing decisions SHALL NOT alter Layer 1 metadata. Layer 1 SHALL remain invariant across all higher‑layer operations.</p>
+<p>Relays SHALL NOT perform cross‑layer correlation. Evaluation of higher‑layer identifiers, session attributes, or policy markers for the purpose of influencing Layer 1 forwarding constitutes exposure and is prohibited.</p>
+<p>Inter‑layer containment is mandatory. Any device that emits, derives, or relies upon higher‑layer information at Layer 1 is non‑compliant.</p>
+</div></section>
+
+<section id="sec12" class="toplevel">
+<h2><span class="secnum">12.</span> Prohibited Optional Behaviors</h2>
+<div class="section-body">
+<p>Optional behaviors at Layer 1 are prohibited unless explicitly authorized by this specification. Devices SHALL implement only the mandatory behaviors required for frame delivery. Any optional feature, extension, or vendor‑defined mechanism that introduces, modifies, or preserves metadata constitutes exposure.</p>
+<p>Devices SHALL NOT provide configuration options that enable or disable minimization, alter emission behavior, or modify TLV structure. Minimization is mandatory and SHALL NOT be subject to operator preference, vendor policy, or trust‑domain configuration.</p>
+<p>Vendor‑defined optional fields SHALL NOT appear in any Layer 1 frame. Proprietary TLVs, diagnostic extensions, performance markers, and experimental fields are prohibited. Optional fields enable correlation across frames and SHALL be suppressed.</p>
+<p>Devices SHALL NOT implement adaptive behaviors that alter metadata based on load, channel conditions, or internal state. Adaptive emission patterns, dynamic padding strategies, and conditional field inclusion constitute exposure and are prohibited.</p>
+<p>Relays SHALL NOT introduce optional processing steps that evaluate or retain metadata not required for forwarding. Selective handling, prioritization, or modification based on prohibited metadata constitutes exposure.</p>
+<p>Optional behaviors SHALL NOT be used for testing, profiling, or performance optimization. Test modes, benchmarking features, and vendor instrumentation SHALL NOT modify Layer 1 behavior or introduce additional metadata.</p>
+<p>Any behavior not explicitly required for frame delivery is prohibited. Optionality enables divergence, divergence enables exposure, and exposure leads to predictable harm.</p>
+</div></section>
+
+<section id="sec13" class="toplevel">
+<h2><span class="secnum">13.</span> Canonical TLV Ordering Requirements</h2>
+<div class="section-body">
+<p>Layer 1 frames SHALL use a single canonical TLV ordering. All devices and relays SHALL construct, emit, and parse TLVs in the exact sequence defined by this specification. Divergence in ordering enables differential parsing, fingerprinting, and exposure, and is therefore prohibited.</p>
+<p>Devices SHALL NOT reorder TLVs based on internal state, vendor preference, performance considerations, or trust‑domain policy. Ordering SHALL remain invariant across all operational modes, including fallback, degraded, and maintenance states.</p>
+<p>Relays SHALL NOT modify TLV ordering during forwarding. Frames SHALL be forwarded with the canonical sequence preserved. Reordering for optimization, batching, or diagnostic purposes constitutes exposure.</p>
+<p>Devices SHALL NOT include optional TLVs unless explicitly authorized by this specification. Authorized optional TLVs SHALL appear only in the positions defined by the canonical sequence. Unauthorized optional TLVs are prohibited.</p>
+<p>Parsing behavior SHALL assume the canonical order. Devices SHALL NOT implement permissive or adaptive parsing strategies that accept or interpret non‑canonical sequences. Permissive parsing enables exploitation through divergent interpretation and is prohibited.</p>
+<p>Canonical ordering is mandatory. Any device that emits, accepts, or relies upon non‑canonical TLV sequences is non‑compliant.</p>
+</div></section>
+
+<section id="sec14" class="toplevel">
+<h2><span class="secnum">14.</span> Error Handling Requirements</h2>
+<div class="section-body">
+<p>Devices SHALL handle all Layer 1 errors without emitting metadata that reveals internal state, processing behavior, or device identity. Error handling SHALL NOT introduce additional fields, timing variations, or structural deviations that enable correlation or inference.</p>
+<p>Devices SHALL NOT emit error codes, diagnostic markers, retry counters, or malformed‑frame signatures. Any observable distinction between error conditions constitutes exposure and is prohibited.</p>
+<p>Relays SHALL NOT modify frame structure, padding, or ordering in response to errors. Forwarding behavior SHALL remain consistent regardless of error type, severity, or origin. Adaptive or conditional error responses constitute exposure.</p>
+<p>Devices SHALL NOT expose fallback transitions, degraded‑mode indicators, or recovery attempts through Layer 1 metadata. All operational modes SHALL adhere to identical emission behavior.</p>
+<p>Error recovery SHALL NOT rely on metadata retention. Devices SHALL NOT store failed frames, partial parses, or internal error logs that include Layer 1 metadata. Retention beyond the operational interval constitutes exposure.</p>
+<p>Malformed frames SHALL be discarded without generating observable metadata. Devices SHALL NOT emit negative acknowledgments, rejection markers, or corrective hints at Layer 1.</p>
+<p>Error handling SHALL NOT compromise minimization. Any device that emits or derives metadata as part of error processing is non‑compliant.</p>
+</div></section>
+
+<section id="sec15" class="toplevel">
+<h2><span class="secnum">15.</span> Frame Construction Requirements</h2>
+<div class="section-body">
+<p>Devices SHALL construct Layer 1 frames using only the fields explicitly required for delivery. No additional fields, markers, or annotations are permitted. Frame structure SHALL remain invariant across all operational modes, trust‑domains, and vendor implementations.</p>
+<p>Devices SHALL NOT include padding, alignment bytes, or structural variations that encode information or reveal internal behavior. Padding, when required, SHALL use a uniform pattern that conveys no metadata and SHALL NOT vary based on device state, load, or error conditions.</p>
+<p>Frame length SHALL NOT encode metadata. Devices SHALL NOT vary frame size to indicate mode transitions, diagnostic states, performance characteristics, or trust‑domain affiliation. Length variation constitutes exposure and is prohibited.</p>
+<p>Devices SHALL NOT introduce vendor‑specific substructures, experimental formats, or proprietary TLVs. All TLVs SHALL conform to the canonical definitions and ordering specified in this document. Unauthorized TLVs constitute exposure.</p>
+<p>Relays SHALL forward frames without modification to structure, ordering, or length. Structural normalization, re‑packing, or re‑encoding constitutes exposure and is prohibited.</p>
+<p>Frame construction SHALL NOT depend on higher‑layer context. Session state, routing decisions, identity assertions, and trust‑domain policy SHALL NOT influence Layer 1 structure.</p>
+<p>Any deviation from the mandated frame structure constitutes exposure. Devices that emit non‑conforming frames are non‑compliant.</p>
+</div></section>
+
+<section id="sec16" class="toplevel">
+<h2><span class="secnum">16.</span> Forwarding Behavior Requirements</h2>
+<div class="section-body">
+<p>Relays SHALL forward Layer 1 frames without modification, interpretation, or evaluation of metadata not explicitly required for delivery. Forwarding behavior SHALL remain invariant across all operational modes, trust‑domains, and vendor implementations.</p>
+<p>Relays SHALL NOT inspect, derive, or act upon origin identifiers, timestamps, hop histories, device characteristics, or any other prohibited metadata. Evaluation of such metadata enables selective forwarding, correlation, or suppression and constitutes exposure.</p>
+<p>Relays SHALL NOT introduce additional processing steps that alter timing, structure, padding, or TLV ordering. Normalization, re‑packing, batching, or re‑encoding of frames is prohibited. Forwarding SHALL preserve the canonical structure defined by this specification.</p>
+<p>Relays SHALL NOT retain metadata beyond the operational interval. Queue positions, retry counters, processing timestamps, and internal routing decisions SHALL NOT persist after forwarding. Retention constitutes exposure regardless of duration.</p>
+<p>Relays SHALL NOT differentiate forwarding behavior based on trust‑domain affiliation, session state, or higher‑layer context. Layer 1 forwarding SHALL remain independent of all higher‑layer semantics.</p>
+<p>Relays SHALL NOT generate acknowledgments, negative acknowledgments, or delivery confirmations at Layer 1. Any observable signaling beyond the mandatory frame structure constitutes exposure.</p>
+<p>Forwarding SHALL be deterministic, minimal, and free of side channels. Any relay that modifies, interprets, or retains metadata beyond what is required for delivery is non‑compliant.</p>
+</div></section>
+
+<section id="sec17" class="toplevel">
+<h2><span class="secnum">17.</span> Relay State Invariance Requirements</h2>
+<div class="section-body">
+<p>Relays SHALL maintain invariant behavior across all internal states. Internal transitions — including load changes, queue saturation, thermal throttling, power‑saving modes, or fault‑recovery procedures — SHALL NOT modify Layer 1 emission, structure, timing, or forwarding behavior.</p>
+<p>Relays SHALL NOT expose internal state through timing variations, padding differences, TLV ordering changes, or fallback‑mode signatures. Any observable distinction between internal states constitutes exposure and is prohibited.</p>
+<p>Relays SHALL NOT adjust forwarding priority, retry behavior, or emission cadence based on internal metrics. Queue depth, processing load, and hardware condition SHALL NOT influence Layer 1 behavior.</p>
+<p>Relays operating under degraded conditions SHALL continue to enforce full minimization. Degraded, fallback, or maintenance states SHALL NOT introduce additional metadata, simplified formats, or diagnostic markers.</p>
+<p>Relays SHALL NOT retain state information across transitions. Internal counters, retry histories, and performance metrics SHALL NOT persist beyond the operational interval. Retention constitutes exposure regardless of duration.</p>
+<p>State invariance is mandatory. Any relay that exposes or derives metadata from internal state transitions is non‑compliant.</p>
+</div></section>
+
+<section id="sec18" class="toplevel">
+<h2><span class="secnum">18.</span> Power, Thermal, and Environmental Invariance</h2>
+<div class="section-body">
+<p>Devices SHALL maintain identical Layer 1 behavior across all power states, thermal conditions, and environmental variations. Power‑saving modes, thermal throttling, voltage fluctuations, and environmental stress SHALL NOT modify emission timing, frame structure, padding behavior, or TLV ordering.</p>
+<p>Devices SHALL NOT expose power‑state transitions through observable metadata. Battery level, charging state, thermal thresholds, and voltage conditions SHALL NOT influence Layer 1 behavior. Any emission variation correlated with power or thermal state constitutes exposure.</p>
+<p>Thermal management mechanisms — including throttling, clock scaling, and duty‑cycle modulation — SHALL NOT alter Layer 1 emission cadence or structure. Devices SHALL implement thermal protections without introducing timing variations or structural deviations.</p>
+<p>Environmental conditions — including temperature, radiation, vibration, and pressure — SHALL NOT produce metadata‑relevant artifacts. Devices SHALL ensure that physical‑layer modulation remains invariant and does not reveal environmental state.</p>
+<p>Devices SHALL NOT retain power‑state or thermal metadata beyond the operational interval. Internal logs, counters, and environmental readings SHALL NOT persist or influence subsequent emissions. Retention constitutes exposure.</p>
+<p>Power, thermal, and environmental invariance is mandatory. Any device that exposes or derives metadata from physical operating conditions is non‑compliant.</p>
+</div></section>
+
+<section id="sec19" class="toplevel">
+<h2><span class="secnum">19.</span> Physical‑Layer Modulation Requirements</h2>
+<div class="section-body">
+<p>Devices SHALL implement a uniform physical‑layer modulation profile that does not reveal device identity, vendor implementation, hardware condition, or environmental state. Modulation characteristics SHALL remain invariant across all operational modes.</p>
+<p>Devices SHALL NOT encode metadata through amplitude, phase, frequency, polarization, or spectral shaping. Any modulation artifact that enables fingerprinting, correlation, or inference constitutes exposure and is prohibited.</p>
+<p>Devices SHALL ensure that symbol timing, pulse shaping, and spectral occupancy do not vary based on internal state, load, thermal condition, or trust‑domain policy. Physical‑layer behavior SHALL NOT reflect higher‑layer semantics or device condition.</p>
+<p>Relays and devices SHALL NOT introduce modulation changes during fallback, degraded, or maintenance modes. All operational states SHALL use identical modulation parameters. Mode‑dependent modulation constitutes exposure.</p>
+<p>Devices SHALL NOT retain or derive metadata from physical‑layer measurements. Channel estimates, error vectors, and signal‑quality metrics SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Physical‑layer modulation SHALL NOT be used for diagnostics, testing, or performance evaluation. Test modes SHALL NOT alter modulation characteristics or introduce observable artifacts.</p>
+<p>Uniform modulation is mandatory. Any device that exposes or derives metadata through physical‑layer characteristics is non‑compliant.</p>
+</div></section>
+
+<section id="sec20" class="toplevel">
+<h2><span class="secnum">20.</span> Hardware Identity Suppression</h2>
+<div class="section-body">
+<p>Devices SHALL NOT expose hardware‑specific characteristics through any Layer 1 behavior. Manufacturing variance, component selection, oscillator tolerance, RF chain characteristics, and board‑level idiosyncrasies SHALL NOT be observable through timing, modulation, amplitude, spectral shape, or error patterns.</p>
+<p>Devices SHALL implement mitigation to prevent fingerprinting based on analog imperfections. Oscillator drift, phase noise, amplifier non‑linearity, and DAC/ADC artifacts SHALL NOT produce stable, device‑unique signatures. Any persistent analog characteristic that enables correlation across frames constitutes exposure.</p>
+<p>Devices SHALL NOT encode metadata through hardware‑dependent behaviors. Component aging, thermal drift, voltage variation, and wear‑induced changes SHALL NOT influence emission timing, modulation, or frame structure. Hardware condition SHALL NOT be inferable from Layer 1 output.</p>
+<p>Relays and devices SHALL NOT retain or derive metadata from hardware measurements. Signal‑quality metrics, error vectors, and analog‑domain observations SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Devices SHALL NOT expose manufacturing identifiers, calibration residues, or production‑line artifacts. Serial numbers, lot codes, calibration offsets, and factory test markers SHALL NOT appear in any form at Layer 1.</p>
+<p>Hardware identity suppression is mandatory. Any device that exposes or derives metadata from hardware characteristics is non‑compliant.</p>
+</div></section>
+
+<section id="sec21" class="toplevel">
+<h2><span class="secnum">21.</span> Anti‑Correlation Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL NOT emit, retain, or derive any metadata that enables correlation of frames across time, space, trust‑domains, sessions, or operational states. Any mechanism — intentional or incidental — that increases the probability of linking two or more frames to a common origin constitutes exposure and is prohibited.</p>
+<p>Devices SHALL ensure that no stable identifiers, behavioral signatures, timing patterns, modulation artifacts, or structural variations persist across emissions. Persistence of any observable characteristic that enables long‑term or short‑term correlation is non‑compliant.</p>
+<p>Relays SHALL NOT introduce correlation vectors through queueing behavior, retry patterns, or forwarding cadence. Forwarding SHALL remain invariant and SHALL NOT reflect internal state, load, or topology. Any correlation between relay behavior and frame characteristics constitutes exposure.</p>
+<p>Devices SHALL NOT derive correlation metadata from received frames. Channel estimates, error vectors, timing offsets, and spectral characteristics SHALL NOT be stored, interpreted, or used to influence subsequent emissions. Derivation constitutes retention, and retention constitutes exposure.</p>
+<p>Devices and relays SHALL NOT participate in correlation‑enabling protocols at Layer 1. Mechanisms such as handshake markers, continuity indicators, hop counters, or sequence numbers are prohibited unless explicitly authorized by this specification.</p>
+<p>Correlation resistance is mandatory. Any device or relay that enables inference of continuity, identity, or linkage across frames is non‑compliant.</p>
+</div></section>
+
+<section id="sec22" class="toplevel">
+<h2><span class="secnum">22.</span> Temporal Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that no Layer 1 behavior varies as a function of time. Absolute time, relative time, uptime, duty cycle, or operational duration SHALL NOT influence emission structure, timing, modulation, padding, or TLV ordering. Any temporal dependency constitutes exposure.</p>
+<p>Devices SHALL NOT encode timestamps, counters, clocks, or temporal markers in any form. Wall‑clock time, monotonic time, session duration, and operational age SHALL NOT appear directly or indirectly in Layer 1 output. Temporal fields are prohibited unless explicitly authorized by this specification.</p>
+<p>Emission timing SHALL NOT reveal device cadence, processing cycles, or internal scheduling. Devices SHALL implement timing behavior that does not correlate with internal clocks, load, or environmental conditions. Timing regularity or drift that enables correlation constitutes exposure.</p>
+<p>Relays SHALL NOT introduce temporal patterns through queueing, batching, retry behavior, or forwarding cadence. Forwarding SHALL remain invariant regardless of network load, topology, or operational duration. Temporal correlation vectors are prohibited.</p>
+<p>Devices SHALL NOT retain temporal metadata beyond the operational interval. Timestamps, retry intervals, and scheduling histories SHALL NOT persist or influence subsequent emissions. Retention constitutes exposure.</p>
+<p>Temporal invariance is mandatory. Any device or relay that exposes or derives metadata from time, timing behavior, or temporal relationships is non‑compliant.</p>
+</div></section>
+
+<section id="sec23" class="toplevel">
+<h2><span class="secnum">23.</span> Spatial Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that no Layer 1 behavior varies as a function of spatial position, orientation, topology, or relative motion. Geographic location, network placement, physical orientation, or movement SHALL NOT influence emission timing, modulation, padding, or TLV structure. Any spatial dependency constitutes exposure.</p>
+<p>Devices SHALL NOT encode location, direction, velocity, or topology through physical‑layer characteristics. RF patterns, antenna behavior, beamforming profiles, and propagation adjustments SHALL NOT reveal spatial state or environmental geometry. Spatially dependent modulation or amplitude variation is prohibited.</p>
+<p>Relays SHALL NOT introduce spatial correlation vectors through forwarding behavior. Differences in queueing, retry patterns, or emission cadence based on physical placement, hop distance, or adjacency relationships constitute exposure and are prohibited.</p>
+<p>Devices SHALL NOT derive or retain spatial metadata from received frames. Channel estimates, angle‑of‑arrival measurements, multipath signatures, and Doppler shifts SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions. Derivation constitutes retention, and retention constitutes exposure.</p>
+<p>Devices and relays SHALL NOT participate in spatially aware protocols at Layer 1. Mechanisms such as hop‑distance indicators, location hints, directional markers, or topology‑dependent fields are prohibited unless explicitly authorized by this specification.</p>
+<p>Spatial invariance is mandatory. Any device or relay that exposes or derives metadata from spatial position, orientation, or topology is non‑compliant.</p>
+</div></section>
+
+<section id="sec24" class="toplevel">
+<h2><span class="secnum">24.</span> Multi‑Path and Multi‑Channel Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that Layer 1 behavior remains invariant across all available physical paths, channels, bands, or media. The existence, selection, or transition between multiple physical pathways SHALL NOT introduce metadata, structural variation, or observable artifacts that enable correlation or inference.</p>
+<p>Devices SHALL NOT encode path selection, channel identity, or media characteristics into Layer 1 frames. Channel numbers, band identifiers, modulation variants, or media‑specific markers are prohibited unless explicitly authorized by this specification.</p>
+<p>Devices SHALL NOT vary emission timing, padding behavior, TLV ordering, or modulation characteristics when operating across multiple channels or media. Any divergence in behavior based on path or channel constitutes exposure.</p>
+<p>Relays SHALL NOT introduce path‑dependent forwarding behavior. Queueing, retry patterns, and emission cadence SHALL remain invariant regardless of which physical path or channel is used. Path‑dependent timing or structure constitutes exposure.</p>
+<p>Devices SHALL NOT retain or derive metadata related to path performance, channel quality, or media characteristics. Channel estimates, error vectors, and path‑specific metrics SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Devices and relays SHALL NOT participate in multi‑path coordination protocols at Layer 1. Mechanisms such as path identifiers, diversity markers, channel continuity indicators, or media‑specific hints are prohibited unless explicitly authorized by this specification.</p>
+<p>Multi‑path and multi‑channel invariance is mandatory. Any device or relay that exposes or derives metadata from physical path, channel selection, or media characteristics is non‑compliant.</p>
+</div></section>
+
+<section id="sec25" class="toplevel">
+<h2><span class="secnum">25.</span> Multi‑Device Behavioral Convergence Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL exhibit indistinguishable Layer 1 behavior regardless of manufacturer, hardware generation, firmware revision, or implementation strategy. Any observable divergence attributable to vendor, model, or software lineage constitutes exposure.</p>
+<p>Devices SHALL NOT introduce behavioral variation based on implementation choices. Differences in buffer architecture, scheduler design, RF chain composition, or driver strategy SHALL NOT manifest in timing, modulation, padding, or TLV structure.</p>
+<p>Firmware revisions SHALL NOT alter Layer 1 emission characteristics. Updates, patches, and hotfixes SHALL preserve identical behavior across all versions. Version‑dependent artifacts — including timing drift, modulation variance, or structural deviation — are prohibited.</p>
+<p>Devices from different vendors SHALL converge to identical Layer 1 output under all operational conditions. Manufacturing variance, design philosophy, and optimization strategies SHALL NOT produce distinguishable signatures.</p>
+<p>Relays SHALL NOT expose implementation differences through queueing behavior, retry cadence, or forwarding latency. Internal architecture SHALL NOT influence observable Layer 1 behavior.</p>
+<p>Behavioral convergence is mandatory. Any device or relay that exposes vendor, model, or version identity through Layer 1 behavior is non‑compliant.</p>
+</div></section>
+
+<section id="sec26" class="toplevel">
+<h2><span class="secnum">26.</span> Cross‑Vendor Timing Convergence Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL emit frames with timing characteristics that are indistinguishable across all vendors, hardware generations, and firmware revisions. Timing behavior — including inter‑frame spacing, symbol timing, guard intervals, and emission cadence — SHALL NOT reveal implementation lineage or device identity.</p>
+<p>Devices SHALL NOT vary timing based on internal scheduling, buffer architecture, CPU load, DMA strategy, or interrupt model. Any timing artifact correlated with implementation details constitutes exposure.</p>
+<p>Firmware updates SHALL NOT alter timing behavior. All revisions MUST preserve identical emission cadence, jitter profile, and inter‑frame timing. Version‑dependent timing drift is prohibited.</p>
+<p>Relays SHALL NOT introduce timing variation based on queue depth, processing latency, or architectural differences. Forwarding timing SHALL remain invariant regardless of internal design or operational conditions.</p>
+<p>Devices SHALL NOT encode metadata through timing modulation, intentional jitter, or adaptive spacing. Timing SHALL NOT reflect trust‑domain policy, session state, or higher‑layer semantics.</p>
+<p>Cross‑vendor timing convergence is mandatory. Any device or relay that exposes vendor, model, or version identity through timing behavior is non‑compliant.</p>
+</div></section>
+
+<section id="sec27" class="toplevel">
+<h2><span class="secnum">27.</span> Multi‑Rate and Multi‑Modulation Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL present identical Layer 1 behavior regardless of supported data rates, modulation families, or fallback profiles. The existence of multiple rate or modulation options SHALL NOT introduce metadata, structural variation, or observable artifacts.</p>
+<p>Devices SHALL NOT encode metadata through rate selection, adaptive modulation, or fallback transitions. Rate changes, if authorized, SHALL NOT be observable at Layer 1. Any correlation between rate behavior and device state, channel condition, or trust‑domain policy constitutes exposure.</p>
+<p>Devices SHALL NOT vary padding, timing, TLV ordering, or emission cadence when operating at different nominal rates. Rate‑dependent structural or temporal variation is prohibited.</p>
+<p>Relays SHALL NOT introduce rate‑dependent forwarding behavior. Queueing, retry patterns, and emission timing SHALL remain invariant regardless of the rate or modulation used by upstream or downstream devices.</p>
+<p>Devices SHALL NOT retain or derive metadata from rate‑selection logic, modulation performance, or fallback triggers. Rate‑related metrics SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Multi‑rate and multi‑modulation invariance is mandatory. Any device or relay that exposes or derives metadata from rate or modulation behavior is non‑compliant.</p>
+</div></section>
+
+<section id="sec28" class="toplevel">
+<h2><span class="secnum">28.</span> Duplexing and Directional Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that Layer 1 behavior remains invariant across all duplexing modes, directional states, and transmission/reception configurations. The choice of half‑duplex, full‑duplex, time‑division, frequency‑division, or any hybrid mechanism SHALL NOT introduce metadata or observable artifacts.</p>
+<p>Devices SHALL NOT encode metadata through duplexing transitions, direction changes, or transmit/receive scheduling. Any correlation between duplexing behavior and device state, topology, or trust‑domain policy constitutes exposure.</p>
+<p>Devices SHALL NOT vary emission timing, padding, modulation, or TLV structure based on directional state. Transmit and receive phases SHALL NOT produce distinguishable signatures or mode‑dependent artifacts.</p>
+<p>Relays SHALL NOT introduce directional or duplexing‑dependent forwarding behavior. Queueing, retry cadence, and emission timing SHALL remain invariant regardless of upstream or downstream duplexing configuration.</p>
+<p>Devices SHALL NOT retain or derive metadata from duplexing performance, directional measurements, or scheduling histories. Duplex‑related metrics SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Duplexing and directional invariance is mandatory. Any device or relay that exposes or derives metadata from duplexing mode or directional state is non‑compliant.</p>
+</div></section>
+
+<section id="sec29" class="toplevel">
+<h2><span class="secnum">29.</span> Antenna and RF Front‑End Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that all antenna configurations, RF front‑end paths, and gain‑control mechanisms produce indistinguishable Layer 1 behavior. Antenna selection, diversity schemes, beamforming states, and RF chain routing SHALL NOT introduce metadata or observable artifacts.</p>
+<p>Devices SHALL NOT encode metadata through antenna choice, gain settings, polarization, or spatial filtering. Any correlation between RF front‑end behavior and device state, environment, or trust‑domain policy constitutes exposure.</p>
+<p>Devices SHALL NOT vary emission timing, modulation, amplitude envelope, or TLV structure based on antenna configuration or RF chain selection. Mode‑dependent RF behavior is prohibited.</p>
+<p>Relays SHALL NOT introduce RF‑path‑dependent forwarding behavior. Queueing, retry cadence, and emission timing SHALL remain invariant regardless of RF front‑end state or antenna path.</p>
+<p>Devices SHALL NOT retain or derive metadata from antenna performance, gain‑control histories, or RF‑path measurements. RF‑related metrics SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Antenna and RF front‑end invariance is mandatory. Any device or relay that exposes or derives metadata from antenna configuration or RF chain behavior is non‑compliant.</p>
+</div></section>
+
+<section id="sec30" class="toplevel">
+<h2><span class="secnum">30.</span> Clock and Oscillator Discipline Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that all clock sources, oscillator disciplines, and frequency‑control mechanisms produce indistinguishable Layer 1 behavior. Variations in oscillator quality, drift characteristics, temperature compensation, or synchronization strategy SHALL NOT introduce metadata or observable artifacts.</p>
+<p>Devices SHALL NOT encode metadata through clock stability, drift rate, phase noise, warm‑up behavior, or synchronization events. Any correlation between oscillator characteristics and device identity, environment, or trust‑domain policy constitutes exposure.</p>
+<p>Devices SHALL NOT vary emission timing, symbol boundaries, guard intervals, or modulation characteristics based on oscillator condition, calibration state, or synchronization source. Clock‑dependent structural or temporal variation is prohibited.</p>
+<p>Relays SHALL NOT introduce timing artifacts derived from internal clock discipline, PLL behavior, or synchronization jitter. Forwarding timing SHALL remain invariant regardless of oscillator performance or synchronization events.</p>
+<p>Devices SHALL NOT retain or derive metadata from clock‑discipline metrics, drift histories, or synchronization adjustments. Clock‑related measurements SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Clock and oscillator discipline invariance is mandatory. Any device or relay that exposes or derives metadata from oscillator behavior or clock discipline is non‑compliant.</p>
+</div></section>
+
+<section id="sec31" class="toplevel">
+<h2><span class="secnum">31.</span> Environmental Noise and Interference Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that Layer 1 behavior remains invariant under all environmental noise conditions, interference levels, and propagation impairments. Variations in ambient RF conditions, interference sources, or channel quality SHALL NOT introduce metadata or observable artifacts.</p>
+<p>Devices SHALL NOT encode metadata through adaptive behavior triggered by noise, interference, or channel degradation. Mechanisms such as dynamic gain control, adaptive filtering, interference avoidance, or noise‑dependent timing adjustments SHALL NOT produce distinguishable signatures. Any correlation between environmental conditions and emission characteristics constitutes exposure.</p>
+<p>Devices SHALL NOT vary modulation, padding, TLV structure, emission cadence, or symbol timing based on interference level, noise floor, or channel impairment. Environment‑dependent structural or temporal variation is prohibited.</p>
+<p>Relays SHALL NOT introduce forwarding variation based on interference or noise conditions. Queueing, retry cadence, and emission timing SHALL remain invariant regardless of environmental RF state.</p>
+<p>Devices SHALL NOT retain or derive metadata from noise measurements, interference profiles, or channel‑quality metrics. Environment‑related observations SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Environmental noise and interference invariance is mandatory. Any device or relay that exposes or derives metadata from environmental RF conditions is non‑compliant.</p>
+</div></section>
+
+<section id="sec32" class="toplevel">
+<h2><span class="secnum">32.</span> Power‑Cycle and Boot‑Sequence Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that no Layer 1 behavior varies as a function of power‑cycle state, boot‑sequence progression, or initialization pathway. Cold start, warm start, reset recovery, and brownout restoration SHALL NOT introduce metadata or observable artifacts.</p>
+<p>Devices SHALL NOT encode metadata through boot timing, initialization order, calibration routines, or warm‑up characteristics. Any correlation between emission behavior and power‑cycle history constitutes exposure.</p>
+<p>Devices SHALL NOT vary modulation, padding, TLV structure, emission cadence, or symbol timing during or immediately after initialization. Boot‑dependent structural or temporal variation is prohibited.</p>
+<p>Relays SHALL NOT expose initialization artifacts through forwarding behavior. Queueing, retry cadence, and emission timing SHALL remain invariant regardless of startup state or recovery pathway.</p>
+<p>Devices SHALL NOT retain or derive metadata from boot‑sequence measurements, calibration offsets, or initialization diagnostics. Power‑cycle‑related observations SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Power‑cycle and boot‑sequence invariance is mandatory. Any device or relay that exposes or derives metadata from initialization behavior is non‑compliant.</p>
+</div></section>
+
+<section id="sec33" class="toplevel">
+<h2><span class="secnum">33.</span> Manufacturing‑Batch and Component‑Aging Invariance Requirements</h2>
+<div class="section-body">
+<p>Devices and relays SHALL ensure that no Layer 1 behavior varies as a function of manufacturing batch, component lineage, aging characteristics, or hardware wear. Differences in fabrication process, component tolerances, thermal history, or operational lifespan SHALL NOT introduce metadata or observable artifacts.</p>
+<p>Devices SHALL NOT encode metadata through aging‑related drift, component fatigue, thermal stabilization patterns, or long‑term degradation of RF or timing characteristics. Any correlation between emission behavior and device age, usage history, or manufacturing origin constitutes exposure.</p>
+<p>Devices SHALL NOT vary modulation, amplitude envelope, symbol timing, padding, or TLV structure due to component aging, capacitor behavior, oscillator drift, or RF chain degradation. Age‑dependent structural or temporal variation is prohibited.</p>
+<p>Relays SHALL NOT expose manufacturing or aging artifacts through forwarding behavior. Queueing, retry cadence, and emission timing SHALL remain invariant regardless of hardware age, wear state, or component variance.</p>
+<p>Devices SHALL NOT retain or derive metadata from aging diagnostics, component‑health metrics, or manufacturing identifiers. Such observations SHALL NOT persist beyond the operational interval and SHALL NOT influence subsequent emissions.</p>
+<p>Manufacturing‑batch and component‑aging invariance is mandatory. Any device or relay that exposes or derives metadata from manufacturing origin or hardware aging is non‑compliant.</p>
+</div></section>
+
+<section id="sec34" class="toplevel">
+<h2><span class="secnum">34.</span> Compliance Levels and Conformance Classes</h2>
+<div class="section-body">
+<p>Devices and relays SHALL implement all mandatory Layer 1 invariance requirements defined in this specification. Compliance is determined solely by observable behavior at the physical layer; implementation strategy, internal architecture, and optimization techniques are irrelevant to conformance.</p>
+<p>Three conformance classes are defined:</p>
+<p><strong>Class A (Full Invariance):</strong><br>Implements all mandatory requirements without exception. No temporal, spatial, environmental, manufacturing, or implementation‑dependent artifacts are observable. Class A devices are suitable for deployment in all trust domains.</p>
+<p><strong>Class B (Constrained Invariance):</strong><br>Implements all mandatory requirements but may include optional extensions explicitly authorized by this specification. Optional behaviors SHALL NOT introduce metadata, correlation vectors, or distinguishable artifacts. Class B devices are suitable for controlled environments.</p>
+<p><strong>Class C (Restricted Deployment):</strong><br>Implements mandatory requirements but may exhibit limited, explicitly documented deviations under narrowly defined conditions. Deviations SHALL NOT expose identity, state, or trust‑domain metadata. Class C devices are suitable only for isolated or experimental environments.</p>
+<p>Devices SHALL NOT claim compliance unless they meet all requirements for the declared class. Partial compliance, self‑attestation without verification, or reliance on undocumented behavior constitutes non‑compliance.</p>
+<p>Conformance classes SHALL NOT be encoded, signaled, or inferable at Layer 1. Any exposure of compliance level constitutes a violation of this specification.</p>
+</div></section>
+
+<section id="sec35" class="toplevel">
+<h2><span class="secnum">35.</span> Test Vectors and Non‑Exposure Validation Requirements</h2>
+<div class="section-body">
+<p>Implementations SHALL undergo mandatory validation to ensure that no Layer 1 behavior exposes metadata, correlation vectors, or distinguishable artifacts. Validation SHALL rely exclusively on observable emissions and SHALL NOT depend on vendor disclosure, implementation notes, or internal diagnostics.</p>
+<p>Test vectors SHALL include:</p>
+<p><strong>Static Invariance Tests:</strong><br>Devices SHALL emit identical frames under controlled, unchanging conditions. Any deviation in timing, modulation, padding, amplitude envelope, or TLV structure constitutes failure.</p>
+<p><strong>Dynamic Stress Tests:</strong><br>Devices SHALL maintain invariance under controlled variations in temperature, supply voltage, interference level, and load. Environment‑dependent artifacts constitute failure.</p>
+<p><strong>Cross‑Device Convergence Tests:</strong><br>Multiple devices from different vendors, manufacturing batches, and firmware revisions SHALL produce indistinguishable emissions. Observable divergence constitutes failure.</p>
+<p><strong>Temporal Stability Tests:</strong><br>Devices SHALL maintain invariance across extended operation, repeated power cycles, and long‑duration drift scenarios. Time‑dependent artifacts constitute failure.</p>
+<p><strong>Path and Topology Neutrality Tests:</strong><br>Devices SHALL produce identical emissions regardless of antenna configuration, channel selection, duplexing mode, or relay placement. Path‑dependent artifacts constitute failure.</p>
+<p>Test results SHALL NOT be encoded, signaled, or inferable at Layer 1. Validation artifacts SHALL NOT influence device behavior. Any exposure of test‑related metadata constitutes non‑compliance.</p>
+</div></section>
+
+<section id="sec36" class="toplevel">
+<h2><span class="secnum">36.</span> Forbidden Behaviors Summary</h2>
+<div class="section-body">
+<p>The following behaviors are strictly prohibited. Any occurrence constitutes immediate non‑compliance, regardless of context, justification, or operational state.</p>
+<p><strong>Implementation‑Dependent Variation:</strong><br>Any timing, modulation, padding, amplitude, or structural differences arising from vendor, model, firmware, architecture, or component lineage.</p>
+<p><strong>Environment‑Dependent Variation:</strong><br>Any emission changes correlated with temperature, interference, noise, voltage, load, or propagation conditions.</p>
+<p><strong>State‑Dependent Variation:</strong><br>Any artifacts tied to boot state, power‑cycle history, calibration routines, warm‑up behavior, or synchronization events.</p>
+<p><strong>Path‑Dependent Variation:</strong><br>Any differences caused by antenna selection, RF chain routing, channel choice, duplexing mode, or physical pathway.</p>
+<p><strong>Rate‑Dependent Variation:</strong><br>Any observable changes linked to modulation family, fallback profile, or adaptive rate selection.</p>
+<p><strong>Temporal Variation:</strong><br>Any drift, jitter, or cadence changes correlated with device age, oscillator behavior, or operational duration.</p>
+<p><strong>Metadata Encoding:</strong><br>Any attempt to encode identity, state, trust‑domain policy, diagnostics, or environmental observations into Layer 1 emissions, intentionally or incidentally.</p>
+<p><strong>Retention of Observations:</strong><br>Any persistence of metrics, histories, or measurements that could influence future emissions or expose correlation vectors.</p>
+<p><strong>Exposure of Compliance State:</strong><br>Any signaling, implicit or explicit, of conformance class, test status, or validation artifacts.</p>
+<p>These prohibitions apply universally. No exceptions are permitted unless explicitly authorized by this specification.</p>
+</div></section>
+
+<section id="sec37" class="toplevel">
+<h2><span class="secnum">37.</span> Security Considerations</h2>
+<div class="section-body">
+<p>Layer 1 SHALL NOT expose, encode, or leak any information that could be used to infer device identity, topology, trust‑domain membership, operational state, or environmental conditions. All emissions SHALL remain invariant across time, context, and implementation.</p>
+<p>Devices and relays SHALL assume that all Layer 1 observers are adversarial. No reliance on observer goodwill, physical isolation, or presumed trust boundaries is permitted. Any observable artifact constitutes a potential attack surface.</p>
+<p>Devices SHALL NOT implement adaptive behaviors that respond to probing, interrogation, or environmental manipulation. Adversarial attempts to induce timing drift, modulation variance, fallback transitions, or RF‑path changes SHALL NOT produce distinguishable artifacts.</p>
+<p>Relays SHALL NOT expose internal state through forwarding behavior. Queue depth, congestion, retry logic, or scheduling pressure SHALL NOT influence emission characteristics. Any correlation between internal load and observable behavior constitutes exposure.</p>
+<p>Devices SHALL NOT retain historical metrics that could enable fingerprinting, correlation, or long‑term behavioral modeling. All operational observations SHALL be ephemeral and SHALL NOT influence future emissions.</p>
+<p>Security at Layer 1 is achieved exclusively through invariance. Any deviation from invariant behavior — intentional or incidental — is a security vulnerability and constitutes non‑compliance.</p>
+</div></section>
+
+<section id="sec38" class="toplevel">
+<h2><span class="secnum">38.</span> Interoperability Considerations</h2>
+<div class="section-body">
+<p>Devices and relays SHALL interoperate without requiring negotiation, capability discovery, or adaptive behavior at Layer 1. Interoperability is achieved exclusively through strict adherence to invariant emission requirements; no auxiliary signaling, metadata exchange, or compatibility markers are permitted.</p>
+<p>Devices SHALL assume that all peers — regardless of vendor, hardware generation, firmware revision, or conformance class — emit identical Layer 1 behavior. No device SHALL rely on optional features, proprietary extensions, or implementation‑specific optimizations to achieve interoperability.</p>
+<p>Relays SHALL NOT expose topology, adjacency, or peer characteristics through forwarding behavior. Upstream and downstream emissions SHALL remain indistinguishable, and no correlation between peer identity and relay behavior is permitted.</p>
+<p>Devices SHALL NOT implement fallback modes, compatibility profiles, or legacy‑support behaviors that alter Layer 1 emissions. Interoperability SHALL NOT depend on mode switching, negotiation sequences, or conditional behavior.</p>
+<p>Devices and relays SHALL remain interoperable across all environmental conditions, operational states, and deployment contexts. No assumptions about shared configuration, synchronized state, or coordinated behavior are permitted.</p>
+<p>Interoperability is guaranteed solely through invariance. Any mechanism that introduces negotiation, adaptation, or peer‑dependent behavior at Layer 1 constitutes non‑compliance.</p>
+</div></section>
+
+<section id="sec39" class="toplevel">
+<h2><span class="secnum">39.</span> Implementation Guidance (Non‑Normative)</h2>
+<div class="section-body">
+<p>This section provides non‑normative guidance intended to assist implementers in achieving full compliance with the mandatory requirements of this specification. These recommendations SHALL NOT be interpreted as requirements, SHALL NOT influence conformance testing, and SHALL NOT be encoded, signaled, or inferable at Layer 1.</p>
+<p>Implementers SHOULD design internal architectures such that all timing, modulation, padding, and emission behaviors are fully decoupled from hardware variability, environmental conditions, and operational state. Internal scheduling, buffering, and RF‑chain management SHOULD be abstracted behind deterministic emission logic.</p>
+<p>Implementers SHOULD employ internal normalization layers that eliminate variation arising from oscillator drift, component tolerances, antenna selection, or environmental noise. Normalization SHOULD occur prior to frame construction and SHALL NOT introduce metadata or correlation vectors.</p>
+<p>Implementers SHOULD avoid adaptive algorithms that respond to channel conditions, interference, or load. Where adaptation is unavoidable for internal stability, such mechanisms SHOULD be strictly contained and SHALL NOT influence observable emissions.</p>
+<p>Implementers SHOULD ensure that firmware updates preserve all timing, structural, and modulation invariants. Update processes SHOULD include regression testing against the full suite of non‑exposure validation vectors.</p>
+<p>Implementers SHOULD design manufacturing and calibration processes to minimize batch‑dependent variation. Component selection, RF tuning, and oscillator discipline SHOULD target uniformity across production runs.</p>
+<p>These guidelines exist solely to support implementers. They do not modify, relax, or extend any normative requirement defined elsewhere in this specification.</p>
+</div></section>
+
+<section id="sec39dup" class="toplevel">
+<h2><span class="secnum">39.</span> Implementation Guidance (Non‑Normative)</h2>
+<div class="section-body">
+<p>This section provides non‑normative guidance intended to assist implementers in achieving full compliance with the mandatory requirements of this specification. These recommendations SHALL NOT be interpreted as requirements, SHALL NOT influence conformance testing, and SHALL NOT be encoded, signaled, or inferable at Layer 1.</p>
+<p>Implementers SHOULD design internal architectures such that all timing, modulation, padding, and emission behaviors are fully decoupled from hardware variability, environmental conditions, and operational state. Internal scheduling, buffering, and RF‑chain management SHOULD be abstracted behind deterministic emission logic.</p>
+<p>Implementers SHOULD employ internal normalization layers that eliminate variation arising from oscillator drift, component tolerances, antenna selection, or environmental noise. Normalization SHOULD occur prior to frame construction and SHALL NOT introduce metadata or correlation vectors.</p>
+<p>Implementers SHOULD avoid adaptive algorithms that respond to channel conditions, interference, or load. Where adaptation is unavoidable for internal stability, such mechanisms SHOULD be strictly contained and SHALL NOT influence observable emissions.</p>
+<p>Implementers SHOULD ensure that firmware updates preserve all timing, structural, and modulation invariants. Update processes SHOULD include regression testing against the full suite of non‑exposure validation vectors.</p>
+<p>Implementers SHOULD design manufacturing and calibration processes to minimize batch‑dependent variation. Component selection, RF tuning, and oscillator discipline SHOULD target uniformity across production runs.</p>
+<p>These guidelines exist solely to support implementers. They do not modify, relax, or extend any normative requirement defined elsewhere in this specification.</p>
+</div></section>
+
+<section id="sec41" class="toplevel">
+<h2><span class="secnum">41.</span> Glossary</h2>
+<div class="section-body">
+<p>This glossary is non‑normative. Definitions SHALL NOT introduce new requirements and SHALL NOT modify any normative statement elsewhere in this specification. Terms are provided solely to ensure consistent interpretation across implementations, audits, and cross‑RFC references.</p>
+<p><strong>A/N Header Split:</strong><br>The mandatory separation of Address and Nonce fields in the canonical Layer 1 frame header. Structural, temporal, and semantic invariance applies to both components.</p>
+<p><strong>Amplitude Envelope:</strong><br>The observable power profile of a transmitted symbol or frame. SHALL remain invariant across devices, conditions, and operational states.</p>
+<p><strong>Artifact:</strong><br>Any observable deviation, correlation vector, or distinguishable behavior at Layer 1. All artifacts are prohibited unless explicitly authorized.</p>
+<p><strong>Correlation Vector:</strong><br>Any pattern, timing deviation, amplitude variation, or structural difference that enables inference of identity, state, environment, or implementation. All correlation vectors are prohibited.</p>
+<p><strong>Drift:</strong><br>Any time‑dependent deviation in oscillator frequency, symbol timing, or emission cadence. Drift SHALL NOT be observable at Layer 1.</p>
+<p><strong>Emission Cadence:</strong><br>The temporal spacing of frames, symbols, or bursts. Cadence SHALL remain invariant across all conditions.</p>
+<p><strong>Exposure:</strong><br>Any leakage of metadata, state, or implementation detail through observable Layer 1 behavior. Exposure constitutes non‑compliance.</p>
+<p><strong>Fallback Profile:</strong><br>Any mechanism that alters modulation, rate, or coding in response to channel conditions. Fallback SHALL NOT be observable at Layer 1.</p>
+<p><strong>Forwarding Behavior:</strong><br>The timing, structure, and emission characteristics of relayed frames. Forwarding SHALL remain invariant regardless of load, topology, or peer identity.</p>
+<p><strong>Invariance:</strong><br>The doctrinal requirement that all observable Layer 1 behavior remain identical across devices, conditions, and operational states.</p>
+<p><strong>Metadata:</strong><br>Any information not explicitly defined as part of the canonical Layer 1 frame. Metadata SHALL NOT be encoded, exposed, or inferable.</p>
+<p><strong>Normalization Layer:</strong><br>An internal implementation construct used to eliminate hardware‑ or environment‑dependent variation. SHALL NOT be observable.</p>
+<p><strong>Operational Interval:</strong><br>The period during which a device is active and emitting frames. No historical state SHALL persist across intervals.</p>
+<p><strong>Path‑Dependent Behavior:</strong><br>Any variation caused by antenna selection, RF chain routing, or channel choice. All path‑dependent behavior is prohibited.</p>
+<p><strong>Relay:</strong><br>Any device that forwards frames without altering their canonical Layer 1 structure. Relays SHALL NOT expose internal state.</p>
+<p><strong>Structural Variation:</strong><br>Any difference in padding, TLV ordering, header composition, or symbol structure. Structural variation is prohibited.</p>
+<p><strong>Temporal Variation:</strong><br>Any difference in timing, jitter, cadence, or symbol boundaries. Temporal variation is prohibited.</p>
+<p><strong>Trust Domain:</strong><br>A logical grouping of devices under shared policy. Trust‑domain membership SHALL NOT be inferable at Layer 1.</p>
+</div></section>
+
+<section id="sec42" class="toplevel">
+<h2><span class="secnum">42.</span> References</h2>
+<div class="section-body">
+<p>This section is non‑normative. It records the authoritative documents, internal standards, and cross‑RFC dependencies that inform or constrain this specification. References SHALL NOT be interpreted as modifying any normative requirement defined elsewhere.</p>
+<p><strong>[RFC‑2300] SolNet Terminology &amp; Concepts</strong><br>Defines the canonical vocabulary, structural primitives, and doctrinal boundaries for all SolNet specifications.</p>
+<p><strong>[RFC‑2301] SolNet Cryptographic Primitives</strong><br>Specifies the cryptographic foundations that operate above Layer 1 and SHALL NOT influence physical‑layer emissions.</p>
+<p><strong>[RFC‑2302] SolNet Ledger Specification</strong><br>Defines ledger semantics and replication behavior. Ledger operations SHALL NOT be inferable at Layer 1.</p>
+<p><strong>[RFC‑2303] Physical Media &amp; Propagation</strong><br>Provides the physical‑layer propagation model. All media‑dependent variation SHALL be normalized prior to emission.</p>
+<p><strong>[RFC‑2304] Antenna Geometry &amp; Alignment</strong><br>Defines antenna‑level constraints. Antenna state SHALL NOT be observable at Layer 1.</p>
+<p><strong>[RFC‑2305] Power &amp; Duty‑Cycle Constraints</strong><br>Specifies power‑domain rules. Power‑state transitions SHALL NOT produce artifacts.</p>
+<p><strong>[RFC‑2350] SolNet Canonical Addressing Standard</strong><br>Defines addressing semantics. Addressing SHALL NOT influence timing, modulation, or emission cadence.</p>
+<p><strong>[RFC‑2351] L1 Frame Format: A/N Header Split</strong><br>Defines the canonical Layer 1 frame structure. All invariance requirements in this document apply to the A/N header.</p>
+<p><strong>[RFC‑2352] L1 Privacy &amp; Metadata Minimization</strong><br>Provides the doctrinal foundation for prohibiting metadata exposure at Layer 1.</p>
+<p><strong>[RFC‑2360] SolNet Layer Model (Revised)</strong><br>Defines the cross‑layer boundaries that prevent upward or downward leakage of state.</p>
+<p><strong>[RFC‑2364] Ephemeris Hint Block Specification</strong><br>Defines optional higher‑layer ephemeris hints. These SHALL NOT influence Layer 1 emissions.</p>
+<p><strong>[RFC‑2421] Error Codes &amp; Diagnostics</strong><br>Specifies diagnostic semantics. Diagnostics SHALL NOT be encoded or inferable at Layer 1.</p>
+<p><strong>[RFC‑2450] Trust‑Domain Enforcement &amp; Auditing</strong><br>Defines trust‑domain policy. Trust‑domain membership SHALL NOT be inferable at Layer 1.</p>
+<p><strong>[RFC‑2481] Minimal Viable DTN for Prototyping</strong><br>Provides prototyping guidance. Prototypes SHALL still meet all mandatory invariance requirements.</p>
+<p><strong>[MIAP‑Series] Martian Interoperability &amp; Alignment Protocols</strong><br>Provides cross‑domain alignment doctrine. MIAP timing and structural constraints SHALL NOT modify Layer 1 invariance.</p>
+</div></section>
+
+<div class="appendix-divider"><h1>Appendices</h1></div>
+
+<section id="appA" class="toplevel appendix">
+<h2><span class="secnum">Appendix A</span> Rationale for Layer‑1 Invariance</h2>
+<div class="section-body">
+<p>This appendix is non‑normative. It provides doctrinal justification for the invariance requirements defined in this specification. Nothing in this appendix modifies, relaxes, or extends any normative statement elsewhere.</p>
+<h3 id="subA-1"><span class="secnum">A.1</span> Threat Model Foundations</h3>
+<p>Layer‑1 invariance exists to eliminate all physical‑layer fingerprinting vectors. Adversaries SHALL be assumed to possess:</p>
+<ul>
+<li>High‑resolution temporal and spectral capture equipment</li>
+<li>Long‑duration observational capability</li>
+<li>Statistical correlation tooling</li>
+<li>Environmental manipulation capability (temperature, interference, voltage, load)</li>
+<li>The ability to induce or observe power‑cycle, boot, or calibration events</li>
+</ul>
+<p>Under this threat model, <strong>any</strong> observable variation becomes a correlation vector. Therefore, invariance is the only viable defensive posture.</p>
+<h3 id="subA-2"><span class="secnum">A.2</span> Why Adaptation Is Prohibited</h3>
+<p>Adaptive mechanisms — rate selection, fallback, interference avoidance, antenna diversity, gain control — are standard in conventional RF systems. In SolNet, they are prohibited because:</p>
+<ul>
+<li>Adaptation exposes environmental conditions</li>
+<li>Environmental conditions correlate with location, topology, and device state</li>
+<li>Correlation enables fingerprinting, tracking, and trust‑domain inference</li>
+</ul>
+<p>Thus, adaptation is incompatible with Layer‑1 privacy doctrine.</p>
+<h3 id="subA-3"><span class="secnum">A.3</span> Why Normalization Is Mandatory</h3>
+<p>Normalization layers exist to eliminate:</p>
+<ul>
+<li>Hardware variability</li>
+<li>Oscillator drift</li>
+<li>Component aging</li>
+<li>Antenna‑path differences</li>
+<li>Environmental noise effects</li>
+</ul>
+<p>Normalization MUST occur internally and MUST NOT be observable. Without normalization, devices diverge over time, enabling long‑term correlation.</p>
+<h3 id="subA-4"><span class="secnum">A.4</span> Why Historical State Cannot Persist</h3>
+<p>Any retained metric — drift history, noise profile, retry count, calibration offset — becomes a fingerprint. Persistence enables:</p>
+<ul>
+<li>Cross‑interval correlation</li>
+<li>Longitudinal device tracking</li>
+<li>Trust‑domain inference</li>
+<li>Behavioral modeling</li>
+</ul>
+<p>Therefore, all operational observations MUST be ephemeral.</p>
+<h3 id="subA-5"><span class="secnum">A.5</span> Why Relays Must Be Perfectly Neutral</h3>
+<p>Relays are high‑risk because they sit at topological choke points. Any forwarding variation exposes:</p>
+<ul>
+<li>Load</li>
+<li>Queue depth</li>
+<li>Peer identity</li>
+<li>Topology</li>
+<li>Trust‑domain boundaries</li>
+</ul>
+<p>Relay neutrality is therefore mandatory and absolute.</p>
+<h3 id="subA-6"><span class="secnum">A.6</span> Why Manufacturing Variance Must Be Eliminated</h3>
+<p>Manufacturing differences — oscillator bins, RF chain tolerances, PCB layout, component batches — create stable, device‑unique signatures. Without strict normalization:</p>
+<ul>
+<li>Devices become fingerprintable</li>
+<li>Vendors become distinguishable</li>
+<li>Production batches become trackable</li>
+</ul>
+<p>This violates the core doctrine of indistinguishability.</p>
+<h3 id="subA-7"><span class="secnum">A.7</span> Why Conformance Cannot Be Signaled</h3>
+<p>If compliance level were observable:</p>
+<ul>
+<li>Attackers could target weaker classes</li>
+<li>Trust‑domain boundaries could be inferred</li>
+<li>Deployment posture could be mapped</li>
+</ul>
+<p>Thus, conformance MUST remain invisible.</p>
+<h3 id="subA-8"><span class="secnum">A.8</span> Why Governance Must Be Strict</h3>
+<p>Layer‑1 invariance is brittle. Small deviations create large attack surfaces. Governance prevents:</p>
+<ul>
+<li>Drift</li>
+<li>Vendor‑specific extensions</li>
+<li>Accidental relaxation</li>
+<li>Layer bleed</li>
+<li>Negotiation creep</li>
+</ul>
+<p>Strict editorial control preserves doctrinal integrity.</p>
+</div></section>
+
+<section id="appB" class="toplevel appendix">
+<h2><span class="secnum">Appendix B</span> Formal Non‑Exposure Proof Sketch</h2>
+<div class="section-body">
+<p><strong>B.1. Model</strong><br>Let (E(d, c, s, h)) denote the complete observable Layer‑1 emission of device (d) under conditions (c), internal state (s), and hardware characteristics (h).<br>The doctrine requires:<br>[ E(d_1, c_1, s_1, h_1) = E(d_2, c_2, s_2, h_2) ] for all devices (d), conditions (c), states (s), and hardware profiles (h).</p>
+<p><strong>B.2. Adversary Capability</strong><br>Assume an adversary with unbounded observational resolution, unlimited capture duration, and full statistical tooling. Any distinguishable difference in (E) is exploitable.</p>
+<p><strong>B.3. Invariance Requirement</strong><br>To prevent inference of identity, state, environment, or lineage, the emission function must be constant:<br>[ E(d, c, s, h) = K ] for a single canonical emission (K) defined by the specification.</p>
+<p><strong>B.4. Elimination of Correlation Vectors</strong><br>Any dependency of (E) on (d), (c), (s), or (h) creates a correlation vector.<br>Thus the partial derivatives must be zero:<br>[ \frac{\partial E}{\partial d} = \frac{\partial E}{\partial c} = \frac{\partial E}{\partial s} = \frac{\partial E}{\partial h} = 0 ]</p>
+<p><strong>B.5. Relay Neutrality</strong><br>For a relay (r), forwarding (F) must satisfy:<br>[ F(E) = K ] regardless of queue depth, load, topology, or peer identity.</p>
+<p><strong>B.6. Historical State Prohibition</strong><br>Let (H) be historical observations. If (E) depends on (H), then:<br>[ \frac{\partial E}{\partial H} \neq 0 ] which is forbidden. Therefore (H) must be discarded and inaccessible.</p>
+<p><strong>B.7. Manufacturing and Aging Neutrality</strong><br>Hardware variation (h) includes oscillator drift, component tolerances, and aging.<br>To prevent fingerprinting:<br>[ E(d, c, s, h_1) = E(d, c, s, h_2) ] for all (h_1, h_2).</p>
+<p><strong>B.8. Completeness of Doctrine</strong><br>If all derivatives are zero and (E) is constant, then no observer — regardless of capability — can infer any property of the device, environment, or state.<br>This satisfies the non‑exposure objective.</p>
+</div></section>
+
+<section id="appC" class="toplevel appendix">
+<h2><span class="secnum">Appendix C</span> Test Vector Overview</h2>
+<div class="section-body">
+<h3 id="subC-1"><span class="secnum">C.1</span> Scope</h3>
+<p>This appendix provides a high‑level overview of the mandatory invariance test vectors used to validate conformance with the Layer‑1 emission requirements. Specific numeric values, timing envelopes, and modulation parameters are maintained by the Canonical Behavior Registry (CBR) and SHALL NOT be reproduced in this document.</p>
+<h3 id="subC-2"><span class="secnum">C.2</span> Canonical Emission Baseline</h3>
+<p>All devices SHALL emit the canonical Layer‑1 signal defined by SPERB. Test vectors verify that the emission is invariant across:</p>
+<ul>
+<li>device identity</li>
+<li>hardware lineage</li>
+<li>manufacturing batch</li>
+<li>environmental conditions</li>
+<li>operational state</li>
+<li>temporal drift</li>
+<li>relay load and topology</li>
+</ul>
+<h3 id="subC-3"><span class="secnum">C.3</span> Vector Categories</h3>
+<p>Test vectors are grouped into the following categories:</p>
+<ul>
+<li><strong>C.3.1. Static Invariance Vectors</strong><br>Validate that the canonical emission is identical across cold boot, warm boot, and steady‑state operation.</li>
+<li><strong>C.3.2. Temporal Stability Vectors</strong><br>Validate invariance over extended intervals, including drift resistance and long‑duration stability.</li>
+<li><strong>C.3.3. Environmental Neutrality Vectors</strong><br>Validate invariance under temperature, voltage, interference, and load variation.</li>
+<li><strong>C.3.4. Manufacturing Neutrality Vectors</strong><br>Validate invariance across oscillator bins, RF chain tolerances, and component aging.</li>
+<li><strong>C.3.5. Relay Neutrality Vectors</strong><br>Validate that relays emit identical forwarding behavior regardless of queue depth, peer identity, or topology.</li>
+</ul>
+<h3 id="subC-4"><span class="secnum">C.4</span> Convergence Requirement</h3>
+<p>All devices SHALL converge to the canonical emission within the stabilization interval defined by CBR. No observable deviation SHALL occur before, during, or after convergence.</p>
+<h3 id="subC-5"><span class="secnum">C.5</span> Non‑Exposure Requirement</h3>
+<p>Test vectors SHALL confirm that no emission characteristic reveals:</p>
+<ul>
+<li>device identity</li>
+<li>environmental state</li>
+<li>operational history</li>
+<li>manufacturing lineage</li>
+<li>relay load or topology</li>
+</ul>
+<h3 id="subC-6"><span class="secnum">C.6</span> Validation Procedure</h3>
+<p>Validation SHALL be performed by accredited facilities under SPERB oversight. Results SHALL be recorded in the Non‑Exposure Ledger (NEL).</p>
+</div></section>
+
+<section id="appD" class="toplevel appendix">
+<h2><span class="secnum">Appendix D</span> Deployment Guidance</h2>
+<div class="section-body">
+<h3 id="subD-1"><span class="secnum">D.1</span> Scope</h3>
+<p>This appendix provides non‑normative guidance for implementers deploying SolNet devices in operational environments.</p>
+<h3 id="subD-2"><span class="secnum">D.2</span> Pre‑Deployment Verification</h3>
+<p>Devices SHOULD undergo full invariance testing prior to deployment. Vendors SHOULD verify:</p>
+<ul>
+<li>canonical emission conformance</li>
+<li>environmental neutrality</li>
+<li>relay neutrality</li>
+<li>manufacturing variance elimination</li>
+</ul>
+<h3 id="subD-3"><span class="secnum">D.3</span> Operational Environment Considerations</h3>
+<p>Deployments SHOULD ensure that environmental conditions do not induce hardware behavior outside the canonical envelope. This includes:</p>
+<ul>
+<li>adequate thermal regulation</li>
+<li>stable power supply</li>
+<li>shielding from extreme interference sources</li>
+</ul>
+<h3 id="subD-4"><span class="secnum">D.4</span> Relay Placement</h3>
+<p>Relays SHOULD be placed to minimize topological exposure. Relay behavior MUST remain neutral regardless of load or peer identity.</p>
+<h3 id="subD-5"><span class="secnum">D.5</span> Firmware and Update Policy</h3>
+<p>Updates SHOULD be infrequent and SHALL NOT modify Layer‑1 behavior. Any update that affects timing, modulation, or emission structure SHALL require full re‑certification.</p>
+<h3 id="subD-6"><span class="secnum">D.6</span> Monitoring and Auditing</h3>
+<p>Operators SHOULD monitor for deviations from canonical behavior. Any anomaly SHOULD be reported to SPERB for review.</p>
+</div></section>
+
+<section id="appE" class="toplevel appendix">
+<h2><span class="secnum">Appendix E</span> Security Considerations</h2>
+<div class="section-body">
+<h3 id="subE-1"><span class="secnum">E.1</span> Scope</h3>
+<p>This appendix outlines the security implications of Layer‑1 invariance.</p>
+<h3 id="subE-2"><span class="secnum">E.2</span> Threat Model</h3>
+<p>Adversaries SHALL be assumed to possess:</p>
+<ul>
+<li>high‑resolution capture equipment</li>
+<li>long‑duration observational capability</li>
+<li>statistical correlation tooling</li>
+<li>environmental manipulation capability</li>
+</ul>
+<h3 id="subE-3"><span class="secnum">E.3</span> Invariance as Security</h3>
+<p>Layer‑1 invariance eliminates fingerprinting vectors by ensuring that all observable emissions are identical. This prevents inference of:</p>
+<ul>
+<li>identity</li>
+<li>state</li>
+<li>environment</li>
+<li>topology</li>
+<li>lineage</li>
+</ul>
+<h3 id="subE-4"><span class="secnum">E.4</span> Relay Exposure Risks</h3>
+<p>Relays are high‑risk nodes. Any deviation in forwarding behavior may expose:</p>
+<ul>
+<li>queue depth</li>
+<li>peer identity</li>
+<li>topology</li>
+</ul>
+<h3 id="subE-5"><span class="secnum">E.5</span> Manufacturing Risks</h3>
+<p>Manufacturing variance introduces stable signatures. Vendors SHALL eliminate such variance to prevent long‑term tracking.</p>
+<h3 id="subE-6"><span class="secnum">E.6</span> Historical State Risks</h3>
+<p>Persistent state enables correlation across intervals. Devices SHALL NOT retain operational history.</p>
+</div></section>
+
+<section id="appF" class="toplevel appendix">
+<h2><span class="secnum">Appendix F</span> Known Non‑Compliant Patterns</h2>
+<div class="section-body">
+<h3 id="subF-1"><span class="secnum">F.1</span> Scope</h3>
+<p>This appendix identifies behaviors that SHALL be considered non‑compliant under all circumstances.</p>
+<h3 id="subF-2"><span class="secnum">F.2</span> Adaptive Behavior</h3>
+<p>Any adaptation based on environment, load, or interference is non‑compliant.</p>
+<h3 id="subF-3"><span class="secnum">F.3</span> Variable Timing</h3>
+<p>Any timing variation correlated with device state, queue depth, or environmental conditions is non‑compliant.</p>
+<h3 id="subF-4"><span class="secnum">F.4</span> Manufacturing Signatures</h3>
+<p>Any emission characteristic that correlates with hardware lineage, oscillator bin, or component tolerance is non‑compliant.</p>
+<h3 id="subF-5"><span class="secnum">F.5</span> Relay Leakage</h3>
+<p>Any forwarding behavior that reveals topology, peer identity, or load is non‑compliant.</p>
+<h3 id="subF-6"><span class="secnum">F.6</span> Persistent State</h3>
+<p>Any retention of operational metrics, calibration offsets, or drift history is non‑compliant.</p>
+</div></section>
+
+<section id="appG" class="toplevel appendix">
+<h2><span class="secnum">Appendix G</span> Historical Context</h2>
+<div class="section-body">
+<h3 id="subG-1"><span class="secnum">G.1</span> Scope</h3>
+<p>This appendix provides background on the development of Layer‑1 invariance doctrine.</p>
+<h3 id="subG-2"><span class="secnum">G.2</span> Pre‑SolNet RF Systems</h3>
+<p>Conventional RF systems relied on adaptive mechanisms that exposed metadata through:</p>
+<ul>
+<li>rate selection</li>
+<li>fallback behavior</li>
+<li>antenna diversity</li>
+<li>gain control</li>
+<li>environmental sensitivity</li>
+</ul>
+<p>These mechanisms enabled fingerprinting, tracking, and inference.</p>
+<h3 id="subG-3"><span class="secnum">G.3</span> Early Exposure Incidents</h3>
+<p>Multiple early deployments revealed that even minor timing or amplitude variations enabled long‑term device tracking.</p>
+<h3 id="subG-4"><span class="secnum">G.4</span> Formation of SPERB</h3>
+<p>SPERB was established to eliminate physical‑layer exposure. Its mandate includes:</p>
+<ul>
+<li>defining invariance doctrine</li>
+<li>enforcing non‑exposure requirements</li>
+<li>auditing vendor compliance</li>
+</ul>
+<h3 id="subG-5"><span class="secnum">G.5</span> Canonical Emission Doctrine</h3>
+<p>The doctrine emerged from the realization that only a single canonical emission could eliminate all correlation vectors.</p>
+</div></section>
+
+<section id="appH" class="toplevel appendix">
+<h2><span class="secnum">Appendix H</span> SPERB Procedural Rules</h2>
+<div class="section-body">
+<h3 id="subH-1"><span class="secnum">H.1</span> Scope</h3>
+<p>This appendix defines procedural rules governing SPERB operations.</p>
+<h3 id="subH-2"><span class="secnum">H.2</span> Review Procedures</h3>
+<p>All proposals SHALL undergo doctrinal review by the Doctrinal Integrity Council (DIC). Proposals that introduce conditional behavior SHALL be rejected.</p>
+<h3 id="subH-3"><span class="secnum">H.3</span> Audit Procedures</h3>
+<p>Audits SHALL be conducted by accredited facilities under SPERB oversight. Findings SHALL be recorded in the Non‑Exposure Ledger (NEL).</p>
+<h3 id="subH-4"><span class="secnum">H.4</span> Enforcement Procedures</h3>
+<p>NEEB SHALL issue corrective directives, halt orders, and revocation notices. CRA SHALL revoke conformance claims when violations are confirmed.</p>
+<h3 id="subH-5"><span class="secnum">H.5</span> Communication Protocols</h3>
+<p>All formal correspondence SHALL use the terminology defined by the Registry of Canonical Terminology (RCT).</p>
+<h3 id="subH-6"><span class="secnum">H.6</span> Naming and Formal Address Requirements</h3>
+<p>All formal correspondence SHALL refer to the Board as <strong>SPERB</strong>, pronounced <em>SPEAR‑B</em>. Informal or phonetic contractions (e.g., “Sperb”) are discouraged and SHALL NOT appear in conformance claims, certification requests, or audit submissions.</p>
+</div></section>
+
+<section id="appI" class="toplevel appendix">
+<h2><span class="secnum">Appendix I</span> Implementation Notes for Non‑Simulation Environments</h2>
+<div class="section-body">
+<h3 id="subI-1"><span class="secnum">I.1</span> Scope</h3>
+<p>This appendix provides guidance for implementing SolNet devices in physical, non‑simulation environments.</p>
+<h3 id="subI-2"><span class="secnum">I.2</span> Hardware Considerations</h3>
+<p>Implementations SHALL ensure that hardware behavior conforms to the canonical emission envelope. This includes:</p>
+<ul>
+<li>oscillator stability</li>
+<li>RF chain normalization</li>
+<li>thermal regulation</li>
+<li>power conditioning</li>
+</ul>
+<h3 id="subI-3"><span class="secnum">I.3</span> Environmental Controls</h3>
+<p>Deployments SHOULD mitigate environmental factors that may induce deviation, including:</p>
+<ul>
+<li>temperature extremes</li>
+<li>voltage fluctuation</li>
+<li>electromagnetic interference</li>
+</ul>
+<h3 id="subI-4"><span class="secnum">I.4</span> Manufacturing Controls</h3>
+<p>Vendors SHALL implement processes to eliminate manufacturing variance, including:</p>
+<ul>
+<li>oscillator binning</li>
+<li>component calibration</li>
+<li>RF chain alignment</li>
+</ul>
+<h3 id="subI-5"><span class="secnum">I.5</span> Relay Implementation Notes</h3>
+<p>Relays SHALL ensure neutrality regardless of load, topology, or peer identity. Internal state SHALL NOT influence forwarding behavior.</p>
+<h3 id="subI-6"><span class="secnum">I.6</span> Update and Maintenance Considerations</h3>
+<p>Updates SHALL NOT modify Layer‑1 behavior. Maintenance procedures SHALL verify continued invariance.</p>
+</div></section>
+
+<section id="appJ" class="toplevel appendix">
+<h2><span class="secnum">Appendix J</span> SPERB Organizational Structure</h2>
+<div class="section-body">
+<h3 id="subJ-1"><span class="secnum">C.1</span> Scope</h3>
+<p>This appendix defines the internal organizational bodies of the SolNet Physical‑Layer Exposure Review Board (SPERB). These bodies are responsible for maintaining, enforcing, and auditing Layer‑1 invariance doctrine. Nothing in this appendix modifies any normative requirement defined elsewhere.</p>
+<h3 id="subJ-2"><span class="secnum">C.2</span> Directorate of Emission Neutrality (DEN)</h3>
+<p>DEN defines and maintains the canonical Layer‑1 emission profile. DEN SHALL ensure that all revisions preserve invariance and SHALL reject proposals that introduce conditional, adaptive, or implementation‑dependent behavior.</p>
+<h3 id="subJ-3"><span class="secnum">C.3</span> Non‑Exposure Enforcement Bureau (NEEB)</h3>
+<p>NEEB investigates suspected exposure events, implementation deviations, and manufacturing variance. NEEB SHALL issue corrective directives, halt orders, and revocation notices when non‑compliance is detected.</p>
+<h3 id="subJ-4"><span class="secnum">C.4</span> Canonical Behavior Registry (CBR)</h3>
+<p>CBR maintains authoritative records of all approved emission parameters, timing envelopes, and structural invariants. CBR SHALL serve as the reference of record for conformance testing and dispute resolution.</p>
+<h3 id="subJ-5"><span class="secnum">C.5</span> Cross‑Vendor Convergence Office (CVCO)</h3>
+<p>CVCO ensures that devices from different vendors, manufacturing batches, and hardware lineages converge to identical observable behavior. CVCO SHALL oversee cross‑device testing and SHALL certify convergence prior to deployment.</p>
+<h3 id="subJ-6"><span class="secnum">C.6</span> Temporal Stability Review Board (TSRB)</h3>
+<p>TSRB evaluates long‑duration invariance, drift resistance, and operational stability. TSRB SHALL conduct extended‑interval testing and SHALL document any time‑dependent artifacts.</p>
+<h3 id="subJ-7"><span class="secnum">C.7</span> Environmental Neutrality Assessment Group (ENAG)</h3>
+<p>ENAG validates invariance under environmental variation, including temperature, voltage, interference, and load. ENAG SHALL ensure that no environmental factor influences observable emissions.</p>
+<h3 id="subJ-8"><span class="secnum">C.8</span> Relay Neutrality Commission (RNC)</h3>
+<p>RNC ensures that relays do not expose internal state, topology, or peer identity through forwarding behavior. RNC SHALL certify relay neutrality and SHALL investigate any correlation between load and emission characteristics.</p>
+<h3 id="subJ-9"><span class="secnum">C.9</span> Doctrinal Integrity Council (DIC)</h3>
+<p>DIC maintains the philosophical and structural coherence of invariance doctrine across the SolNet RFC corpus. DIC SHALL review all proposed revisions for doctrinal alignment and SHALL prevent cross‑layer bleed.</p>
+<h3 id="subJ-10"><span class="secnum">C.10</span> Registry of Canonical Terminology (RCT)</h3>
+<p>RCT enforces vocabulary discipline and prevents terminology drift. RCT SHALL maintain the authoritative glossary and SHALL ensure consistent usage across all specifications.</p>
+<h3 id="subJ-11"><span class="secnum">C.11</span> Compliance Revocation Authority (CRA)</h3>
+<p>CRA is empowered to revoke conformance claims, certification status, or deployment authorization for any device, vendor, or implementation found to violate invariance doctrine.</p>
+</div></section>
+
+<section id="appK" class="toplevel appendix">
+<h2><span class="secnum">Appendix K</span> Authorship</h2>
+<div class="section-body">
+<h3 id="subK-1"><span class="secnum">D.1</span> Editorial Authority</h3>
+<p>This document was prepared under the authority of the SolNet Physical‑Layer Exposure Review Board (SPERB). Authorship reflects institutional roles rather than individual identity.</p>
+<h3 id="subK-2"><span class="secnum">D.2</span> Primary Authors</h3>
+<ul>
+<li><strong>Office of Emission Neutrality (DEN)</strong> — Canonical emission definition and invariance doctrine.</li>
+<li><strong>Non‑Exposure Enforcement Bureau (NEEB)</strong> — Exposure prohibitions and enforcement requirements.</li>
+<li><strong>Canonical Behavior Registry (CBR)</strong> — Structural and timing invariants.</li>
+<li><strong>Cross‑Vendor Convergence Office (CVCO)</strong> — Convergence and interoperability constraints.</li>
+<li><strong>Temporal Stability Review Board (TSRB)</strong> — Drift, stability, and long‑interval requirements.</li>
+<li><strong>Environmental Neutrality Assessment Group (ENAG)</strong> — Environmental invariance requirements.</li>
+<li><strong>Relay Neutrality Commission (RNC)</strong> — Relay behavior and neutrality constraints.</li>
+<li><strong>Doctrinal Integrity Council (DIC)</strong> — Doctrinal review and cross‑RFC alignment.</li>
+<li><strong>Registry of Canonical Terminology (RCT)</strong> — Terminology and glossary consistency.</li>
+</ul>
+<h3 id="subK-3"><span class="secnum">D.3</span> Contributing Bodies</h3>
+<ul>
+<li><strong>Compliance Revocation Authority (CRA)</strong> — Conformance and certification language.</li>
+<li><strong>Standards Continuity Office (SCO)</strong> — Revision and governance model.</li>
+<li><strong>Manufacturing Variance Tribunal (MVT)</strong> — Manufacturing‑neutrality requirements.</li>
+</ul>
+<h3 id="subK-4"><span class="secnum">D.4</span> Custodian of Record</h3>
+<p>The <strong>Canonical Behavior Registry (CBR)</strong> maintains the authoritative version of this document and all associated change logs.</p>
+</div></section>
+
+  </article>
+</div>
+
+<script>
+(function(){
+  // active TOC highlight
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.toplevel'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
