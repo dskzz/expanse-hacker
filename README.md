@@ -58,25 +58,27 @@ it as *not* buildable yet, rather than just generating code for it.
 
 Two things worth opening directly:
 
-- **The RFC corpus** — [`docs/vault/New RFCs/`](docs/vault/New%20RFCs/)
-  is a from-scratch protocol spec corpus written in real IETF-RFC
-  style, with genuine security/protocol reasoning underneath the
-  fiction. Most directly security-flavored:
-  [RFC 2301 — Crypto Primitives](docs/vault/New%20RFCs/RFC%202301%20-%20Crypto%20Primitives.md),
-  [RFC 2352 — L1 Privacy and Metadata Minimization](docs/vault/New%20RFCs/RFC%202352%20-%20%20L1%20Privacy%20and%20Metadata%20Minimization.md),
-  [RFC 2362 — Trust Domains and Authority Policy](docs/vault/New%20RFCs/RFC%202362%20-%20Trust%20Domains%20and%20Authority%20Policy.md).
-  Easier-to-read HTML renderings of the newest two are in
-  [`docs/rfc-html/`](docs/rfc-html/). Each RFC has a matching
-  **companion doc** in
-  [`docs/vault/RFC Companion/`](docs/vault/RFC%20Companion/) that
-  works out how it actually gets exploited in-game — concrete,
-  fictional, non-actionable attack classes derived from the spec's own
-  mechanics, not generic hacking tropes.
-  [RFC 2362's companion](docs/vault/RFC%20Companion/RFC%202362%20-%20Trust%20Domains%20and%20Authority%20Policy.md)
+- **The RFC corpus** is a from-scratch protocol spec corpus written in
+  real IETF-RFC style, with genuine security/protocol reasoning
+  underneath the fiction — styled, standalone HTML renderings (no
+  Obsidian-vault cruft) are in [`docs/rfc-html/`](docs/rfc-html/).
+  Most directly security-flavored:
+  [RFC 2301 — Crypto Primitives](docs/rfc-html/RFC-2301-SolNet-Cryptographic-Primitives.html),
+  [RFC 2352 — L1 Privacy and Metadata Minimization](docs/rfc-html/RFC-2352-L1-Privacy-and-Metadata-Minimization.html),
+  [RFC 2362 — Trust Domains and Authority Policy](docs/rfc-html/RFC-2362-Trust-Domains-and-Authority-Policy.html).
+  Each RFC has a matching **companion doc** in
+  [`docs/rfc-companions/`](docs/rfc-companions/) that works out how it
+  actually gets exploited in-game — concrete, fictional,
+  non-actionable attack classes derived from the spec's own mechanics,
+  not generic hacking tropes.
+  [RFC 2362's companion](docs/rfc-companions/RFC%202362%20-%20Trust%20Domains%20and%20Authority%20Policy.md)
   is the cleanest example: it walks through privilege-escalation
   failure modes (a single cheap local compromise implying trust across
   an entire domain) that follow directly from the RFC's own trust
-  model, section by section.
+  model, section by section. (The vault under
+  [`docs/vault/New RFCs/`](docs/vault/New%20RFCs/) and
+  [`docs/vault/RFC Companion/`](docs/vault/RFC%20Companion/) is the
+  canonical source for both — these are read-friendly copies.)
 - **The Console** — a real nix-like shell, not a themed textbox.
   [`code/scripts/tools/Console.gd`](code/scripts/tools/Console.gd) is
   the dispatcher: a VFS-backed filesystem with real `owner`/`group`/
