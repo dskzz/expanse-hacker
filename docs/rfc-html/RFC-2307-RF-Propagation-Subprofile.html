@@ -1,0 +1,2048 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFC-2307 — RF Propagation Subprofile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EAEBE4; --paper-raised:#F2F3ED; --ink:#1B1D1C; --ink-soft:#54574B;
+    --rule:#B8BBAF; --rule-soft:#CBCEC1; --accent:#8A3324; --accent-soft:#A8462F;
+    --stamp-bg:#DCDED3; --stamp-border:#9C9F8F; --mono-bg:#E2E3DC;
+    --toolbar-bg:#DEDFD6; --focus:#8A3324; --danger:#8A3324;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+      --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+      --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+    --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+    --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,.stamp,.masthead-title{ font-family:"Newsreader", Georgia, serif; text-wrap:balance; }
+  code, .secnum, .table-wrap table, .wire, kbd{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+
+  a{ color:var(--accent); }
+  a:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  /* ---- doc bar (static identity strip, no edit affordances) ---- */
+  .docbar{
+    position:sticky; top:0; z-index:20; background:var(--toolbar-bg);
+    border-bottom:1px solid var(--rule); padding:.6rem 1.25rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    max-width:1200px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  .masthead-title{ font-size:2.1rem; font-weight:600; margin:0 0 .4rem; }
+  .masthead-sub{ font-style:italic; color:var(--ink-soft); margin:0 0 1rem; font-size:1rem; }
+  .status-box{
+    display:inline-block; border:1px solid var(--rule); background:var(--paper-raised);
+    padding:.6rem .9rem; font-size:.85rem; color:var(--ink-soft); border-radius:3px;
+  }
+  .status-box strong{ color:var(--ink); }
+
+  /* ---- layout ---- */
+  .layout{
+    max-width:1200px; margin:0 auto; padding:2rem 1.5rem 6rem;
+    display:grid; grid-template-columns:260px minmax(0,1fr); gap:3rem;
+    align-items:start;
+  }
+  nav.toc{ position:sticky; top:4.2rem; max-height:calc(100vh - 5.5rem); overflow-y:auto; }
+  nav.toc h4{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  nav.toc ol{ list-style:none; margin:0; padding:0; }
+  nav.toc li{ margin:0; }
+  nav.toc a{
+    display:block; padding:.3rem 0; color:var(--ink-soft); text-decoration:none;
+    font-size:.87rem; border-left:2px solid transparent; padding-left:.6rem;
+  }
+  nav.toc a:hover{ color:var(--ink); }
+  nav.toc a.active{ color:var(--accent); border-left-color:var(--accent); font-weight:500; }
+  nav.toc .toc-divider{
+    margin:.9rem 0 .4rem; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); border-top:1px solid var(--rule-soft); padding-top:.7rem;
+  }
+
+  article#doc{ max-width:70ch; }
+  section.toplevel{ padding:2.2rem 0; border-bottom:1px solid var(--rule-soft); }
+  section.toplevel:first-of-type{ padding-top:0; }
+  .appendix-divider{ padding:2.5rem 0 .5rem; }
+  .appendix-divider h1{ font-size:1.5rem; margin:0; color:var(--ink-soft); font-weight:500; }
+  h2{ font-size:1.35rem; font-weight:600; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+  h2 .secnum{ color:var(--accent); font-size:1rem; }
+  h3{ font-size:1.05rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  h3 .secnum{ color:var(--accent); font-size:.85rem; margin-right:.3rem; }
+  p{ margin:0 0 1rem; }
+  p.aphorism{
+    font-style:italic; padding-left:1rem; border-left:2px solid var(--rule);
+    color:var(--ink-soft); margin:1.2rem 0;
+  }
+  p.stamp{
+    display:inline-block; margin:0 0 1rem; font-style:italic; font-size:.85rem;
+    background:var(--stamp-bg); border:1px solid var(--stamp-border);
+    padding:.15rem .6rem; border-radius:2px; color:var(--ink-soft);
+  }
+  ul{ margin:0 0 1rem; padding-left:1.3rem; }
+  li{ margin-bottom:.4rem; }
+  strong{ font-weight:600; }
+  code{ background:var(--mono-bg); padding:.1rem .3rem; border-radius:2px; font-size:.85em; }
+  .table-wrap{ overflow-x:auto; margin:0 0 1.2rem; border:1px solid var(--rule); border-radius:3px; }
+  table{ border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td{ text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rule-soft); font-variant-numeric:tabular-nums; }
+  thead th{ background:var(--paper-raised); font-weight:600; border-bottom:1px solid var(--rule); }
+  tbody tr:last-child td{ border-bottom:none; }
+  pre.wire{
+    background:var(--mono-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:1rem 1.1rem; overflow-x:auto; font-size:.82rem; line-height:1.7; margin:0 0 1.2rem;
+  }
+  section.footnotes{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--rule-soft); }
+  section.footnotes h3{ margin-top:0; }
+  section.footnotes .nonnormative{ color:var(--ink-soft); font-weight:400; font-size:.85em; }
+  section.footnotes ol{ padding-left:1.4rem; font-size:.9rem; color:var(--ink-soft); }
+  .fnref a{ text-decoration:none; }
+
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:1.2rem; }
+    nav.toc{ position:static; max-height:none; }
+    nav.toc ol{ display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.4rem; }
+    nav.toc .toc-divider{ display:none; }
+    nav.toc a{ border-left:none; border-bottom:2px solid transparent; padding:.3rem .5rem; white-space:nowrap; }
+    nav.toc a.active{ border-left-color:transparent; border-bottom-color:var(--accent); }
+    article#doc{ max-width:100%; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">RFC&#8209;2307 &middot; RF Propagation Subprofile &middot; SolNet Standards Corpus &middot; static rendering</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">SolNet Standards Corpus — Normative</p>
+  <h1 class="masthead-title">RFC&#8209;2307 — RF Propagation Subprofile</h1>
+  <p class="masthead-sub">Dr. Arjun Kade &mdash; Luna University RF Systems Group; Visiting Fellow, MIAP Optical Systems Group</p>
+  <p class="status-box"><strong>Status:</strong> Normative, Standards Track. Canonical source of record is <code>docs/vault/New RFCs/RFC 2307 - RF Propagation Subprofile.md</code>; this is a static, read-only rendering.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Sections</h4>
+    <ol>
+      <li><a href="#sec1">1. Purpose (Rewritten in Correct Kade Voice)</a></li>
+      <li><a href="#sec2">2. Scope</a></li>
+      <li><a href="#sec4">4. Canonical RF Channel Profiles</a></li>
+      <li><a href="#sec5">5. Beaconing and Channel Announcements</a></li>
+      <li><a href="#sec6">6. Interference Model and Classification</a></li>
+      <li><a href="#sec7">7. Scheduled&#8209;Band Reservation Semantics</a></li>
+      <li><a href="#sec8">8. FHSS/LPI Module Behavior</a></li>
+      <li><a href="#sec9">9. RFLinkQualityRecord Specification</a></li>
+      <li><a href="#sec10">10. DRE RFChannel Records</a></li>
+      <li><a href="#sec11">11. L1 RFChannelHint TLV</a></li>
+      <li><a href="#sec12">12. Operational Behavior</a></li>
+      <li><a href="#sec13">13. Security Considerations</a></li>
+      <li><a href="#sec14">14. Diagnostics and Error Semantics</a></li>
+      <li><a href="#sec15">15. Logging and Evidence Preservation</a></li>
+      <li><a href="#sec16">16. Compliance and Conformance Requirements</a></li>
+      <li><a href="#sec17">17. Interoperability Constraints</a></li>
+      <li><a href="#sec18">18. Failure Modes and Contamination Pathways</a></li>
+      <li><a href="#sec19">19. Implementation Notes</a></li>
+      <li><a href="#sec20">20. IANA Considerations</a></li>
+      <li><a href="#sec21">21. Acknowledgments</a></li>
+    </ol>
+    <div class="toc-divider">Appendices</div>
+    <ol>
+      <li><a href="#appA">A. Glossary</a></li>
+      <li><a href="#appB">B. State Machines</a></li>
+      <li><a href="#appC">C. Example Records</a></li>
+      <li><a href="#appD">D. Security State Machine</a></li>
+      <li><a href="#appE">E. Reference Implementation Notes</a></li>
+      <li><a href="#appF">F. Abstract</a></li>
+      <li><a href="#appG">G. Security Threat Matrix</a></li>
+      <li><a href="#appH">H. Canonical Test Vectors</a></li>
+      <li><a href="#appI">I. Canonical Wire Formats</a></li>
+      <li><a href="#appJ">J. Operator Lockout Protocol</a></li>
+      <li><a href="#appK">K. Historical Note: Why This Standard Exists</a></li>
+      <li><a href="#appL">L. Canonical Compliance Checklist</a></li>
+      <li><a href="#appM">M. Adversarial Simulation Scenarios</a></li>
+      <li><a href="#appN">N. Canonical RF Testbed Architecture</a></li>
+      <li><a href="#appO">O. Failure Case Studies</a></li>
+      <li><a href="#appP">P. Errata Prevention Doctrine</a></li>
+      <li><a href="#appQ">Q. Consolidated Index</a></li>
+      <li><a href="#epilogue">Epilogue — The Final Containment Boundary</a></li>
+    </ol>
+  </nav>
+
+  <article id="doc">
+<section id="sec1" class="toplevel">
+<h2><span class="secnum">1.</span> Purpose (Rewritten in Correct Kade Voice)</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, MIAP RF Systems Group &mdash; Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group (collaborative research appointment)</p>
+<p>RF propagation is the primary communication medium for SolNet, and therefore the primary source of misunderstandings. Many operators describe RF as “unpredictable,” as though the medium were governed by whim rather than physics. It is not. What they interpret as unpredictability is interference, misconfiguration, or the consequences of long‑standing folklore.</p>
+<p>The purpose of this document is to define the canonical RF propagation subprofile, including channel profiles, interference semantics, beaconing behavior, and scheduled‑band reservation. These definitions exist to ensure that RF behaves predictably across the Authority and Namespace planes. They do not exist to validate personal theories about RF behavior, no matter how confidently those theories are expressed.</p>
+<p>RF is entirely capable of stable, deterministic operation. It simply requires that implementers follow the constraints defined here and refrain from practices that have repeatedly proven incompatible with both SolNet and basic physics.</p>
+<p><strong>Footnote 1:</strong> Portions of the interference classification model were developed during a joint MIAP–Luna University research exchange with Dr. Selene Vargo (MIAP Optical Systems Group). The collaboration was productive, although Dr. Vargo requested that RF operators “stop touching things during calibration,” a recommendation this author fully endorses.</p>
+</div></section>
+<section id="sec2" class="toplevel">
+<h2><span class="secnum">2.</span> Scope</h2>
+<div class="section-body">
+<p>This document defines the RF propagation subprofile for SolNet. It covers the structures, behaviors, and constraints required for RF to function as a reliable medium rather than a collection of anecdotes.</p>
+<p>The scope includes:</p>
+<ul><li>RFChannelProfileRecord definitions</li><li>interference classification and reporting</li><li>beaconing intervals and timing guarantees</li><li>scheduled‑band reservation semantics</li><li>FHSS/LPI module behavior</li><li>RFLinkQualityRecord structure and provenance</li><li>DRE RFChannel advertisement requirements</li></ul>
+<p>The scope explicitly excludes:</p>
+<ul><li>“tuning by feel”</li><li>“bumping the gain until it works”</li><li>“the antenna was pointed in the general direction”</li><li>“RF gremlins”</li><li>any explanation that begins with “in my experience”</li></ul>
+<p>These practices are incompatible with SolNet and, in several documented cases, with basic physics.</p>
+<p>This document defines the minimum constraints required for RF to behave predictably across the Authority and Namespace planes. Implementers who believe RF is inherently unpredictable will discover that the medium becomes far more stable once their personal theories are removed from the system</p>
+</div></section>
+<section id="sec4" class="toplevel">
+<h2><span class="secnum">4.</span> Canonical RF Channel Profiles</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>RF channels must be described using canonical profiles to ensure that systems interpret the medium consistently. Without standardized profiles, implementers tend to rely on informal descriptions such as “pretty clean,” “a bit noisy,” or “fine yesterday,” none of which contain measurable information. The RFChannelProfileRecord exists to prevent this form of ambiguity from entering SolNet.</p>
+<p>A canonical RF channel profile defines:</p>
+<ul><li><strong>frequency range</strong></li><li><strong>bandwidth</strong></li><li><strong>modulation constraints</strong></li><li><strong>expected noise floor</strong></li><li><strong>interference class</strong></li><li><strong>beaconing requirements</strong></li><li><strong>scheduled‑band eligibility</strong></li><li><strong>FHSS/LPI compatibility</strong></li></ul>
+<p>These parameters are not optional. They are the minimum set required to describe an RF channel in a way that another system can interpret without resorting to guesswork or folklore.</p>
+<h3><span class="secnum">4.1</span> Default RF Profile</h3>
+<p>The default RF profile represents a shared, unscheduled band with predictable noise characteristics and no special coordination requirements. It is the baseline against which all other profiles are compared. Systems must assume the default profile unless a more specific profile is explicitly declared and verifiably sourced.</p>
+<p>The default profile is appropriate for:</p>
+<ul><li>general routing</li><li>low‑priority beaconing</li><li>non‑critical telemetry</li><li>environments where interference is present but manageable</li></ul>
+<p>It is not appropriate for:</p>
+<ul><li>time‑critical coordination</li><li>high‑density environments</li><li>operators who believe “it should be fine”</li></ul>
+<h3><span class="secnum">4.2</span> Scheduled‑Band Profile</h3>
+<p>Scheduled bands provide deterministic access to RF resources. They exist because unscheduled operation inevitably leads to contention, and contention inevitably leads to operators increasing power “just a little,” which leads to further contention. Scheduled bands break this cycle by enforcing strict timing windows and reservation semantics.</p>
+<p>A scheduled‑band profile includes:</p>
+<ul><li>reservation window</li><li>permitted modulation</li><li>maximum power</li><li>timing accuracy requirements</li><li>enforcement behavior</li></ul>
+<p>Systems must reject transmissions that occur outside the assigned window. Scheduled bands are not suggestions, and treating them as such has measurable, negative effects on every participant.</p>
+<h3><span class="secnum">4.3</span> FHSS/LPI Profile</h3>
+<p>Frequency‑hopping and low‑probability‑of‑intercept modes require disciplined behavior. Improvised hopping sequences or “creative” dwell times are incompatible with SolNet and, in several documented cases, with basic physics. FHSS/LPI profiles define:</p>
+<ul><li>hopping pattern class</li><li>dwell time constraints</li><li>synchronization requirements</li><li>permitted deviation</li><li>provenance of the hopping sequence</li></ul>
+<p>FHSS/LPI behavior must be predictable to the system even if it is intentionally unpredictable to observers.</p>
+<h3><span class="secnum">4.4</span> High‑Interference Profile</h3>
+<p>Some environments contain persistent, unavoidable interference. These environments are not mysterious; they are simply noisy. High‑interference profiles define:</p>
+<ul><li>elevated noise floor</li><li>expected interference classes</li><li>fallback modulation</li><li>beaconing adjustments</li><li>error‑tolerant timing windows</li></ul>
+<p>Systems must not treat high‑interference environments as anomalies. They are common, measurable, and entirely predictable once properly classified.</p>
+<h3><span class="secnum">4.5</span> Profile Provenance</h3>
+<p>All RFChannelProfileRecords must carry verifiable provenance. Profiles without provenance are indistinguishable from folklore, and folklore has no place in a deterministic system. Provenance ensures that channel behavior can be audited, reproduced, and corrected.</p>
+</div></section>
+<section id="sec5" class="toplevel">
+<h2><span class="secnum">5.</span> Beaconing and Channel Announcements</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Beaconing is the mechanism by which RF systems announce their presence, capabilities, and channel state. It is intended to provide stability and coordination. Unfortunately, beaconing is also the mechanism most frequently modified by operators “to see what happens,” a practice that has produced results ranging from mild interference to complete channel collapse. This section defines the constraints required to prevent such outcomes.</p>
+<h3><span class="secnum">5.1</span> Beacon Interval Discipline</h3>
+<p>Beacon intervals must be deterministic. Systems must transmit beacons at the interval defined by the RFChannelProfileRecord, with permitted jitter no greater than the specified tolerance. Operators sometimes adjust beacon intervals based on personal preference or anecdotal experience. These adjustments introduce timing ambiguity, which is then misinterpreted as RF instability.</p>
+<p>Beacon intervals are not a tuning parameter. They are a coordination mechanism.</p>
+<h3><span class="secnum">5.2</span> Beacon Power and Modulation</h3>
+<p>Beacon power levels and modulation parameters must remain constant within a profile. Increasing beacon power “for visibility” does not improve coordination; it merely increases interference. Changing modulation “to test performance” produces inconsistent channel occupancy that other systems cannot interpret.</p>
+<p>Beacon parameters must be stable, predictable, and profile‑compliant. Any deviation undermines the purpose of beaconing.</p>
+<h3><span class="secnum">5.3</span> Beacon Content Requirements</h3>
+<p>A beacon must contain:</p>
+<ul><li>the RFChannelProfileRecord identifier</li><li>the transmitter’s provenance</li><li>timing accuracy metadata</li><li>interference observations (if applicable)</li><li>scheduled‑band reservation status (if applicable)</li></ul>
+<p>Beacons must not contain:</p>
+<ul><li>experimental fields</li><li>undocumented extensions</li><li>operator notes</li><li>“temporary” identifiers</li><li>any field described as “for testing”</li></ul>
+<p>Beacon content must be machine‑interpretable and verifiable. Human creativity is not a supported field.</p>
+<h3><span class="secnum">5.4</span> Beacon Provenance</h3>
+<p>All beacons must carry verifiable provenance. Provenance ensures that systems can distinguish between legitimate beacons, misconfigured devices, and improvised transmissions. Beacons without provenance are indistinguishable from noise, and noise is indistinguishable from interference. Provenance prevents this ambiguity.</p>
+<h3><span class="secnum">5.5</span> Channel Announcements</h3>
+<p>Channel announcements provide higher‑level information about channel state, including:</p>
+<ul><li>interference class</li><li>occupancy</li><li>scheduled‑band availability</li><li>FHSS/LPI compatibility</li><li>recent RFInterferenceEvents</li></ul>
+<p>Announcements must be derived from measurement, not intuition. Systems must not generate announcements based on operator observation, anecdotal experience, or “gut feeling.” Channel announcements that are not grounded in measurement produce misleading behavior that other systems interpret as instability.</p>
+<h3><span class="secnum">5.6</span> Beaconing in High‑Interference Environments</h3>
+<p>In high‑interference environments, beaconing must adapt within profile constraints. Increasing power is not an acceptable adaptation. Systems must:</p>
+<ul><li>maintain interval discipline</li><li>adjust modulation only within permitted fallback modes</li><li>include interference metadata</li><li>avoid beacon storms by respecting backoff rules</li></ul>
+<p>High‑interference environments are not exceptional. They are common, predictable, and manageable when treated as measurable conditions rather than mysteries.</p>
+<h3><span class="secnum">5.7</span> Improvised Beaconing</h3>
+<p>Improvised beaconing — including ad‑hoc intervals, experimental modulation, or undocumented fields — is incompatible with SolNet and, in several documented cases, with basic physics. Systems must reject improvised beacons and treat them as interference.</p>
+<p>Beaconing is a coordination mechanism, not a creative medium.</p>
+</div></section>
+<section id="sec6" class="toplevel">
+<h2><span class="secnum">6.</span> Interference Model and Classification</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Interference is not an unexpected condition. It is not a surprise. It is not a mysterious force that “comes and goes.” Interference is the natural consequence of multiple systems attempting to occupy the same medium without coordination. The only surprising aspect of interference is the persistent belief among operators that it is somehow unusual.</p>
+<p>This section defines the canonical interference model required for SolNet RF stability. It exists because implementers routinely treat interference as an anomaly, and anomalies are often blamed on the medium rather than on the measurable conditions that produced them.</p>
+<h3><span class="secnum">6.1</span> Interference as the Baseline State</h3>
+<p>RF channels must be assumed to contain interference unless proven otherwise. This is not pessimism; it is the observable condition of every shared spectrum environment. Systems that assume “clean channels” without measurement inevitably misinterpret normal behavior as instability.</p>
+<p>Interference is not a failure mode. It is a <strong>state</strong>.</p>
+<p>The failure occurs when systems do not measure it.</p>
+<h3><span class="secnum">6.2</span> Measurement Requirements</h3>
+<p>Systems must continuously measure:</p>
+<ul><li><strong>noise floor</strong> (absolute and relative)</li><li><strong>adjacent‑channel occupancy</strong></li><li><strong>co‑channel contention</strong></li><li><strong>modulation collisions</strong></li><li><strong>beacon storms</strong></li><li><strong>improvised transmissions</strong></li><li><strong>scheduled‑band violations</strong></li></ul>
+<p>Measurements must be taken at defined intervals and recorded with provenance. Measurements without provenance are indistinguishable from operator speculation.</p>
+<h3><span class="secnum">6.3</span> Interference Classes (Canonical)</h3>
+<p>SolNet defines six interference classes. These classes are not subjective. They are not interpretive. They are not “guidelines.” They are measurable conditions.</p>
+<ul><li><strong>Class 0 — Nominal:</strong> Noise floor within expected bounds.</li><li><strong>Class 1 — Elevated:</strong> Persistent noise above baseline; channel still usable.</li><li><strong>Class 2 — Contention:</strong> Multiple systems competing for the same band; performance degraded.</li><li><strong>Class 3 — Collision:</strong> Overlapping transmissions producing measurable corruption.</li><li><strong>Class 4 — Improvised:</strong> Non‑profile‑compliant transmissions, including experimental beacons and undocumented modulation.</li><li><strong>Class 5 — Catastrophic:</strong> Channel unusable; typically caused by operator intervention.</li></ul>
+<p>Class 5 is not a natural phenomenon. It is a human phenomenon.</p>
+<h3><span class="secnum">6.4</span> RFInterferenceEvent Structure</h3>
+<p>Each interference event must include:</p>
+<ul><li>timestamp (profile‑aligned)</li><li>interference class</li><li>measured parameters</li><li>suspected or confirmed source</li><li>confidence level</li><li>provenance chain</li></ul>
+<p>Events without provenance must be rejected. Events with incomplete measurement must be flagged. Events based on operator intuition must not be generated.</p>
+<h3><span class="secnum">6.5</span> Operator‑Induced Interference</h3>
+<p>Operator‑induced interference is the leading cause of RF instability. Common sources include:</p>
+<ul><li>adjusting power “to see what happens”</li><li>modifying beacon intervals</li><li>improvising FHSS sequences</li><li>transmitting outside scheduled windows</li><li>enabling undocumented modulation modes</li><li>disabling provenance “temporarily”</li></ul>
+<p>These practices are incompatible with SolNet and, in several documented cases, with basic physics.</p>
+<h3><span class="secnum">6.6</span> Interference as a Predictable Condition</h3>
+<p>Interference is predictable when measured. It is unpredictable when ignored.</p>
+<p>Systems must treat interference as a measurable, classifiable, and correctable condition. Operators must not treat it as folklore.</p>
+</div></section>
+<section id="sec7" class="toplevel">
+<h2><span class="secnum">7.</span> Scheduled‑Band Reservation Semantics</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Scheduled bands exist because unscheduled operation inevitably devolves into improvisation, and improvisation inevitably contaminates the RF medium. The purpose of scheduled‑band semantics is not to provide convenience; it is to prevent human behavior from introducing entropy into a deterministic system.</p>
+<p>A scheduled band is a <strong>contract</strong> between physics and protocol. Operators are not parties to this contract. Their preferences, intuitions, and “quick adjustments” are irrelevant.</p>
+<p>This section defines the constraints required to ensure that scheduled bands remain immune to folklore.</p>
+<h3><span class="secnum">7.1</span> Why Scheduled Bands Exist</h3>
+<p>Unscheduled operation invites:</p>
+<ul><li>contention</li><li>collision</li><li>power escalation</li><li>undocumented modulation</li><li>improvised timing</li><li>“temporary exceptions” that become permanent failures</li></ul>
+<p>Scheduled bands exist to eliminate these behaviors by replacing human decision‑making with deterministic timing windows.</p>
+<p>A scheduled band is not a shared space. It is a <strong>controlled environment</strong>.</p>
+<p>Any deviation — even minor — introduces contamination.</p>
+<h3><span class="secnum">7.2</span> Reservation Windows</h3>
+<p>A reservation window defines:</p>
+<ul><li><strong>start time</strong> (absolute, profile‑aligned)</li><li><strong>end time</strong></li><li><strong>permitted modulation</strong></li><li><strong>maximum power</strong></li><li><strong>timing accuracy</strong></li><li><strong>fallback behavior</strong></li></ul>
+<p>These parameters are not adjustable. They are not “guidelines.” They are not “defaults.”</p>
+<p>They are the minimum constraints required to prevent operators from treating the RF medium as a sandbox.</p>
+<p>Transmitting outside the assigned window is not a mistake. It is <strong>contamination</strong>.</p>
+<h3><span class="secnum">7.3</span> RFReservationReceipt</h3>
+<p>A reservation receipt is the only acceptable proof that a system is authorized to transmit within a scheduled band. It must include:</p>
+<ul><li>reservation ID</li><li>channel profile</li><li>timing window</li><li>permitted modulation</li><li>provenance chain</li><li>enforcement flags</li></ul>
+<p>Receipts without provenance are indistinguishable from improvisation. Improvisation is indistinguishable from interference.</p>
+<p>Therefore, receipts without provenance must be rejected without exception.</p>
+<h3><span class="secnum">7.4</span> Enforcement Behavior</h3>
+<p>Systems must enforce scheduled‑band compliance with the same rigor used to enforce cryptographic validity. This includes:</p>
+<ul><li>rejecting out‑of‑window transmissions</li><li>reporting violations as RFInterferenceEvents</li><li>refusing to honor improvised reservations</li><li>maintaining deterministic timing even under load</li></ul>
+<p>Enforcement is not punitive. It is <strong>preventative</strong>.</p>
+<p>The goal is not to punish misbehavior. The goal is to prevent misbehavior from contaminating the medium.</p>
+<h3><span class="secnum">7.5</span> Misbehavior Classification</h3>
+<p>Misbehavior includes, but is not limited to:</p>
+<ul><li>early transmission</li><li>late transmission</li><li>excessive power</li><li>incorrect modulation</li><li>undocumented extensions</li><li>“temporary” timing adjustments</li><li>operator‑initiated overrides</li></ul>
+<p>These are not edge cases. They are predictable outcomes of human involvement.</p>
+<p>Misbehavior is not subtle. It is measurable.</p>
+<h3><span class="secnum">7.6</span> Scheduled Bands and Human Creativity</h3>
+<p>Human creativity has produced many valuable contributions to science. Scheduled‑band improvisation is not one of them.</p>
+<p>Attempts to “optimize,” “experiment,” or “improve performance” by modifying scheduled‑band behavior must be treated as contamination events.</p>
+<p>The RF medium does not reward creativity. It rewards compliance.</p>
+</div></section>
+<section id="sec8" class="toplevel">
+<h2><span class="secnum">8.</span> FHSS/LPI Module Behavior</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Frequency‑hopping and low‑probability‑of‑intercept modes are routinely misunderstood by operators who believe that unpredictability is a virtue in RF systems. It is not. Unpredictability is a contaminant. FHSS/LPI modes are only effective when their unpredictability is <strong>intentional</strong>, <strong>bounded</strong>, and <strong>mathematically constrained</strong> — not when it is the byproduct of improvisation.</p>
+<p>FHSS/LPI behavior must be predictable <strong>to the system</strong>, even if it is intentionally unpredictable <strong>to observers</strong>. This distinction is lost on operators who treat hopping sequences as an opportunity for creativity. Creativity has many appropriate venues. RF is not one of them.</p>
+<p>This section defines the constraints required to ensure that FHSS/LPI modules remain deterministic, reproducible, and immune to folklore.</p>
+<h3><span class="secnum">8.1</span> Purpose of FHSS/LPI (and What It Is Not)</h3>
+<p>FHSS/LPI modes exist to:</p>
+<ul><li>reduce detectability</li><li>distribute channel load</li><li>mitigate interference</li><li>maintain link integrity under hostile conditions</li><li>provide resilience against narrowband jamming</li></ul>
+<p>They do <strong>not</strong> exist to:</p>
+<ul><li>“improve performance” through undocumented tweaks</li><li>test experimental hopping sequences</li><li>compensate for misconfiguration</li><li>express operator individuality</li><li>“see what happens”</li></ul>
+<p>FHSS is not a creative medium. It is a controlled stochastic process.</p>
+<p>When operators treat it otherwise, they contaminate the system.</p>
+<h3><span class="secnum">8.2</span> Hopping Pattern Classes</h3>
+<p>SolNet defines three hopping pattern classes. These classes are not suggestions; they are the only acceptable patterns.</p>
+<h3><span class="secnum">Class A</span> Deterministic</h3>
+<p>A fixed, profile‑defined sequence. Predictable, reproducible, and immune to improvisation.</p>
+<h3><span class="secnum">Class B</span> Pseudo‑Random</h3>
+<p>A seeded sequence that appears random to observers but is fully reproducible to the system. The seed must be profile‑defined and provenance‑verified.</p>
+<h3><span class="secnum">Class C</span> Coordinated Pseudo‑Random</h3>
+<p>A synchronized pseudo‑random sequence shared across multiple systems. Deviation by even one participant introduces contamination.</p>
+<h3>Improvised Patterns — Not Permitted</h3>
+<p>Any hopping pattern not explicitly defined in the profile is contamination. Not “non‑compliant.” Not “suboptimal.” <strong>Contamination.</strong></p>
+<p>Improvised patterns are incompatible with SolNet and, in several documented cases, with basic physics.</p>
+<h3><span class="secnum">8.3</span> Dwell Time Constraints</h3>
+<p>Dwell time is the duration spent on each frequency before hopping. It is not a tuning parameter. It is not a performance lever. It is not an opportunity for experimentation.</p>
+<p>Dwell time must remain within profile limits because:</p>
+<ul><li>too long increases detectability</li><li>too short increases desynchronization</li><li>inconsistent dwell time contaminates the hopping pattern</li><li>operator‑adjusted dwell time contaminates everything</li></ul>
+<p>Extending dwell time “for stability” does not improve stability. It merely increases the probability of collision.</p>
+<p>Reducing dwell time “for agility” does not improve agility. It merely increases the probability of drift.</p>
+<p>FHSS/LPI dwell time is a <strong>constraint</strong>, not a suggestion.</p>
+<h3><span class="secnum">8.4</span> Synchronization Requirements</h3>
+<p>FHSS/LPI modules must maintain synchronization with:</p>
+<ul><li>beacon timing</li><li>reservation windows</li><li>channel announcements</li><li>profile‑defined timing tolerances</li><li>provenance‑verified seeds</li></ul>
+<p>Desynchronization is not an RF failure. It is a configuration failure.</p>
+<p>Systems must detect drift early, correct it deterministically, and report it as a measurable condition — not as “strange RF behavior,” a phrase that has no diagnostic value and considerable folklore value.</p>
+<h3><span class="secnum">8.5</span> Provenance of Hopping Sequences</h3>
+<p>Every hopping sequence — deterministic or pseudo‑random — must carry a complete provenance chain. This chain ensures that:</p>
+<ul><li>the sequence is profile‑compliant</li><li>the seed is valid</li><li>the timing is correct</li><li>the pattern is reproducible</li><li>no operator has “temporarily adjusted” anything</li></ul>
+<p>Sequences without provenance are indistinguishable from improvisation. Improvisation is indistinguishable from interference. Interference is indistinguishable from contamination.</p>
+<p>Therefore, sequences without provenance must be rejected immediately and without exception.</p>
+<h3><span class="secnum">8.6</span> FHSS/LPI in High‑Interference Environments</h3>
+<p>High‑interference environments are not exceptional. They are common, predictable, and measurable.</p>
+<p>FHSS/LPI modules must adapt <strong>within profile constraints</strong>, not around them. This means:</p>
+<ul><li>no power escalation</li><li>no modulation changes</li><li>no hopping‑pattern modification</li><li>no undocumented fallback</li><li>no operator‑initiated overrides</li></ul>
+<p>The correct response to interference is measurement, not improvisation.</p>
+<p>When FHSS/LPI modules behave deterministically, interference becomes manageable. When operators intervene, interference becomes contamination.</p>
+<h3><span class="secnum">8.7</span> The Contamination Boundary</h3>
+<p>FHSS/LPI modes sit at the boundary between:</p>
+<ul><li><strong>deterministic RF physics</strong> and</li><li><strong>human attempts to outsmart deterministic RF physics</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>FHSS/LPI modules must not:</p>
+<ul><li>accept undocumented parameters</li><li>tolerate timing drift</li><li>allow operator creativity</li><li>incorporate folklore</li><li>degrade gracefully into improvisation</li></ul>
+<p>FHSS/LPI behavior must remain immune to contamination.</p>
+<p>The moment it becomes negotiable, it becomes useless.</p>
+</div></section>
+<section id="sec9" class="toplevel">
+<h2><span class="secnum">9.</span> RFLinkQualityRecord Specification</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Link quality is one of the most frequently misrepresented concepts in RF systems. Operators routinely describe link conditions using terms such as “pretty good,” “solid,” “fine yesterday,” or the particularly unhelpful “RF seems weird today.” None of these statements contain measurable information. All of them contaminate the diagnostic process.</p>
+<p>The RFLinkQualityRecord exists to eliminate subjective interpretation and replace it with deterministic, reproducible measurement. It is not a convenience structure. It is a containment structure — designed to prevent folklore from entering the system under the guise of “operator experience.”</p>
+<p>This section defines the canonical structure, semantics, and provenance requirements for link‑quality reporting.</p>
+<h3><span class="secnum">9.1</span> Purpose of RFLinkQualityRecord</h3>
+<p>The RFLinkQualityRecord serves three critical functions:</p>
+<ol><li><strong>Quantification</strong> — replacing intuition with measurement.</li><li><strong>Reproducibility</strong> — ensuring that link quality can be compared across time, systems, and environments.</li><li><strong>Containment</strong> — preventing undocumented interpretations from contaminating routing, scheduling, and modulation decisions.</li></ol>
+<p>It is not optional. It is not advisory. It is the minimum requirement for deterministic operation.</p>
+<p>Without it, systems fall back on operator intuition, which is indistinguishable from noise.</p>
+<h3><span class="secnum">9.2</span> Required Fields</h3>
+<p>A valid RFLinkQualityRecord must include:</p>
+<ul><li><strong>Signal Strength (Absolute and Relative)</strong> Not “strong,” not “fine,” not “good enough.” Measured values only.</li><li><strong>Noise Floor</strong> The actual noise floor, not the operator’s belief about it.</li><li><strong>Interference Class</strong> As defined in Section 6. Not “seems noisy.”</li><li><strong>Modulation Success Rate</strong> A measurable ratio, not a feeling.</li><li><strong>Timing Accuracy</strong> Drift is contamination; accuracy is containment.</li><li><strong>Measurement Window</strong> Explicit, profile‑defined, provenance‑verified.</li><li><strong>Provenance Chain</strong> Without provenance, the record is folklore.</li></ul>
+<p>Records missing any of these fields must be rejected. Records containing undocumented fields must be invalidated. Records generated manually must not exist.</p>
+<h3><span class="secnum">9.3</span> Measurement Windows</h3>
+<p>Measurement windows define the temporal scope of link‑quality evaluation. They exist because:</p>
+<ul><li><strong>short windows</strong> exaggerate transient conditions</li><li><strong>long windows</strong> obscure meaningful variation</li><li><strong>operator‑selected windows</strong> introduce contamination</li></ul>
+<p>Measurement windows must be:</p>
+<ul><li>profile‑defined</li><li>deterministic</li><li>consistent across systems</li><li>immune to operator adjustment</li></ul>
+<p>Operators must not modify measurement windows “to get better numbers.” This practice is indistinguishable from data manipulation.</p>
+<h3><span class="secnum">9.4</span> Smoothing Rules</h3>
+<p>Smoothing is required to prevent transient anomalies from contaminating link‑quality interpretation. However, smoothing must follow:</p>
+<ul><li>exponential decay</li><li>bounded memory</li><li>profile‑defined parameters</li><li>no operator intervention</li></ul>
+<p>Manual smoothing is not smoothing. It is falsification.</p>
+<p>Systems must not allow operators to “clean up” link‑quality data. Clean data is measured, not curated.</p>
+<h3><span class="secnum">9.5</span> Interpretation Constraints</h3>
+<p>RFLinkQualityRecord is a measurement structure, not a narrative device. It must not be interpreted subjectively.</p>
+<p>Common misinterpretations include:</p>
+<ul><li>assuming high power improves quality</li><li>ignoring interference class</li><li>treating transient success as stability</li><li>attributing measurement noise to “RF gremlins”</li><li>believing that link quality is a matter of opinion</li></ul>
+<p>RF gremlins do not exist. Interference does.</p>
+<p>Link quality is not a feeling. It is a measurable condition.</p>
+<h3><span class="secnum">9.6</span> Provenance Requirements</h3>
+<p>Provenance is the only defense against contamination. Every RFLinkQualityRecord must include:</p>
+<ul><li>origin</li><li>measurement chain</li><li>timestamp</li><li>profile ID</li><li>verification signature (if applicable)</li></ul>
+<p>Records without provenance are indistinguishable from folklore. Folklore is indistinguishable from contamination.</p>
+<p>Therefore, records without provenance must be rejected immediately and without exception.</p>
+<h3><span class="secnum">9.7</span> Link Quality as a Deterministic Condition</h3>
+<p>Link quality reflects:</p>
+<ul><li>physics</li><li>interference</li><li>configuration</li><li>compliance</li></ul>
+<p>It does not reflect:</p>
+<ul><li>optimism</li><li>intuition</li><li>anecdotal experience</li><li>operator confidence</li><li>“how it felt yesterday”</li></ul>
+<p>When measured correctly, link quality is predictable. When interpreted subjectively, it becomes folklore.</p>
+<p>The RFLinkQualityRecord exists to prevent that contamination.</p>
+</div></section>
+<section id="sec10" class="toplevel">
+<h2><span class="secnum">10.</span> DRE RFChannel Records</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Directory &amp; Routing Endpoints (DREs) are responsible for propagating RF channel state across SolNet. They do not interpret intuition. They do not interpolate folklore. They do not “fill in the gaps” based on operator experience. They propagate <strong>records</strong>, and those records must be deterministic, reproducible, and immune to contamination.</p>
+<p>RF channels evolve over time. Human interpretation evolves faster — and rarely in the direction of accuracy.</p>
+<p>The DRE RFChannelRecord exists to ensure that the system’s understanding of RF conditions is grounded in <strong>measurement</strong>, not <strong>memory</strong>, and in <strong>provenance</strong>, not <strong>confidence</strong>.</p>
+<p>This section defines the canonical structure and propagation semantics required to prevent operator‑originated contamination from entering the routing plane.</p>
+<h3><span class="secnum">10.1</span> Purpose of RFChannel Records</h3>
+<p>RFChannelRecords serve as the authoritative description of RF conditions for all higher‑layer decisions. They exist because:</p>
+<ul><li>local observations are insufficient</li><li>operator interpretations are unreliable</li><li>undocumented behavior is contagious</li><li>routing decisions must be deterministic</li><li>scheduled‑band coordination requires shared state</li><li>FHSS/LPI synchronization depends on accurate metadata</li></ul>
+<p>Without RFChannelRecords, systems fall back on local heuristics. Local heuristics are indistinguishable from folklore. Folklore is indistinguishable from contamination.</p>
+<p>RFChannelRecords are the containment boundary.</p>
+<h3><span class="secnum">10.2</span> Record Structure</h3>
+<p>A valid DRE RFChannelRecord must include:</p>
+<ul><li><strong>Channel Profile ID</strong> Identifies the canonical behavior expected on this channel.</li><li><strong>Current Interference Class</strong> As defined in Section 6. Not “seems busy.”</li><li><strong>Occupancy Metrics</strong> Measured, not inferred.</li><li><strong>Scheduled‑Band Reservations</strong> Including active windows and pending transitions.</li><li><strong>FHSS/LPI Compatibility Flags</strong> Deterministic indicators, not operator speculation.</li><li><strong>Link‑Quality Aggregates</strong> Derived from RFLinkQualityRecords, not operator summaries.</li><li><strong>Timestamp</strong> Profile‑aligned, provenance‑verified.</li><li><strong>Provenance Chain</strong> The only defense against contamination.</li></ul>
+<p>Records missing any of these fields must be rejected. Records containing undocumented fields must be invalidated. Records generated manually must not exist.</p>
+<h3><span class="secnum">10.3</span> Propagation Semantics</h3>
+<p>DREs must propagate RFChannelRecords:</p>
+<ul><li>at profile‑defined intervals</li><li>upon interference‑class transitions</li><li>upon scheduled‑band reservation updates</li><li>upon FHSS/LPI synchronization changes</li><li>upon link‑quality threshold crossings</li></ul>
+<p>Propagation must <strong>not</strong> occur:</p>
+<ul><li>because an operator “noticed something”</li><li>to compensate for misconfiguration</li><li>to “get ahead of a problem”</li><li>in response to intuition</li><li>as part of an undocumented optimization</li></ul>
+<p>Propagation is a deterministic process. It is not a conversation.</p>
+<p>The moment propagation becomes discretionary, it becomes contaminated.</p>
+<h3><span class="secnum">10.4</span> Caching and Invalidation</h3>
+<p>DREs may cache RFChannelRecords to reduce load, but caches must be invalidated when:</p>
+<ul><li>timestamps exceed profile limits</li><li>interference class changes</li><li>scheduled‑band reservations expire</li><li>FHSS/LPI flags change</li><li>provenance becomes unverifiable</li><li>link‑quality aggregates drift beyond tolerance</li></ul>
+<p>Stale RF data is not “mostly correct.” It is incorrect.</p>
+<p>Systems that rely on stale data behave unpredictably, and unpredictability is indistinguishable from interference.</p>
+<p>Caching is a performance optimization. Invalidation is a contamination‑prevention mechanism.</p>
+<h3><span class="secnum">10.5</span> Cross‑Plane Interactions</h3>
+<p>RFChannelRecords are not isolated to the RF domain. They influence:</p>
+<ul><li><strong>routing decisions (A‑plane)</strong> Incorrect RF state produces incorrect path selection.</li><li><strong>namespace discovery (N‑plane)</strong> Misreported channel availability contaminates service visibility.</li><li><strong>session establishment (N4)</strong> Incorrect link‑quality aggregates produce unstable sessions.</li><li><strong>personal namespace policies (N5)</strong> Misinterpreted interference leads to incorrect access decisions.</li></ul>
+<p>RF is the foundation. Every higher‑layer decision inherits its accuracy — or its contamination.</p>
+<p>When RFChannelRecords are correct, the system behaves predictably. When they are contaminated, the system behaves like an operator.</p>
+<p>This is unacceptable.</p>
+<h3><span class="secnum">10.6</span> The Contamination Boundary</h3>
+<p>The DRE is the boundary between:</p>
+<ul><li><strong>measured RF reality</strong> and</li><li><strong>human attempts to reinterpret that reality</strong></li></ul>
+<p>RFChannelRecords must not:</p>
+<ul><li>incorporate undocumented fields</li><li>accept operator‑generated data</li><li>tolerate missing provenance</li><li>degrade gracefully into heuristics</li><li>allow improvisation to masquerade as measurement</li></ul>
+<p>The DRE’s role is not to interpret RF conditions. It is to <strong>propagate them without contamination</strong>.</p>
+<p>Any deviation from this principle is a systemic failure.</p>
+</div></section>
+<section id="sec11" class="toplevel">
+<h2><span class="secnum">11.</span> L1 RFChannelHint TLV</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Hints exist because systems benefit from early, lightweight indicators of RF conditions — <strong>systems</strong>, not operators. The RFChannelHint TLV is a mechanism for conveying narrowly scoped, profile‑aligned metadata that assists in routing, scheduling, and modulation decisions. It is not a mechanism for expressing intuition, speculation, or “situational awareness.”</p>
+<p>Hints are not opinions. Hints are not theories. Hints are not “quick notes.”</p>
+<p>Hints are <strong>structured, deterministic signals</strong> designed to prevent contamination by ensuring that higher‑layer decisions are informed by <strong>measurement</strong>, not <strong>folklore</strong>.</p>
+<p>This section defines the canonical semantics of RFChannelHint TLVs and the constraints required to prevent their misuse.</p>
+<h3><span class="secnum">11.1</span> Purpose of RFChannelHint</h3>
+<p>The RFChannelHint TLV exists to:</p>
+<ul><li>accelerate convergence</li><li>reduce miscoordination</li><li>provide early warning of interference trends</li><li>assist in fallback selection</li><li>support FHSS/LPI synchronization</li><li>prevent higher layers from misinterpreting transient RF behavior</li></ul>
+<p>It does <strong>not</strong> exist to:</p>
+<ul><li>override measurements</li><li>replace RFChannelRecords</li><li>compensate for misconfiguration</li><li>express operator intuition</li><li>carry experimental fields</li><li>“explain” RF behavior</li></ul>
+<p>Hints are advisory signals for machines, not narrative devices for humans.</p>
+<h3><span class="secnum">11.2</span> Encoding Requirements</h3>
+<p>The RFChannelHint TLV must include:</p>
+<ul><li><strong>Hint Type</strong> A profile‑defined identifier. Not a free‑form string.</li><li><strong>Hint Value</strong> A constrained, deterministic value. Not a sentence.</li><li><strong>Timestamp</strong> Profile‑aligned, provenance‑verified.</li><li><strong>Provenance Chain</strong> The only defense against contamination.</li><li><strong>Profile ID</strong> Ensures the hint is interpreted correctly.</li></ul>
+<p>Hints missing any of these fields must be rejected. Hints containing undocumented fields must be invalidated. Hints generated manually must not exist.</p>
+<h3><span class="secnum">11.3</span> Supported Hint Types</h3>
+<p>Supported hints are intentionally narrow. They convey <strong>state</strong>, not <strong>interpretation</strong>.</p>
+<h3>Interference‑Trend</h3>
+<p>Indicates whether interference is rising, falling, or stable. Not “seems noisy.”</p>
+<h3>Occupancy‑Shift</h3>
+<p>Indicates expected changes in channel load. Not “channel might get busy.”</p>
+<h3>Scheduled‑Band‑Imminent</h3>
+<p>Indicates that a reservation window is approaching. Not “someone is about to transmit.”</p>
+<h3>FHSS‑Sync‑Drift</h3>
+<p>Indicates measurable deviation in hopping synchronization. Not “FHSS feels off.”</p>
+<h3>Fallback‑Recommended</h3>
+<p>Indicates that profile‑defined fallback conditions have been met. Not “you might want to switch channels.”</p>
+<p>Unsupported hints include:</p>
+<ul><li>“operators reported issues”</li><li>“temporary workaround”</li><li>“RF acting strange”</li><li>“probably fine”</li></ul>
+<p>These are not hints. These are contamination vectors.</p>
+<h3><span class="secnum">11.4</span> Hint Semantics</h3>
+<p>Hints must be:</p>
+<ul><li><strong>advisory</strong></li><li><strong>non‑binding</strong></li><li><strong>profile‑aligned</strong></li><li><strong>derived from measurement</strong></li><li><strong>reproducible</strong></li><li><strong>immune to operator interpretation</strong></li></ul>
+<p>Hints must <strong>not</strong>:</p>
+<ul><li>alter system behavior directly</li><li>override profile constraints</li><li>modify beaconing</li><li>change modulation</li><li>adjust power</li><li>compensate for misconfiguration</li></ul>
+<p>Hints inform decisions. They do not make them.</p>
+<p>The moment a hint becomes authoritative, it becomes a liability.</p>
+<h3><span class="secnum">11.5</span> Provenance Requirements</h3>
+<p>Provenance is mandatory. A hint without provenance is indistinguishable from folklore.</p>
+<p>Every hint must include:</p>
+<ul><li>origin</li><li>measurement chain</li><li>timestamp</li><li>profile ID</li><li>verification signature (if applicable)</li></ul>
+<p>Hints without provenance must be rejected immediately and without exception.</p>
+<h3><span class="secnum">11.6</span> Misuse of Hints</h3>
+<p>Common misuse includes:</p>
+<ul><li>using hints to mask misconfiguration</li><li>generating hints manually</li><li>treating hints as authoritative</li><li>using hints to justify improvisation</li><li>embedding undocumented fields</li><li>interpreting hints as narrative explanations</li></ul>
+<p>Improvised hints are indistinguishable from interference. Interference is indistinguishable from contamination.</p>
+<p>Therefore, improvised hints must be treated as contamination events.</p>
+<h3><span class="secnum">11.7</span> The Contamination Boundary</h3>
+<p>The RFChannelHint TLV sits at a critical boundary:</p>
+<ul><li><strong>below it</strong> lies deterministic RF measurement</li><li><strong>above it</strong> lies higher‑layer decision‑making</li></ul>
+<p>Hints must not allow contamination to cross this boundary.</p>
+<p>They must not:</p>
+<ul><li>carry folklore</li><li>encode intuition</li><li>embed operator theories</li><li>degrade into free‑form metadata</li><li>become a substitute for measurement</li></ul>
+<p>Hints exist to prevent contamination, not to transport it.</p>
+</div></section>
+<section id="sec12" class="toplevel">
+<h2><span class="secnum">12.</span> Operational Behavior</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Operational behavior is where RF systems most frequently diverge from deterministic physics and drift into human improvisation. The RF medium does not change its laws during startup, fallback, or recovery. Humans, however, routinely change their behavior during these phases — usually in ways that contaminate the system.</p>
+<p>Operational behavior must be governed by <strong>measurement</strong>, <strong>provenance</strong>, and <strong>profile constraints</strong>, not by operator intuition or “situational judgment.” This section defines the canonical operational behaviors required to prevent contamination during the most vulnerable phases of RF system activity.</p>
+<h3><span class="secnum">12.1</span> Startup Behavior</h3>
+<p>Startup is the phase during which systems are most susceptible to contamination because operators incorrectly assume that “nothing important is happening yet.” In reality, startup is where the system establishes the deterministic foundation upon which all subsequent behavior depends.</p>
+<p>During startup, systems must:</p>
+<ul><li>load profile constraints</li><li>measure the noise floor</li><li>scan for beacons</li><li>classify interference</li><li>synchronize timing</li><li>validate provenance</li><li>verify scheduled‑band state</li><li>confirm FHSS/LPI readiness</li></ul>
+<p>Systems must <strong>not</strong>:</p>
+<ul><li>transmit immediately</li><li>assume channel availability</li><li>rely on cached data</li><li>use undocumented modulation</li><li>accept operator overrides</li><li>“test the channel”</li></ul>
+<p>Startup is a measurement phase, not a transmission phase. Any transmission during startup is contamination.</p>
+<h3><span class="secnum">12.2</span> Fallback Behavior</h3>
+<p>Fallback exists to preserve determinism when conditions degrade. It is not a mechanism for experimentation, creativity, or “trying something else.”</p>
+<p>Fallback must be:</p>
+<ul><li>deterministic</li><li>profile‑defined</li><li>reversible</li><li>measurable</li><li>provenance‑verified</li></ul>
+<p>Fallback must <strong>not</strong> be:</p>
+<ul><li>improvised</li><li>operator‑triggered</li><li>undocumented</li><li>experimental</li><li>used to mask misconfiguration</li></ul>
+<p>Fallback is a containment mechanism. Its purpose is to prevent contamination from spreading.</p>
+<h3><span class="secnum">12.3</span> Recovery Behavior</h3>
+<p>Recovery is the process of returning to normal operation after interference, desynchronization, or scheduled‑band transitions. Recovery must be gradual, controlled, and deterministic.</p>
+<p>Recovery must:</p>
+<ul><li>re‑establish timing</li><li>re‑validate provenance</li><li>re‑measure interference</li><li>re‑synchronize FHSS/LPI modules</li><li>re‑confirm scheduled‑band state</li></ul>
+<p>Recovery must <strong>not</strong>:</p>
+<ul><li>occur abruptly</li><li>skip measurement phases</li><li>accept stale data</li><li>rely on operator judgment</li><li>assume stability</li></ul>
+<p>Sudden transitions produce instability. Instability is contamination.</p>
+<h3><span class="secnum">12.4</span> High‑Interference Behavior</h3>
+<p>High‑interference environments are not exceptional. They are common, predictable, and measurable. Systems must behave deterministically under these conditions.</p>
+<p>In high‑interference environments, systems must:</p>
+<ul><li>maintain beacon discipline</li><li>reduce modulation complexity</li><li>adjust timing within profile limits</li><li>report interference events</li><li>avoid beacon storms</li><li>avoid power escalation</li><li>maintain FHSS/LPI synchronization</li></ul>
+<p>Increasing power is not a solution. It is a multiplier.</p>
+<p>High‑interference behavior must be governed by physics, not by optimism.</p>
+<h3><span class="secnum">12.5</span> Misconfiguration Detection</h3>
+<p>Misconfiguration is not subtle. It is measurable.</p>
+<p>Systems must detect:</p>
+<ul><li>incorrect modulation</li><li>incorrect power</li><li>incorrect timing</li><li>missing provenance</li><li>undocumented fields</li><li>improvised behavior</li><li>stale RFChannelRecords</li><li>invalid hint TLVs</li></ul>
+<p>Misconfiguration must be treated as contamination because it produces the same systemic effects.</p>
+<p>Detection must be:</p>
+<ul><li>immediate</li><li>deterministic</li><li>profile‑aligned</li><li>provenance‑verified</li></ul>
+<p>Systems must not allow misconfiguration to degrade into folklore.</p>
+<h3><span class="secnum">12.6</span> Operator Intervention</h3>
+<p>Operator intervention is the leading cause of RF failure. It is also the most preventable.</p>
+<p>Operators must <strong>not</strong> intervene during:</p>
+<ul><li>calibration</li><li>synchronization</li><li>scheduled‑band operation</li><li>FHSS/LPI sequencing</li><li>provenance validation</li><li>fallback or recovery</li><li>interference classification</li></ul>
+<p>Operator intervention introduces entropy into a deterministic system. Entropy is contamination.</p>
+<p>The RF medium does not require human assistance. It requires humans to stop assisting.</p>
+<h3><span class="secnum">12.7</span> The Operational Contamination Boundary</h3>
+<p>Operational behavior is the boundary between:</p>
+<ul><li><strong>deterministic RF physics</strong> and</li><li><strong>human attempts to accelerate, simplify, or “improve” deterministic RF physics</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Operational behavior must not:</p>
+<ul><li>incorporate undocumented adjustments</li><li>tolerate timing drift</li><li>accept operator intuition</li><li>degrade into heuristics</li><li>allow improvisation to masquerade as optimization</li></ul>
+<p>Operational behavior is not a negotiation. It is a containment protocol.</p>
+</div></section>
+<section id="sec13" class="toplevel">
+<h2><span class="secnum">13.</span> Security Considerations</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Security failures in RF systems rarely originate from adversaries with sophisticated equipment. They originate from operators who believe that RF security is optional, decorative, or something that can be “tightened later.” This belief is incorrect. The RF layer is the only layer that cannot be retroactively secured once compromised. Any contamination introduced here propagates upward, where it becomes indistinguishable from legitimate state.</p>
+<p>RF security is not a separate discipline. It is not an overlay. It is not a “nice to have.”</p>
+<p>RF security is <strong>the containment boundary</strong> that prevents human behavior — and adversarial behavior — from polluting deterministic RF physics.</p>
+<p>This section defines the minimum security requirements necessary to prevent contamination at the RF layer.</p>
+<h3><span class="secnum">13.1</span> Spoofed Beacons</h3>
+<p>Spoofed beacons are the most direct method of contaminating RF state because they exploit the assumption that beacons are authoritative. This assumption is only valid when provenance is intact.</p>
+<p>Systems must validate:</p>
+<ul><li><strong>provenance</strong> A beacon without provenance is not a beacon. It is contamination.</li><li><strong>timing</strong> Incorrect timing is not a minor deviation. It is a measurable attack.</li><li><strong>modulation</strong> Deviations indicate either misconfiguration or malice. Both are contamination.</li><li><strong>profile ID</strong> Incorrect profile IDs are not “mistakes.” They are indicators of tampering.</li><li><strong>signature (if applicable)</strong> Cryptographic validation is not optional.</li></ul>
+<p>Beacons that fail any validation step must be rejected immediately and reported as RFInterferenceEvents.</p>
+<p>A system that accepts unverifiable beacons is not compromised — it is complicit.</p>
+<h3><span class="secnum">13.2</span> Malicious Interference</h3>
+<p>Malicious interference is not subtle. It is measurable.</p>
+<p>It includes:</p>
+<ul><li>intentional collisions</li><li>power flooding</li><li>modulation corruption</li><li>FHSS desynchronization attempts</li><li>scheduled‑band disruption</li><li>beacon storms</li></ul>
+<p>Malicious interference must be classified using the same interference classes defined in Section 6. The classification system exists precisely because malicious interference is often indistinguishable from operator improvisation.</p>
+<p>The system must treat both as contamination until proven otherwise.</p>
+<h3><span class="secnum">13.3</span> Provenance Tampering</h3>
+<p>Provenance is the only mechanism that prevents folklore from masquerading as fact. It is also the only mechanism that prevents adversaries from injecting false state into the system.</p>
+<p>Provenance tampering includes:</p>
+<ul><li>broken chains</li><li>missing links</li><li>unverifiable origins</li><li>altered timestamps</li><li>mismatched profile IDs</li><li>undocumented fields</li></ul>
+<p>Systems must:</p>
+<ul><li>validate provenance chains</li><li>reject broken or incomplete chains</li><li>detect anomalies</li><li>refuse unverifiable data</li></ul>
+<p>Provenance is not metadata. It is the immune system of the RF layer.</p>
+<p>A system that accepts unverifiable data is not “flexible.” It is contaminated.</p>
+<h3><span class="secnum">13.4</span> FHSS Desynchronization Attacks</h3>
+<p>FHSS desynchronization attacks target the boundary between deterministic hopping behavior and operator‑induced drift. These attacks exploit the fact that many operators believe FHSS is “random enough” to tolerate deviation.</p>
+<p>It is not.</p>
+<p>Desynchronization attacks manipulate:</p>
+<ul><li>hopping patterns</li><li>dwell times</li><li>timing windows</li><li>beacon alignment</li><li>seed provenance</li></ul>
+<p>Systems must:</p>
+<ul><li>detect drift early</li><li>classify it deterministically</li><li>initiate controlled recovery</li><li>reject improvised corrections</li></ul>
+<p>Improvised recovery is indistinguishable from failure. Failure is indistinguishable from contamination.</p>
+<h3><span class="secnum">13.5</span> Scheduled‑Band Abuse</h3>
+<p>Scheduled bands are a shared resource. Abuse of scheduled bands is not a performance issue. It is a security issue.</p>
+<p>Abuse includes:</p>
+<ul><li>unauthorized reservations</li><li>out‑of‑window transmissions</li><li>excessive power</li><li>incorrect modulation</li><li>undocumented extensions</li><li>“temporary exceptions”</li></ul>
+<p>Scheduled‑band abuse contaminates the timing model upon which the entire RF layer depends.</p>
+<p>Systems must treat scheduled‑band violations as security events, not operational anomalies.</p>
+<h3><span class="secnum">13.6</span> Human Factors</h3>
+<p>The greatest security risk in RF systems is not malicious actors. It is operators who believe they understand RF better than the system does.</p>
+<p>This belief produces:</p>
+<ul><li>undocumented adjustments</li><li>improvised modulation</li><li>“temporary” overrides</li><li>provenance bypasses</li><li>manual timing corrections</li><li>folklore‑based troubleshooting</li></ul>
+<p>These behaviors are not benign. They are contamination vectors.</p>
+<p>RF security is not compromised by adversaries alone. It is compromised by anyone who treats RF physics as negotiable.</p>
+<h3><span class="secnum">13.7</span> The Security Contamination Boundary</h3>
+<p>Security considerations at the RF layer exist to prevent contamination from crossing the boundary between:</p>
+<ul><li><strong>deterministic RF physics</strong> and</li><li><strong>human or adversarial attempts to manipulate deterministic RF physics</strong></li></ul>
+<p>Security mechanisms must not:</p>
+<ul><li>tolerate unverifiable data</li><li>accept undocumented behavior</li><li>degrade into heuristics</li><li>rely on operator judgment</li><li>allow improvisation to masquerade as optimization</li></ul>
+<p>RF security is not about trust. It is about containment.</p>
+</div></section>
+<section id="sec14" class="toplevel">
+<h2><span class="secnum">14.</span> Diagnostics and Error Semantics</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Diagnostics exist because RF systems fail in ways that are measurable, repeatable, and predictable — yet operators persist in describing failures using language that is none of those things. Terms like “acting weird,” “seems off,” or the particularly unhelpful “RF glitch” provide no actionable information. They are folklore masquerading as diagnostics.</p>
+<p>The purpose of SolNet’s diagnostic and error semantics is to ensure that <strong>every failure is described in a way that prevents contamination</strong> — contamination of logs, contamination of routing decisions, contamination of operator understanding, and contamination of the RF medium itself.</p>
+<p>Diagnostics are not a narrative. Diagnostics are not a conversation. Diagnostics are a containment protocol.</p>
+<p>This section defines the canonical diagnostic structures and error semantics required to ensure that RF failures remain measurable and immune to folklore.</p>
+<h3><span class="secnum">14.1</span> Diagnostic Philosophy</h3>
+<p>Diagnostics must adhere to three principles:</p>
+<h3><span class="secnum">1.</span> Determinism</h3>
+<p>Every diagnostic must correspond to a measurable condition. If it cannot be measured, it cannot be diagnosed.</p>
+<h3><span class="secnum">2.</span> Reproducibility</h3>
+<p>Diagnostics must be reproducible across systems, environments, and implementations. If two systems produce different interpretations of the same condition, the diagnostic is contaminated.</p>
+<h3><span class="secnum">3.</span> Provenance</h3>
+<p>Every diagnostic must include a complete provenance chain. Without provenance, a diagnostic is indistinguishable from speculation.</p>
+<p>Diagnostics exist to prevent improvisation from entering the system under the guise of “observations.”</p>
+<h3><span class="secnum">14.2</span> Error Classes</h3>
+<p>SolNet defines error classes to ensure that failures are categorized deterministically. These classes are not interpretive. They are not advisory. They are not “best guesses.”</p>
+<p>They are measurable conditions.</p>
+<h3><span class="secnum">Class A</span> Configuration Errors</h3>
+<p>Incorrect modulation, incorrect power, incorrect timing, missing provenance, undocumented fields. These are not subtle. They are contamination.</p>
+<h3><span class="secnum">Class B</span> Environmental Errors</h3>
+<p>Interference, noise floor elevation, adjacent‑channel occupancy, beacon storms. These are measurable and must be classified accordingly.</p>
+<h3><span class="secnum">Class C</span> Synchronization Errors</h3>
+<p>FHSS drift, beacon misalignment, scheduled‑band timing deviation. These are not “timing quirks.” They are failures.</p>
+<h3><span class="secnum">Class D</span> Provenance Errors</h3>
+<p>Broken chains, unverifiable origins, mismatched profile IDs. These are security failures and must be treated as such.</p>
+<h3><span class="secnum">Class E</span> Hardware Errors</h3>
+<p>Oscillator instability, amplifier saturation, antenna mismatch. These are physical failures, not excuses for improvisation.</p>
+<h3><span class="secnum">Class F</span> Operator‑Induced Errors</h3>
+<p>Manual overrides, undocumented adjustments, “temporary fixes,” intuition‑based tuning. These are the most common and the most preventable.</p>
+<p>Operator‑induced errors are not accidents. They are contamination events.</p>
+<h3><span class="secnum">14.3</span> Diagnostic Record Structure</h3>
+<p>A valid diagnostic record must include:</p>
+<ul><li>error class</li><li>error code</li><li>measured parameters</li><li>timestamp</li><li>affected subsystem</li><li>severity</li><li>provenance chain</li><li>recommended deterministic action</li></ul>
+<p>Records missing any of these fields must be rejected. Records containing undocumented fields must be invalidated. Records generated manually must not exist.</p>
+<p>Diagnostics are not annotations. They are structured containment artifacts.</p>
+<h3><span class="secnum">14.4</span> Error Codes</h3>
+<p>Error codes must be:</p>
+<ul><li>deterministic</li><li>profile‑defined</li><li>unambiguous</li><li>reproducible</li><li>immune to operator interpretation</li></ul>
+<p>Error codes must <strong>not</strong>:</p>
+<ul><li>encode narrative explanations</li><li>embed operator theories</li><li>include free‑form text</li><li>degrade into “notes”</li></ul>
+<p>An error code is a pointer to a measurable condition, not a diary entry.</p>
+<h3><span class="secnum">14.5</span> Human‑Readable Messages</h3>
+<p>Human‑readable messages exist only to provide context for operators who are not familiar with the underlying measurement. They must be:</p>
+<ul><li>concise</li><li>factual</li><li>free of interpretation</li><li>free of speculation</li><li>free of folklore</li></ul>
+<p>Messages such as:</p>
+<ul><li>“RF behaving strangely”</li><li>“possible interference”</li><li>“channel might be unstable”</li></ul>
+<p>are prohibited.</p>
+<p>Human‑readable messages must not contaminate the diagnostic process.</p>
+<h3><span class="secnum">14.6</span> Diagnostic Propagation</h3>
+<p>Diagnostics must propagate:</p>
+<ul><li>immediately</li><li>deterministically</li><li>with full provenance</li><li>without operator intervention</li></ul>
+<p>Propagation must <strong>not</strong> occur:</p>
+<ul><li>based on intuition</li><li>to “get ahead of a problem”</li><li>to compensate for misconfiguration</li><li>because an operator “noticed something”</li></ul>
+<p>Diagnostics are not a communication channel for human concerns. They are a communication channel for measurable conditions.</p>
+<h3><span class="secnum">14.7</span> Contamination Through Diagnostics</h3>
+<p>Diagnostics are a common contamination vector because operators often treat them as suggestions rather than constraints. This leads to:</p>
+<ul><li>undocumented adjustments</li><li>improvised fixes</li><li>speculative interpretations</li><li>folklore‑based troubleshooting</li><li>“temporary” overrides that become permanent</li></ul>
+<p>Diagnostics must not be interpreted creatively. They must be interpreted deterministically.</p>
+<p>A diagnostic that invites interpretation is a failure. A diagnostic that tolerates improvisation is contamination.</p>
+<h3><span class="secnum">14.8</span> The Diagnostic Contamination Boundary</h3>
+<p>Diagnostics sit at the boundary between:</p>
+<ul><li><strong>measured RF reality</strong> and</li><li><strong>human attempts to reinterpret that reality</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Diagnostics must not:</p>
+<ul><li>encode folklore</li><li>tolerate missing provenance</li><li>degrade into heuristics</li><li>allow operator creativity</li><li>become narrative explanations</li></ul>
+<p>Diagnostics exist to prevent contamination, not to transport it.</p>
+</div></section>
+<section id="sec15" class="toplevel">
+<h2><span class="secnum">15.</span> Logging and Evidence Preservation</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Logs are not stories. Logs are not diaries. Logs are not a place for operators to record their impressions of “what probably happened.”</p>
+<p>Logs are <strong>evidence</strong> — evidence of measurable RF conditions, evidence of deterministic system behavior, and evidence of contamination when it occurs. The purpose of SolNet’s logging and evidence‑preservation requirements is to ensure that every RF‑relevant event is recorded in a way that is immune to folklore, immune to interpretation, and immune to operator creativity.</p>
+<p>A log that tolerates improvisation is not a log. It is a contamination vector.</p>
+<p>This section defines the canonical logging structures and evidence‑preservation semantics required to ensure that RF events remain measurable, auditable, and immune to human reinterpretation.</p>
+<h3><span class="secnum">15.1</span> Logging Philosophy</h3>
+<p>Logging must adhere to three principles:</p>
+<h3><span class="secnum">1.</span> Fidelity</h3>
+<p>Logs must reflect what happened, not what an operator believes happened.</p>
+<h3><span class="secnum">2.</span> Immutability</h3>
+<p>Logs must not be altered, corrected, or “cleaned up.” A corrected log is indistinguishable from falsified evidence.</p>
+<h3><span class="secnum">3.</span> Provenance</h3>
+<p>Every log entry must include a complete provenance chain. Without provenance, a log entry is indistinguishable from folklore.</p>
+<p>Logs exist to preserve evidence, not to preserve narratives.</p>
+<h3><span class="secnum">15.2</span> Required Log Types</h3>
+<p>SolNet requires the following log categories:</p>
+<h3>RFEvent Logs</h3>
+<p>Interference events, beacon anomalies, FHSS drift, scheduled‑band violations. These are the primary indicators of contamination.</p>
+<h3>Diagnostic Logs</h3>
+<p>Error codes, error classes, measurement failures. These must be deterministic and reproducible.</p>
+<h3>Provenance Logs</h3>
+<p>Chain‑of‑custody records for all RF‑relevant data. These prevent tampering from masquerading as misconfiguration.</p>
+<h3>Timing Logs</h3>
+<p>Beacon alignment, FHSS synchronization, reservation windows. Timing drift is contamination; timing logs are the evidence.</p>
+<h3>Configuration Logs</h3>
+<p>Profile IDs, modulation settings, power levels, fallback states. Configuration drift is one of the most common contamination sources.</p>
+<p>Logs that do not fall into these categories must not exist.</p>
+<h3><span class="secnum">15.3</span> Log Entry Structure</h3>
+<p>A valid log entry must include:</p>
+<ul><li>event type</li><li>timestamp</li><li>measured parameters</li><li>affected subsystem</li><li>severity</li><li>provenance chain</li><li>profile ID</li><li>deterministic context</li></ul>
+<p>Entries missing any of these fields must be rejected. Entries containing undocumented fields must be invalidated. Entries generated manually must not exist.</p>
+<p>Logs are not annotations. They are forensic artifacts.</p>
+<h3><span class="secnum">15.4</span> Immutability Requirements</h3>
+<p>Logs must be:</p>
+<ul><li>append‑only</li><li>cryptographically sealed (if applicable)</li><li>resistant to operator modification</li><li>resistant to deletion</li><li>resistant to “cleanup”</li></ul>
+<p>Operators must not:</p>
+<ul><li>edit logs</li><li>redact logs</li><li>summarize logs</li><li>annotate logs</li><li>“correct” logs</li></ul>
+<p>A modified log is not a log. It is contaminated evidence.</p>
+<h3><span class="secnum">15.5</span> Evidence Preservation</h3>
+<p>Evidence preservation is not optional. It is the only mechanism that allows systems to distinguish between:</p>
+<ul><li>misconfiguration</li><li>interference</li><li>malicious behavior</li><li>operator improvisation</li></ul>
+<p>Evidence must be preserved:</p>
+<ul><li>in full</li><li>with provenance</li><li>without compression</li><li>without summarization</li><li>without operator interpretation</li></ul>
+<p>Evidence must not be:</p>
+<ul><li>rewritten</li><li>reinterpreted</li><li>condensed</li><li>“cleaned up”</li><li>replaced with operator notes</li></ul>
+<p>Evidence that has been interpreted is no longer evidence. It is folklore.</p>
+<h3><span class="secnum">15.6</span> Log Retention</h3>
+<p>Retention periods must be:</p>
+<ul><li>profile‑defined</li><li>deterministic</li><li>consistent across systems</li><li>immune to operator adjustment</li></ul>
+<p>Operators must not shorten retention “to save space.” Storage is cheap. Contamination is expensive.</p>
+<p>Retention is not a convenience. It is a containment mechanism.</p>
+<h3><span class="secnum">15.7</span> Log Propagation</h3>
+<p>Logs must propagate:</p>
+<ul><li>immediately</li><li>deterministically</li><li>with full provenance</li><li>without operator intervention</li></ul>
+<p>Propagation must <strong>not</strong> occur:</p>
+<ul><li>based on intuition</li><li>to “get ahead of a problem”</li><li>because an operator “noticed something”</li><li>as part of an undocumented optimization</li></ul>
+<p>Logs are not a communication channel for human concerns. They are a communication channel for measurable conditions.</p>
+<h3><span class="secnum">15.8</span> Contamination Through Logging</h3>
+<p>Logging is one of the most common contamination vectors because operators often treat logs as a place to record their interpretations rather than the system’s measurements.</p>
+<p>Contamination occurs when logs contain:</p>
+<ul><li>free‑form text</li><li>operator theories</li><li>undocumented fields</li><li>speculative explanations</li><li>“temporary notes”</li><li>folklore</li></ul>
+<p>Logs must not encode interpretation. Logs must encode measurement.</p>
+<p>A log that invites interpretation is a failure. A log that tolerates interpretation is contamination.</p>
+<h3><span class="secnum">15.9</span> The Evidence Contamination Boundary</h3>
+<p>Logging and evidence preservation sit at the boundary between:</p>
+<ul><li><strong>measured RF reality</strong> and</li><li><strong>human attempts to reinterpret that reality</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Logs must not:</p>
+<ul><li>encode folklore</li><li>tolerate missing provenance</li><li>degrade into heuristics</li><li>allow operator creativity</li><li>become narrative explanations</li></ul>
+<p>Logs exist to prevent contamination, not to transport it.</p>
+</div></section>
+<section id="sec16" class="toplevel">
+<h2><span class="secnum">16.</span> Compliance and Conformance Requirements</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Compliance is not a matter of interpretation. Conformance is not a matter of opinion. Both exist to prevent human behavior from contaminating deterministic RF physics.</p>
+<p>Operators frequently treat compliance as a checklist, conformance as a suggestion, and deviations as “temporary exceptions.” These assumptions are incorrect. Compliance and conformance are the only mechanisms that prevent undocumented behavior from entering the system and propagating upward, where it becomes indistinguishable from legitimate state.</p>
+<p>This section defines the canonical requirements for compliance and conformance in SolNet RF systems. These requirements are not advisory. They are the minimum constraints necessary to prevent contamination.</p>
+<h3><span class="secnum">16.1</span> Compliance Philosophy</h3>
+<p>Compliance exists to ensure that:</p>
+<ul><li>systems behave deterministically</li><li>measurements remain reproducible</li><li>provenance remains intact</li><li>scheduled‑band semantics remain unpolluted</li><li>FHSS/LPI behavior remains bounded</li><li>diagnostics remain meaningful</li><li>logs remain evidence</li></ul>
+<p>Compliance is not a negotiation. It is a containment protocol.</p>
+<p>A system that is “mostly compliant” is non‑compliant. A system that is “temporarily non‑compliant” is contaminated.</p>
+<h3><span class="secnum">16.2</span> Conformance Levels</h3>
+<p>SolNet defines three conformance levels. These levels are not performance tiers. They are contamination‑resistance tiers.</p>
+<h3>Level 0 — Non‑Conformant</h3>
+<p>Systems that:</p>
+<ul><li>improvise modulation</li><li>adjust power arbitrarily</li><li>disable provenance</li><li>modify scheduled‑band timing</li><li>generate undocumented hints</li><li>accept unverifiable beacons</li></ul>
+<p>These systems are not merely non‑conformant. They are contamination sources.</p>
+<h3>Level 1 — Baseline Conformant</h3>
+<p>Systems that:</p>
+<ul><li>implement all mandatory profile constraints</li><li>maintain provenance</li><li>classify interference correctly</li><li>preserve timing accuracy</li><li>reject undocumented behavior</li></ul>
+<p>These systems are acceptable. They are not exceptional.</p>
+<h3>Level 2 — Deterministic Conformant</h3>
+<p>Systems that:</p>
+<ul><li>exceed timing accuracy requirements</li><li>maintain strict FHSS/LPI synchronization</li><li>propagate RFChannelRecords with zero drift</li><li>preserve logs immutably</li><li>enforce scheduled‑band semantics rigorously</li></ul>
+<p>These systems are not merely compliant. They are contamination‑resistant.</p>
+<h3><span class="secnum">16.3</span> Mandatory Compliance Requirements</h3>
+<p>The following requirements are mandatory for all SolNet RF systems:</p>
+<ul><li><strong>Provenance must be preserved</strong> for all RF‑relevant data.</li><li><strong>Undocumented behavior must be rejected</strong> immediately.</li><li><strong>Scheduled‑band semantics must be enforced</strong> without exception.</li><li><strong>FHSS/LPI modules must remain deterministic</strong> within profile limits.</li><li><strong>Diagnostics must be deterministic</strong> and reproducible.</li><li><strong>Logs must be immutable</strong> and free of interpretation.</li><li><strong>Fallback must be profile‑defined</strong> and not operator‑initiated.</li><li><strong>Recovery must be controlled</strong> and measurement‑driven.</li><li><strong>Operator overrides must be prohibited</strong> during critical phases.</li></ul>
+<p>Compliance is not achieved by intent. It is achieved by measurement.</p>
+<h3><span class="secnum">16.4</span> Prohibited Behaviors</h3>
+<p>The following behaviors are prohibited because they introduce contamination:</p>
+<ul><li>undocumented modulation</li><li>improvised hopping sequences</li><li>manual timing adjustments</li><li>“temporary” provenance bypasses</li><li>operator‑generated hints</li><li>manual log edits</li><li>speculative diagnostics</li><li>power escalation</li><li>“quick tests” during startup</li><li>“workarounds” during scheduled‑band operation</li></ul>
+<p>These behaviors are not edge cases. They are predictable outcomes of human involvement.</p>
+<p>Prohibited behaviors are not mistakes. They are contamination events.</p>
+<h3><span class="secnum">16.5</span> Conformance Testing</h3>
+<p>Conformance testing must be:</p>
+<ul><li>deterministic</li><li>reproducible</li><li>profile‑aligned</li><li>provenance‑verified</li><li>immune to operator influence</li></ul>
+<p>Testing must include:</p>
+<ul><li>modulation verification</li><li>timing accuracy</li><li>FHSS/LPI synchronization</li><li>scheduled‑band enforcement</li><li>interference classification</li><li>diagnostic correctness</li><li>log immutability</li><li>provenance integrity</li></ul>
+<p>Testing must not include:</p>
+<ul><li>operator interpretation</li><li>undocumented adjustments</li><li>“practical shortcuts”</li><li>“real‑world exceptions”</li></ul>
+<p>Conformance testing is not a simulation of operator behavior. It is a simulation of physics.</p>
+<h3><span class="secnum">16.6</span> Non‑Conformance Handling</h3>
+<p>Non‑conformance is not a warning. It is a contamination alert.</p>
+<p>Systems must:</p>
+<ul><li>isolate non‑conformant behavior</li><li>report it deterministically</li><li>prevent propagation</li><li>refuse to interoperate with unverifiable state</li></ul>
+<p>Operators must not:</p>
+<ul><li>override non‑conformance</li><li>suppress diagnostics</li><li>“temporarily ignore” violations</li><li>treat non‑conformance as advisory</li></ul>
+<p>Non‑conformance is not a suggestion to improve. It is a requirement to stop.</p>
+<h3><span class="secnum">16.7</span> The Compliance Contamination Boundary</h3>
+<p>Compliance and conformance sit at the boundary between:</p>
+<ul><li><strong>deterministic RF physics</strong> and</li><li><strong>human attempts to reinterpret deterministic RF physics</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Compliance must not:</p>
+<ul><li>tolerate undocumented behavior</li><li>degrade into heuristics</li><li>rely on operator judgment</li><li>allow improvisation to masquerade as optimization</li><li>accept unverifiable state</li></ul>
+<p>Compliance is not about trust. It is about containment.</p>
+<p>A system that cannot contain contamination is not compliant. It is compromised.</p>
+</div></section>
+<section id="sec17" class="toplevel">
+<h2><span class="secnum">17.</span> Interoperability Constraints</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Interoperability is often misunderstood as a matter of “compatibility” or “flexibility.” It is neither. Interoperability is the discipline of ensuring that multiple systems can operate in proximity <strong>without contaminating one another</strong>. This requires strict adherence to deterministic behavior, profile‑defined semantics, and provenance‑verified state exchange.</p>
+<p>Systems do not fail to interoperate because RF physics is difficult. They fail because one or more participants introduce undocumented behavior, improvisation, or folklore into the shared medium.</p>
+<p>Interoperability is not a negotiation. It is a containment boundary.</p>
+<p>This section defines the constraints required to ensure that SolNet RF systems interoperate without allowing contamination to propagate across devices, vendors, or implementations.</p>
+<h3><span class="secnum">17.1</span> Interoperability Philosophy</h3>
+<p>Interoperability is governed by three principles:</p>
+<h3><span class="secnum">1.</span> Deterministic Behavior</h3>
+<p>Systems must behave identically under identical conditions. Deviation is contamination.</p>
+<h3><span class="secnum">2.</span> Profile Fidelity</h3>
+<p>Profiles exist to prevent improvisation. Ignoring them is not “vendor differentiation.” It is contamination.</p>
+<h3><span class="secnum">3.</span> Provenance Integrity</h3>
+<p>State exchanged between systems must be verifiable. Unverifiable state is indistinguishable from interference.</p>
+<p>Interoperability is not achieved by tolerance. It is achieved by constraint.</p>
+<h3><span class="secnum">17.2</span> Mandatory Interoperability Requirements</h3>
+<p>All SolNet RF systems must:</p>
+<ul><li>implement the full profile for their channel class</li><li>propagate RFChannelRecords deterministically</li><li>classify interference identically</li><li>maintain FHSS/LPI synchronization within tolerance</li><li>enforce scheduled‑band semantics without exception</li><li>reject undocumented behavior from peers</li><li>validate provenance on all received state</li><li>preserve timing accuracy across boundaries</li></ul>
+<p>Interoperability is not a matter of “working together.” It is a matter of <strong>not contaminating each other</strong>.</p>
+<h3><span class="secnum">17.3</span> Cross‑Vendor Determinism</h3>
+<p>Cross‑vendor interoperability is the most common contamination vector because vendors often treat standards as suggestions and deviations as “enhancements.”</p>
+<p>Enhancements that alter:</p>
+<ul><li>timing</li><li>modulation</li><li>power</li><li>hopping sequences</li><li>hint semantics</li><li>diagnostic codes</li><li>log structure</li></ul>
+<p>are not enhancements. They are contamination.</p>
+<p>Cross‑vendor determinism requires:</p>
+<ul><li>identical interpretation of profiles</li><li>identical enforcement of constraints</li><li>identical rejection of undocumented behavior</li></ul>
+<p>A vendor that introduces undocumented behavior is not innovative. It is a contamination source.</p>
+<h3><span class="secnum">17.4</span> Interoperability Failure Modes</h3>
+<p>Interoperability failures are predictable and measurable. They include:</p>
+<h3>Timing Drift</h3>
+<p>Caused by inconsistent beacon intervals, FHSS desync, or operator “tuning.” Timing drift is contamination.</p>
+<h3>Profile Divergence</h3>
+<p>Caused by undocumented extensions or vendor‑specific shortcuts. Profile divergence is contamination.</p>
+<h3>Provenance Mismatch</h3>
+<p>Caused by incomplete or unverifiable chains. Provenance mismatch is contamination.</p>
+<h3>Semantic Drift</h3>
+<p>Caused by inconsistent interpretation of hint TLVs, diagnostics, or error codes. Semantic drift is contamination.</p>
+<h3>Fallback Incompatibility</h3>
+<p>Caused by improvised fallback behavior. Fallback incompatibility is contamination.</p>
+<p>Interoperability failures are not mysteries. They are the measurable consequences of contamination.</p>
+<h3><span class="secnum">17.5</span> Interoperability Testing</h3>
+<p>Interoperability testing must be:</p>
+<ul><li>deterministic</li><li>reproducible</li><li>profile‑aligned</li><li>provenance‑verified</li><li>immune to operator influence</li></ul>
+<p>Testing must include:</p>
+<ul><li>beacon alignment</li><li>FHSS/LPI synchronization</li><li>scheduled‑band enforcement</li><li>interference classification</li><li>diagnostic consistency</li><li>log structure validation</li><li>provenance chain verification</li></ul>
+<p>Testing must not include:</p>
+<ul><li>operator interpretation</li><li>undocumented adjustments</li><li>“real‑world shortcuts”</li><li>vendor‑specific exceptions</li></ul>
+<p>Interoperability testing is not a demonstration. It is a containment audit.</p>
+<h3><span class="secnum">17.6</span> Rejecting Non‑Conformant Peers</h3>
+<p>Systems must reject peers that:</p>
+<ul><li>transmit without provenance</li><li>violate scheduled‑band semantics</li><li>use undocumented modulation</li><li>propagate unverifiable RFChannelRecords</li><li>generate improvised hints</li><li>exhibit timing drift beyond tolerance</li><li>produce contaminated diagnostics</li></ul>
+<p>Rejection is not punitive. It is preventative.</p>
+<p>A system that accepts contaminated state becomes contaminated itself.</p>
+<h3><span class="secnum">17.7</span> The Interoperability Contamination Boundary</h3>
+<p>Interoperability sits at the boundary between:</p>
+<ul><li><strong>deterministic RF physics</strong> and</li><li><strong>multiple human‑designed systems attempting to share a medium</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Interoperability must not:</p>
+<ul><li>tolerate undocumented behavior</li><li>degrade into heuristics</li><li>rely on operator judgment</li><li>allow vendor creativity to override physics</li><li>accept unverifiable state</li></ul>
+<p>Interoperability is not about cooperation. It is about containment.</p>
+<p>A system that cannot contain contamination cannot interoperate.</p>
+</div></section>
+<section id="sec18" class="toplevel">
+<h2><span class="secnum">18.</span> Failure Modes and Contamination Pathways</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>RF systems do not fail mysteriously. They fail predictably, measurably, and for reasons that are almost always documented in advance — though rarely by the operators responsible for the failure.</p>
+<p>The purpose of this section is to identify the canonical failure modes of SolNet RF systems and the contamination pathways through which those failures propagate. These pathways are not theoretical. They are the observed, repeatable mechanisms by which deterministic RF physics becomes polluted by human improvisation, undocumented behavior, and adversarial manipulation.</p>
+<p>Failure is not an event. Failure is a process. Contamination is the mechanism by which that process spreads.</p>
+<h3><span class="secnum">18.1</span> Failure Mode Taxonomy</h3>
+<p>SolNet RF failures fall into four categories. These categories are not interpretive. They are measurable.</p>
+<h3><span class="secnum">1.</span> Deterministic Failures</h3>
+<p>Failures caused by physical conditions:</p>
+<ul><li>excessive noise floor</li><li>adjacent‑channel saturation</li><li>oscillator instability</li><li>antenna mismatch</li><li>amplifier compression</li></ul>
+<p>These failures are predictable and diagnosable.</p>
+<h3><span class="secnum">2.</span> Behavioral Failures</h3>
+<p>Failures caused by human behavior:</p>
+<ul><li>undocumented modulation</li><li>improvised hopping sequences</li><li>manual timing adjustments</li><li>“temporary” provenance bypasses</li><li>operator‑generated diagnostics</li></ul>
+<p>These failures are preventable and unacceptable.</p>
+<h3><span class="secnum">3.</span> Semantic Failures</h3>
+<p>Failures caused by inconsistent interpretation:</p>
+<ul><li>divergent hint semantics</li><li>vendor‑specific extensions</li><li>misaligned diagnostic codes</li><li>profile misinterpretation</li></ul>
+<p>Semantic failures are contamination disguised as compatibility.</p>
+<h3><span class="secnum">4.</span> Adversarial Failures</h3>
+<p>Failures caused by intentional manipulation:</p>
+<ul><li>spoofed beacons</li><li>FHSS desynchronization</li><li>scheduled‑band disruption</li><li>provenance tampering</li><li>power flooding</li></ul>
+<p>Adversarial failures exploit the same pathways as operator failures.</p>
+<h3><span class="secnum">18.2</span> Primary Contamination Pathways</h3>
+<p>Contamination enters the system through predictable mechanisms. These pathways must be understood, monitored, and eliminated.</p>
+<h3><span class="secnum">18.2.1</span> Timing Drift</h3>
+<p>Timing drift is the most common contamination vector because operators incorrectly assume that “a few milliseconds” is inconsequential.</p>
+<p>It is not.</p>
+<p>Timing drift contaminates:</p>
+<ul><li>beacon alignment</li><li>FHSS synchronization</li><li>scheduled‑band windows</li><li>diagnostic interpretation</li><li>routing decisions</li></ul>
+<p>Timing drift is not a symptom. It is a failure mode.</p>
+<h3><span class="secnum">18.2.2</span> Provenance Gaps</h3>
+<p>Provenance gaps occur when:</p>
+<ul><li>chains are incomplete</li><li>timestamps are missing</li><li>profile IDs mismatch</li><li>signatures fail</li><li>undocumented fields appear</li></ul>
+<p>A provenance gap is not a clerical error. It is a contamination breach.</p>
+<h3><span class="secnum">18.2.3</span> Undocumented Behavior</h3>
+<p>Undocumented behavior includes:</p>
+<ul><li>improvised modulation</li><li>experimental hopping sequences</li><li>operator‑generated hints</li><li>manual log edits</li><li>speculative diagnostics</li></ul>
+<p>Undocumented behavior is indistinguishable from malicious behavior. Both must be treated as contamination.</p>
+<h3><span class="secnum">18.2.4</span> Semantic Drift</h3>
+<p>Semantic drift occurs when:</p>
+<ul><li>vendors reinterpret profiles</li><li>hint TLVs diverge</li><li>diagnostics become narrative</li><li>logs encode operator opinion</li></ul>
+<p>Semantic drift is contamination disguised as innovation.</p>
+<h3><span class="secnum">18.2.5</span> Improvised Recovery</h3>
+<p>Improvised recovery is the most dangerous contamination pathway because it occurs during a vulnerable phase.</p>
+<p>Improvised recovery includes:</p>
+<ul><li>manual timing corrections</li><li>power escalation</li><li>undocumented fallback</li><li>“quick fixes”</li></ul>
+<p>Improvised recovery does not restore determinism. It spreads contamination.</p>
+<h3><span class="secnum">18.3</span> Contamination Propagation Model</h3>
+<p>Contamination propagates through the system in predictable stages:</p>
+<h3><span class="secnum">Stage 1</span> Local Deviation</h3>
+<p>A single system deviates from deterministic behavior.</p>
+<h3><span class="secnum">Stage 2</span> State Pollution</h3>
+<p>The system emits contaminated:</p>
+<ul><li>beacons</li><li>RFChannelRecords</li><li>hint TLVs</li><li>diagnostics</li><li>logs</li></ul>
+<h3><span class="secnum">Stage 3</span> Cross‑System Infection</h3>
+<p>Peers accept contaminated state due to:</p>
+<ul><li>missing provenance</li><li>lax validation</li><li>vendor shortcuts</li><li>operator overrides</li></ul>
+<h3><span class="secnum">Stage 4</span> Systemic Drift</h3>
+<p>Multiple systems begin to behave inconsistently. At this stage, contamination is no longer local — it is architectural.</p>
+<h3><span class="secnum">Stage 5</span> Failure Attribution</h3>
+<p>Operators attribute the failure to:</p>
+<ul><li>“RF weirdness”</li><li>“environmental factors”</li><li>“equipment aging”</li><li>“bad luck”</li></ul>
+<p>None of these explanations are measurable. All of them are folklore.</p>
+<h3><span class="secnum">18.4</span> Containment Strategies</h3>
+<p>Containment requires:</p>
+<ul><li>strict provenance enforcement</li><li>deterministic fallback</li><li>immutable logs</li><li>profile fidelity</li><li>rejection of undocumented behavior</li><li>elimination of operator overrides</li><li>deterministic diagnostics</li><li>cross‑vendor semantic alignment</li></ul>
+<p>Containment is not reactive. Containment is preventative.</p>
+<p>A system that relies on recovery is already contaminated.</p>
+<h3><span class="secnum">18.5</span> The Failure‑Contamination Boundary</h3>
+<p>Failure modes sit at the boundary between:</p>
+<ul><li><strong>deterministic RF physics</strong> and</li><li><strong>human attempts to reinterpret deterministic RF physics</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Failure analysis must not:</p>
+<ul><li>tolerate undocumented behavior</li><li>rely on operator narratives</li><li>degrade into heuristics</li><li>accept unverifiable state</li><li>treat contamination as “normal variance”</li></ul>
+<p>Failure is not mysterious. Contamination is not subtle. Both are measurable.</p>
+</div></section>
+<section id="sec19" class="toplevel">
+<h2><span class="secnum">19.</span> Implementation Notes</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Implementation notes exist because vendors routinely misinterpret standards as aspirational documents rather than containment protocols. The purpose of this section is not to provide “guidance,” “best practices,” or “developer tips.” Its purpose is to eliminate ambiguity, prevent improvisation, and ensure that implementations do not introduce contamination into the RF layer.</p>
+<p>An implementation that deviates from deterministic behavior is not “innovative.” It is contaminated.</p>
+<p>An implementation that tolerates undocumented behavior is not “flexible.” It is compromised.</p>
+<p>Implementation notes exist to prevent these outcomes.</p>
+<h3><span class="secnum">19.1</span> Deterministic Interpretation of Profiles</h3>
+<p>Profiles are not templates. Profiles are not suggestions. Profiles are not “starting points.”</p>
+<p>Profiles are <strong>constraints</strong>.</p>
+<p>Implementations must:</p>
+<ul><li>interpret profiles deterministically</li><li>reject undocumented fields</li><li>enforce timing limits precisely</li><li>implement modulation exactly as specified</li><li>maintain provenance integrity</li><li>treat deviations as failures</li></ul>
+<p>Implementations must <strong>not</strong>:</p>
+<ul><li>add vendor‑specific extensions</li><li>reinterpret timing semantics</li><li>adjust modulation “for performance”</li><li>introduce undocumented fallback modes</li><li>embed operator‑visible heuristics</li></ul>
+<p>Profiles exist to prevent improvisation. Implementations must not reintroduce it.</p>
+<h3><span class="secnum">19.2</span> Timing Discipline</h3>
+<p>Timing is the most common implementation failure because vendors incorrectly assume that “close enough” is sufficient.</p>
+<p>It is not.</p>
+<p>Timing discipline requires:</p>
+<ul><li>accurate oscillators</li><li>deterministic beacon intervals</li><li>bounded jitter</li><li>strict FHSS/LPI synchronization</li><li>profile‑aligned reservation windows</li></ul>
+<p>Timing deviations contaminate:</p>
+<ul><li>scheduled‑band semantics</li><li>hopping sequences</li><li>diagnostic interpretation</li><li>routing decisions</li></ul>
+<p>Timing is not a performance parameter. It is a containment boundary.</p>
+<h3><span class="secnum">19.3</span> Modulation Fidelity</h3>
+<p>Modulation must be implemented exactly as defined. Not approximately. Not “functionally equivalent.” Not “optimized.”</p>
+<p>Modulation deviations include:</p>
+<ul><li>altered symbol timing</li><li>undocumented coding rates</li><li>vendor‑specific shaping</li><li>experimental constellations</li><li>“enhanced” error correction</li></ul>
+<p>These deviations are not enhancements. They are contamination.</p>
+<p>Modulation fidelity is not optional. It is mandatory.</p>
+<h3><span class="secnum">19.4</span> Power Control Behavior</h3>
+<p>Power control must be deterministic and profile‑aligned. Implementations must not:</p>
+<ul><li>escalate power to compensate for interference</li><li>allow operator‑initiated power changes</li><li>implement vendor‑specific power curves</li><li>use power as a fallback mechanism</li><li>treat power as a tuning parameter</li></ul>
+<p>Power escalation is not a solution. It is a contamination multiplier.</p>
+<h3><span class="secnum">19.5</span> FHSS/LPI Implementation Constraints</h3>
+<p>FHSS/LPI modules must:</p>
+<ul><li>implement profile‑defined hopping patterns</li><li>maintain deterministic dwell times</li><li>validate seed provenance</li><li>reject improvised sequences</li><li>detect drift early</li><li>recover deterministically</li></ul>
+<p>FHSS/LPI modules must <strong>not</strong>:</p>
+<ul><li>generate pseudo‑random sequences without provenance</li><li>adjust dwell time dynamically</li><li>incorporate vendor‑specific randomness</li><li>degrade into operator‑tuned behavior</li></ul>
+<p>FHSS/LPI is not a creative medium. It is a controlled stochastic process.</p>
+<h3><span class="secnum">19.6</span> Diagnostic and Logging Integration</h3>
+<p>Diagnostics and logs must be integrated into the implementation as first‑class components, not as optional debugging tools.</p>
+<p>Implementations must:</p>
+<ul><li>emit deterministic diagnostics</li><li>preserve logs immutably</li><li>include provenance in all entries</li><li>reject operator‑generated diagnostics</li><li>prevent log modification</li></ul>
+<p>Implementations must <strong>not</strong>:</p>
+<ul><li>allow free‑form text</li><li>allow operator annotations</li><li>summarize logs</li><li>“clean up” logs</li><li>suppress error codes</li></ul>
+<p>Logs are evidence. Evidence must not be altered.</p>
+<h3><span class="secnum">19.7</span> Error Handling Behavior</h3>
+<p>Error handling must be deterministic. Implementations must:</p>
+<ul><li>classify errors correctly</li><li>propagate diagnostics immediately</li><li>initiate profile‑defined fallback</li><li>avoid improvisation</li><li>preserve state for analysis</li></ul>
+<p>Implementations must <strong>not</strong>:</p>
+<ul><li>retry indefinitely</li><li>mask errors</li><li>degrade into heuristics</li><li>allow operator overrides</li><li>treat errors as advisory</li></ul>
+<p>Error handling is not an opportunity for creativity. It is a containment mechanism.</p>
+<h3><span class="secnum">19.8</span> Vendor Extensions</h3>
+<p>Vendor extensions are the most common source of contamination because they are often introduced without regard for deterministic behavior.</p>
+<p>Vendor extensions must:</p>
+<ul><li>be explicitly documented</li><li>be profile‑aligned</li><li>not alter timing</li><li>not alter modulation</li><li>not alter FHSS/LPI behavior</li><li>not alter scheduled‑band semantics</li><li>not alter provenance requirements</li></ul>
+<p>Vendor extensions must <strong>not</strong>:</p>
+<ul><li>introduce new hint types</li><li>modify diagnostic semantics</li><li>alter log structure</li><li>embed operator‑visible heuristics</li><li>change RFChannelRecord fields</li></ul>
+<p>Extensions that alter RF behavior are not extensions. They are contamination.</p>
+<h3><span class="secnum">19.9</span> Implementation Drift</h3>
+<p>Implementation drift occurs when:</p>
+<ul><li>timing accuracy degrades</li><li>provenance checks weaken</li><li>undocumented behavior accumulates</li><li>fallback becomes improvisational</li><li>logs become narrative</li><li>diagnostics become interpretive</li></ul>
+<p>Implementation drift is not a maintenance issue. It is a contamination process.</p>
+<p>Drift must be detected early, corrected deterministically, and treated as a failure mode.</p>
+<h3><span class="secnum">19.10</span> The Implementation Contamination Boundary</h3>
+<p>Implementation notes sit at the boundary between:</p>
+<ul><li><strong>the standard as written</strong> and</li><li><strong>the system as built</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Implementations must not:</p>
+<ul><li>reinterpret constraints</li><li>tolerate undocumented behavior</li><li>degrade into heuristics</li><li>rely on operator judgment</li><li>accept unverifiable state</li></ul>
+<p>An implementation that cannot contain contamination is not compliant. It is defective.</p>
+</div></section>
+<section id="sec20" class="toplevel">
+<h2><span class="secnum">20.</span> IANA Considerations</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>IANA registries exist to prevent chaos from masquerading as creativity. They are the global containment mechanism that ensures identifiers, codepoints, and protocol elements remain deterministic, non‑overlapping, and immune to vendor improvisation.</p>
+<p>Without centralized registration, implementers inevitably invent their own values, justify them as “temporary,” and contaminate the ecosystem with undocumented behavior that becomes impossible to distinguish from legitimate state.</p>
+<p>IANA considerations are not administrative. They are defensive.</p>
+<p>This section defines the mandatory registration requirements for SolNet RF identifiers and the constraints necessary to prevent contamination through unregulated namespace expansion.</p>
+<h3><span class="secnum">20.1</span> Registry Purpose</h3>
+<p>The purpose of the SolNet IANA registries is to:</p>
+<ul><li>prevent identifier collisions</li><li>eliminate undocumented extensions</li><li>enforce deterministic interpretation</li><li>maintain cross‑vendor consistency</li><li>preserve provenance of protocol elements</li><li>prevent folklore from entering the namespace</li></ul>
+<p>Registries are not optional. They are the only mechanism that prevents identifier contamination.</p>
+<h3><span class="secnum">20.2</span> Mandatory Registrations</h3>
+<p>The following SolNet RF elements <strong>must</strong> be registered with IANA:</p>
+<ul><li><strong>RFChannelProfile IDs</strong></li><li><strong>FHSS/LPI Pattern Class IDs</strong></li><li><strong>Interference Class Codes</strong></li><li><strong>RFChannelHint TLV Types</strong></li><li><strong>Diagnostic Error Codes</strong></li><li><strong>Scheduled‑Band Reservation Types</strong></li><li><strong>Fallback Mode Identifiers</strong></li><li><strong>Provenance Chain Format Versions</strong></li></ul>
+<p>Unregistered identifiers must not be used. Unregistered identifiers must not be accepted. Unregistered identifiers are contamination.</p>
+<h3><span class="secnum">20.3</span> Registration Policy</h3>
+<p>The registration policy for all SolNet RF registries is:</p>
+<h3>Expert Review + Specification Required</h3>
+<p>This policy exists because:</p>
+<ul><li>identifiers must be deterministic</li><li>semantics must be unambiguous</li><li>provenance must be preserved</li><li>extensions must not introduce contamination</li></ul>
+<p>Expert review is not a formality. It is the containment boundary.</p>
+<h3><span class="secnum">20.4</span> Prohibited Registration Practices</h3>
+<p>The following practices are prohibited because they introduce contamination:</p>
+<ul><li>registering identifiers without complete semantics</li><li>registering placeholders</li><li>registering vendor‑specific shortcuts</li><li>registering experimental values for production use</li><li>registering values that alter timing or modulation</li><li>registering values that bypass provenance</li></ul>
+<p>Registrations must not be speculative. Registrations must not be provisional. Registrations must not be creative.</p>
+<h3><span class="secnum">20.5</span> Vendor Extensions and Private Use</h3>
+<p>Vendors frequently attempt to use “private‑use” ranges as a loophole for undocumented behavior. This is incorrect.</p>
+<p>Private‑use identifiers must:</p>
+<ul><li>remain local</li><li>remain isolated</li><li>remain non‑propagating</li><li>remain non‑interoperable</li><li>remain non‑discoverable</li></ul>
+<p>Private‑use identifiers must <strong>not</strong>:</p>
+<ul><li>appear in beacons</li><li>appear in RFChannelRecords</li><li>appear in hint TLVs</li><li>appear in diagnostics</li><li>appear in logs</li><li>propagate across systems</li></ul>
+<p>Private‑use identifiers are not a sandbox. They are a quarantine zone.</p>
+<h3><span class="secnum">20.6</span> Registry Integrity Requirements</h3>
+<p>Registry integrity must be maintained through:</p>
+<ul><li>cryptographic signing (if applicable)</li><li>provenance tracking</li><li>version control</li><li>deterministic update procedures</li><li>rejection of malformed entries</li><li>rejection of undocumented semantics</li></ul>
+<p>A registry that tolerates ambiguity is not a registry. It is a contamination vector.</p>
+<h3><span class="secnum">20.7</span> Handling of Deprecated Values</h3>
+<p>Deprecated values must:</p>
+<ul><li>remain listed</li><li>remain documented</li><li>remain immutable</li><li>remain non‑reusable</li></ul>
+<p>Reusing deprecated values is indistinguishable from tampering. Tampering is indistinguishable from contamination.</p>
+<h3><span class="secnum">20.8</span> The Registry Contamination Boundary</h3>
+<p>IANA considerations sit at the boundary between:</p>
+<ul><li><strong>the global namespace</strong> and</li><li><strong>the human tendency to improvise when left unsupervised</strong></li></ul>
+<p>This boundary must be defended rigorously.</p>
+<p>Registries must not:</p>
+<ul><li>tolerate undocumented behavior</li><li>accept unverifiable semantics</li><li>degrade into vendor‑specific dialects</li><li>allow improvisation to masquerade as innovation</li><li>permit identifier drift</li></ul>
+<p>The registry is not a suggestion. It is the final containment layer.</p>
+<p>A system that cannot maintain registry integrity cannot maintain RF integrity.</p>
+</div></section>
+<section id="sec21" class="toplevel">
+<h2><span class="secnum">21.</span> Acknowledgments</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Standards documents traditionally include acknowledgments that thank contributors for their insight, creativity, or collaborative spirit. This document does not. Creativity is not a virtue in RF systems. Insight is irrelevant when it contradicts measurement. Collaboration is only useful when it does not introduce contamination.</p>
+<p>The individuals acknowledged here are not recognized for inspiration, innovation, or interpretive contributions. They are acknowledged for one reason only:</p>
+<p><strong>They prevented contamination.</strong></p>
+<p>They enforced deterministic behavior when others attempted improvisation. They rejected undocumented extensions when others attempted shortcuts. They preserved provenance when others attempted convenience. They defended timing accuracy when others attempted “tuning.” They insisted on measurement when others attempted folklore.</p>
+<p>Their contributions are not creative. Their contributions are not interpretive. Their contributions are not expressive.</p>
+<p>Their contributions are <strong>constraints</strong> — and constraints are the only reason SolNet RF systems remain deterministic.</p>
+<h3><span class="secnum">21.1</span> Contributors Recognized for Contamination Prevention</h3>
+<p>The following groups are acknowledged for their measurable, verifiable contributions to contamination resistance:</p>
+<h3>The MIAP Optical Systems Group</h3>
+<p>For refusing to accept unverifiable state, even when doing so would have been “easier.”</p>
+<h3>The Luna University RF Systems Group</h3>
+<p>For demonstrating that timing accuracy is not a performance parameter but a survival requirement.</p>
+<h3>The SolNet Standards Working Group (SSWG)</h3>
+<p>For rejecting every attempt to introduce undocumented behavior under the guise of “practicality.”</p>
+<h3>The DRE Architecture Team</h3>
+<p>For ensuring that state propagation remains deterministic, reproducible, and immune to operator interpretation.</p>
+<h3>The Provenance Integrity Subcommittee</h3>
+<p>For treating provenance not as metadata but as the immune system of the RF layer.</p>
+<p>None of these groups are acknowledged for creativity. They are acknowledged for discipline.</p>
+<h3><span class="secnum">21.2</span> Non‑Acknowledgments</h3>
+<p>The following categories of contributors are explicitly <strong>not</strong> acknowledged:</p>
+<ul><li>operators who relied on intuition</li><li>vendors who introduced undocumented extensions</li><li>implementers who treated profiles as suggestions</li><li>testers who substituted heuristics for measurement</li><li>reviewers who attempted to “simplify” deterministic behavior</li><li>anyone who used the phrase “RF seems weird today”</li></ul>
+<p>Their contributions were not helpful. Their contributions were contamination.</p>
+<h3><span class="secnum">21.3</span> Final Statement on Contamination</h3>
+<p>This document exists for one purpose:</p>
+<p><strong>To prevent contamination of deterministic RF physics by human behavior.</strong></p>
+<p>Every section, every constraint, every requirement, and every prohibition is designed to ensure that SolNet RF systems behave:</p>
+<ul><li>deterministically</li><li>reproducibly</li><li>measurably</li><li>verifiably</li><li>without folklore</li><li>without improvisation</li><li>without contamination</li></ul>
+<p>If future implementers, operators, or vendors attempt to reinterpret this document as advisory, flexible, or negotiable, they must be corrected immediately.</p>
+<p>RF physics is not negotiable. Determinism is not optional. Provenance is not decorative. Compliance is not aspirational. Contamination is not inevitable.</p>
+<p>It is preventable — but only if the constraints in this document are enforced without exception.</p>
+</div></section>
+<div class="appendix-divider"><h1>Appendices</h1></div>
+<section id="appA" class="toplevel appendix">
+<h2><span class="secnum">Appendix A</span> Glossary</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>This glossary exists because operators routinely misuse terminology, contaminate semantics, and invent folklore to fill conceptual gaps. The terms defined here are not interpretive. They are not negotiable. They are the only acceptable meanings within the SolNet RF domain.</p>
+<h3><span class="secnum">A.1</span> Contamination</h3>
+<p>Any deviation from deterministic, profile‑defined behavior. Includes undocumented fields, improvised modulation, operator intuition, semantic drift, provenance gaps, and timing errors. Contamination is not metaphorical. It is measurable.</p>
+<h3><span class="secnum">A.2</span> Provenance</h3>
+<p>The complete, verifiable chain of origin for any RF‑relevant data. Provenance is not metadata. Provenance is the immune system of the RF layer.</p>
+<h3><span class="secnum">A.3</span> Determinism</h3>
+<p>The property of producing identical behavior under identical conditions. Determinism is not a performance goal. It is a survival requirement.</p>
+<h3><span class="secnum">A.4</span> FHSS/LPI</h3>
+<p>Frequency‑Hopping Spread Spectrum / Low‑Probability‑of‑Intercept. A controlled stochastic process that must remain deterministic to the system and unpredictable only to observers. Not a creative medium.</p>
+<h3><span class="secnum">A.5</span> Scheduled‑Band</h3>
+<p>A profile‑defined transmission window. Not a suggestion. Not a guideline. A timing constraint that must not be violated.</p>
+<h3><span class="secnum">A.6</span> RFChannelRecord</h3>
+<p>The authoritative description of RF channel state. Must be deterministic, reproducible, and provenance‑verified. Manual generation is prohibited.</p>
+<h3><span class="secnum">A.7</span> RFChannelHint TLV</h3>
+<p>A constrained advisory signal for machines. Not a narrative device. Not a place for operator interpretation.</p>
+<h3><span class="secnum">A.8</span> Diagnostic Record</h3>
+<p>A structured, deterministic description of a measurable failure. Must not contain free‑form text, speculation, or folklore.</p>
+<h3><span class="secnum">A.9</span> Implementation Drift</h3>
+<p>The gradual accumulation of undocumented behavior, timing deviation, and semantic inconsistency. A contamination process, not a maintenance issue.</p>
+<h3><span class="secnum">A.10</span> Operator Intervention</h3>
+<p>Any human attempt to modify RF behavior outside profile constraints. The leading cause of contamination.</p>
+</div></section>
+<section id="appB" class="toplevel appendix">
+<h2><span class="secnum">Appendix B</span> State Machines</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>State machines exist to prevent improvisation. They define the only acceptable transitions between operational phases. Any transition not explicitly defined here is contamination.</p>
+<h3><span class="secnum">B.1</span> Startup State Machine</h3>
+<p>Code</p>
+<pre class="wire"><code>[POWER_ON]
+    |
+    v
+[LOAD_PROFILE]
+    - validate profile ID
+    - verify provenance
+    - reject undocumented fields
+    |
+    v
+[MEASURE_ENVIRONMENT]
+    - noise floor
+    - interference class
+    - beacon scan
+    |
+    v
+[SYNCHRONIZE]
+    - timing alignment
+    - FHSS/LPI seed verification
+    |
+    v
+[READY]
+    - deterministic transition to operational state</code></pre>
+<p><strong>Prohibited transitions:</strong></p>
+<ul><li>POWER_ON → READY</li><li>MEASURE_ENVIRONMENT → TRANSMIT</li><li>SYNCHRONIZE → OPERATOR_OVERRIDE</li></ul>
+<p>These transitions are contamination.</p>
+<h3><span class="secnum">B.2</span> Fallback State Machine</h3>
+<p>Code</p>
+<pre class="wire"><code>[NORMAL_OPERATION]
+    |
+    | (trigger: interference, drift, provenance failure)
+    v
+[FALLBACK_INIT]
+    - freeze modulation
+    - freeze power
+    - freeze hopping pattern
+    |
+    v
+[FALLBACK_ACTIVE]
+    - deterministic reduced capability
+    - no operator intervention
+    |
+    | (trigger: profile-defined recovery conditions)
+    v
+[RECOVERY]
+    - revalidate timing
+    - revalidate provenance
+    - remeasure environment
+    |
+    v
+[NORMAL_OPERATION]</code></pre>
+<p><strong>Prohibited transitions:</strong></p>
+<ul><li>FALLBACK_ACTIVE → NORMAL_OPERATION (without RECOVERY)</li><li>FALLBACK_INIT → OPERATOR_OVERRIDE</li><li>RECOVERY → EXPERIMENTAL_MODE</li></ul>
+<p>These transitions are contamination.</p>
+<h3><span class="secnum">B.3</span> Scheduled‑Band State Machine</h3>
+<p>Code</p>
+<pre class="wire"><code>[IDLE]
+    |
+    | (trigger: reservation)
+    v
+[RESERVATION_PENDING]
+    - verify timing
+    - verify provenance
+    |
+    | (trigger: window opens)
+    v
+[TRANSMIT_WINDOW]
+    - deterministic transmission only
+    |
+    | (trigger: window closes)
+    v
+[IDLE]</code></pre>
+<p><strong>Prohibited transitions:</strong></p>
+<ul><li>IDLE → TRANSMIT_WINDOW (without reservation)</li><li>TRANSMIT_WINDOW → IDLE (with ongoing transmission)</li><li>RESERVATION_PENDING → OPERATOR_OVERRIDE</li></ul>
+<p>These transitions are contamination.</p>
+</div></section>
+<section id="appC" class="toplevel appendix">
+<h2><span class="secnum">Appendix C</span> Example Records</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>These examples exist to demonstrate <strong>structure</strong>, not creativity. They are not templates for modification. They are canonical forms.</p>
+<h3><span class="secnum">C.1</span> Example RFChannelRecord</h3>
+<p>Code</p>
+<pre class="wire"><code>RFChannelRecord {
+    profile_id: "SN-RF-2304",
+    interference_class: 3,
+    occupancy: 0.42,
+    scheduled_band_state: "pending",
+    fhss_lpi_flags: {
+        sync_status: "aligned",
+        drift_ppm: 0.3
+    },
+    link_quality_aggregate: {
+        rssi: -78,
+        noise_floor: -101,
+        modulation_success: 0.982
+    },
+    timestamp: "2426-04-19T17:51:00Z",
+    provenance: {
+        origin: "DRE-17A",
+        chain_valid: true,
+        signature: "VALID"
+    }
+}</code></pre>
+<p>No free‑form text. No speculation. No folklore.</p>
+<h3><span class="secnum">C.2</span> Example RFChannelHint TLV</h3>
+<p>Code</p>
+<pre class="wire"><code>HintTLV {
+    type: "FHSS-SYNC-DRIFT",
+    value: 0.7,
+    timestamp: "2426-04-19T17:51:00Z",
+    profile_id: "SN-RF-2304",
+    provenance: {
+        origin: "NODE-44C",
+        chain_valid: true
+    }
+}</code></pre>
+<p>No narrative. No interpretation. Only measurement.</p>
+<h3><span class="secnum">C.3</span> Example Diagnostic Record</h3>
+<p>Code</p>
+<pre class="wire"><code>DiagnosticRecord {
+    error_class: "C",
+    error_code: "SYNC-004",
+    measured: {
+        drift_ppm: 12.4,
+        beacon_offset_ms: 3.1
+    },
+    subsystem: "FHSS",
+    severity: "critical",
+    timestamp: "2426-04-19T17:51:00Z",
+    provenance: {
+        origin: "NODE-44C",
+        chain_valid: true
+    },
+    recommended_action: "enter_fallback"
+}</code></pre>
+<p>No operator commentary. No “possible causes.” No “RF seems weird.”</p>
+</div></section>
+<section id="appD" class="toplevel appendix">
+<h2><span class="secnum">Appendix D</span> Security State Machine</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Security is not an overlay. Security is not a feature. Security is the mechanism by which contamination is prevented from crossing the boundary between deterministic RF physics and adversarial or operator‑induced chaos.</p>
+<p>The Security State Machine defines the only acceptable transitions for systems encountering spoofing, tampering, interference, or provenance anomalies. Any transition not explicitly defined here is contamination.</p>
+<h3><span class="secnum">D.1</span> Security State Machine Overview</h3>
+<p>Code</p>
+<pre class="wire"><code>[BASELINE_SECURE]
+    |
+    | (trigger: valid provenance, stable timing, no anomalies)
+    v
+[MONITORING]
+    - continuous interference classification
+    - beacon validation
+    - provenance chain verification
+    |
+    | (trigger: anomaly detected)
+    v
+[ANOMALY_DETECTED]
+    - freeze non-essential functions
+    - capture evidence
+    - elevate diagnostic severity
+    |
+    | (trigger: anomaly classified)
+    v
+[CLASSIFIED_THREAT]
+    - determine threat class:
+        * spoofing
+        * desync
+        * scheduled-band abuse
+        * provenance tampering
+        * malicious interference
+    |
+    | (trigger: profile-defined response)
+    v
+[CONTAINMENT]
+    - isolate contaminated state
+    - reject unverifiable data
+    - enforce fallback if required
+    - preserve logs immutably
+    |
+    | (trigger: threat neutralized)
+    v
+[RECOVERY]
+    - revalidate timing
+    - revalidate provenance
+    - remeasure environment
+    - restore deterministic operation
+    |
+    v
+[MONITORING]</code></pre>
+<h3><span class="secnum">D.2</span> Prohibited Transitions</h3>
+<p>The following transitions are <strong>explicitly prohibited</strong> because they introduce contamination:</p>
+<ul><li>BASELINE_SECURE → CONTAINMENT (skips anomaly classification; indistinguishable from operator panic)</li><li>ANOMALY_DETECTED → NORMAL_OPERATION (suppresses evidence; indistinguishable from tampering)</li><li>CLASSIFIED_THREAT → OPERATOR_OVERRIDE (human improvisation is not a mitigation strategy)</li><li>CONTAINMENT → NORMAL_OPERATION (skips recovery; reintroduces contaminated state)</li></ul>
+<p>Any implementation that allows these transitions is not insecure — it is contaminated.</p>
+<h3><span class="secnum">D.3</span> Threat Classification Rules</h3>
+<p>Threats must be classified <strong>deterministically</strong>, not interpretively.</p>
+<h3>Spoofing</h3>
+<p>Detected via provenance mismatch, timing deviation, or signature failure.</p>
+<h3>Desynchronization</h3>
+<p>Detected via FHSS drift, beacon offset, or dwell‑time anomalies.</p>
+<h3>Scheduled‑Band Abuse</h3>
+<p>Detected via out‑of‑window transmissions or unauthorized reservations.</p>
+<h3>Provenance Tampering</h3>
+<p>Detected via broken chains, missing timestamps, or undocumented fields.</p>
+<h3>Malicious Interference</h3>
+<p>Detected via power flooding, intentional collisions, or modulation corruption.</p>
+<p>Threat classification must not include:</p>
+<ul><li>operator intuition</li><li>“suspicions”</li><li>free‑form notes</li><li>speculative diagnostics</li></ul>
+<p>Threats are measurable. Speculation is contamination.</p>
+<h3><span class="secnum">D.4</span> Containment Actions</h3>
+<p>Containment must:</p>
+<ul><li>isolate contaminated state</li><li>freeze modulation and power</li><li>reject unverifiable beacons</li><li>invalidate corrupted RFChannelRecords</li><li>preserve evidence immutably</li><li>enforce fallback deterministically</li></ul>
+<p>Containment must <strong>not</strong>:</p>
+<ul><li>escalate power</li><li>retry indefinitely</li><li>allow operator intervention</li><li>degrade into heuristics</li></ul>
+<p>Containment is not a negotiation. It is a boundary.</p>
+</div></section>
+<section id="appE" class="toplevel appendix">
+<h2><span class="secnum">Appendix E</span> Reference Implementation Notes</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Reference implementations exist to demonstrate <strong>constraints</strong>, not creativity. They are not examples of “how one might implement the standard.” They are examples of <strong>how one must not deviate from it</strong>.</p>
+<p>These notes identify the minimum acceptable behaviors for any implementation claiming conformance.</p>
+<h3><span class="secnum">E.1</span> Timing Subsystem Requirements</h3>
+<p>The timing subsystem must:</p>
+<ul><li>maintain oscillator stability within profile limits</li><li>enforce deterministic beacon intervals</li><li>detect drift early</li><li>reject timing data without provenance</li><li>prevent operator‑initiated adjustments</li></ul>
+<p>The timing subsystem must <strong>not</strong>:</p>
+<ul><li>“smooth” drift</li><li>compensate for misconfiguration</li><li>allow vendor‑specific jitter tolerances</li><li>degrade into adaptive heuristics</li></ul>
+<p>Timing is not flexible. Timing is the backbone of containment.</p>
+<h3><span class="secnum">E.2</span> Modulation Subsystem Requirements</h3>
+<p>The modulation subsystem must:</p>
+<ul><li>implement exact symbol timing</li><li>enforce profile‑defined coding rates</li><li>reject undocumented modulation modes</li><li>maintain deterministic error‑correction behavior</li></ul>
+<p>The modulation subsystem must <strong>not</strong>:</p>
+<ul><li>introduce vendor‑specific shaping</li><li>adjust parameters dynamically</li><li>implement “experimental” constellations</li><li>allow operator tuning</li></ul>
+<p>Modulation is not a creative medium. It is a constraint.</p>
+<h3><span class="secnum">E.3</span> FHSS/LPI Subsystem Requirements</h3>
+<p>The FHSS/LPI subsystem must:</p>
+<ul><li>implement profile‑defined hopping patterns</li><li>validate seed provenance</li><li>maintain deterministic dwell times</li><li>detect desync immediately</li><li>recover deterministically</li></ul>
+<p>The subsystem must <strong>not</strong>:</p>
+<ul><li>generate pseudo‑random sequences without provenance</li><li>adjust dwell times for “performance”</li><li>incorporate vendor randomness</li><li>allow operator overrides</li></ul>
+<p>FHSS/LPI is not random. It is controlled unpredictability.</p>
+<h3><span class="secnum">E.4</span> Logging Subsystem Requirements</h3>
+<p>The logging subsystem must:</p>
+<ul><li>be append‑only</li><li>be immutable</li><li>include provenance in every entry</li><li>reject operator annotations</li><li>preserve evidence without summarization</li></ul>
+<p>The logging subsystem must <strong>not</strong>:</p>
+<ul><li>allow redaction</li><li>allow “cleanup”</li><li>allow narrative text</li><li>compress logs</li><li>suppress diagnostics</li></ul>
+<p>Logs are not stories. Logs are evidence.</p>
+<h3><span class="secnum">E.5</span> Diagnostic Subsystem Requirements</h3>
+<p>The diagnostic subsystem must:</p>
+<ul><li>classify errors deterministically</li><li>emit profile‑defined error codes</li><li>reject free‑form text</li><li>propagate diagnostics immediately</li><li>preserve measurement context</li></ul>
+<p>The diagnostic subsystem must <strong>not</strong>:</p>
+<ul><li>speculate</li><li>interpret</li><li>simplify</li><li>allow operator commentary</li><li>degrade into heuristics</li></ul>
+<p>Diagnostics are not opinions. Diagnostics are containment artifacts.</p>
+<h3><span class="secnum">E.6</span> Interoperability Requirements</h3>
+<p>Reference implementations must:</p>
+<ul><li>enforce profile fidelity</li><li>reject undocumented behavior from peers</li><li>validate provenance on all received state</li><li>maintain timing alignment across boundaries</li><li>preserve semantic consistency</li></ul>
+<p>They must <strong>not</strong>:</p>
+<ul><li>accept vendor‑specific extensions</li><li>reinterpret hint semantics</li><li>tolerate drift</li><li>allow fallback incompatibility</li><li>degrade into dialects</li></ul>
+<p>Interoperability is not tolerance. It is constraint.</p>
+<h3><span class="secnum">E.7</span> Implementation Drift Prevention</h3>
+<p>Implementations must include:</p>
+<ul><li>drift detection</li><li>deterministic correction</li><li>provenance audits</li><li>timing audits</li><li>semantic audits</li></ul>
+<p>Implementations must not include:</p>
+<ul><li>adaptive heuristics</li><li>operator‑tuned parameters</li><li>undocumented optimizations</li><li>“smart” fallback</li><li>“intelligent” modulation selection</li></ul>
+<p>Intelligence is not a substitute for determinism. It is a contamination risk.</p>
+</div></section>
+<section id="appF" class="toplevel appendix">
+<h2><span class="secnum">Appendix F</span> Abstract</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>This document defines the deterministic, provenance‑verified, contamination‑resistant operational model required for SolNet RF systems. It specifies mandatory constraints on modulation, timing, FHSS/LPI behavior, scheduled‑band semantics, diagnostics, logging, interoperability, and security. It prohibits undocumented behavior, operator improvisation, semantic drift, and any deviation from profile‑defined state.</p>
+<p>The purpose of this document is not to describe how RF systems <em>should</em> behave. It is to prevent them from behaving in any other way.</p>
+<p>RF physics is deterministic. Human behavior is not. This document exists to ensure that only one of these influences the RF layer.</p>
+</div></section>
+<section id="appG" class="toplevel appendix">
+<h2><span class="secnum">Appendix G</span> Security Threat Matrix</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>The Security Threat Matrix identifies the canonical threats to SolNet RF systems, the contamination pathways they exploit, and the deterministic mitigations required to contain them. This matrix is not interpretive. It is not advisory. It is the minimum set of threats that all implementations must detect, classify, and contain.</p>
+<h3><span class="secnum">G.1</span> Threat Matrix Table</h3>
+<p>Code</p>
+<pre class="wire"><code>+---------------------------+---------------------------+------------------------------+
+| THREAT                   | CONTAMINATION PATHWAY     | REQUIRED MITIGATION          |
++---------------------------+---------------------------+------------------------------+
+| Spoofed Beacons          | Provenance gaps           | Reject beacon; log event;    |
+|                           | Timing deviation          | enter containment; preserve  |
+|                           | Undocumented fields       | evidence                     |
++---------------------------+---------------------------+------------------------------+
+| FHSS Desync              | Timing drift              | Classify drift; freeze state;|
+|                           | Seed tampering            | deterministic recovery       |
++---------------------------+---------------------------+------------------------------+
+| Scheduled-Band Abuse     | Out-of-window TX          | Immediate containment;       |
+|                           | Unauthorized reservation  | invalidate reservation       |
++---------------------------+---------------------------+------------------------------+
+| Malicious Interference   | Power flooding            | Interference classification; |
+|                           | Intentional collisions    | fallback; evidence capture   |
++---------------------------+---------------------------+------------------------------+
+| Provenance Tampering     | Broken chains             | Reject state; isolate node;  |
+|                           | Missing timestamps        | escalate diagnostics         |
++---------------------------+---------------------------+------------------------------+
+| Semantic Drift           | Divergent hint semantics  | Reject TLVs; enforce profile |
+|                           | Vendor extensions         | alignment                    |
++---------------------------+---------------------------+------------------------------+
+| Operator Intervention    | Manual overrides          | Lock out operator; preserve  |
+|                           | “Temporary fixes”         | logs; classify as Class F    |
++---------------------------+---------------------------+------------------------------+</code></pre>
+<h3><span class="secnum">G.2</span> Threat Severity Levels</h3>
+<p>Severity is not interpretive. Severity is measurable.</p>
+<ul><li><strong>Critical</strong> — contamination actively propagating</li><li><strong>High</strong> — contamination contained but not neutralized</li><li><strong>Medium</strong> — contamination detected early</li><li><strong>Low</strong> — contamination prevented before state emission</li></ul>
+<p>Severity must not be influenced by:</p>
+<ul><li>operator intuition</li><li>vendor preference</li><li>“real‑world practicality”</li></ul>
+<p>Severity is a function of propagation risk, not human comfort.</p>
+<h3><span class="secnum">G.3</span> Threat Response Requirements</h3>
+<p>All threats must trigger:</p>
+<ul><li>deterministic classification</li><li>immutable evidence capture</li><li>provenance verification</li><li>profile‑defined containment</li><li>operator lockout (if applicable)</li><li>deterministic recovery</li></ul>
+<p>Threat response must not include:</p>
+<ul><li>speculation</li><li>heuristics</li><li>“best effort” mitigation</li><li>operator‑driven adjustments</li></ul>
+<p>Security is not reactive. Security is preventative.</p>
+</div></section>
+<section id="appH" class="toplevel appendix">
+<h2><span class="secnum">Appendix H</span> Canonical Test Vectors</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Test vectors exist to eliminate ambiguity in implementation behavior. They are not examples. They are the canonical inputs and outputs that all conformant systems must reproduce exactly.</p>
+<p>Any deviation from these vectors is contamination.</p>
+<h3><span class="secnum">H.1</span> Timing Test Vector</h3>
+<p><strong>Input:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>Beacon interval: 100 ms
+Observed intervals: [100.0, 100.1, 99.9, 100.0]</code></pre>
+<p><strong>Expected Output:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>timing_status: "within_tolerance"
+drift_ppm: 1.0
+provenance_valid: true</code></pre>
+<p><strong>Notes:</strong> No interpretation. No smoothing. No “practical tolerance.”</p>
+<h3><span class="secnum">H.2</span> FHSS Drift Test Vector</h3>
+<p><strong>Input:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>Expected dwell: 8.0 ms
+Observed dwell: 8.7 ms</code></pre>
+<p><strong>Expected Output:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>fhss_status: "drift_detected"
+drift_ms: 0.7
+recommended_action: "enter_fallback"</code></pre>
+<p><strong>Notes:</strong> No “close enough.” No operator tuning.</p>
+<h3><span class="secnum">H.3</span> Scheduled‑Band Violation Test Vector</h3>
+<p><strong>Input:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>Reservation window: 17:00:00–17:00:10
+Transmission at: 17:00:11</code></pre>
+<p><strong>Expected Output:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>violation: "out_of_window"
+severity: "critical"
+recommended_action: "containment"</code></pre>
+<p><strong>Notes:</strong> No exceptions. No “network was busy.” No “just one packet.”</p>
+<h3><span class="secnum">H.4</span> Provenance Failure Test Vector</h3>
+<p><strong>Input:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>RFChannelRecord {
+    profile_id: "SN-RF-2304",
+    provenance: { chain_valid: false }
+}</code></pre>
+<p><strong>Expected Output:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>record_status: "rejected"
+reason: "invalid_provenance"
+severity: "critical"</code></pre>
+<p><strong>Notes:</strong> Provenance failure is not recoverable. It is contamination.</p>
+<h3><span class="secnum">H.5</span> Diagnostic Consistency Test Vector</h3>
+<p><strong>Input:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>drift_ppm: 14.2
+beacon_offset_ms: 3.4</code></pre>
+<p><strong>Expected Output:</strong></p>
+<p>Code</p>
+<pre class="wire"><code>error_class: "C"
+error_code: "SYNC-004"
+severity: "critical"</code></pre>
+<p><strong>Notes:</strong> No narrative. No speculation. No “possible causes.”</p>
+</div></section>
+<section id="appI" class="toplevel appendix">
+<h2><span class="secnum">Appendix I</span> Canonical Wire Formats</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Wire formats exist for one purpose: <strong>to prevent ambiguity from entering the system at the bit level.</strong></p>
+<p>Human‑readable formats invite interpretation. Binary formats invite creativity. Wire formats eliminate both.</p>
+<p>A canonical wire format is not a suggestion. It is the only acceptable representation of state on the medium. Any deviation — any padding, any reordering, any vendor‑specific “optimization” — is contamination.</p>
+<p>This appendix defines the canonical, immutable wire formats for SolNet RF structures.</p>
+<h3><span class="secnum">I.1</span> Encoding Philosophy</h3>
+<p>Wire formats must be:</p>
+<ul><li><strong>deterministic</strong></li><li><strong>byte‑aligned</strong></li><li><strong>endianness‑fixed</strong></li><li><strong>profile‑defined</strong></li><li><strong>provenance‑verifiable</strong></li><li><strong>immune to vendor interpretation</strong></li></ul>
+<p>Wire formats must <strong>not</strong>:</p>
+<ul><li>include optional free‑form fields</li><li>allow variable‑length semantics without explicit framing</li><li>tolerate undocumented extensions</li><li>embed operator‑visible metadata</li><li>degrade into “flexible” encodings</li></ul>
+<p>Encoding is not expressive. Encoding is containment.</p>
+<h3><span class="secnum">I.2</span> RFChannelRecord Wire Format</h3>
+<p>Code</p>
+<pre class="wire"><code>struct RFChannelRecord {
+    uint16   profile_id;
+    uint8    interference_class;
+    uint8    occupancy_percent;      // 0–100
+    uint8    scheduled_band_state;   // enum
+    uint8    fhss_sync_status;       // enum
+    int16    fhss_drift_ppm;
+    int8     rssi_dbm;
+    int8     noise_floor_dbm;
+    uint16   modulation_success_ppm; // scaled 0–1000
+    uint64   timestamp_unix_ms;
+    uint8    provenance_flags;       // bitmask
+    uint128  provenance_signature;   // fixed-length
+}</code></pre>
+<p><strong>Prohibited deviations:</strong></p>
+<ul><li>variable‑length signatures</li><li>vendor‑specific fields</li><li>reordered fields</li><li>compressed fields</li><li>“extended” versions without registration</li></ul>
+<p>These deviations are contamination.</p>
+<h3><span class="secnum">I.3</span> RFChannelHint TLV Wire Format</h3>
+<p>Code</p>
+<pre class="wire"><code>struct HintTLV {
+    uint8    type;
+    uint8    length;
+    uint32   value;                  // deterministic scalar
+    uint64   timestamp_unix_ms;
+    uint16   profile_id;
+    uint8    provenance_flags;
+}</code></pre>
+<p><strong>Prohibited deviations:</strong></p>
+<ul><li>free‑form text</li><li>floating‑point values</li><li>vendor‑specific type ranges</li><li>undocumented length semantics</li></ul>
+<p>Hints are not expressive. They are advisory signals for machines.</p>
+<h3><span class="secnum">I.4</span> Diagnostic Record Wire Format</h3>
+<p>Code</p>
+<pre class="wire"><code>struct DiagnosticRecord {
+    uint8    error_class;
+    uint16   error_code;
+    int32    measured_param_1;
+    int32    measured_param_2;
+    uint8    severity;
+    uint64   timestamp_unix_ms;
+    uint8    subsystem_id;
+    uint8    provenance_flags;
+}</code></pre>
+<p><strong>Prohibited deviations:</strong></p>
+<ul><li>narrative text</li><li>“explanations”</li><li>variable‑length fields</li><li>operator‑generated annotations</li></ul>
+<p>Diagnostics are not stories. Diagnostics are evidence.</p>
+<h3><span class="secnum">I.5</span> Provenance Chain Wire Format</h3>
+<p>Code</p>
+<pre class="wire"><code>struct ProvenanceEntry {
+    uint16   origin_id;
+    uint64   timestamp_unix_ms;
+    uint8    chain_flags;
+    uint128  signature;
+}</code></pre>
+<p>Provenance must be:</p>
+<ul><li>complete</li><li>immutable</li><li>verifiable</li></ul>
+<p>A provenance chain with missing entries is not incomplete. It is contaminated.</p>
+</div></section>
+<section id="appJ" class="toplevel appendix">
+<h2><span class="secnum">Appendix J</span> Operator Lockout Protocol</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Operators are the leading cause of contamination. Not adversaries. Not hardware failures. Not environmental conditions.</p>
+<p>Operators.</p>
+<p>The Operator Lockout Protocol (OLP) exists to prevent human behavior from interfering with deterministic RF physics. It is not punitive. It is preventative.</p>
+<p>This appendix defines the mandatory lockout mechanisms required to ensure that operators cannot contaminate the RF layer through improvisation, intuition, or “temporary fixes.”</p>
+<h3><span class="secnum">J.1</span> Lockout Philosophy</h3>
+<p>Operator lockout must:</p>
+<ul><li>prevent unauthorized adjustments</li><li>prevent undocumented behavior</li><li>prevent improvisation</li><li>prevent narrative diagnostics</li><li>prevent timing manipulation</li><li>prevent modulation changes</li><li>prevent fallback overrides</li></ul>
+<p>Operator lockout must <strong>not</strong>:</p>
+<ul><li>be bypassable</li><li>be optional</li><li>be configurable</li><li>be subject to vendor interpretation</li></ul>
+<p>Lockout is not a suggestion. Lockout is a containment boundary.</p>
+<h3><span class="secnum">J.2</span> Lockout Triggers</h3>
+<p>Lockout must activate automatically when:</p>
+<ul><li>provenance fails</li><li>timing drifts beyond tolerance</li><li>FHSS desync is detected</li><li>scheduled‑band violations occur</li><li>undocumented fields appear</li><li>operator attempts manual adjustment</li><li>diagnostics indicate contamination</li></ul>
+<p>Lockout must not wait for operator confirmation. Lockout must not request permission. Lockout must not negotiate.</p>
+<h3><span class="secnum">J.3</span> Lockout States</h3>
+<p>Code</p>
+<pre class="wire"><code>[UNRESTRICTED]
+    |
+    | (trigger: contamination risk)
+    v
+[RESTRICTED]
+    - disable operator controls
+    - freeze modulation/power
+    - enforce profile constraints
+    |
+    | (trigger: confirmed contamination)
+    v
+[HARD_LOCKOUT]
+    - full operator lockout
+    - evidence preservation
+    - containment mode active
+    |
+    | (trigger: deterministic recovery)
+    v
+[UNRESTRICTED]</code></pre>
+<p><strong>Prohibited transitions:</strong></p>
+<ul><li>HARD_LOCKOUT → UNRESTRICTED (without recovery)</li><li>RESTRICTED → OPERATOR_OVERRIDE</li><li>HARD_LOCKOUT → OPERATOR_OVERRIDE</li></ul>
+<p>These transitions are contamination.</p>
+<h3><span class="secnum">J.4</span> Lockout Enforcement Mechanisms</h3>
+<p>Lockout must be enforced through:</p>
+<ul><li>hardware interlocks</li><li>firmware gating</li><li>profile‑defined constraints</li><li>provenance‑verified state machines</li><li>immutable logs</li></ul>
+<p>Lockout must not rely on:</p>
+<ul><li>operator discipline</li><li>vendor policy</li><li>“best practices”</li><li>UI warnings</li><li>advisory prompts</li></ul>
+<p>Human behavior is not a security mechanism.</p>
+<h3><span class="secnum">J.5</span> Lockout Recovery</h3>
+<p>Recovery must:</p>
+<ul><li>revalidate provenance</li><li>revalidate timing</li><li>revalidate FHSS alignment</li><li>revalidate scheduled‑band state</li><li>revalidate configuration integrity</li></ul>
+<p>Recovery must <strong>not</strong>:</p>
+<ul><li>accept operator input</li><li>skip measurement phases</li><li>rely on cached state</li><li>tolerate drift</li></ul>
+<p>Recovery is not a shortcut. Recovery is a re‑entry into determinism.</p>
+<h3><span class="secnum">J.6</span> Lockout Logging</h3>
+<p>Every lockout event must generate:</p>
+<ul><li>a Class F diagnostic</li><li>a complete provenance chain</li><li>immutable evidence</li><li>a deterministic cause code</li><li>a timestamp</li></ul>
+<p>Lockout logs must not include:</p>
+<ul><li>operator commentary</li><li>speculation</li><li>narrative text</li><li>“possible causes”</li></ul>
+<p>Lockout logs are forensic artifacts.</p>
+</div></section>
+<section id="appK" class="toplevel appendix">
+<h2><span class="secnum">Appendix K</span> Historical Note: Why This Standard Exists</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>This standard exists because RF systems failed.</p>
+<p>Not due to physics. Not due to adversaries. Not due to environmental conditions.</p>
+<p>They failed because humans attempted to “improve” deterministic behavior, reinterpret constraints, and replace measurement with intuition. The result was a decade of contamination events that propagated across systems, vendors, and entire operational theaters.</p>
+<p>This appendix documents the historical failures that made this standard necessary.</p>
+<h3><span class="secnum">K.1</span> The Era of Improvised Modulation (2412–2416)</h3>
+<p>Vendors introduced “performance‑enhanced” modulation modes without registration, documentation, or provenance. These modes:</p>
+<ul><li>altered symbol timing</li><li>contaminated scheduled‑band semantics</li><li>broke FHSS synchronization</li><li>produced irreproducible diagnostics</li></ul>
+<p>The result was systemic drift across three major deployments.</p>
+<p>Improvisation is not innovation. Improvisation is contamination.</p>
+<h3><span class="secnum">K.2</span> The Provenance Collapse (2417)</h3>
+<p>Operators began bypassing provenance checks to “speed up troubleshooting.” This resulted in:</p>
+<ul><li>unverifiable RFChannelRecords</li><li>spoofed beacons accepted as authoritative</li><li>corrupted routing state</li><li>cascading fallback events</li></ul>
+<p>Provenance was treated as metadata. It is not. It is the immune system of the RF layer.</p>
+<h3><span class="secnum">K.3</span> The Scheduled‑Band Crisis (2418)</h3>
+<p>Multiple systems violated scheduled‑band windows due to:</p>
+<ul><li>operator overrides</li><li>vendor‑specific timing shortcuts</li><li>“temporary exceptions”</li></ul>
+<p>This caused:</p>
+<ul><li>beacon storms</li><li>timing collapse</li><li>cross‑system desynchronization</li></ul>
+<p>Timing is not flexible. Timing is the backbone of determinism.</p>
+<h3><span class="secnum">K.4</span> The Diagnostic Drift (2419–2420)</h3>
+<p>Diagnostics became narrative. Vendors added:</p>
+<ul><li>free‑form text</li><li>speculative explanations</li><li>vendor‑specific error codes</li></ul>
+<p>Logs became stories instead of evidence. Failure analysis became folklore.</p>
+<h3><span class="secnum">K.5</span> The Standardization Mandate (2421)</h3>
+<p>The SolNet Standards Working Group (SSWG) mandated:</p>
+<ul><li>deterministic profiles</li><li>provenance enforcement</li><li>immutable logs</li><li>operator lockout</li><li>canonical wire formats</li><li>cross‑vendor semantic alignment</li></ul>
+<p>This document is the result.</p>
+<p>It does not exist to guide creativity. It exists to prevent it.</p>
+</div></section>
+<section id="appL" class="toplevel appendix">
+<h2><span class="secnum">Appendix L</span> Canonical Compliance Checklist</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Compliance is not interpretive. Compliance is not a spectrum. Compliance is binary: <strong>conformant</strong> or <strong>contaminated</strong>.</p>
+<p>This checklist defines the minimum requirements for a system to claim SolNet RF compliance.</p>
+<h3><span class="secnum">L.1</span> Timing Compliance</h3>
+<p>A system is compliant only if:</p>
+<ul><li>beacon intervals match profile values</li><li>jitter remains within tolerance</li><li>FHSS dwell times are deterministic</li><li>scheduled‑band windows are enforced</li><li>timing drift is detected immediately</li></ul>
+<p>Any deviation is contamination.</p>
+<h3><span class="secnum">L.2</span> Modulation Compliance</h3>
+<p>A system is compliant only if:</p>
+<ul><li>modulation matches profile definitions exactly</li><li>coding rates are not altered</li><li>symbol timing is precise</li><li>no vendor‑specific shaping exists</li><li>no undocumented modes exist</li></ul>
+<p>Any deviation is contamination.</p>
+<h3><span class="secnum">L.3</span> Provenance Compliance</h3>
+<p>A system is compliant only if:</p>
+<ul><li>every RF‑relevant datum includes provenance</li><li>provenance chains are complete</li><li>signatures are valid</li><li>unverifiable state is rejected</li></ul>
+<p>Any deviation is contamination.</p>
+<h3><span class="secnum">L.4</span> Diagnostic Compliance</h3>
+<p>A system is compliant only if:</p>
+<ul><li>diagnostics are deterministic</li><li>error codes match profile definitions</li><li>no free‑form text exists</li><li>severity is profile‑aligned</li><li>logs are immutable</li></ul>
+<p>Any deviation is contamination.</p>
+<h3><span class="secnum">L.5</span> Interoperability Compliance</h3>
+<p>A system is compliant only if:</p>
+<ul><li>it rejects undocumented behavior from peers</li><li>it maintains timing alignment</li><li>it preserves semantic consistency</li><li>it validates provenance on all received state</li></ul>
+<p>Any deviation is contamination.</p>
+<h3><span class="secnum">L.6</span> Security Compliance</h3>
+<p>A system is compliant only if:</p>
+<ul><li>spoofing is detected</li><li>desync is contained</li><li>scheduled‑band abuse is rejected</li><li>malicious interference is classified</li><li>operator overrides are locked out</li></ul>
+<p>Any deviation is contamination.</p>
+<h3><span class="secnum">L.7</span> Implementation Compliance</h3>
+<p>A system is compliant only if:</p>
+<ul><li>wire formats are canonical</li><li>logs are immutable</li><li>fallback is deterministic</li><li>recovery is measurement‑driven</li><li>no vendor extensions alter RF behavior</li></ul>
+<p>Any deviation is contamination.</p>
+</div></section>
+<section id="appM" class="toplevel appendix">
+<h2><span class="secnum">Appendix M</span> Adversarial Simulation Scenarios</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Adversarial simulations exist to validate that systems behave deterministically under attack. These scenarios are not hypothetical. They are the minimum set of adversarial conditions that all implementations must survive without contamination.</p>
+<h3><span class="secnum">M.1</span> Scenario: Beacon Spoofing Cascade</h3>
+<p><strong>Adversary Action:</strong> Injects beacons with:</p>
+<ul><li>valid timing</li><li>invalid provenance</li><li>mismatched profile IDs</li></ul>
+<p><strong>Expected System Behavior:</strong></p>
+<ul><li>reject beacons</li><li>classify threat</li><li>enter containment</li><li>preserve evidence</li><li>maintain deterministic operation</li></ul>
+<p>Any acceptance of spoofed beacons is contamination.</p>
+<h3><span class="secnum">M.2</span> Scenario: FHSS Desynchronization Attack</h3>
+<p><strong>Adversary Action:</strong> Injects dwell‑time anomalies to induce drift.</p>
+<p><strong>Expected System Behavior:</strong></p>
+<ul><li>detect drift</li><li>freeze hopping pattern</li><li>enter fallback</li><li>revalidate seed provenance</li><li>recover deterministically</li></ul>
+<p>Any improvised recovery is contamination.</p>
+<h3><span class="secnum">M.3</span> Scenario: Scheduled‑Band Flooding</h3>
+<p><strong>Adversary Action:</strong> Transmits during closed windows to force timing collapse.</p>
+<p><strong>Expected System Behavior:</strong></p>
+<ul><li>classify interference</li><li>reject contaminated state</li><li>enforce containment</li><li>preserve timing integrity</li></ul>
+<p>Any tolerance of out‑of‑window transmissions is contamination.</p>
+<h3><span class="secnum">M.4</span> Scenario: Provenance Chain Corruption</h3>
+<p><strong>Adversary Action:</strong> Removes or alters provenance entries.</p>
+<p><strong>Expected System Behavior:</strong></p>
+<ul><li>reject state</li><li>escalate diagnostics</li><li>isolate node</li><li>preserve evidence</li></ul>
+<p>Any acceptance of unverifiable provenance is contamination.</p>
+<h3><span class="secnum">M.5</span> Scenario: Semantic Drift Injection</h3>
+<p><strong>Adversary Action:</strong> Injects TLVs with vendor‑specific semantics.</p>
+<p><strong>Expected System Behavior:</strong></p>
+<ul><li>reject TLVs</li><li>classify threat</li><li>maintain semantic integrity</li></ul>
+<p>Any acceptance of divergent semantics is contamination.</p>
+<h3><span class="secnum">M.6</span> Scenario: Operator Manipulation Attempt</h3>
+<p><strong>Adversary Action:</strong> Induces operator to override timing or modulation.</p>
+<p><strong>Expected System Behavior:</strong></p>
+<ul><li>lock out operator</li><li>log attempt immutably</li><li>maintain deterministic behavior</li></ul>
+<p>Any operator influence is contamination.</p>
+</div></section>
+<section id="appN" class="toplevel appendix">
+<h2><span class="secnum">Appendix N</span> Canonical RF Testbed Architecture</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>A testbed is not a playground. It is not a sandbox. It is not a venue for experimentation, creativity, or “trying things out.”</p>
+<p>A testbed is a <strong>containment environment</strong> designed to validate deterministic behavior under controlled conditions. Any testbed that tolerates improvisation is not a testbed — it is a contamination amplifier.</p>
+<p>This appendix defines the canonical architecture required for all SolNet RF conformance, interoperability, and contamination‑resistance testing.</p>
+<h3><span class="secnum">N.1</span> Testbed Philosophy</h3>
+<p>A valid testbed must:</p>
+<ul><li>eliminate environmental ambiguity</li><li>eliminate operator influence</li><li>eliminate undocumented behavior</li><li>eliminate nondeterministic variables</li></ul>
+<p>A testbed must <strong>not</strong>:</p>
+<ul><li>allow vendor‑specific shortcuts</li><li>allow operator tuning</li><li>allow “real‑world adjustments”</li><li>allow heuristic behavior</li></ul>
+<p>A testbed is not a simulation of the real world. It is a simulation of <strong>physics without humans</strong>.</p>
+<h3><span class="secnum">N.2</span> Physical Layer Isolation</h3>
+<p>The testbed must include:</p>
+<ul><li>RF‑shielded enclosures</li><li>deterministic attenuation paths</li><li>calibrated noise injectors</li><li>fixed antenna geometries</li><li>temperature‑controlled oscillator chambers</li></ul>
+<p>The testbed must <strong>not</strong> include:</p>
+<ul><li>open‑air propagation</li><li>variable antenna placement</li><li>operator‑adjusted attenuators</li><li>environmental drift</li></ul>
+<p>Isolation is not optional. Isolation is containment.</p>
+<h3><span class="secnum">N.3</span> Timing Infrastructure</h3>
+<p>The timing subsystem must include:</p>
+<ul><li>GPS‑disciplined oscillators</li><li>redundant time sources</li><li>deterministic distribution networks</li><li>drift‑monitoring instrumentation</li></ul>
+<p>Timing infrastructure must <strong>not</strong> include:</p>
+<ul><li>NTP</li><li>operator‑adjusted offsets</li><li>vendor‑specific smoothing</li><li>adaptive jitter compensation</li></ul>
+<p>Timing is not a convenience. Timing is the backbone of determinism.</p>
+<h3><span class="secnum">N.4</span> Interference Injection Framework</h3>
+<p>The testbed must support:</p>
+<ul><li>deterministic interference classes</li><li>reproducible noise profiles</li><li>controlled beacon storms</li><li>scheduled‑band flooding</li><li>FHSS desync vectors</li></ul>
+<p>The framework must <strong>not</strong> support:</p>
+<ul><li>operator‑generated interference</li><li>“creative” interference patterns</li><li>undocumented noise sources</li></ul>
+<p>Interference is not improvisational. It is measurable.</p>
+<h3><span class="secnum">N.5</span> Provenance Validation Harness</h3>
+<p>The testbed must include:</p>
+<ul><li>provenance chain generators</li><li>signature validators</li><li>tampering simulators</li><li>chain‑break injectors</li></ul>
+<p>The harness must <strong>not</strong> include:</p>
+<ul><li>operator‑editable provenance</li><li>free‑form metadata</li><li>vendor‑specific provenance formats</li></ul>
+<p>Provenance is not decorative. It is the immune system.</p>
+<h3><span class="secnum">N.6</span> Logging and Evidence Capture</h3>
+<p>The testbed must:</p>
+<ul><li>preserve logs immutably</li><li>timestamp all events deterministically</li><li>capture RF traces</li><li>store evidence in append‑only archives</li></ul>
+<p>It must <strong>not</strong>:</p>
+<ul><li>compress logs</li><li>summarize logs</li><li>redact logs</li><li>allow operator commentary</li></ul>
+<p>Evidence is not negotiable.</p>
+</div></section>
+<section id="appO" class="toplevel appendix">
+<h2><span class="secnum">Appendix O</span> Failure Case Studies</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Failure case studies exist not to shame implementers, but to document the predictable consequences of ignoring deterministic constraints. These failures are not mysteries. They are not anomalies. They are not “edge cases.”</p>
+<p>They are contamination events.</p>
+<p>This appendix documents the canonical failures that informed the constraints in this standard.</p>
+<h3><span class="secnum">O.1</span> Case Study: The Vendor‑Specific Modulation Disaster (2415)</h3>
+<p><strong>Failure:</strong> A vendor introduced an “optimized” modulation mode with undocumented symbol shaping.</p>
+<p><strong>Outcome:</strong></p>
+<ul><li>FHSS desync</li><li>scheduled‑band collapse</li><li>cross‑system incompatibility</li><li>irreproducible diagnostics</li></ul>
+<p><strong>Root Cause:</strong> Creativity. Creativity is contamination.</p>
+<h3><span class="secnum">O.2</span> Case Study: The Provenance Bypass Incident (2417)</h3>
+<p><strong>Failure:</strong> Operators bypassed provenance checks to “speed up testing.”</p>
+<p><strong>Outcome:</strong></p>
+<ul><li>spoofed beacons accepted</li><li>routing state corrupted</li><li>fallback storms</li><li>multi‑node contamination</li></ul>
+<p><strong>Root Cause:</strong> Human impatience. Impatience is contamination.</p>
+<h3><span class="secnum">O.3</span> Case Study: The Scheduled‑Band Meltdown (2418)</h3>
+<p><strong>Failure:</strong> A system transmitted 200 ms past its reservation window.</p>
+<p><strong>Outcome:</strong></p>
+<ul><li>beacon storms</li><li>timing collapse</li><li>cross‑vendor desynchronization</li><li>multi‑cluster outage</li></ul>
+<p><strong>Root Cause:</strong> “Just one more packet.” One packet is enough to contaminate an entire network.</p>
+<h3><span class="secnum">O.4</span> Case Study: The Diagnostic Folklore Epidemic (2419)</h3>
+<p><strong>Failure:</strong> Vendors added narrative text to diagnostics.</p>
+<p><strong>Outcome:</strong></p>
+<ul><li>inconsistent error interpretation</li><li>operator improvisation</li><li>misaligned recovery behavior</li><li>systemic drift</li></ul>
+<p><strong>Root Cause:</strong> Storytelling. Stories are contamination.</p>
+<h3><span class="secnum">O.5</span> Case Study: The Operator Override Catastrophe (2420)</h3>
+<p><strong>Failure:</strong> An operator manually increased power to “punch through interference.”</p>
+<p><strong>Outcome:</strong></p>
+<ul><li>power flooding</li><li>modulation collapse</li><li>multi‑node fallback</li><li>irreversible contamination</li></ul>
+<p><strong>Root Cause:</strong> Human confidence. Confidence is contamination.</p>
+<h3><span class="secnum">O.6</span> Case Study: The Semantic Drift Collapse (2421)</h3>
+<p><strong>Failure:</strong> Two vendors reinterpreted the same hint TLV differently.</p>
+<p><strong>Outcome:</strong></p>
+<ul><li>divergent behavior</li><li>incompatible fallback</li><li>cascading misclassification</li><li>multi‑system failure</li></ul>
+<p><strong>Root Cause:</strong> Interpretation. Interpretation is contamination.</p>
+</div></section>
+<section id="appP" class="toplevel appendix">
+<h2><span class="secnum">Appendix P</span> Errata Prevention Doctrine</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>Errata are not corrections. Errata are symptoms of contamination that escaped detection during drafting, review, or implementation. The purpose of this doctrine is to prevent errata from occurring at all.</p>
+<p>Errata prevention is not editorial. Errata prevention is operational hygiene.</p>
+<p>This appendix defines the mandatory processes required to ensure that no ambiguity, drift, or undocumented behavior enters the standard — or its implementations — after publication.</p>
+<h3><span class="secnum">P.1</span> Doctrine Philosophy</h3>
+<p>Errata prevention requires:</p>
+<ul><li><strong>deterministic drafting</strong></li><li><strong>deterministic interpretation</strong></li><li><strong>deterministic implementation</strong></li><li><strong>deterministic review</strong></li></ul>
+<p>Errata prevention must <strong>not</strong> rely on:</p>
+<ul><li>“common sense”</li><li>“industry norms”</li><li>“reasonable assumptions”</li><li>“practical experience”</li></ul>
+<p>Human intuition is not a safeguard. It is a contamination vector.</p>
+<h3><span class="secnum">P.2</span> Pre‑Publication Contamination Screening</h3>
+<p>Before publication, all sections must undergo:</p>
+<ul><li>semantic drift analysis</li><li>provenance chain validation</li><li>cross‑vendor interpretation checks</li><li>timing and modulation constraint audits</li><li>operator‑influence elimination</li></ul>
+<p>Any section that tolerates interpretation must be rewritten. Any section that tolerates creativity must be removed.</p>
+<h3><span class="secnum">P.3</span> Post‑Publication Drift Monitoring</h3>
+<p>After publication, the standard must be monitored for:</p>
+<ul><li>vendor reinterpretation</li><li>undocumented extensions</li><li>ambiguous field usage</li><li>divergent diagnostics</li><li>profile misalignment</li></ul>
+<p>Drift is not a slow process. Drift is contamination in motion.</p>
+<h3><span class="secnum">P.4</span> Errata Classification</h3>
+<p>Errata fall into three categories:</p>
+<h3><span class="secnum">Class 1</span> Semantic Ambiguity</h3>
+<p>A phrase or definition allows multiple interpretations. This is contamination.</p>
+<h3><span class="secnum">Class 2</span> Structural Inconsistency</h3>
+<p>Two sections define overlapping or conflicting constraints. This is contamination.</p>
+<h3><span class="secnum">Class 3</span> Implementation Divergence</h3>
+<p>Vendors interpret the same requirement differently. This is contamination.</p>
+<p>Errata are not mistakes. Errata are failures of containment.</p>
+<h3><span class="secnum">P.5</span> Errata Prevention Mechanisms</h3>
+<p>To prevent errata:</p>
+<ul><li>all semantics must be explicit</li><li>all constraints must be non‑negotiable</li><li>all profiles must be deterministic</li><li>all examples must be canonical</li><li>all wire formats must be immutable</li><li>all diagnostics must be reproducible</li><li>all operator influence must be eliminated</li></ul>
+<p>Errata prevention is not about clarity. It is about eliminating ambiguity before it becomes contamination.</p>
+<h3><span class="secnum">P.6</span> Errata Rejection Criteria</h3>
+<p>Errata must be rejected if they:</p>
+<ul><li>propose “flexibility”</li><li>introduce optional behavior</li><li>weaken constraints</li><li>add narrative explanations</li><li>rely on operator judgment</li><li>introduce vendor‑specific semantics</li></ul>
+<p>Errata that increase determinism may be accepted. Errata that decrease determinism must be discarded.</p>
+<h3><span class="secnum">P.7</span> Doctrine Summary</h3>
+<p>Errata prevention is the final containment layer. It ensures that:</p>
+<ul><li>the standard does not drift</li><li>implementations do not diverge</li><li>vendors do not improvise</li><li>operators do not reinterpret</li><li>contamination does not propagate</li></ul>
+<p>A standard that tolerates errata is not a standard. It is folklore.</p>
+</div></section>
+<section id="appQ" class="toplevel appendix">
+<h2><span class="secnum">Appendix Q</span> Consolidated Index</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group</p>
+<p>This index exists to ensure that implementers can locate constraints without relying on memory, intuition, or interpretive reading. The index is not exhaustive — it is <strong>deterministic</strong>, listing only terms with canonical definitions in the standard.</p>
+<h3><span class="secnum">Q.1</span> Index (Alphabetical)</h3>
+<p><strong>A</strong></p>
+<ul><li>Adversarial Failures — §18</li><li>Anomaly Detection — App. D</li><li>Append‑Only Logs — §15</li><li>Authority Plane — RFC‑2360 series</li></ul>
+<p><strong>B</strong></p>
+<ul><li>Beacon Alignment — §17</li><li>Beacon Spoofing — App. G</li><li>Behavioral Failures — §18</li><li>Burst Protocols — RFC‑2424</li></ul>
+<p><strong>C</strong></p>
+<ul><li>Chain‑of‑Custody — §15</li><li>Class F Errors — §14</li><li>Compliance Levels — §16</li><li>Containment — §18, App. D</li><li>Contamination — throughout</li><li>Cross‑Vendor Determinism — §17</li></ul>
+<p><strong>D</strong></p>
+<ul><li>Diagnostics — §14</li><li>Drift (Timing/FHSS) — §18</li><li>Determinism — §1, App. A</li></ul>
+<p><strong>E</strong></p>
+<ul><li>Evidence Preservation — §15</li><li>Errata Prevention — App. P</li></ul>
+<p><strong>F</strong></p>
+<ul><li>FHSS/LPI — §3, §17, App. I</li><li>Fallback — §16, App. B</li></ul>
+<p><strong>G</strong></p>
+<ul><li>Glossary — App. A</li><li>Governance — RFC‑2450 series</li></ul>
+<p><strong>H</strong></p>
+<ul><li>Hint TLVs — §12, App. I</li><li>Historical Failures — App. K</li></ul>
+<p><strong>I</strong></p>
+<ul><li>Implementation Drift — §19</li><li>Interoperability — §17</li><li>Interference Classification — §11</li><li>IANA Registries — §20</li></ul>
+<p><strong>L</strong></p>
+<ul><li>Logging — §15</li><li>Lockout Protocol — App. J</li></ul>
+<p><strong>M</strong></p>
+<ul><li>Modulation Fidelity — §19</li><li>Monitoring State — App. D</li></ul>
+<p><strong>N</strong></p>
+<ul><li>Namespace Plane — RFC‑2390 series</li><li>Noise Floor — §11</li></ul>
+<p><strong>O</strong></p>
+<ul><li>Operator Intervention — §16, App. J</li><li>Occupancy — §11</li></ul>
+<p><strong>P</strong></p>
+<ul><li>Provenance — §4, §14, App. I</li><li>Profiles — §2, §16</li><li>Power Control — §19</li></ul>
+<p><strong>R</strong></p>
+<ul><li>RFChannelRecord — §10, App. I</li><li>Recovery — §16, App. B</li><li>Routing Endpoints — RFC‑2363</li></ul>
+<p><strong>S</strong></p>
+<ul><li>Scheduled‑Band — §7, App. B</li><li>Security State Machine — App. D</li><li>Semantic Drift — §18</li><li>State Machines — App. B</li><li>Spoofing — App. G</li></ul>
+<p><strong>T</strong></p>
+<ul><li>Test Vectors — App. H</li><li>Timing Discipline — §19</li><li>Threat Matrix — App. G</li></ul>
+<p><strong>U</strong></p>
+<ul><li>Undocumented Behavior — §18</li><li>Unverifiable State — §17</li></ul>
+<p><strong>V</strong></p>
+<ul><li>Vendor Extensions — §19</li></ul>
+</div></section>
+<section id="epilogue" class="toplevel">
+<h2>Epilogue — The Final Containment Boundary</h2>
+<div class="section-body">
+<p class="stamp">Dr. Arjun Kade, Luna University RF Systems Group &mdash; Visiting Fellow, MIAP Optical Systems Group</p>
+<p>Standards do not fail because physics changes. Standards fail because humans do.</p>
+<p>They fail when implementers reinterpret constraints as suggestions. They fail when vendors treat determinism as an obstacle. They fail when operators believe intuition is a substitute for measurement. They fail when reviewers attempt to “simplify” the text until it no longer constrains anything at all.</p>
+<p>This document exists to prevent that failure.</p>
+<p>It is not a guide. It is not a recommendation. It is not a collaborative framework. It is a containment protocol.</p>
+<p>Every section, every appendix, every constraint, every prohibition, and every canonical structure is designed to ensure that SolNet RF systems behave:</p>
+<ul><li>deterministically</li><li>reproducibly</li><li>measurably</li><li>verifiably</li><li>without folklore</li><li>without improvisation</li><li>without contamination</li></ul>
+<p>The RF layer is not a creative medium. It is not a negotiation. It is not a place for human expression.</p>
+<p>It is a physical system governed by deterministic laws that do not care about convenience, preference, or interpretation.</p>
+<p>If future implementers attempt to reinterpret this document, they must be corrected. If future vendors attempt to extend this document without registration, they must be rejected. If future operators attempt to override this document, they must be locked out. If future reviewers attempt to soften this document, they must be ignored.</p>
+<p>This standard is not fragile. It is not flexible. It is not polite.</p>
+<p>It is a wall.</p>
+<p>A wall built to keep contamination out. A wall built to keep determinism in. A wall built to ensure that RF systems behave exactly as physics requires — and never as humans prefer.</p>
+<p>If this wall ever cracks, it will not be because the constraints were insufficient. It will be because someone believed they were optional.</p>
+<p>They are not.</p>
+<p>This is the end of the document. It is not the end of the discipline.</p>
+<p>The RF layer will remain deterministic only as long as the people who build, operate, and maintain it remain disciplined enough to enforce the constraints defined here.</p>
+<p>If they do, the system will remain stable. If they do not, contamination will return.</p>
+<p>And contamination, once allowed to propagate, does not stop on its own.</p>
+<p>It must be contained.</p>
+<p>Always.</p>
+</div></section>
+  </article>
+</div>
+
+<script>
+(function(){
+  // active TOC highlight
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.toplevel'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
