@@ -297,7 +297,9 @@ gets converted to `db/`.
 **Cross-references:** §16 next steps list RFC-2361 (Layer Model —
 correct number this time, matches the old-folder title) referencing
 ledger semantics for A-stack, and **RFC-2363 (Identity Resolution)**
-— neither drafted in New RFCs/ yet.
+— RFC-2361 is still undrafted; RFC-2363 is now drafted and graduated,
+but under the DRE scope this index's own investigation settled on
+below, not as Identity Resolution.
 
 ---
 
@@ -364,8 +366,11 @@ Courier Operations" as a next step — but the actual RFC-2304 in
 New RFCs/ is **"Antenna Geometry and Alignment,"** an unrelated topic.
 Same class of error as RFC-2301's RFC-2360 mismatch: a next-steps
 reference pointing at a number that got used for something else. §19
-also references RFC-2363 (Identity Resolution, still undrafted
-anywhere) consistently with RFC-2302's own next-steps section.
+also references RFC-2363 (Identity Resolution) consistently with
+RFC-2302's own next-steps section — RFC-2363 is now drafted and
+graduated, but as Directory & Routing Endpoints (DRE), not Identity
+Resolution; see this index's own resolution of that scope confusion
+below.
 
 ---
 
@@ -954,10 +959,89 @@ fleet commissioning office, the arm of the UN holding Earthstock's AK)
 `RevocationRecord` staying exactly as this document assumes, but per
 `db/CORPUS-STATUS.md` none of the four have an actual `db/` schema yet
 — see the companion doc's "Schemas to Craft" section for the specific
-prerequisite gap this creates for implementation. RFC-2363 (DRE) has a
-real, direct dependency here too: §5 explicitly defers its own DRE
-trust-decision integration to RFC-2363 once drafted, rather than
-retrofitting it here.
+prerequisite gap this creates for implementation. RFC-2363 (DRE) had a
+real, direct dependency here too: §5 explicitly deferred its own DRE
+trust-decision integration to RFC-2363 rather than retrofitting it
+here. **RESOLVED 2026-11-19 by RFC-2363 §5.4** — see that RFC's own
+entry below.
+
+---
+
+## RFC-2363 — Directory and Routing Endpoints (DRE) (graduated 2026-11-19, full draft)
+
+**Status:** ✅ Graduated from an undrafted `TODOv2.md` stub — closes the
+corpus's oldest standing forward reference (RFC-2350, RFC-2303, and
+RFC-2308 all cited this document by number since before it existed)
+and resolves the three-way scope confusion this index itself flagged
+earlier (RFC-2302/2303 informally called it "Identity Resolution";
+RFC-2350/RFC-2304's companion/RFC-2308's companion all independently
+converged on Directory & Routing Endpoints instead — DRE wins, per
+`TODOv2.md`'s own registry entry). A styled HTML rendering lives at
+`docs/rfc-html/RFC-2363-Directory-and-Routing-Endpoints.html`; a
+plain-language companion with exploit hints is at `docs/plain-
+language/RFC-2363-Plain-Language.md`. No formal exploit/tools
+companion doc exists yet under `docs/vault/RFC Companion/` or
+`docs/rfc-companions/` — that's a gap worth closing alongside the
+other graduated RFCs' companions.
+
+Defines three record types for the first time anywhere in the corpus:
+**`DREInfoRecord`** (a DRE's self-description and optional role-alias
+table, published at `//info`), **`ProvenanceRecord`** (the record
+RFC-2350's `ProvenancePointer` has referenced by name since that
+document's own publication, with no prior document ever specifying its
+contents), and **`ProfileRegistryEntry`** (a domain's published Domain
+Privacy Profile declaration, RFC-2308 §4, retrievable at `//profile`).
+§0.1 also resolves a real terminology drift: RFC-2300 §5.3 calls this
+layer "Directory & Reachability Endpoints," while RFC-2303/2308/2350
+and this document's own working title all say "Directory and Routing
+Endpoints" — the latter is locked as canonical, with RFC-2300's
+phrasing retained as a non-normative synonym.
+
+§5.4 closes the dependency RFC-2362 §5 explicitly left open: a DRE now
+MUST consult the requester's TrustDomain (RFC-2362) before serving or
+publishing a record on their behalf. §8 does the same for RFC-2308's
+exposure-decision state machine. The division of labor is stated
+plainly in §8's own text: this document defines the records, RFC-2362
+decides who's trusted, RFC-2308 decides how much they're shown — no
+single RFC performs a query alone.
+
+**New since the live-artifact draft stage (added mid-session, per
+direct design discussion):** §5.5 **Self-Signed Sequencing**. The
+original draft left replication integrity purely to per-record
+Signature/FreshnessTag, which — correctly flagged in review — doesn't
+catch a validly-signed-but-stale record being replayed to look current.
+The fix adds **SequenceNumber** (strictly increasing per
+IssuingTrustDomain) and **PriorRecordHash** (hash-chains each record to
+the issuing domain's own immediately preceding one) to
+`ProvenanceRecord` (§5.2), verified by receiving indexers in §6.4. Both
+fields are covered by the record's existing Signature, so **no relay
+is ever asked to vouch for a record's freshness or path** — consistent
+with §3.2's "a DRE is a witness, not a notary" doctrine, which an
+earlier proposed fix (per-relay signed hop records) would have
+violated. §6.3 draws the resulting distinction explicitly: the
+replication envelope's hop/TTL count (loop detection only, a relay can
+lie about it with no worse consequence than slower loop detection) is
+a fundamentally different, much lower-stakes kind of "relay touches
+this" than the signature chain, which no relay's envelope behavior can
+touch at all.
+
+Also found and flagged, not fixed: §5.4 notes this is now the
+**second** unrelated record in the corpus named `PolicyRecord` —
+RFC-2302/2362's trust-domain-acceptance `PolicyRecord` and RFC-2308
+§3's exposure-classification `PolicyRecord` share a name and nothing
+else. Appendix D.4 recommends a disambiguating rename to whichever
+registrar eventually owns that decision.
+
+**Findings/notes for future RFC work:** not yet converted to `db/`
+schema — wire-level binary encoding for all three record types is
+explicitly deferred (Appendix D.4), consistent with RFC-2362's own
+deferral pattern. RFC-2363 formalizes two previously-standalone `rfc-
+proposals/` documents (role-directory addressing → §4.3's fast-path/
+local-fallback role resolution; reply-path privacy → §4.4's
+Correlator mechanism, reusing RFC-2300 §6.1 Session Keys rather than
+inventing a new record type) — those proposal documents can likely be
+retired or marked superseded now that their substance is formally in
+the graduated RFC.
 
 ---
 

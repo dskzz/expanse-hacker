@@ -125,14 +125,14 @@ draft yet
 | 2353 | L1 Relay Advertisement Protocol | 📝 — fully drafted 2026-09-08 (graduated from stub; see `db/CORPUS-INDEX.md`), not yet converted to `db/` schema | — |
 | 2354–2359 | *(not yet in `TODOv2.md`'s detailed entries)* | 📋/unclear | — |
 
-### Authority Plane (2360–2389) — 2362 drafted 2026-09-09, rest not yet
+### Authority Plane (2360–2389) — 2362 drafted 2026-09-09, 2363 drafted 2026-11-19, rest not yet
 
 | RFC | Topic | Status | Notes |
 |---|---|---|---|
 | 2360 | Layer Model Revised | 📋 | 🗄️ old `RFCs/RFC 2361 - SolNet Layer Model.md` may be source material (note: old number 2361, new number 2360) |
 | 2361 | Identity Resolution L2 | 📋 | — |
 | 2362 | Trust Domains and Authority Policy | 📝 — fully drafted 2026-09-09 (graduated; see `db/CORPUS-INDEX.md`), not yet converted to `db/` schema. Depends on RFC-2302's AnchorRecord/PolicyRecord/CrossCertRecord/RevocationRecord, none of which are schematized yet either — see the RFC-2362 companion doc's "Schemas to Craft" section. 🗄️ old `RFCs/RFC 2362 - SolNet Contact Ecology Level.md` is an unrelated topic, not source material. |
-| 2363 | Directory and Routing Endpoints (DRE) | 📋 | — |
+| 2363 | Directory and Routing Endpoints (DRE) | 📝 — fully drafted 2026-11-19 (graduated; see `db/CORPUS-INDEX.md`), not yet converted to `db/` schema. Defines `ProvenanceRecord` for the first time in the corpus, with a self-signed SequenceNumber/PriorRecordHash chain (§5.5) for replay/rollback detection that doesn't require trusting any relay. | — |
 | 2364 | Ephemeris Hint Block Spec | 📋 | 🗄️ old `RFCs/RFC 2354 - Mobility Hint Block Spec.md` may be related topic |
 | 2365 | DTN Routing Policy | 📋 | 🗄️ old `RFCs/RFC 2354 - DTN Routing policy.md` may be source material |
 | 2366 | Ship as Router Behavior | 📋 | — |
@@ -179,12 +179,15 @@ error, not something reading RFC-2350 would explain away.
    cutting note #1 above) and formally distinguishes local device
    root from domain root. Not yet converted to `db/` schema — see
    the Authority Plane table above for the specific gap.
-5. **RFC-2363** (Directory & Routing Endpoints) — still undrafted, but
-   now has a settled scope (confirmed via `TODOv2.md`: DRE, not
-   Identity Resolution as RFC-2302/2303 assumed) and two `rfc-
-   proposals/` documents already targeting it (role-directory
-   addressing, reply-path privacy) — a natural next full draft now
-   that RFC-2362 exists to depend on.
+5. **RFC-2363** (Directory & Routing Endpoints) — drafted and graduated
+   2026-11-19. Defines `DREInfoRecord`, `ProvenanceRecord`, and
+   `ProfileRegistryEntry`; closes RFC-2362 §5's deferred DRE
+   trust-decision hook; formalizes the role-directory and
+   reply-path-privacy mechanisms from the two `rfc-proposals/`
+   documents that previously targeted it. Not yet converted to
+   `db/` schema — wire-level encoding is explicitly deferred (Appendix
+   D.4). Also flags, without resolving, a `PolicyRecord` naming
+   collision with RFC-2308 §3's own unrelated record of the same name.
 6. **RFC-2360/2361 mislabel sweep** — low-risk, mechanical: six
    documents cite "RFC-2361" for Layer Model content; `TODOv2.md`
    confirms that's RFC-2360, and RFC-2361 is actually Identity

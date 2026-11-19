@@ -192,6 +192,49 @@ denoted T_adv, and — consistent with the Authority entry above — is
 never published as a numeric protocol constant, only referenced as a
 per-deployment policy parameter.
 
+**DRE (Directory & Routing Endpoint)** — An L3 Location Plane node
+(RFC-2363) that publishes and opportunistically replicates advisory
+directory data — who's reachable, who holds what role, coarse
+ephemeris — without authenticating anyone, forwarding a single packet,
+or deciding who sees what. "Advisory, replicated, and occasionally
+wrong" (RFC-2300 §5.3) by design; nothing it publishes is ground
+truth. Canonically expands to "Directory and **Routing** Endpoints"
+(RFC-2363 §0.1), not "Reachability" — RFC-2300's own phrasing is a
+retained but non-normative synonym.
+
+**DREID** — A DRE's own identifier, deterministically derived (never
+centrally issued) from its operating domain's TrustDomain record
+(RFC-2363 §3.3). Changes when the domain re-roots, by design — a
+domain-root change is significant enough that a DRE shouldn't quietly
+keep its old identity across one.
+
+**ProvenanceRecord** — The record RFC-2350's ProvenancePointer field
+has referenced by name since that document's own publication, finally
+defined by RFC-2363 §5: who asserts an Address is currently valid, and
+on what basis. Carries a self-signed, strictly-increasing
+SequenceNumber chained to the issuing domain's own prior record via
+PriorRecordHash (RFC-2363 §5.5) — the mechanism that lets a receiver
+detect a stale-but-authentic record being replayed as current, without
+any relay along the way being trusted to vouch for freshness or path.
+
+**DREInfoRecord** — A DRE's own self-description, published at
+`//info` (RFC-2363 §4): its DREID, operating domain, which well-known
+paths it serves, and an optional RoleAliasTable mapping functional
+roles (`captain`, `duty-tech`) to whoever currently holds them.
+
+**ProfileRegistryEntry** — A domain's published Domain Privacy Profile
+declaration (RFC-2363 §9), retrievable at `//profile`, so another
+domain's DRE can learn what it'll actually be shown before spending a
+query finding out the hard way. Absence is information, not a default
+to the most permissive reading.
+
+**Correlator** — An opaque, session-scoped substitute for a domain's
+real internal ServiceChain, published at `//contact` instead of the
+raw internal path (RFC-2363 §4.4). Reuses RFC-2300 §6.1 Session Keys
+rather than inventing a new record type. Publishing the raw ServiceChain
+where a Correlator was required is a named failure mode, Correlator
+Bypass — well-formed, non-compliant, and invisible to a syntax check.
+
 ## Trust and Identity Records
 
 Ledger record types (RFC-2302, extended by RFC-2362) that back the

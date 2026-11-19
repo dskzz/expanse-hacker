@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFC-2363 — Directory and Routing Endpoints</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EAEBE4; --paper-raised:#F2F3ED; --ink:#1B1D1C; --ink-soft:#54574B;
+    --rule:#B8BBAF; --rule-soft:#CBCEC1; --accent:#8A3324; --accent-soft:#A8462F;
+    --stamp-bg:#DCDED3; --stamp-border:#9C9F8F; --mono-bg:#E2E3DC;
+    --toolbar-bg:#DEDFD6; --focus:#8A3324; --danger:#8A3324;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+      --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+      --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1A1C19; --paper-raised:#20221D; --ink:#E8E9E2; --ink-soft:#ABAE9E;
+    --rule:#3A3D34; --rule-soft:#2C2F27; --accent:#D97A5F; --accent-soft:#E8987F;
+    --stamp-bg:#242720; --stamp-border:#454838; --mono-bg:#1F211C; --toolbar-bg:#15160F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,.stamp,.masthead-title{ font-family:"Newsreader", Georgia, serif; text-wrap:balance; }
+  code, .secnum, .table-wrap table, .wire, kbd{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+
+  a{ color:var(--accent); }
+  a:focus-visible, button:focus-visible, [contenteditable]:focus-visible{
+    outline:2px solid var(--focus); outline-offset:2px;
+  }
+
+  /* ---- doc bar (static identity strip, no edit affordances) ---- */
+  .docbar{
+    position:sticky; top:0; z-index:20; background:var(--toolbar-bg);
+    border-bottom:1px solid var(--rule); padding:.6rem 1.25rem;
+    font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    max-width:1200px; margin:0 auto; padding:2.5rem 1.5rem 1.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead-eyebrow{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  .masthead-title{ font-size:2.1rem; font-weight:600; margin:0 0 .4rem; }
+  .masthead-sub{ font-style:italic; color:var(--ink-soft); margin:0 0 1rem; font-size:1rem; }
+  .status-box{
+    display:inline-block; border:1px solid var(--rule); background:var(--paper-raised);
+    padding:.6rem .9rem; font-size:.85rem; color:var(--ink-soft); border-radius:3px;
+  }
+  .status-box strong{ color:var(--ink); }
+
+  /* ---- layout ---- */
+  .layout{
+    max-width:1200px; margin:0 auto; padding:2rem 1.5rem 6rem;
+    display:grid; grid-template-columns:260px minmax(0,1fr); gap:3rem;
+    align-items:start;
+  }
+  nav.toc{ position:sticky; top:4.2rem; max-height:calc(100vh - 5.5rem); overflow-y:auto; }
+  nav.toc h4{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 .6rem;
+  }
+  nav.toc ol{ list-style:none; margin:0; padding:0; }
+  nav.toc li{ margin:0; }
+  nav.toc a{
+    display:block; padding:.3rem 0; color:var(--ink-soft); text-decoration:none;
+    font-size:.87rem; border-left:2px solid transparent; padding-left:.6rem;
+  }
+  nav.toc a:hover{ color:var(--ink); }
+  nav.toc a.active{ color:var(--accent); border-left-color:var(--accent); font-weight:500; }
+  nav.toc .toc-divider{
+    margin:.9rem 0 .4rem; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); border-top:1px solid var(--rule-soft); padding-top:.7rem;
+  }
+
+  article#doc{ max-width:70ch; }
+  section.toplevel{ padding:2.2rem 0; border-bottom:1px solid var(--rule-soft); }
+  section.toplevel:first-of-type{ padding-top:0; }
+  .appendix-divider{ padding:2.5rem 0 .5rem; }
+  .appendix-divider h1{ font-size:1.5rem; margin:0; color:var(--ink-soft); font-weight:500; }
+  h2{ font-size:1.35rem; font-weight:600; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+  h2 .secnum{ color:var(--accent); font-size:1rem; }
+  h3{ font-size:1.05rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  h3 .secnum{ color:var(--accent); font-size:.85rem; margin-right:.3rem; }
+  p{ margin:0 0 1rem; }
+  p.aphorism{
+    font-style:italic; padding-left:1rem; border-left:2px solid var(--rule);
+    color:var(--ink-soft); margin:1.2rem 0;
+  }
+  p.stamp{
+    display:inline-block; margin:0 0 1rem; font-style:italic; font-size:.85rem;
+    background:var(--stamp-bg); border:1px solid var(--stamp-border);
+    padding:.15rem .6rem; border-radius:2px; color:var(--ink-soft);
+  }
+  ul{ margin:0 0 1rem; padding-left:1.3rem; }
+  li{ margin-bottom:.4rem; }
+  strong{ font-weight:600; }
+  code{ background:var(--mono-bg); padding:.1rem .3rem; border-radius:2px; font-size:.85em; }
+  .table-wrap{ overflow-x:auto; margin:0 0 1.2rem; border:1px solid var(--rule); border-radius:3px; }
+  table{ border-collapse:collapse; width:100%; font-size:.85rem; }
+  th, td{ text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rule-soft); font-variant-numeric:tabular-nums; }
+  thead th{ background:var(--paper-raised); font-weight:600; border-bottom:1px solid var(--rule); }
+  tbody tr:last-child td{ border-bottom:none; }
+  pre.wire{
+    background:var(--mono-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:1rem 1.1rem; overflow-x:auto; font-size:.82rem; line-height:1.7; margin:0 0 1.2rem;
+  }
+  section.footnotes{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--rule-soft); }
+  section.footnotes h3{ margin-top:0; }
+  section.footnotes .nonnormative{ color:var(--ink-soft); font-weight:400; font-size:.85em; }
+  section.footnotes ol{ padding-left:1.4rem; font-size:.9rem; color:var(--ink-soft); }
+  .fnref a{ text-decoration:none; }
+
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:1.2rem; }
+    nav.toc{ position:static; max-height:none; }
+    nav.toc ol{ display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.4rem; }
+    nav.toc .toc-divider{ display:none; }
+    nav.toc a{ border-left:none; border-bottom:2px solid transparent; padding:.3rem .5rem; white-space:nowrap; }
+    nav.toc a.active{ border-left-color:transparent; border-bottom-color:var(--accent); }
+    article#doc{ max-width:100%; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">RFC&#8209;2363 &middot; Directory and Routing Endpoints &middot; SolNet Standards Corpus &middot; static rendering</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow">SolNet Standards Corpus — Normative, Graduated 2026-11-19</p>
+  <h1 class="masthead-title">RFC&#8209;2363 — Directory and Routing Endpoints (DRE)</h1>
+  <p class="masthead-sub">SolNet Standards Working Group &mdash; Directory &amp; Reachability Working Group (SSWG&#8209;DIR&#8209;WG)</p>
+  <p class="status-box"><strong>Status:</strong> Normative, Standards Track. Canonical source of record is <code>docs/vault/New RFCs/RFC 2363 - Directory and Routing Endpoints.md</code>; this is a static, read-only rendering.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Sections</h4>
+    <ol>
+      <li><a href="#sec0">0. Preface</a></li>
+      <li><a href="#sec1">1. Scope</a></li>
+      <li><a href="#sec2">2. Terminology</a></li>
+      <li><a href="#sec3">3. The Directory &amp; Routing Endpoint</a></li>
+      <li><a href="#sec4">4. DREInfoRecord</a></li>
+      <li><a href="#sec5">5. ProvenanceRecord</a></li>
+      <li><a href="#sec6">6. Replication, Indexing, and Sequence Verification</a></li>
+      <li><a href="#sec7">7. Resolution Integration</a></li>
+      <li><a href="#sec8">8. Exposure Decisions</a></li>
+      <li><a href="#sec9">9. ProfileRegistryEntry</a></li>
+      <li><a href="#sec10">10. Invalid Forms and Failure Modes</a></li>
+    </ol>
+    <div class="toc-divider">Appendices</div>
+    <ol>
+      <li><a href="#appA">A. Worked Example — Role Directory</a></li>
+      <li><a href="#appB">B. Worked Example — Correlator Bypass</a></li>
+      <li><a href="#appC">C. Record Field Reference</a></li>
+      <li><a href="#appD">D. Authorship</a></li>
+    </ol>
+  </nav>
+
+  <article id="doc">
+<section id="sec0" class="toplevel">
+<h2><span class="secnum">0.</span> Preface</h2>
+<div class="section-body">
+<p class="stamp">SolNet Standards Working Group — Directory &amp; Reachability Working Group</p>
+<p>RFC&#8209;2350 has cited this document by number in its own canonical binary format since before this document existed, on the theory that a schema someone will eventually write is still a schema. RFC&#8209;2303 and RFC&#8209;2308 did the same, independently, without checking with each other first. This Working Group appreciates the confidence and would like it on record that citing a document into existence is not the same as drafting it.</p>
+<p>What those three documents agree on, it turns out, is correct: a <strong>Directory &amp; Routing Endpoint (DRE)</strong> publishes advisory, replicated, occasionally-wrong information about how to find things &mdash; domains, roles, contact paths, coarse ephemeris &mdash; without ever being asked to authenticate anyone, forward a single packet, or decide who gets to see what. Those are, respectively, RFC&#8209;2362's job, RFC&#8209;2365's job, and RFC&#8209;2308's job. A DRE that tries to do any of them has exceeded its charter, however helpful the attempt.</p>
+<p>A DRE is a bulletin board, not a notary. It says what it last heard, and when it heard it. It does not vouch.</p>
+<h3><span class="secnum">0.1</span> Terminology Reconciliation Note</h3>
+<p>RFC&#8209;2300 &sect;5.3, introducing the Location Plane, names this layer &ldquo;Directory &amp; <strong>Reachability</strong> Endpoints.&rdquo; RFC&#8209;2303, RFC&#8209;2308, RFC&#8209;2350, and this document's own working title all independently say &ldquo;Directory and <strong>Routing</strong> Endpoints&rdquo; instead. Both phrases abbreviate to the same acronym and refer to the same layer; neither predates the other by enough to settle this on priority alone.</p>
+<p>This Working Group resolves it as follows, and asks that the resolution stick: <strong>&ldquo;Directory and Routing Endpoints&rdquo; is the canonical expansion of DRE</strong>, matching majority usage and this document's own registry entry. RFC&#8209;2300's &ldquo;Reachability&rdquo; phrasing is retained as an acceptable synonym in casual or legacy reference &mdash; it is, after all, not wrong &mdash; but MUST NOT be used in new normative text. Implementers should note that the &ldquo;Routing&rdquo; in the name refers to the routing <em>information</em> a DRE publishes (role aliases, reachability advisories, ephemeris hints), not to the packet-forwarding mechanics RFC&#8209;2365 (DTN Routing Policy) actually performs. A DRE does not move traffic. It answers questions about where traffic should go, badly, on a good day, and somewhat better than nothing on all the others.</p>
+</div></section>
+
+<section id="sec1" class="toplevel">
+<h2><span class="secnum">1.</span> Scope</h2>
+<div class="section-body">
+<p>RFC&#8209;2363 defines:</p>
+<ul>
+<li>the Directory &amp; Routing Endpoint (DRE) and its function within the L3 Location Plane (RFC&#8209;2300 &sect;5.3);</li>
+<li>the <code>DREInfoRecord</code> schema and the well-known publication paths <code>//info</code>, <code>//contact</code>, and <code>//beacon</code>;</li>
+<li>the <code>ProvenanceRecord</code> schema &mdash; the record type RFC&#8209;2350's <code>ProvenancePointer</code><sup class="fnref"><a href="#fn1">1</a></sup> (&sect;4.7, &sect;5.8, &sect;6) has referenced since that document's own publication;</li>
+<li>the <code>ProfileRegistryEntry</code> schema and the domain-privacy-profile lookup path;</li>
+<li>DREID assignment and RecordIndex addressing (Section 3.3);</li>
+<li>replication rules, indexer behavior, and disagreement handling for advisory data propagated through the DTN mesh;</li>
+<li>the DRE Resolution step of RFC&#8209;2350's resolution precedence (&sect;7.8), including its integration point with role-based addressing and namespace escalation (RFC&#8209;2390+);</li>
+<li>the points in this document's own procedures where RFC&#8209;2362 (trust consultation) and RFC&#8209;2308 (exposure decisions) MUST be consulted, without this document itself defining new fields at those layers.</li>
+</ul>
+<p>RFC&#8209;2363 does <strong>not</strong> define:</p>
+<ul>
+<li>packet-level routing, store-and-forward semantics, or ship-as-router mobility (RFC&#8209;2365, RFC&#8209;2366);</li>
+<li>local namespace or in-domain service resolution (RFC&#8209;2390, RFC&#8209;2391);</li>
+<li>the exposure-decision procedure a DRE runs before answering a query (RFC&#8209;2308) &mdash; this document defines the records that procedure operates over, not the procedure itself;</li>
+<li>cross-domain trust recognition rules (RFC&#8209;2362) &mdash; this document defines only where a DRE consults them;</li>
+<li>session establishment or continuity once a contact path has been resolved (RFC&#8209;2392);</li>
+<li>ephemeris hint block internals (RFC&#8209;2364) &mdash; a DRE republishes and ages these; it does not compute them.</li>
+</ul>
+<p>These remain the responsibility of their respective working groups, which this Working Group has no intention of relieving of that responsibility.</p>
+</div></section>
+
+<section id="sec2" class="toplevel">
+<h2><span class="secnum">2.</span> Terminology</h2>
+<div class="section-body">
+<p>The following terms are used normatively throughout this document. All terms inherit their global definitions from RFC&#8209;2300 unless explicitly refined here.</p>
+<p><strong>L1</strong> &mdash; the Data&#8209;Link layer (RFC&#8209;2300 &sect;5.2), fully specified by RFC&#8209;2350: canonical addressing, the LocationChain/ServiceChain split, and the AddressRecord format this document's own <code>ProvenancePointer</code> binding (Section 5.3) resolves against.</p>
+<p><strong>L2</strong> &mdash; Identity Resolution (RFC&#8209;2300 &sect;5.3): UUID&#8209;S7, NetworkKeys, NetworkCerts, and LedgerAnchors &mdash; where an identifier stops being a local opinion and starts being a ledger fact. A TrustDomain's<sup class="fnref"><a href="#fn2">2</a></sup> root attestation credential (RFC&#8209;2362 &sect;2) lives here.</p>
+<p><strong>L3</strong> &mdash; Directory &amp; Routing Endpoints, this document's own layer (RFC&#8209;2300 &sect;5.3; see Section 0.1 for the Reachability/Routing naming reconciliation): publishes advisory, replicated directory data &mdash; <code>DREInfoRecord</code>, <code>ProvenanceRecord</code>, <code>ProfileRegistryEntry</code> &mdash; without authenticating anyone, moving a single packet, or deciding who gets to see what.</p>
+<p><strong>DRE</strong> &mdash; Directory &amp; Routing Endpoint; an L3 node publishing and replicating advisory directory data.</p>
+<p><strong>DREID</strong> &mdash; a deterministically-derived identifier for a DRE (Section 3.3).</p>
+<p><strong>RecordIndex</strong> &mdash; a monotonically-assigned identifier for a record within one DRE's own publication history.</p>
+<p><strong>DREInfoRecord</strong> &mdash; a DRE's self-description and role-alias directory (Section 4).</p>
+<p><strong>ProvenanceRecord</strong> &mdash; the authoritative-origin record RFC&#8209;2350's <code>ProvenancePointer</code> resolves to (Section 5).</p>
+<p><strong>ProfileRegistryEntry</strong> &mdash; a domain's published Domain Privacy Profile<sup class="fnref"><a href="#fn3">3</a></sup> declaration (Section 9).</p>
+<p><strong>Role Alias</strong> &mdash; a published mapping from a functional role name to a current ServiceChain path (Section 4.3).</p>
+<p><strong>Correlator</strong> &mdash; an opaque, session-scoped substitute for an internal ServiceChain, published in place of it (Section 4.4).</p>
+<p><strong>Indexer</strong> &mdash; the local component of a DRE responsible for merging replicated records and resolving disagreement between sources (Section 6.2).</p>
+</div></section>
+
+<section id="sec3" class="toplevel">
+<h2><span class="secnum">3.</span> The Directory &amp; Routing Endpoint</h2>
+<div class="section-body">
+<h3><span class="secnum">3.1</span> Function</h3>
+<p>A DRE is any L3 node that publishes <code>DREInfoRecord</code>, <code>ProvenanceRecord</code>, and/or <code>ProfileRegistryEntry</code> data at the well-known paths defined in this document, and that participates in replicating such records for other DREs. A device does not need to be a dedicated server to be a DRE; a relay, a station's traffic-control system, or a ship's own comms suite MAY all serve this role simultaneously alongside their other functions, subject to whatever local resource constraints apply.</p>
+<p>A DRE MUST NOT be assumed to be continuously reachable, authoritative, or current. Clients consulting a DRE are consulting a cache of what that DRE last heard, filtered through however long its own replication backlog happens to be that day.</p>
+<h3><span class="secnum">3.2</span> Advisory, Not Authoritative</h3>
+<p>RFC&#8209;2300 &sect;5.3 already says it: DRE data is &ldquo;advisory, replicated, and occasionally wrong.&rdquo; This document does not soften that. Nothing a DRE publishes MUST be treated as ground truth by a receiving implementation. Where a DRE's advisory data conflicts with an authoritative source &mdash; a directly-verified <code>ProvenanceRecord</code>, a live local resolution &mdash; the authoritative source prevails, always, without exception logged as noteworthy.</p>
+<p class="aphorism">A DRE is a witness, not a notary. It saw something, once, and is telling you about it.</p>
+<p>The Working Group notes that at least one early implementation treated the absence of a record at a queried DRE as equivalent to revocation. It is not. Absence means the DRE has not heard of the record, has not replicated it yet, or has expired it locally under its own retention policy &mdash; any of which is a routine operating condition, not a finding.</p>
+<h3><span class="secnum">3.3</span> DREID Assignment</h3>
+<p>Unlike TLV keys, which the Canonical Address Registrar (CAR) allocates centrally under RFC&#8209;2350, a DREID is <strong>not</strong> centrally issued. Round-trip registration is not viable at DTN light-lag scale, and a DRE serving a single station or ship cannot wait on an Earth-side authority to confirm it may exist.</p>
+<p>A DREID MUST be derived deterministically from the operating domain's own Trust Domain record (RFC&#8209;2362): specifically, a truncated cryptographic hash (RFC&#8209;2301 &sect;algorithm registry) of that record's canonical serialized form. A domain that re-roots &mdash; revokes and replaces its own domain-root record under RFC&#8209;2362 &sect;6 &mdash; MUST therefore expect its DREID to change. This is deliberate: a domain-root change is a significant, auditable event, and a DRE quietly keeping its old identity across one would misrepresent continuity that did not occur.</p>
+<p>DREID collision (two domains independently deriving the same value) is vanishingly unlikely by construction and is treated as a named failure mode in Section 10, not designed around further.</p>
+</div></section>
+
+<section id="sec4" class="toplevel">
+<h2><span class="secnum">4.</span> DREInfoRecord</h2>
+<div class="section-body">
+<h3><span class="secnum">4.1</span> Structure</h3>
+<p>A <code>DREInfoRecord</code> MUST contain:</p>
+<ul>
+<li><strong>DREID</strong> &mdash; this DRE's derived identifier (Section 3.3);</li>
+<li><strong>OperatingDomain</strong> &mdash; a reference to the RFC&#8209;2362 TrustDomain this DRE publishes on behalf of;</li>
+<li><strong>PublishedPaths</strong> &mdash; which of <code>//info</code>, <code>//contact</code>, <code>//beacon</code> this DRE actually serves (a DRE is not required to serve all three);</li>
+<li><strong>ReplicationPeers</strong> &mdash; an advisory list of other DREIDs this DRE has recently exchanged records with, for indexer disagreement-tracing purposes (Section 6.2);</li>
+<li><strong>SupportedPointerTypes</strong> &mdash; which RFC&#8209;2350 &sect;6.2 PointerType values this DRE can resolve on request;</li>
+<li><strong>FreshnessTag</strong><sup class="fnref"><a href="#fn4">4</a></sup> &mdash; per RFC&#8209;2350 &sect;5.7, MUST NOT be stripped or fabricated by any relay carrying this record;</li>
+<li><strong>RoleAliasTable</strong> &mdash; OPTIONAL, per Section 4.3;</li>
+<li><strong>Signature</strong> &mdash; signed by the publishing DRE's own operational key, distinct from and not a substitute for the domain-root credential the OperatingDomain reference points to.</li>
+</ul>
+<h3><span class="secnum">4.2</span> Publication at <code>//info</code></h3>
+<p>A DRE's own <code>DREInfoRecord</code> MUST be published at its <code>//info</code> path. Clients and other DREs discovering a domain for the first time consult <code>//info</code> before anything else this document defines; every other record type is reached, directly or indirectly, by first knowing which DRE to ask.</p>
+<h3><span class="secnum">4.3</span> Role-Alias Directory Extension</h3>
+<p>A DRE's <code>RoleAliasTable</code>, where present, maps a functional role name (e.g. <code>actual</code>, <code>captain</code>, <code>duty-tech</code>) to the ServiceChain currently staffing it, updated by the operating domain as staffing changes and replicated opportunistically like any other DRE data.</p>
+<p>Resolution of a role-addressed message proceeds in two stages:</p>
+<ol>
+<li><strong>Fast path.</strong> The sender consults its own cached copy of the destination domain's <code>RoleAliasTable</code>, however stale, and addresses the message to whatever ServiceChain it currently names for that role.</li>
+<li><strong>Local fallback.</strong> If the cached table is missing the role entirely, or the sender has no cached table for that domain at all, the destination domain's own local S3 service discovery (RFC&#8209;2391) resolves the role live, <em>after physical arrival</em> &mdash; entirely local, and therefore unaffected by however many DTN hops the message took to get there.</li>
+</ol>
+<p>This makes role-based addressing inherently stale-tolerant: if the role's occupant changes between when the sender's table was cached and when the message arrives, local resolution at the destination still reaches whoever currently holds it. A message is never delivered to a role that has since changed hands, because the final handoff is never trusted to the cache.</p>
+<p>A domain publishing no <code>RoleAliasTable</code> at all cannot be role-addressed by a sender with no other prior contact. This is a limit of first contact, not a defect; RFC&#8209;2300 &sect;5.1 already establishes that L0 is unreliable by default and optimistic assumptions become incident reports. A sender with no cached directory and no out-of-band bootstrap needs a specific known ServiceChain, the same as it always has.</p>
+<h3><span class="secnum">4.4</span> <code>//contact</code> and Session-Scoped Correlators</h3>
+<p>A domain's <code>//contact</code> publication tells an outside sender how to reach it. A naive publication exposes the domain's real internal ServiceChain verbatim &mdash; department, section, role, person &mdash; to every DRE that replicates it and every party that ever queries it.</p>
+<p>A <code>//contact</code> record SHOULD publish an opaque, session-scoped <strong>Correlator</strong> in place of the real internal ServiceChain, using the Session Key<sup class="fnref"><a href="#fn5">5</a></sup> mechanism RFC&#8209;2300 &sect;6.1 already defines for exactly this purpose (&ldquo;answer whether a specific interaction is current and authorized&rdquo;). The publishing domain's own gateway maintains the correlator-to-real-identity mapping locally; a reply addressed to the correlator is reversed and delivered internally, and the correlator is never resolvable by anyone outside the gateway that issued it. This is not a new record type &mdash; it is Session Keys, applied to an outbound field that has, until now, gone without them.</p>
+<p>Publishing a raw internal ServiceChain at <code>//contact</code> where a Correlator was called for is a named failure mode, <strong>Correlator Bypass</strong>, defined in Section 10. It is not a wire-format violation &mdash; the record is perfectly well-formed &mdash; and for that reason it is exactly the kind of failure a syntax check will never catch. See Appendix B for a worked incident.</p>
+<h3><span class="secnum">4.5</span> <code>//beacon</code> and Ephemeris Hints</h3>
+<p>A DRE MAY republish coarse ephemeris and beacon hints at <code>//beacon</code>, aged and re-aggregated from whatever RFC&#8209;2304 alignment data and RFC&#8209;2364 ephemeris hint blocks it has locally received. A DRE does not compute ephemeris; it forwards and ages what it is given, attaching its own FreshnessTag to reflect when <em>it</em> last heard the value, not when the value was originally computed. Conflating the two is a Section 10 failure mode.</p>
+</div></section>
+
+<section id="sec5" class="toplevel">
+<h2><span class="secnum">5.</span> ProvenanceRecord</h2>
+<div class="section-body">
+<h3><span class="secnum">5.1</span> Purpose</h3>
+<p>RFC&#8209;2350 has required, since its own publication, that every <code>ProvenancePointer</code> resolve to &ldquo;a valid ProvenanceRecord (RFC&#8209;2363).&rdquo; No document has, until now, said what that record actually contains. Implementers requiring a schema before this document's publication were, at least, asking the correct question of the wrong document.</p>
+<p>A <code>ProvenanceRecord</code> answers one question: <em>who asserts that this Address is currently valid, and on what basis?</em> It is not a timestamp, not an address hash by itself, and not a routing hint &mdash; RFC&#8209;2350 &sect;6 already rules those readings out, and this document does not reopen them.</p>
+<h3><span class="secnum">5.2</span> Structure</h3>
+<p>A <code>ProvenanceRecord</code> MUST contain:</p>
+<ul>
+<li><strong>RecordHash</strong> &mdash; the canonical hash of this record's own serialized form, computed after every other field is set;</li>
+<li><strong>IssuingTrustDomain</strong> &mdash; a reference to the RFC&#8209;2362 TrustDomain asserting this record;</li>
+<li><strong>Assertion</strong> &mdash; the specific claim being made (e.g. &ldquo;this LocationChain currently resolves under the issuing domain's declared root attestation model&rdquo;);</li>
+<li><strong>IssuedAt / FreshnessTag</strong> &mdash; per RFC&#8209;2350 &sect;5.7;</li>
+<li><strong>HashAlgorithm</strong> &mdash; per RFC&#8209;2301's algorithm registry;</li>
+<li><strong>SequenceNumber</strong> &mdash; a varint, strictly increasing per IssuingTrustDomain, signed as part of this record; the first <code>ProvenanceRecord</code> a domain ever issues MUST use 0 (Section 5.5);</li>
+<li><strong>PriorRecordHash</strong> &mdash; the RecordHash of this domain's immediately preceding <code>ProvenanceRecord</code> (the one at SequenceNumber &minus; 1); REQUIRED whenever SequenceNumber &gt; 0, absent only at SequenceNumber 0 (Section 5.5);</li>
+<li><strong>Signature</strong> &mdash; bound to whichever credential the issuing domain's declared root attestation model actually produces (an Anchor Key signature for <code>CHAIN_OF_CUSTODY</code>, a quorum co-signature set for <code>QUORUM_WITNESS</code>, and so on per RFC&#8209;2362 &sect;2) &mdash; this document does not require a persistent key where the issuing domain's own model does not have one; covers SequenceNumber and PriorRecordHash along with every other field;</li>
+<li><strong>LedgerEntryRef</strong><sup class="fnref"><a href="#fn6">6</a></sup> &mdash; OPTIONAL, present when this record is also anchored in a ledger per RFC&#8209;2302. An external anchor, not a substitute for the chain in Section 5.5 &mdash; a domain with no ledger still sequences.</li>
+</ul>
+<h3><span class="secnum">5.3</span> Binding to PointerType</h3>
+<p>RFC&#8209;2350 &sect;6.2 defines three <code>ProvenancePointer</code> PointerTypes, each of which resolves to a <code>ProvenanceRecord</code> by a different path:</p>
+<ul>
+<li><strong>DirectRecordHash (0x01)</strong> &mdash; the pointer's HashBytes MUST match this record's own RecordHash exactly;</li>
+<li><strong>LedgerEntryRef (0x02)</strong> &mdash; the referenced ledger entry's payload MUST be a canonically-serialized <code>ProvenanceRecord</code>;</li>
+<li><strong>DRERecordRef (0x03)</strong> &mdash; the record is hosted and served by a DRE, addressed by <code>DREID || RecordIndex</code> (RFC&#8209;2350 &sect;6.5); the DRE serving it is subject to Section 5.4 and Section 8 of this document before it answers.</li>
+</ul>
+<p>All three resolve to the identical record shape defined in Section 5.2. The PointerType says where to look, not what you will find when you get there.</p>
+<h3><span class="secnum">5.4</span> Trust Consultation (Deferred to RFC&#8209;2362)</h3>
+<p>RFC&#8209;2362 &sect;5 defers its own DRE trust-decision integration to this document, &ldquo;once drafted, not retroactively added.&rdquo; This is the point at which it is added: before a DRE publishes or serves a <code>ProvenanceRecord</code>, <code>DREInfoRecord</code>, or <code>ProfileRegistryEntry</code> on a requester's behalf, it MUST consult the requester's TrustDomain per RFC&#8209;2362, and apply whatever cross-domain PolicyRecord (RFC&#8209;2362 &sect;4, RFC&#8209;2302) its own operating domain has on file for that requester's domain. This document defines the point in the pipeline where that consultation happens; RFC&#8209;2362 defines what happens as a result of it.</p>
+<p>This Working Group notes, for the record and not with any particular satisfaction, that this is now the second RFC-defined record named <code>PolicyRecord</code> in the corpus &mdash; RFC&#8209;2308 &sect;3 defines an unrelated exposure-classification schema under the same name. The two are not interchangeable and this document does not attempt to reconcile the collision; it is flagged here so nobody spends an afternoon debugging why a trust decision and an exposure decision keep reading each other's fields.</p>
+<h3><span class="secnum">5.5</span> Self-Signed Sequencing (Replay and Rollback Detection)</h3>
+<p>A <code>ProvenanceRecord</code> may travel through DREs with no relationship to the domain that issued it, no obligation to have heard of it before, and no way for the receiver to know how many hops it took to get there. Section 3.2 already establishes that none of those DREs are trusted to vouch for the record's content. They are equally not trusted to vouch for its <em>freshness</em> &mdash; a relay asked to attest &ldquo;this is current&rdquo; is a notary, and this Working Group has already ruled that role out.</p>
+<p>SequenceNumber and PriorRecordHash (Section 5.2) exist to make freshness self-verifying instead. Each domain's own signature extends a chain only that domain can extend: record N's PriorRecordHash MUST equal the RecordHash of that domain's record N&minus;1. A receiver holding any prior record from a domain can verify that a newly-arrived one either continues the chain correctly or does not &mdash; and can do this against a record that arrived by any path whatsoever, through any number of relays, none of which were asked to certify anything. The verification is between the receiver and the domain's own signature. No DRE in between is a party to it.</p>
+<p>This closes a specific attack Section 3.2 and Section 6 (on their own) do not: a validly-signed, authentic, unmodified <code>ProvenanceRecord</code> that is simply <strong>old</strong>, reintroduced to make stale state look current. FreshnessTag alone does not catch this if the replayed copy's own timestamp is left untouched &mdash; the record is telling the truth about when it was issued, it is lying about being the domain's latest word. SequenceNumber does catch it: a receiver who has already seen N+3 and is handed N again knows immediately, without consulting anyone, that N is behind.</p>
+<p>LedgerEntryRef (Section 5.2), where present, anchors this same sequence externally per RFC&#8209;2302 &mdash; useful corroboration, never a requirement. A domain under a root attestation model with no persistent ledger (Section 5.2's Signature note) still sequences its own records; the chain lives in the records themselves, signed, not in infrastructure a <code>QUORUM_WITNESS</code> or <code>CAPABILITY_TOKEN</code> domain may not run.</p>
+<p class="aphorism">A relay can lose a record, duplicate it, or sit on it for a year. It cannot make the chain say something its own signature didn't put there.</p>
+</div></section>
+
+<section id="sec6" class="toplevel">
+<h2><span class="secnum">6.</span> Replication, Indexing, and Sequence Verification</h2>
+<div class="section-body">
+<h3><span class="secnum">6.1</span> Opportunistic Replication</h3>
+<p>DRE records propagate through the same store-and-forward DTN mesh as everything else at this scale (RFC&#8209;2300 &sect;5.3, RFC&#8209;2365) &mdash; opportunistically, whenever two DREs happen to have a link, never as a scheduled live synchronization a sender can depend on arriving by a given time.</p>
+<p>A stale <code>//info</code> record from a jury-rigged Ceres traffic-control node, a properly-maintained Martian orbital defense DRE, and a UN-chartered backbone relay's own DRE are, for resolution purposes, three equally advisory sources that happen to disagree &mdash; institutional pedigree buys a source no extra trust here, only ever a FreshnessTag comparison and, per RFC&#8209;2300 &sect;5.3, a wider error bound.</p>
+<h3><span class="secnum">6.2</span> Local Indexer Behavior</h3>
+<p>Each DRE's indexer MUST key incoming records by <code>(DREID, RecordIndex)</code> for DRE-hosted records, or by RecordHash for directly-verified ones, and MUST resolve conflicting copies of the same key by FreshnessTag &mdash; newest wins locally. Where two copies carry indistinguishable freshness, the indexer MUST retain both and report the disagreement to any client that asks, rather than silently preferring one. RFC&#8209;2300 &sect;5.3's instruction to &ldquo;consult multiple sources&rdquo; presumes the indexer has not already thrown the losing source away.</p>
+<h3><span class="secnum">6.3</span> Replication Failure Modes</h3>
+<p>An indexer detecting a record that has been replicated back to it having passed through an implausible number of intermediate DREs (a replication loop) MUST drop it and MUST log the event; it MUST NOT simply keep forwarding a record indefinitely on the theory that more copies means more truth. Records propagated through this mesh MUST carry a hop or TTL bound sufficient to make this detectable.</p>
+<p>The hop or TTL count is carried in the replication envelope, not inside the signed record, and it is not a trust mechanism: a relay that decrements it dishonestly can make loop detection slower, nothing else. It cannot forge a record, alter its freshness, or vouch for its path &mdash; those properties come from Section 5.5's signature chain, which no relay's envelope behavior can touch. A hop count asks a relay to count. Section 5.5 does not ask a relay anything.</p>
+<h3><span class="secnum">6.4</span> Sequence Verification and Replay Rejection</h3>
+<p>On receiving a <code>ProvenanceRecord</code>, an indexer that already holds a record from the same IssuingTrustDomain MUST compare SequenceNumbers before accepting the new one:</p>
+<ul>
+<li>if the new SequenceNumber is higher, and its PriorRecordHash matches the RecordHash of the highest record the indexer already holds (or of the intervening record it can independently verify), the chain is intact and the indexer MUST accept it as the domain's current word;</li>
+<li>if the new SequenceNumber is lower than or equal to one the indexer already holds, the record MUST be treated as a replay (Section 10) regardless of how current its FreshnessTag claims to be, and MUST NOT silently overwrite the newer one the indexer already has;</li>
+<li>if the new SequenceNumber is higher but PriorRecordHash does not match, the chain is broken &mdash; the indexer MUST flag this for the same manual reconciliation Section 10 requires for a DREID collision, and MUST NOT guess which of the two disagreeing histories is correct.</li>
+</ul>
+<p>None of this asks a relay to participate. The indexer is checking the domain's own signature against the domain's own prior signature, which it may have received from a completely different relay, hours or months apart. That is the entire point.</p>
+</div></section>
+
+<section id="sec7" class="toplevel">
+<h2><span class="secnum">7.</span> Resolution Integration (RFC&#8209;2350 &sect;7.8)</h2>
+<div class="section-body">
+<p>RFC&#8209;2350 &sect;7.8 defines DRE Resolution as Step 7 of its resolution precedence: it MAY occur after <code>ProvenancePointer</code> dereference (Step 6) and before namespace escalation (Step 8, RFC&#8209;2390+), MUST NOT reorder chain interpretation, MUST NOT infer missing fields, and MUST NOT modify the Address under resolution. This document does not relax any of those constraints; it specifies what a DRE actually does within them.</p>
+<p>A DRE Resolution query submits the resolved LocationChain and, where present, the dereferenced <code>ProvenanceRecord</code>, to a DRE believed to serve the destination domain. The DRE MAY answer with: a matching <code>ProvenanceRecord</code> or <code>DREInfoRecord</code>; a role-alias hit per Section 4.3; or nothing, if it has no cached data for the query. An empty answer is not an error and MUST NOT halt resolution &mdash; per RFC&#8209;2350 &sect;7.8, it simply proceeds to namespace escalation.</p>
+<p>Appendix A works this procedure through the scenario that originally motivated Section 4.3: a sender with no live round-trip budget, addressing a role rather than a known path.</p>
+</div></section>
+
+<section id="sec8" class="toplevel">
+<h2><span class="secnum">8.</span> Exposure Decisions (Deferred to RFC&#8209;2308)</h2>
+<div class="section-body">
+<p>RFC&#8209;2308 &sect;1.2 already describes a DRE as the &ldquo;sole arbiter of metadata visibility&rdquo; in regulated environments and specifies the state machine that decision runs on: <code>INIT &rarr; VERIFY &rarr; EVALUATE &rarr; (EXPOSE | SUPPRESS) &rarr; AUDIT</code>, with <code>FAILSAFE</code> as the universal fallback from any failure state. This document does not redefine that procedure. It specifies that a DRE receiving a query for any record type this document defines MUST run that query through RFC&#8209;2308's state machine before responding, using the exposure PolicyRecord (RFC&#8209;2308 &sect;3, expressly not the trust PolicyRecord of Section 5.4) and the requester's Domain Privacy Profile (Section 9) as inputs.</p>
+<p>The division of labor, stated once and plainly so nobody has to reconstruct it later: this document defines the records. RFC&#8209;2362 decides whether the requester is trusted at all. RFC&#8209;2308 decides how much of the record that requester is actually shown. No single one of these three RFCs performs a query alone, and none of them should be made to.</p>
+</div></section>
+
+<section id="sec9" class="toplevel">
+<h2><span class="secnum">9.</span> ProfileRegistryEntry</h2>
+<div class="section-body">
+<h3><span class="secnum">9.1</span> Purpose</h3>
+<p>A <code>ProfileRegistryEntry</code> lets a domain publish which Domain Privacy Profile (RFC&#8209;2308 &sect;4: UN, MCRN, OPA, Belter, or Non-Compliant) it operates under, so another domain's DRE can look up what it will actually be shown before spending a query on finding out the hard way.</p>
+<h3><span class="secnum">9.2</span> Structure</h3>
+<p>A <code>ProfileRegistryEntry</code> MUST contain: <strong>TrustDomain</strong> (the declaring domain, RFC&#8209;2362), <strong>DeclaredProfile</strong> (one of RFC&#8209;2308 &sect;4's named profiles), <strong>EffectiveSince</strong> and <strong>FreshnessTag</strong>, and a <strong>Signature</strong> from the declaring domain's own root attestation credential.</p>
+<h3><span class="secnum">9.3</span> Registry Query Path</h3>
+<p>A domain's <code>ProfileRegistryEntry</code>, where published, MUST be retrievable at <code>//profile</code>. A DRE MAY fold this into its <code>//info</code> response instead of serving it separately, provided the FreshnessTag and Signature remain intact either way.</p>
+<h3><span class="secnum">9.4</span> Non-Compliant Domains</h3>
+<p>A DRE MUST NOT fabricate a <code>ProfileRegistryEntry</code> on behalf of a domain that has not published one, and MUST NOT assume a missing entry defaults to the most permissive profile. Absence of a declared profile is itself information &mdash; consistent with RFC&#8209;2308 &sect;4.7's treatment of non-compliant domains &mdash; and a receiving DRE SHOULD treat an undeclared domain at least as conservatively as RFC&#8209;2308's Non-Compliant category, not more generously.</p>
+</div></section>
+
+<section id="sec10" class="toplevel">
+<h2><span class="secnum">10.</span> Invalid Forms and Failure Modes</h2>
+<div class="section-body">
+<p>The following are invalid or non-compliant and MUST be treated as failures, not edge cases to be silently handled:</p>
+<ul>
+<li><strong>Correlator Bypass</strong> (Section 4.4) &mdash; a <code>//contact</code> record publishing a raw internal ServiceChain where a session-scoped Correlator was required. Well-formed, non-compliant, and probe-detectable: any internal ServiceChain segment appearing verbatim in a <code>//contact</code> record is sufficient evidence on its own.</li>
+<li><strong>Fabricated ProfileRegistryEntry</strong> (Section 9.4) &mdash; a DRE inventing or defaulting a profile declaration a domain never published.</li>
+<li><strong>DREID collision</strong> (Section 3.3) &mdash; two domains independently deriving the same DREID. An indexer detecting this MUST NOT silently merge the two domains' records; it MUST flag both for manual reconciliation and, in the interim, treat first-seen-by-that-indexer as authoritative locally only, not network-wide.</li>
+<li><strong>Replication loop</strong> (Section 6.3) &mdash; a record circulating among DREs past its TTL/hop bound.</li>
+<li><strong>Sequence rollback / replay</strong> (Section 6.4) &mdash; a validly-signed <code>ProvenanceRecord</code> presented with a SequenceNumber at or behind one the receiver already holds for that domain. Authentic and well-formed; stale masquerading as current. A FreshnessTag check alone will not catch this if the replayed copy's own timestamp was never altered &mdash; the SequenceNumber comparison is the one that does.</li>
+<li><strong>Broken sequence chain</strong> (Section 6.4) &mdash; a higher SequenceNumber whose PriorRecordHash does not match the receiver's own highest-held record for that domain. Treated the same as a DREID collision: flagged for reconciliation, never silently resolved in either direction.</li>
+<li><strong>Ephemeris/beacon age conflation</strong> (Section 4.5) &mdash; a republished hint carrying a FreshnessTag reflecting original computation time rather than last-heard time.</li>
+<li><strong>Stale record served as current</strong> &mdash; any record forwarded, cached, or served with its FreshnessTag stripped, altered, or omitted.</li>
+<li><strong>Absence-as-revocation</strong> (Section 3.2) &mdash; treating a DRE's lack of a record as equivalent to that record having been revoked.</li>
+</ul>
+<p>The Working Group declines to enumerate every conceivable variant of the above, as implementers have, in every prior document this Working Group has published, demonstrated unlimited creativity in producing them.</p>
+</div></section>
+
+<div class="appendix-divider"><h1>Appendices</h1></div>
+
+<section id="appA" class="toplevel appendix">
+<h2><span class="secnum">Appendix A</span> Worked Example — Role Directory Resolution</h2>
+<div class="section-body">
+<p class="stamp">Free Mesh Consortium — field notes</p>
+<p>A Martian tech needs to reach whoever currently holds &ldquo;Blackbeard actual&rdquo; &mdash; the fleet commander's role, not a specific known ServiceChain, and not something worth a query-then-reply round trip measured in hours at this range.</p>
+<p>The tech's own cache holds a <code>RoleAliasTable</code> entry for Blackbeard's domain from six days prior, naming <code>ENGINEERING:CMD:ACTUAL</code> as <code>actual</code>. The message is addressed to that path and transmitted. Three days into transit, Blackbeard's fleet commander changes &mdash; a routine rotation, not an emergency. The sending tech has no way to know this and no way to find out before the message arrives.</p>
+<p>On arrival, Blackbeard's own domain resolves <code>ENGINEERING:CMD:ACTUAL</code> via local S3 (RFC&#8209;2391) against its <em>current</em> staffing, not the tech's three-day-stale cache. The message reaches the new commander without anyone re-transmitting anything or the tech ever learning their directory was out of date. This is Section 4.3's fast-path-plus-local-fallback working exactly as specified: the cache only ever had to get the message pointed in the right direction, not get the answer right.</p>
+</div></section>
+
+<section id="appB" class="toplevel appendix">
+<h2><span class="secnum">Appendix B</span> Worked Example — Correlator Bypass</h2>
+<div class="section-body">
+<p class="stamp">Independent Auditors — incident excerpt</p>
+<p>A newly-commissioned Belt station publishes its <code>//contact</code> record using default gateway settings, which, on this particular vendor's hardware, ship with Session Key correlation disabled unless explicitly configured. The record propagates through the DTN mesh for eleven days before anyone notices, reaching an estimated forty-one DREs, each of which faithfully replicates the station's full internal ServiceChain &mdash; department, section, and the names of three individual duty techs &mdash; to whoever queries it.</p>
+<p>Nothing here is a wire-format violation. The record is syntactically perfect. It is also a Correlator Bypass (Section 4.4/10): the station published an internal identity chain where a Correlator was called for, and did so correctly, repeatedly, for eleven days, because correctness was never the thing missing.</p>
+<p>The failure is caught by a routine probe checking published <code>//contact</code> records against known internal ServiceChain naming conventions, not by anything in this document's own validation rules &mdash; which is the point of naming Correlator Bypass explicitly rather than leaving it as an unlabeled configuration mistake. A named failure mode is something a probe can be written against. An unlabeled one is something somebody notices eventually, or doesn't.</p>
+</div></section>
+
+<section id="appC" class="toplevel appendix">
+<h2><span class="secnum">Appendix C</span> Record Field Reference</h2>
+<div class="section-body">
+<p>Non-normative summary; Sections 4, 5, and 9 remain authoritative.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Record</th><th>Key Fields</th><th>Published At</th></tr></thead>
+<tbody>
+<tr><td><code>DREInfoRecord</code></td><td>DREID, OperatingDomain, PublishedPaths, ReplicationPeers, SupportedPointerTypes, RoleAliasTable?, FreshnessTag, Signature</td><td><code>//info</code></td></tr>
+<tr><td><code>ProvenanceRecord</code></td><td>RecordHash, IssuingTrustDomain, Assertion, IssuedAt/FreshnessTag, HashAlgorithm, SequenceNumber, PriorRecordHash?, Signature, LedgerEntryRef?</td><td>via ProvenancePointer (RFC&#8209;2350)</td></tr>
+<tr><td><code>ProfileRegistryEntry</code></td><td>TrustDomain, DeclaredProfile, EffectiveSince, FreshnessTag, Signature</td><td><code>//profile</code> (or folded into <code>//info</code>)</td></tr>
+</tbody>
+</table></div>
+</div></section>
+
+<section id="appD" class="toplevel appendix">
+<h2><span class="secnum">Appendix D</span> Authorship</h2>
+<div class="section-body">
+<p><strong>D.1 Editorial Authority.</strong> Prepared under the multi-institutional authorship model established for RFC&#8209;2352 and applied to this corpus's other graduated documents. Unlike RFC&#8209;2362 or RFC&#8209;2353, this document has a single primary author; no institutional dispute attaches to a directory bulletin board.</p>
+<p><strong>D.2 Primary Author.</strong></p>
+<ul>
+<li><strong>SolNet Standards Working Group (SSWG)</strong> &mdash; full document. DRE function, DREInfoRecord, ProvenanceRecord, ProfileRegistryEntry, replication and indexing rules, resolution integration, and the deferral points to RFC&#8209;2362 and RFC&#8209;2308.</li>
+</ul>
+<p><strong>D.3 Custodian of Record.</strong> The Directory Registry Authority (DRA), a standing SSWG sub-body, maintains record-type versioning and reserved field allocations for this document, distinct from and not overlapping the Canonical Address Registrar's (CAR) TLV-key custodianship under RFC&#8209;2350. The DRA does not allocate DREIDs; Section 3.3 explains why none exist to allocate.</p>
+<p><strong>D.4 Open Items for a Future Revision.</strong> This document flags, without resolving, the <code>PolicyRecord</code> naming collision between this document's Section 5.4/RFC&#8209;2362 usage and RFC&#8209;2308 &sect;3's usage (Section 5.4). A disambiguating rename of one or both is recommended to whichever registrar eventually owns that decision. Full wire-level encoding for <code>DREInfoRecord</code>, <code>ProvenanceRecord</code>, and <code>ProfileRegistryEntry</code> (binary TLV form, matching RFC&#8209;2350 &sect;5&ndash;6's conventions) is deferred pending implementation priority; this revision specifies logical structure only.</p>
+<section class="footnotes" aria-label="Editorial notes"><h3>Editorial Notes <span class="nonnormative">(non-normative)</span></h3><ol>
+<li id="fn1"><strong>ProvenancePointer</strong> &mdash; the canonical reference to an Address's authoritative origin (RFC&#8209;2350 &sect;4.7, &sect;5.8, &sect;6), optional but, when present, MUST resolve to a valid ProvenanceRecord. Not a timestamp, an address hash, or a routing hint.</li>
+<li id="fn2"><strong>TrustDomain</strong> &mdash; a named, policy-bearing boundary declaring one of four root attestation models (RFC&#8209;2362 &sect;2). The entity a ProvenanceRecord's IssuingTrustDomain field, and a DREInfoRecord's OperatingDomain field, both point to.</li>
+<li id="fn3"><strong>Domain Privacy Profile</strong> &mdash; a domain's declared maximum permissible metadata visibility (RFC&#8209;2308 &sect;4: UN, MCRN, OPA, Belter, or Non-Compliant). What a ProfileRegistryEntry publishes and what a DRE's exposure decision (Section 8) is measured against.</li>
+<li id="fn4"><strong>FreshnessTag</strong> &mdash; a varint field (RFC&#8209;2350 &sect;5.7) expressing temporal freshness. Every record type this document defines carries one; none of them may have it stripped in transit.</li>
+<li id="fn5"><strong>Session Keys</strong> &mdash; the RFC&#8209;2300 &sect;6.1 identity-chain layer answering whether a specific interaction is current and authorized. The mechanism this document reuses, rather than inventing a new record type, for <code>//contact</code> correlation (Section 4.4).</li>
+<li id="fn6"><strong>AnchorRecord / LedgerAnchor</strong> &mdash; the RFC&#8209;2302 ledger mechanism a ProvenanceRecord's optional LedgerEntryRef field points into, when a domain chooses to anchor its provenance assertions in a ledger rather than (or in addition to) direct DRE hosting.</li>
+</ol></section>
+<p><em>For terms shared across multiple SolNet RFCs (DRE, DREID, RecordIndex, ProvenanceRecord, DREInfoRecord, ProfileRegistryEntry, TrustDomain, FreshnessTag, Session Keys, Domain Privacy Profile, referenced RFC numbers), see the shared corpus glossary (<code>solnet-glossary.md</code>).</em></p>
+</div></section>
+  </article>
+</div>
+
+<script>
+(function(){
+  // active TOC highlight
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.toplevel'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+
+</body></html>

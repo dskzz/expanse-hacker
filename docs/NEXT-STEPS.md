@@ -77,17 +77,38 @@ new ones to real `db/trust/*.json` schemas (tracked in the companion
 doc's Schemas section and in `CORPUS-STATUS.md`'s Authority Plane
 table). RFC-2363 (Track A4) is now unblocked.
 
-### A4. Draft RFC-2363 (Directory and Routing Endpoints)
+### A4. Draft RFC-2363 (Directory and Routing Endpoints) — DONE, graduated 2026-11-19
 
-Also undrafted, but its scope is now settled — `TODOv2.md` confirms
-RFC-2363 = DRE, resolving the three-way scope confusion found across
-RFC-2302/2303 (which call it "Identity Resolution") and RFC-2350
-(which correctly ties it to DRE + ProvenanceRecord). Two
-`rfc-proposals/` documents already target this RFC directly
-(`rfc2300-dre-role-directory.md`'s role-based addressing extension,
-`rfc2300-2302-reply-path-privacy.md`'s session-correlator design) —
-drafting RFC-2363 for real gives both proposals a home to land in
-instead of floating as standalone proposals indefinitely.
+Drafted, iterated, and promoted: `docs/vault/New RFCs/RFC 2363 -
+Directory and Routing Endpoints.md`, static HTML at `docs/rfc-html/
+RFC-2363-Directory-and-Routing-Endpoints.html`, and a plain-language
+write-up with exploit hints at `docs/plain-language/
+RFC-2363-Plain-Language.md`. No formal exploits/tools companion doc
+yet under `docs/rfc-companions/` — that's the one piece still missing
+relative to the other graduated RFCs.
+
+Resolves the three-way scope confusion found across RFC-2302/2303
+(which called it "Identity Resolution") and RFC-2350 (which correctly
+tied it to DRE + ProvenanceRecord) — DRE wins, per `TODOv2.md`'s own
+registry entry. Defines `DREInfoRecord`, `ProvenanceRecord` (the record
+type RFC-2350's `ProvenancePointer` has pointed at since that document
+shipped, with nothing defining it until now), and `ProfileRegistryEntry`.
+Closes RFC-2362 §5's deferred DRE trust-decision hook and RFC-2308's
+exposure-decision integration. Formalizes both `rfc-proposals/`
+documents that targeted it (`rfc2300-dre-role-directory.md`'s role-based
+addressing → §4.3; `rfc2300-2302-reply-path-privacy.md`'s
+session-correlator design → §4.4) — those two can likely be retired now.
+
+Also added, past the original live-artifact draft: §5.5's self-signed
+SequenceNumber/PriorRecordHash chain, so replay/rollback of a validly-
+signed-but-stale record is detectable without any relay ever being
+asked to vouch for a record's freshness or path — closing a real gap
+the first draft missed, caught in design review rather than built in
+from the start.
+
+Not yet done: wire-level binary encoding for all three record types
+(explicitly deferred, Appendix D.4), the `db/` schema conversion, and a
+formal exploits/tools companion doc.
 
 ### A5. Low-risk mechanical cleanup, batch whenever convenient
 
@@ -309,7 +330,7 @@ suspicious — visible personality from mechanical rules, not scripting.
 
 ## Suggested order
 
-1. **A1** (RFC-2350 correction sign-off) — quick, unblocks A4 and B5.
+1. **A1** (RFC-2350 correction sign-off) — quick, unblocks B5 (A4 is done).
 2. **B1** (solo/multi-user detection) — quick, unblocks B2 and B3.
 3. **B2 + B3** (solo-claim degradation + quorum ledger persistence) —
    the two features that have been design-locked longest without
@@ -320,9 +341,11 @@ suspicious — visible personality from mechanical rules, not scripting.
 5. **B4 + B5** (permission gradient, addressing parser) — these two
    are the actual foundation the rest of the multi-user/multi-domain
    story sits on.
-6. **A4** (draft RFC-2363) — A3 is done (graduated 2026-09-09); A4 is
-   now unblocked and is the remaining bigger lift before the Authority
-   Plane block can grow further.
+6. **A3 and A4 are both done** (graduated 2026-09-09 and 2026-11-19).
+   The remaining bigger lift before the Authority Plane block can grow
+   further is the `db/trust/*.json` schema conversion both RFCs still
+   need (RFC-2362's four record types and RFC-2363's three, per each
+   RFC's own Appendix tracking the gap).
 7. **B6, B7, B8** — content and polish, parallelizable with anything
    above once B4/B5 exist to hang them on.
 8. **A5, A6, A8** — cleanup, backlog, and RFC-2310 (QKD), fold in
