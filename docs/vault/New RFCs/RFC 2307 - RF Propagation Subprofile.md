@@ -45,7 +45,7 @@ The scope explicitly excludes:
 - any explanation that begins with “in my experience”
     
 
-These practices are incompatible with SolNet and, in several documented cases, with basic physics.
+These practices are incompatible with SolNet and, in several documented cases, with basic physics. “The antenna was pointed in the general direction” is not dismissed here because pointing doesn’t matter — it is dismissed because §4.6 defines what replaces it for any RF channel that is not broad‑beam.
 
 This document defines the minimum constraints required for RF to behave predictably across the Authority and Namespace planes. Implementers who believe RF is inherently unpredictable will discover that the medium becomes far more stable once their personal theories are removed from the system
 
@@ -72,6 +72,8 @@ A canonical RF channel profile defines:
 - **scheduled‑band eligibility**
     
 - **FHSS/LPI compatibility**
+    
+- **directional alignment dependency, where applicable (§4.6)**
     
 
 These parameters are not optional. They are the minimum set required to describe an RF channel in a way that another system can interpret without resorting to guesswork or folklore.
@@ -156,6 +158,16 @@ Systems must not treat high‑interference environments as anomalies. They are c
 ## **4.5 Profile Provenance**
 
 All RFChannelProfileRecords must carry verifiable provenance. Profiles without provenance are indistinguishable from folklore, and folklore has no place in a deterministic system. Provenance ensures that channel behavior can be audited, reproduced, and corrected.
+
+## **4.6 Directional Profile**
+
+A directional profile applies to any RF channel carried on a steerable, gain‑focused antenna — a dish, a phased array, anything where propagation is confined to a beam rather than radiated broadly. The physics differs from the tightbeam laser case (RFC‑2306) only in degree, not in kind: a beam that must be aimed at where the receiver actually is, not where it was last known to be, is the same acquisition problem RFC‑2306 already solves for optical links, with a wider margin for error and nothing else changed about the underlying requirement.
+
+A directional profile MUST have its current pointing state available as an AlignmentStateRecord and EphemerisRecord (RFC‑2304) for the channel in question, retrievable through the channel's DRE RFChannel record (§10.5). It MUST consult coarse ephemeris hints (RFC‑2364) when acquiring or re‑acquiring a target whose position has not been independently confirmed within the profile's own staleness tolerance. This is a logical requirement on the profile, not a new field on RFChannelProfileRecord's wire form (Appendix I.2) — a directional channel's alignment state lives in the alignment record it already has a provenance chain for, and is not duplicated into the RF record alongside it.
+
+Directionality is an orthogonal axis to §4.1–§4.4, not a fifth alternative to them. Those profiles describe what is carried on the link; a directional declaration describes how the link is aimed. A single channel MAY combine both — a Scheduled‑Band Profile carried on a directional antenna still requires its own AlignmentStateRecord, on the same terms as any other directional channel.
+
+An RF channel with no directional declaration is broad‑beam by default and has no AlignmentStateRecord dependency, because it has no acquisition problem to solve. Absence of the declaration MUST be read as that statement, not as an omission awaiting correction.
 
 # **5 Beaconing and Channel Announcements**
 
@@ -925,6 +937,8 @@ RFChannelRecords are not isolated to the RF domain. They influence:
 - **session establishment (N4)** Incorrect link‑quality aggregates produce unstable sessions.
     
 - **personal namespace policies (N5)** Misinterpreted interference leads to incorrect access decisions.
+    
+- **antenna alignment (RFC‑2304)** A directional channel's pointing state lives in its AlignmentStateRecord, not in the RFChannelRecord; the DRE links the two on request, it does not duplicate one inside the other.
     
 
 RF is the foundation. Every higher‑layer decision inherits its accuracy — or its contamination.
