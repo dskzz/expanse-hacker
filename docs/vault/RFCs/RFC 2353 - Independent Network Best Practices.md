@@ -23,7 +23,7 @@ This document provides **best‑practice recommendations** for operators of **in
 - commercial or industrial subnetworks (e.g., Ganymede AgriNet)
     
 
-The goal is to ensure **maximum interoperability** with major coalition networks (e.g., **Earth Coalition Networks**, **Martian Congressional Republic Relays**, **Tycho Station Operations Mesh**) while preserving full administrative independence.
+The goal is to ensure **maximum interoperability** with major coalition networks (e.g., **Earth Coalition Networks**, **Martian Democratic Republic Relays**, **Tycho Station Operations Mesh**) while preserving full administrative independence.
 
 ---
 

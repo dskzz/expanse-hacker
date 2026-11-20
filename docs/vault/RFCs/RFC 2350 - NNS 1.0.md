@@ -304,7 +304,7 @@ Code
 AuthorityChain → NetworkID(UUID‑S7) → NetworkKey
 ```
 
-Signed by a trust‑domain authority (UN‑MIL, MCRN‑MIL, OPA‑CIVIL, etc.)
+Signed by a trust‑domain authority (UN‑MIL, MRN‑MIL, OPA‑CIVIL, etc.)
 
 ## **6.4 LedgerAnchor (optional but recommended)**
 

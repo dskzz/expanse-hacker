@@ -35,7 +35,7 @@ SolNet is a **federated, delay‑tolerant, multi‑authority network** spanning 
 
 - **Earth Coalition Networks**
     
-- **Martian Congressional Republic Relays**
+- **Martian Democratic Republic Relays**
     
 - **Tycho Station Operations Mesh**
     

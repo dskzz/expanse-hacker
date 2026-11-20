@@ -215,7 +215,7 @@ Earth’s official L1 compliance suite. Modules:
 - profile auditor
     
 
-## **B. Mars (MCRN) Tools**
+## **B. Mars (MDR) Tools**
 
 Precise, militarized, efficient.
 
@@ -319,7 +319,7 @@ Fallback parser interceptor. Features:
 - BlueFrame
     
 
-### **2.** _**MCRN‑SignalOps‑2351**_ (Mars)
+### **2.** _**MDR‑SignalOps‑2351**_ (Mars)
 
 - RedSplit
     

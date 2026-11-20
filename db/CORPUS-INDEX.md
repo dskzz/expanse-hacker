@@ -687,13 +687,13 @@ actual minority usage here, not the rest of the corpus.
 
 **Real content, reusable for game design almost as-is:**
 PolicyRecord schema (§3) and Domain Privacy Profiles per faction —
-**UN (high regulation), MCRN (military regulation), OPA (mixed
+**UN (high regulation), MDR (military regulation), OPA (mixed
 compliance), Belter (low regulation)** — a real, already-drafted
 four-way regulatory split that's a natural narrative complement to
 this project's own four *OS-lineage* root models (different axis:
 this is about metadata-exposure policy per political faction, not
 authentication/authorization per OS lineage, but the factions line up
-suggestively — UN≈Earthstock, MCRN≈Mars, Belter≈Scrapshell, OPA/
+suggestively — UN≈Earthstock, MDR≈Mars, Belter≈Scrapshell, OPA/
 Corporate less directly mapped). A compliant **DRE state machine**
 (Appendix E): INIT → VERIFY → EVALUATE → (EXPOSE | SUPPRESS) → AUDIT,
 with FAILSAFE as the universal fallback from any failure and SUPPRESS

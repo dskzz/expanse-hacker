@@ -10,7 +10,7 @@ _Status: Standards‑Track_
 
 This document defines the operational guidelines for **Zone Gateways**, the boundary nodes responsible for translating between **local Network Namespace Systems (NNS)** and the **SolNet Bundle Addressing Protocol (BAP)**. Zone Gateways ensure that ships, stations, orbitals, and planetary networks can interoperate while maintaining independent administrative control.
 
-Gateways are deployed across major public networks (e.g., **Earth Coalition Networks**, **Martian Congressional Republic Relays**, **Tycho Station Operations Mesh**, **Ceres PublicNet**) as well as independent operators in the Belt.
+Gateways are deployed across major public networks (e.g., **Earth Coalition Networks**, **Martian Democratic Republic Relays**, **Tycho Station Operations Mesh**, **Ceres PublicNet**) as well as independent operators in the Belt.
 
 ---
 

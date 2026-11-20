@@ -34,7 +34,7 @@ Example:
 
 - `CIV:EARTH:LUNA_L1:RELAY_03:COMMS`
     
-- `MIL:MCRN:MARS_L2:RELAY_01:PDN`
+- `MIL:MRN:MARS_L2:RELAY_01:PDN`
     
 - `CIV:CERES:DOCK_RING_A:TERM_442:SHELL`
     
@@ -60,7 +60,7 @@ Instead of IPv4/IPv6 + netmasks, you have **prefix scopes**:
 
 - `CIV:EARTH:*` → all civilian nodes in the Earth system
     
-- `MIL:MCRN:MARS_L2:*` → all Martian military nodes at Mars L2
+- `MIL:MRN:MARS_L2:*` → all Martian military nodes at Mars L2
     
 - `CIV:CERES:DOCK_RING_A:*` → all devices in that ring
     
@@ -152,7 +152,7 @@ Top‑level **network** segment:
 
 - `CIV` → civilian backbone
     
-- `MIL` → faction militaries (UNN, MCRN, etc.)
+- `MIL` → faction militaries (UNN, MRN, etc.)
     
 - `CORP` → corporate nets
     
@@ -305,7 +305,7 @@ Example flow:
             
         - `POWER_CORE:MONITOR`
             
-5. You `route-trace MIL:MCRN:MARS_L2:RELAY_01:COMMS`.
+5. You `route-trace MIL:MRN:MARS_L2:RELAY_01:COMMS`.
     
     - You see a probable path through:
         
@@ -313,7 +313,7 @@ Example flow:
             
         - `CIV:INNER_RELAY_BELT_03`
             
-        - `MIL:MCRN:MARS_L2:RELAY_01`
+        - `MIL:MRN:MARS_L2:RELAY_01`
             
 
 Each of those becomes a **node you can try to reach, hack, or influence**.
@@ -416,17 +416,17 @@ UN networks tend to be:
 
 Perfect for hacking.
 
-### **MCR (Martian Congressional Republic)**
+### **MDR (Martian Democratic Republic)**
 
 Orderly, hierarchical, militarized.
 
 Examples:
 
-- `MCR-COMMAND-ALPHA`
+- `MDR-COMMAND-ALPHA`
     
-- `MCR-NAV-SECURE`
+- `MDR-NAV-SECURE`
     
-- `MCR-RESEARCH-BETA`
+- `MDR-RESEARCH-BETA`
     
 - `MCR-PD-OMEGA`
     

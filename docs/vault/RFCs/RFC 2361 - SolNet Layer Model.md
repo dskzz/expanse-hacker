@@ -64,7 +64,7 @@ The following link types are recognized:
 
 - **LASER_DIRECT** — High‑bandwidth, tightbeam, requires precise alignment.
     
-- **LASER_CHAINED** — Multi‑hop repeater chains (MCRN, UNN, corporate).
+- **LASER_CHAINED** — Multi‑hop repeater chains (MRN, UNN, corporate).
     
 - **LASER_DEEPSPACE** — Long‑range, low‑power, used by research vessels.
     
@@ -95,7 +95,7 @@ The following link types are recognized:
 
 - **CORPORATE_PROPRIETARY** — Closed, authenticated, encrypted.
     
-- **MILITARY_EXCLUSIVE** — MCRN/UNN‑only channels.
+- **MILITARY_EXCLUSIVE** — MRN/UNN‑only channels.
     
 - **DIPLOMATIC_SECURE** — UN diplomatic channels.
     
@@ -181,7 +181,7 @@ This layer governs political, military, and corporate boundaries.
 
 ### 6.1 Jurisdiction Domains
 
-- **MCRN**
+- **MRN**
     
 - **UNN**
     
@@ -196,7 +196,7 @@ This layer governs political, military, and corporate boundaries.
 
 ### 6.2 Policy Enforcement Examples
 
-- MCRN relays reject OPA traffic.
+- MRN relays reject OPA traffic.
     
 - UN relays require bureaucratic authentication.
     
@@ -292,7 +292,7 @@ This layer includes:
 
 ### 9.1 Encryption Domains
 
-- **MIL‑HIGH** (MCRN, UNN elite units)
+- **MIL‑HIGH** (MRN, UNN elite units)
     
 - **MIL‑MEDIUM** (UNN general fleet)
     

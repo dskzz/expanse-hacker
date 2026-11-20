@@ -39,4 +39,4 @@ And ledger anchoring being expensive, slow, or dangerous in the outer system tur
 
 That’s a network that feels alive.
 
-The next really sharp edge to decide is whether **policy preference itself is observable** — can nodes advertise “I prefer MCRN namespaces” or “I distrust unanchored receipts,” or is that something players have to infer by watching behavior over time?
+The next really sharp edge to decide is whether **policy preference itself is observable** — can nodes advertise “I prefer MDR namespaces” or “I distrust unanchored receipts,” or is that something players have to infer by watching behavior over time?

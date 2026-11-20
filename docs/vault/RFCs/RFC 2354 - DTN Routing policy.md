@@ -12,7 +12,7 @@ This document defines recommended routing policies for **Delay‑Tolerant Networ
 
 - **Earth Coalition Networks**
     
-- **Martian Congressional Republic Relays**
+- **Martian Democratic Republic Relays**
     
 - **Tycho Station Operations Mesh**
     

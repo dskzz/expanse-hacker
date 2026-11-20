@@ -14,7 +14,7 @@ PCGP ensures that **PNS labels**, **public keys**, and **current NNS addresses**
 
 - **Earth Coalition Networks**
     
-- **Martian Congressional Republic Relays**
+- **Martian Democratic Republic Relays**
     
 - **Tycho Station Operations Mesh**
     

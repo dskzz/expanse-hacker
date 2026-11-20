@@ -32,7 +32,7 @@ The broadcast required simultaneous use of multiple propagation paths to overwhe
 - **Redundant Power Regulation Units** — Necessary to maintain stable output during burst transmission. Civilian regulators brown out under this load.
     
 
-_SSWG Note:_ “The combination of UNN, MCRN, and Belt hardware is not accidental. It is the minimum viable set for a cross‑jurisdiction broadcast.”
+_SSWG Note:_ “The combination of UNN, MRN, and Belt hardware is not accidental. It is the minimum viable set for a cross‑jurisdiction broadcast.”
 
 ## 3. Firmware and Metadata Components
 

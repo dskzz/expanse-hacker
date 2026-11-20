@@ -21,7 +21,7 @@ This document defines the operational and security guidelines for **personal com
 - expeditionary field tablets
     
 
-The goal is to ensure consistent identity handling, predictable routing behavior, and secure integration across all SolNet‑participating networks, including **Earth Coalition Networks**, **Martian Congressional Republic systems**, **Tycho Station Operations Mesh**, **Ceres PublicNet**, and independent Belt operators.
+The goal is to ensure consistent identity handling, predictable routing behavior, and secure integration across all SolNet‑participating networks, including **Earth Coalition Networks**, **Martian Democratic Republic systems**, **Tycho Station Operations Mesh**, **Ceres PublicNet**, and independent Belt operators.
 
 ---
 

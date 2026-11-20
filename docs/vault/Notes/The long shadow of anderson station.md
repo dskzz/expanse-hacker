@@ -10,7 +10,7 @@ Silence became accusation. Accusation became escalation. Escalation became a blo
 
 When the UNN deployed five destroyers to embargo Martian terraforming supplies, Mars interpreted the move as a provocation. When a Martian cruiser twitched its targeting solution—an automated correction, not a threat—the UNN read it as hostile intent. Within seconds, the shooting started.
 
-The lone MCRN cruiser crippled all five UN destroyers. On the _Yasijuro_, twenty‑nine personnel were blown into space when a hull section decompressed. Half the UNN fleet was already on a hard burn toward Mars, prepared to end the colony outright before cooler heads intervened.
+The lone MRN cruiser crippled all five UN destroyers. On the _Yasijuro_, twenty‑nine personnel were blown into space when a hull section decompressed. Half the UNN fleet was already on a hard burn toward Mars, prepared to end the colony outright before cooler heads intervened.
 
 The battle ended quickly. The consequences did not.
 

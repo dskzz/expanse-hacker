@@ -258,7 +258,7 @@ The division of labor, stated once and plainly so nobody has to reconstruct it l
 
 #### 9.1 Purpose
 
-A `ProfileRegistryEntry` lets a domain publish which Domain Privacy Profile (RFC‑2308 §4: UN, MCRN, OPA, Belter, or Non-Compliant) it operates under, so another domain's DRE can look up what it will actually be shown before spending a query on finding out the hard way.
+A `ProfileRegistryEntry` lets a domain publish which Domain Privacy Profile (RFC‑2308 §4: UN, MDR, OPA, Belter, or Non-Compliant) it operates under, so another domain's DRE can look up what it will actually be shown before spending a query on finding out the hard way.
 
 #### 9.2 Structure
 
@@ -340,7 +340,7 @@ Non-normative summary; Sections 4, 5, and 9 remain authoritative.
 
 [^1]: **ProvenancePointer** — the canonical reference to an Address's authoritative origin (RFC‑2350 §4.7, §5.8, §6), optional but, when present, MUST resolve to a valid ProvenanceRecord. Not a timestamp, an address hash, or a routing hint.
 [^2]: **TrustDomain** — a named, policy-bearing boundary declaring one of four root attestation models (RFC‑2362 §2). The entity a ProvenanceRecord's IssuingTrustDomain field, and a DREInfoRecord's OperatingDomain field, both point to.
-[^3]: **Domain Privacy Profile** — a domain's declared maximum permissible metadata visibility (RFC‑2308 §4: UN, MCRN, OPA, Belter, or Non-Compliant). What a ProfileRegistryEntry publishes and what a DRE's exposure decision (Section 8) is measured against.
+[^3]: **Domain Privacy Profile** — a domain's declared maximum permissible metadata visibility (RFC‑2308 §4: UN, MDR, OPA, Belter, or Non-Compliant). What a ProfileRegistryEntry publishes and what a DRE's exposure decision (Section 8) is measured against.
 [^4]: **FreshnessTag** — a varint field (RFC‑2350 §5.7) expressing temporal freshness. Every record type this document defines carries one; none of them may have it stripped in transit.
 [^5]: **Session Keys** — the RFC‑2300 §6.1 identity-chain layer answering whether a specific interaction is current and authorized. The mechanism this document reuses, rather than inventing a new record type, for `//contact` correlation (Section 4.4).
 [^6]: **AnchorRecord / LedgerAnchor** — the RFC‑2302 ledger mechanism a ProvenanceRecord's optional LedgerEntryRef field points into, when a domain chooses to anchor its provenance assertions in a ledger rather than (or in addition to) direct DRE hosting.

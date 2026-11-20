@@ -49,7 +49,7 @@ Below is a full, **non‑consolidated** SolNet RFC corpus rebuilt from the groun
 
 #### RFC‑2308 Media Privacy and Exposure Policy
 
-**Purpose**: Exposure rules for ephemeris, pointing, beaconing metadata. **Why**: Prevents leakage of operationally sensitive data. **Defines**: PolicyRecord fields, exposure levels, audit obligations. **Interaction**: L1 suppression rules, DRE access controls. **Profiles**: domain privacy profiles (UN, MCRN, OPA, Belter). **Tests**: privacy enforcement, access control audits.
+**Purpose**: Exposure rules for ephemeris, pointing, beaconing metadata. **Why**: Prevents leakage of operationally sensitive data. **Defines**: PolicyRecord fields, exposure levels, audit obligations. **Interaction**: L1 suppression rules, DRE access controls. **Profiles**: domain privacy profiles (UN, MDR, OPA, Belter). **Tests**: privacy enforcement, access control audits.
 
 #### RFC‑2309 L0 Test and Validation Suite
 

@@ -12,7 +12,7 @@ The policies defined here restrict the visibility of fields that enable cross‑
 
 RFC‑2308 removes that belief.
 
-The PolicyRecord schema formalizes the minimum metadata that may be emitted and the conditions under which additional fields may be exposed. Domain privacy profiles (UN, MCRN, OPA, Belter) are defined to ensure that exposure decisions are deterministic and not subject to operator preference or domain‑level negotiation. L1 suppression rules are integrated directly into the policy to prevent accidental leakage through lower‑layer behavior. DRE access controls are specified to ensure that visibility is granted only when provenance, authorization, and necessity are all verifiable and auditable.
+The PolicyRecord schema formalizes the minimum metadata that may be emitted and the conditions under which additional fields may be exposed. Domain privacy profiles (UN, MDR, OPA, Belter) are defined to ensure that exposure decisions are deterministic and not subject to operator preference or domain‑level negotiation. L1 suppression rules are integrated directly into the policy to prevent accidental leakage through lower‑layer behavior. DRE access controls are specified to ensure that visibility is granted only when provenance, authorization, and necessity are all verifiable and auditable.
 
 This document assumes the malicious motives inherent in any domain, vendor, or operator when visibility is left unregulated. It assumes that exposed metadata will be aggregated, correlated, and used to compromise systems. It assumes that operators will bypass restrictions when they believe it will save them time.
 
@@ -77,7 +77,7 @@ Any field that can be correlated across domains is considered an exposure surfac
 
 ## **1.4 Domain Privacy Profiles**
 
-A **Domain Privacy Profile** defines the maximum permissible visibility for a given domain (UN, MCRN, OPA, Belter). These profiles constrain what metadata a DRE may expose to that domain. Profiles are deterministic and non‑negotiable. Operator preference, domain‑level agreements, and local policy cannot override them.
+A **Domain Privacy Profile** defines the maximum permissible visibility for a given domain (UN, MDR, OPA, Belter). These profiles constrain what metadata a DRE may expose to that domain. Profiles are deterministic and non‑negotiable. Operator preference, domain‑level agreements, and local policy cannot override them.
 
 Profiles exist because unregulated visibility has repeatedly resulted in cross‑domain correlation attacks, operational inference, and compromise of essential systems. The profiles formalize the minimum level of opacity required to prevent recurrence.
 
@@ -345,7 +345,7 @@ Suppression rules must be deterministic. Operator‑initiated overrides are proh
 
 ### **3.2.5** `profile_binding`
 
-The domain privacy profiles (UN, MCRN, OPA, Belter) that determine visibility. Each field must specify:
+The domain privacy profiles (UN, MDR, OPA, Belter) that determine visibility. Each field must specify:
 
 - which domains may see it
     
@@ -526,9 +526,9 @@ The UN profile assumes:
 
 The UN profile is the most conservative. It exists to prevent correlation attacks across large, multi‑node infrastructures.
 
-## **4.4 MCRN Profile (Military Regulation)**
+## **4.4 MDR Profile (Military Regulation)**
 
-The MCRN profile assumes:
+The MDR profile assumes:
 
 - strict internal controls
     
@@ -541,7 +541,7 @@ The MCRN profile assumes:
 
 **Visibility Class:** Low **Allowed Fields:** none beyond link‑establishment minimums **Restricted Fields:** all operational metadata **Audit Requirements:** immutable log and alert **Provenance Requirements:** full identity and chain **Retention Constraints:** minimal, purge‑on‑disconnect
 
-The MCRN profile is designed to prevent any external visibility into military posture or movement.
+The MDR profile is designed to prevent any external visibility into military posture or movement.
 
 ## **4.5 OPA Profile (Mixed Compliance)**
 
