@@ -215,7 +215,7 @@ Earth’s official L1 compliance suite. Modules:
 - profile auditor
     
 
-## **B. Mars (MCRN) Tools**
+## **B. Mars (MDR) Tools**
 
 Precise, militarized, efficient.
 
@@ -246,7 +246,7 @@ Fallback mode controller. Features:
 - simplified parser exploitation
     
 
-## **C. Belt / OPA Tools**
+## **C. Belt / OSL Tools**
 
 Improvised, modular, powerful.
 
@@ -319,7 +319,7 @@ Fallback parser interceptor. Features:
 - BlueFrame
     
 
-### **2.** _**MCRN‑SignalOps‑2351**_ (Mars)
+### **2.** _**MDR‑SignalOps‑2351**_ (Mars)
 
 - RedSplit
     
@@ -328,7 +328,7 @@ Fallback parser interceptor. Features:
 - DustFallback
     
 
-### **3.** _**Belt‑Tools‑2351 Pack**_ (OPA)
+### **3.** _**Belt‑Tools‑2351 Pack**_ (OSL)
 
 - erlufshoax‑2351
     
