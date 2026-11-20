@@ -1,102 +1,134 @@
-# Rohktok — the Belter Pidgin (replaces Lang Belta)
+# Rock Talk — the Belter Pidgin (replaces Lang Belta)
 
-Status: locked, 2026-11-20. Original constructed pidgin for OPRA's voice
-and general Belt-flavor dialogue, replacing the real, sourced Lang Belta
-grammar/vocabulary used in RFC-2353 and (until this note) RFC-2310's §7
-field note. Same reasoning as the MCRN→MDR/OPA→OSL/ASA renames: Lang
-Belta is Nick Farmer's specific invented conlang for a different,
-actively-marketed franchise, not something to ship in a commercial
-product.
+Status: **locked, 2026-11-20.** Replaces the real, sourced Lang Belta
+grammar/vocabulary used in RFC-2353 and RFC-2310's §7 field note — same
+reasoning as the MCRN→MDR/OPA→OSL/ASA renames: Lang Belta is Nick
+Farmer's specific invented conlang for a different, actively-marketed
+franchise, not something to ship in a commercial product.
 
-**In-universe name:** Rohktok ("rock talk") — a Belter-coined term,
-following the same real naming pattern Tok Pisin and Bislama use
-("talk" + descriptor), without reusing either of those actual names.
+**In-universe name:** Rock Talk, spoken by the **Kamenya** (Belters,
+collectively).
 
-**What this is built from, and what it isn't.** The grammar below
-follows well-documented, real-world creole typology — the kind of
-structural features (zero copula, preverbal tense-aspect particles,
-no case marking, reduced inflection) that recur independently across
-dozens of real creoles worldwide, including Tok Pisin and Krio, which
-is why this reads as authentically "creole-shaped" rather than
-invented nonsense. The actual **words** are original coinages, not
-borrowed from Tok Pisin, Krio, or Lang Belta. Same split as Lang
-Belta's own real creator used — real structure, invented vocabulary —
-just without reusing anyone's specific existing words, theirs or ours.
+## The governing idea: a VOX language first
+
+Rock Talk started as suit-comms and relay-channel discipline, not a
+native tongue — the same justification already established for OPRA's
+article-dropping tic (`Notes/voices/voice_profiles/SPERB Sub-Bureau
+Voices.md`: tied to "sign-language/limited-bandwidth comms culture").
+This takes that from one grammatical tic to the organizing principle
+of the whole pidgin: **if a word's meaning survives without it, cut
+it.** That's also the hard filter for adding any new word later: it
+must (a) already be recognizable to an English reader — a naturalized
+loanword, not obscure foreign vocabulary — and (b) be short, one
+syllable preferred, two at the outside. Savvy/palaver/Kamenya get an
+exception because they're load-bearing named concepts, not ordinary
+vocabulary.
+
+## What this is built from
+
+Two real historical layers, neither of them Lang Belta's:
+
+1. **Age-of-sail trade pidgin** — Chinese Pidgin English (Canton/Hong
+   Kong trade, 17th–19th c. — also gave English "long time no see,"
+   "no can do") and the broader Atlantic maritime pidgin of the same
+   era. Source of the core grammar: object-form pronouns for every
+   role, `all-` as a plural marker, `bimeby` ("by and by") as the
+   future particle, `s'pose` ("suppose") for conditionals, plain `no`
+   for negation. Genuinely old, not contemporary-coded.
+2. **A handful of already-naturalized loanwords** from French, German,
+   and Hindi/Sanskrit — chosen because English speakers already
+   half-know them, the same way `savvy` and `palaver` work. Not a
+   systematic four-language vocabulary; just enough spice to read as
+   a real multi-substrate pidgin without needing a glossary.
 
 ## Core grammar
 
 - **SVO word order.**
-- **Zero copula for equatives** (the default — "X Y" means "X is Y,"
-  no linking verb). `sta` is the one exception: a dedicated **locative**
-  copula, used only for genuine physical location ("where something
-  actually is"), same split Lang Belta's `bi`/zero-copula distinction
-  made for RFC-2353.
-- **Preverbal TAM particles**, one per verb phrase, in this order
-  (future/past/aspect, then negation, then verb):
-  - `sko` — future ("gonna")
-  - `tol` — past
-  - `zeh` — perfective/completed
-  - `ruk` — habitual
-- **Negation:** `vey`, preverbal — "`ten vey sko go`" = "they're not
-  gonna go."
-- **Quantifiers precede the noun:** `vash` = all, `vashting` = everything
-  /everyone (vash + ting, same compounding logic as Lang Belta's
-  kowl/kowlting, different root).
-- **No articles** — drop a/the/an wherever meaning survives without them.
-- **No plural suffix on ordinary nouns.** Pronouns pluralize with a
-  dedicated suffix, `-wa`: `ja` (I/me) → `jawa` (we); `yo` (you) →
-  `yowa` (you-all); `ten` (he/she/it) → `tenwa` (they).
-- **Conditional:** `lenga` ("if"), opens or follows the clause, same
-  flexibility as English "if."
-- **Preposition for "for/to":** `ku`.
+- **Zero copula for equatives** (default — "X Y" = "X is Y").
+- **`tam`** — locative ("there/is there"), the one case zero-copula
+  doesn't cover.
+- **Object-form pronouns, every role:** `me` / `you` / `him` (he-she-it,
+  gender-collapsed).
+- **Plural via `all-` prefix:** `all-me` (we), `all-you` (you-all),
+  `all-him` (they).
+- **`no`** — negation, preverbal.
+- **`bimeby`** — future ("gonna," "will eventually").
+- **`fini`** — completive/perfective ("already done").
+- **`s'pose`** — conditional ("if").
+- **`dis` / `dat`** — demonstratives (this/that).
+- **Reduplication** marks habitual, intensity, or "for real, no
+  exceptions": `trouble trouble` (serious danger), `same same`
+  (genuinely identical), `no no` (absolutely not).
+- **The identity suffix `-ya`** is productive — attach it to a root to
+  make a demonym/collective-identity noun: `kamen` (rock) + `-ya` =
+  **Kamenya** (Belters); `inner` + `-ya` = **Innya** (Inners,
+  generic for Earth/Mars). Extensible the same way if Earth and Mars
+  ever need splitting apart (`Erya`, etc.).
+- **No articles, ever.**
 
 ## Core vocabulary
 
-| Rohktok | English |
-|---|---|
-| `ja` / `yo` / `ten` | I-me / you / he-she-it (plural: `jawa`/`yowa`/`tenwa`) |
-| `vey` | not / no (preverbal negation) |
-| `sko` / `tol` / `zeh` / `ruk` | future / past / perfective / habitual particle |
-| `sta` | locative copula ("is [somewhere]") |
-| `vash` / `vashting` | all / everything, everyone |
-| `ku` | for / to |
-| `lenga` | if |
-| `rohkfolk` | Belters, collectively (the identity-root, parallel to `belta` — invariant, doesn't need a plural marker) |
-| `fray` | to fail / break / glitch |
-| `kreb` | work / duty / job |
-| `deng` | danger / trouble |
-| `lenz` | to listen / hear |
-| `zuv` | to know |
-| `mek` | to make / do |
+| Rock Talk | English | Source |
+|---|---|---|
+| `savvy` | know / understand | pidgin-English (Sp./Port. *sabe*) |
+| `palaver` | talk / negotiation / unresolved deal | pidgin-English (Port. *palavra*) |
+| `kaputt` | broken / failed | German |
+| `ami` | friend | French |
+| `bon` | good | French |
+| `fini` | done / completive (grammar particle, see above) | French |
+| `chai` | tea | Hindi |
+| `guru` | expert / wise one | Hindi/Sanskrit |
+| `karma` | consequence / debt owed | Hindi/Sanskrit |
+| `kamenya` | Belters, collectively | Russian *камень* (stone) + `-ya` |
+| `innya` | Inners (Earth/Mars people), collectively | English "inner" + `-ya` |
 
-## Worked comparison
+**Kept plain English, no replacement forced:** water, work,
+trouble/danger, fast, for — no candidate loanword cleared the
+recognizability-and-brevity bar, so these just stay English.
 
-RFC-2353's existing OPRA line, in Lang Belta (as currently shipped) vs.
-Rohktok:
+## Worked examples
 
-> Lang Belta: *"Where beltalowda be, relay contact gonna fokaso, gonna
-> break."*
->
-> Rohktok: *"Where rohkfolk sta, relay contact sko fray, sko break."*
+> `Him bon ami.`
+> he/she good friend
+> *"They're a good friend."*
 
-RFC-2310 §7's field note, in Rohktok (replaces the Lang Belta version
-currently live in the artifact):
+> `Dis no bon. No go tam.`
+> this not good. not go there.
+> *"This isn't good. Don't go there."*
 
-> *"Sector vey got repeater infrastructure vey lose QKD's
-> eavesdropping-detection property — lose reach, same way lose reach on
-> any physically constrained medium. This the existing admission-
-> fairness, sparse-topology deng OPRA already kreb elsewhere this
-> corpus, vey new one this document bringing. No new OPRA mechanism
-> proposed here; this note sta so parallel vey lost next time somebody
-> sko draft one."*
+> `Trouble trouble tam — no go.`
+> trouble-trouble there — not go
+> *"There's real danger over there — stay away."*
+
+> `All-me fini work. All-him no fini.`
+> we completed work. they not completed.
+> *"We're done. They're not."*
+
+> `Bimeby you savvy why.`
+> by-and-by you understand why
+> *"You'll understand why, eventually."*
+
+> `S'pose you no savvy, no go.`
+> suppose you not understand, not go
+> *"If you don't understand, don't go."*
+
+> `No palaver till him fini pay karma.`
+> not talk until he/she completed pay consequence
+> *"No negotiating until they've paid what they owe."*
+
+> `Kamenya no ami for Innya.`
+> rock-people not friend for inner-people
+> *"Belters have no love for Inners."*
+
+> `Innya no savvy kamenya. Kamenya no savvy Innya.`
+> inner-people not understand rock-people. rock-people not understand inner-people.
+> *"Inners don't get Belters. Belters don't get Inners."*
 
 ## Still open
 
-- This vocabulary is intentionally small (just enough to cover OPRA's
-  established grammatical tics — article-dropping, zero-copula,
-  tautology-closer, future/negation particles). It'll need expanding
-  the next time a document needs a Rohktok word that isn't here yet —
-  extend it here, don't invent one-off words in the document itself.
-- The actual corpus-wide swap (RFC-2353's "beltalowda," and RFC-2310's
-  field note once this is confirmed) hasn't been done yet — this file
-  locks the language itself; applying it is a separate pass.
+- Vocabulary stays small and growable — extend here when a document
+  needs a word that isn't listed, applying the filter above, rather
+  than inventing one-offs elsewhere.
+- Applying this corpus-wide (RFC-2353's "beltalowda" line, RFC-2310's
+  field note) is a separate, not-yet-done pass — this file locks the
+  language itself; applying it to existing documents comes next.
