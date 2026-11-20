@@ -358,21 +358,21 @@ The Hybrid Relay Profile combines RF and tightbeam with multi-media scheduling a
 
 *Operational Relay Authority*
 
-Where beltalowda be, relay contact gonna fokaso, gonna break. Unte pretending anything other na gonya help anybody out here.
+Where kamenya tam, relay contact bimeby kaputt, bimeby break. Pretending otherwise no help nobody out here.
 
-Relay rejoins network after gap — terásheting duting, occlusion, seleshang, DTN partition, whatever cause — relay MAY emit solo RelayAdvertisement watim, get visible again fast. After that, T_adv same as every other relay. Exception belong fo relay coming back online. Exception na fo relay looking fo excuse fo update wamotim.
+Relay rejoin network after gap — signal blackout, occlusion, handoff gap, DTN partition, whatever cause — relay MAY emit solo RelayAdvertisement again, get visible again fast. After that, T_adv same as every other relay. Exception for relay coming back online. Exception no for relay looking for excuse to update again.
 
-AdmissionPolicyHint and RelayCapabilityMask MUST NOT bias against node low-band, hardware older, node from one sector wamotim other — Authority na care what excuse come dressed like engineering. Relay pass what come, kowl fair-share. Relay quietly favoring peer high-capability while gonya advertise A2 (Open) fo kowlting else, that na degrading graceful — that lying by omission. Lying still be.
+AdmissionPolicyHint and RelayCapabilityMask MUST NOT bias against node low-band, hardware older, node from one sector more than other — Authority no care what excuse come dressed like engineering. Relay pass what come, all fair-share. Relay quietly favoring peer high-capability while bimeby advertise A2 (Open) for everything else, that no degrading graceful — that lying by omission. Lying, dat's dat.
 
-Hybrid relay in spin-shift[^8] zone SHALL degrade smooth, na sharp. Tightbeam drop sudden gonna make kowl sector go dark sili RF fallback na standing ready *before* drop, na scrambled together after. Operator plan fo that ahead of time, same as always — you plan fo break before break come.
+Hybrid relay in spin-shift[^8] zone SHALL degrade smooth, no sharp. Tightbeam drop sudden bimeby make all sector go dark s'pose RF fallback no standing ready *before* drop, no scrambled together after. Operator plan for that ahead of time, same as always — you plan for break before break come.
 
-Vacuum drift hit RF and tightbeam chain different way — RF chain drift one way, beamline drift another way — and hybrid relay serving both media got to account fo both, na just whichever medium vendor happened test more.
+Vacuum drift hit RF and tightbeam chain different way — RF chain drift one way, beamline drift another way — and hybrid relay serving both media got to account for both, no just whichever medium vendor happened test more.
 
 #### 8.5 Fair Treatment Under Automated Admission Logic
 
 *Operational Relay Authority*
 
-Same rule hold when hand on admission logic na person no more. Relay letting some model quietly favor some peer while gonya advertise A2 fo rest, that still lying by omission. Machine lying still be. Authority na care sili person or process pick favorite; result same, sector still shut out. You build logic, you answer fo what it do.
+Same rule hold when hand on admission logic no person no more. Relay letting some model quietly favor some peer while bimeby advertise A2 for rest, that still lying by omission. Machine lying, dat's dat. Authority no care s'pose person or process pick favorite; result same, sector still shut out. You build logic, you answer for what it do.
 
 ---
 
@@ -527,15 +527,15 @@ This appendix indexes the test vectors required by Section 13. It does not defin
 
 A vendor may organize its own internal test harness however it likes. This Registry organizes this appendix by section number because that is the one organizing principle guaranteed not to go stale when a vendor reorganizes theirs.
 
-*Operational Relay Authority — field note:* Test lab pass kowl four, sector still eat relay alive first winter, ya. Table tell you what to test. Table na tell you sector where relay actually sit — that ENAG job, that Authority job, table just table.
+*Operational Relay Authority — field note:* Test lab pass all four, sector still eat relay alive first winter, savvy. Table tell you what to test. Table no tell you sector where relay actually sit — that ENAG job, that Authority job, table just table.
 
 ### Appendix D — Deployment Guidance
 
 *Operational Relay Authority*
 
-Pick H_max fo sector you actually have, na sector you wish you had. Dense cluster near station, low H_max fine — kowlting close, hop na need travel far to matter. Deep Belt, sparse relay chain strung out over million kilometer, H_max too low mean advertisement die a few hop out and half the sector never see it exist at all. Na table in Appendix C tell you which sector you in. You out there. You know.
+Pick H_max for sector you actually have, no sector you wish you had. Dense cluster near station, low H_max fine — everything close, hop no need travel far to matter. Deep Belt, sparse relay chain strung out over million kilometer, H_max too low mean advertisement die a few hop out and half the sector never see it exist at all. No table in Appendix C tell you which sector you in. You out there. You know.
 
-Watch H_max after storm season too. Topology that hold steady kowl year can lose three relay to a bad conjunction and suddenly your old H_max na reach where it used to. Authority say again — tune it to now, na yesterday.
+Watch H_max after storm season too. Topology that hold steady all year can lose three relay to a bad conjunction and suddenly your old H_max no reach where it used to. Authority say again — tune it to now, no yesterday.
 
 *Environmental Neutrality Assessment Group*
 
@@ -592,9 +592,9 @@ Before RAP, relay capability was communicated informally, inconsistently, and, i
 
 *Operational Relay Authority*
 
-Before RAP, everybody build own way to say what relay do. One sector use signal strength as stand-in fo kowlting — capacity, admission, load, all one number, nobody agree what number mean. Next sector over use something else entire. Ship come through, ship guess wrong, ship lose cargo or lose contact, and everybody call it bad luck 'cause nobody wrote down what actually happen.
+Before RAP, everybody build own way to say what relay do. One sector use signal strength as stand-in for everything — capacity, admission, load, all one number, nobody agree what number mean. Next sector over use something else entire. Ship come through, ship guess wrong, ship lose cargo or lose contact, and everybody call it bad luck 'cause nobody wrote down what actually happen.
 
-RAP na fix kowlting out here. Storm still come, relay still die, sector still go quiet sometime with no warning. What RAP fix smaller, but it matter: now when relay say C2, every relay everywhere mean same thing by C2. That alone save more cargo than any signal-strength trick ever did.
+RAP no fix everything out here. Storm still come, relay still die, sector still go quiet sometime with no warning. What RAP fix smaller, but it matter: now when relay say C2, every relay everywhere mean same thing by C2. That alone save more cargo than any signal-strength trick ever did.
 
 ### Appendix I — SPERB Procedural Rules
 
@@ -614,13 +614,13 @@ RAP na fix kowlting out here. Storm still come, relay still die, sector still go
 
 ### Appendix J — Implementation Notes
 
-**J.1 Scope.** *Operational Relay Authority.* This appendix give practical note fo implementing relay in physical, non-simulation deployment — na lab, na test bench, actual sector.
+**J.1 Scope.** *Operational Relay Authority.* This appendix give practical note for implementing relay in physical, non-simulation deployment — no lab, no test bench, actual sector.
 
 **J.2 Hardware Considerations.** *Environmental Neutrality Assessment Group.* Implementations SHALL ensure timing and emission hardware conforms to the canonical interval discipline of Section 6 under the full range of thermal and power conditions the deployment will actually see, not the range the bench happened to have available that week.
 
-**J.3 Forwarding Relay Considerations.** *Operational Relay Authority.* Relay that forward — na just originate — need buffer enough to hold record long enough to decrement and re-emit without drift creeping into timing Section 6 already forbid. Cheap relay skip this, buffer too small, drop record under load 'stead of forward it clean. That na compliant fallback. That just failure wearing compliant clothes.
+**J.3 Forwarding Relay Considerations.** *Operational Relay Authority.* Relay that forward — no just originate — need buffer enough to hold record long enough to decrement and re-emit without drift creeping into timing Section 6 already forbid. Cheap relay skip this, buffer too small, drop record under load instead of forward it clean. That no compliant fallback. That just failure wearing compliant clothes.
 
-**J.4 Sector Topology Considerations.** *Operational Relay Authority.* H_max (Section 1.6) policy parameter, na hardware one, but hardware still constrain what policy realistic — relay with weak buffer, weak power budget, can't reliably forward at all, no matter what H_max sector authority pick. Know your hardware 'fore you promise your policy.
+**J.4 Sector Topology Considerations.** *Operational Relay Authority.* H_max (Section 1.6) policy parameter, no hardware one, but hardware still constrain what policy realistic — relay with weak buffer, weak power budget, can't reliably forward at all, no matter what H_max sector authority pick. Know your hardware before you promise your policy.
 
 **J.5 Update and Maintenance Considerations.** *Environmental Neutrality Assessment Group.* Firmware updates MUST NOT alter emission timing, TLV ordering, or HopCount decrement behavior. An update that "improves" any of the three has not improved this protocol. It has left it.
 
