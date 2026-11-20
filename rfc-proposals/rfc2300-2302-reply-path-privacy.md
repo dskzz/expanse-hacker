@@ -13,7 +13,7 @@ a proposed addition.
 
 A naive outbound transmission's return address carries the sender's
 full internal identity verbatim — e.g. `... from VANGUARD//
-ENGINEERING:ENG1:REACTOR:TECH-A4`. That's directly readable by the
+ENGINEERING:ENG1:REACTOR:TECH-TK421`. That's directly readable by the
 destination and anyone relaying the packet, which conflicts with a
 principle already on the books: RFC-2300 §7 already says "L1‑L exposure
 SHOULD be minimized for personal devices," and RFC-2302 §7 already
@@ -28,7 +28,7 @@ not leak location, authority, or operational metadata"), but that's a
 narrower guarantee than what's at risk here — an opaque UUID reveals
 nothing on its own, but it was never designed to carry a full
 organizational path in the first place. A human-legible ServiceChain
-like `ENGINEERING:ENG1:REACTOR:TECH-A4` reveals real internal
+like `ENGINEERING:ENG1:REACTOR:TECH-TK421` reveals real internal
 structure (department, section, role, person) that UUID-S7 doesn't
 even attempt to protect, because it's not the thing UUID-S7 replaces
 here. This is a complementary mechanism, not a duplicate.
@@ -40,7 +40,7 @@ ServiceChain identity for an opaque, session-scoped correlator before
 transmission:
 
 ```
-naive:    to BLACKBEARD//captain  from VANGUARD//ENGINEERING:ENG1:REACTOR:TECH-A4
+naive:    to BLACKBEARD//captain  from VANGUARD//ENGINEERING:ENG1:REACTOR:TECH-TK421
 private:  to BLACKBEARD//captain  from VANGUARD//7f3a-91c2-...
 ```
 

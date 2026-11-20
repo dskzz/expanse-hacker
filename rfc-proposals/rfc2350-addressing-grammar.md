@@ -111,7 +111,7 @@ outsider need to parse this" test:
 ## Worked examples (not proposed RFC text, just confirming the fix reads correctly)
 
 ```
-MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG1:Reactor:TECH-A4
+MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG1:Reactor:TECH-TK421
 MDR:<city>:BREACH-CANDY//DOME-2-6:OKONKWO
 SHIP//@tech-Kamal
 ```

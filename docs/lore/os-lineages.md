@@ -654,7 +654,7 @@ for Scrapshell:
 ### Worked examples
 
 ```
-MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG1:Reactor:TECH-A4
+MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG1:Reactor:TECH-TK421
 MDR:<city>:BREACH-CANDY//DOME-2-6:OKONKWO
 ```
 The second is a civilian residential address, not a ship — worth being
