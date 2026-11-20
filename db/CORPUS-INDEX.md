@@ -1085,7 +1085,7 @@ different from (and older than) the canonical `New RFCs/` L0-L5
 model: **NNS (Network Namespace System) → UUID → BAP (Bundle
 Addressing Protocol) → DTN routing**, with **PNS (Personal Naming
 Service)** as the identity layer, all federated under loose trust
-domains (HIGH/MEDIUM/LOW/UNKNOWN — Earth/Mars/Luna, Tycho/Ganymede/
+domains (HIGH/MEDIUM/LOW/UNKNOWN — Earth/Mars/Luna, Vesta/Ganymede/
 Ceres, independents, unverified). This whole vocabulary (NNS, BAP,
 PNS, AuthorityChain//NamespaceChain) was later replaced by the
 canonical corpus's LocationChain//ServiceChain + UUID-S7 + DRE

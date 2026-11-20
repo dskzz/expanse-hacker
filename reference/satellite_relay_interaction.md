@@ -135,7 +135,7 @@ These are the standout screen types, each a near-direct template for a hotspot p
   (RFC-2392 Session layer) — link-quality metadata literally framed as the chrome around a call.
 - **Identity dossier / ID popup** (holographic card, photo, name, status, small linked-photo
   gallery, category icon column) and **transponder identification overlay** ("TRANSPONDER
-  IDENTIFIED: MCRN DONNAGER") → template for IdentityRecord/NetworkCert display (RFC-2361) and for
+  IDENTIFIED: MRN VANGUARD") → template for IdentityRecord/NetworkCert display (RFC-2361) and for
   the "assemble a dossier from scraped indices" exploit vector (`RFC 2303 Exploits.md` #9).
 - **Transponder/vessel-ID editing panel** ("Upper Transponder Modules": editable vessel name,
   service number, Epstein drive ID, beam frequencies — shown transitioning from one ship's

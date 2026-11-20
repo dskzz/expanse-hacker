@@ -29,7 +29,7 @@ ServiceChain — as opaque cargo it never interprets).
 ## Three real inconsistencies found, and how this fixes all three
 
 **1. Separator mismatch.** RFC-2300's own illustrative examples use
-colon-separated segments (`MCRC:ALPHAFLEET:DONNAGER`), but the current
+colon-separated segments (`MRN:ALPHAFLEET:VANGUARD`), but the current
 formal ABNF (`LocationChain = LocationElement *( "/" LocationElement )`)
 mandates a single `/` instead. Once LocationChain's internal separator
 is understood as a real, load-bearing standard (not just an
@@ -111,7 +111,7 @@ outsider need to parse this" test:
 ## Worked examples (not proposed RFC text, just confirming the fix reads correctly)
 
 ```
-MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG1:Reactor:TECH-TK421
-MCR:<city>:BREACH-CANDY//DOME-2-6:KAMAL
+MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG1:Reactor:TECH-A4
+MDR:<city>:BREACH-CANDY//DOME-2-6:OKONKWO
 SHIP//@tech-Kamal
 ```

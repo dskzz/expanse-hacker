@@ -1532,9 +1532,9 @@ Consequences:
 - Authority‑Plane intervention
     
 
-## **A.2 The Tycho Diagnostic Cascade**
+## **A.2 The Perihelion Diagnostic Cascade**
 
-A Tycho‑based research installation forwarded a diagnostic bundle containing secondary data from three upstream relays. The bundle included:
+A Perihelion‑based research installation forwarded a diagnostic bundle containing secondary data from three upstream relays. The bundle included:
 
 - ephemeris deltas
     
