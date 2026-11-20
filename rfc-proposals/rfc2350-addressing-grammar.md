@@ -69,7 +69,7 @@ syntactically following ServiceChain rather than nested inside it:
 `Address = LocationChain "//" ServiceChain [ "@" PNI ]`. This
 satisfies "the user segmented totally" literally — PNI is a fourth
 field, not a ServiceElement — and gives a clean minimal-address form
-for a single-user console: `SHIP//@tech-Kamal` (empty ServiceChain,
+for a single-user console: `SHIP//@tech-Okonkwo` (empty ServiceChain,
 straight to the PNI).
 
 **3. Dropped chainless-PNI capability.** RFC-2300 §3 defines PNI as
@@ -113,5 +113,5 @@ outsider need to parse this" test:
 ```
 MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG1:Reactor:TECH-TK421
 MDR:<city>:BREACH-CANDY//DOME-2-6:OKONKWO
-SHIP//@tech-Kamal
+SHIP//@tech-Okonkwo
 ```

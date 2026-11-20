@@ -92,7 +92,7 @@ panel UI, rather than treating the vault copies as the asset source of truth.
 - **Dense monospace data panels**: labeled numeric/hex readouts (coordinates, message IDs, drive
   telemetry), not prose — panels read as instrument clusters, not menus.
 - **Color-coded by faction/context**, not by severity alone: blue-grey for UN/civilian comm log
-  viewers, red for Martian/military control grids, pink/magenta for MCRN missile/weapons systems,
+  viewers, red for Martian/military control grids, pink/magenta for MRN missile/weapons systems,
   green phosphor for engineering/drive diagnostics, cyan for UNN science/scanning stations. A
   given hotspot's panel color should probably follow *whose equipment it is* (operator domain /
   trust domain, which SolNet already models via RFC-2362 Trust Domains) rather than a single
