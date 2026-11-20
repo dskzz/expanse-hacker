@@ -8,6 +8,10 @@ Non-canonical GM/design reference material, not part of the in-fiction
 RFC corpus in `docs/rfc-html/`. Kept as plain `.md` here — no styled HTML
 rendering, unlike the RFCs themselves.
 
-The canonical source of record for any companion document is always its
-Markdown file under `docs/vault/RFC Companion/`. A file here is a copy,
-kept in sync manually.
+This folder is now the canonical source of record for companion documents
+in its own right.
+
+(Historical note: this used to point at `docs/vault/RFC Companion/`. The
+vault — both the copy that was checked into this repo and the real one on
+the user's own machine — is frozen historical material from the project's
+original Obsidian/GPT-era notes and is never edited by this repo.)
