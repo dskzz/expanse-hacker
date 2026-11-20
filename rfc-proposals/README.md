@@ -7,7 +7,7 @@ versus **officially proposed changes to the actual RFC materials**
 
 ## Why this is its own directory, not a subfolder of `docs/`
 
-The root `README.md`'s existing rule for `docs/vault/New RFCs/` and
+The root `README.md`'s existing rule for `docs/rfcs/` and
 `docs/vault/RFCs/` is deliberately strict: **surgical corrections
 only** — typo/consistency fixes, never rewrites, tone changes, or
 restructuring — and adding or obsoleting an entire RFC needs Dan's

@@ -6,7 +6,7 @@ a Martian tech wants to reach "Blackbeard actual" (a fleet commander),
 a specific known ServiceChain path — without a live round-trip lookup,
 which is impossible at DTN light-lag scale (a single query-then-message
 exchange could be multiple hours per hop). Targets
-`docs/vault/New RFCs/RFC 2300 - Solnet Terms and Concepts.md` §5.3 —
+`docs/rfcs/RFC 2300 - Solnet Terms and Concepts.md` §5.3 —
 that file is untouched; this describes the proposed extension.
 
 ## What already exists and doesn't need inventing

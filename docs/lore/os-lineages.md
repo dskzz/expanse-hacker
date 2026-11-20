@@ -252,7 +252,7 @@ record, not the requirement: a successful `claim root --union-vote`
 gets appended as a real **multisig ledger entry** — N genuine
 co-signatures from the seconding union members, hash-chained for
 tamper detection — using the **Local ledgers** deployment mode
-`docs/vault/New RFCs/RFC 2302 - Solnet LEdger Spec.md` §9 already
+`docs/rfcs/RFC 2302 - Solnet LEdger Spec.md` §9 already
 specifies for exactly this station-scale case (not yet converted to a
 `db/` schema, but real, drafted content, not invented for this). The
 entry carries a TTL per RFC-2302 §6's own "cache TTL and freshness

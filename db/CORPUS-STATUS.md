@@ -8,7 +8,7 @@ time.
 
 ## Two RFC folders, not two eras of the same content
 
-- **`docs/vault/New RFCs/`** — current, actively drafted, follows the
+- **`docs/rfcs/`** — current, actively drafted, follows the
   numeric-block plan in `New RFCs/TODOv2.md` (L0 2300–2319, L1
   2350–2359, Authority Plane 2360–2389, Namespace Plane 2390–2419,
   Cross-plane/Operational 2420–2449, Security/Governance 2450–2479,

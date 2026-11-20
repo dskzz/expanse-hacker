@@ -17,5 +17,5 @@ Each file has three parts:
   cover, and which other document actually owns that piece.
 
 The canonical source of record for any RFC is always its Markdown file
-under `docs/vault/New RFCs/`. These are a reader's digest of that
+under `docs/rfcs/`. These are a reader's digest of that
 source, kept in sync manually — if the two ever disagree, the RFC wins.

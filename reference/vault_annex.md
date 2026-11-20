@@ -154,7 +154,7 @@ though — kept the proposal file as a stub in case a genuine session/handshake 
 
 ### 6. RFC-2300 §§8–15 may not belong to RFC-2300
 
-**Where it'd go:** `docs/vault/New RFCs/RFC 2300 - Solnet Terms and Concepts.md` — a possible
+**Where it'd go:** `docs/rfcs/RFC 2300 - Solnet Terms and Concepts.md` — a possible
 content/assembly error within the file itself, not a missing-content gap.
 
 **Why it matters:** flagged by Gary 2026-09-04 while converting the corpus to schemas — §§8–15 of

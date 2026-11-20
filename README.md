@@ -75,10 +75,11 @@ Two things worth opening directly:
   is the cleanest example: it walks through privilege-escalation
   failure modes (a single cheap local compromise implying trust across
   an entire domain) that follow directly from the RFC's own trust
-  model, section by section. (The vault under
-  [`docs/vault/New RFCs/`](docs/vault/New%20RFCs/) and
-  [`docs/vault/RFC Companion/`](docs/vault/RFC%20Companion/) is the
-  canonical source for both — these are read-friendly copies.)
+  model, section by section. (`docs/rfcs/` is the actual canonical
+  Markdown source for the RFCs themselves; `docs/rfc-html/` and
+  `docs/rfc-companions/` are both derived from it. `docs/vault/` is a
+  frozen historical snapshot — same status as the real Obsidian vault
+  on the user's own machine — and is never edited by this repo.)
 - **The Console** — a real nix-like shell, not a themed textbox.
   [`code/scripts/tools/Console.gd`](code/scripts/tools/Console.gd) is
   the dispatcher: a VFS-backed filesystem with real `owner`/`group`/
@@ -92,14 +93,16 @@ Two things worth opening directly:
 ## Repo layout
 
 - `docs/` — architecture and worldbuilding design docs (Gary/design
-  session's territory), plus `docs/vault/` — a mirrored copy of the
-  SolNet RFC corpus and companion docs (source: an Obsidian vault kept
-  by the user). **The RFCs in `docs/vault/New RFCs/` and
-  `docs/vault/RFCs/` get surgical corrections only** — typo/consistency
-  fixes, never rewrites, tone changes, or restructuring. Adding or
-  obsoleting an entire RFC needs the user's explicit sign-off first,
-  every time. Everything else in `docs/vault/` (Notes, RFC Companion
-  exploit briefs, history, voices) is normal editable content.
+  session's territory). `docs/rfcs/` is the canonical Markdown source
+  for the SolNet RFC corpus; `docs/rfc-html/` (styled renderings) and
+  `docs/rfc-companions/` (GM/design exploit material) are both derived
+  from it. **RFCs in `docs/rfcs/` get surgical corrections only** —
+  typo/consistency fixes, never rewrites, tone changes, or
+  restructuring, unless the user explicitly signs off on something
+  larger first. `docs/vault/` is a frozen historical snapshot of the
+  project's original Obsidian/GPT-era notes (same status as the real
+  vault on the user's own machine) and is never edited by this repo —
+  not even the surgical corrections above apply to it.
   `docs/systems/` is the conceptual counterpart to `reference/`'s
   practical/implementation notes — same machines, two angles; read
   both.
@@ -115,8 +118,8 @@ Two things worth opening directly:
   working on this repo.
 - `rfc-proposals/` — **officially proposed changes to the RFC
   materials themselves** (changes, removals, additions), kept separate
-  from both `docs/vault/`'s protected RFC text and `docs/`'s game-design
+  from both `docs/rfcs/`'s protected RFC text and `docs/`'s game-design
   notes. A proposal here is a draft change request for the user's
-  review — nothing in this directory edits `docs/vault/` directly, and
+  review — nothing in this directory edits `docs/rfcs/` directly, and
   the existing surgical-corrections-only rule above still governs the
   actual RFC text.

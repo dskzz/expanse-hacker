@@ -3,7 +3,7 @@
 Status: proposed 2026-09-05, from a design conversation working through
 concrete cross-domain addressing scenarios (a Martian warship, a
 civilian residential address, a pirate fleet). Targets
-`docs/vault/New RFCs/RFC 2350 - SolNet Canonical Addressing Standard.md`
+`docs/rfcs/RFC 2350 - SolNet Canonical Addressing Standard.md`
 §4 (grammar) — that file is untouched; this describes the proposed
 change for Dan's review.
 

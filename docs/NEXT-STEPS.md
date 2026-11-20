@@ -1,8 +1,8 @@
 # Next Steps — RFC Work + System-Building TODO
 
 **Built 2026-09-05**, from a full top-to-bottom read-through of the
-SolNet RFC corpus (`docs/vault/New RFCs/`, `docs/vault/RFCs/`
-old/superseded, `docs/vault/RFC Companion/`, and all three TODO
+SolNet RFC corpus (`docs/rfcs/`, `docs/vault/RFCs/`
+old/superseded, `docs/rfc-companions/`, and all three TODO
 documents). See `db/CORPUS-INDEX.md` for the detailed per-RFC content
 and inconsistency findings this is built from, and
 `db/CORPUS-STATUS.md` for RFC→schema conversion tracking.
@@ -53,10 +53,10 @@ entry.
 
 ### A3. Draft RFC-2362 (Trust Domains and Authority Policy) — DONE, graduated 2026-09-09
 
-Drafted, iterated, and promoted: `docs/vault/New RFCs/RFC 2362 - Trust
+Drafted, iterated, and promoted: `docs/rfcs/RFC 2362 - Trust
 Domains and Authority Policy.md`, static reader-facing HTML at
 `docs/rfc-html/RFC-2362-Trust-Domains-and-Authority-Policy.html`, and a
-companion doc at `docs/vault/RFC Companion/RFC 2362 - Trust Domains and
+companion doc at `docs/rfc-companions/RFC 2362 - Trust Domains and
 Authority Policy.md` (exploits, mission hooks, tools, and the schemas
 still to craft).
 
@@ -79,7 +79,7 @@ table). RFC-2363 (Track A4) is now unblocked.
 
 ### A4. Draft RFC-2363 (Directory and Routing Endpoints) — DONE, graduated 2026-11-19
 
-Drafted, iterated, and promoted: `docs/vault/New RFCs/RFC 2363 -
+Drafted, iterated, and promoted: `docs/rfcs/RFC 2363 -
 Directory and Routing Endpoints.md`, static HTML at `docs/rfc-html/
 RFC-2363-Directory-and-Routing-Endpoints.html`, and a plain-language
 write-up with exploit hints at `docs/plain-language/
@@ -151,7 +151,7 @@ this one RFC.
 Not yet built: a repeatable pipeline instead of a one-off conversion
 script, and a real home for the output — something like a `build/` or
 `docs/` folder (naming TBD) that holds the generated review pages,
-distinct from the authored Markdown in `docs/vault/New RFCs/` and
+distinct from the authored Markdown in `docs/rfcs/` and
 `docs/vault/Notes/`. Worth deciding, when this gets picked up: whether
 that folder holds checked-in generated HTML, or is purely a build
 artifact regenerated on demand from the Markdown source. Low priority,
@@ -280,7 +280,7 @@ a puzzle, not just the correct-by-default path.
 
 ### B7. Convert the RFC Companion content that's already game-ready
 
-`docs/vault/RFC Companion/` has substantial, largely implementation-
+`docs/rfc-companions/` has substantial, largely implementation-
 ready puzzle/exploit/mission design for RFCs that are drafted but not
 yet converted to `db/` content:
 

@@ -1,7 +1,7 @@
 # SolNet RFC Corpus — AI-Friendly Index
 
-Status: built 2026-09-05, full read-through of `docs/vault/New RFCs/`,
-`docs/vault/RFCs/` (superseded), and `docs/vault/RFC Companion/`. Purpose:
+Status: built 2026-09-05, full read-through of `docs/rfcs/`,
+`docs/vault/RFCs/` (superseded), and `docs/rfc-companions/`. Purpose:
 let Gary and Sid answer "what does RFC-XXXX actually say about Y" from
 this file first, without re-reading the source RFC (some of which run
 5,000-9,000 lines), only falling back to the full text when a design
@@ -12,9 +12,9 @@ tracks conversion status to `db/` schemas) — this index is about *what
 the RFCs say*; CORPUS-STATUS.md is about *what's been turned into
 game content*. Read both when doing corpus work.
 
-Full read-through complete as of 2026-09-05: `docs/vault/New RFCs/`
+Full read-through complete as of 2026-09-05: `docs/rfcs/`
 (all 15 documents + the `wokring/` subfolder), `docs/vault/RFCs/` (all
-16 old/superseded documents), `docs/vault/RFC Companion/` (all 13
+16 old/superseded documents), `docs/rfc-companions/` (all 13
 files), and all three TODO documents. See `docs/NEXT-STEPS.md` for the
 consolidated priority list and implementation TODO this read-through
 produced.
@@ -484,7 +484,7 @@ Claude Artifact, iterate against direct feedback, promote to Markdown
 once approved). A styled, read-only HTML rendering for human readers
 lives at `docs/rfc-html/RFC-2353-L1-Relay-Advertisement-Protocol.html`;
 a game-design companion doc (exploits, missions, software, structures)
-is at `docs/vault/RFC Companion/RFC 2353 - L1 Relay Advertisement
+is at `docs/rfc-companions/RFC 2353 - L1 Relay Advertisement
 Protocol.md`.
 
 Defines the Relay Advertisement Protocol (RAP): the required/optional
@@ -914,7 +914,7 @@ via the live-artifact review workflow (after RFC-2353). A styled HTML
 rendering for human readers lives at `docs/rfc-html/
 RFC-2362-Trust-Domains-and-Authority-Policy.html`; a game-design and
 implementation companion doc (exploits, tools, and — new this time —
-concrete `db/` schemas to craft) is at `docs/vault/RFC Companion/RFC
+concrete `db/` schemas to craft) is at `docs/rfc-companions/RFC
 2362 - Trust Domains and Authority Policy.md`.
 
 Resolves the corpus's longest-standing open design blocker: RFC-2302's
@@ -980,7 +980,7 @@ converged on Directory & Routing Endpoints instead — DRE wins, per
 `docs/rfc-html/RFC-2363-Directory-and-Routing-Endpoints.html`; a
 plain-language companion with exploit hints is at `docs/plain-
 language/RFC-2363-Plain-Language.md`. No formal exploit/tools
-companion doc exists yet under `docs/vault/RFC Companion/` or
+companion doc exists yet under `docs/rfc-companions/` or
 `docs/rfc-companions/` — that's a gap worth closing alongside the
 other graduated RFCs' companions.
 
@@ -1166,7 +1166,7 @@ either), rather than inventing a new mechanism from scratch.
 
 ---
 
-## `docs/vault/RFC Companion/` folder (13 files, 4163 lines total)
+## `docs/rfc-companions/` folder (13 files, 4163 lines total)
 
 **Status:** all 13 read (full for the 8 small ones under 150 lines;
 targeted sampling of the front matter + first major section for the
@@ -1308,7 +1308,7 @@ found in the normative RFC text itself.
 
 ---
 
-## `docs/vault/New RFCs/TODO*.md` — the three planning documents
+## `docs/rfcs/TODO*.md` — the three planning documents
 
 **Status:** all three read (`TODOv2.md` in full, 348 lines; `TODO -
 Modules.md` in full, 462 lines; `TODO - ORIGINAL.md` sampled in depth
