@@ -1,4 +1,4 @@
-# **A list of 100 example networks (UN, MCR, Belter, Corp, Pirate)**
+# **A list of 100 example networks (UN, MDR, Belter, Corp, Pirate)**
 
 This is a full, rich catalog you can drop directly into your game world. It’s organized by faction/type so you can plug them into missions, routing tables, or lore.
 
@@ -49,49 +49,49 @@ Chaotic, bureaucratic, sprawling, full of legacy systems.
 20. UN-OPS-GEO_SYNCH
     
 
-# 🔴 **2. MCR Networks (20 examples)**
+# 🔴 **2. MDR Networks (20 examples)**
 
 Orderly, hierarchical, militarized, predictable.
 
-21. MCR-COMMAND-ALPHA
+21. MDR-COMMAND-ALPHA
     
-22. MCR-COMMAND-BETA
+22. MDR-COMMAND-BETA
     
-23. MCR-NAV-SECURE
+23. MDR-NAV-SECURE
     
-24. MCR-NAV-OMEGA
+24. MDR-NAV-OMEGA
     
-25. MCR-PD-OMEGA
+25. MDR-PD-OMEGA
     
-26. MCR-RESEARCH-BETA
+26. MDR-RESEARCH-BETA
     
-27. MCR-RESEARCH-OMEGA
+27. MDR-RESEARCH-OMEGA
     
-28. MCR-OPS-DEIMOS
+28. MDR-OPS-DEIMOS
     
-29. MCR-OPS-PHOBOS
+29. MDR-OPS-PHOBOS
     
-30. MCR-ICE-LOGISTICS
+30. MDR-ICE-LOGISTICS
     
-31. MCR-TRAFFIC-CORE
+31. MDR-TRAFFIC-CORE
     
-32. MCR-TRAFFIC-2
+32. MDR-TRAFFIC-2
     
-33. MCR-AGRI-DOME
+33. MDR-AGRI-DOME
     
-34. MCR-ENG-CORE
+34. MDR-ENG-CORE
     
-35. MCR-ENG-REDLINE
+35. MDR-ENG-REDLINE
     
-36. MCR-SEC-INTEL
+36. MDR-SEC-INTEL
     
-37. MCR-SEC-FORENSICS
+37. MDR-SEC-FORENSICS
     
-38. MCR-TRAINING-CADET
+38. MDR-TRAINING-CADET
     
-39. MCR-RELAY-L2
+39. MDR-RELAY-L2
     
-40. MCR-RELAY-L1
+40. MDR-RELAY-L1
     
 
 # 🛰️ **3. Commercial Networks (20 examples)**
@@ -235,11 +235,11 @@ Chaotic, spoofed, onion‑routed, ephemeral.
     
 101. IND-UNDERDECK-NET
     
-102. IND-OPA-FREEDOM-3
+102. IND-ASA-FREEDOM-3
     
-103. IND-OPA-SHADOWNET
+103. IND-ASA-SHADOWNET
     
-104. IND-OPA-OPS
+104. IND-ASA-OPS
     
 105. IND-ICEPIRATE-ALPHA
     

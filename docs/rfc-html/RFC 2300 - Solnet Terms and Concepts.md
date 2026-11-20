@@ -29,7 +29,7 @@ Implementations **MUST** support UUID‑S7 as the primary NetworkID **for ledger
 Anything else invites identity collisions and long nights in audit review.
 ### LocationChain
 
-Left‑hand textual chain naming identity authority, trust domain, and coarse location semantics (example: `MCRC:ALPHAFLEET:DONNAGER`). LocationChain entries are paired cryptographically with UUID‑S7 anchors. This is the part of the address that tells the network who is speaking and roughly where they belong.
+Left‑hand textual chain naming identity authority, trust domain, and coarse location semantics (example: `MRN:ALPHAFLEET:VANGUARD`). LocationChain entries are paired cryptographically with UUID‑S7 anchors. This is the part of the address that tells the network who is speaking and roughly where they belong.
 
 ### ServiceChain
 

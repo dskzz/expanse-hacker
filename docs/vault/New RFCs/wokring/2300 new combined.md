@@ -34,7 +34,7 @@ Anything else invites identity collisions, reconciliation nightmares, and long n
 
 ### LocationChain
 
-Left‑hand textual chain naming identity authority, trust domain, and coarse location semantics (example: `MCRC:ALPHAFLEET:DONNAGER`). LocationChain entries are paired cryptographically with UUID‑S7 anchors.
+Left‑hand textual chain naming identity authority, trust domain, and coarse location semantics (example: `MRN:ALPHAFLEET:VANGUARD`). LocationChain entries are paired cryptographically with UUID‑S7 anchors.
 
 This is the part of the address that tells the network who is speaking and roughly where they belong. It is not a routing table, and it is not a service path, no matter how tempting that might be.
 

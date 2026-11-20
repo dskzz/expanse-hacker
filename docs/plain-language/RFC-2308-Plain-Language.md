@@ -24,7 +24,7 @@ The key pieces:
 - **Domain Privacy Profiles.** Every faction runs a different exposure
   policy — tight and heavily regulated (UN-style), military-strict
   (Mars), loosely enforced (Belter), or somewhere in between (mixed
-  corporate/OPA) — and a DRE is supposed to know which profile it's
+  corporate/OSL) — and a DRE is supposed to know which profile it's
   talking to before deciding what to show.
 - **A PolicyRecord spells out, field by field, what's sensitive and
   what isn't.** Classification, exposure level, suppression rules,

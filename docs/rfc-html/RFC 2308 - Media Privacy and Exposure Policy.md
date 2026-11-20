@@ -12,7 +12,7 @@ The policies defined here restrict the visibility of fields that enable cross‑
 
 RFC‑2308 removes that belief.
 
-The PolicyRecord schema formalizes the minimum metadata that may be emitted and the conditions under which additional fields may be exposed. Domain privacy profiles (UN, MDR, OPA, Belter) are defined to ensure that exposure decisions are deterministic and not subject to operator preference or domain‑level negotiation. L1 suppression rules are integrated directly into the policy to prevent accidental leakage through lower‑layer behavior. DRE access controls are specified to ensure that visibility is granted only when provenance, authorization, and necessity are all verifiable and auditable.
+The PolicyRecord schema formalizes the minimum metadata that may be emitted and the conditions under which additional fields may be exposed. Domain privacy profiles (UN, MDR, OSL, Belter) are defined to ensure that exposure decisions are deterministic and not subject to operator preference or domain‑level negotiation. L1 suppression rules are integrated directly into the policy to prevent accidental leakage through lower‑layer behavior. DRE access controls are specified to ensure that visibility is granted only when provenance, authorization, and necessity are all verifiable and auditable.
 
 This document assumes the malicious motives inherent in any domain, vendor, or operator when visibility is left unregulated. It assumes that exposed metadata will be aggregated, correlated, and used to compromise systems. It assumes that operators will bypass restrictions when they believe it will save them time.
 
@@ -77,7 +77,7 @@ Any field that can be correlated across domains is considered an exposure surfac
 
 ## **1.4 Domain Privacy Profiles**
 
-A **Domain Privacy Profile** defines the maximum permissible visibility for a given domain (UN, MDR, OPA, Belter). These profiles constrain what metadata a DRE may expose to that domain. Profiles are deterministic and non‑negotiable. Operator preference, domain‑level agreements, and local policy cannot override them.
+A **Domain Privacy Profile** defines the maximum permissible visibility for a given domain (UN, MDR, OSL, Belter). These profiles constrain what metadata a DRE may expose to that domain. Profiles are deterministic and non‑negotiable. Operator preference, domain‑level agreements, and local policy cannot override them.
 
 Profiles exist because unregulated visibility has repeatedly resulted in cross‑domain correlation attacks, operational inference, and compromise of essential systems. The profiles formalize the minimum level of opacity required to prevent recurrence.
 
@@ -345,7 +345,7 @@ Suppression rules must be deterministic. Operator‑initiated overrides are proh
 
 ### **3.2.5** `profile_binding`
 
-The domain privacy profiles (UN, MDR, OPA, Belter) that determine visibility. Each field must specify:
+The domain privacy profiles (UN, MDR, OSL, Belter) that determine visibility. Each field must specify:
 
 - which domains may see it
     
@@ -543,9 +543,9 @@ The MDR profile assumes:
 
 The MDR profile is designed to prevent any external visibility into military posture or movement.
 
-## **4.5 OPA Profile (Mixed Compliance)**
+## **4.5 OSL Profile (Mixed Compliance)**
 
-The OPA profile assumes:
+The OSL profile assumes:
 
 - heterogeneous infrastructure
     
@@ -558,7 +558,7 @@ The OPA profile assumes:
 
 **Visibility Class:** Moderate‑Low **Allowed Fields:** minimal diagnostic fields **Restricted Fields:** ephemeris, pointing vectors, timing signatures **Audit Requirements:** record and forward **Provenance Requirements:** full identity **Retention Constraints:** minimal, purge recommended
 
-The OPA profile reflects a domain where compliance is possible but not guaranteed.
+The OSL profile reflects a domain where compliance is possible but not guaranteed. This is not a drafting failure to be tightened in a later revision: the Outer System League declares this profile and expects stations recognizing its authority to honor it, but it has no enforcement reach over Anti-Solar Alliance-aligned stations, which answer to no declared privacy profile at all. A receiving DRE cannot tell, from the profile alone, which kind of station it is actually talking to — a real, named uncertainty, not an oversight this document is responsible for resolving.
 
 ## **4.6 Belter Profile (Low Regulation)**
 

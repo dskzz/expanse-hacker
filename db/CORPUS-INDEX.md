@@ -193,7 +193,7 @@ already in `rfc-proposals/rfc2350-addressing-grammar.md`:
    boundary is mandatory. Parsers MUST enforce a single `//`.").
 2. **ProvenancePointer is mandatory here**, appended to every
    LocationChain — but RFC-2300's own worked examples elsewhere in the
-   same document (`MCRC:ALPHAFLEET:DONNAGER`) have no ProvenancePointer
+   same document (`MRN:ALPHAFLEET:VANGUARD`) have no ProvenancePointer
    at all, and RFC-2350's version makes it explicitly optional. Taken
    literally, this grammar makes RFC-2300's own examples non-compliant.
 3. **`TLVChar` permits a literal `/`** inside a TLV value — a real risk
@@ -687,13 +687,13 @@ actual minority usage here, not the rest of the corpus.
 
 **Real content, reusable for game design almost as-is:**
 PolicyRecord schema (§3) and Domain Privacy Profiles per faction —
-**UN (high regulation), MDR (military regulation), OPA (mixed
+**UN (high regulation), MDR (military regulation), OSL (mixed
 compliance), Belter (low regulation)** — a real, already-drafted
 four-way regulatory split that's a natural narrative complement to
 this project's own four *OS-lineage* root models (different axis:
 this is about metadata-exposure policy per political faction, not
 authentication/authorization per OS lineage, but the factions line up
-suggestively — UN≈Earthstock, MDR≈Mars, Belter≈Scrapshell, OPA/
+suggestively — UN≈Earthstock, MDR≈Mars, Belter≈Scrapshell, OSL/
 Corporate less directly mapped). A compliant **DRE state machine**
 (Appendix E): INIT → VERIFY → EVALUATE → (EXPOSE | SUPPRESS) → AUDIT,
 with FAILSAFE as the universal fallback from any failure and SUPPRESS
@@ -1140,7 +1140,7 @@ either), rather than inventing a new mechanism from scratch.
    shape, same "left side is global/who, right side is local/what"
    split, same PNI shorthand (`<Identity>@<AuthorityChain>`), even the
    same worked examples reused nearly verbatim in the canonical
-   RFC-2350 (`MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG-1:Reactor`).
+   RFC-2350 (`MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG-1:Reactor`).
    Not a defect — flagged here as confirmation, from primary source
    material, of what this session's addressing design conversation
    with Dan had already inferred and built `rfc-proposals/

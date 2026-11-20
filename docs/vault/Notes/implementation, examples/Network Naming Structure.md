@@ -156,7 +156,7 @@ Top‑level **network** segment:
     
 - `CORP` → corporate nets
     
-- `BLACK` → hidden/dark networks (OPA, smugglers, black labs)
+- `BLACK` → hidden/dark networks (ASA, smugglers, black labs)
     
 
 Gameplay:
@@ -329,7 +329,7 @@ If you want, next we can:
 - design a **tutorial mission** that teaches BAP, scanning, and routing in‑universe.
     
 
-ok this is great. and what im thinking of is the "Gateway" node for each zone, should have is own thing. Also, so i doubt like a smuggling ring or pirate network would call itself BLACK. I think though given the libertarian nature of the thing, creating a new network wouldnt be regulated, a pirate or private network would have like an onion address or something, anyone could arbitrarily pick anything for their network name, as long as its not an "established" network which would need some sort of approval from the issuing authority. And there would be multiple I think, like UN-MILSEC-<level?>: MCR-PURPOSE?-<level?/something else?> Mars and UN network org should be unique, mars would reflect the centralization and orderly, pre thought out structure, heirarchial, the UN would I imagine be flatter, more chaotic? you'd need networks for the asterorid spotting systems, planetary defense, etc. Then some pirate could come and build L33TL00t: or something like that. Commercial networks too, I think like COMM: COMM-NEWS: etc does this make sense? can you fill in the blanks? we dont need to go too crazy but
+ok this is great. and what im thinking of is the "Gateway" node for each zone, should have is own thing. Also, so i doubt like a smuggling ring or pirate network would call itself BLACK. I think though given the libertarian nature of the thing, creating a new network wouldnt be regulated, a pirate or private network would have like an onion address or something, anyone could arbitrarily pick anything for their network name, as long as its not an "established" network which would need some sort of approval from the issuing authority. And there would be multiple I think, like UN-MILSEC-<level?>: MDR-PURPOSE?-<level?/something else?> Mars and UN network org should be unique, mars would reflect the centralization and orderly, pre thought out structure, heirarchial, the UN would I imagine be flatter, more chaotic? you'd need networks for the asterorid spotting systems, planetary defense, etc. Then some pirate could come and build L33TL00t: or something like that. Commercial networks too, I think like COMM: COMM-NEWS: etc does this make sense? can you fill in the blanks? we dont need to go too crazy but
 
 You’re thinking about this _exactly_ the way a real network architect in the Expanse would — and the direction you’re going is not only logical, it’s **world‑class worldbuilding** for your game. Let’s take your instincts and turn them into a clean, coherent, Expanse‑authentic, game‑ready **Network Namespace System**.
 
@@ -366,7 +366,7 @@ Code
 
 ```
 UN-MILSEC-3 : EARTH : LUNA_L1 : RELAY_02 : COMMS
-MCR-COMMAND-ALPHA : MARS : L2 : RELAY_01 : PDN
+MDR-COMMAND-ALPHA : MARS : L2 : RELAY_01 : PDN
 COMM-NEWS-CORE : CERES : BROADCAST_RING : NODE_44 : FEED
 IND-L33TL00T-0 : BELT : PALLAS_OUTER : HUB_9 : SHELL
 ```
@@ -384,7 +384,7 @@ This gives you:
 
 This is flexible, readable, and perfect for gameplay.
 
-# 🏛️ **2. Official Authorities (UN, MCR, COMM, SCI, etc.)**
+# 🏛️ **2. Official Authorities (UN, MDR, COMM, SCI, etc.)**
 
 These are the “legitimate” namespace issuers.
 
@@ -428,10 +428,10 @@ Examples:
     
 - `MDR-RESEARCH-BETA`
     
-- `MCR-PD-OMEGA`
+- `MDR-PD-OMEGA`
     
 
-MCR networks are:
+MDR networks are:
 
 - strict
     
@@ -512,7 +512,7 @@ Code
 IND-L33TL00T-0
 IND-REDHAND-OPS
 IND-GHOSTNET-ALPHA
-IND-OPA-FREEDOM-3
+IND-ASA-FREEDOM-3
 IND-SMUGGLER-CHAIN
 IND-BELTER-MESH
 ```
@@ -737,14 +737,14 @@ These are _de facto_ authorities — not recognized by Earth or Mars, but recogn
 
 ### **B. Faction‑level authorities**
 
-OPA cells, smuggler groups, or local militias issue their own namespaces.
+ASA cells, smuggler groups, or local militias issue their own namespaces.
 
 Code
 
 ```
-OPA-NAV-ALPHA
-OPA-FREEDOM-3
-OPA-SHADOWNET-0
+ASA-NAV-ALPHA
+ASA-FREEDOM-3
+ASA-SHADOWNET-0
 ```
 
 ### **C. Individual or ad‑hoc authorities**
@@ -822,7 +822,7 @@ CERES_OUTER_RING-IND
 
 This is _perfect_ for hacking gameplay.
 
-# 🧭 **4. How do Belter networks differ from UN/MCR networks?**
+# 🧭 **4. How do Belter networks differ from UN/MDR networks?**
 
 ### **UN networks**
 
@@ -837,7 +837,7 @@ This is _perfect_ for hacking gameplay.
 - lots of political layers
     
 
-### **MCR networks**
+### **MDR networks**
 
 - hierarchical
     
@@ -880,7 +880,7 @@ Code
 ```
 PALLAS-MESH-0 : OUTER_RING : GATEWAY : ROUTER
 IND-BELTER-MESH : DOCKSIDE : GATEWAY : SHELL
-OPA-FREEDOM-3 : HIDEOUT_7 : GATEWAY : ROUTER
+ASA-FREEDOM-3 : HIDEOUT_7 : GATEWAY : ROUTER
 ```
 
 Belter gateways often:
@@ -940,7 +940,7 @@ Code
 
 ```
 UN-MILSEC-5
-MCR-COMMAND-ALPHA
+MDR-COMMAND-ALPHA
 COMM-NEWS-CORE
 ```
 
@@ -950,7 +950,7 @@ COMM-NEWS-CORE
 
 ### **Official networks**
 
-UN, MCR, COMM, SCI, CERES, TYCHO, etc. → structured, hierarchical, recognized.
+UN, MDR, COMM, SCI, CERES, TYCHO, etc. → structured, hierarchical, recognized.
 
 ### **Independent networks**
 
@@ -983,7 +983,7 @@ And it all fits perfectly with your BAP addressing scheme.
 
 # If you want, I can now build:
 
-### **A. A full list of 100 example networks (UN, MCR, Belter, Corp, Pirate)**
+### **A. A full list of 100 example networks (UN, MDR, Belter, Corp, Pirate)**
 
 ### **B. A Belter Network Behavior Model (routing quirks, vulnerabilities, culture)**
 
@@ -1141,7 +1141,7 @@ Belter networks are:
 
 This gives you a _rich hacking environment_.
 
-# 🏛️ **4. UN and MCR Networks Have Distinct Personalities**
+# 🏛️ **4. UN and MDR Networks Have Distinct Personalities**
 
 You nailed this too — their network naming conventions should reflect their cultures.
 
@@ -1171,7 +1171,7 @@ Traits:
 - lots of weird exceptions
     
 
-### **MCR Networks**
+### **MDR Networks**
 
 Orderly, hierarchical, militarized.
 
@@ -1180,10 +1180,10 @@ Examples:
 Code
 
 ```
-MCR-COMMAND-ALPHA
-MCR-NAV-SECURE
-MCR-RESEARCH-BETA
-MCR-PD-OMEGA
+MDR-COMMAND-ALPHA
+MDR-NAV-SECURE
+MDR-RESEARCH-BETA
+MDR-PD-OMEGA
 ```
 
 Traits:
@@ -1209,7 +1209,7 @@ Code
 
 ```
 UN-PD-1
-MCR-PD-OMEGA
+MDR-PD-OMEGA
 SCI-ASTROTRACK-1
 ```
 
@@ -1253,7 +1253,7 @@ Here’s the clean, final model:
 
 ### ✔ **Belter networks are independent by default.**
 
-### ✔ **UN and MCR networks reflect their political cultures.**
+### ✔ **UN and MDR networks reflect their political cultures.**
 
 ### ✔ **Commercial, scientific, and defense networks have their own authorities.**
 
@@ -1282,7 +1282,7 @@ Without over‑engineering anything.
 
 ### **A. A full namespace spec (NNS 1.0)**
 
-### **B. A list of 100 example networks (UN, MCR, Belter, Corp, Pirate)**
+### **B. A list of 100 example networks (UN, MDR, Belter, Corp, Pirate)**
 
 ### **C. A Belter network behavior model (routing quirks, vulnerabilities)**
 

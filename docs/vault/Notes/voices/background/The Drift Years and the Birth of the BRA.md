@@ -183,7 +183,7 @@ But because the crisis is over, and the system snaps back to its default shape.
 
 The cooperation model is put on a shelf. The Belt’s seat at the table is quietly removed. The people who helped save the system are told, politely, that their help is no longer required.
 
-## The emotional truth that births the OPA
+## The emotional truth that births the Anti-Solar Accord
 
 The OPRA engineers—Earth, Mars, Belt—go home. But the Belt engineers go home with a different lesson:
 
@@ -196,7 +196,7 @@ The OPRA engineers—Earth, Mars, Belt—go home. But the Belt engineers go home
 - And the moment the crisis ended, we were pushed aside.
     
 
-That’s the wound that becomes the OPA.
+That’s the wound that becomes the Accord.
 
 Not ideology. Not rebellion. Not hatred.
 
@@ -320,7 +320,7 @@ The people who built it feel betrayed.
 
 These are the seeds of something new.
 
-## **14. The Birth of the OPA (Year 27)**
+## **14. The Signing of the Anti-Solar Accord (Year 27)**
 
 - The sidelined BRA founders regroup.
     
@@ -333,7 +333,7 @@ These are the seeds of something new.
 - They build something new.
     
 
-The OPA is born not from ideology, but from **infrastructure**.
+The Accord is born not from ideology, but from **infrastructure**.
 
 If you want, I can now produce a **single‑page in‑universe chronicle** written as if it were a recovered Belt document, or a **UN‑ID classified briefing** summarizing this timeline from the inner planets’ perspective.
 
@@ -541,7 +541,7 @@ They carry:
 
 They stop believing in reform. They start believing in each other.
 
-## **14. The Birth of the OPA (Year 27)**
+## **14. The Signing of the Anti-Solar Accord (Year 27)**
 
 The sidelined BRA founders regroup.
 
@@ -549,4 +549,4 @@ Dawes becomes their political center of gravity. Johnson becomes their moral cen
 
 They stop trying to fix the system from within. They build something new.
 
-The OPA is born not from ideology, but from **infrastructure**—from the belief that the Belt deserves a voice that cannot be dropped, filtered, or ignored.
+The Accord is born not from ideology, but from **infrastructure**—from the belief that the Belt deserves a voice that cannot be dropped, filtered, or ignored. (The later split into the Outer System League and the Anti-Solar Alliance, each claiming to be its true heir, comes after this point, not at it.)

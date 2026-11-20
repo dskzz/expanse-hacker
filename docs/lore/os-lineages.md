@@ -99,15 +99,17 @@ broadly enough to matter. Every lineage below is a real descendant of
 this moment, not a superficial resemblance to it: they share an actual
 common ancestor, not just a family of similar ideas.
 
-**~2302–2307 — marginalization, and the birth of the OPA.** The
-moment the fires are out, the old habits return. Earth bureaucrats
-reclaim the committees; Mars reasserts doctrinal purity; corporate
-vendors flood the standards process; BRA is thanked, praised, and
-quietly excluded despite having done the work that saved the network.
-The engineers who built BRA scatter, carrying technical expertise,
-institutional memory, and a specific, founded grievance. That's the
-actual seed of the OPA — infrastructure and betrayal, not abstract
-ideology.
+**~2302–2307 — marginalization, and the signing of the Anti-Solar
+Accord.** The moment the fires are out, the old habits return. Earth
+bureaucrats reclaim the committees; Mars reasserts doctrinal purity;
+corporate vendors flood the standards process; BRA is thanked, praised,
+and quietly excluded despite having done the work that saved the
+network. The engineers who built BRA scatter, carrying technical
+expertise, institutional memory, and a specific, founded grievance.
+That's the actual seed of the Accord — infrastructure and betrayal, not
+abstract ideology. (The split into the Outer System League and the
+Anti-Solar Alliance, both later claiming to be its legitimate heir, is
+a separate, not-yet-dated event.)
 
 **~2302 → now (~2350) — roughly fifty years of renewed
 divergence.** With the coalition dissolved and no authority left to
@@ -171,7 +173,7 @@ but without the user holding their own rollback keys. In-fiction
 grounding, per §1: Earthstock ≈ UN-ID's institutional voice
 (cautious, procedural, "terrified of ambiguity"); Mars ≈ MIAP/Mrs.
 Mars (confident, doctrinal, 70 years of tightbeam expertise); Scrapshell
-≈ BRA/IROC/OPA descent; Corporate ≈ Mao-Kwikowski and the other named
+≈ BRA/IROC/Accord descent; Corporate ≈ Mao-Kwikowski and the other named
 players in [`corporations.md`](corporations.md).
 
 ### Product and shell names (settled 2026-09-05)
@@ -475,7 +477,7 @@ the correction visible rather than quietly rewriting history:
   every absolute year in this doc — and in `Notes/history/SolNet
   Incident Timeline.md`, which shares the same chronology — was shifted
   uniformly **40 years earlier**: Vesta ~2320→~2280, Anderson
-  ~2330→~2290, the OPRA moment ~2339–42→~2299–2302, OPA founding
+  ~2330→~2290, the OPRA moment ~2339–42→~2299–2302, Anti-Solar Accord
   ~2347→~2307, "now" 2390s→~2350. All *relative* gaps (the ~50-year
   divergence window, the ~30-plus-year Anderson-to-now cooldown, RFC
   adoption dates) are unchanged; only the absolute anchor moved.
@@ -652,8 +654,8 @@ for Scrapshell:
 ### Worked examples
 
 ```
-MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG1:Reactor:TECH-TK421
-MCR:<city>:BREACH-CANDY//DOME-2-6:KAMAL
+MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG1:Reactor:TECH-A4
+MDR:<city>:BREACH-CANDY//DOME-2-6:OKONKWO
 ```
 The second is a civilian residential address, not a ship — worth being
 explicit that this addressing scheme is about physical/organizational
@@ -662,10 +664,10 @@ layer from which OS a destination device happens to run. A Mars
 civilian residence's terminal is a device-level fact (probably a
 Tharsis-descended civilian build); the address that reaches it is a
 civil-registry-level fact. Don't conflate the two. Also worth noting:
-the household is addressed as a shared unit (`KAMAL`, a plain trailing
+the household is addressed as a shared unit (`OKONKWO`, a plain trailing
 segment, not a personal `@`-PNI) because the message is for the whole
 family, the same way physical mail addresses a household — `@tech-
-Kamal`-style PNI addressing is for singling out one person's own
+Okonkwo`-style PNI addressing is for singling out one person's own
 device specifically, a different case.
 
 ### From addressing to actual file permissions (locked 2026-09-05)

@@ -13,7 +13,7 @@
     "LocationChain": {
       "side": "left",
       "meaning": "identity authority, trust domain, coarse location",
-      "example": "MCRC:ALPHAFLEET:DONNAGER"
+      "example": "MRN:ALPHAFLEET:VANGUARD"
     },
     "ServiceChain": {
       "side": "right",

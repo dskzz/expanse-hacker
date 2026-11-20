@@ -229,7 +229,7 @@ So orbital relays around Jupiter or Saturn could easily be:
     
 - military listening posts
     
-- OPA smuggler dens
+- ASA smuggler dens
     
 - corporate research nodes
     
@@ -322,7 +322,7 @@ You don’t need a full orbital simulator. You need a **strategic map** with key
     
 - Ceres Lagrange relays
     
-- OPA outposts
+- OSL outposts
     
 
 ### **Jovian System**

@@ -162,7 +162,7 @@ Bundles MAY include routing hints.
 
 Examples:
 
-- `"prefer:MCR"`
+- `"prefer:MDR"`
     
 - `"avoid:UN"`
     
@@ -270,7 +270,7 @@ Code
   "priority": 2,
   "ttl": 86400,
   "chunks": 12,
-  "routing_hints": ["avoid:MCR", "prefer:INNER_SYSTEM"],
+  "routing_hints": ["avoid:MDR", "prefer:INNER_SYSTEM"],
   "metadata": {
     "timestamp": "2350-06-01T12:44:00Z",
     "content_type": "news_feed"
@@ -313,7 +313,7 @@ It works because it has to.
 - prioritize government traffic
     
 
-### **MCR**
+### **MDR**
 
 - strict hierarchy
     

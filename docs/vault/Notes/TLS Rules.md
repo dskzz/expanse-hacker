@@ -97,7 +97,7 @@ So when two TLVs claim to mean “priority”:
 - The other is logged, forwarded, or ignored
     
 
-Earth prefers Earth. Mars prefers Mars. OPA prefers whoever paid last.
+Earth prefers Earth. Mars prefers Mars. The League prefers whoever's at the table; the Alliance prefers whoever paid last.
 
 No syntax breaks. No magic neutrality. No hand‑waving.
 

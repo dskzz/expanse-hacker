@@ -75,11 +75,11 @@ Because explicit prejudice is brittle. Learned preference is adaptive.
 
 An AI router doesn’t say:
 
-> “I distrust OPA.”
+> “I distrust OSL.”
 
 It says:
 
-> “OPA TLVs from _this region_ with _this freshness profile_ and _this anchoring history_ tend to resolve cleanly.”
+> “OSL TLVs from _this region_ with _this freshness profile_ and _this anchoring history_ tend to resolve cleanly.”
 
 That’s not ideology. That’s survival.
 
@@ -242,7 +242,7 @@ But—pure “namespace wins” determinism is too clean for The Expanse. Real n
 
 #### Add “gravity wells” for big factions
 
-Earth relays _will_ prefer Earth semantics. Mars will do the same. OPA will do it differently depending on who’s holding the station this week.
+Earth relays _will_ prefer Earth semantics. Mars will do the same. The Belt will do it differently depending on whether the station's holding with the League or the Alliance this week.
 
 So instead of “namespace wins,” make it:
 
@@ -383,7 +383,7 @@ A mix of **self‑asserted** and **trust‑domain‑issued** namespaces is exact
         
     - and long memory.
         
-- **Nodes don’t “obey” namespaces — they weight them.** An Earth relay doesn’t reject OPA TLVs. It just:
+- **Nodes don’t “obey” namespaces — they weight them.** An Earth relay doesn’t reject OSL TLVs. It just:
     
     - assigns them lower confidence,
         

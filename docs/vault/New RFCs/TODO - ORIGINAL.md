@@ -6,7 +6,7 @@ This document is the single canonical index for the SolNet RFC corpus. Each entr
 
 ### RFC‑2300 — SolNet Terminology & Concepts
 
-**Purpose:** Establish the canonical vocabulary and conceptual model used across all RFCs (UUID‑S7, LocationChain, ServiceChain, two‑plane split, role weights, provenance, freshness). **Why:** Prevents drift and ambiguity; gives every implementer a single source of definitions. **Defines:** Core terms, naming conventions, plane boundaries, minimal examples. **Interaction (L/S):** Declares that _Location_ holds identity/authority/ephemeris and _Service_ holds local naming and sessions. **Expanse notes:** Must reflect multi‑jurisdictional actors (UN, MDR, OPA), long delays, and roaming devices. **Tightbeam/RF:** Introduces L0 media subprofiles concept; points to subprofile RFCs.
+**Purpose:** Establish the canonical vocabulary and conceptual model used across all RFCs (UUID‑S7, LocationChain, ServiceChain, two‑plane split, role weights, provenance, freshness). **Why:** Prevents drift and ambiguity; gives every implementer a single source of definitions. **Defines:** Core terms, naming conventions, plane boundaries, minimal examples. **Interaction (L/S):** Declares that _Location_ holds identity/authority/ephemeris and _Service_ holds local naming and sessions. **Expanse notes:** Must reflect multi‑jurisdictional actors (UN, MDR, OSL), long delays, and roaming devices. **Tightbeam/RF:** Introduces L0 media subprofiles concept; points to subprofile RFCs.
 
 ### RFC‑2301 — SolNet Cryptographic Primitives
 
@@ -38,7 +38,7 @@ This document is the single canonical index for the SolNet RFC corpus. Each entr
 
 ### RFC‑2308 — Media Privacy & Exposure Policy
 
-**Purpose:** Define exposure rules and access controls for ephemeris, pointing, beaconing, and channel metadata. **Why:** Prevents accidental leakage of operationally sensitive data; balances discoverability and privacy. **Defines:** PolicyRecord fields for L0Profile, exposure levels (public/restricted/private), access control bindings, audit obligations. **Interaction (L/S):** L1 suppression rules and DRE publication policies reference these controls. **Expanse notes:** Different domains (MDR, OPA, UN) will have divergent defaults.
+**Purpose:** Define exposure rules and access controls for ephemeris, pointing, beaconing, and channel metadata. **Why:** Prevents accidental leakage of operationally sensitive data; balances discoverability and privacy. **Defines:** PolicyRecord fields for L0Profile, exposure levels (public/restricted/private), access control bindings, audit obligations. **Interaction (L/S):** L1 suppression rules and DRE publication policies reference these controls. **Expanse notes:** Different domains (MDR, OSL, UN) will have divergent defaults.
 
 ### RFC‑2309 — L0 Test & Validation Suite
 

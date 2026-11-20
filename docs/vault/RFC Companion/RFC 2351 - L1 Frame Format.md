@@ -246,7 +246,7 @@ Fallback mode controller. Features:
 - simplified parser exploitation
     
 
-## **C. Belt / OPA Tools**
+## **C. Belt / OSL Tools**
 
 Improvised, modular, powerful.
 
@@ -328,7 +328,7 @@ Fallback parser interceptor. Features:
 - DustFallback
     
 
-### **3.** _**Belt‑Tools‑2351 Pack**_ (OPA)
+### **3.** _**Belt‑Tools‑2351 Pack**_ (OSL)
 
 - erlufshoax‑2351
     

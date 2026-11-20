@@ -139,9 +139,9 @@ A scalar from **0.0 to 1.0**:
 |---|---|---|
 |**1.0**|perfectly predictable|planets, moons, major stations|
 |**0.9**|highly predictable|Lagrange relays, Tycho Station|
-|**0.6–0.8**|scheduled movers|corporate haulers, UN/MCR fleets|
+|**0.6–0.8**|scheduled movers|corporate haulers, UN/MDR fleets|
 |**0.2–0.5**|semi‑arbitrary|Belter rockhoppers, prospectors|
-|**0.0**|chaotic|pirates, smugglers, OPA cells|
+|**0.0**|chaotic|pirates, smugglers, ASA cells|
 
 #### **update_interval**
 

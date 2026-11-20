@@ -245,7 +245,7 @@ If you want, I can now generate:
 
 - **Ellison’s internal notes** (her private paranoia, not for publication)
     
-- **Domain Privacy Profiles (UN, MDR, OPA, Belter)**
+- **Domain Privacy Profiles (UN, MDR, OSL, Belter)**
     
 - **The PolicyRecord schema**
     

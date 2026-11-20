@@ -363,7 +363,7 @@
 <h2><span class="secnum">9.</span> ProfileRegistryEntry</h2>
 <div class="section-body">
 <h3><span class="secnum">9.1</span> Purpose</h3>
-<p>A <code>ProfileRegistryEntry</code> lets a domain publish which Domain Privacy Profile (RFC&#8209;2308 &sect;4: UN, MDR, OPA, Belter, or Non-Compliant) it operates under, so another domain's DRE can look up what it will actually be shown before spending a query on finding out the hard way.</p>
+<p>A <code>ProfileRegistryEntry</code> lets a domain publish which Domain Privacy Profile (RFC&#8209;2308 &sect;4: UN, MDR, OSL, Belter, or Non-Compliant) it operates under, so another domain's DRE can look up what it will actually be shown before spending a query on finding out the hard way.</p>
 <h3><span class="secnum">9.2</span> Structure</h3>
 <p>A <code>ProfileRegistryEntry</code> MUST contain: <strong>TrustDomain</strong> (the declaring domain, RFC&#8209;2362), <strong>DeclaredProfile</strong> (one of RFC&#8209;2308 &sect;4's named profiles), <strong>EffectiveSince</strong> and <strong>FreshnessTag</strong>, and a <strong>Signature</strong> from the declaring domain's own root attestation credential.</p>
 <h3><span class="secnum">9.3</span> Registry Query Path</h3>
@@ -437,7 +437,7 @@
 <section class="footnotes" aria-label="Editorial notes"><h3>Editorial Notes <span class="nonnormative">(non-normative)</span></h3><ol>
 <li id="fn1"><strong>ProvenancePointer</strong> &mdash; the canonical reference to an Address's authoritative origin (RFC&#8209;2350 &sect;4.7, &sect;5.8, &sect;6), optional but, when present, MUST resolve to a valid ProvenanceRecord. Not a timestamp, an address hash, or a routing hint.</li>
 <li id="fn2"><strong>TrustDomain</strong> &mdash; a named, policy-bearing boundary declaring one of four root attestation models (RFC&#8209;2362 &sect;2). The entity a ProvenanceRecord's IssuingTrustDomain field, and a DREInfoRecord's OperatingDomain field, both point to.</li>
-<li id="fn3"><strong>Domain Privacy Profile</strong> &mdash; a domain's declared maximum permissible metadata visibility (RFC&#8209;2308 &sect;4: UN, MDR, OPA, Belter, or Non-Compliant). What a ProfileRegistryEntry publishes and what a DRE's exposure decision (Section 8) is measured against.</li>
+<li id="fn3"><strong>Domain Privacy Profile</strong> &mdash; a domain's declared maximum permissible metadata visibility (RFC&#8209;2308 &sect;4: UN, MDR, OSL, Belter, or Non-Compliant). What a ProfileRegistryEntry publishes and what a DRE's exposure decision (Section 8) is measured against.</li>
 <li id="fn4"><strong>FreshnessTag</strong> &mdash; a varint field (RFC&#8209;2350 &sect;5.7) expressing temporal freshness. Every record type this document defines carries one; none of them may have it stripped in transit.</li>
 <li id="fn5"><strong>Session Keys</strong> &mdash; the RFC&#8209;2300 &sect;6.1 identity-chain layer answering whether a specific interaction is current and authorized. The mechanism this document reuses, rather than inventing a new record type, for <code>//contact</code> correlation (Section 4.4).</li>
 <li id="fn6"><strong>AnchorRecord / LedgerAnchor</strong> &mdash; the RFC&#8209;2302 ledger mechanism a ProvenanceRecord's optional LedgerEntryRef field points into, when a domain chooses to anchor its provenance assertions in a ledger rather than (or in addition to) direct DRE hosting.</li>

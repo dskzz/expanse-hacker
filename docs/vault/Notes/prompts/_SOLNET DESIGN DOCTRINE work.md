@@ -114,7 +114,7 @@ A short, enforceable constitution for design decisions—so every RFC, subsystem
 
 - **Rule:** A node may decode a TLV but still treat it as:
     
-    - **ignored**, **informational**, **actionable**, or **forbidden** based on **TrustDomainPolicy** (this is where Earth/Mars/OPA behavior lives).
+    - **ignored**, **informational**, **actionable**, or **forbidden** based on **TrustDomainPolicy** (this is where Earth/Mars/OSL behavior lives).
 
 ## Required spec sections for every RFC
 
@@ -167,7 +167,7 @@ If you do model it, you get emergent behavior:
     
 - “Mars will anchor fast for Martian certs, slow-roll Earth certs.”
     
-- “OPA relay will anchor if you pay, but the receipt is ‘soft’ unless cross-signed.”
+- “ASA relay will anchor if you pay, but the receipt is ‘soft’ unless cross-signed.”
     
 ## AI in routing: the rule is “auditable outcomes,” not “no AI”
 

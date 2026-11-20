@@ -159,8 +159,8 @@ Code
 
 ```
 UN-FLEET:AgathaKing
-MCRC:ALPHAFLEET:DONNAGER
-OPA:Tynan
+MRN:ALPHAFLEET:VANGUARD
+ASA:Pirate1
 IND:RedshiftHauler
 TYCHO:Station
 MEDINA:Station
@@ -304,7 +304,7 @@ Code
 AuthorityChain → NetworkID(UUID‑S7) → NetworkKey
 ```
 
-Signed by a trust‑domain authority (UN‑MIL, MRN‑MIL, OPA‑CIVIL, etc.)
+Signed by a trust‑domain authority (UN‑MIL, MRN‑MIL, OSL‑CIVIL, etc.)
 
 ## **6.4 LedgerAnchor (optional but recommended)**
 
@@ -347,7 +347,7 @@ A pirate spoofing:
 Code
 
 ```
-MCRC:ALPHAFLEET:DONNAGER//
+MRN:ALPHAFLEET:VANGUARD//
 ```
 
 Without the correct NetworkCert becomes:
@@ -355,7 +355,7 @@ Without the correct NetworkCert becomes:
 Code
 
 ```
-MCRC:ALPHAFLEET:DONNAGER//  (UNVERIFIED)
+MRN:ALPHAFLEET:VANGUARD//  (UNVERIFIED)
 ```
 
 And is treated as a completely different domain.
@@ -501,7 +501,7 @@ Code
 Code
 
 ```
-MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG-1:Reactor:SomeGuy
+MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG-1:Reactor:SomeGuy
 ```
 
 ### **Mixed internal structures**
@@ -509,17 +509,17 @@ MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG-1:Reactor:SomeGuy
 Code
 
 ```
-MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG-1:Reactor:SomeGuy
-MCRC:ALPHAFLEET:DONNAGER//MARDET:LtLopez
+MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG-1:Reactor:SomeGuy
+MRN:ALPHAFLEET:VANGUARD//MARDET:LtLopez
 ```
 
-### **OPA flat**
+### **ASA flat**
 
 Code
 
 ```
-OPA:Tynan//Gunnery1
-OPA:Tynan//Reactor
+ASA:Pirate1//Gunnery1
+ASA:Pirate1//Reactor
 ```
 
 ### **UN semi‑structured**

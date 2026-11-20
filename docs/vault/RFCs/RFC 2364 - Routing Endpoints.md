@@ -124,7 +124,7 @@ Directory endpoints act as the **authoritative source of truth** for a namespace
 
 ```
 UN-FLEET:AgathaKing:Directory
-OPA:Ceres:Directory
+OSL:Ceres:Directory
 IND:RedshiftHauler:Directory
 ```
 
@@ -182,7 +182,7 @@ Routers exchange updates via **signed, incremental gossip**.
 ```
 UN-FLEET:Router
 UN-FLEET:AgathaKing:Router
-OPA:Ceres:Router
+OSL:Ceres:Router
 ```
 
 ---
@@ -536,9 +536,9 @@ UN-FLEET:AgathaKing:Ops:Directory
 ## Belt Station Example
 
 ```
-OPA:Ceres:Directory
-OPA:Ceres:Router
-OPA:Ceres:Broadcast
+OSL:Ceres:Directory
+OSL:Ceres:Router
+OSL:Ceres:Broadcast
 ```
 
 ## Independent Hauler Example

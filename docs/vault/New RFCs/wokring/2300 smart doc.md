@@ -14,7 +14,7 @@ Define the vocabulary, identifier class (UUID‑S7), two‑plane architecture (L
     
 - **UUID‑S7:** canonical 128‑bit, time‑sortable identifier for domain anchors and long‑lived entities. Implementations **MUST** use UUID‑S7 for ledger anchors and cross‑domain references.
     
-- **LocationChain:** left‑hand chain naming authority and coarse location (e.g., `MCRC:ALPHAFLEET:DONNAGER`).
+- **LocationChain:** left‑hand chain naming authority and coarse location (e.g., `MRN:ALPHAFLEET:VANGUARD`).
     
 - **ServiceChain:** right‑hand chain naming local service paths (e.g., `ENGINEERING:ENG‑1:Reactor`).
     
@@ -169,7 +169,7 @@ json
 ```
 {
   "uuid_s7":"<uuid-s7>",
-  "location_chain":"MCRC:ALPHAFLEET:DONNAGER",
+  "location_chain":"MRN:ALPHAFLEET:VANGUARD",
   "authority_weight": 90,
   "provenance": {"pointer":"DRE1:9f3a7b:20260326T1631Z","signer":"authority://mcrc","signature":"..."},
   "freshness":{"created":"2026-03-26T16:31Z","class":"Short","confidence":0.92}
@@ -244,7 +244,7 @@ Add the following test vectors to the RFC‑2300 test appendix and reference the
 
 **Grammar tests**
 
-- Valid: `MCRC:ALPHAFLEET:DONNAGER//ENGINEERING:ENG-1:Reactor`
+- Valid: `MRN:ALPHAFLEET:VANGUARD//ENGINEERING:ENG-1:Reactor`
     
 - Invalid: missing `//`, multiple `//`, malformed components.
     

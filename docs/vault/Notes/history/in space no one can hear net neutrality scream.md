@@ -30,7 +30,7 @@ The beautiful thing is that this gives you _mechanics_, not just lore:
 
 - Earth routers preferring Earth namespaces isn’t bias — it’s policy.
     
-- Mars ignoring OPA hints unless corroborated isn’t hostility — it’s risk management.
+- Mars ignoring OSL hints unless corroborated isn’t hostility — it’s risk management.
     
 - Belter nodes skipping half the TLVs and trusting whoever paid last isn’t chaos — it’s survival.
     

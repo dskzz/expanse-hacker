@@ -185,7 +185,7 @@ This layer governs political, military, and corporate boundaries.
     
 - **UNN**
     
-- **OPA / Belt**
+- **OSL / Belt**
     
 - **Commercial**
     
@@ -196,7 +196,7 @@ This layer governs political, military, and corporate boundaries.
 
 ### 6.2 Policy Enforcement Examples
 
-- MRN relays reject OPA traffic.
+- MRN relays reject OSL traffic.
     
 - UN relays require bureaucratic authentication.
     
