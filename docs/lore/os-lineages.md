@@ -31,8 +31,8 @@ survive intact for the same reason a toilet's "hole" does: there's no
 better answer to the problem, so time just refines the edges.
 
 **Correction from the original version of this doc:** it isn't true
-that nothing catastrophic ever happened. There *was* a war (the Vesta
-Blockade) and there *was* a massacre (Anderson Station), and both were
+that nothing catastrophic ever happened. There *was* a war (the Seven
+Day War) and there *was* a massacre (the Massacre at Thisbe Station), and both were
 directly caused by exactly the kind of software drift this doc is
 about — not the other way around. What never happened, before or
 after either event, is a top-down rebuild: no one, at any point, ever
@@ -54,13 +54,14 @@ standing authority to begin with.
 
 ## 1. Timeline
 
-**~2280 — the Vesta Blockade.** Not humanity's first war, but the
+**~2280 — the Seven Day War.** Not humanity's first war, but the
 first one caused by network rot. Timing drift and corrupted diplomatic
 traffic turn a routine standoff into a shooting war — Earth reads
 Mars's silence as defiance, Mars reads Earth's silence as escalation.
-One Martian cruiser cripples five UN destroyers. Everyone blames
-everyone else. No one blames the network. The drift that caused it
-doesn't stop.
+One Martian cruiser cripples five UN destroyers. Seven days, first
+shot to ceasefire — over before either side's command structure can
+even agree on why. Everyone blames everyone else. No one blames the
+network. The drift that caused it doesn't stop.
 
 **~2280–2290 — the Drift Years** (vault-canonical name, not this doc's
 invention). Earth piles on redundancy that overloads Belt relays; Mars
@@ -72,24 +73,25 @@ on their own clock — compressed into a single decade under real
 technical and political strain, not stretched across centuries of
 drift-by-distance the way the original version of this doc had it.
 
-**~2290 — Anderson Station.** The Drift Years' body count. A surrender
-message gets flagged low-priority, drifts through Earth's civilian
-filters, and is silently dropped. Fred Johnson orders an assault based
-on silence the network itself manufactured. This is the setting's
-founding trauma — the moment "the network is unreliable" stops being
-an engineering footnote and becomes something people died over.
+**~2290 — the Massacre at Thisbe Station.** The Drift Years' body
+count. A surrender message gets flagged low-priority, drifts through
+Earth's civilian filters, and is silently dropped. Elias Voss orders
+an assault based on silence the network itself manufactured. This is
+the setting's founding trauma — the moment "the network is unreliable"
+stops being an engineering footnote and becomes something people died
+over.
 
-**~2290s–2299 — Johnson, Dawes, and the Ceres Broadcast.** Johnson,
-exiled and haunted, quietly rebuilds a fleet-class broadcast node from
-salvage on Ceres. Anderson Dawes, watching from the docks, confronts
-him instead of turning him in. Together they force the Anderson
-footage onto the network in a way no faction's filters can suppress.
-For the first time, Earth, Mars, the Belt, and the megacorps all see
-the same failure at the same moment.
+**~2290s–2299 — Voss, Oduya, and the Ceres Broadcast.** Voss, exiled
+and haunted, quietly rebuilds a fleet-class broadcast node from
+salvage on Ceres. Imara Oduya, watching from the docks, confronts him
+instead of turning him in. Together they force the Thisbe footage
+onto the network in a way no faction's filters can suppress. For the
+first time, Earth, Mars, the Belt, and the megacorps all see the same
+failure at the same moment.
 
 **~2299–2302 — the OPRA moment: SolNet's real founding.** The one time
 everyone actually pulls in the same direction — not out of trust, but
-because the alternative is another Anderson. Earth's institutional
+because the alternative is another Thisbe. Earth's institutional
 engineers, Mars's doctrinal timing specialists, Belt relay techs
 (organized as the **Belt Relay Authority**, BRA, and its
 standards-track counterpart **IROC**), and megacorp money and
@@ -111,6 +113,32 @@ abstract ideology. (The split into the Outer System League and the
 Anti-Solar Alliance, both later claiming to be its legitimate heir, is
 a separate, not-yet-dated event.)
 
+**~2318 — the Frontier Opportunity Program.** The one time since the
+Accord's founding that the UN, MDR, and a corporate backer (Hauptmann
+& Voskuijlen) all show up to the same table on purpose — not out of
+trust, and not under crisis, just converging self-interest. Officially:
+a joint, voluntary resettlement scheme (the **Joint Resettlement
+Initiative**, with the Frontier Opportunity Program as its flagship
+effort) offering Belters passage to a new colony, financed through
+Hauptmann & Voskuijlen. Actually: the UN and MDR also use it, quietly
+and separately from the official volunteer intake, to offload a number
+of their own inconvenient people — debtors, dissidents, troublemakers
+nobody official wants to prosecute or explain. Built at **Slayton
+Construction Yards**, a shipyard neither the UN nor MDR actually
+controls — they need its capacity, not its politics — and managed by
+**Elias Voss**, decades removed from Thisbe by now and genuinely
+convinced this is the first real thing he's done for Belters since the
+Ceres Broadcast. The yard's management, not its ownership, is Voss's
+actual leverage: the UN and the corporate backers treat him as a
+contractor to be managed, not a partner to be trusted, and the gap
+between what Voss believes he's running and what the sponsoring powers
+are actually using it for doesn't fully surface until the ship — the
+***Clean Slate*** — is already loaded and burning for departure.
+Whatever history repeats here, it isn't Thisbe's; this is decades
+later, and the ship's manifest problem is a different shape of the
+same old question this corpus keeps returning to: whose names does the
+network actually bother to get right.
+
 **~2302 → now (~2350) — roughly fifty years of renewed
 divergence.** With the coalition dissolved and no authority left to
 enforce it, the same mechanism from the Drift Years resumes — except
@@ -122,37 +150,33 @@ time for genuine, load-bearing dialects to form, nowhere near enough
 time for anyone to have forgotten *why*. Scrapshell's divergence
 should read as recent and felt, not ancient and archaeological (§5).
 
-**Why the gap has to be decades, not years — and what that implies
-about how Anderson is remembered "by now":** the real-world Expanse
-books never hard-pin Anderson Station's date relative to their own
-present day; the show plays it as recent, but the books leave enough
-slack that a gap of up to ~30 years is plausible, not a stretch
-against canon. Two concrete threads support the longer end of that
-range on their own: Johnson's own post-Anderson arc (getting hired by,
-then building up, Tycho Station into what it is by "present day") and
-the *Nauvoo*'s construction state by "present day" — both simply don't
-fit in ten years, independent of the atrocity-cooldown argument below.
-Compare to real history for that second argument: a decade is too
-short for 9/11-scale hostility to cool to the level of settled,
-low-heat resentment "present day" Anderson needs to read as — 30-plus
-years is closer to right. That has a specific consequence worth keeping, not
-just a dating justification: **the animosity that's left by "now"
-isn't really about the deaths anymore.** Enough time has passed that
-the atrocity itself has mostly been metabolized; what's left of
-anti-Johnson sentiment runs more on him being an Earther than on what
-he actually did to the people responsible for it. Grudges outlive
-their own reasons and get re-hosted on tribal lines instead — a
-specific instance of the setting's existing "gravity bends
-expectations and costs, not correctness or virtue" principle
-(`TODOv2.md`'s CHANGES section), applied to people instead of
-protocols.
+**Why the gap is decades, not years — and what that implies about how
+Thisbe is remembered "by now":** this is the corpus's own canon now,
+not something that needs reconciling against anyone else's timeline,
+so the length of the gap is simply an authorial choice — roughly fifty
+years between the massacre and "now" (§1's own anchor dates already
+say so). The reasoning behind *that* length is still worth keeping
+even though the length itself no longer needs outside justification:
+compare to real history — a decade is too short for 9/11-scale
+hostility to cool to the level of settled, low-heat resentment "present
+day" Thisbe needs to read as; 30-plus years is closer to right. That
+has a specific consequence worth keeping, not just a dating
+justification: **the animosity that's left by "now" isn't really about
+the deaths anymore.** Enough time has passed that the atrocity itself
+has mostly been metabolized; what's left of anti-Voss sentiment runs
+more on him being an Earther than on what he actually did to the
+people responsible for it. Grudges outlive their own reasons and get
+re-hosted on tribal lines instead — a specific instance of the
+setting's existing "gravity bends expectations and costs, not
+correctness or virtue" principle (`TODOv2.md`'s CHANGES section),
+applied to people instead of protocols.
 
 ## 2. The four lineages
 
 | Lineage | Vibe | Design implication |
 |---|---|---|
 | **Earthstock** | Inner-system corporate/mil descendant. Verbose, ceremony-heavy, signed packages — closest to "the original" since Earth kept the coordination capacity to patch longest. | Textbook-correct, and over-trusting of its own PKI: designed assuming a reachable CA. |
-| **Scrapshell** | Belt vernacular, directly descended from BRA/IROC engineering culture — people who *did* the work of keeping the post-Anderson network alive, got a real seat at the table for a few years, and were pushed out anyway. Terse, hand-patched, full of undocumented folklore ("everyone knows you SIGHUP twice on a Kestrel relay"). The primary player-facing dialect. | Inconsistent by nature — every station only fixed what broke *for them*. Divergence reads as ongoing self-determination, not neglect. |
+| **Scrapshell** | Belt vernacular, directly descended from BRA/IROC engineering culture — people who *did* the work of keeping the post-Thisbe network alive, got a real seat at the table for a few years, and were pushed out anyway. Terse, hand-patched, full of undocumented folklore ("everyone knows you SIGHUP twice on a Kestrel relay"). The primary player-facing dialect. | Inconsistent by nature — every station only fixed what broke *for them*. Divergence reads as ongoing self-determination, not neglect. |
 | **Mars capability-fork** | Disciplined military-industrial fork that actually pulled off one real paradigm shift early — capability-based security instead of Unix DAC — then froze it. | Rigorous on paper; assumes physical custody equals authority. Capture the hardware, inherit the capability, no exploit required. |
 | **Corporate leased-compute fork** | Not one company — a shared archetype (proprietary, phone-home, subscription-gated trust) that several named players instantiate differently. Mao-Kwikowski is the biggest and most deeply embedded, but not the only game in town — see [`corporations.md`](corporations.md). | Assumes connectivity it doesn't reliably have. Trusts cached, expired grants because whoever wrote it assumed the network would always be there to time-check against. Which corp's flavor of this bug a node has depends on which corp built it. |
 
@@ -512,6 +536,25 @@ the correction visible rather than quietly rewriting history:
   alternative kill people — not "a good protocol design" in-universe
   so much as the terms of a truce nobody had the standing to enforce
   past the crisis that produced it.
+- **Decoupled from Expanse canon and renamed, 2026-11-20/21:** this
+  doc's founding-trauma pair no longer needs to reconcile against the
+  real Expanse books/show's timeline at all — it's this corpus's own
+  invented history now. Renamed throughout: Vesta Blockade → **the
+  Seven Day War**, Anderson Station → **the Massacre at Thisbe
+  Station**, Fred Johnson → **Elias Voss**, Anderson Dawes → **Imara
+  Oduya**. Dropped the Tycho Station/*Nauvoo* construction-state dating
+  argument entirely — it only ever existed to argue the gap was long
+  enough to fit within Expanse's own (admittedly vague) timeline, which
+  this doc no longer needs to do; the gap is now just stated directly
+  (§1). Separately, added a new, later timeline entry (~2318, the
+  Frontier Opportunity Program) giving Voss a second act managing
+  **Slayton Construction Yards** — the replacement for the dropped
+  Tycho/shipyard beat, now standing on its own rather than serving as
+  dating evidence. Every entry in this §7 log above this one still
+  uses the old "Anderson"/"Vesta"/"Johnson"/"Dawes" names because it's
+  describing the pre-2026-11-20 state, consistent with this section's
+  existing practice of leaving superseded reasoning visible rather than
+  quietly rewriting it. §1 above is current.
 
 ## 8. Mechanical implications per lineage
 
