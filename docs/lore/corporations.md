@@ -182,7 +182,19 @@ Tanager's courier-manifest fraud.
 
 ## Hidden ownership
 
-Not every company on this roster is as independent as it looks:
+Not every company on this roster is as independent as it looks. Worth
+flagging a mechanical implication, not just a narrative one: ownership
+plausibly shows up as shared certificate lineage or delegated
+AuthorityWeight in RFC-2362's trust-domain model, whether or not it's
+ever declared. A hidden parent-subsidiary relationship isn't just a
+fact a player might learn from a document — it could be a literal,
+checkable signal in a cross-cert audit, the same way the reply-path-
+privacy misconfiguration in `rfc-proposals/` is a real, checkable bug
+class rather than an abstract suspicion. Pulling enough trust-chain
+data across enough of the companies below turns "prove the Trust
+exists" from a narrative claim into an actual graph-analysis puzzle.
+Not designed in detail yet — flagging it for whenever RFC-2362 gets
+real design attention.
 
 - **Okafor-Lindgren** (Trust) quietly holds an undisclosed stake in
   **Permafrost Data Systems** and **Glasswell Data Systems** — the
@@ -420,7 +432,13 @@ counterparty's node turns out non-conformant or actively malicious.
 
 **How they make money:** actuarial risk-pricing on node behavior they
 have no formal standing to score — a reputation-score system smuggled
-in through insurance premiums instead of protocol fields.
+in through insurance premiums instead of protocol fields. Real-world
+precedent worth naming directly: this is the same conflict of interest
+real credit-rating agencies had before 2008 (Moody's/S&P, paid by the
+entities they rated) — except Trellis rates *protocol conformance*,
+not financial creditworthiness, which is the separate, parallel
+mechanism Castellan Ratings / Veritas Sol Ratings / Claimline Ratings
+run (see the full roster table).
 
 **Vibe:** actuarial, smug, litigious, extremely good at sounding
 reasonable.
@@ -532,6 +550,9 @@ a scenario needs one.
 | Covenant Underwriters | Insurance (rival to Trellis) | Earth | — |
 | Threshold Arbitration | Legal/cross-domain arbitration | Belt | Neutral ground deliberately — an Earth-based "neutral" arbiter would undercut its own credibility; authority rests on nothing but everyone agreeing to pretend it has some, same shape as Trellis's smuggled-in reputation scores |
 | Lyceum Credentialing Group | Credentialing/education | Earth | Named for Aristotle's real Lyceum; a forged credential is on-theme identity fraud for a hacking game specifically |
+| Castellan Ratings | Credit rating (company/domain creditworthiness) | Earth | One of the inner-system "big two" |
+| Veritas Sol Ratings | Credit rating (rival to Castellan) | Mars | The other half of the "big two"; genuine rivals, both trusted mainly within the UN/MDR formal economy |
+| Claimline Ratings | Credit rating — Belt specialist | Belt | Rates Belt-specific risk (station reliability, trust-domain quirks, OSL/ASA fragmentation) the inner-system big two either ignore or mis-rate; the resulting grievance is a close cousin of the Rockline Compact's |
 | Solvane Systems | Business/enterprise computing | Earth | — |
 | Keystone Embedded Systems | Industrial/embedded computing | Mars | Ship/station control systems specifically |
 | Nexora Analytics | Data & analytics | Earth | Aggregates exactly what RFC-2308 minimization exists to prevent, individually compliant at every step — the violation is the business model |
