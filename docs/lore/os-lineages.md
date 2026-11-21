@@ -178,7 +178,7 @@ applied to people instead of protocols.
 | **Earthstock** | Inner-system corporate/mil descendant. Verbose, ceremony-heavy, signed packages — closest to "the original" since Earth kept the coordination capacity to patch longest. | Textbook-correct, and over-trusting of its own PKI: designed assuming a reachable CA. |
 | **Scrapshell** | Belt vernacular, directly descended from BRA/IROC engineering culture — people who *did* the work of keeping the post-Thisbe network alive, got a real seat at the table for a few years, and were pushed out anyway. Terse, hand-patched, full of undocumented folklore ("everyone knows you SIGHUP twice on a Kestrel relay"). The primary player-facing dialect. | Inconsistent by nature — every station only fixed what broke *for them*. Divergence reads as ongoing self-determination, not neglect. |
 | **Mars capability-fork** | Disciplined military-industrial fork that actually pulled off one real paradigm shift early — capability-based security instead of Unix DAC — then froze it. | Rigorous on paper; assumes physical custody equals authority. Capture the hardware, inherit the capability, no exploit required. |
-| **Corporate leased-compute fork** | Not one company — a shared archetype (proprietary, phone-home, subscription-gated trust) that several named players instantiate differently. Mao-Kwikowski is the biggest and most deeply embedded, but not the only game in town — see [`corporations.md`](corporations.md). | Assumes connectivity it doesn't reliably have. Trusts cached, expired grants because whoever wrote it assumed the network would always be there to time-check against. Which corp's flavor of this bug a node has depends on which corp built it. |
+| **Corporate leased-compute fork** | Not one company — a shared archetype (proprietary, phone-home, subscription-gated trust) that several named players instantiate differently, dozens of them by now across every sector of the Sol economy. The biggest and most deeply embedded isn't even one company — it's the Sol Industrial Trust, four companies that look independent and secretly aren't — see [`corporations.md`](corporations.md). | Assumes connectivity it doesn't reliably have. Trusts cached, expired grants because whoever wrote it assumed the network would always be there to time-check against. Which corp's flavor of this bug a node has depends on which corp built it. |
 
 All four still have files, pipes, a shell, and a `root`-equivalent —
 they radically disagree about *who gets to be root and how you prove
@@ -197,7 +197,7 @@ but without the user holding their own rollback keys. In-fiction
 grounding, per §1: Earthstock ≈ UN-ID's institutional voice
 (cautious, procedural, "terrified of ambiguity"); Mars ≈ MIAP/Mrs.
 Mars (confident, doctrinal, 70 years of tightbeam expertise); Scrapshell
-≈ BRA/IROC/Accord descent; Corporate ≈ Mao-Kwikowski and the other named
+≈ BRA/IROC/Accord descent; Corporate ≈ the Sol Industrial Trust and the many other named
 players in [`corporations.md`](corporations.md).
 
 ### Product and shell names (settled 2026-09-05)
@@ -212,7 +212,7 @@ out directly with the user:
 | **Earthstock** | **Earthstock CoreOS** (official, UN-ID/government — dry, defensible-in-a-meeting, a committee name) **and**, independently forked from the same SolOS ancestor, **GaiaOS** (a university/research consortium's own system — mythological branding fits *that* kind of committee, not a standards body; extra resonance if it's specifically an earth-systems-science network, a direct nod to the real Gaia hypothesis) | **CoreOS-CE** ("Compact Edition") — same compliance/ceremony weight, just smaller, matching how real regulated-industry embedded firmware stays bloated with certification overhead even at tiny footprints | `bash`, unchanged — ceremony-heavy institutional culture preserves precedent faithfully |
 | **BeltOS** | **Scrapshell** — the flagship, our primary player-facing dialect | **miniscrapshell** (real, `db/vfs/templates/miniscrapshell.json` — strips `/usr/lib`) | `sash` — eroded from "Scrapshell sh" over decades of oral/hand-patched use, the same folk-erosion mechanic as `/etc` → "Everyone's To-Change" (§5) |
 | **Tharsis** (Mars — doesn't fragment the way the Belt does, so one product, not a category-vs-flagship split) | **Tharsis** | **Tharsis-TCB** — not a shrink, a structurally different thing: capability systems are already minimal by design in reality (real ones like seL4 are tiny, verified microkernels with nothing to strip), so Mars's constrained-device form is a bare capability-execution stub with **no shell at all** — no `msh`, because a device nobody's meant to sit down and type into doesn't need one | `msh`, pronounced "mash" — plain, undecorated (M + sh), on-brand for Mars's doctrinal voice; rhymes with `bash` as convergent evolution (`bash`/`dash`/`hash`/`cash` are all real short *-ash* words), not a forced pun |
-| **Corporate** | deliberately none — Mao-Kwikowski's own branded firmware, VARS's own, etc. (`corporations.md`) | already real and concrete: `db/components/vars-buffer-mk2.json` *is* one vendor's constrained-device firmware | deliberately none, matches no shared OS name |
+| **Corporate** | deliberately none — Okafor-Lindgren's own branded firmware, VARS's own, etc. (`corporations.md`) | already real and concrete: `db/components/vars-buffer-mk2.json` *is* one vendor's constrained-device firmware | deliberately none, matches no shared OS name |
 
 `Tharsis`'s own name is real Mars nomenclature, not invented: the
 volcanic plateau hosting the solar system's largest volcanoes, itself
@@ -615,7 +615,8 @@ window dressing on the other:
   in §7~~ — **resolved 2026-09-05, by the user directly**: Vesta →
   Drift → Anderson, BRA narrative's order, settled outright.
 - `corporations.md` populates the Corporate lineage with named players
-  beyond Mao-Kwikowski; worth checking whether Scrapshell (or any
+  across the whole Sol economy, not one dominant company; worth
+  checking whether Scrapshell (or any
   other lineage) should get the same treatment — right now Scrapshell
   reads as one unified culture, which may undersell how much variation
   a fifty-year-old, hand-patched, no-central-authority lineage should
