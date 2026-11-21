@@ -249,6 +249,53 @@ the point: the Compact could be entirely right, or could be a
 mutual-paranoia feedback loop that happens to be organizing against
 something real anyway.
 
+## The passive giants (common ownership)
+
+A third kind of power, distinct from both the Trust and the Rockline
+Compact — this one needs no meetings, no coordination, not even
+intent. Real-world grounding: economists call it "common ownership
+theory" — when a small handful of giant diversified investors each
+hold small stakes across nearly every company in an industry, none of
+those companies has much actual incentive to compete hard on price or
+share, even without a single conspiratorial conversation ever
+happening. It's a real, currently-debated antitrust question around
+the real asset managers who actually do this at planetary scale today
+— the mechanism is free to use, the real companies' names aren't.
+
+**The reason there are two, not one:** a single all-owning fund is
+just a monopoly with better PR — easy to spot, easy to blame,
+basically a second Trust. The actual phenomenon depends on
+multiplicity: several nominally-competing investment vehicles whose
+underlying portfolios overlap so heavily that every operating
+company's major shareholders quietly share the same interest anyway.
+Two funds that occasionally disagree also hands a clever player real
+leverage a single monolithic owner never would.
+
+- **Bedrock Capital Partners** (Earth) — the aggressive, activist one.
+  Holds small-but-pervasive stakes across nearly the entire Sol
+  economy — Trust members where legally permitted, independents,
+  Rockline Compact members, media, all of it — and is willing to
+  actually intervene in a portfolio company's management, sitting
+  unusually close to political/regulatory power.
+- **Longview Capital Partners** (Earth) — the quiet, mutual-structured
+  counterpart: owned by its own funds' investors rather than outside
+  shareholders, passive almost to a fault, mostly other people's
+  retirement money sitting still for decades. Holds an overlapping but
+  not identical portfolio to Bedrock's.
+- **The friction worth keeping:** Bedrock and Longview don't always
+  agree on how a shared portfolio company should be run — real
+  daylight between two major shareholders that a player could actually
+  work, rather than facing one unified owner with no internal seams.
+
+**Media specifically:** Bedrock's reach touches Clarion Media and
+Driftcast Media the same incidental way it touches almost everything
+else — structural, not targeted. Separately, and more pointedly,
+**Hauptmann & Voskuijlen** (Trust) holds a specific, intentional stake
+in **Clarion Media** — not passive diversification, deliberate
+narrative-control leverage. Two different flavors of media ownership
+sitting on the same company: one that doesn't care what Clarion
+reports as long as the numbers work, one that very much does.
+
 ## Earth's military-industrial decline
 
 Doesn't fit neatly as one more independent, so it gets its own section:
@@ -308,8 +355,11 @@ Media splits into three real tiers, not one flat list:
   trustworthy-sounding brand name doing a genuinely heavy amount of
   quiet narrative work; the Ceres Broadcast (`os-lineages.md` §1) is
   the thing institutions like Clarion exist precisely to prevent from
-  happening twice. **Gameplay hook:** proving a feed was shaped, not
-  just biased, is a harder puzzle than finding one forged document.
+  happening twice. Carries both Bedrock's incidental passive stake and
+  Hauptmann & Voskuijlen's specific, intentional one (see "The passive
+  giants" below) — two very different reasons to own the same
+  newsroom. **Gameplay hook:** proving a feed was shaped, not just
+  biased, is a harder puzzle than finding one forged document.
 - **Driftcast Media** (Belt) — the Belt's own independent press,
   deliberate contrast to Earth-based Clarion.
 
