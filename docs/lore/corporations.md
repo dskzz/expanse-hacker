@@ -180,6 +180,75 @@ provenance are a natural, physical-custody-flavored exploit surface —
 a "who actually has the real claim here" puzzle, distinct from
 Tanager's courier-manifest fraud.
 
+## Hidden ownership
+
+Not every company on this roster is as independent as it looks:
+
+- **Okafor-Lindgren** (Trust) quietly holds an undisclosed stake in
+  **Permafrost Data Systems** and **Glasswell Data Systems** — the
+  physical-facility layer sitting right underneath its own leased-
+  compute service layer. Proving the Trust's collusion was already
+  about cross-referencing four companies' behavior over years; this
+  means some of the companies *around* the Trust aren't independent
+  either, which makes the whole arrangement harder to map, not just
+  bigger.
+- **Calloway Munitions** (Mars) secretly owns **Ashdown Munitions**
+  (Mars) — the system's "two competing" weapons makers aren't actually
+  competing at all. A small-scale echo of the Trust's own trick,
+  suggesting fake competition hiding real coordination is a pattern
+  this economy's power keeps finding at every scale, not just at the
+  top.
+- **Hauptmann & Voskuijlen** (Trust) periodically ends up holding
+  equity in companies that defaulted on H&V debt instead of repaying
+  it — a boring, realistic way a finance house ends up quietly owning
+  operating businesses it never set out to run. Not pinned to a
+  specific company; a one-off detail to apply wherever a scenario
+  needs a company's real owner to be a surprise.
+
+## The Rockline Compact
+
+Not a mirror of the Sol Industrial Trust — a different shape of thing
+entirely, and deliberately so. Where the Trust is four companies
+secretly colluding from genuine dominance, the Rockline Compact is a
+handful of **Belt** companies quietly coordinating in self-defense,
+without solid proof of what they're defending against: they've
+noticed how suspiciously well **Oberth Extraction** — a Trust member —
+never gets undercut on Belt mining, despite being headquartered in the
+one place that's supposed to be the actual frontier of competition.
+The name draws on the same "rock" self-identity already anchored in
+Belter culture (Kamenya, from Russian *kamen* — see
+`belter-pidgin.md`), not invented free-floating.
+
+**Core membership:** **Reyes-Petrov Minerals** (Oberth's direct
+mining rival, squeezed hardest and most motivated), **Lodestar
+Shipyards**, **VARS**, **Longreach Telecom**, **Driftwood Salvage &
+Reclamation**.
+
+**Quietly sympathetic, not formal members:** **Tanager Freight &
+Custody**, and — more interesting precisely because it's a bigger deal
+— **Threshold Arbitration**, whose entire value proposition is
+performed neutrality. A confirmed Rockline sympathy there isn't
+background fact, it's a live vulnerability: a captured "neutral"
+institution is a bigger reveal than a stated alignment, so leave it as
+a live option for whenever a scenario wants to pull that thread rather
+than deciding it here.
+
+**Political texture, not armed resistance:** this is economic self-
+defense — pooled information, coordinated claim registration, mutual
+pricing data — not confrontation. **OSL** (`belt-political-
+structure.md`) is quietly sympathetic, reading it as pragmatic self-
+determination consistent with its own diplomatic approach. **ASA**
+considers it insufficiently radical — not a real answer to the
+problem it's responding to, just another way of playing the inner
+system's game more carefully.
+
+**Status:** real, but unproven even to the Compact's own members —
+nobody in the Compact has hard evidence the Trust actually exists, only
+a pattern that's too consistent to be coincidence. That uncertainty is
+the point: the Compact could be entirely right, or could be a
+mutual-paranoia feedback loop that happens to be organizing against
+something real anyway.
+
 ## Earth's military-industrial decline
 
 Doesn't fit neatly as one more independent, so it gets its own section:
