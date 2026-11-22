@@ -566,6 +566,50 @@ a scenario needs one.
 | The Commons Relief Network | Charity — genuine | Earth | New-International-adjacent |
 | The Okafor-Lindgren Foundation | Charity — corporate-washing | Earth | Tax-shelter/reputation-management arm of a Trust member |
 
+## Regulatory arbitrage: Doris
+
+Real-world precedent: a ship's flag registration (Panama, Liberia) has
+nothing to do with where it actually sails — it's a paperwork fact
+about which government's laws apply to the company that owns it, same
+logic as Delaware or Luxembourg's corporate-registration business:
+the names themselves are unglamorous, ordinary place names that
+happened to accumulate a reputation through use, not because anyone
+picked a name that sounds like paperwork.
+
+**Doris** — a real, genuinely obscure minor asteroid (#48 in the
+catalog), used with no embellishing suffix, deliberately plain enough
+that it can't be mistaken for a frontier outpost or a last stand.
+Nobody's ever heard of it, which is exactly why it works.
+
+**What's actually registered there, and what isn't:** not a
+LocationChain — a ship or node's LocationChain has to stay honest
+about where it actually, currently is, network-topologically; that's
+the one hard routing law in `rfc2350-addressing-grammar.md`'s own
+reasoning, and faking it would break your own reachability. What
+*is* registered at Doris, completely decoupled from real-time network
+position: a company's legal/corporate charter (whose business, tax,
+and labor law formally applies), and — the piece with real technical
+teeth — **which authority issued its RAP/SPERB conformance
+certificate**. A ship's AIS-equivalent (LocationChain) tells you
+exactly where it is in real time; its flag registration (Doris) never
+changes no matter where it sails, the same way a real tanker's flag
+state doesn't move when the ship does.
+
+**Who actually uses it:** the natural home for the Trust's shell
+layers — Okafor-Lindgren's stake in Permafrost/Glasswell, Calloway's
+ownership of Ashdown (see "Hidden ownership" above). A conformance
+certificate issued by Doris's thin, barely-staffed local board means a
+sloppier, more incomplete cross-cert audit trail than a certificate
+from a jurisdiction that actually checks — which directly complicates
+(doesn't defeat) the trust-chain fingerprinting already flagged
+above: messier to trace, not untraceable.
+
+**Note for the stations pass:** this is really the first concrete
+station-level worldbuilding decision to fall out of the corporate
+landscape rather than a pure corporate one — worth carrying forward
+when stations get their own dedicated pass, rather than re-deciding it
+from scratch.
+
 ## Open threads
 
 - VARS's founder surname "Voss" shares a name with Elias Voss,
