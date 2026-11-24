@@ -62,9 +62,42 @@ legitimacy under real, mounting pressure this corpus already knows
 how to tell honestly — the same throughline as MDR's performed
 democracy and OPRA's dissolve-and-resume coalition
 (`os-lineages.md`), just arriving here as a conservation treaty
-instead of a political one. **Threshold Arbitration**
-(`corporations.md`) is the obvious, already-established body to
-arbitrate Protocol disputes, rather than inventing a new one.
+instead of a political one.
+
+## The Europa Allocation Council
+
+Six seats, two apiece from the three signatories — the UN, MDR, and
+**OSL** specifically, not ASA: OSL is already established as the
+Belt's actual diplomatic-track representative wherever cross-domain
+negotiation happens (`belt-political-structure.md`), and ASA's
+harder, more paramilitary character has no natural seat at a table
+shaped like this one. The Council sets harvesting quotas and
+licensing terms each cycle; **Threshold Arbitration**
+(`corporations.md`) stays the separate body that adjudicates actual
+Protocol violations once the Council's rules exist — the body that
+writes the rule and the body that enforces it are never the same
+one.
+
+**The three blocs want genuinely different things, not interchangeable
+caution.** The UN's delegates lean conservative on quotas — protecting
+the ocean is the point of the portfolio they hold. MDR's delegates
+push for looser access, the same fuel-security instinct already
+driving its own Phobos/Deimos independence
+(`mars-political-structure.md`) — deuterium this reachable is too
+strategically important to leave fully gated. OSL's delegates push for
+the Belt's own fair share of licensed access rather than either pure
+position — the same "don't shut us out" instinct already live at the
+Ganymede Condominium (`ganymede-condominium.md`). Six seats split
+three ways means no single bloc can carry a vote alone; every real
+decision needs an actual cross-bloc coalition, not a rubber stamp.
+
+**A deadlock defaults to inertia, not crisis.** A split vote simply
+means the previous cycle's quotas hold unchanged until someone builds
+a real majority — the same dissolve-and-resume pattern already
+running through OPRA's own coalition (`os-lineages.md`): the Council
+doesn't fail loudly when it can't agree, it just quietly stops being
+able to act, which favors whoever benefits most from the status quo
+at that moment.
 
 ## Kivelson Station - Europa
 
@@ -119,8 +152,14 @@ one.
   actually tested or violated that line yet, isn't decided — a clean
   future hook in the same register as Peale's own "has anyone
   exploited this yet" questions.
-- The Protocol's exact signatory list isn't pinned down beyond "the
-  UN, plausibly MDR and OSL."
-- No named figures beyond the honorific — Kivelson Station's actual
-  lead scientist/administrator is a natural future role (added to
-  `people-pass-queue.md`).
+- Settled: three signatories (UN, MDR, OSL), two Council seats each.
+  Still open: whether the Ganymede Condominium (`ganymede-condominium.md`)
+  ever gets its own seat given its direct economic stake (Marius's
+  fertilizer customer, `peale-extraction.md`), or stays unrepresented
+  despite that interest.
+- No named figures — six Council delegates, Kivelson Station's lead
+  scientist/administrator, all open (added to `people-pass-queue.md`).
+- Whether a quota deadlock has ever actually happened, and what the
+  frozen quota was at the time, isn't decided — a natural dramatic
+  beat whenever this body needs to matter in a scene rather than as
+  background structure.

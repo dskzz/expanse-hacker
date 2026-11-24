@@ -43,6 +43,8 @@ here).
   crew; whoever leads the ocean-science team (and doubles, uneasily,
   as the only real check on licensed harvesting nearby) is a natural
   future role.
+- **The Europa Allocation Council** (`europa.md`) — six delegate
+  seats, two each from the UN, MDR, and OSL; none named yet.
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple
