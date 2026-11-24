@@ -37,23 +37,47 @@ When unification happened, Elysium didn't get absorbed outright: it
 negotiated genuine devolved autonomy — its own regional assembly, its
 own economic customs — as the price of joining rather than resisting.
 
-**Political culture, not a regime label:** this is the Scotland-in-
-England comparison, deliberately, not a "straight commie up there"
-cartoon. Elysium's founding population came out of state-planned,
-collectivist colonial administration, so generations later Elysian
-politics genuinely leans more collectivist and social-democratic than
-MDR's mainstream — more worker co-ops, more planned public
-infrastructure, less of MDR's capability-based military-industrial
-discipline. It's a real, textured regional difference in degree, not
-a different country or an enemy ideology. The name deliberately pulls
-from more than one real precedent at once: Puerto Rico's actual
-"Commonwealth" status (self-governing, folded into a larger nation,
-neither fully separate nor fully absorbed), the real Commonwealth of
-Independent States (fitting Elysium's own Eurasian colonial lineage),
-and the British Commonwealth's "tied by shared history, not command"
-looseness. None of these are borrowed wholesale; the term just
-happens to be real, flexible, and already proven to mean exactly this
-shape of arrangement.
+**Political culture, not a regime label — and specifically not the
+"Eastern collective = commie" cliché.** Collectivism as a genuine
+cultural value (real, found across Confucian-influenced societies
+independent of any specific political-economic system) is a different
+thing entirely from 20th-century Marxist-Leninist communism, and
+conflating the two is exactly the lazy move this corpus keeps working
+to avoid. Elysium's capital, **Datong (大同)**, is named for the real
+Confucian political-philosophy concept — "Great Unity" or "Great
+Harmony," from the *Book of Rites*' "Liyun" chapter, describing an
+idealized, egalitarian society sharing resources communally — a
+concept that predates Marxism by over two thousand years. That's the
+founding ideal the name honors.
+
+**The modern reality has evolved past that ideal, openly rather than
+by denial.** What started as something closer to Datong's genuine
+collectivist vision has, over generations, become frank — not
+hidden — **authoritarian political control plus heavily
+government-regulated corporatism**, the real-world pattern sometimes
+called "state capitalism" (modern China's actual hybrid of one-party
+political control and substantial, state-directed market activity,
+rather than classic centrally-planned Soviet-style communism; also
+visible in things like Singapore's government-linked companies).
+Elysium didn't abandon Datong's ideal and hide the fact — it evolved
+past it and stopped bothering to perform otherwise, which makes it a
+genuine contrast with MDR rather than a mirror of it: **MDR performs
+a legitimacy it doesn't fully have** (real elections, "Democratic
+Republic" branding, capability-is-authority hiding underneath,
+`mariner-valley.md`). **Elysium has stopped performing entirely** —
+openly authoritarian-corporatist, Datong's name carrying the founding
+idealism the way "the United Nations" still carries 1940s idealism
+Earth's actual politics mostly outgrew.
+
+The Commonwealth's own name deliberately pulls from more than one
+real precedent at once regardless of this evolution: Puerto Rico's
+actual "Commonwealth" status (self-governing, folded into a larger
+nation, neither fully separate nor fully absorbed), the real
+Commonwealth of Independent States (fitting Elysium's own Eurasian
+colonial lineage), and the British Commonwealth's "tied by shared
+history, not command" looseness. None of these are borrowed wholesale;
+the term just happens to be real, flexible, and already proven to
+mean exactly this shape of arrangement.
 
 **Ongoing friction:** devolution as a live, unresolved political
 question rather than settled history — autonomy referendums, disputes
@@ -61,6 +85,31 @@ over how much the Commonwealth's assembly can override MDR doctrine
 from Mariner Valley, resentment on both sides that never quite boils
 into actual separatism. This is a standing, textured political fact
 about Mars, not a subplot about rebellion.
+
+**A seat on the Consular College, won rather than inherited.**
+Elysium wasn't one of the dozen founding colonies that consolidated
+into Mariner Valley (`mariner-valley.md`) — it was colonized entirely
+separately. When it negotiated its devolution deal, it negotiated its
+own seat on the already-existing Consular College too: a
+**thirteenth seat**, added later, distinct from the original twelve.
+
+**The one real exception to the College's otherwise-ceremonial
+character.** The original twelve seats represent founding colonies
+that are, per the Martian Congress's own malapportionment problem,
+increasingly hollow — old, shrinking, symbolically important but
+materially diminishing. Elysium's seat represents a bloc that's
+currently, actually that strong: population, economy, and industrial
+capability rivaling the rest of Mars **combined** — the Commonwealth
+is formally just one devolved region of MDR, but by far the single
+strongest independent power bloc on the planet, counterweighted only
+by everyone else added together. Formal ceremonial powerlessness
+doesn't survive contact with real material power at that scale:
+nobody can actually afford to treat Elysium's Consul as a figurehead
+the way they can the other eleven, regardless of what the College's
+rules formally say — the same underlying logic as "capability is
+authority" elsewhere in MDR, just surfacing inside the ceremonial
+body instead of the executive branch. Elysium's seat is the live
+exception that proves the rule for everyone else's.
 
 ## Still open
 
