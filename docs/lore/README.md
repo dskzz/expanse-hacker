@@ -87,6 +87,12 @@ cheap fix for now.
 
 ## Shared/cross-cutting
 
+- **`people-pass-queue.md`** — a running list of every unnamed role
+  or figure the corpus has flagged as needing a name once the
+  deferred people pass actually starts. Add to it as new ones come
+  up; don't let a named-figure gap live only in a single file's own
+  open threads.
+
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
   research IP, and the Belt's informal technical backdoor into it.
