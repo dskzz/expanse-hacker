@@ -180,17 +180,35 @@ built on purpose. ASA doesn't need access to Psyche to make this
 argument land; the empty rock and the Core's own survivors make it
 for them, independently and at the same time.
 
-**The last holdouts are the live fuse.** The transition isn't fully
-closed out — the bitterest people on the rock are still physically
-present, still have system access automation hasn't fully replaced,
-and are watching their own jobs get finished off on a delay. That's
-an open door ASA would be foolish not to have tried knocking on:
-whether anyone's successfully recruited a holdout for something more
-than sympathy — information, access, a slowdown, outright sabotage —
-isn't settled, but it's the single most dangerous unresolved question
-this file leaves on the table. A company that automated its way out
-of a workforce it no longer needed didn't automate out the handful of
-people it still, grudgingly, does.
+**The last holdouts are the live fuse — and ASA has already struck
+at least one.** Settled: this isn't a hypothetical vulnerability, it's
+a standing asset. Not recruited on ideology — recruited the same way
+the diaspora radicalized in the first place, through a personal
+connection that never severed: a holdout with a sibling, a former
+neighbor, an old crewmate who left for Vesta and is ASA-affiliated
+now, reaching back rather than ASA cold-approaching a stranger. That's
+consistent with how everything else about Psyche's politics works —
+personal before political.
+
+**What the asset actually provides is informational, not kinetic** —
+in keeping with the quiet, bureaucratic register the rest of this
+place runs on. Legacy credentials and system access nobody's gotten
+around to rotating out, visibility into shipment schedules and
+security posture, an occasional maintenance ticket slow-walked or a
+sync quietly delayed just long enough to leave a gap open a little
+longer than Oberth thinks it is. Small, deniable, easy to misread as
+ordinary institutional sloppiness rather than as what it actually is
+— which is exactly the point, and exactly the kind of signal the
+claim-provenance fraud hook above would have to surface to prove.
+
+**The irony Oberth hasn't noticed:** the rotation policy that's
+slowly erasing the Core's institutional memory is, from ASA's side,
+also running out the clock on its own access. ASA has a live,
+self-interested reason to want *this specific holdout's* rotation-out
+delayed — not because it cares about Oberth's staffing problem, but
+because losing the holdout loses the asset. For once, ASA and Oberth
+both have a reason to keep the same person in place a little longer,
+for completely opposite reasons neither would admit to the other.
 
 ## Open threads
 
@@ -201,9 +219,13 @@ people it still, grudgingly, does.
 - Whether the Rockline Compact (`corporations.md`) has ever actually
   tried testing the claim boundary on the ground, or just suspects
   from a distance — open, and a natural future hook.
-- **Whether ASA has actually turned a last holdout, and into what** —
-  deliberately left open above as the file's sharpest unresolved hook.
-  Worth deciding before Psyche shows up in anything plot-specific.
+- Whether there's exactly one asset among the holdouts or more than
+  one, and whether Oberth has any live suspicion versus genuinely no
+  idea — not pinned down, and worth deciding deliberately rather than
+  defaulting, since it changes how exposed this thread already is.
+- No name for the asset yet, or for the ASA-side contact they report
+  to — deferred along with the rest of this corpus's named-figures
+  work, per the broader worldbuilding-before-people sequencing.
 - Exact length of the automation decade and how long ago it finished
   isn't pinned down — should land recently enough that the last
   holdouts are still bitter rather than resigned, loosely a generation
