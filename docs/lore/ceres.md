@@ -86,15 +86,39 @@ run security whether it's sanctioned or not.
 ## The Magnates
 
 Not one isolated puppet at the top — a whole class underneath him.
-Each major Earth corp with real presence on Ceres (plausibly several
-Trust members, Okafor-Lindgren and Hauptmann & Voskuijlen especially,
-given their scale) has a local **Magnate**: nominally an independent
-Belter business tycoon, publicly the face of that corp's Ceres
-operations, actually sponsored by and answerable to the Earth parent
-the same way the Hetman answers to Earth's broader leverage. A real
-social layer worth investigating — most genuinely compromised, maybe
-one or two secretly sympathetic to the opposition below while publicly
-playing the part.
+Each major Earth corp with real presence on Ceres has a local
+**Magnate**: nominally an independent Belter business tycoon,
+publicly the face of that corp's Ceres operations, actually sponsored
+by and answerable to the Earth parent the same way the Hetman answers
+to Earth's broader leverage.
+
+Deliberately mixed, and worth stating why: Piast (Slavic) being
+compromised and Oduya (West African) being the genuine resistance
+risks reading as an ethnic pattern rather than a personal one if left
+as the only two data points on Ceres. The Magnate roster below exists
+partly to break that reading — corruption and integrity both need to
+cut across backgrounds, not split along one line:
+
+- **Emeka Falana** — Okafor-Lindgren's Magnate (West African-coded).
+  Fully compromised. Placed deliberately: West African heritage isn't
+  a moral marker in this cast: Oduya's integrity is personal, not
+  ethnic, and Falana is the proof.
+- **Priya Deshmukh** — Oberth Extraction's Magnate (Indian-coded).
+  Also fully compromised — and actively so, not passively: Oberth is
+  a Sol Industrial Trust member whose entire position depends on
+  nobody noticing how convenient its market standing is
+  (`corporations.md`), so Deshmukh's real job is maintaining that
+  cover, not just benefiting from it.
+- **Bogdan Wysocki** — Hauptmann & Voskuijlen's Magnate
+  (Slavic-coded), and the deliberate reversal: secretly sympathetic to
+  Oduya's movement, not compromised at all. Two Slavic-coded figures
+  holding real power on Ceres — Piast fully sold out, Wysocki quietly
+  working against the same system from inside it — makes the actual
+  split visible: individual choice, not heritage. Sharp irony built in
+  for free: H&V holds Piast's actual blackmail leverage, which means
+  the one institution with the most power over the Hetman has someone
+  on the inside who could plausibly expose exactly that leverage, if
+  he ever judged the risk worth taking.
 
 ## The real opposition: Imara Oduya
 
@@ -120,8 +144,10 @@ character.
 
 ## Open threads
 
-- Which specific corps have named Magnates on Ceres isn't pinned down
-  yet — flagged for whenever a scenario needs a specific one.
+- Whether any other major corp (Meridiani Systems, VARS, Tanager)
+  warrants its own named Ceres Magnate beyond the three above isn't
+  decided — the three given are a deliberate minimum, not an
+  exhaustive roster.
 - Whether Piast's debt to H&V is public knowledge to anyone (Oduya,
   the Rockline Compact, a sufficiently motivated player) or genuinely
   secret leverage nobody's proven yet — left open, same uncertainty
