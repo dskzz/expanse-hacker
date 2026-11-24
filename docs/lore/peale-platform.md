@@ -83,12 +83,33 @@ Condominium politics: it's also the nearest safe staging base for
 every dangerous robotic operation in the Jupiter system, Peale
 included.
 
-**The rare exception:** a handful of physical tasks — a jammed
-mechanism, a unit that needs physical retrieval — genuinely can't be
-done by remote hands alone. Those get extremely brief, heavily
-shielded crewed sorties: the single most hazardous, best-paid, and
-rarest duty assignment anywhere in this corpus, not a standing crew
-roster.
+**The rare exception, and the real physics behind the gear.** A
+handful of physical tasks — a jammed mechanism, a unit that needs
+physical retrieval — genuinely can't be done by remote hands alone.
+What makes even a brief crewed sortie survivable isn't a thicker
+version of an ordinary hazmat suit: Jupiter's radiation belts are
+overwhelmingly **trapped charged particles** — electrons and ions,
+not gamma rays or cosmic rays — and charged particles are something a
+magnetic field deflects far more efficiently, per kilogram, than any
+amount of passive mass shielding can block. A civilization already
+running a fusion economy on He-3 (`mars-political-structure.md`'s
+Phobos/Deimos operations, among others) already has the mature
+superconducting-magnet and plasma-confinement engineering base that
+this calls for — so Peale's sortie gear is plausibly an **active
+magnetic-deflection suit or small armored pod**, generating its own
+shielding field, rather than a passive lead-and-tungsten shell heavy
+enough to be nearly unwearable at the scale needed.
+
+**The real limit isn't the concept, it's the power budget.** A field
+strong enough to matter has to run continuously, so sortie duration
+is capped by whatever the suit's power cell can sustain, not by
+choice — "extremely brief" stays extremely brief, now for a specific,
+well-grounded reason instead of a hand-waved one. It also only solves
+the radiation problem: it does nothing for Io's volcanic and fast-
+resurfacing hazards, which stay exactly as dangerous as before. Even
+with the gear, this remains the single most hazardous, best-paid, and
+rarest duty assignment anywhere in this corpus — not a standing crew
+roster, just better-understood gear behind the same rare exception.
 
 ## What this actually exposes
 
