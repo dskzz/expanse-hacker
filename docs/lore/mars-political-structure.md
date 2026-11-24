@@ -111,6 +111,31 @@ authority" elsewhere in MDR, just surfacing inside the ceremonial
 body instead of the executive branch. Elysium's seat is the live
 exception that proves the rule for everyone else's.
 
+## Fusion fuel independence: Phobos and Deimos
+
+Mars's own surface is a poor native source of helium-3 — its thin
+atmosphere and patchy residual magnetic field meaningfully reduce
+solar-wind implantation compared to a truly airless body, nowhere
+near as efficient an accumulator as the Moon's regolith
+(`armstrong-city.md`). But Mars has an obvious local source in orbit:
+**Phobos and Deimos**, both small, airless, heavily cratered moons —
+physically the same environment as Luna's surface or an asteroid,
+directly exposed to solar wind for billions of years, just
+accumulating at a somewhat lower rate given Mars's greater distance
+from the Sun. A real, workable local source, not an import
+dependency — and already present in the corpus's inherited naming
+conventions without previously meaning anything (the old vault
+network list's `MDR-OPS-PHOBOS`/`MDR-OPS-DEIMOS`, frozen but
+inspirational): these are MDR's actual helium-3 mining operations.
+
+Thematically, not just conveniently: Mars securing its own
+independent fusion-fuel supply rather than depending on Earth/Luna
+for something this strategically critical is exactly the kind of
+self-sufficiency a nation this insecure about its unequal
+relationship with Earth would have prioritized early. Mars isn't
+vulnerable to an Earth fuel chokehold the way it might otherwise be —
+earned independence, not an accident.
+
 ## Still open
 
 - Exact unification date relative to the rest of the corpus's timeline

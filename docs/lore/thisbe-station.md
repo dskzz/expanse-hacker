@@ -57,16 +57,39 @@ and the Rockline Compact's whole grievance.
 ## Space Cuba: the actual present-day shape
 
 Still a cooperative, in name and mostly in practice — hollowed out,
-not thriving, not dead. The real analogy worth using directly: small,
-ideologically awkward, survives despite a much larger power's
-hostility because crushing it outright costs more than tolerating it
-does. The UN can't move against Thisbe without reopening the
-massacre's own wound publicly — the same broadcast that created the
-reform window in the first place would make any crackdown now a
-system-wide scandal. Thisbe can't fully break free either — it still
+not thriving, not dead. The real analogy worth using directly, and
+more precisely than "everyone avoids it": most of the world doesn't
+actually avoid Cuba — plenty of nations maintain completely normal
+relations with it specifically to signal independence from US
+pressure, or just to needle Washington a little. The accurate version
+here is an active three-way split, not uniform hands-off avoidance:
+
+- **The UN** can't move against Thisbe without reopening the
+  massacre's own wound publicly — the same broadcast that created the
+  reform window in the first place would make any crackdown now a
+  system-wide scandal. Genuinely stuck, not merely reluctant.
+- **ASA** doesn't need to actually embrace the cooperative's ideology
+  to use open relations with Thisbe as a deliberate wedge against the
+  UN — opportunism dressed as solidarity, consistent with ASA's
+  established willingness to act unilaterally and provoke rather than
+  negotiate.
+- **MDR** maintains a small, calculated, visibly-public trade
+  relationship for the same reason, scaled to Mars's own insecurity
+  about its unequal relationship with Earth (`mariner-valley.md`) —
+  enough open contact to be a pointed irritant, not enough exposure to
+  invite real cost.
+- **OSL** stays genuinely more reserved than either — its whole brand
+  is careful diplomacy with established powers, and being seen as
+  using Thisbe to provoke the UN cuts directly against that image.
+
+The UN hates all of it and can't do much about any single piece:
+can't crack down on Thisbe without the scandal, can't credibly punish
+Mars or ASA for maintaining ordinary relations with a nominally-
+still-recognized cooperative without looking like a bully on top of
+everything else. Thisbe can't fully break free either — it still
 needs inner-system markets and capital it has no real way to replace.
-Neither side can afford to act, so neither does, and the stalemate
-just continues.
+A real, active diplomatic pressure point, not a forgotten backwater
+everyone quietly avoids.
 
 **Chronic underemployment, and — the part that actually matters for
 play — chronically underpatched software.** Nobody with real capital
@@ -77,11 +100,28 @@ genuinely vulnerable network infrastructure — the same shape as
 Shackleton's neglect (`armstrong-city.md`), different root cause:
 underinvestment born of squeeze, not abandonment born of irrelevance.
 
-## The helium-3 cluster: a live complication, not settled history
+## The helium-3 discovery: recent, regional, and a live complication
 
-Recently discovered: an unusually rich, localized pocket of helium-3-
-bearing regolith — plausibly exposed by some specific impact event
-that uncovered ancient, long-undisturbed surface material, rather
+**Explicitly recent** — within the last few years of "now," not old
+settled history. This is a contemporary issue the present political
+situation hasn't finished reacting to, not backstory.
+
+**Regional, not a single freak rock** — a better, more scientifically
+coherent conceit than one isolated pocket at Thisbe alone. Real
+asteroid "families" exist: groups of bodies sharing a common
+collisional origin and similar composition, the same way the real
+Flora, Eos, and Themis families do. If Thisbe's whole neighborhood
+shares common ancestry — a parent body that broke apart at some
+point, or a cluster of bodies with similar impact-exposure
+histories — then the entire region being helium-3-rich is more
+plausible than a single lucky exception, and it raises the stakes
+considerably: not one valuable station, a whole valuable neighborhood
+suddenly worth fighting over.
+
+Within that region, Thisbe specifically holds an unusually rich,
+localized pocket of helium-3-bearing regolith — plausibly exposed by
+some specific impact event that uncovered ancient, long-undisturbed
+surface material, rather
 than a uniform planet-wide deposit. Solar-wind-implanted helium-3
 isn't exclusively lunar; it accumulates on any long-exposed airless
 surface, just at a lower rate farther from the Sun — a genuinely
