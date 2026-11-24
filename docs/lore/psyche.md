@@ -127,6 +127,21 @@ obvious candidate given its UN/MFN administrative weight,
 that still carries any warmth belongs to the people the company spent
 a decade making unnecessary.
 
+**A third figure, caught in the middle: the local admin.** One of the
+outside hires fills the liaison-to-corporate role long enough to
+actually start noticing things — access patterns that don't add up,
+maintenance logs that don't quite match the work order, the ordinary
+texture of a site with a leak in it. Oberth corporate is genuinely,
+structurally hands-off here, not just at the automation layer but at
+the management layer above it: Psyche is a low-priority legacy asset
+in somebody's portfolio (`corporations.md`'s hidden-ownership logic),
+not a strategic one, and a distant owner that's never had to look
+closely at this place has no appetite to start now over a local
+admin's unproven hunch. The admin has raised it. Nobody above them
+has found it worth the cost of actually investigating — which is its
+own quiet confirmation of exactly how hands-off "hands-off" really
+is, at every level of the company, not just the automated one.
+
 ## What this actually exposes
 
 A site that runs mostly on automation with minimal human oversight is
@@ -190,6 +205,19 @@ now, reaching back rather than ASA cold-approaching a stranger. That's
 consistent with how everything else about Psyche's politics works —
 personal before political.
 
+**The primary asset is the single most irreplaceable holdout on the
+rock** — not a random sympathizer, but specifically the one who knows
+where everything is, how to fix it, and how the whole patchworked-
+together system of legacy and automated functions actually fits
+together, the exact expertise Oberth has never managed to fully
+write down into something a machine (or a replacement hire) could run
+without them. That's not a coincidence of casting; it's the direct
+consequence of who's left. Everyone replaceable has already been
+replaced. The handful still there are, by definition, the ones
+nobody's found a way to do without — which makes the irreplaceable
+one both Oberth's single point of failure and ASA's highest-value
+source, for the same reason.
+
 **What the asset actually provides is informational, not kinetic** —
 in keeping with the quiet, bureaucratic register the rest of this
 place runs on. Legacy credentials and system access nobody's gotten
@@ -200,6 +228,21 @@ longer than Oberth thinks it is. Small, deniable, easy to misread as
 ordinary institutional sloppiness rather than as what it actually is
 — which is exactly the point, and exactly the kind of signal the
 claim-provenance fraud hook above would have to surface to prove.
+It's also exactly the pattern the local admin has been flagging
+without traction: not proof of a leak, just a string of things that
+don't quite add up, from someone corporate has no appetite to
+seriously look into.
+
+**Why nobody audits the one person worth auditing.** Oberth can't
+afford to investigate its own irreplaceable holdout too closely —
+the same expertise that makes them valuable is exactly what makes
+scrutinizing them expensive and risky: push too hard and the one
+person who understands how Psyche's systems actually interlock might
+walk, retire, or simply stop being cooperative, with no one left who
+could take over. The institutional protection that keeps the
+irreplaceable holdout employed is the same protection that's kept
+them unaudited. Oberth's hands-off culture doesn't just create the
+vulnerability; it's actively, if unintentionally, shielding it.
 
 **The irony Oberth hasn't noticed:** the rotation policy that's
 slowly erasing the Core's institutional memory is, from ASA's side,
@@ -219,12 +262,18 @@ for completely opposite reasons neither would admit to the other.
 - Whether the Rockline Compact (`corporations.md`) has ever actually
   tried testing the claim boundary on the ground, or just suspects
   from a distance — open, and a natural future hook.
-- Whether there's exactly one asset among the holdouts or more than
-  one, and whether Oberth has any live suspicion versus genuinely no
-  idea — not pinned down, and worth deciding deliberately rather than
-  defaulting, since it changes how exposed this thread already is.
-- No name for the asset yet, or for the ASA-side contact they report
-  to — deferred along with the rest of this corpus's named-figures
+- Settled: the primary asset is the single irreplaceable systems
+  holdout, and the local admin suspects a leak but can't get Oberth
+  corporate to act on it. Still open: whether there's a *second*
+  asset among the lesser holdouts beyond the primary one.
+- Whether the local admin's suspicion ever gets far enough to matter
+  — a direct escalation to the Rockline Compact's own suspicions
+  about Oberth, a quiet personal investigation that goes nowhere
+  through official channels, or just permanent, unresolved unease —
+  isn't decided, and is a clean future hook in its own right.
+- No name for the asset, the local admin, or the ASA-side contact the
+  asset reports to — deferred along with the rest of this corpus's
+  named-figures
   work, per the broader worldbuilding-before-people sequencing.
 - Exact length of the automation decade and how long ago it finished
   isn't pinned down — should land recently enough that the last
