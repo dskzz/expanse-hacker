@@ -24,6 +24,7 @@ dominant cartel sitting on top of all of it.
 
 **Resource extraction & hauling:** ore/metal mining · ice & volatiles
 harvesting · fuel/propellant refining · mining-rights survey services
+· geological exploration & solar-body surveying
 
 **Industrial & construction:** construction materials/manufacturing ·
 shipbuilding & repair · real estate/habitat construction & ownership ·
@@ -533,7 +534,10 @@ a scenario needs one.
 |---|---|---|---|
 | Reyes-Petrov Minerals | Ore/metal mining | Belt | Smaller rival to Oberth |
 | Frostline Harvesting | Ice/volatiles + fuel/propellant refining | Ganymede | Covers both — refining raw volatiles is the natural next link in the same supply chain |
-| Triangulum Survey Group | Mining-rights survey | Belt | Finds and certifies claims before any extractor shows up; a forged survey timestamp mirrors Driftwood's abandonment-timestamp mechanic |
+| Triangulum Survey Group | Mining-rights survey (legal/claim certification) | Belt | Finds and certifies claims before any extractor shows up; a forged survey timestamp mirrors Driftwood's abandonment-timestamp mechanic |
+| Benchmark Surveys | Mining-rights survey (rival to Triangulum) | Belt | Named for the real surveying term (a fixed reference point other measurements check against). The Rockline Compact's trust alternative if Triangulum's data is ever suspected of favoring Oberth |
+| Shoemaker Geological Survey | Geological exploration & solar-body surveying | Earth–Belt joint venture | Named for Eugene Shoemaker, the real father of astrogeology. Distinct from Triangulum/Benchmark — this is the actual scientific characterization (composition, structure, resource potential) that happens *before* anyone stakes a claim, not the legal certification after. Survey data is valuable enough to falsify or leak either direction, and a natural lever for the Trust's hidden reach — steering which surveys get priority could mean Oberth sees promising finds before anyone else, with no single overt act of favoritism to point to |
+| Longshot Exploration | Geological exploration (rival to Shoemaker) | Belt | Fully independent, no Earth institutional backing — survives by exploring bodies inner-system money doesn't think are worth the risk |
 | Standard Fabrication Co. | Industrial components + robotics/heavy equipment | Mars | Covers both — assembling machines is the natural next step from making the parts |
 | Domewright Habitats | Real estate/habitat | Belt | A lot of "independent" stations are Domewright property with another name painted over the lease |
 | Helion Power | Power generation | Mars | Technically excellent, genuinely trusted — certified-parts lock-in feels less extractive than VARS's until an emergency hits |
