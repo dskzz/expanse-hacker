@@ -217,11 +217,22 @@ is forced by light-lag, PREP has none at all by hard physical limit,
 and Marius has a real, if modest, human staff simply because the
 hazard that forced everything upstream to go robotic has genuinely
 dropped away by this point in the chain. Final sulfur, SO2, and
-sulfuric-acid-precursor product leaves Marius market-ready, headed
-outward to the Belt's metal-refining economy (Oberth Extraction's
-own chain at Psyche, among others) — resolving the open question
-below about where PREP's output actually goes: through Marius first,
-not straight out of the Jovian system as raw concentrate.
+sulfuric-acid-precursor product leaves Marius market-ready — resolving
+the open question below about where PREP's output actually goes:
+through Marius first, not straight out of the Jovian system as raw
+concentrate.
+
+**A real, local customer, not just a long haul to the Belt.** Sulfur
+is a genuine plant macronutrient, and sulfuric acid is a key input
+for real fertilizers (superphosphate, ammonium sulfate) — and
+`ganymede-condominium.md` already establishes that Earth holds
+genuinely valuable, licensable agricultural science at Ganymede as
+part of the Condominium's farming operations. That means a real share
+of Marius's output never leaves the neighborhood at all: it feeds
+straight into Ganymede's own agricultural program next door, a far
+shorter and more sensible supply chain than hauling everything out to
+the Belt's metal-refining economy (Oberth Extraction's own chain at
+Psyche, among others, still takes the rest).
 
 ## Open threads
 
