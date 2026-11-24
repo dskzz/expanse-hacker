@@ -153,10 +153,17 @@ any existing or future name that turns out just as hard to place.
   open threads.
 - **`flashpoints.md`** — a running list of every live, standing
   tension loaded enough to actually erupt, not just an undecided
-  detail — the Jovian sovereignty crisis, Thisbe's unfinished
-  helium-3 fallout, Lunar resource depletion as a newly-identified
-  root cause behind several threads already built elsewhere. Add to
-  it the same way as the people-pass queue.
+  detail. Swept corpus-wide 2026-11-24: three in the Jovian system
+  (the sovereignty crisis, Ganymede's three-way friction, Europa's
+  quota fight), three on Mars (Elysium's devolution friction, the
+  Martian Congress's malapportionment crisis, the Mariner Valley
+  Caucus/Elysium rivalry), five in the Belt (the OSL/ASA split,
+  Vesta's worker councils, Ceres's Oduya-vs-Piast rivalry, Psyche's
+  live ASA asset, Thisbe's unfinished fallout), plus the New
+  International vs. the UN, the Rockline Compact's suspicion of the
+  Trust, and Lunar resource depletion as a newly-identified root
+  cause tying several of the others together. Add to it the same way
+  as the people-pass queue.
 
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
