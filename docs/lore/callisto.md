@@ -296,6 +296,59 @@ unaccountable leverage over exactly the population doing the most
 dangerous work in the system, whether or not it's ever actually
 misused.
 
+## A bureaucratic warzone, not a shooting one
+
+Everything above adds up to a fight fought almost entirely in
+paperwork, stamps, and competing certificates — the right register
+for this corpus, and sharper for staying there instead of reaching
+for violence it doesn't need:
+
+- **Dueling licenses.** The Concord Assembly (above) has started
+  issuing its own permits and business registrations, parallel to
+  the JDC's official ones, for the same activity — a direct,
+  intentional claim of governing legitimacy. A merchant operating in
+  Concord increasingly has to choose which stamp to display, or
+  quietly hold both and hope whichever authority wins the larger
+  fight doesn't penalize them for hedging.
+- **A civil service that no longer knows whose signature counts.**
+  The Jovian Civil Service's own institutional self-interest (above)
+  means a growing number of JCS officials have started quietly
+  processing Concord Assembly paperwork alongside their official JDC
+  duties — nobody's been fired for it yet, because nobody in JDC
+  leadership is confident enough in how this ends to make that fight
+  now. The practical result: whether a given stamp means anything
+  depends increasingly on which clerk you got, not on any settled
+  rule.
+- **Customs as the daily battlefield.** The Jovian Customs and
+  Excise Board (above) still taxes and clears cargo under JDC
+  authority; the Concord Assembly has started asserting its own
+  competing tariff and clearance rules for goods it considers under
+  its own jurisdiction. The result real merchants actually live with:
+  a shipment of Peale's sulfur or Marius's refined product can sit
+  uncleared at dock for real, no malice required, just because the
+  shipper's paperwork recognizes one authority and the dockworkers
+  recognize the other, and neither side is backing down on principle.
+- **Threshold Arbitration's docket as the overflow valve.**
+  Threshold Arbitration (`corporations.md`) already carries a
+  disproportionate caseload from TGC and Europa Council disputes
+  (`ganymede-condominium.md`) — Concord's unresolved status is
+  flooding that same docket further, turning a neutral arbiter never
+  designed for constitutional questions into the place where "whose
+  stamp actually counts" keeps getting litigated one shipment at a
+  time, because no political body has the standing to just rule on
+  it directly.
+- **The fight is a technical fact, not just a political one.** Two
+  non-recognizing authorities issuing competing certificates is
+  exactly a cross-cert trust problem in this corpus's own terms
+  (RFC-2362's AuthorityWeight model, `os-lineages.md`) — which
+  authority's signature a given node or relay actually trusts isn't
+  settled by politics alone, it's a literal, checkable configuration
+  question, the same kind of real signal a cross-cert audit could
+  surface elsewhere in this corpus (`corporations.md`'s hidden-
+  ownership section). Whoever's paperwork the network itself defaults
+  to trusting has a real, quiet advantage nobody's had to win a vote
+  to get.
+
 ## Open threads
 
 - Whether JTC is independent or still under JDC's administrative
@@ -309,6 +362,10 @@ misused.
   Moons wing are still one movement with an internal argument, or
   have already split into two organizations with two different
   goals — not decided.
+- Whose certificates the system's nodes and relays actually default
+  to trusting, and whether anyone has deliberately engineered that
+  default rather than it just happening by accident — not decided,
+  and a clean, mechanically real hook for this corpus specifically.
 - Exactly what the Concord Settlement would actually divide, beyond
   the general leanings already noted (Peale toward Belt refining,
   Marius toward Earth's ag program, Mars's ask being deuterium access
