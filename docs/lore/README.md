@@ -151,6 +151,12 @@ any existing or future name that turns out just as hard to place.
   deferred people pass actually starts. Add to it as new ones come
   up; don't let a named-figure gap live only in a single file's own
   open threads.
+- **`flashpoints.md`** — a running list of every live, standing
+  tension loaded enough to actually erupt, not just an undecided
+  detail — the Jovian sovereignty crisis, Thisbe's unfinished
+  helium-3 fallout, Lunar resource depletion as a newly-identified
+  root cause behind several threads already built elsewhere. Add to
+  it the same way as the people-pass queue.
 
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
