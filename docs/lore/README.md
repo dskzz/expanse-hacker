@@ -90,8 +90,5 @@ cheap fix for now.
 - The relay-town archetype (maintenance crews → bar → organic
   settlement, tied to RFC-2353's own hop-count mechanics) was
   discussed but never written up.
-- Refining-operation-specific locations (behind Oberth Extraction,
-  Reyes-Petrov Minerals, Frostline Harvesting) still need real
-  orbital anchors and LocationChains.
 - Black sites (R&D, surveillance, prison, weapons placement, across
   Mariner Valley, Elysium, and Earth) remain a flagged future pass.

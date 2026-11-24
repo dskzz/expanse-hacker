@@ -164,6 +164,11 @@ what happens to real people if the wrong thing gets touched.
 
 ### Oberth Extraction — Belt mining (Belt)
 
+**LocationChain:** `BELT:PSYCHE:OBERTH` — anchored at the real 16
+Psyche, a genuinely metal-rich asteroid and an actual NASA mission
+target for exactly that reason, a near-perfect thematic fit for a
+metal-mining operation rather than a coincidence.
+
 **Sells:** Belt mining and raw-material extraction — named for Hermann
 Oberth, a real, genuinely obscure-to-most-readers rocketry pioneer,
 the same naming move as Slayton Construction Yards.
@@ -555,8 +560,8 @@ a scenario needs one.
 
 | Company | Sector | Home | Note |
 |---|---|---|---|
-| Reyes-Petrov Minerals | Ore/metal mining | Belt | Smaller rival to Oberth |
-| Frostline Harvesting | Ice/volatiles + fuel/propellant refining | Ganymede | Covers both — refining raw volatiles is the natural next link in the same supply chain |
+| Reyes-Petrov Minerals | Ore/metal mining | Belt | Smaller rival to Oberth. LocationChain: `BELT:JUNO:REYESPETROV` — anchored at the real 3 Juno, one of the first four asteroids discovered |
+| Frostline Harvesting | Ice/volatiles + fuel/propellant refining | Ganymede | Covers both — refining raw volatiles is the natural next link in the same supply chain. LocationChain: `TGC:GANYMEDE:FROSTLINE`, consistent with Ganymede's own shared-jurisdiction anchor |
 | Triangulum Survey Group | Mining-rights survey (legal/claim certification) | Belt | Finds and certifies claims before any extractor shows up; a forged survey timestamp mirrors Driftwood's abandonment-timestamp mechanic |
 | Benchmark Surveys | Mining-rights survey (rival to Triangulum) | Belt | Named for the real surveying term (a fixed reference point other measurements check against). The Rockline Compact's trust alternative if Triangulum's data is ever suspected of favoring Oberth |
 | Shoemaker Geological Survey | Geological exploration & solar-body surveying | Earth–Belt joint venture | Named for Eugene Shoemaker, the real father of astrogeology. Distinct from Triangulum/Benchmark — this is the actual scientific characterization (composition, structure, resource potential) that happens *before* anyone stakes a claim, not the legal certification after. Survey data is valuable enough to falsify or leak either direction, and a natural lever for the Trust's hidden reach — steering which surveys get priority could mean Oberth sees promising finds before anyone else, with no single overt act of favoritism to point to |
