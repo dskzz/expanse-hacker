@@ -35,14 +35,25 @@ point into Luna's broader network — legacy, neglected infrastructure
 being the soft entry point into an otherwise well-defended system is
 a real, well-grounded pattern, not an invented one.
 
-**Old ideals, still held here.** Shackleton's remaining population
-leans toward the kind of self-reliant, independence-minded attitude
-the Belt is known for — not identical to Belter culture, not a
-parallel political system, just a real present-day kinship born the
-same way: neglect by the center breeds independence at the edges.
-Worth keeping as live, current culture at Shackleton specifically,
-rather than purely historical color the way an earlier draft framed
-it.
+**Old ideals, still held here — and a real reason they took root.**
+Unlike Armstrong City, Shackleton was never a UN purpose-built
+project — it grew up organically as a frontier mining outpost first,
+only loosely integrated into the UN's own administrative priorities
+even in its heyday. That's exactly why old-timey anarcho-capitalist
+types actually settled there rather than somewhere more
+UN-administered, and exactly why it was the natural thing to neglect
+first once resources got scarce: it was never fully inside the
+system Armstrong City was built as. Armstrong City's own people have
+a dismissive nickname for it — **"the Shack."**
+
+**A live, ongoing political tension, not settled history.** A
+declining, ancap-leaning, increasingly unmonitored outpost is exactly
+the kind of loose end a centralizing UN naturally wants gone — the
+Assembly (or whichever agency currently holds the file) has a real,
+active institutional incentive to push for Shackleton's formal
+dissolution or absorption, not just quietly let it fade. Whether
+Shackleton survives as an actual holdout or gets formally closed is
+an open, live question, not a foregone conclusion either way.
 
 ## Armstrong City: grown from a tourist trap into Luna's actual center
 
@@ -67,20 +78,56 @@ administers, and distributes — a real economic geography, periphery
 and center doing genuinely different jobs instead of one location
 trying to be everything.
 
-## Government: ultra-centralized, no shared sovereignty at all
+## Government: run like DC is run by Congress, with the same real problems
 
 A real, deliberate contrast to Ceres's MFN trade framework and the
 Ganymede Condominium's three-way split: Luna is the UN's **own**
 system, lock, stock, and barrel — no Trust-member hidden stake
 competing with Belt or Mars interests, no negotiated functional
 division between rival powers. Just direct, uncontested, centralized
-UN administration. That cleanliness is itself the point of contrast
-with everywhere else in this corpus: Luna is the one place Earth
-doesn't have to share, hide its hand, or negotiate — which makes
-Armstrong City's sprawling, overlapping bureaucratic turf wars
-(agencies competing over jurisdiction, not over the territory itself)
-a different kind of mess than anywhere else: internal to one power,
-not between rival ones.
+UN administration.
+
+But "uncontested" doesn't mean well-run, and the specific mechanism
+worth borrowing directly is how Washington, DC is actually governed
+by the US Congress — not a separate, Luna-specific legislature (that
+word's already spoken for by Mars's Martian Congress), the **UN
+General Assembly itself**, with exactly the real negatives DC
+actually has:
+
+- **No real representation.** Armstrong City's residents don't get a
+  real voting seat in the body that directly controls them — the
+  literal "taxation without representation" complaint, same one
+  printed on DC license plates in real life.
+- **Luna's governance is an afterthought**, not a priority — the
+  Assembly's actual attention is consumed by matters across the
+  entire UN's jurisdiction, so Luna gets whatever attention is left
+  over, inconsistently.
+- **Local policy gets used as a bargaining chip in unrelated fights**
+  — the real pattern of Congress attaching riders to DC's budget for
+  reasons having nothing to do with DC itself, just because it's
+  convenient leverage. Armstrong City's own budget and local rules
+  plausibly get held hostage the same way, over disputes happening
+  elsewhere in Sol entirely.
+- **Chronic budget uncertainty feeds the agency sprawl directly** —
+  this is the actual cause of the overlapping, turf-warring UN
+  agencies already established, not a second, unrelated mess. When
+  the body nominally in charge doesn't pay close, consistent
+  attention, subordinate agencies fill the vacuum inconsistently,
+  which is exactly what that sprawl is downstream of.
+
+## Two-tier UN: prestige on Earth, the actual bureaucracy on Luna
+
+The corporate tax incentive (below) isn't just about the tax break —
+it's about **direct, in-person access to the UN's actual working
+bureaucratic corps**, who are based on Luna, not Earth. The UN sorts
+itself geographically: the higher-level, visible, prosperous
+leadership and political class stay on Earth, while the grinding,
+day-to-day administrative apparatus — the people who actually process
+filings, permits, and compliance — toils away on Luna. Armstrong
+City isn't just symbolically important or a convenient tax haven,
+it's physically where the UN's real administrative engine runs, which
+is the concrete reason a company's HQ being there matters beyond the
+tax line.
 
 ## Corporate HQs: the tax incentive, and what it actually costs
 
@@ -110,11 +157,14 @@ tradeoffs, not just three names on a list.
 ## Open threads
 
 - No specific named UN agency or bureaucratic structure for Armstrong
-  City yet — the "overlapping agencies, internal turf war" framing is
-  established, specific agency names aren't.
-- Whether Shackleton's holdout culture has any organized political
-  voice or outside contact (Rockline Compact sympathy, say) or stays
-  purely local and isolated — not decided.
+  City yet — the "General Assembly oversight causes agency sprawl"
+  framing is established, specific agency names aren't.
+- Whether Shackleton's dissolution pressure ever actually succeeds, or
+  the holdout wins out indefinitely — genuinely open, not resolved
+  here on purpose.
+- Whether Shackleton's holdout culture has any organized outside
+  contact (Rockline Compact sympathy, say) or stays purely local and
+  isolated — not decided.
 - Which specific remote sites run the ongoing ice-mining and regolith
   helium-3 operations feeding Armstrong City's refineries hasn't been
   named yet.
