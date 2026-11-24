@@ -170,6 +170,62 @@ the joint UNN-MRN battle fleet (`corporations.md`'s Rickover/Calloway
 entry) — meaning the same capability-over-ballot logic that governs
 domestic MDR politics also governs Mars's half of Sol's actual navy.
 
+## The Consular College: the mess the strong front hides
+
+Worth stating the frame explicitly rather than leaving it implicit:
+MDR's "Democratic Republic" name already oversells legitimacy it
+doesn't quite have (`mars-political-structure.md`), and everything
+below is that same gap, pushed down into the institutions themselves.
+Mars projects disciplined, unified competence outward so
+successfully that almost nobody outside Mars realizes how patchwork
+the inside actually is. The Belt's own fragmentation (Scrapshell, the
+Rockline Compact, OSL/ASA) is visible — everyone can see the seams.
+Mars's is just as real, and successfully hidden, which is the more
+dangerous kind.
+
+When the dozen colonies consolidated, their Governors didn't simply
+surrender their perks — Rome's own consulship is the real precedent
+worth using directly: it began as the Republic's actual supreme
+executive office, and as power consolidated under the Emperors, the
+office didn't disappear, it survived for centuries as a prestigious,
+largely ceremonial title the aristocracy still fought over. Same
+shape here: each former Governor becomes a **Consul**, forming
+**the Consular College** — status and precedence without real
+governance, sitting on top of Congress's own (separately strained)
+seats-per-colony apportionment above.
+
+**Not one-size-fits-all — selection follows each colony's own
+original governance tradition, which is where the real mess lives:**
+- A colony originally run by a single strong Governor → that seat is
+  now **dynastic/inherited**, the same way real single-ruler lineages
+  calcify into family succession once the original power is gone but
+  the prestige remains.
+- A colony originally run by a **ruling council** → instead of one
+  Consul, that colony sends a small **Consular Council** (five to
+  seven members) who vote amongst themselves on all the ceremonial
+  business a Consul handles — consistent with that colony's own
+  collective tradition rather than imposing a figurehead it never had.
+- A colony that was **corporate-structured** (a direct callback to
+  the company-town idea) → that seat belongs to whoever holds the top
+  executive position at the controlling company at the time, meaning
+  one seat in Mars's highest ceremonial body is effectively a rotating
+  corporate executive chair. Corporate power holding a seat in the
+  planet's ceremonial nobility, same vein as Ceres's Magnates, just
+  at the very top instead of underneath a Hetman.
+- Whichever colonies actually had real democratic tradition even
+  under single-Governor rule → **elected at-large**, the fourth option
+  left open rather than forced.
+
+**The First Consul** leads the College, elected by it — a title with
+a real double layer of history worth using directly: it's literally
+Napoleon Bonaparte's own title during the French Consulate
+(1799–1804), itself a deliberate revival of the Roman consulship,
+before he used the position as the stepping stone to becoming
+Emperor. Worth keeping as a live narrative possibility rather than a
+settled fact — a nominally ceremonial "first among equals" role that
+a sufficiently ambitious occupant could plausibly leverage into real
+influence, the same way Napoleon actually did.
+
 ## Open threads
 
 - Whether an organized reapportionment movement exists — new-dome and
