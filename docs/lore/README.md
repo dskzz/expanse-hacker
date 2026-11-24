@@ -95,6 +95,15 @@ cheap fix for now.
   *deliberately approved* long-lived-trust exception, instead of an
   accidental one.
 
+## Jupiter
+
+- **`peale-platform.md`** — the Jovian-moons pass's first entry: an
+  active, profitable sulfur/SO2 extraction operation at Io,
+  deliberately not a refinery and deliberately not abandoned. Real
+  tidal-heating volcanism, zero permanent human presence (Jupiter's
+  radiation is lethal, not just inconvenient), fully robotic and
+  teleoperated from Ganymede in near-real-time.
+
 ## Shared/cross-cutting
 
 - **`people-pass-queue.md`** — a running list of every unnamed role
