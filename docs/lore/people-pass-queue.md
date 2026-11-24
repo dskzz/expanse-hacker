@@ -39,6 +39,10 @@ here).
 - **Marius Works** (`peale-extraction.md`) — unlike Peale itself, this
   one has a real (if modest) human staff given Ganymede's survivable
   radiation; whoever runs the refinery floor is a natural future role.
+- **Kivelson Station** (`europa.md`) — a small rotating research
+  crew; whoever leads the ocean-science team (and doubles, uneasily,
+  as the only real check on licensed harvesting nearby) is a natural
+  future role.
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple

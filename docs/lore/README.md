@@ -117,6 +117,14 @@ any existing or future name that turns out just as hard to place.
   volcanism, zero permanent human presence (Jupiter's
   radiation is lethal, not just inconvenient), fully robotic and
   teleoperated from Ganymede in near-real-time.
+- **`europa.md`** — the pass's second entry: a genuine science-versus-
+  industry standoff, not just another resource site. The Europa
+  Protocol (a free structural borrowing of the real Antarctic Treaty
+  System) protects the real subsurface-ocean evidence and Conamara
+  Chaos specifically, while licensing ice harvesting elsewhere —
+  because Europa's water is also a massive deuterium source. Kivelson
+  Station does the ocean science and doubles, uneasily, as the only
+  real check on the harvesters.
 
 ## Shared/cross-cutting
 
