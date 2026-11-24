@@ -1,4 +1,4 @@
-# Lassell Relay (Triton)
+# Lassell Relay - Triton
 
 Status: locked, 2026-11-24. Deliberately the *only* post-Saturn
 location in the corpus — not the seed of an outer-system region, a

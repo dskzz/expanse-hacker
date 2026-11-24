@@ -1,4 +1,4 @@
-# Peale Platform (Io)
+# Peale Remote Extraction Platform - Io
 
 Status: locked, 2026-11-24. First entry in the Jovian-moons pass.
 Deliberately an **extraction platform**, not a refinery, and
@@ -6,7 +6,9 @@ deliberately still active — a real correction to the common
 impression (including, per discussion, Expanse's own portrayal) that
 Io hosts a derelict or abandoned industrial site. There's no reason
 to abandon something this valuable once the actual hazard is solved
-by simply never sending anyone there to begin with.
+by simply never sending anyone there to begin with. Informally, on
+every manifest and in every casual conversation, it's just **PREP**
+— the full name is for paperwork.
 
 **LocationChain:** `JUPITER:IO:PEALE` — the first facility anchored
 to a bare `JUPITER` region domain rather than `TGC`, which stays
@@ -173,6 +175,53 @@ for a profitable, in-demand extraction operation to ever shut down —
 the thing Expanse's own derelict-refinery image never quite explains
 is *why* anyone would walk away from wealth like this instead of just
 automating around the one real problem.
+
+## Concentrate, don't ship rock: Peale's output and the Marius Works - Ganymede
+
+Shipping raw, unprocessed volcanic material off Io would be a real
+waste of cargo capacity — most of what the harvester fleet scoops up
+is silicate rock and waste alongside the actual sulfur/SO2 content,
+and hauling that bulk mass anywhere costs real fuel and real transit
+time for no payoff. So PREP's harvesters do **primary concentration
+on-site**: robotic thermal/physical separation that strips out the
+sulfur-rich fraction and leaves the waste rock behind, the same basic
+beneficiation logic real mining operations already use (shipping
+ore concentrate or metal pellets, never raw rock). That part doesn't
+need delicate human oversight, so it stays inside PREP's existing
+zero-crew model.
+
+**Final refining happens somewhere people can actually survive:**
+the **Marius Works - Ganymede**, a dedicated refinery stationed in Ganymede's
+orbital neighborhood — named for **Simon Marius**, the real,
+genuinely under-credited contemporary of Galileo who independently
+discovered the Galilean moons around the same time and is the one
+who actually proposed their names (Io included). Positioned to take
+advantage of Ganymede's existing teleoperation infrastructure
+(`ganymede-condominium.md`, and PREP's own teleoperation link above)
+without being part of the Condominium's own political jurisdiction —
+a clean real-world illustration of this corpus's own LocationChain
+principle: physical position and legal/political authority are
+separate facts, decoupled on purpose (the same distinction Doris
+exists to formalize, `corporations.md`).
+
+**LocationChain:** `JUPITER:GANYMEDE:MARIUS` — anchored at Ganymede's
+location but under the bare `JUPITER` domain rather than `TGC`,
+precisely because it sits near the Condominium without being part of
+it.
+
+**Radiation at Ganymede's distance from Jupiter is dramatically
+lower than at Io** — survivable, not lethal — so Marius is where
+this corpus's automation spectrum finally resolves back to ordinary
+human presence: Psyche's crew is a deliberate cost choice, Lassell's
+is forced by light-lag, PREP has none at all by hard physical limit,
+and Marius has a real, if modest, human staff simply because the
+hazard that forced everything upstream to go robotic has genuinely
+dropped away by this point in the chain. Final sulfur, SO2, and
+sulfuric-acid-precursor product leaves Marius market-ready, headed
+outward to the Belt's metal-refining economy (Oberth Extraction's
+own chain at Psyche, among others) — resolving the open question
+below about where PREP's output actually goes: through Marius first,
+not straight out of the Jovian system as raw concentrate.
 
 ## Open threads
 

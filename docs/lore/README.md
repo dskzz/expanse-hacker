@@ -9,6 +9,19 @@ while new interconnected lore lands every session would mean
 maintaining two copies of everything in parallel. This index is the
 cheap fix for now.
 
+**A loose naming convention, 2026-11-24:** as the roster of obscure-
+honorific facility names grows (Oberth, Slayton, Peale, Lassell,
+Marius...), names that give no hint where the place actually is risk
+blurring together. Where that's a real problem, append the body
+directly into the formal name — `[Name] - [Body]`, e.g. "Peale Remote
+Extraction Platform - Io," "Lassell Relay - Triton," "Marius Works -
+Ganymede." Not a hard rule: a location with its own deep, heavily-
+developed lore (Vishvakarma, Thisbe Station) earns memorability
+through content rather than needing the crutch, and a body-named
+location (Ceres, Vesta, Psyche) has no problem to fix in the first
+place. Applied so far to the three names above; worth revisiting for
+any existing or future name that turns out just as hard to place.
+
 ## Foundational
 
 - **`os-lineages.md`** — the big one. OS/software lineage history,
@@ -97,10 +110,11 @@ cheap fix for now.
 
 ## Jupiter
 
-- **`peale-platform.md`** — the Jovian-moons pass's first entry: an
-  active, profitable sulfur/SO2 extraction operation at Io,
-  deliberately not a refinery and deliberately not abandoned. Real
-  tidal-heating volcanism, zero permanent human presence (Jupiter's
+- **`peale-extraction.md`** — the Jovian-moons pass's first entry:
+  the Peale Remote Extraction Platform ("PREP"), an active,
+  profitable sulfur/SO2 extraction operation at Io, deliberately not
+  a refinery and deliberately not abandoned. Real tidal-heating
+  volcanism, zero permanent human presence (Jupiter's
   radiation is lethal, not just inconvenient), fully robotic and
   teleoperated from Ganymede in near-real-time.
 

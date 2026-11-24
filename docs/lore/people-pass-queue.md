@@ -33,9 +33,12 @@ here).
 - **Lassell Relay** (`lassell-relay.md`) — no named crew at all yet;
   a relay/comms lead and at least one geyser-studying scientist are
   the obvious minimum roles to eventually name.
-- **Peale Platform** (`peale-platform.md`) — nobody's permanently
+- **Peale Remote Extraction Platform** (`peale-extraction.md`) — nobody's permanently
   stationed there to name, but whoever leads the remote teleoperation
   team from Ganymede is a natural future role.
+- **Marius Works** (`peale-extraction.md`) — unlike Peale itself, this
+  one has a real (if modest) human staff given Ganymede's survivable
+  radiation; whoever runs the refinery floor is a natural future role.
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple
