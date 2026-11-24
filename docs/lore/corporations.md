@@ -330,6 +330,15 @@ backbone for hulls and legacy systems, still employs enormous numbers
 of people — but it's losing ground on the thing that actually matters
 in a fight, a real gradient rather than a flat replacement.
 
+**A civilian division, same company, Boeing's actual real pattern:**
+Rickover didn't need a separate civilian builder invented alongside
+it — a large, old operation losing ground on cutting-edge military
+contracts realistically leans harder into civilian/commercial
+shipbuilding as a hedge, the same way the real Boeing's defense
+business and commercial airliner business sit under one roof and
+lean on each other. Same declining-but-still-massive character, now
+with a second, more stable leg instead of a new name to track.
+
 **The software layer tells the same story:** Rickover's control
 software and drivers are genuinely error-prone and outdated, and this
 isn't a new invention — it's the natural symptom of something already
@@ -498,14 +507,27 @@ powers are using it for is the actual story.
 
 ### The shipbuilding supply chain (nearby sectors, not direct competitors)
 
-- **Anchorpoint Shipwrights** (Mars) — general-purpose rival
-  integrator to Lodestar.
+- **Anchorpoint Shipwrights** (Mars) — the civilian/general-purpose
+  half of Mars's split: rival integrator to Lodestar, no military
+  specialization.
+- **Garrison Shipworks** (Mars) — the naval half: military/naval
+  specialist, the shipbuilding partner to Calloway and Ashdown
+  Munitions. Mars's two halves, same civilian/naval split Rickover
+  now covers alone on Earth under one roof.
 - **Corelli Drive Systems** (Mars) — propulsion/engines only, supplies
-  both Lodestar and Anchorpoint rather than competing with either.
+  Lodestar, Anchorpoint, and Garrison alike rather than competing with
+  any of them.
 - **Patchwright Conversions** (Belt) — refit and conversion of
   existing hulls, the value-chain step up from Driftwood's pure scrap.
 - **Skipjack Craft Co.** (Belt) — small craft and shuttles, a
   genuinely different market from interplanetary vessels.
+- **Cutwater Yards** (Belt) — a smaller, ordinary general-purpose
+  builder, named for the cutwater, the forward edge of a ship's bow
+  that splits the water. Not a niche specialist like Patchwright or
+  Skipjack, just a modest local yard.
+- **Millrace Shipworks** (Belt) — another smaller local builder,
+  named for the channel that drives a mill wheel — workaday
+  industrial flavor, same modest scale as Cutwater.
 - **Garrison Shipworks** (Mars) — military/naval specialist, the
   shipbuilding partner to Calloway and Ashdown.
 
