@@ -58,6 +58,11 @@ cheap fix for now.
   chain and industrial-components companies (Anchorpoint, Garrison,
   Corelli, Standard Fabrication, Patchwright, Skipjack, Cutwater,
   Millrace), lighter tier than a full page each.
+- **`vishvakarma.md`** — the oldest industrial station in Sol,
+  sited at the genuinely stable Earth-Moon L4 point, named for
+  India's ascendant era and the real demographic thesis in
+  `demographics.md` — a structural (not name-for-name) echo of Honor
+  Harrington's Hephaestus.
 
 ## Earth
 
