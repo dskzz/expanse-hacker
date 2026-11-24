@@ -50,6 +50,13 @@ idealized, egalitarian society sharing resources communally — a
 concept that predates Marxism by over two thousand years. That's the
 founding ideal the name honors.
 
+**LocationChain:** `ELYSIUM:DATONG` — Elysium's real devolved
+autonomy (its own Consular seat, its frank authoritarian-corporatist
+character) earns it a top-level domain of its own rather than nesting
+under MDR, the same logic as giving Ganymede's shared jurisdiction
+its own identity instead of picking a side. Added as part of the
+corpus-wide LocationChain retrofit pass.
+
 **The modern reality has evolved past that ideal, openly rather than
 by denial.** What started as something closer to Datong's genuine
 collectivist vision has, over generations, become frank — not

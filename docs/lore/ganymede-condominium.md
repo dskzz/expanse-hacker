@@ -6,6 +6,11 @@ gap the same way the Belt's OSL/ASA split and Mars's Commonwealth of
 Elysium did: Ganymede isn't a monolith, and no single power ever
 managed to claim it outright.
 
+**LocationChain:** `TGC:GANYMEDE` — no single faction owns this
+place, so the chain anchors on the Tripartite Ganymede Commission
+itself rather than picking a side, added as part of the corpus-wide
+LocationChain retrofit pass.
+
 **Condominium** is used here as the actual real term of art in
 international law — two or more sovereign powers jointly governing
 one territory by splitting *function*, not geography. Real precedent:

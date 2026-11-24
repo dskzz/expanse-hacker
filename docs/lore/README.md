@@ -90,10 +90,6 @@ cheap fix for now.
 - The relay-town archetype (maintenance crews → bar → organic
   settlement, tied to RFC-2353's own hop-count mechanics) was
   discussed but never written up.
-- A retrofit pass to add LocationChain data to the station pages
-  written before this convention existed (Ceres, Thisbe, Ganymede,
-  Mariner Valley, Armstrong City/Shackleton, Slayton, Datong) hasn't
-  been done yet.
 - Refining-operation-specific locations (behind Oberth Extraction,
   Reyes-Petrov Minerals, Frostline Harvesting) still need real
   orbital anchors and LocationChains.

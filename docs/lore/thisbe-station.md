@@ -6,6 +6,10 @@ replacement for "Anderson Station" (`os-lineages.md` §1, §7). Settled
 on the deliberate "uneasy third way": neither fully redeemed nor a
 dead memorial.
 
+**LocationChain:** `BELT:THISBE` — sits directly on the real 88
+Thisbe asteroid, no intermediate region needed, added as part of the
+corpus-wide LocationChain retrofit pass.
+
 ## The real rock, best understanding
 
 **88 Thisbe** — a real, fairly large main-belt asteroid, roughly 200+

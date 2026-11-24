@@ -5,6 +5,11 @@ pass, after the Ganymede Condominium (`ganymede-condominium.md`). The
 Belt's biggest hub, close to a de facto capital even though no single
 government formally owns it — except, on paper, one does.
 
+**LocationChain:** `BELT:CERES` — Ceres is itself the anchoring body,
+no intermediate region needed, added as part of the corpus-wide
+LocationChain retrofit pass (`industrial-stations.md` established
+the convention).
+
 ## Physical structure
 
 A real zoned layout, inherited as structure rather than reinvented —

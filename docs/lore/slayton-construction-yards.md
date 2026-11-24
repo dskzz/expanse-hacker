@@ -9,10 +9,17 @@ plausibility gap of a backer building its flagship project somewhere
 UN protection couldn't fully reach and then being surprised when
 someone else takes it.
 
+**LocationChain:** `BELT:KIRKWOOD-2:SLAYTON` — real Kirkwood gaps
+don't carry place names the way asteroids do, so this names the gap
+directly: specifically the 2:1 resonance with Jupiter, the outermost
+of the major gaps, giving Slayton a bit more genuine distance from
+inner-system oversight than a middle gap would. Added as part of the
+corpus-wide LocationChain retrofit pass.
+
 ## Siting: a real Kirkwood gap, not just an empty spot
 
-Sited in or near one of the asteroid belt's real **Kirkwood gaps** —
-genuine orbital-resonance zones (with Jupiter) that have been
+Sited in or near the asteroid belt's real **2:1 Kirkwood gap** —
+a genuine orbital-resonance zone (with Jupiter) that has been
 gravitationally swept relatively clear of debris over billions of
 years, at specific, well-known distances comfortably past Mars and
 before Jupiter. Not hand-waved emptiness: a physically real reason

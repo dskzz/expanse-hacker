@@ -6,6 +6,9 @@ center — named echoing the real Valles Marineris, roughly antipodal
 to the Commonwealth of Elysium (`mars-political-structure.md`) on the
 opposite side of the planet.
 
+**LocationChain:** `MDR:MARINER-VALLEY` — added as part of the
+corpus-wide LocationChain retrofit pass.
+
 ## Founding and physical structure
 
 Started as roughly a dozen independent-but-allied starter colonies,

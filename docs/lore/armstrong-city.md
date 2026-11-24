@@ -7,6 +7,11 @@ south pole entirely once it became clear the two places should be
 doing two different jobs). Sixth full station write-up, now covering
 two linked locations instead of one.
 
+**LocationChain:** `UN:LUNA:ARMSTRONG` for Armstrong City,
+`UN:LUNA:SHACKLETON` for Shackleton Base — matching Rickover Naval
+Yards' own `UN:LUNA:RICKOVER` (`rickover-naval-yards.md`), added as
+part of the corpus-wide LocationChain retrofit pass.
+
 ## Shackleton Base: the origin, now declining
 
 Named for the real south-pole crater (one of the actual permanently-
