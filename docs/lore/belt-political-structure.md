@@ -38,8 +38,8 @@ never going to rebrand into either of these; that idea is retired.
 ## Still open
 
 - Exactly when the split happened relative to the rest of the corpus's
-  timeline (Vesta Blockade / Anderson Station / the "trickling out" RFC
-  era) isn't pinned down yet. Matters for the eventual rename sweep:
+  timeline (the Seven Day War / the Massacre at Thisbe Station / the
+  "trickling out" RFC era) isn't pinned down yet. Matters for the eventual rename sweep:
   an existing "OPA" reference in an older/earlier-era document might
   need to become "the Accord" or an unsplit precursor movement rather
   than OSL or ASA specifically, depending on when that document is

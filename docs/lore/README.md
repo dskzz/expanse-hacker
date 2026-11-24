@@ -96,3 +96,8 @@ cheap fix for now.
   discussed but never written up.
 - Black sites (R&D, surveillance, prison, weapons placement, across
   Mariner Valley, Elysium, and Earth) remain a flagged future pass.
+- An outer-system pass (Hidalgo, Adonis, Amor, the Jupiter Trojans/
+  Greeks, the Hilda group — `asteroid-bases.md`'s own open threads)
+  is flagged: small independent mining operations plus minor
+  "traveler's inn" waypoint stations at each region's entry point,
+  not yet built.
