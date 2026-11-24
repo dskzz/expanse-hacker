@@ -46,6 +46,10 @@ cheap fix for now.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
   stalemate, and the live, unresolved helium-3 crisis.
+- **`slayton-construction-yards.md`** — the deliberate, better-
+  reasoned replacement for Expanse's Tycho Station: a real Kirkwood
+  gap siting, an early corporate-by-necessity founding, and the
+  ownership-vs-partnership structure protecting Elias Voss.
 
 ## Earth
 
@@ -73,6 +77,6 @@ cheap fix for now.
 - The relay-town archetype (maintenance crews → bar → organic
   settlement, tied to RFC-2353's own hop-count mechanics) was
   discussed but never written up.
-- Rickover Naval Yards and Slayton Construction Yards exist in
-  `corporations.md` but haven't gotten their own station-level pages
-  yet, unlike everywhere else on this list.
+- Rickover Naval Yards still exists only in `corporations.md` and
+  hasn't gotten its own station-level page yet; Slayton Construction
+  Yards now has.
