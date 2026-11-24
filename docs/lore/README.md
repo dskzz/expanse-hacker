@@ -69,10 +69,12 @@ cheap fix for now.
   Tortuga-styled Sylvia's Reach, and the deliberately minor,
   unhighlighted Shoemaker Outpost (Eros).
 - **`psyche.md`** — Oberth Extraction's home: a deliberately
-  hands-off, heavily-automated skeleton-crew mining claim rather than
-  a settlement, built on the real exposed-protoplanet-core hypothesis
-  — and on the political logic of never letting a community form
-  that could organize the way Vesta's did.
+  hands-off, heavily-automated skeleton-crew mining claim built on
+  the real exposed-protoplanet-core hypothesis. Wasn't always empty —
+  a decade-long automation campaign hollowed out a real workforce
+  (the Core), feeding a Belt-wide diaspora and leaving bitter last
+  holdouts as ASA's single most dangerous unresolved recruiting
+  target.
 
 ## Earth
 

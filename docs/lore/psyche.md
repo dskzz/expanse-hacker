@@ -5,7 +5,9 @@ already anchors here with a LocationChain — this file gives the place
 itself the history and character treatment, deliberately built as a
 skeleton-crew, heavily-automated extraction site rather than a real
 settlement. The low population isn't a gap to fill in later; it's the
-point, and the thing worth making interesting.
+point. It's also not an original condition — Psyche had a real
+workforce once, and the automation campaign that hollowed it out is
+recent enough to still be a live grievance, not settled history.
 
 **LocationChain:** `BELT:PSYCHE:OBERTH`.
 
@@ -31,6 +33,51 @@ nickel-iron would actually do to prices. The math is bad, but the
 belief is exactly the kind of thing characters in-universe would
 repeat anyway. Oberth doesn't correct it.
 
+## History: the Core, before automation
+
+Psyche wasn't always a skeleton-crew claim. Old-timers and the
+diaspora it produced (below) still sometimes call it **the Core** —
+an informal name, never official, but a genuinely fitting one: the
+real exposed-protoplanet-core hypothesis above, and the plain fact
+that it was home before it was a line item. For roughly a generation
+after Oberth secured exclusive claim rights, Psyche ran the way any
+early mining settlement does — real crews, real manual and semi-
+automated extraction work, enough people to make it an actual
+community rather than a rotation.
+
+**The squeeze wasn't a single event — that's what made it worse.**
+Oberth didn't fire a community; it automated a succession of
+functions one at a time over roughly a decade, each round framed
+publicly as modernization and cost efficiency, each round quietly
+needing fewer hands than the one before. No single layoff was large
+enough to be a scandal. No single round justified a strike. By the
+time anyone could point to the cumulative effect, there wasn't enough
+of a workforce left to make a strike mean anything — the company
+didn't need to fire people so much as stop needing them, round after
+round, until there was nobody left to notice except the people it
+had already happened to. That's a deliberately different shape of
+harm than the Massacre at Thisbe Station (`os-lineages.md`) — no
+single atrocity to point to, just a long, bureaucratic hollowing-out,
+which is its own kind of story this corpus hasn't told yet.
+
+**Where the people went.** Most of the Core's displaced workers
+scattered across the Belt rather than staying to watch the rock
+finish emptying out — plausibly feeding directly into VPH's own
+populations (`asteroid-bases.md`), which were already the Belt's
+hardest-luck, most ASA-receptive ground before any of them arrived.
+A Psyche-born worker showing up at Vesta or Hygiea with a specific,
+personal automation grievance isn't a stretch; it's exactly the kind
+of texture that makes VPH's politics feel earned rather than assigned.
+
+**The last holdouts.** The transition is mostly finished, but recent
+enough to still be living memory, not folklore — a handful of the
+original crew are still there, kept on for institutional knowledge
+Oberth hasn't finished automating away, and are being rotated out on
+the same short-contract policy as everyone else, just slower. They
+are, without exception, the bitterest people on the rock: the ones
+who watched their neighbors get quietly made redundant and are now
+the paid caretakers of the machines that did it.
+
 ## Why hands-off is the business model, not an absence of one
 
 Oberth's actual edge (`corporations.md`) is **exclusive claim rights
@@ -47,31 +94,38 @@ VPH are; it's deliberately lean, because every dollar not spent on
 crew is pure margin on a monopoly nobody can take away.
 
 **A second, colder reason, and the real payoff of the model:** a
-population is also a liability. Vesta's decline produced real worker
-councils filling a real power vacuum (`asteroid-bases.md`) — Oberth
-has clearly learned that lesson without anyone needing to say so out
-loud. Keep crews small, keep contracts short, rotate people out before
-they put down roots, and there's no community left to organize in the
-first place. Psyche isn't hands-off by neglect; it's hands-off *by
-design*, specifically so nothing like Vesta's councils can ever form
-here.
+population is also a liability, and Oberth didn't need to learn that
+from watching Vesta's worker councils fill a real power vacuum
+(`asteroid-bases.md`) — it learned it firsthand, from the Core's own
+history. A community that's lived somewhere for a generation has
+standing to organize; a rotation of short-contract outsiders doesn't.
+Keeping the last holdouts' replacements permanently transient isn't a
+policy borrowed from watching someone else's mistake — it's Oberth
+making sure its own mistake, if it ever was one, never has the chance
+to repeat itself.
 
 ## Who's actually there
 
-A handful of contract personnel, rotated on short tours, doing the
-jobs automation genuinely can't: hardware the robots can't self-
-diagnose, physical maintenance, certification renewals, claim-boundary
-defense, and liaison back to Oberth corporate. Some of the operation's
-oversight likely isn't even performed on-site — plausibly run
-remotely from a nearby hub (Ceres is the obvious candidate given its
-UN/MFN administrative weight, `ceres.md`) with only safety-critical
-or hands-on maintenance work actually requiring a body physically on
-the rock. Nobody on a Psyche contract thinks of it as home. That's
-intentional, and it shows: there's no settlement name worth
-remembering here, no bare-name-earned-by-character the way Vesta or
-Davida got one — just "Oberth's claim," cold and bureaucratic, because
-nothing about the place has ever been personal enough to earn
-anything warmer.
+Two populations, overlapping uneasily during a transition that's
+mostly finished but not entirely closed out. **The last holdouts**
+(above) — a shrinking handful of original Core workers kept on for
+institutional knowledge, bitter, rotating out slower than policy
+would otherwise call for simply because nobody's finished writing
+their expertise down into something a machine can run without them.
+**Outside short-contract hires** — brought in to do the jobs
+automation genuinely can't (hardware the robots can't self-diagnose,
+physical maintenance, certification renewals, claim-boundary defense,
+liaison back to Oberth corporate), rotated out fast enough that none
+of them ever calls it home, which is exactly the point: once the last
+holdouts finally age out, replacing them with people who were never
+attached to the place in the first place finishes what automation
+started. Some operational oversight likely isn't even performed
+on-site — plausibly run remotely from a nearby hub (Ceres is the
+obvious candidate given its UN/MFN administrative weight,
+`ceres.md`). Officially, it's not even called the Core anymore — just
+"Oberth's claim" on the paperwork, cold on purpose, because the name
+that still carries any warmth belongs to the people the company spent
+a decade making unnecessary.
 
 ## What this actually exposes
 
@@ -99,14 +153,44 @@ not bolted on:
   almost entirely on paperwork and Trust backing, not presence —
   which is a real vulnerability the moment either one gets
   successfully challenged.
-- **A rallying example, not a recruiting ground.** Psyche has no
-  organic Belt political foothold the way VPH do — nobody lives here
-  long enough to radicalize. But that absence is itself useful to
-  ASA: Psyche is the clean, finished version of what hands-off Trust-
-  backed capital wants for the whole Belt — all the extraction, none
-  of the people, nothing left to organize against because nothing's
-  left to organize *at all*. ASA doesn't need Psyche's crew to make
-  that argument; the empty rock makes it for them.
+## ASA and the Core
+
+ASA's reaction splits into three registers, and they reinforce each
+other rather than competing:
+
+**The diaspora is a live recruiting pipeline, not folklore.** This
+isn't an abstract grievance ASA has to manufacture sympathy for — the
+Core's displaced workers scattered straight into VPH's own
+populations (`asteroid-bases.md`), already the Belt's most ASA-
+receptive ground before any of them arrived. A Psyche-born cell
+member at Vesta doesn't need the Rockline Compact's suspicion or the
+"worth more than Earth's economy" mythology to make the case against
+Oberth; they have a specific layoff, a specific job, a specific
+neighbor who left and never came back. That's sharper and more
+durable than ideology — ASA's anger about Psyche is personal before
+it's political, in exactly the places it matters.
+
+**The empty rock is the clean version of the argument.** Once the
+personal grievance seeds the sympathy, Psyche as it stands *today* —
+all extraction, almost no people, nothing left to even organize
+against — becomes ASA's single cleanest piece of propaganda for what
+Trust-backed capital wants for the whole Belt. Not a hypothetical
+slippery slope: a finished example, visible on a map, that Oberth
+built on purpose. ASA doesn't need access to Psyche to make this
+argument land; the empty rock and the Core's own survivors make it
+for them, independently and at the same time.
+
+**The last holdouts are the live fuse.** The transition isn't fully
+closed out — the bitterest people on the rock are still physically
+present, still have system access automation hasn't fully replaced,
+and are watching their own jobs get finished off on a delay. That's
+an open door ASA would be foolish not to have tried knocking on:
+whether anyone's successfully recruited a holdout for something more
+than sympathy — information, access, a slowdown, outright sabotage —
+isn't settled, but it's the single most dangerous unresolved question
+this file leaves on the table. A company that automated its way out
+of a workforce it no longer needed didn't automate out the handful of
+people it still, grudgingly, does.
 
 ## Open threads
 
@@ -117,3 +201,13 @@ not bolted on:
 - Whether the Rockline Compact (`corporations.md`) has ever actually
   tried testing the claim boundary on the ground, or just suspects
   from a distance — open, and a natural future hook.
+- **Whether ASA has actually turned a last holdout, and into what** —
+  deliberately left open above as the file's sharpest unresolved hook.
+  Worth deciding before Psyche shows up in anything plot-specific.
+- Exact length of the automation decade and how long ago it finished
+  isn't pinned down — should land recently enough that the last
+  holdouts are still bitter rather than resigned, loosely a generation
+  or less before "now" (~2350, `os-lineages.md`).
+- No specific named figures yet — a holdout worth naming, and whoever
+  runs Oberth's on-site liaison function, are the obvious next step
+  if this location gets used directly rather than referenced.
