@@ -46,9 +46,12 @@ here).
 - **The Europa Allocation Council** (`europa.md`) — six delegate
   seats, two each from the UN, MDR, and OSL; none named yet.
 - **Callisto / the Jovian Development Company** (`callisto.md`) —
-  four open roles: the JDC's current administrator, the sovereignty
-  movement's leadership, and whoever heads the Jovian Trade
-  Association and Jovian Traffic Control.
+  the JDC's current administrator; the Callisto Home Rule League's
+  leadership and the United Moons wing's leadership (possibly the
+  same people, possibly already split); whoever heads JTA, JTC, the
+  Jovian Sentinel Survey, and the Jovian Exposure Registry; the
+  Concord Settlement's negotiators (plausibly overlapping with the
+  Europa Allocation Council's own delegates above).
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple

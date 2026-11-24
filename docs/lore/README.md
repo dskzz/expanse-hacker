@@ -131,10 +131,18 @@ any existing or future name that turns out just as hard to place.
   scarce thing people fight over. Home to the Jovian Development
   Company (a free structural borrowing of the real East India
   Company — chartered monopoly, eroding authority, gridiron flag and
-  all), the free-trade Jovian Trade Association, Jovian Traffic
-  Control, and — tellingly — the Europa Allocation Council's actual
-  meeting chamber. Concord's own sovereignty movement is this pass's
-  biggest live, deliberately unresolved political thread.
+  all) and its own bureaucracy, the free-trade Jovian Trade
+  Association, Jovian Traffic Control, the Jovian Sentinel Survey
+  (debris tracking, named in spirit for the real Shoemaker-Levy 9
+  impact), the Jovian Exposure Registry (radiation-dose certification
+  with real quiet power over who keeps working), and — tellingly —
+  the Europa Allocation Council's actual meeting chamber. The
+  Callisto Home Rule League's push for self-governance has split a
+  maximalist pan-Jovian wing (the United Moons) away from it, which is
+  in turn pushing Earth, Mars, and the Belt toward their own
+  negotiated partition (the ironically-named Concord Settlement) —
+  three real, mutually exclusive outcomes left deliberately open as
+  this pass's biggest live political thread.
 
 ## Shared/cross-cutting
 
