@@ -50,7 +50,8 @@ computing · data & analytics
 lobbying & political influence · PR & political consultancy
 
 **Security:** weapons/defense manufacturing · private security
-contracting · mercenary/paramilitary contracting
+contracting · mercenary/paramilitary contracting · private prison/
+detention infrastructure
 
 **Consumer goods & retail:** consumer staples/mass manufacture ·
 retail/distribution
@@ -585,6 +586,7 @@ a scenario needs one.
 | Nexora Analytics | Data & analytics | Earth | Aggregates exactly what RFC-2308 minimization exists to prevent, individually compliant at every step — the violation is the business model |
 | Palisade Security | Private security contracting | Earth | Corporate-facing, legitimate |
 | Redline Contractors | Mercenary/paramilitary contracting | Belt | Works for whoever's paying this week |
+| Haven Corrections Group | Private prison/detention infrastructure | Earth–Mars joint venture | "Haven" genuinely means refuge/safe harbor — same ironic-etymology trick as the Sol Industrial Trust's own name, hung on a detention company instead of a cartel. Plausibly the actual holding/processing infrastructure for the Frontier Opportunity Program's quietly-dumped debtors and dissidents (`os-lineages.md`), not a disconnected sector |
 | Commonware Goods | Consumer staples/mass manufacture | Earth | The low-margin, high-volume layer every real economy has and this one was missing |
 | Omnibus Trading Co. | Retail/distribution | Earth–Belt joint venture | — |
 | Lattimer & Cross | Lobbying/political influence | Earth | Almost certainly how the Trust's members keep the arrangement from surfacing |
