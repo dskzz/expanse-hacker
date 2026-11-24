@@ -85,6 +85,16 @@ cheap fix for now.
   (prestige on Earth, bureaucracy on Luna), and the corporate HQ tax
   incentive.
 
+## Beyond Saturn
+
+- **`lassell-relay.md`** — deliberately the only post-Saturn location
+  in the corpus: a single tiny OPRA relay/research outpost at Triton,
+  not the seed of an outer-system region. Takes the network-drift
+  themes already running through `os-lineages.md` and `psyche.md` to
+  their physical limit — a four-hour one-way light-lag that forces a
+  *deliberately approved* long-lived-trust exception, instead of an
+  accidental one.
+
 ## Shared/cross-cutting
 
 - **`people-pass-queue.md`** — a running list of every unnamed role

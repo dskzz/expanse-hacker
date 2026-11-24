@@ -30,6 +30,9 @@ here).
 - **Davida** (`asteroid-bases.md`) — no named figures or tenants at
   all beyond the shipbuilding-supply-chain companies already anchored
   there.
+- **Lassell Relay** (`lassell-relay.md`) — no named crew at all yet;
+  a relay/comms lead and at least one geyser-studying scientist are
+  the obvious minimum roles to eventually name.
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple
