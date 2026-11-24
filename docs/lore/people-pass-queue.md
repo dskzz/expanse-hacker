@@ -45,6 +45,10 @@ here).
   future role.
 - **The Europa Allocation Council** (`europa.md`) — six delegate
   seats, two each from the UN, MDR, and OSL; none named yet.
+- **Callisto / the Jovian Development Company** (`callisto.md`) —
+  four open roles: the JDC's current administrator, the sovereignty
+  movement's leadership, and whoever heads the Jovian Trade
+  Association and Jovian Traffic Control.
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple

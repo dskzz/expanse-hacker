@@ -125,6 +125,16 @@ any existing or future name that turns out just as hard to place.
   because Europa's water is also a massive deuterium source. Kivelson
   Station does the ocean science and doubles, uneasily, as the only
   real check on the harvesters.
+- **`callisto.md`** — the pass's third entry, and a deliberate
+  inversion of the first two: not a resource site, but the one safe
+  place in the whole Jupiter system, which makes safety itself the
+  scarce thing people fight over. Home to the Jovian Development
+  Company (a free structural borrowing of the real East India
+  Company — chartered monopoly, eroding authority, gridiron flag and
+  all), the free-trade Jovian Trade Association, Jovian Traffic
+  Control, and — tellingly — the Europa Allocation Council's actual
+  meeting chamber. Concord's own sovereignty movement is this pass's
+  biggest live, deliberately unresolved political thread.
 
 ## Shared/cross-cutting
 
