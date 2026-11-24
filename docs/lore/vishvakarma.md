@@ -133,6 +133,50 @@ whose whole business model is resolving disputes where no single
 government has clean jurisdiction — a natural third major venue for
 its caseload, alongside Ganymede and Ceres.
 
+## Why this stays fragmented instead of consolidating over centuries
+
+Specific to Vishvakarma's own particular circumstances — its extreme
+age, its UN Earth-Moon jurisdiction, the specific multi-tenant
+corporate structure that formed around it — not a universal rule to
+apply anywhere else in this corpus. Ceres, Thisbe, and Ganymede each
+have their own distinct reasons for their own structures already;
+none of them needed this logic. Four independent forces hold this
+one in place, not a single cause, which is why it's held for
+centuries rather than drifting toward consolidation the way most
+fragmented structures eventually do:
+
+1. **Deliberate UN policy, with real enforcement, not just a
+   preference.** A real regulatory cap — the UN enforces a limit on
+   how much of Vishvakarma's total footprint any single entity can
+   own or lease, the same shape as real antitrust market-concentration
+   limits, just inverted: not consumer protection, political control.
+2. **Mutual deterrence among the competing tenants themselves.**
+   Whoever controls the underlying "shell" structure gains real
+   leverage over every other tenant, so any overt consolidation
+   attempt gets actively resisted by everyone else with a stake in
+   the place — even by parties who'd do the same thing themselves
+   given the chance. The same dynamic already holding the Sol
+   Industrial Trust's own four members in their careful non-
+   competition with each other (`corporations.md`).
+3. **Self-reinforcing legal complexity, independent of anyone's
+   strategy.** A real phenomenon — "heirs' property" in actual US
+   law, where land ownership splits among more descendants each
+   generation until clear title becomes practically impossible, is
+   the closest real analogue. After centuries of undocumented leases,
+   properly untangling ownership to do a clean acquisition becomes
+   too expensive to attempt; the mess perpetuates itself through pure
+   inertia, no policy required.
+4. **Why the Trust's play has to look exactly the way it does.** Not
+   a hostile takeover — a quiet, patient, legally boring accumulation
+   of scattered claims, specifically because that's the only approach
+   that doesn't trigger forces 1 and 2, and specifically because
+   force 3 means almost nobody is paying close enough attention to
+   the old paperwork to notice it happening at all.
+
+Even if any one of these four lapsed — UN policy attention wandering
+for a decade, say — the other three would still hold the fragmentation
+in place on their own.
+
 ## Open threads
 
 - Which modern corporations from `corporations.md`'s roster actually
