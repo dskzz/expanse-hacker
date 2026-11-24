@@ -63,6 +63,10 @@ cheap fix for now.
   India's ascendant era and the real demographic thesis in
   `demographics.md` — a structural (not name-for-name) echo of Honor
   Harrington's Hephaestus.
+- **`asteroid-bases.md`** — the next tier after Ceres/Thisbe: Vesta,
+  Pallas, Hygiea (oldest, hardest-luck, ASA-leaning), genuinely
+  ordinary Davida, Tortuga-styled Sylvia's Reach, and the
+  deliberately minor, unhighlighted Shoemaker Outpost (Eros).
 
 ## Earth
 
