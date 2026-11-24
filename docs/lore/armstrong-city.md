@@ -1,91 +1,120 @@
-# Armstrong City
+# Armstrong City and Shackleton Base
 
-Status: locked, 2026-11-24. Sixth full station write-up. Luna's
-biggest settlement, Earth/UN territory, named for the first human to
-walk on the Moon — the most obvious, almost inevitable honorific
-choice (`earth-political-structure.md`'s own reasoning the first time
-this name came up), not a creative stretch.
+Status: locked, 2026-11-24 (revised from an earlier draft — the
+original outpost was first drafted as "Jamestown Base," corrected to
+**Shackleton Base**, and Armstrong City's location moved off the
+south pole entirely once it became clear the two places should be
+doing two different jobs). Sixth full station write-up, now covering
+two linked locations instead of one.
 
-## Founding: Jamestown Base
+## Shackleton Base: the origin, now declining
 
-Grew out of **Jamestown Base** — a real historical/conceptual naming
-choice, not invented for this corpus: early lunar outpost planning
-documents actually used "Jamestown" informally, drawing the same
-"first permanent foothold" metaphor the real 1607 Virginia settlement
-carries. Sited at the lunar south pole specifically for the
-permanently-shadowed polar craters' water ice — real, scientifically
-grounded siting logic, not arbitrary.
+Named for the real south-pole crater (one of the actual permanently-
+shadowed craters believed to hold water ice) and, through it, for
+Ernest Shackleton — the real historical icon of harsh-polar-survival
+exploration, a strong thematic fit for a harsh polar mining outpost.
+This was Luna's original foothold, sited for the same real ice-deposit
+logic as before.
 
-Jamestown Base is still there, now a historical district inside the
-much larger city that grew up around it, the same way a real old town
-center survives inside a city that outgrew it by orders of magnitude.
+**Now a declining, largely ghost-town outpost.** The easy, cheap-to-
+reach polar ice is mostly spent — consistent with the real finite-
+deposit estimates already established — and resource extraction has
+shifted away from Shackleton to two other sources: diffuse helium-3
+processing from surface regolith across the broader Lunar surface
+(see below), and a handful of remote, harder-to-reach ice-mining
+operations elsewhere on the Moon. Shackleton itself isn't gone, just
+hollowed out — the place that used to matter, now mostly skeleton
+crew and leftovers.
 
-## Why the ice matters more than it looks like it should
+**A real backdoor, not a metaphorical one.** Nobody's investing in or
+closely monitoring Shackleton's network infrastructure anymore —
+old, under-maintained nodes nobody's actively hardening or watching
+closely, because the place isn't economically central enough to
+justify the attention. That's a genuine, concrete security weak
+point into Luna's broader network — legacy, neglected infrastructure
+being the soft entry point into an otherwise well-defended system is
+a real, well-grounded pattern, not an invented one.
 
-South-pole permanently-shadowed craters hold real, substantial — but
-finite — water ice; serious estimates run from hundreds of millions
-to roughly a billion metric tons across known deposits. Centuries of
-real industrial-scale extraction have plausibly thinned the easy,
-cheap-to-reach reserves by now, even if deeper or more marginal
-deposits remain.
+**Old ideals, still held here.** Shackleton's remaining population
+leans toward the kind of self-reliant, independence-minded attitude
+the Belt is known for — not identical to Belter culture, not a
+parallel political system, just a real present-day kinship born the
+same way: neglect by the center breeds independence at the edges.
+Worth keeping as live, current culture at Shackleton specifically,
+rather than purely historical color the way an earlier draft framed
+it.
 
-This matters far more than ordinary water scarcity would, because
-**fusion engines need deuterium, and water is the practical source**
-— deuterium occurs naturally in ordinary water at about one part in
-6,420. Water ice isn't just life support here, it's fuel feedstock
-for the entire system's fusion-drive economy (Helion Power, Corelli
-Drive Systems). A second resource layer sits beside it: **helium-3**,
-distributed thinly across the entire lunar surface regolith from
-billions of years of solar-wind implantation, rather than
-concentrated at the poles — a separate, diffuse mining industry needing
-huge area coverage instead of a rich deposit, feeding the other half
-of the deuterium-helium-3 fusion cycle hard-SF (and this corpus) tends
-to favor.
+## Armstrong City: grown from a tourist trap into Luna's actual center
 
-Running low on the good ice is a real, physically-grounded reason for
-Luna to depend on **imports** — Frostline Harvesting (Ganymede) and
-the Belt generally — for a resource Earth's own backyard settlement
-can no longer fully supply itself. A genuine vulnerability, not an
-abstract one.
+Not at the south pole. Armstrong City grew from the real Apollo 11
+landing site (Mare Tranquillitatis, the actual Sea of Tranquility) —
+started small, as a museum and heritage tourist site opened by a UN
+committee, trading on the symbolic weight of the first human
+footprints on the Moon rather than on any resource the site itself
+produced.
 
-## Government: a massive UN administrative complex, and why
+That symbolic weight is exactly what let it become something much
+bigger than a monument: disproportionate investment and development
+followed its historical importance the way real capitals sometimes
+get sited for symbolic rather than purely practical reasons, and over
+time it grew into **Luna's actual vital hub** — a sprawling office
+complex, habs, recyclers, domed farms, refineries and processing
+plants, the endpoint of dozens of pipelines carrying material in from
+Shackleton's remaining ice operations and the diffuse regolith-mining
+sites, and the center of Luna's transportation network. Shackleton
+and the surface mining sites extract; Armstrong City refines,
+administers, and distributes — a real economic geography, periphery
+and center doing genuinely different jobs instead of one location
+trying to be everything.
 
-Not an anarcho-capitalist frontier culture — that's the Belt's
-already-established signature, and duplicating it here would dilute
-rather than differentiate (the same reasoning that kept Ceres, the
-Ganymede Condominium, and Mariner Valley's capability-is-authority
-model each running on a genuinely different mechanism). Luna's
-proximity to Earth also cuts against the same independence-by-distance
-dynamic that let the Belt develop its own culture in the first place.
+## Government: ultra-centralized, no shared sovereignty at all
 
-The real, specific reason Armstrong City became a dense administrative
-complex rather than a self-governing frontier: **Earth was never
-going to let the system's fusion-fuel supply self-govern.** The
-bureaucratic density is the direct result of needing tight control
-over something too strategically important to decentralize, not a
-lack of imagination or a UN habit. Sprawling, overlapping UN agencies
-each claim a piece of jurisdiction over Luna's resources and
-functions — a different kind of institutional mess than Mars's
-inherited patchwork (`mariner-valley.md`'s Consular College): not
-history colliding with itself, genuine bureaucratic turf war, nobody
-fully in charge of anything.
+A real, deliberate contrast to Ceres's MFN trade framework and the
+Ganymede Condominium's three-way split: Luna is the UN's **own**
+system, lock, stock, and barrel — no Trust-member hidden stake
+competing with Belt or Mars interests, no negotiated functional
+division between rival powers. Just direct, uncontested, centralized
+UN administration. That cleanliness is itself the point of contrast
+with everywhere else in this corpus: Luna is the one place Earth
+doesn't have to share, hide its hand, or negotiate — which makes
+Armstrong City's sprawling, overlapping bureaucratic turf wars
+(agencies competing over jurisdiction, not over the territory itself)
+a different kind of mess than anywhere else: internal to one power,
+not between rival ones.
 
-## What Luna used to be — the Heinlein nod, kept as history, not present reality
+## Corporate HQs: the tax incentive, and what it actually costs
 
-Jamestown Base's earliest era was genuinely rougher and more
-self-reliant than anything Armstrong City is now — before the fuel
-stakes became fully clear and the UN's grip tightened in response.
-That independent-frontier period didn't survive as the current
-political culture, but it didn't disappear either: old-timer
-communities, historical societies, maybe a few holdout settlements the
-modern administrative apparatus never fully absorbed, carrying the
-memory of what Luna almost became instead of what it actually is now.
+The UN actively pushes tax incentives for corporate headquarters to
+relocate to Armstrong City specifically, rather than staying on
+Earth's actual surface — a real, concrete reason a lot of this
+corpus's "Earth-based" companies (Okafor-Lindgren, Hauptmann &
+Voskuijlen, Bedrock, Longview, Trellis, Ondine, Nexora, Clarion,
+Lyceum, Castellan, and others — `corporations.md`) have been labeled
+loosely as "Earth" without distinguishing Earth's surface from Luna.
+Worth sorting out which specific companies are literally Luna-HQ'd
+under this incentive in a future pass; not resolved here.
+
+The trade is worth being explicit about, because it's a genuinely
+different deal than Doris's: Doris offers minimal tax and minimal
+oversight both — nobody's really watching, which is also its
+weakness, a sloppier audit trail easier to exploit but also easier to
+get caught in. Luna offers the tax break but the opposite trade on
+oversight — real, centralized UN administration with nowhere else to
+appeal, no competing jurisdiction to play off against the way Earth's
+actual surface (with its multiple governments) still allows. You get
+cheaper, but you're now fully inside the UN's own fiefdom, not
+playing several powers against each other. Three real options for
+where a company actually registers, three genuinely different
+tradeoffs, not just three names on a list.
 
 ## Open threads
 
-- No specific UN agency or named bureaucratic structure governing
-  Armstrong City has been pinned down yet — the "sprawling, competing
-  agencies" framing is established, specific agency names aren't.
-- Whether any of the old-timer/holdout communities have a concrete
-  present-day political voice, or are purely historical color with no
-  live stake in anything — not decided.
+- No specific named UN agency or bureaucratic structure for Armstrong
+  City yet — the "overlapping agencies, internal turf war" framing is
+  established, specific agency names aren't.
+- Whether Shackleton's holdout culture has any organized political
+  voice or outside contact (Rockline Compact sympathy, say) or stays
+  purely local and isolated — not decided.
+- Which specific remote sites run the ongoing ice-mining and regolith
+  helium-3 operations feeding Armstrong City's refineries hasn't been
+  named yet.
