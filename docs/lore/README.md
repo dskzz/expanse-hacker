@@ -64,9 +64,15 @@ cheap fix for now.
   `demographics.md` — a structural (not name-for-name) echo of Honor
   Harrington's Hephaestus.
 - **`asteroid-bases.md`** — the next tier after Ceres/Thisbe: Vesta,
-  Pallas, Hygiea (oldest, hardest-luck, ASA-leaning), genuinely
-  ordinary Davida, Tortuga-styled Sylvia's Reach, and the
-  deliberately minor, unhighlighted Shoemaker Outpost (Eros).
+  Pallas, Hygiea (oldest, hardest-luck, ASA-leaning, each with its
+  own distinct flavor of that politics), genuinely ordinary Davida,
+  Tortuga-styled Sylvia's Reach, and the deliberately minor,
+  unhighlighted Shoemaker Outpost (Eros).
+- **`psyche.md`** — Oberth Extraction's home: a deliberately
+  hands-off, heavily-automated skeleton-crew mining claim rather than
+  a settlement, built on the real exposed-protoplanet-core hypothesis
+  — and on the political logic of never letting a community form
+  that could organize the way Vesta's did.
 
 ## Earth
 
