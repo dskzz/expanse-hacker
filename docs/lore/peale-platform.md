@@ -114,15 +114,51 @@ roster, just better-understood gear behind the same rare exception.
 ## What this actually exposes
 
 The ultimate version of `os-lineages.md`'s "logs are testimony, not
-truth" theme: there is no possible human verification of routine
+truth" theme: there is no possible *human* verification of routine
 Peale operations, ever. Not slow to verify (Lassell), not merely
 expensive to verify (Psyche) — genuinely, permanently impossible,
 because sending someone to check is a death sentence, not a cost
-tradeoff. Whatever the telemetry reports *is* the record, full stop.
-The teleoperation link from Ganymede is accordingly the entire attack
-surface for this location: hijack or spoof it convincingly enough,
-and there is no physical cross-check anyone could ever perform to
-catch it — not eventually, not at any cost.
+tradeoff.
+
+**The industry's actual answer to that: log bots — formally, the
+witness channel.** No regulator or insurer signs off on "just trust
+the operational telemetry" forever, so Peale runs a second, dedicated
+fleet of hardened units whose only job is independent visual
+witness — fixed and roaming cameras covering the harvester fleet
+from multiple separate angles, each frame hardware-signed at the
+point of capture rather than after the fact, consistent with the
+AuthorityWeight/cross-cert trust primitive already underpinning this
+corpus's authority model (`corporations.md`, `os-lineages.md`).
+Multiple independent, cryptographically-rooted witnesses from
+different physical positions are a real, well-precedented way to
+raise the cost of a convincing fake well above forging a single
+telemetry stream — genuine security engineering, not theater.
+
+**It raises the bar; it doesn't restore ground truth.** The witness
+channel is still transmitted data riding the same teleoperation link
+to Ganymede as everything else — harder to fake convincingly across
+every angle at once, but not a physical human check, and nothing
+that was never transmitted live ever existed in the first place.
+There's no local archive to retrieve later the way a black box
+usually implies: if the link is down or compromised at the exact
+moment something happens, the record isn't delayed, it's gone.
+
+**And the cover for blinding it is already built in.** Log bots sit
+on Io's surface too, which means they're exposed to the same
+volcanic attrition as the harvester fleet — losing one to an
+eruption is exactly as routine and exactly as unremarkable as losing
+a harvester unit (above). Which means disabling a witness unit
+deliberately, right before something you don't want recorded, looks
+identical to ordinary bad luck. The very ordinariness of equipment
+loss on Io is the perfect deniable cover for blinding the one system
+built specifically to prevent deniability.
+
+The teleoperation link from Ganymede — now carrying both the
+operational and witness channels — is accordingly the entire attack
+surface for this location: compromise it convincingly enough across
+every angle, or simply arrange for the right unit to go quiet at the
+right moment, and there is no physical cross-check anyone could ever
+perform to catch it — not eventually, not at any cost.
 
 ## Why it's still running, not abandoned
 
@@ -150,3 +186,7 @@ automating around the one real problem.
 - No named figures — nobody's permanently stationed to name, but
   whoever leads Peale's remote teleoperation team from Ganymede is a
   natural future role (added to `people-pass-queue.md`).
+- Whether anyone has actually exploited the witness-channel blind
+  spot (a deliberately disabled log bot passed off as volcanic
+  attrition) isn't decided — a clean, specific future hook distinct
+  from the broader teleoperation-hijack angle above.
