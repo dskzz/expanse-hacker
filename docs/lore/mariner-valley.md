@@ -56,6 +56,47 @@ layer down, in whoever actually holds the keys. The President's own
 name isn't pinned down yet — same open pattern as Piast before he had
 one.
 
+## The Martian Congress: from confederacy to consolidation
+
+The dozen founding colonies first unified as a confederacy, not a
+single government — each guarding its own autonomy fiercely, the
+natural move for materially-equal, politically-separate founders with
+no reason yet to trust a stronger center. But Mars colonization's
+economics were brutal enough (the near-bankruptcies, above) that a
+confederacy's duplicated effort across a dozen separate
+administrations wasn't sustainable, and real consolidation into a
+single government followed. The genuinely important bonus: only a
+properly unified Mars had the strength to actually pull off the
+breakaway from Earth (below) — a loose confederation of bickering
+colonies never could have.
+
+What survived consolidation is its own clean invention, not inherited
+from anywhere: **the Martian Congress**, the resulting legislative
+body. Its apportionment is the direct legacy of the confederal
+founding — seats tied to the original dozen colonies, not to
+population, the same logic as the US Senate's equal-representation-
+per-state model, a structural fingerprint of a confederal origin.
+
+## The modern strain: population diffusing, apportionment frozen
+
+Exactly what's now straining against reality. As new domes rise and
+people move out of the original tunnel-colonies, and new settlements
+grow along the transport corridors connecting everything, population
+is diffusing away from the old founding centers toward areas the
+Congress's apportionment was never built to represent. Real,
+well-precedented political problem — the UK's actual "rotten
+boroughs" before 19th-century reform, US malapportionment before "one
+person, one vote" — entrenched old-colony political power holding
+disproportionate seats while the fastest-growing parts of Mars have
+the least formal say over their own government.
+
+This compounds with "capability is authority" above rather than
+competing with it: not one distortion but two, stacked. Real power in
+Mariner Valley runs through old-colony incumbency at the legislative
+level *and* physical hardware custody at the executive/infrastructure
+level, at the same time — a genuinely textured kind of democratic
+failure, not a single trick repeated.
+
 ## Independence, insecurity, and the military buildup
 
 MDR broke away from Earth outright at some point before the Seven Day
@@ -131,6 +172,11 @@ domestic MDR politics also governs Mars's half of Sol's actual navy.
 
 ## Open threads
 
+- Whether an organized reapportionment movement exists — new-dome and
+  transport-corridor populations pushing to update Congressional
+  representation against old-colony incumbents who benefit from
+  keeping it frozen. A natural political-conflict hook, not yet built
+  out.
 - Whether Meridiani Systems (Mars terraforming, named for the real
   Meridiani Planum — a different, specific Martian region from
   Mariner Valley) maintains its real operational center at Meridiani
