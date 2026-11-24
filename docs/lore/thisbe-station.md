@@ -68,6 +68,15 @@ here is an active three-way split, not uniform hands-off avoidance:
   massacre's own wound publicly — the same broadcast that created the
   reform window in the first place would make any crackdown now a
   system-wide scandal. Genuinely stuck, not merely reluctant.
+- **OSL has been the real, decades-long quiet patron** — not reserved
+  at all, just patient. Overtly backing Thisbe would hand the UN
+  exactly the "Belt political aggression" pretext it needs, so OSL
+  played the long game instead: quietly keeping the cooperative fed,
+  healthy, and newsworthy for years, understanding its value as a
+  sympathetic cause without ever claiming credit or provoking the UN
+  directly. Careful and genuinely invested at the same time, not one
+  instead of the other — the patient version of OSL's established
+  diplomatic caution, not an exception to it.
 - **ASA** doesn't need to actually embrace the cooperative's ideology
   to use open relations with Thisbe as a deliberate wedge against the
   UN — opportunism dressed as solidarity, consistent with ASA's
@@ -78,9 +87,6 @@ here is an active three-way split, not uniform hands-off avoidance:
   about its unequal relationship with Earth (`mariner-valley.md`) —
   enough open contact to be a pointed irritant, not enough exposure to
   invite real cost.
-- **OSL** stays genuinely more reserved than either — its whole brand
-  is careful diplomacy with established powers, and being seen as
-  using Thisbe to provoke the UN cuts directly against that image.
 
 The UN hates all of it and can't do much about any single piece:
 can't crack down on Thisbe without the scandal, can't credibly punish
@@ -90,6 +96,47 @@ everything else. Thisbe can't fully break free either — it still
 needs inner-system markets and capital it has no real way to replace.
 A real, active diplomatic pressure point, not a forgotten backwater
 everyone quietly avoids.
+
+## The big carrot: a tightrope OSL now has to actually walk
+
+Decades of quiet investment suddenly pays off: the helium-3 discovery
+gives OSL something real enough to consider openly laying claim to
+mineral rights on Thisbe's behalf, for the first time risking an
+actual, open breach with Earth rather than quiet patronage. The
+parallel is deliberate and worth stating directly: Mars secured fuel
+independence via Phobos and Deimos (`mars-political-structure.md`);
+this is the Belt's own shot at the same thing. If it works, Earth
+becomes the comparatively exposed power — the only one left still
+dependent on a strained, politically fraught supply (Luna's depleting
+ice, the UN's own administrative mess, `armstrong-city.md`) once both
+Mars and the Belt have independent sources. A real, system-wide
+strategic shift riding on one decision, not a local mineral-rights
+dispute.
+
+Genuinely unresolved: whether the opportunity for the Belt to have
+its own fuel source is worth the open breach with Earth, or whether
+OSL's whole decades-long investment gets risked and lost on one bad
+roll. Not decided here on purpose.
+
+## Mars called in to mediate, and a fault line that was already there
+
+The stakes are high enough that **Mars gets called in to mediate**
+between OSL and the UN — plausible specifically because Mars is
+independent enough not to be Earth's rubber stamp, but not as
+confrontational as the Belt's hardline factions, giving it real
+credibility as a broker neither side fully trusts but both can at
+least talk to.
+
+Mediating surfaces a fault line already built into MDR rather than
+creating a new one: **the Commonwealth of Elysium sides with the
+Belt's claim**, consistent with its own collectivist political
+character and its general sympathy toward exactly this kind of
+worker-cooperative cause. **The Mariner Valley Caucus**
+(`mars-political-structure.md`) sides with the UN instead — the first
+real, live issue to actually activate the Consular College's
+13th-seat tension and the Congress's own internal split, rather than
+leaving it as background texture. Mars doesn't mediate as one unified
+voice; it mediates while quietly split against itself.
 
 **Chronic underemployment, and — the part that actually matters for
 play — chronically underpatched software.** Nobody with real capital

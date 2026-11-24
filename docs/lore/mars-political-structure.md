@@ -111,6 +111,23 @@ authority" elsewhere in MDR, just surfacing inside the ceremonial
 body instead of the executive branch. Elysium's seat is the live
 exception that proves the rule for everyone else's.
 
+## The Mariner Valley Caucus
+
+Elysium has a formal identity (the Commonwealth, its 13th Consular
+seat, its own bloc weight). The rest of MDR, when it needs to act as
+a counterweight, now has one too: **the Mariner Valley Caucus** —
+deliberately named to sound like an accident of geography, "just the
+representatives from Mariner Valley," rather than a determined effort
+to counter Elysium's interests specifically. Same oversold-
+innocuousness naming logic as "Democratic Republic" itself and the
+Sol Industrial Trust's own name (`corporations.md`) — call the real
+thing something bland enough that it reads as incidental.
+
+First real, live use: siding with the UN against Elysium-backed
+Belt interests in the Thisbe helium-3 dispute (`thisbe-station.md`) —
+the issue that actually activates this split rather than leaving it
+as background texture.
+
 ## Fusion fuel independence: Phobos and Deimos
 
 Mars's own surface is a poor native source of helium-3 — its thin
