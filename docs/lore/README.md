@@ -50,6 +50,14 @@ cheap fix for now.
   reasoned replacement for Expanse's Tycho Station: a real Kirkwood
   gap siting, an early corporate-by-necessity founding, and the
   ownership-vs-partnership structure protecting Elias Voss.
+- **`rickover-naval-yards.md`** — the physical place behind
+  `corporations.md`'s Earth military-industrial decline arc: Luna
+  plus dispersed orbital facilities, `UN:LUNA:RICKOVER`.
+- **`industrial-stations.md`** — real orbital anchors and
+  LocationChain addresses for the rest of the shipbuilding supply
+  chain and industrial-components companies (Anchorpoint, Garrison,
+  Corelli, Standard Fabrication, Patchwright, Skipjack, Cutwater,
+  Millrace), lighter tier than a full page each.
 
 ## Earth
 
@@ -77,6 +85,12 @@ cheap fix for now.
 - The relay-town archetype (maintenance crews → bar → organic
   settlement, tied to RFC-2353's own hop-count mechanics) was
   discussed but never written up.
-- Rickover Naval Yards still exists only in `corporations.md` and
-  hasn't gotten its own station-level page yet; Slayton Construction
-  Yards now has.
+- A retrofit pass to add LocationChain data to the station pages
+  written before this convention existed (Ceres, Thisbe, Ganymede,
+  Mariner Valley, Armstrong City/Shackleton, Slayton, Datong) hasn't
+  been done yet.
+- Refining-operation-specific locations (behind Oberth Extraction,
+  Reyes-Petrov Minerals, Frostline Harvesting) still need real
+  orbital anchors and LocationChains.
+- Black sites (R&D, surveillance, prison, weapons placement, across
+  Mariner Valley, Elysium, and Earth) remain a flagged future pass.
