@@ -1,10 +1,12 @@
-# The Irregular Moon Families: Jupiter's Own Mini-Belts
+# Jupiter's Smaller Moons: Mini-Belts and the Inner Ring
 
 Status: locked, 2026-11-25. Deliberately a single, light-touch
-treatment covering all four families at once — none of these
-individual bodies earns a Peale- or Europa-level writeup, and that's
-the point. The real value here is the cluster itself, not any one
-rock in it.
+treatment covering everything beyond the four Galileans at once —
+the four irregular debris families as Jupiter's own mini-belts, plus
+the inner ring-moons as a genuinely distinct second tier. None of
+these individual bodies earns a Peale- or Europa-level writeup, and
+that's the point. The real value in the irregular families is the
+cluster itself, not any one rock in it.
 
 ## Real facts: debris families, not random scatter
 
@@ -31,6 +33,30 @@ belt:
   gravitational influence (its Hill sphere) — the frontier of the
   frontier, genuinely the last thing still gravitationally "Jupiter's"
   before interplanetary space takes over.
+
+## The other second tier: the inner ring-moons
+
+A genuinely distinct category from both the Galileans and the
+irregular families above, and worth naming separately rather than
+folding in: **Metis, Adrastea, Amalthea, and Thebe**, real moons
+orbiting *inside* Io's own orbit, embedded in or near Jupiter's own
+faint, dusty ring system — which they themselves help create,
+through ordinary micrometeorite erosion knocking dust off their
+surfaces into orbit. Amalthea (~250×146×128 km) is the biggest of
+the four and genuinely substantial, bigger than most individual
+irregular-family rocks — and it's visibly reddish, very plausibly
+sulfur contamination drifting in from Io's own volcanic plumes
+(`peale-extraction.md`), a real, physically grounded detail rather
+than an invented one.
+
+**Not exploited, and for good reason.** This deep inside Jupiter's
+radiation belts is worse than Io, not comparable to it — even
+Peale's fully-robotic, zero-crew model (`peale-extraction.md`) exists
+because there's real, sellable sulfur worth the automation cost;
+nothing here offers a comparably strong reason to bother. If anything
+ever operates out here, it's a purely robotic sensor/observation post
+studying Jupiter's rings or magnetosphere up close, not an extraction
+site — and even that's speculative, not established.
 
 ## The mini-belt difference: actual neighbors
 
@@ -107,6 +133,24 @@ decoupling already used for Doris (`corporations.md`), where legal
 registration and real position are separate facts that don't have to
 move together.
 
+## A shared foundry, not a shipyard
+
+Real neighbors who build and maintain their own spin habitats
+eventually need somewhere to build and repair the ships that move
+people and goods *between* clans and families — not a Lodestar- or
+Slayton-scale shipyard (`corporations.md`, `slayton-construction-yards.md`),
+nothing built for long-haul system trade, just a small, inter-clan
+foundry sized for intramoon logistics: short hops between rocks in
+the same family, and the slightly longer run out to Ganymede or
+Callisto when a clan actually needs something from the bigger
+economy. Sited at the **Himalia group** specifically, since it's the
+closest of the four families to the Galileans and therefore the
+natural hub for whatever traffic actually flows in and out of this
+corner of the system. Consistent with everything else here, it's
+run cooperatively by whichever clans actually use it rather than
+owned by any outside company — shared infrastructure, not a
+corporate outpost dropped into clan territory.
+
 ## Open threads
 
 - No named clans, settlements, or figures in any family —
@@ -121,3 +165,10 @@ move together.
 - Whether any specific clans have known rivalries or alliances within
   a given family isn't decided — a natural, low-cost hook whenever a
   scenario needs one.
+- No name for the Himalia foundry, and no named clans credited with
+  running it — deliberately left unnamed per the same "no special
+  treatment" scope, added to `people-pass-queue.md` as a future role
+  rather than a future company.
+- Whether anyone has ever actually bothered with the inner ring-moons
+  (Metis/Adrastea/Amalthea/Thebe) for observation purposes, or
+  whether they stay genuinely untouched — open.

@@ -45,6 +45,10 @@ here).
   future role.
 - **The Europa Allocation Council** (`europa.md`) — six delegate
   seats, two each from the UN, MDR, and OSL; none named yet.
+- **The Himalia foundry** (`jovian-irregular-moons.md`) — an
+  inter-clan cooperative facility with no named clans credited for
+  running it; also no named clans or figures anywhere in any of the
+  four irregular-moon families generally.
 - **Callisto / the Jovian Development Company** (`callisto.md`) —
   the JDC's current administrator; the Callisto Home Rule League's
   leadership and the United Moons wing's leadership (possibly the

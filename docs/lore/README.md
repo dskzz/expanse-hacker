@@ -153,7 +153,10 @@ any existing or future name that turns out just as hard to place.
   own mini-belts — genuinely clustered, unlike the real Belt's
   isolation, functionally ungoverned rather than formally free, clan-
   run rather than corporate-run, and a natural landing spot for VPH's
-  and Psyche's Belt diaspora.
+  and Psyche's Belt diaspora. A small inter-clan foundry at Himalia
+  handles intramoon logistics. Also covers the real inner ring-moons
+  (Metis, Adrastea, Amalthea, Thebe) as a genuinely distinct, even
+  more hazardous second tier — not worth exploiting, not developed.
 
 ## Shared/cross-cutting
 
