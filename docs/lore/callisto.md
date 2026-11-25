@@ -302,13 +302,30 @@ A real structural borrowing, not an invented one: a formally
 designated **Free Trade Zone (FTZ)** at Concord — reduced customs
 and tariff regulation inside a defined perimeter, the same real-
 world economic tool dozens of actual jurisdictions use to attract
-trade, warehousing, and investment. The JDC chartered it, and not by
-accident: once the JTA broke the company's commercial monopoly
-outright (above), the JDC needed a revenue source that didn't depend
-on exclusive trading rights it no longer held — an FTZ is exactly
-the kind of thing a declining chartered company reaches for once its
-core business erodes, the same real pattern that pushed the actual
-East India Company to diversify as its own monopoly weakened.
+trade, warehousing, and investment. "Emporium" is doing real work in
+the name, not just sounding grand: the word's original sense (from
+the Greek *emporion*) was specifically a trading post where ordinary
+civic law relaxed to encourage trade across cultural and political
+lines — close to a literal historical precedent for an FTZ, not a
+loose metaphor — while the word's modern drift toward "a large,
+varied marketplace" fits the retail and entertainment side just as
+well. The JDC chartered it, and not by accident: once the JTA broke
+the company's commercial monopoly outright (above), the JDC needed a
+revenue source that didn't depend on exclusive trading rights it no
+longer held — an FTZ is exactly the kind of thing a declining
+chartered company reaches for once its core business erodes, the
+same real pattern that pushed the actual East India Company to
+diversify as its own monopoly weakened.
+
+**Formal name versus what people actually say.** "The Emporium
+Zone" is the name on the charter, and "Zone" is doing real work
+there too — it's the term that actually carries the FTZ's special
+legal status, unlike the plainer geographic "district." That hasn't
+stopped Concord's own population from calling it **"the District"**
+in ordinary conversation anyway, the same casual layering already
+running through this corpus's naming elsewhere (the Shack, PREP,
+Kamenya) — with **"the Strip"** (below) as the even more specific
+nickname for its entertainment core within that.
 
 **LocationChain:** `JDC:CALLISTO:EMPORIUM` — sited near Concord's own
 docks, the same real-world siting logic as actual free trade zones
