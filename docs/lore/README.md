@@ -164,6 +164,14 @@ any existing or future name that turns out just as hard to place.
   Trust, and Lunar resource depletion as a newly-identified root
   cause tying several of the others together. Add to it the same way
   as the people-pass queue.
+- **`equipment-codex.md`** — a growing reference for established
+  technology that doesn't belong to one location file. First entry:
+  the Loadframe, a gravity-compensation exoskeleton — active force
+  synthesis to walk normally in low gravity (a real power-budget
+  problem), structural load redirection for relief in high gravity (a
+  real structural-engineering problem, mechanically easier), and a
+  genuine medical necessity for anyone long-adapted to low gravity
+  visiting somewhere like Earth.
 
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
