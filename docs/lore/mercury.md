@@ -44,7 +44,7 @@ large-scale solar power collection, a different economic logic than
 anywhere else in this corpus, which otherwise runs almost entirely on
 fusion (He-3, deuterium) rather than direct solar capture.
 
-## Lawrence Station
+## Lawrence Station - Mercury
 
 **LocationChain:** `MERCURY:POLAR-SHADOW:LAWRENCE` — the facility
 straddles both halves of the planet's defining contrast: ice mining

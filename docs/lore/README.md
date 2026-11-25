@@ -96,12 +96,12 @@ any existing or future name that turns out just as hard to place.
 
 ## Inner Planets
 
-- **`mercury.md`** — Lawrence Station: real polar water ice trapped
+- **`mercury.md`** — Lawrence Station - Mercury: real polar water ice trapped
   by Mercury's own permanently-shadowed craters, paired with
   exceptional solar collection from the same planet's extreme flux.
   Automated for a fourth distinct reason beyond everywhere else built
   so far — brutal thermal cycling, not radiation or light-lag.
-- **`venus.md`** — Landis Habitat(s): real floating aerostat cities
+- **`venus.md`** — Landis Habitat(s) - Venus: real floating aerostat cities
   in the one altitude band where Venus's atmosphere is nearly Earth-
   like, using ordinary breathable air as the lifting gas. The one
   genuinely pleasant place in the whole corpus — atmospheric/

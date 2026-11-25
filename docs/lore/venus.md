@@ -43,7 +43,7 @@ genuinely unresolved in the real world as of this writing — exactly
 the kind of live scientific question worth keeping open here rather
 than settling one way or the other.
 
-## Landis Habitat(s)
+## Landis Habitat(s) - Venus
 
 **LocationChain:** `VENUS:CLOUD-DECK:LANDIS` — floating, not
 surface-anchored, the first LocationChain in this corpus where the
