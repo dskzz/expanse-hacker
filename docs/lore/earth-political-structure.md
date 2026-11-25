@@ -291,6 +291,82 @@ over neither body directly — a civilian political coordinator, not a
 military one, the same real principle of civilian control of the
 military most actual governments already run on.
 
+## Intelligence and counterintelligence: the Directorate of Space Security
+
+**Police power stays with the blocs; this is the space-only
+exception, the same domain split running through everything else
+here.** Earth-domestic intelligence and policing are each bloc's own
+business, not detailed further — the UN's own service, the **UN
+Directorate of Space Security (DSS)**, has jurisdiction only over
+off-world and interplanetary matters, consistent with the UN's
+authority generally being real and exercised in space while staying
+toothless on Earth. The name itself is deliberately dry and
+administrative — "Security Directorate" reads as facilities/IT
+security as readily as it reads as an intelligence service, which is
+itself the same "formal legitimacy" camouflage running through every
+other institution in this corpus. Spacers call it **the Quiet
+Service**, an open secret rather than a real one — nobody's fooled
+about what it does, same as how no one's ever really fooled about
+what a real intelligence agency does either.
+
+**Why it exists, in order of how load-bearing each reason is:**
+
+- **Counterintelligence over the Fleet's own authorization systems is
+  the single most important job on paper.** The rogue-command
+  vulnerability (above) — a stale, cached, or long-lived-trust
+  exception letting one compromised credential bypass nine blocs'
+  worth of political consensus — is exactly the kind of insider
+  compromise DSS's counterintelligence wing exists to catch. Whether
+  it actually can is a different question: the same compartmentalized,
+  low-visibility nature that lets an intelligence service function at
+  all is exactly what would let DSS itself become the vulnerability it
+  was built to prevent, rather than its solution. Deliberately left
+  open, consistent with how the rogue-command hook has been treated
+  everywhere else — nothing confirms DSS has ever been compromised, or
+  has ever been the one to compromise it.
+- **The covert counterpart to the Nuclear Safeguards Directorate's
+  overt inspections** (`space-law-compacts.md`) — the real IAEA/
+  intelligence-agency split: declared inspections catch what a
+  facility admits to; covert human and technical intelligence is what
+  actually catches what it doesn't. Thisbe Station's own helium-3
+  program and ASA's fissile-material status are the two live
+  questions DSS has the clearest institutional reason to actually
+  care about answering.
+- **Resolving, covertly, what the Sol Tripartite Process structurally
+  can't** (`space-law-compacts.md`): ASA's compound legal ambiguity
+  across Protocol IV, the Anti-Piracy Compact, and the
+  Non-Proliferation Agreement all share the same shape — nobody with
+  standing has ever had to decide. DSS is the body actually trying to
+  find out, since the diplomatic and legal machinery structurally
+  can't reach a party that holds no seat in it.
+- **A secondary interest in off-world corporate activity** — the
+  Rockline Compact's suspicion of the Sol Industrial Trust
+  (`corporations.md`, `flashpoints.md`) is fundamentally about
+  interplanetary commerce (Belt mining), not bloc-domestic regulation,
+  putting it at least partly inside DSS's actual remit even though
+  nobody would officially describe economic counterintelligence as
+  its job.
+
+**Captured the same way everything else in this corpus is.** DSS
+nominally serves all nine blocs equally; its real staffing and
+leadership lean disproportionately toward the four veto powers,
+especially the Atlantic Zone — the same old institutional capacity
+that makes Earthstock "closest to the original" (`os-lineages.md`)
+carries over directly into who actually staffs a dry, technical-
+sounding security service first. That gives the Proportionality
+Caucus (above) a live, concrete grievance here too, distinct from
+funding and representation: an intelligence service funded by all
+nine blocs but answering, in practice, mostly to four of them.
+
+Oversight runs nominally through the Secretary-General and the Joint
+Military Council — but covert operations are structurally harder for
+any nine-bloc consensus mechanism to actually verify than a Fleet
+action is, giving DSS more real unchecked latitude in practice than
+the Fleet officially has, even though both sit under the same
+formal chain. Mars plausibly runs its own peer intelligence service out
+of Admiralty House's own command structure, watching DSS exactly as
+warily as DSS watches Mars; not built out further than that yet.
+
 ## Mars: a peer power, not a tenth bloc
 
 MDR is not one of the nine blocs and never has been — it isn't an

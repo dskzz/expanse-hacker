@@ -157,6 +157,11 @@ starts:
   — no named chair or members yet.
 - **The UN Spaceguard Directorate and UN Space Survey Directorate**
   (`earth-political-structure.md`) — no named heads yet.
+- **The UN Directorate of Space Security ("the Quiet Service")**
+  (`earth-political-structure.md`) — no named director, counterintel
+  chief, or field officer yet; whoever eventually investigates Thisbe
+  Station's helium-3 program or ASA's fissile-material status
+  covertly is a natural future figure.
 - **The UN Nuclear Safeguards Directorate** (`space-law-compacts.md`)
   — no named head or inspectors yet.
 - **Marine insurance underwriters and P&I clubs** (`space-law-compacts.md`)

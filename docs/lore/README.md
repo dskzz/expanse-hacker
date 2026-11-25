@@ -182,8 +182,13 @@ any existing or future name that turns out just as hard to place.
   detection, doubling as deliberate-kinetic-attack early warning, with
   Mars's own already-flagged missing capability creating a real
   dependency) and the UN Space Survey Directorate (survey/registration
-  ahead of Off-World Development's own economic arrangements). Still
-  explicitly a work in progress.
+  ahead of Off-World Development's own economic arrangements); and a
+  space-only UN intelligence/counterintelligence service, the
+  Directorate of Space Security ("the Quiet Service"), tasked above
+  all with guarding the Fleet's own authorization systems against the
+  rogue-command vulnerability — and just as plausibly the likeliest
+  vector for exploiting it, captured by the four veto powers the same
+  way everything else here is. Still explicitly a work in progress.
 - **`space-law-compacts.md`** — the real maritime-law family, ported
   compact by compact: the Sol Tripartite Process (UN proposes, then
   Mars/UN/OSL negotiate — ASA structurally excluded by having no seat
