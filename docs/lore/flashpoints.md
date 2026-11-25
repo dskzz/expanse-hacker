@@ -186,16 +186,16 @@ political consensus by finding one cached credential instead. Nothing
 confirms this has ever actually been exploited — deliberately left
 open as the sharpest mechanically-real hook this whole pass produced.
 
-### The Directorate of Security's own capture
+### The Directorate of Security Services' own capture
 
-Home file: `earth-political-structure.md`. DS is funded by all nine
+Home file: `earth-political-structure.md`. DSS is funded by all nine
 blocs but its real staffing and leadership lean disproportionately
 toward the four veto powers, especially the Atlantic Zone — a new,
 concrete grievance for the Proportionality Caucus distinct from
 funding and representation, and a live question nobody's forced yet:
-whether DS counterintelligence actually protects the Fleet's
+whether DSS counterintelligence actually protects the Fleet's
 authorization systems from the rogue-command vulnerability, or
-whether DS's own compartmentalized, low-visibility nature makes it
+whether DSS's own compartmentalized, low-visibility nature makes it
 the likeliest vector for exploiting that same vulnerability. Not
 resolved either way, on purpose.
 
