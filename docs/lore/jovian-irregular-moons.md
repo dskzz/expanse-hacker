@@ -58,6 +58,26 @@ ever operates out here, it's a purely robotic sensor/observation post
 studying Jupiter's rings or magnetosphere up close, not an extraction
 site — and even that's speculative, not established.
 
+**What's actually worth noting about each, briefly.** Metis and
+Adrastea both orbit embedded directly in Jupiter's main ring, and
+real orbital-dynamics evidence suggests they're the ring's actual
+*source* — ordinary micrometeorite impacts knocking dust off their
+surfaces, continuously resupplying material the ring would otherwise
+lose. That's a real, physically specific reason the Jovian Sentinel
+Survey (`callisto.md`) would have to understand them at some level
+even without ever building anything there — tracking where debris
+comes from is exactly its job, and these two moons are a known,
+answerable piece of that question. Amalthea is the odd one out in a
+different way: real Galileo-era measurements found it surprisingly
+low-density, likely more of a loose, porous rubble pile than a solid
+rock, and puzzlingly, it radiates slightly more heat than sunlight
+alone should explain — still not fully resolved, a minor, genuine
+scientific curiosity rather than anything load-bearing. It also has
+one purely historical distinction: discovered in 1892 by Edward
+Barnard, by eye, through a telescope — the last moon in the solar
+system anyone ever found that way, before photography and later
+spacecraft took over entirely.
+
 ## The mini-belt difference: actual neighbors
 
 This is the real distinction from the main asteroid belt, not just a
@@ -113,7 +133,13 @@ whatever best fits the specific lineage of the people who ended up
 there, deliberately not one single borrowed term imposed on all of
 them. (Worth keeping distinct from Ceres's own "Hetman" terminology,
 `ceres.md` — a different cultural register for a different kind of
-settlement.)
+settlement.) One thread among several, kept light rather than made
+the model for everyone: a clan with roots tracing to India's own real
+Adivasi (Scheduled Tribe) communities, whose customary land-linked
+councils and chieftain structures sit genuinely apart from caste-
+Hindu village governance — a closer, more apt real precedent for
+this kind of rock-as-ancestral-territory arrangement than caste
+structure would be, without needing to be the only culture out here.
 
 **Real neighbors means real clan politics, not just proximity.**
 Each orbital family clustering several clans within actual traveling
