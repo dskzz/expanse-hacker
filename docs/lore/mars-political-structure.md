@@ -69,6 +69,18 @@ the Jovian Sentinel Survey plays for Callisto
 yet; flagged as a direct, necessary consequence of Admiralty House's
 whole premise rather than a nice-to-have.
 
+**Ballista-class: the precision capability the UN won't build.**
+Where the UN's own kinetic deterrent stays deliberately crude and
+theoretical — any big enough ship *could* be weaponized, but nothing
+is actually designed for it — Mars has no comparable legitimacy
+concern and builds exactly what the UN won't: a dedicated
+bombardment ship class, carrying guided, variable-yield munitions for
+proportionate, targeted strikes rather than blunt mass-and-hope
+kinetics. Full doctrine and naming rationale lives in
+`ship-class-codex.md`, the new reference for named ship classes
+generally; built at Rickover Naval Yards
+(`rickover-naval-yards.md`), MDR's existing military shipyard.
+
 ## The Commonwealth of Elysium
 
 Mars isn't one homogeneous culture any more than the Belt is one

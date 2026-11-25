@@ -118,6 +118,22 @@ starts:
   actually suit the place (a flag-of-convenience jurisdiction
   arguably works better anonymous) but is worth a deliberate decision
   rather than a permanent default.
+- **The UN Secretary-General** (`earth-political-structure.md`) — no
+  name yet for the UN's own top executive.
+- **The Proportionality Caucus's leadership** (`earth-political-structure.md`)
+  — the loyal-opposition faction pushing to reapportion UN
+  representation to match real demographic/economic weight; no named
+  figures yet.
+- **Bloc UN delegation heads** (`earth-political-structure.md`) — each
+  of the nine blocs sends its own appointed delegation; none named yet
+  for any bloc.
+- **The UN Fleet's own command structure** (`earth-political-structure.md`)
+  — deliberately multi-bloc and consensus-gated by design; no named
+  Fleet Commander or bloc-seat holders yet, and whoever eventually
+  exploits (or discovers) the rogue-command technical vulnerability is
+  a natural future figure.
+- **Ballista-class vessels and commanding officers** (`ship-class-codex.md`,
+  `mars-political-structure.md`) — none named yet.
 
 ## Already named (reference only — not part of the queue)
 

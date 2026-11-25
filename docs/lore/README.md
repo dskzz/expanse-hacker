@@ -111,8 +111,19 @@ any existing or future name that turns out just as hard to place.
 
 ## Earth
 
-- **`earth-political-structure.md`** — the UN and the New
-  International, Earth's organized opposition.
+- **`earth-political-structure.md`** — massively expanded: the real
+  nine-bloc structure governing Earth's actual domestic politics
+  (the Atlantic Zone, the African Union, Bharat, a Zhongguo-descended
+  bloc, a Three Seas-descended bloc, the Eurasian Union, Patria
+  Grande, ASEAN and Others, an OIC-descended bloc), indirect/caucus
+  UN representation, the loyal Proportionality Caucus alongside the
+  revolutionary New International, the UN's real three-tier geography
+  (NYC ceremonial, New Delhi administrative, Luna's off-world
+  bureaucracy), and a full military-teeth framework — toothless on
+  Earth but federal-strength in space, an unusable kinetic deterrent,
+  treaty-capped ground forces weaker than Mars's, orbital embargo as
+  the real lever, and a rogue-command vulnerability that's technical
+  underneath its political safeguard.
 - **`armstrong-city.md`** — Armstrong City and Shackleton Base: the
   DC/Congress governance model, the UN's two-tier geography
   (prestige on Earth, bureaucracy on Luna), and the corporate HQ tax
@@ -215,6 +226,11 @@ any existing or future name that turns out just as hard to place.
   real structural-engineering problem, mechanically easier), and a
   genuine medical necessity for anyone long-adapted to low gravity
   visiting somewhere like Earth.
+- **`ship-class-codex.md`** — the same idea for named ship classes.
+  First entry: Mars's Ballista-class precision-bombardment ships,
+  alongside the UN's own deliberate, logged absence of an equivalent
+  — refining a kinetic deterrent into an actual weapon system would
+  undercut the "unthinkable last resort" logic it depends on.
 
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,

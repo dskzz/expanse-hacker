@@ -126,6 +126,35 @@ decades after the massacre itself.
 
 ## Cross-cutting / Earth
 
+### The Proportionality Caucus versus old money's funding leverage
+
+Home file: `earth-political-structure.md`. The nine blocs' real
+demographic and economic weight has shifted hard toward Bharat,
+Zhongguo, and the African Union — but the Atlantic Zone's own share
+of real wealth hasn't shrunk nearly as fast, and UN funding runs on
+assessed contributions proportional to economic weight, not
+population. That gives old money a real, checkable lever
+(disproportionate funding share buying influence no formal vote
+grants) against the loyal Proportionality Caucus's entirely
+reasonable, entirely stalled push to reapportion representation to
+match the real shift. Distinct from the New International below: this
+is reform-from-within friction, not revolutionary rupture.
+
+### The UN Fleet's rogue-command vulnerability
+
+Home file: `earth-political-structure.md`. The political safeguard
+against a rogue Secretary-General or Fleet Commander — multi-bloc
+consensus required to authorize any real use of force, the same
+distributed-control logic as multi-key nuclear launch — is only as
+strong as the technical trust-chain enforcing it. Any stale, cached,
+or long-lived-trust exception anywhere in the Fleet's own
+authorization systems (the same category of vulnerability already
+built into Lassell Relay's own deliberately-approved exception) would
+let a sufficiently positioned insider bypass nine blocs' worth of
+political consensus by finding one cached credential instead. Nothing
+confirms this has ever actually been exploited — deliberately left
+open as the sharpest mechanically-real hook this whole pass produced.
+
 ### The New International versus the UN
 
 Home file: `earth-political-structure.md`. Real organized political
