@@ -15,10 +15,12 @@ of nominally-separate players who either genuinely compete or quietly
 agree not to.
 
 What follows is the full result of mapping that out properly: a
-37-sector taxonomy loosely checked against the real GICS sector
-standard, a ~46-company roster against it, home locations (Earth,
-Mars, Belt, Ganymede, or a joint venture between two), and one
-dominant cartel sitting on top of all of it.
+38-sector taxonomy loosely checked against the real GICS sector
+standard (hospitality & entertainment added 2026-11-25 once Callisto's
+Emporium Zone needed it, `callisto.md`), a ~50-company roster against
+it, home locations (Earth, Mars, Belt, Ganymede, Callisto, or a joint
+venture between two), and one dominant cartel sitting on top of all
+of it.
 
 ## Sector taxonomy
 
@@ -54,7 +56,7 @@ contracting · mercenary/paramilitary contracting · private prison/
 detention infrastructure
 
 **Consumer goods & retail:** consumer staples/mass manufacture ·
-retail/distribution
+retail/distribution · hospitality & entertainment (hoteliers, casinos)
 
 **Reclamation:** salvage, recycling & waste management
 
@@ -221,8 +223,12 @@ real design attention.
   equity in companies that defaulted on H&V debt instead of repaying
   it — a boring, realistic way a finance house ends up quietly owning
   operating businesses it never set out to run. Not pinned to a
-  specific company; a one-off detail to apply wherever a scenario
-  needs a company's real owner to be a surprise.
+  specific company in general, but it has one concrete instance now:
+  **Nova Court** (`callisto.md`'s Emporium Zone) borrowed heavily from
+  H&V to build out its share of the Strip, defaulted, and H&V quietly
+  holds the controlling equity today — a glossy, independent-looking
+  casino brand with a Trust finance house as its actual owner, and
+  nothing about its storefront gives that away.
 
 ## The Rockline Compact
 
@@ -599,6 +605,10 @@ a scenario needs one.
 | Far Horizon Relief Fund | Charity — genuine | Belt | Disaster/mutual aid |
 | The Commons Relief Network | Charity — genuine | Earth | New-International-adjacent |
 | The Okafor-Lindgren Foundation | Charity — corporate-washing | Earth | Tax-shelter/reputation-management arm of a Trust member |
+| Seneschal House | Hospitality & entertainment (hoteliers, casinos) | Callisto | The JDC's favored, old-money-flavored licensee at the Emporium Zone's Strip (`callisto.md`) — named for the real historical steward-of-a-household title, fitting a company that's close kin to a declining chartered authority rather than a flashy upstart |
+| Tradewind Leisure | Hospitality & entertainment (rival) | Callisto | Grew directly out of JTA merchant money diversifying into the Strip once the Emporium Zone opened — free trade's own hospitality wing |
+| Nova Court | Hospitality & entertainment (rival) | Callisto | Looks fully independent. Isn't — see Hidden ownership below |
+| Four Moons Hospitality | Hospitality & entertainment (rival) | Callisto | Deliberately Jovian-identified branding (all four Galilean moons, not Earth or Mars styling) — operates under the Concord Assembly's rival license rather than the JDC's official one, the live test case for whether the Assembly's authority actually holds up in practice |
 
 ## Regulatory arbitrage: Doris
 

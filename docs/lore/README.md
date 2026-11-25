@@ -180,10 +180,12 @@ any existing or future name that turns out just as hard to place.
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
   research IP, and the Belt's informal technical backdoor into it.
-- **`corporations.md`** — the full corporate landscape: 37 sectors,
-  ~46+ companies, the Sol Industrial Trust, the Rockline Compact, the
+- **`corporations.md`** — the full corporate landscape: 38 sectors,
+  ~50 companies, the Sol Industrial Trust, the Rockline Compact, the
   passive giants (Bedrock/Longview), credit raters, hidden ownership,
-  and Doris (the flag-of-convenience jurisdiction).
+  Doris (the flag-of-convenience jurisdiction), and — newest —
+  hospitality & entertainment, Callisto's Emporium Zone casino
+  operators.
 
 ## Open threads worth knowing about before adding more
 

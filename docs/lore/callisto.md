@@ -439,15 +439,18 @@ for violence it doesn't need:
   and United Moons' leadership, JTA's and JTC's heads, the Concord
   Settlement's delegates, and whoever runs the Emporium Zone's
   licensing authority, all open (added to `people-pass-queue.md`).
-- Who actually operates the Strip's casinos and hospitality venues
-  isn't decided — deferred to the corporate pass, though quiet money
-  from the Rockline Compact or a Trust member wouldn't be out of
-  character (`corporations.md`'s hidden-ownership pattern).
-- Whether the Concord Assembly has ever actually succeeded in taxing
-  or licensing a Strip operator under its own authority, or whether
-  every operator so far has stuck with the JDC's official license —
-  not decided, a clean measure of how real the Assembly's authority
-  actually is in practice.
+- Settled: four operators split the Strip (`corporations.md`) —
+  Seneschal House (JDC's own favored legacy licensee), Tradewind
+  Leisure (grew out of JTA merchant money), Nova Court (looks
+  independent, is quietly Hauptmann & Voskuijlen-owned after a
+  defaulted debt), and Four Moons Hospitality (deliberately Jovian-
+  branded, operates under the Concord Assembly's rival license
+  instead of the JDC's). Four Moons is accordingly the live test case
+  for the open thread just below.
+- Whether the Concord Assembly's license has actually held up for
+  Four Moons in practice — whether the JDC has ever successfully
+  moved against it, or just hasn't yet — not decided, a clean measure
+  of how real the Assembly's authority actually is.
 - Exact founding date of the JDC's original charter, and how long ago
   TGC/the Europa Protocol actually carved themselves out of it, isn't
   pinned down.
