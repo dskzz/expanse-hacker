@@ -49,14 +49,20 @@ sulfur contamination drifting in from Io's own volcanic plumes
 (`peale-extraction.md`), a real, physically grounded detail rather
 than an invented one.
 
-**Not exploited, and for good reason.** This deep inside Jupiter's
+**Not exploited, but genuinely studied.** This deep inside Jupiter's
 radiation belts is worse than Io, not comparable to it — even
 Peale's fully-robotic, zero-crew model (`peale-extraction.md`) exists
 because there's real, sellable sulfur worth the automation cost;
-nothing here offers a comparably strong reason to bother. If anything
-ever operates out here, it's a purely robotic sensor/observation post
-studying Jupiter's rings or magnetosphere up close, not an extraction
-site — and even that's speculative, not established.
+nothing here offers a comparably strong reason to extract anything.
+What it does have is a real scientific draw, and a real institutional
+home for it: a scattering of unmanned sensor platforms, run under the
+auspices of Ganymede's own universities (`ganymede-condominium.md`'s
+licensable science establishment) rather than any commercial charter
+— purely robotic, remotely operated the same way Peale's harvesters
+are, studying Jupiter's ring system and magnetosphere up close
+without ever risking a person this deep in the belts. Settles what
+was an open question: yes, someone bothers with the inner ring-moons,
+just for research grants and publishable data rather than product.
 
 **What's actually worth noting about each, briefly.** Metis and
 Adrastea both orbit embedded directly in Jupiter's main ring, and
@@ -203,6 +209,7 @@ corporate outpost dropped into clan territory.
   running it — deliberately left unnamed per the same "no special
   treatment" scope, added to `people-pass-queue.md` as a future role
   rather than a future company.
-- Whether anyone has ever actually bothered with the inner ring-moons
-  (Metis/Adrastea/Amalthea/Thebe) for observation purposes, or
-  whether they stay genuinely untouched — open.
+- Settled: Ganymede's universities run unmanned research platforms
+  at the inner ring-moons. Still open: which specific university or
+  department, and whether any named researcher or project is
+  attached to it yet (added to `people-pass-queue.md`).

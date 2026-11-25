@@ -49,6 +49,9 @@ here).
   inter-clan cooperative facility with no named clans credited for
   running it; also no named clans or figures anywhere in any of the
   four irregular-moon families generally.
+- **The inner ring-moon research platforms** (`jovian-irregular-moons.md`)
+  — no specific Ganymede university, department, or researcher named
+  yet for the unmanned science program at Metis/Adrastea/Amalthea/Thebe.
 - **Callisto / the Jovian Development Company** (`callisto.md`) —
   the JDC's current administrator; the Callisto Home Rule League's
   leadership and the United Moons wing's leadership (possibly the
