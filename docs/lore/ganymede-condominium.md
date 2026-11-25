@@ -56,6 +56,26 @@ terraforming work, so its research footprint here is real but
 deliberately small — until the bounty gets big enough to be worth
 muscling in for anyway (see Tensions, below).
 
+**The same universities' long game: Jupiter's atmosphere itself.**
+Gas giants hold a far larger helium-3 reservoir than any solid body
+ever could — real planetary science, not invented — but Jupiter's
+gravity well is the deepest in the solar system after the Sun's own,
+and the fuel cost of launching anything, let alone harvested cargo,
+back out of it currently dwarfs whatever it would be worth. That
+math is exactly why this stays a funded, long-term research line
+rather than an active operation: early-stage aerostat and probe
+studies into the upper atmosphere's survivable pressure bands,
+published papers, no extraction hardware yet. The money behind it
+isn't blind optimism — Luna's own helium-3 reserves are plausibly
+running thin (`flashpoints.md`'s Lunar resource depletion entry), and
+an institution that can see that crisis coming has real reason to
+keep funding the one reservoir in the system big enough to actually
+end it, even decades before the energy economics might ever close
+the gap. The same radiation-hardening expertise already going into
+the ring-moon research platforms (`jovian-irregular-moons.md`) is a
+natural, direct precursor to anything that eventually has to survive
+inside Jupiter's own atmosphere.
+
 **The Belt — the actual operation.** Greenhollow and Frostline's
 ground-level labor and agricultural output, run day-to-day by Belters
 regardless of whose paper sits upstream. No formal seat on the
@@ -106,3 +126,14 @@ rivalry everywhere else in this corpus — wherever two or more powers
 share something uneasily, there's a seam a clever operator can work.
 Ganymede is just the physical, ground-level version of a pattern this
 setting already runs on everywhere else.
+
+## Open threads
+
+- No program name, named lead scientist, or actual timeline exists
+  yet for the Jupiter atmospheric helium-3 research line above — a
+  natural future role for `people-pass-queue.md` once a scenario
+  needs one.
+- Whether the energy-cost problem (the fuel cost of escaping
+  Jupiter's gravity well with any harvested cargo) has a plausible
+  in-universe solution on the horizon, or is meant to stay a genuine,
+  unsolved engineering wall for the foreseeable future — not decided.

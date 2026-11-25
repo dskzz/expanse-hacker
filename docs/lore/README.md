@@ -192,6 +192,11 @@ any existing or future name that turns out just as hard to place.
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
   research IP, and the Belt's informal technical backdoor into it.
+  Its universities also fund a long-term, currently-impractical
+  research line into mining helium-3 straight from Jupiter's
+  atmosphere — motivated directly by Lunar resource depletion
+  (`flashpoints.md`), the one reservoir big enough to actually solve
+  that crisis, decades before the energy economics might ever work.
 - **`corporations.md`** — the full corporate landscape: 38 sectors,
   ~50 companies, the Sol Industrial Trust, the Rockline Compact, the
   passive giants (Bedrock/Longview), credit raters, hidden ownership,

@@ -52,6 +52,9 @@ here).
 - **The inner ring-moon research platforms** (`jovian-irregular-moons.md`)
   — no specific Ganymede university, department, or researcher named
   yet for the unmanned science program at Metis/Adrastea/Amalthea/Thebe.
+- **The Jupiter atmospheric helium-3 research line** (`ganymede-condominium.md`)
+  — no program name or lead scientist named yet for this long-term,
+  currently-impractical research effort.
 - **Callisto / the Jovian Development Company** (`callisto.md`) —
   the JDC's current administrator; the Callisto Home Rule League's
   leadership and the United Moons wing's leadership (possibly the

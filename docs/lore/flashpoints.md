@@ -166,3 +166,8 @@ behind the fight over Europa's deuterium all read differently once
 Luna's own well is visibly running dry rather than just being
 prudently diversified away from. Worth a dedicated pass of its own;
 flagged here first so the connection isn't lost before that happens.
+Also now the explicit funding motive behind Ganymede's own long-term,
+currently-impractical research into mining helium-3 straight from
+Jupiter's atmosphere (`ganymede-condominium.md`) — the one reservoir
+in the system big enough to actually end this crisis, decades before
+the energy economics might ever make it real.
