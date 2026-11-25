@@ -176,13 +176,15 @@ independence movements used:
   corpus, one organized from genuine poverty and exploitation, the
   other from a comparatively privileged administrative class that
   simply wants out from under someone else's charter.
-- **The Concord Tocsin** — the League's own press organ, named for
-  the real historical alarm bell rung to warn and rally people,
-  carrying its case across SolNet rather than just around Concord's
-  own corridors. Deliberately not "Clarion" — that name is already
-  spoken for by `corporations.md`'s own Earth media giant, a Trust-
-  compromised outlet the sincere, independent Tocsin shouldn't echo
-  even by accident.
+- **The Concord Iskra** — the League's own press organ, named for
+  the real underground paper Lenin ran before the Russian Revolution,
+  smuggled in rather than openly tolerated — a fitting match for a
+  movement still working inside the JDC's charter while building
+  toward something bigger, carrying its case across SolNet rather
+  than just around Concord's own corridors. Deliberately not
+  "Clarion" — that name is already spoken for by `corporations.md`'s
+  own Earth media giant, a Trust-compromised outlet the sincere,
+  independent Iskra shouldn't echo even by accident.
 
 **This is existential for the JDC in a way it isn't for anyone
 else.** Callisto is the company's last real stronghold; losing it
@@ -201,6 +203,18 @@ has built — Peale's output, Marius's refining, Europa's licensed
 zones, even Ganymede's own condominium, if it could ever be pried
 loose. Not home rule — secession from all three inner powers at
 once, a fourth bloc in its own right.
+
+**United Moons has its own press, and a sharper one.** Where the
+League's own Iskra (above) still works quietly inside the JDC's
+charter, United Moons publishes openly under the name **Kesari
+News** — named for Bal Gangadhar Tilak's real newspaper, which
+pushed a harder, more confrontational nationalist line than the more
+moderate Indian independence voices of its own era. Same real split
+reproduced deliberately: Iskra is a movement still building toward
+something, Kesari News is a movement that's already decided what it
+wants and stopped being quiet about it. Dropping "Concord" from its
+own name is itself a small, pointed statement — United Moons doesn't
+identify with any one moon's own institutions, Callisto's included.
 
 **That ambition is exactly what's pushing Earth, Mars, and the Belt
 toward common cause with each other, unusually.** Ganymede's TGC and
@@ -447,14 +461,16 @@ for violence it doesn't need:
   ownership section). Whoever's paperwork the network itself defaults
   to trusting has a real, quiet advantage nobody's had to win a vote
   to get.
-- **The information war runs on the same split as everything else.**
-  JBS (`corporations.md`) is the JDC's own legacy broadcaster,
-  straining to hold a credible claim to neutral, official coverage
-  while the ground under it visibly shifts toward the League; the
-  Concord Tocsin is the League's own sincere, explicitly partisan
-  answer. Neither one is lying outright — which makes the real fight
-  about whose framing the system's own population actually trusts by
-  default, the same underlying question as whose certificate a relay
+- **The information war runs on the same split as everything else,
+  and now has three real voices, not two.** JBS (`corporations.md`)
+  is the JDC's own legacy broadcaster, straining to hold a credible
+  claim to neutral, official coverage while the ground under it
+  visibly shifts toward the League; the Concord Iskra is the League's
+  own quieter, still-working-inside-the-system answer; Kesari News is
+  United Moons' louder, already-decided one. None of the three is
+  lying outright — which makes the real fight about whose framing the
+  system's own population actually trusts by default, the same
+  underlying question as whose certificate a relay
   trusts, just playing out in coverage instead of cross-cert chains.
 
 ## Open threads

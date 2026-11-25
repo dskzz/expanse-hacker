@@ -415,7 +415,8 @@ already established for their governments):
   claim to neutral, official coverage while the political ground it
   reports on visibly shifts toward the Home Rule League underneath
   it — a contested claim to credibility, not a settled one, distinct
-  from the Concord Tocsin's own explicit, sincere advocacy
+  from the Concord Iskra's and Kesari News's own explicit advocacy —
+  the League's and United Moons' own respective press organs
   (`callisto.md`).
 
 **Independent/pirate (long tail):** numerous, scrappy, mostly Belt-

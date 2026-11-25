@@ -65,8 +65,8 @@ here).
   Emporium Zone's licensing authority and the Strip's casino/
   hospitality operators (plausibly with quiet Rockline/Trust money
   behind at least one of them); JBS's editor-in-chief or news
-  director, and the Concord Tocsin's own editor (`corporations.md`,
-  `callisto.md`).
+  director, and the editors of the Concord Iskra and Kesari News
+  (`corporations.md`, `callisto.md`).
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple
