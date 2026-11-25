@@ -296,6 +296,54 @@ unaccountable leverage over exactly the population doing the most
 dangerous work in the system, whether or not it's ever actually
 misused.
 
+## The Emporium Zone
+
+A real structural borrowing, not an invented one: a formally
+designated **Free Trade Zone (FTZ)** at Concord — reduced customs
+and tariff regulation inside a defined perimeter, the same real-
+world economic tool dozens of actual jurisdictions use to attract
+trade, warehousing, and investment. The JDC chartered it, and not by
+accident: once the JTA broke the company's commercial monopoly
+outright (above), the JDC needed a revenue source that didn't depend
+on exclusive trading rights it no longer held — an FTZ is exactly
+the kind of thing a declining chartered company reaches for once its
+core business erodes, the same real pattern that pushed the actual
+East India Company to diversify as its own monopoly weakened.
+
+**LocationChain:** `JDC:CALLISTO:EMPORIUM` — sited near Concord's own
+docks, the same real-world siting logic as actual free trade zones
+clustering near ports rather than city centers.
+
+**What it actually is: genuine trade infrastructure, not just a
+front.** Bonded warehousing, light assembly and repackaging for
+goods in transit, duty-free retail — the JTA's own merchants (above)
+were among its earliest and loudest backers, since a formally
+reduced-regulation zone just concentrates and extends the free-trade
+mandate they already won system-wide.
+
+**And because reduced regulation cuts more than one way: the
+Strip.** The Emporium Zone's real draw — the part everyone actually
+talks about — is its licensed entertainment and gambling core,
+informally **the Strip**, no official name needed because everyone
+already knows what it means. The same real-world logic as Macau (a
+colonial free port with its own legal gambling regime distinct from
+the mainland) or Shanghai's own historical International Settlement
+(multiple rival powers' citizens operating under reduced central
+authority) applies directly here — and it's exactly where hazard-duty
+workers rotating out of Peale's sorties or Kivelson Station's Europa
+shifts actually want to spend their pay and unwind, the same real
+pattern behind every naval or garrison town that's ever grown a vice
+district to serve a dangerous-duty population passing through.
+
+**Another battlefield in the bureaucratic warzone below, and a
+lucrative one.** Gambling licenses are real, contested revenue, not
+a side detail — the JDC issues its own official gaming licenses as a
+genuine financial lifeline, while the Concord Assembly has started
+asserting its own competing claim to tax and license Strip operators
+under its own authority instead. Whoever's license a given casino
+actually operates under ends up being as much a political statement
+as a business decision.
+
 ## A bureaucratic warzone, not a shooting one
 
 Everything above adds up to a fight fought almost entirely in
@@ -372,7 +420,17 @@ for violence it doesn't need:
   rather than territory) — deliberately left unresolved.
 - No named figures — the JDC's current administrator, the League's
   and United Moons' leadership, JTA's and JTC's heads, the Concord
-  Settlement's delegates, all open (added to `people-pass-queue.md`).
+  Settlement's delegates, and whoever runs the Emporium Zone's
+  licensing authority, all open (added to `people-pass-queue.md`).
+- Who actually operates the Strip's casinos and hospitality venues
+  isn't decided — deferred to the corporate pass, though quiet money
+  from the Rockline Compact or a Trust member wouldn't be out of
+  character (`corporations.md`'s hidden-ownership pattern).
+- Whether the Concord Assembly has ever actually succeeded in taxing
+  or licensing a Strip operator under its own authority, or whether
+  every operator so far has stuck with the JDC's official license —
+  not decided, a clean measure of how real the Assembly's authority
+  actually is in practice.
 - Exact founding date of the JDC's original charter, and how long ago
   TGC/the Europa Protocol actually carved themselves out of it, isn't
   pinned down.

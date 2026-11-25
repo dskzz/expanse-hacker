@@ -51,7 +51,10 @@ here).
   same people, possibly already split); whoever heads JTA, JTC, the
   Jovian Sentinel Survey, and the Jovian Exposure Registry; the
   Concord Settlement's negotiators (plausibly overlapping with the
-  Europa Allocation Council's own delegates above).
+  Europa Allocation Council's own delegates above); whoever runs the
+  Emporium Zone's licensing authority and the Strip's casino/
+  hospitality operators (plausibly with quiet Rockline/Trust money
+  behind at least one of them).
 - **Corporate interlocking directorates** (`corporations.md`,
   flagged in the lore README) — unblocked now that `demographics.md`
   exists, but needs actual named board members sitting on multiple

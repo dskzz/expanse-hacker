@@ -136,7 +136,11 @@ any existing or future name that turns out just as hard to place.
   (debris tracking, named in spirit for the real Shoemaker-Levy 9
   impact), the Jovian Exposure Registry (radiation-dose certification
   with real quiet power over who keeps working), and — tellingly —
-  the Europa Allocation Council's actual meeting chamber. The
+  the Europa Allocation Council's actual meeting chamber, and the
+  Emporium Zone — a chartered Free Trade Zone the JDC built as a new
+  revenue stream once its commercial monopoly broke, whose licensed
+  entertainment core ("the Strip") is a direct, deliberate echo of
+  Macau and Shanghai's old International Settlement. The
   Callisto Home Rule League's push for self-governance has split a
   maximalist pan-Jovian wing (the United Moons) away from it, which is
   in turn pushing Earth, Mars, and the Belt toward their own
