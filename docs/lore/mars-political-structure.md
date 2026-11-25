@@ -21,6 +21,54 @@ oversells "democratic" relative to how it actually runs, the same way
 those real states did. Not a 1:1 rename of MCRN; a different, real
 naming logic applied to the same role.
 
+## Admiralty House: the MRN's command afloat, deliberately not ashore
+
+A real, sound piece of military logic drives this, not an aesthetic
+choice: a fixed command-and-control center — on Mars's surface, on
+Phobos, on Deimos, anywhere predictable — is a sitting target for the
+oldest weapon this corpus's own orbital mechanics make possible,
+kinetic bombardment. Throwing mass at a known, fixed point is cheap;
+intercepting or dodging it only works if the target can actually
+move. So the MRN's real nerve center is never planetside or moon-
+based at all — it lives in high orbit, named **Admiralty House**
+after the real historical term for a naval command headquarters
+(the Royal Navy's own, among others), and kept mobile enough to
+maneuver clear of anything incoming given enough warning.
+
+**Station or module — the module answer is the sharper one, and
+worth taking further than just "it moves."** A dedicated, permanently
+mobile station is still one identifiable thing for an adversary to
+find and track, even if its exact position changes; the real
+hardening comes from making "Admiralty House" an institution with no
+single fixed physical identity at all. The actual command-and-control
+hardware is a secure, transferable module, installed aboard whichever
+MRN vessel currently holds the designation — rotated periodically, the
+specific host ship's identity itself treated as classified. Anyone
+outside the MRN's own command structure knows Admiralty House exists;
+knowing which ship it's actually riding on this month is a different,
+much harder problem. The same real doctrine behind dispersed
+continuity-of-government planning and mobile nuclear-command units
+that travel with a head of state, not an invented concept.
+
+**A deliberate first exception to this corpus's own LocationChain
+honesty principle.** Every other facility's LocationChain reflects
+real, truthful physical position (`rfc2350-addressing-grammar.md`'s
+own grammar, Doris's registration-versus-position split,
+`corporations.md`). Admiralty House is the first case built to
+*not* do that on purpose — whatever chain reference it publishes is
+either stale by design, rotated deliberately, or simply withheld,
+the security logic of a mobile command module taken to its own
+logical technical conclusion rather than just a narrative detail.
+
+**What this requires that doesn't exist yet: Mars's own early
+warning capability.** Dodging an incoming threat only works with
+enough lead time to actually maneuver — meaning MDR needs some real
+debris/threat-tracking capacity of its own, the same functional role
+the Jovian Sentinel Survey plays for Callisto
+(`callisto.md`), scaled to Mars's own strategic needs. Not built out
+yet; flagged as a direct, necessary consequence of Admiralty House's
+whole premise rather than a nice-to-have.
+
 ## The Commonwealth of Elysium
 
 Mars isn't one homogeneous culture any more than the Belt is one
@@ -172,3 +220,13 @@ earned independence, not an accident.
   purely political/cultural with the same underlying tech — leaning
   toward the latter unless a design reason emerges to make it
   mechanically distinct too.
+- Mars's own early-warning/debris-tracking capability, which
+  Admiralty House's whole premise depends on, isn't built out yet —
+  a direct, flagged consequence rather than a free-floating gap.
+- No named figures for Admiralty House — its commanding admiral,
+  whoever actually knows which ship holds it this rotation, and
+  whether that knowledge is itself compartmentalized even within the
+  MRN, are all open (added to `people-pass-queue.md`).
+- Whether Admiralty House's deliberately-obscured LocationChain
+  practice has ever actually been compromised or spoofed — a clean,
+  mechanically real hook for whenever a scenario needs one.

@@ -39,7 +39,12 @@ any existing or future name that turns out just as hard to place.
 - **`mars-political-structure.md`** — MDR/MRN, the Commonwealth of
   Elysium (Datong as its capital, its 13th Consular seat, its
   authoritarian-corporatist evolution), the Mariner Valley Caucus,
-  and Mars's own helium-3 independence via Phobos/Deimos.
+  Mars's own helium-3 independence via Phobos/Deimos, and Admiralty
+  House — the MRN's real command center, deliberately kept mobile
+  and off any fixed body (real kinetic-bombardment logic), its exact
+  host ship rotated and treated as classified rather than published
+  through the usual LocationChain honesty this corpus otherwise
+  holds to everywhere else.
 - **`mariner-valley.md`** — the capital itself: founding history (a
   dozen underground starter colonies), capability-is-authority, the
   Presidency, the Martian Congress's malapportionment problem, and
@@ -88,6 +93,21 @@ any existing or future name that turns out just as hard to place.
   (the Core), feeding a Belt-wide diaspora and leaving bitter last
   holdouts as ASA's single most dangerous unresolved recruiting
   target.
+
+## Inner Planets
+
+- **`mercury.md`** — Lawrence Station: real polar water ice trapped
+  by Mercury's own permanently-shadowed craters, paired with
+  exceptional solar collection from the same planet's extreme flux.
+  Automated for a fourth distinct reason beyond everywhere else built
+  so far — brutal thermal cycling, not radiation or light-lag.
+- **`venus.md`** — Landis Habitat(s): real floating aerostat cities
+  in the one altitude band where Venus's atmosphere is nearly Earth-
+  like, using ordinary breathable air as the lifting gas. The one
+  genuinely pleasant place in the whole corpus — atmospheric/
+  biosignature research (the real, still-disputed phosphine question)
+  alongside a luxury wellness destination, with altitude-keeping as
+  the actual hazard instead of survival.
 
 ## Earth
 

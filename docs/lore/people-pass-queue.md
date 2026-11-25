@@ -39,6 +39,16 @@ here).
 - **Marius Works** (`peale-extraction.md`) — unlike Peale itself, this
   one has a real (if modest) human staff given Ganymede's survivable
   radiation; whoever runs the refinery floor is a natural future role.
+- **Lawrence Station** (`mercury.md`) — nobody permanently stationed
+  there to name, but whoever leads the remote operations team is a
+  natural future role.
+- **Landis Habitat(s)** (`venus.md`) — whoever leads the atmospheric/
+  phosphine research program, and whoever administers the wellness/
+  resort side, are both open.
+- **Admiralty House** (`mars-political-structure.md`) — its
+  commanding admiral, and whoever actually knows which ship holds it
+  this rotation (possibly compartmentalized even within the MRN),
+  both open.
 - **Kivelson Station** (`europa.md`) — a small rotating research
   crew; whoever leads the ocean-science team (and doubles, uneasily,
   as the only real check on licensed harvesting nearby) is a natural
