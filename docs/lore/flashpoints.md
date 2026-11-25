@@ -44,7 +44,10 @@ equity), no bloc can carry a vote alone, and Frostline Harvesting's
 quiet, OPEC-style cartel backing of the UN's conservative position
 means the "science versus industry" framing hides real, self-
 interested money on both sides. A deadlock just freezes the current
-quota — inertia, not crisis, until someone builds a real majority.
+quota — inertia, not crisis, until someone builds a real majority. The
+OIC bloc's own fusion-era anxiety (below) now gives the UN's
+conservative position a second, independent motive sitting right next
+to Frostline's cartel money, not replacing it.
 
 ## Mars
 
@@ -126,6 +129,21 @@ decades after the massacre itself.
 
 ## Cross-cutting / Earth
 
+### The OIC bloc's fusion-era anxiety
+
+Home file: `earth-resources-and-pressures.md`. A maturing deuterium/
+helium-3 fusion economy erodes the fossil-fuel leverage the OIC bloc's
+real wealth has run on for generations — the same anxiety already
+driving actual present-day OPEC behavior around the renewable
+transition, just carried further. That gives the bloc a direct,
+material (not environmental or safety) motive to slow the fusion
+transition wherever it can reach it politically: a second, independent
+cause behind the UN's own conservative Europa Allocation Council
+position (`europa.md`), sitting right alongside Frostline Harvesting's
+cartel money rather than replacing it, and a standing, not yet acted
+on, source of UN-level pressure against any serious expansion of
+Thisbe Station's own helium-3 discovery (`thisbe-station.md`).
+
 ### Zhongguo's resentment over Bharat's veto seat
 
 Home file: `earth-political-structure.md`. Bharat's admission as a
@@ -167,6 +185,19 @@ let a sufficiently positioned insider bypass nine blocs' worth of
 political consensus by finding one cached credential instead. Nothing
 confirms this has ever actually been exploited — deliberately left
 open as the sharpest mechanically-real hook this whole pass produced.
+
+### Haven Corrections Group's jurisdictional seam under the Torture Convention
+
+Home file: `earth-political-structure.md`. The UN Convention Against
+Torture is one of the rare cases that actually clears the UN's own
+high domestic-binding threshold — genuine, enforceable law across all
+nine blocs — but Haven Corrections Group operates as an Earth-Mars
+joint venture (`corporations.md`), and Mars isn't party to the
+Convention at all. No proof of anything yet, just a real, structural
+seam no one's actually tested: an unresolved question of which
+partner's compliance regime actually governs a joint facility, sitting
+right next to the same kind of flag-of-convenience loophole Doris
+already represents.
 
 ### The New International versus the UN
 

@@ -141,7 +141,38 @@ any existing or future name that turns out just as hard to place.
   Frontier Fleet Admiral, Marine Commandant, Merchant Marine liaison —
   under the nine-seat civilian Joint Military Council), and Mars's
   explicit footing as a peer sovereign power outside the bloc system
-  entirely, not a tenth bloc. Still explicitly a work in progress.
+  entirely, not a tenth bloc. Now also: procurement via geographic
+  return (modeled on the real European Space Agency's own practice)
+  and how the Atlantic Zone out-competes a rising Bharati contractor
+  through technical-standards manipulation rather than denying Bharat
+  its own guaranteed share; four specialized agencies (the
+  International Court, the UN Monetary Authority with its own
+  capital-weighted voting hierarchy, the Public Health Directorate,
+  the Commons and Environment Directorate), each nominally
+  independent but structurally tied to the same funding/bloc politics
+  as everything else; and a fully worked example of the rare Earth-
+  binding-consensus mechanic actually firing — the UN Convention
+  Against Torture, binding on all nine blocs, genuinely unenforced in
+  practice, and binding on neither Mars nor Doris nor the Belt, which
+  is exactly the seam Haven Corrections Group's Earth-Mars joint
+  venture now sits on. Still explicitly a work in progress.
+- **`earth-resources-and-pressures.md`** — Earth's own "double studs":
+  real demographic/social pressure per bloc (the Atlantic Zone's
+  decline-and-urban-decay, the African Union's youth-bulge double
+  edge, Bharat's and the Zhongguo bloc's food-security strain, the
+  Eurasian Union's demographic decline without the Atlantic Zone's
+  wealth cushion, Patria Grande's inequality offset by real export
+  leverage, the Three Seas bloc's emigration drain, ASEAN and Others'
+  industrialization cost, and the OIC bloc's fusion-era economic
+  anxiety), plus who feeds whom (Patria Grande, the Eurasian Union,
+  the Atlantic Zone's own agriculture, and ASEAN as net exporters;
+  Bharat, the Zhongguo bloc, and the OIC bloc as net importers) and
+  who makes things (the Atlantic Zone's advanced/aerospace-grade
+  manufacturing, the Zhongguo bloc's higher-value industry, ASEAN and
+  Bharat competing for mass manufacturing). The OIC bloc's fusion
+  anxiety ties directly into a new, second motive behind the Europa
+  Allocation Council's quota fight and standing UN-level pressure
+  against expanding Thisbe Station's helium-3 discovery.
 - **`earth-blocs.md`** — the deferred follow-up: each of the nine
   blocs' own internal governance, one real institutional ancestor per
   bloc rather than a shared template (the Atlantic Zone's EU-style

@@ -149,6 +149,18 @@ starts:
 - **OSL's own UN ambassador** (`earth-political-structure.md`,
   `belt-political-structure.md`) — the Belt's Permanent Observer
   mission at New Delhi has no named head yet.
+- **The four specialized agencies** (`earth-political-structure.md`)
+  — no named head for the International Court, the UN Monetary
+  Authority, the Public Health Directorate, or the Commons and
+  Environment Directorate.
+- **The UN Committee Against Torture** (`earth-political-structure.md`)
+  — no named chair or members yet.
+- **Each bloc's own domestic party leadership tied to its pet-issue
+  cleavage** (`earth-blocs.md`, `earth-resources-and-pressures.md`) —
+  the Atlantic Zone's globalist-vs-nativist split, Bharat's
+  agricultural-policy axis, the OIC bloc's own lead voice on fusion-
+  era economic anxiety (and specifically its delegate at the Europa
+  Allocation Council and on Thisbe Station's discovery) — none named.
 - **Ballista-class vessels and commanding officers** (`ship-class-codex.md`,
   `mars-political-structure.md`) — none named yet.
 

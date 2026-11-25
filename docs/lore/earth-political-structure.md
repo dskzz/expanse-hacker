@@ -4,9 +4,13 @@ Status: locked naming decision, 2026-11-21; massively expanded
 2026-11-25 with the nine-bloc structure, UN governance, and the
 UN's actual military "teeth," then again the same day with the
 Committee of the Whole, money/lobbying/corruption, the Fleet Staff/
-Joint Military Council split, and Mars's peer-power footing. Each
-bloc's own internal governance now has its own file,
-`earth-blocs.md`. Earth had the same "one org speaks for
+Joint Military Council split, Mars's peer-power footing,
+procurement/geographic-return contracting, and the four specialized
+agencies (World Court, Monetary Authority, Public Health Directorate,
+Commons and Environment Directorate) and their own domain-split bite.
+Each bloc's own internal governance, and Earth's demographic/resource
+pressures, now have their own files: `earth-blocs.md` and
+`earth-resources-and-pressures.md`. Earth had the same "one org speaks for
 everyone" thinness the Belt had before OSL/ASA and Mars had before
 the Commonwealth of Elysium: the UN with total, unchallenged control
 and no organized opposition of any kind. Real populations that large
@@ -458,6 +462,103 @@ not vague institutional inertia, a specific, checkable fact about who
 actually funds the thing, buying leverage no formal vote ever grants
 outright.
 
+## Procurement: geographic return, and how the Atlantic Zone actually wins
+
+The UN Fleet, its stations, and its off-world infrastructure all have
+to be built by someone, and who gets to build them is real, contested
+politics layered on top of real industrial fact
+(`earth-resources-and-pressures.md`).
+
+**The baseline mechanism is geographic return**, the same real
+principle the actual European Space Agency already runs its own
+procurement on: each bloc's share of UN contracts tracks its share of
+UN funding (above), not an open, winner-take-all bid. That means
+Bharat's own funding weight guarantees it a real, growing contract
+share — the same leverage that won it a veto seat applies here too —
+and it means the Atlantic Zone's disproportionate funding share
+(old money, not population) guarantees it a disproportionate baseline
+share as well, before any lobbying even starts.
+
+**Real competition happens around the edges of that baseline, not
+against it.** Two levers matter most: **prestige contracts** —
+flagship vessels, major stations — aren't bound as tightly to strict
+proportional return, so blocs lobby hard (the same Lattimer & Cross-
+style channels already established) to win the ones that carry extra
+visibility beyond their guaranteed share. And **technical standards**
+are the quieter, more effective lever: a bloc with real influence over
+the UN's own Conformance and Standards directorate (above) can write a
+contract's technical requirements around its own existing industrial
+base — a real, well-documented defense-procurement tactic, not an
+invented one — without ever needing to argue for its own contractor by
+name. **This is specifically how the Atlantic Zone out-competes a
+rising Bharati contractor**: not by denying Bharat its own guaranteed
+geographic-return share, but by keeping the most advanced, highest-
+prestige specifications pinned to a technical bar that only the
+Atlantic Zone's own real aerospace-grade manufacturing base
+(`earth-resources-and-pressures.md`) can plausibly clear — a soft,
+technocratic exclusion dressed as a neutral engineering requirement,
+the same "formal legitimacy vs. real power" throughline running
+through everything else in this corpus.
+
+## Specialized agencies: nominally independent, structurally tied
+
+Real international bodies — a World Court, a monetary authority, a
+public-health directorate, an environmental one — exist here the same
+way they exist in the actual UN system today: **formally independent
+specialized agencies, not departments the Secretary-General commands
+directly**, but tied back into the same funding and bloc politics
+everything else here runs on.
+
+- **The International Court** (colloquially "the World Court," the
+  same real nickname the actual ICJ already carries) adjudicates
+  disputes *between blocs* — trade, resource-commons, treaty
+  interpretation — not domestic law inside any one bloc, and not
+  individual criminal matters. **Its bite follows the same domain
+  split as everything else here.** On Earth, its rulings are advisory
+  in practice: binding only as far as the losing bloc's own consent
+  extends, the same real toothlessness the actual ICJ has today when
+  a major power simply declines to comply. Off-world, where the UN's
+  authority is already real and exercised (RAP/SPERB, the Frontier
+  Opportunity Program), the same Court's rulings carry genuine,
+  enforceable weight — one institution, two very different levels of
+  real power depending entirely on which domain a dispute falls in.
+- **The UN Monetary Authority** handles inter-bloc currency stability
+  and development lending — the real IMF/World Bank's actual role,
+  under a different name. Its governing vote is **weighted by capital
+  contribution, not by the one-bloc-one-seat logic of the UN caucus**
+  — the same real IMF/World Bank practice today — which means its own
+  internal power ranking doesn't mirror the veto-power list at all.
+  The Atlantic Zone's old money commands even more concentrated
+  influence here than in the general caucus; Patria Grande or ASEAN
+  and Others, holding no veto seat, could plausibly out-rank a veto
+  power inside this one institution if their own capital contribution
+  warrants it — a genuinely different hierarchy sitting right next to
+  the political one, not a restatement of it.
+- **The UN Public Health Directorate**, modeled on the real WHO,
+  coordinates disease response and medical research standards —
+  genuinely load-bearing given how many sealed habitats and closed
+  biospheres this corpus already has (Ganymede's agriculture, Venus's
+  wellness resort, every station's own life support) — but
+  coordinates by consent, same as the real WHO: it can recommend, not
+  command, inside any bloc's own borders.
+- **The UN Commons and Environment Directorate**, modeled on the real
+  UNEP, tracks and reports on cross-border pollution and shared-
+  resource disputes (air, water, anything that doesn't respect a
+  bloc's own boundary) but — consistent with Earth staying toothless
+  absent the high-consensus-threshold bar above — has no independent
+  enforcement power of its own; it's a forum and a registry, and real
+  cross-border pollution disputes get settled the way everything else
+  on Earth does, bloc-to-bloc negotiation, with the Directorate's own
+  data as the shared starting point both sides at least have to argue
+  against.
+
+**None of these are the UN caucus or the Secretary-General acting
+directly** — all four keep their own separate governance, the same
+real "specialized agency" fiction the actual UN system runs on today,
+even while every one of them stays reachable by the same funding
+leverage and bloc lobbying already established everywhere else in
+this file.
+
 ## Domain-split authority: toothless on Earth, federal in space
 
 The UN's constitutional character depends entirely on which domain
@@ -482,7 +583,57 @@ genuine crisis forces real, temporary agreement, the UN exercises
 real binding authority while the emergency lasts, and the consensus
 dissolves back into normal fragmentation once the fear that produced
 it fades, because nobody retains the standing to hold nine blocs
-together once it does. The Sol Industrial Trust (`corporations.md`)
+together once it does.
+
+**A worked example: the UN Convention Against Torture is one of the
+rare cases that actually clears the threshold** — real, already-
+existing precedent, since the actual present-day Convention Against
+Torture is among the most widely-ratified human-rights treaties on
+Earth today despite covering governments with wildly different
+politics otherwise. The same logic holds here: no veto power wants to
+be the one visible holdout on a ban this close to universal moral
+consensus, reputational cost alone clears the bar even where genuine
+enforcement never will. So all nine blocs ratify it, and it becomes
+real, binding UN law rather than a mere treaty recommendation — proof
+the domestic-binding mechanism isn't hypothetical.
+
+**But binding and enforced are different things, and the gap between
+them is where the real texture lives.** The UN has no domestic police
+power to back the Convention up — its own ground forces stay
+treaty-capped (below) regardless of what's binding on paper. A
+standing **UN Committee Against Torture**, run out of New York
+alongside the other blue-ribbon machinery (above), reviews each
+bloc's own self-reported compliance and hears formal complaints — the
+same real body the actual Convention already runs, with the same real
+limit: no power beyond reporting and reputational pressure. The
+International Court (below) can in principle hear an inter-bloc
+complaint, but its ruling is only as binding as the accused bloc's own
+consent, same as everywhere else on Earth. Actual compliance quality
+tracks each bloc's own domestic institutional strength from
+`earth-blocs.md`, not the treaty itself: the Atlantic Zone's own
+independent judiciary makes violations genuinely harder to hide than
+the Zhongguo bloc's or the Eurasian Union's more centralized systems
+do — the same real, uneven pattern the actual Convention's signatories
+already show today.
+
+**Mars, the Belt, and Doris sit entirely outside it.** The Convention
+binds the nine blocs; it binds nobody else, because nobody else is
+party to the UN's own caucus system in the first place. MDR sets its
+own policy independently, with no obligation to match the UN's
+standard either way. Doris — already established as a thin, barely-
+staffed, flag-of-convenience jurisdiction (`corporations.md`) — is the
+obvious, structural seam: a plausible home for exactly the kind of
+activity that can't survive scrutiny inside a ratifying bloc, not
+because anyone designed it that way, but because that's precisely what
+a flag-of-convenience jurisdiction is for. Haven Corrections Group
+(`corporations.md`), the Earth-Mars joint-venture private prison
+operator, sits right on this seam too: a real, concrete, unresolved
+question about which jurisdiction's compliance regime actually governs
+a joint venture's own facilities, and real-world precedent that
+private prisons already draw weaker oversight than state-run ones even
+inside a single, fully-compliant jurisdiction.
+
+The Sol Industrial Trust (`corporations.md`)
 is explicitly the sinister mirror of this same pattern — the one
 coalition that formed under crisis and never let go.
 
@@ -622,6 +773,17 @@ underneath it, not despite knowing it.
 - What exactly Mars's diplomatic footing with the UN actually is,
   beyond "more substantial than the Belt's Observer status" — not
   pinned down.
+- No named figures for any of the four specialized agencies (the
+  International Court, the UN Monetary Authority, the Public Health
+  Directorate, the Commons and Environment Directorate), nor for any
+  named prestige-contract fight or standards-manipulation episode at
+  the procurement level — added to `people-pass-queue.md`.
+- Whether the International Court has ever actually ruled on an
+  inter-bloc dispute that mattered, on Earth or off it — not decided.
+- Whether the UN Monetary Authority's capital-weighted voting has ever
+  produced a power ranking that visibly contradicts the political
+  veto-power list in a way that mattered — a natural, not-yet-used
+  hook.
 - Whether Bharat still actively backs the Proportionality Caucus now
   that it holds a veto seat, or has quietly stopped pushing further —
   deliberately left open as a live question about Bharat's own
