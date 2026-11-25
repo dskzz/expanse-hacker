@@ -184,7 +184,7 @@ any existing or future name that turns out just as hard to place.
   dependency) and the UN Space Survey Directorate (survey/registration
   ahead of Off-World Development's own economic arrangements); and a
   space-only UN intelligence/counterintelligence service, the
-  Directorate of Space Security ("the Quiet Service"), tasked above
+  Directorate of Security ("the Quiet Service"), tasked above
   all with guarding the Fleet's own authorization systems against the
   rogue-command vulnerability — and just as plausibly the likeliest
   vector for exploiting it, captured by the four veto powers the same
