@@ -7,7 +7,13 @@ Committee of the Whole, money/lobbying/corruption, the Fleet Staff/
 Joint Military Council split, Mars's peer-power footing,
 procurement/geographic-return contracting, and the four specialized
 agencies (World Court, Monetary Authority, Public Health Directorate,
-Commons and Environment Directorate) and their own domain-split bite.
+Commons and Environment Directorate) and their own domain-split bite,
+then again with the UN Human Rights Council (one broad mandate, the
+Committee Against Torture one treaty-specific committee under it),
+Additional Protocol IV (Outer Space) extending real Geneva Convention
+tradition off-world with genuinely enforceable bite given the same
+domain split, and a note on each bloc's own CA root/trust-domain
+fragmentation under Earthstock (`os-lineages.md` §12).
 Each bloc's own internal governance, and Earth's demographic/resource
 pressures, now have their own files: `earth-blocs.md` and
 `earth-resources-and-pressures.md`. Earth had the same "one org speaks for
@@ -26,7 +32,12 @@ safe terminology (same bucket as "tightbeam" or the Moon's real
 Armstrong crater). Earth's political establishment: institutional,
 bureaucratic, the Earthstock OS lineage's own "verbose, ceremony-heavy,
 over-trusting of its own PKI" culture (`os-lineages.md` §2) is this
-establishment's natural technical expression.
+establishment's natural technical expression. Each bloc plausibly runs
+its own CA root under that shared Earthstock lineage — distros of one
+lineage, not nine separate networks — with cross-certification between
+any two blocs' roots tracking their actual diplomatic relationship
+rather than any technical need; `os-lineages.md` §12 covers the
+underlying paradigm this is one instance of.
 
 ## The nine blocs
 
@@ -585,6 +596,18 @@ dissolves back into normal fragmentation once the fear that produced
 it fades, because nobody retains the standing to hold nine blocs
 together once it does.
 
+**The UN Human Rights Council is still here, carried forward from
+real history rather than reinvented** — the same body (under its real
+current name; the real original 1946 Commission, Eleanor Roosevelt's
+own, drafted the founding Universal Declaration this corpus's version
+descends from unbroken) running the same real periodic-review process
+across all nine blocs, housed in the same New York blue-ribbon tier as
+everything else ceremonial. It's the broad, standing mandate; the
+**UN Committee Against Torture** below is one specific, treaty-bound
+committee operating underneath that same umbrella — real UN practice
+already works exactly this way, a general Council plus narrower
+treaty-specific committees, not one monolithic human-rights office.
+
 **A worked example: the UN Convention Against Torture is one of the
 rare cases that actually clears the threshold** — real, already-
 existing precedent, since the actual present-day Convention Against
@@ -716,6 +739,62 @@ a way destruction never is. Authorizing one requires the same high
 consensus threshold as binding domestic policy above — a supermajority
 of the blocs' own caucus delegations, not a Secretary-General's
 unilateral call.
+
+**Additional Protocol IV (Outer Space) extends the real Geneva
+Convention tradition off-world.** The real Geneva Conventions already
+have a documented history of exactly this kind of extension — the
+1977 and 2005 Additional Protocols broadened the original 1949 text to
+new forms of warfare without replacing it — so a further protocol
+covering spacefaring conflict is a direct continuation, not an
+invented genre of law. Negotiated and signed at Geneva itself, keeping
+Earth's own old ceremonial diplomatic tradition as the literal site of
+treaty-making even once the subject matter moves off-world, the same
+"fossil-naming" logic already running through New York's own standing.
+Core provisions: protected, non-targetable status for non-combatant
+vessels and anything life-support-critical (habitat domes, water/air
+reclamation, medical facilities) — a direct, hard-SF-appropriate
+descendant of Geneva's real protection for hospitals; a binding **duty
+to rescue**, extending the real 1968 Rescue Agreement's peacetime
+courtesy into an active wartime obligation to assist any crew in
+genuine distress regardless of affiliation; POW treatment standards
+for captured military personnel; and explicit protected/neutral status
+for designated infrastructure — OPRA's own relay network
+(`belt-political-structure.md`) is named outright as protected under
+the Protocol, giving its already-established practical neutrality (both
+OSL and ASA have to use it regardless of rivalry) real legal teeth for
+the first time.
+
+**This is where the domain split cuts the other way.** On Earth, the
+UN Convention Against Torture (above) is binding but functionally
+unenforced. Off-world, where the UN's authority is already real and
+exercised, Protocol IV violations fall under the International
+Court's genuine, enforceable jurisdiction (above) — the same
+institution, the same domain split, opposite outcome, because this is
+space rather than Earth. **Signatories include parties well outside
+the nine blocs**, unlike the Earth-only Torture Convention: Mars
+(MDR) signed on as an independent sovereign treaty party via ordinary
+diplomacy (`mars-political-structure.md`), and OSL signed on behalf of
+the Belt's moderate wing — real mutual self-interest clearing the bar
+even among genuine rivals, the same logic that gets real nuclear
+powers to ratify arms-control treaties with each other today. **ASA's
+own relationship to the Protocol is deliberately left unsettled** —
+either never signed or a serial, suspected violator — giving OSL a
+concrete legal distinction from ASA beyond rhetoric: one side is a
+signatory in good standing, the other isn't, or doesn't act like one.
+
+**This also reframes, rather than replaces, the UN's own ship-class
+restraint above.** The UN's deliberate choice not to build a precision
+bombardment-capable ship class was already doctrine; Protocol IV gives
+it a legal dimension too — a weapon that can't reliably discriminate
+between a legitimate target and a Protocol-protected one can't be used
+without risking a violation, so avoiding that capability is partly
+compliance now, not purely restraint. **Mars's Ballista-class sits on
+the other side of that same logic**: its variable-yield, precision-
+guided doctrine (`ship-class-codex.md`) is exactly the kind of
+weapon capable of Protocol-compliant discrimination, which means MDR's
+own operational preference for surgical strikes doubles, if Mars ever
+needed it to, as the thing that keeps Ballista-class use defensible
+under a treaty Mars actually signed.
 
 **No dedicated bombardment ship class, on purpose.** Full doctrine in
 `ship-class-codex.md`: refining the kinetic deterrent into an actual

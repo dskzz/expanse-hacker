@@ -28,7 +28,22 @@ any existing or future name that turns out just as hard to place.
   the Seven Day War, the Massacre at Thisbe Station, the Frontier
   Opportunity Program, the four OS lineages (Earthstock, Scrapshell,
   Mars capability-fork, Corporate). Most other docs trace back to
-  something here.
+  something here. Now also (§12): SolNet's political character named
+  explicitly — "ancap in networking," unenforceable by design. The
+  narrow waist is addressing only (RFC-2350's LocationChain/
+  ServiceChain plus RFC-2351's A-header); the N-header and everything
+  behind a location's own gateway is unstandardized local discretion,
+  universally (a station can run literal Token Ring behind a
+  translation gateway and still be a valid participant), with a real,
+  named, deliberately low compliance floor (RFC-2351's fallback mode).
+  What actually holds the system together absent any enforcement
+  mechanism is reputation and access-gating, not law — which reframes
+  the UN's own "federal in space" authority
+  (`earth-political-structure.md`) as the same access-gating logic
+  applied politically, not coercive enforcement. Earth's own nine-bloc
+  fragmentation is this same trust-domain paradigm (RFC-2362) read at
+  the political layer: one Earthstock lineage, nine CA roots,
+  cross-certification tracking actual diplomacy.
 - **`demographics.md`** — how Sol's population map actually shifted:
   Earth's non-nuclear decline, old capital surviving state collapse,
   and which cultural threads are load-bearing where (West African,

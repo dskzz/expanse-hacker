@@ -853,3 +853,111 @@ the first RFC-authorship context it's been formalized for (RFC-2353
 Belter operator's voice — not just in institutional RFC prose, and at
 whatever point on the Ganymede–Pallas gradient the specific
 character/station calls for.
+
+## 12. SolNet's political character: the narrow waist, and unenforceable by design (locked 2026-11-25, the user's own framing)
+
+**SolNet is ancap in networking** — the user's own phrase, and the
+right one: the absolute bare minimum of shared rules, no standing
+authority able to force compliance, total freedom behind your own
+gateway, suggested standards that are real and genuinely published but
+structurally unenforceable. This isn't a new layer bolted onto the
+existing design — it's what §7 was already saying ("a *treaty-shaped*
+response... not 'a good protocol design' in-universe so much as the
+terms of a truce nobody had the standing to enforce past the crisis
+that produced it") made explicit, plus real mechanical backing already
+sitting in the RFC corpus that hadn't been named out loud as one
+coherent paradigm until now.
+
+**"RFC" is real, honest terminology here, not just borrowed flavor.**
+A Request For Comments, in reality, is explicitly not a standard —
+it becomes one purely through voluntary, self-interested adoption,
+with no global enforcement body anywhere in the chain. SolNet's own
+RFCs are exactly that non-binding in-universe, not metaphorically —
+§5's dated, on-the-record proof is the Scrapshell union's own
+`ADMISSION_MODE=HANDWAVE_TX` override from 2321: a unilateral decision
+to stop honoring Earthstock's confirmed-reservation handshake, with no
+mechanism anywhere to compel them back into compliance, and nobody
+ever reverting it since. That's not a bug sitting in the lore waiting
+to be explained — it's the system working exactly as specified.
+
+**The narrow waist — the one thing that actually has to hold up — is
+addressing, not transport.** RFC-2350's LocationChain//ServiceChain
+grammar and RFC-2351's **A-header** (the addressing half of the L1
+frame's A/N header split) are the only genuinely mandatory layer: be
+nameable, or nobody can find you to even attempt contact. The
+**N-header** — RFC-2351's network-specific half — is where real
+divergence lives by design, and it shows in the RFC's own exploit
+catalog: every named vulnerability (A/N desync, vendor N-header
+overload, TLV mis-sort) happens in or around the N-header, never in
+"the address itself couldn't be parsed." Real-world grounding, same
+bucket as reusing "RFC" directly: this is the actual internet's own
+"narrow waist"/hourglass model (IP as the one thing every participant
+has to agree on; anything above or below it is free to vary) —
+SolNet's narrow waist is LocationChain/ServiceChain plus the A-header,
+nothing more.
+
+**ServiceChain is a shared logical name, never a shared transport —
+confirmed directly by the user against this doc's own §10.** SolNet
+agrees on how to *interpret* a ServiceChain name for addressing and
+permission-scoping; it has no opinion at all on what actually carries
+the bits from a location's gateway to that named department or
+machine. A station is free to run genuinely anachronistic physical
+fabric — literal Token Ring, the user's own example — behind its own
+front door, with nothing required beyond a local gateway box that
+translates an inbound ServiceChain-addressed request into whatever
+that fabric needs and translates replies back out. **This boundary is
+universal, not special to any one seam** — it recurs at every single
+LocationChain-addressable location, a tiny Scrapshell relay station
+and a Mars military vessel and an Earth bloc's own domestic network
+all alike, not a one-time translation step at some particular
+political or propagation edge. (The DTN bundle-wrapping that *does*
+happen specifically at the edge of meaningful light-lag — this
+corpus's version of the real, already-existing Bundle Protocol work on
+actual deep-space networking — is a separate, additional thing that
+happens *in addition to*, not instead of, this universal local-gateway
+pattern; it's the propagation-specific case, not the general one.)
+
+**A real, named, deliberately low floor — not an absence of
+standards, a floor.** RFC-2351 defines Full Profile, Reduced Profile,
+and a fallback mode as a graduated compliance ladder, and fallback
+mode — "a simplified parser with weaker validation" — is specified as
+a *legitimate* way to participate, not a violation of anything. A
+station can run as stripped-down as fallback mode and still be a fully
+valid SolNet participant. Nobody is pushed up that ladder; the entire
+gap between fallback-mode-minimum and Full-Profile-ideal is where all
+the real vendor weirdness and divergence — and, mechanically, this
+RFC's whole exploit surface — actually lives.
+
+**What actually holds the system together, with no enforcement
+possible even in principle, is reputation and access-gating — not
+law.** A relay that lies about its advertised capability (RFC-2353)
+doesn't get punished by anyone; it just stops being trusted and routed
+through, the same self-interested discipline real ancap theory
+predicts order emerging from. RFC-2362's trust-domain/cross-cert model
+is the identical shape at the identity layer: no global root, just a
+web of voluntary bilateral trust relationships any party can decline
+to extend or revoke. **This reframes, rather than contradicts, the
+UN's own "federal in space" authority in `earth-political-structure.md`**
+— even that power is ultimately access-gating over voluntary
+networks (RAP/SPERB conformance certification functions like a real
+private certification mark, ISO or UL-style — nobody's forced to earn
+it, but a ship or station without it plausibly can't dock, insure, or
+trade where other parties have chosen to require it), not coercive
+protocol-level enforcement, because SolNet has no mechanism for that
+even in principle. A Belt pirate's scratch-built rig is completely
+free to exist; it just can't expect to be trusted, routed through, or
+let near anything that matters without clearing whatever voluntary
+gates other parties have agreed to respect.
+
+**Earth's own nine-bloc fragmentation (`earth-political-structure.md`)
+is this same trust-domain paradigm, read at the political layer, not
+a separate mechanic.** Each bloc plausibly runs its own CA root under
+the shared Earthstock lineage — distros of one lineage, not nine
+separate OSes — and whether two blocs' roots are cross-certified
+tracks their actual diplomatic relationship: a thin, easily-revoked
+cross-cert between rivals, a deeper one between aligned blocs. Not
+written up as its own section there yet, just flagged here as the
+direct, free extension of RFC-2362's already-established model to the
+one domain (Earth's bloc politics) that hadn't explicitly had it
+applied yet.
+
