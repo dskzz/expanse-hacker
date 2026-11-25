@@ -151,8 +151,9 @@ any existing or future name that turns out just as hard to place.
   deliberately light-touch: the four real debris families beyond the
   Galileans (Himalia, Ananke, Carme, Pasiphae), treated as Jupiter's
   own mini-belts — genuinely clustered, unlike the real Belt's
-  isolation, functionally ungoverned rather than formally free, and a
-  natural landing spot for VPH's and Psyche's Belt diaspora.
+  isolation, functionally ungoverned rather than formally free, clan-
+  run rather than corporate-run, and a natural landing spot for VPH's
+  and Psyche's Belt diaspora.
 
 ## Shared/cross-cutting
 

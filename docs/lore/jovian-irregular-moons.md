@@ -69,9 +69,47 @@ Moons, `callisto.md`) an actual demographic root out here, not just
 Concord's comparatively privileged administrators wanting out from
 under a charter.
 
+## Clan-run, not corporate-run
+
+A real power vacuum like this one doesn't stay empty — something
+fills it, and kinship is the oldest, most reliable thing people reach
+for when formal institutions aren't there to lean on, the same real
+pattern behind frontier settlements and diaspora communities
+throughout actual history. Each rock in a given family is
+effectively a clan's own ancestral claim: the extended family that
+settled it collectively builds, maintains, and lives in whatever
+Cole Spindle Works-style spin habitat sits on or around it, treating
+the rock the way a real historical clan treats ancestral land. Who
+actually leads a clan, and what that leader is even called, varies
+family to family and clan to clan rather than following one uniform
+title — a chieftain-style head in one, an elder council in another,
+whatever best fits the specific lineage of the people who ended up
+there, deliberately not one single borrowed term imposed on all of
+them. (Worth keeping distinct from Ceres's own "Hetman" terminology,
+`ceres.md` — a different cultural register for a different kind of
+settlement.)
+
+**Real neighbors means real clan politics, not just proximity.**
+Each orbital family clustering several clans within actual traveling
+distance of each other means marriages, trade agreements, old
+grudges, and shifting alliances between specific families, not just
+ships passing within sight of each other — a genuinely different
+flavor of politics than anywhere else in this corpus: not formal
+institutional maneuvering (Mars, Earth, the JDC), not corporate
+exploitation (Psyche), kinship politics on its own terms.
+
+**Political affiliation and clan governance are separate layers, on
+purpose.** A clan descended from VPH's or Psyche's diaspora might
+carry real ASA sympathy as a matter of family history and
+conviction, but that's a belief the clan holds, not the structure
+that actually runs its daily life — the same kind of deliberate
+decoupling already used for Doris (`corporations.md`), where legal
+registration and real position are separate facts that don't have to
+move together.
+
 ## Open threads
 
-- No named settlements, companies, or figures in any family —
+- No named clans, settlements, or figures in any family —
   deliberately left as collective texture rather than specific
   places, consistent with the "no special treatment" scope here.
 - Whether any single family has developed its own distinct identity
@@ -80,3 +118,6 @@ under a charter.
   jurisdiction out here, or whether "nobody's bothered yet" simply
   continues indefinitely — open, and worth revisiting only if a
   scenario actually needs it to matter.
+- Whether any specific clans have known rivalries or alliances within
+  a given family isn't decided — a natural, low-cost hook whenever a
+  scenario needs one.
