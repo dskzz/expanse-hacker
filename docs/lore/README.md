@@ -146,7 +146,9 @@ any existing or future name that turns out just as hard to place.
   in turn pushing Earth, Mars, and the Belt toward their own
   negotiated partition (the ironically-named Concord Settlement) —
   three real, mutually exclusive outcomes left deliberately open as
-  this pass's biggest live political thread.
+  this pass's biggest live political thread, none of which actually
+  consults the irregular-moon clans who hold real leverage of their
+  own through Four Moons Hospitality.
 - **`jovian-irregular-moons.md`** — the pass's fourth entry, and
   deliberately light-touch: the four real debris families beyond the
   Galileans (Himalia, Ananke, Carme, Pasiphae), treated as Jupiter's

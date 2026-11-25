@@ -227,6 +227,34 @@ of how the map gets redrawn — but the fact that it's being negotiated
 at all, over the League's head, by the same three powers the League
 is trying to get free of, is itself the point.
 
+**A fourth set of players, with real holdings rather than just
+opinions: the irregular-moon families.** Himalia, Ananke, Carme, and
+Pasiphae (`jovian-irregular-moons.md`) are clan-run, not corporate-
+run — think real Appalachian holler culture more than any organized-
+crime trope: tight extended families, fierce loyalty, a deep,
+historically-earned wariness of outside authority, not a syndicate
+carving up territory. That same wariness gives several of them real,
+practical reasons to want nothing to do with the JDC's charter — and
+real money behind wanting a say in how Concord's future actually
+gets decided. Four Moons Hospitality (`corporations.md`) is the
+visible result: a coalition of clans from across the four families,
+pooling resources for an actual foothold in the Emporium Zone,
+deliberately operating under the Concord Assembly's license instead
+of the JDC's.
+
+**Not a unified bloc, even among themselves.** The families cooperate
+pragmatically where it pays — the shared Himalia foundry
+(`jovian-irregular-moons.md`), backing Four Moons Hospitality
+together — without that meaning they agree on the bigger question.
+Some clans lean hard toward the United Moons' full-independence
+vision; others want nothing more than to be left alone entirely,
+suspicious of Concord's politics on principle regardless of who's
+asking; at least one real, long-running rivalry between specific
+clans in different families runs hot enough that it shapes which
+side of Concord's maneuvering they back, less from ideology than from
+simply not wanting to stand on the same side as a family they don't
+speak to.
+
 **Deliberately left open: how this actually resolves.** Three real
 shapes are all on the table at once, and nothing here picks one. The
 real East India Company's story ended with the Crown stripping the
@@ -238,7 +266,10 @@ the Concord Settlement could simply succeed, partitioning the system
 among Earth, Mars, and the Belt before either the JDC or the League
 gets the chance to lose or win anything outright — the real,
 historically loaded third option neither side necessarily sees coming
-until it's already happening. It's the single biggest live political
+until it's already happening. The moon families don't get a vote in
+any of the three outcomes above, which is exactly why they're
+building their own leverage through holdings like Four Moons rather
+than waiting to be consulted. It's the single biggest live political
 question this pass has produced.
 
 ## Jovian Trade Association (JTA)

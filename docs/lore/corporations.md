@@ -608,7 +608,7 @@ a scenario needs one.
 | Seneschal House | Hospitality & entertainment (hoteliers, casinos) | Callisto | The JDC's favored, old-money-flavored licensee at the Emporium Zone's Strip (`callisto.md`) — named for the real historical steward-of-a-household title, fitting a company that's close kin to a declining chartered authority rather than a flashy upstart |
 | Tradewind Leisure | Hospitality & entertainment (rival) | Callisto | Grew directly out of JTA merchant money diversifying into the Strip once the Emporium Zone opened — free trade's own hospitality wing |
 | Nova Court | Hospitality & entertainment (rival) | Callisto | Looks fully independent. Isn't — see Hidden ownership below |
-| Four Moons Hospitality | Hospitality & entertainment (rival) | Callisto | Deliberately Jovian-identified branding (all four Galilean moons, not Earth or Mars styling) — operates under the Concord Assembly's rival license rather than the JDC's official one, the live test case for whether the Assembly's authority actually holds up in practice |
+| Four Moons Hospitality | Hospitality & entertainment (rival) | Callisto | The name reads as "the four Galilean moons" to anyone who doesn't look closer — convenient camouflage, since it's actually a coalition of clans from the four irregular-moon families (`jovian-irregular-moons.md`) pooling resources for a real foothold at Concord. Operates under the Concord Assembly's rival license rather than the JDC's official one, the live test case for whether the Assembly's authority actually holds up in practice |
 
 ## Regulatory arbitrage: Doris
 

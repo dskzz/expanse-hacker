@@ -188,9 +188,17 @@ corporate outpost dropped into clan territory.
   jurisdiction out here, or whether "nobody's bothered yet" simply
   continues indefinitely — open, and worth revisiting only if a
   scenario actually needs it to matter.
-- Whether any specific clans have known rivalries or alliances within
-  a given family isn't decided — a natural, low-cost hook whenever a
-  scenario needs one.
+- Settled: at least one real, long-running inter-clan rivalry exists
+  across two different families, real enough that it shapes which
+  side of Concord's maneuvering (`callisto.md`) each clan backs.
+  Still open: which specific clans, which families, and what the
+  original grudge actually was.
+- Also settled: these families aren't politically isolated from
+  Concord despite the physical distance — a coalition of their clans
+  backs Four Moons Hospitality (`corporations.md`) as a real foothold
+  in the Emporium Zone, and they're a real fourth player in the
+  Jovian sovereignty crisis even though none of the three outcomes on
+  the table (`callisto.md`) actually consults them.
 - No name for the Himalia foundry, and no named clans credited with
   running it — deliberately left unnamed per the same "no special
   treatment" scope, added to `people-pass-queue.md` as a future role
