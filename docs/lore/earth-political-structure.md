@@ -379,8 +379,41 @@ Frontier Opportunity Program and Ceres's MFN arrangement
 (`ceres.md`); and a **Conformance and Standards** oversight body,
 distinct from OPRA — OPRA stays the neutral technical standards body
 everyone has to use regardless of politics, this is the UN's own
-compliance-auditing arm checking RAP/SPERB adherence. More departments
-can be added as specific scenarios need them rather than up front.
+compliance-auditing arm checking RAP/SPERB adherence.
+
+Two more, both real-world-grounded and both load-bearing rather than
+decorative: the **UN Spaceguard Directorate**, named directly after
+the real program of the same name (itself borrowed by actual
+astronomers from Arthur C. Clarke's fiction before becoming the real
+term of art), runs Earth/cislunar near-object detection — genuinely
+dual-purpose, since in a setting where kinetic bombardment is already
+the de facto WMD (above), distinguishing a natural impact threat from
+a deliberate one is exactly the same detection problem. The **Jovian
+Sentinel Survey** (`callisto.md`) is a later, distinct regional body
+under Concord's own umbrella, not a Spaceguard branch office, but
+explicitly modeled on Spaceguard's own methods — credit without
+collapsing the two into one bureaucracy. **Mars's own already-flagged
+missing early-warning capability** (`mars-political-structure.md`'s
+"Still open") means MDR plausibly leans on Spaceguard data it doesn't
+generate itself — a real, standing dependency and a point of genuine
+strategic vulnerability given Earth-Mars history, not just an
+engineering gap.
+
+The **UN Space Survey Directorate** is the broader scientific
+counterpart: mapping, cataloguing, and formally registering newly
+surveyed bodies — a real function lifted from the actual 1976
+Registration Convention — before anything gets as far as Off-World
+Development's own economic arrangements. "Survey discovers,
+Development administers" is a clean, deliberate pipeline, the same
+division of labor real agencies split between pure science and
+commercial administration. That pipeline is also a quiet lever worth
+keeping in mind: whoever can influence which bodies the Survey
+Directorate prioritizes cataloguing first effectively gatekeeps who
+gets first economic mover advantage, without ever needing to touch
+the economic decision directly.
+
+More departments can be added as specific scenarios need them rather
+than up front.
 
 ## The New International
 

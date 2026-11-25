@@ -170,7 +170,40 @@ any existing or future name that turns out just as hard to place.
   Against Torture, binding on all nine blocs, genuinely unenforced in
   practice, and binding on neither Mars nor Doris nor the Belt, which
   is exactly the seam Haven Corrections Group's Earth-Mars joint
-  venture now sits on. Still explicitly a work in progress.
+  venture now sits on. Now also: the UN Human Rights Council (the
+  broad standing mandate the Committee Against Torture sits under as
+  one treaty-specific committee); Additional Protocol IV (Outer
+  Space), extending real Geneva Convention tradition off-world with
+  genuinely enforceable bite given the same domain split, OPRA's relay
+  network named as explicitly protected, and signatories outside the
+  nine blocs entirely; each bloc's own CA-root/trust-domain
+  fragmentation under Earthstock (`os-lineages.md` §12); and two more
+  departments, the UN Spaceguard Directorate (dual-purpose near-object
+  detection, doubling as deliberate-kinetic-attack early warning, with
+  Mars's own already-flagged missing capability creating a real
+  dependency) and the UN Space Survey Directorate (survey/registration
+  ahead of Off-World Development's own economic arrangements). Still
+  explicitly a work in progress.
+- **`space-law-compacts.md`** — the real maritime-law family, ported
+  compact by compact: the Sol Tripartite Process (UN proposes, then
+  Mars/UN/OSL negotiate — ASA structurally excluded by having no seat
+  in it); the Good Samaritan Compact of 2112 (duty to render
+  assistance to persons and vessels alike, the *Amaranth*/*Ondine*
+  founding incident echoing the real Titanic/SOLAS history, exceptions
+  including a space-specific propellant-margin carve-out); Salvage Law
+  ("no cure, no pay"); Interplanetary Rules of the Road; the General
+  Average Compact; the Limitation of Liability Compact; the
+  Interplanetary Marine Insurance Framework (three genuinely different
+  models across Earth/UN, Mars, and Belt/OSL, plus ASA's total
+  uninsurability); the Anti-Piracy Compact's universal jurisdiction;
+  flag-state jurisdiction named outright; the Interplanetary Nuclear
+  Non-Proliferation Agreement (all nine Earth blocs already
+  nuclear-armed by the time it's negotiated — the real teeth is
+  keeping weapons out of space and barring proliferation to new
+  actors, not Earth's own already-settled proliferation); the
+  Interstation Tax Compact (captured by design via Doris, not just
+  weakly enforced); and the Freedom of Transit Compact, deliberately
+  loaded with five real-world-grounded loopholes.
 - **`earth-resources-and-pressures.md`** — Earth's own "double studs":
   real demographic/social pressure per bloc (the Atlantic Zone's
   decline-and-urban-decay, the African Union's youth-bulge double

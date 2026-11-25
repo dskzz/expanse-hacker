@@ -155,6 +155,15 @@ starts:
   Environment Directorate.
 - **The UN Committee Against Torture** (`earth-political-structure.md`)
   — no named chair or members yet.
+- **The UN Spaceguard Directorate and UN Space Survey Directorate**
+  (`earth-political-structure.md`) — no named heads yet.
+- **The UN Nuclear Safeguards Directorate** (`space-law-compacts.md`)
+  — no named head or inspectors yet.
+- **Marine insurance underwriters and P&I clubs** (`space-law-compacts.md`)
+  — no named major underwriter on the Earth/UN side yet.
+- **The *Ondine*'s master and owning company** (`space-law-compacts.md`)
+  — the ship's own name is the lasting historical shorthand; the
+  people responsible are still unnamed.
 - **Each bloc's own domestic party leadership tied to its pet-issue
   cleavage** (`earth-blocs.md`, `earth-resources-and-pressures.md`) —
   the Atlantic Zone's globalist-vs-nativist split, Bharat's

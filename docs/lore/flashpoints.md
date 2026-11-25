@@ -186,6 +186,44 @@ political consensus by finding one cached credential instead. Nothing
 confirms this has ever actually been exploited — deliberately left
 open as the sharpest mechanically-real hook this whole pass produced.
 
+### Mars's dependency on UN Spaceguard data
+
+Home file: `earth-political-structure.md`. MDR's own already-flagged
+missing early-warning/debris-tracking capability
+(`mars-political-structure.md`) means Mars plausibly leans on the UN's
+own Spaceguard Directorate for near-object detection it doesn't
+generate independently — a real, standing strategic dependency given
+Earth-Mars history, not just an engineering gap. The Seven Day War's
+own root cause was a timing/trust failure misread as deliberate
+hostility; a scenario where Spaceguard data is withheld, delayed, or
+simply wrong at the wrong moment rhymes with that founding trauma
+without repeating it outright.
+
+### ASA's compound legal ambiguity
+
+Home file: `space-law-compacts.md`. Not one open question but the same
+one, recurring by structural design: ASA holds no seat in the Sol
+Tripartite Process, so its compliance status is left deliberately
+unresolved across every compact that process produced — Additional
+Protocol IV (Outer Space, `earth-political-structure.md`), the
+Anti-Piracy Compact's universal-jurisdiction standard, and the
+Non-Proliferation Agreement's fissile-material bar all have the exact
+same shape of open question hanging on them: not "ASA is guilty" or
+"ASA is innocent," but "nobody with standing has ever had to decide,"
+which is precisely what keeps ASA reading as genuinely outside the
+legal order rather than merely unpopular within it.
+
+### Doris as a Freedom of Transit Compact loophole
+
+Home file: `space-law-compacts.md`. A new, concrete function stacked
+on Doris's existing flag-of-convenience role (`corporations.md`,
+already load-bearing for the Torture Convention's jurisdictional seam
+and the Tax Compact's capture): a ship can reflag through Doris
+specifically to claim transit rights its true operator's actual bloc
+identity wouldn't get. No confirmed instance yet — a live, unexercised
+mechanism rather than a past event, same as the Compact's other four
+loopholes.
+
 ### Haven Corrections Group's jurisdictional seam under the Torture Convention
 
 Home file: `earth-political-structure.md`. The UN Convention Against
