@@ -20,6 +20,17 @@ cross-domain negotiation contexts. Probably the default "this is the
 Belt's political domain" reference wherever a document needs one
 without taking a side in the OSL/ASA rivalry.
 
+**What that recognition actually is: Permanent Observer status at
+the UN** (`earth-political-structure.md`) — a genuine seat and a real
+diplomatic mission, no vote on binding resolutions. Co-option, not
+absorption, and a weaker deal than it could be specifically because
+OSL's real leverage (the Rockline Compact's suspicions, the Belt's
+own informal technical backdoor at Ganymede, `ganymede-condominium.md`)
+has never been unified the way a single bloc's leverage is — split
+between OSL and ASA instead. That fragmentation is exactly the
+mechanical reason OSL settled for observer status rather than real
+power, and exactly what ASA means by "sold out."
+
 ## Anti-Solar Alliance (ASA)
 
 The hardline wing. More defiant, more willing to act unilaterally, more

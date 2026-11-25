@@ -127,11 +127,14 @@ starts:
 - **Bloc UN delegation heads** (`earth-political-structure.md`) — each
   of the nine blocs sends its own appointed delegation; none named yet
   for any bloc.
-- **The UN Fleet's own command structure** (`earth-political-structure.md`)
-  — deliberately multi-bloc and consensus-gated by design; no named
-  Fleet Commander or bloc-seat holders yet, and whoever eventually
-  exploits (or discovers) the rogue-command technical vulnerability is
-  a natural future figure.
+- **The Joint Military Council** (`earth-political-structure.md`) —
+  nine seats, one per bloc, deliberately multi-bloc and consensus-
+  gated by design; none named yet, and whoever eventually exploits
+  (or discovers) the rogue-command technical vulnerability is a
+  natural future figure.
+- **OSL's own UN ambassador** (`earth-political-structure.md`,
+  `belt-political-structure.md`) — the Belt's Permanent Observer
+  mission at New Delhi has no named head yet.
 - **Ballista-class vessels and commanding officers** (`ship-class-codex.md`,
   `mars-political-structure.md`) — none named yet.
 

@@ -126,6 +126,19 @@ decades after the massacre itself.
 
 ## Cross-cutting / Earth
 
+### Zhongguo's resentment over Bharat's veto seat
+
+Home file: `earth-political-structure.md`. Bharat's admission as a
+fourth permanent UN veto power came from real leverage (funding, tech
+dependency), not fairness, and the Zhongguo-descended bloc was the
+last, most reluctant holdout — real India-China regional rivalry
+means it experienced the admission as a direct, personal demotion in
+exactly the arena it cares about most, in a way the Atlantic Zone and
+Eurasian Union never felt as sharply. The resentment never actually
+went away; it's live, standing friction inside the same four-power
+club that's supposed to present a united front protecting its own
+privileges.
+
 ### The Proportionality Caucus versus old money's funding leverage
 
 Home file: `earth-political-structure.md`. The nine blocs' real

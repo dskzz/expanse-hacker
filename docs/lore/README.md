@@ -123,7 +123,14 @@ any existing or future name that turns out just as hard to place.
   Earth but federal-strength in space, an unusable kinetic deterrent,
   treaty-capped ground forces weaker than Mars's, orbital embargo as
   the real lever, and a rogue-command vulnerability that's technical
-  underneath its political safeguard.
+  underneath its political safeguard. Now also: four permanent veto
+  seats (Atlantic Zone, Eurasian Union, Zhongguo-bloc, and Bharat —
+  won through funding/tech leverage, not fairness), a Joint Military
+  Council instead of an SG-as-CINC, symmetric selection/removal
+  thresholds for the Secretary-General, and the UN's genuinely
+  different postures toward the Belt (co-option via Permanent
+  Observer status) versus Jupiter (defending an existing seat). Still
+  explicitly a work in progress.
 - **`armstrong-city.md`** — Armstrong City and Shackleton Base: the
   DC/Congress governance model, the UN's two-tier geography
   (prestige on Earth, bureaucracy on Luna), and the corporate HQ tax

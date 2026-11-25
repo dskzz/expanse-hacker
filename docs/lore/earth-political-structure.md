@@ -106,19 +106,139 @@ not an open floor contested by public campaigning — the same real
 shape as actual UN Security Council or EU Council negotiations today,
 not an invented mechanism.
 
+**Fixed and equal, not proportional — the formal injustice the
+Proportionality Caucus exists to fight.** Each of the nine blocs
+sends exactly seven delegates to the General Assembly-style body (63
+total), regardless of population. Bharat and the African Union, with
+real populations in the billions, hold the same seven seats as the
+Three Seas bloc. If representation were already proportional, there'd
+be nothing for the Proportionality Caucus to push for — the flat
+inequality is the grievance, made concrete rather than abstract.
+Voting happens only among these appointed delegates; there is no
+popular, planet-wide "assembly of the whole."
+
+## Permanent veto power: four seats, not nine
+
+**Four blocs hold a legacy veto: the Atlantic Zone, the Eurasian
+Union, the Zhongguo-descended bloc, and Bharat.** The first three
+map directly onto the real UN Security Council's actual P5
+composition once the US/UK/France collapse into one Atlantic Zone —
+not an invention, a direct extrapolation. Bharat's seat is the fourth
+and newest, won rather than given (below). The remaining five blocs —
+the African Union, the Three Seas-descended bloc, Patria Grande, ASEAN
+and Others, and the OIC-descended bloc — hold no veto at all, despite
+several of them having real populations far larger than at least one
+veto-holder. That mismatch between formal power and real demographic
+weight is deliberate, not an oversight — it's the same shape of
+injustice already running through MDR's Martian Congress
+malapportionment and Elysium's ceremonial-vs-real Consular seat, just
+at planetary scale.
+
+**Why Bharat, and why now: co-option, not fairness.** Real
+institutional power doesn't dilute itself voluntarily. Bharat's
+admission came from concentrated leverage, not moral argument: its
+economy growing large enough that its assessed UN funding
+contribution rivals or exceeds the Eurasian Union's own, and —
+extrapolated directly from India's real, current dominance in IT and
+software services — Bharat becoming the indispensable steward of
+some critical network or administrative computing backbone the other
+blocs have grown dependent on, the same shape of leverage as
+Taiwan's real "silicon shield" today. Real international-relations
+logic: accommodate a rising power into the club before it becomes a
+revisionist threat outside it. The existing three didn't choose this
+out of fairness — they chose it because the alternative (an
+increasingly indispensable, increasingly resentful outside power
+drifting toward the Proportionality Caucus) was more dangerous than
+controlling the risk by absorbing it. Real history backs the "least
+objectionable" framing too: India's actual Non-Aligned Movement
+legacy and its real reputation for pursuing its own interests without
+the kind of confrontations the US, Russia, and China have each had
+with one another made it the rising power none of the three existing
+veto-holders saw as *their own* primary rival.
+
+**The Zhongguo bloc minds this far more than the other two, and
+still does.** Real India-China regional rivalry — actual border
+disputes, actual competition for Asian strategic leadership — means
+China experiences India's elevation as a direct, personal demotion in
+exactly the arena it cares about most, in a way the Atlantic Zone and
+Eurasian Union never felt as sharply. Zhongguo was the last and most
+reluctant holdout, forced into accepting a fourth veto seat rather
+than choosing it, and the resentment never actually went away.
+
 ## Loyal opposition: the Proportionality Caucus
 
 The New International (below) is the revolutionary answer; this is
 the loyal one — a faction operating entirely within the UN's own
 accepted bounds, pushing to reapportion real voting and
 representational weight to actually match the demographic and
-economic shift already underway (Africa, Bharat, Zhongguo ascendant;
-the Atlantic Zone's old money still overrepresented relative to its
-shrinking population share). Not clandestine, not revolutionary —
+economic shift already underway. Not clandestine, not revolutionary —
 just the formal, working-the-system version of the same underlying
 grievance, the same relationship Elysium's own devolution politics
 have to outright separatism (`mars-political-structure.md`): real,
 standing friction that hasn't tipped into rupture.
+
+**Bharat's admission complicates the Caucus rather than vindicating
+it.** For years Bharat was the Caucus's clearest example — real,
+massive demographic weight, formally excluded all the same. Now that
+Bharat holds a veto seat, it's an insider with every reason to defend
+the system that finally let it in, not necessarily an ally to the
+blocs still waiting, chief among them the African Union. Whether
+Bharat still backs the Caucus's cause out of principle, or quietly
+treats its own admission as proof the system works and stops pushing
+further, is a live, unresolved question about Bharat's own character
+— not decided, and worth deciding deliberately rather than by
+default.
+
+## Natural fissures and alliances
+
+**The four veto powers are a coalition of convenience, not
+friendship.** Real historical and ongoing rivalry runs through every
+pair of them — Atlantic Zone/Eurasian Union, Atlantic Zone/Zhongguo,
+Eurasian Union/Zhongguo, and now Zhongguo/Bharat as the newest and
+rawest — yet all four close ranks to protect the veto system itself,
+the same way the real Security Council's P5 behave today: disagree
+on everything substantive, agree completely that the club shouldn't
+grow any further or lose its own privileges.
+
+**The other five blocs are the Proportionality Caucus's natural
+base, but not a clean one.** The African Union, the Three Seas-
+descended bloc, Patria Grande, ASEAN and Others, and the OIC-descended
+bloc share the same formal grievance, without sharing much else. The
+OIC bloc's own internal Iran-Saudi tension doesn't pause for this
+cause; the real India-Pakistan tension that already complicates OIC-
+Bharat relations doesn't go away just because both might otherwise
+sympathize with reapportionment. The Three Seas bloc is the sharpest
+swing case of all: formally excluded from the veto club (real
+sympathy for reform), but culturally and historically closer to the
+Atlantic Zone's own orientation than to the African Union or Patria
+Grande — torn between its formal interest and its actual alignment.
+
+## Command structure: the Joint Military Council
+
+The Secretary-General is not the Fleet's commander-in-chief —
+concentrating that authority in one civilian office would recreate
+exactly the single point of failure the whole rogue-command design
+(below) exists to avoid. Real operational and authorization authority
+sits with the **Joint Military Council**: one military liaison seat
+per bloc, mirroring the General Assembly's own equal structure,
+nine seats regardless of veto status. The Secretary-General is a
+civilian political coordinator, not a military one — the same real
+principle of civilian control of the military most actual governments
+already run on.
+
+## Selecting, and removing, the Secretary-General
+
+Chosen by the caucus of delegates, with any one of the four veto
+powers able to block a candidate outright — the same practical shape
+as real Security Council influence over the actual UN Secretary-
+General's selection today. **Removal requires clearing the exact same
+bar**, which is the load-bearing detail: a Secretary-General who has
+secured even one veto power's quiet backing is nearly unremovable
+through legitimate channels. That symmetry is precisely what makes
+the rogue-leader scenario (below) dangerous rather than merely
+theoretical — legitimate removal failing is the reason any real
+opposition to a rogue Secretary-General would have to look for a
+technical answer instead of a political one.
 
 ## The New International
 
@@ -175,7 +295,15 @@ city performing all of them:
   same fossil-naming logic as the Atlantic Zone's own "Zone": kept
   because an institution this old doesn't abandon its own founding
   site, even once the founding site stops being where anything
-  actually gets decided.
+  actually gets decided. Still home to the UN's blue-ribbon
+  committees — real, expert-staffed advisory panels, a natural fit
+  for the already-established Earthstock culture (verbose, ceremony-
+  heavy institutions, `os-lineages.md` §2). Most of the time these
+  exist to look productive while deferring action the high
+  domestic-binding threshold makes genuinely hard to clear; on the
+  rare occasions a real crisis forces real consensus, a committee's
+  recommendation becomes one of the few things that actually goes
+  binding.
 - **New Delhi** — the real seat of administrative power now,
   reflecting Bharat's own ascendance (`demographics.md`,
   `jovian-irregular-moons.md`'s Vishvakarma naming rationale) directly
@@ -237,6 +365,47 @@ authority here is real and exercised, not theoretical — the Frontier
 Opportunity Program, RAP/SPERB conformance certification, its role in
 Ganymede's condominium and Europa's Protocol. This is where the UN's
 actual power lives.
+
+## The UN and non-bloc populations: the Belt and Jupiter
+
+Neither the Belt nor Jupiter is one of the nine blocs, and the UN's
+posture toward each is genuinely different — co-option of an outside
+population versus defense of a stake it already holds.
+
+**The Belt gets Permanent Observer status — the same pattern reused
+a second time.** A real, existing UN category (used today for
+entities like the Holy See): a genuine seat, genuine ambassadors, no
+vote on binding resolutions. OSL maintains an actual diplomatic
+mission, most plausibly in New Delhi, functioning as its de facto
+embassy — the exact same shape as the Belt's own token seat on the
+Tripartite Ganymede Commission (`ganymede-condominium.md`), not a
+coincidence. **The goal is co-option, not absorption or pure
+exploitation.** Full absorption as a tenth voting bloc is a cost the
+four veto powers have no reason to pay voluntarily; pure exploitation
+with zero recognition risks pushing more of the Belt toward ASA and
+destabilizing a resource base the whole system depends on. Observer
+status plus the Ceres MFN framework (`ceres.md`) is the cheap, stable
+middle path. **The mechanical reason the Belt gets a weaker deal than
+Bharat did:** India had concentrated, unified leverage — one bloc,
+one funding stream, one tech dependency. The Belt's leverage is real
+(the Rockline Compact's suspicions, its informal technical backdoor
+at Ganymede, `ganymede-condominium.md`) but never unified, split
+between OSL and ASA. That fragmentation is exactly why OSL settles
+for an observer seat instead of real power — and exactly the
+ammunition ASA already uses against it ("sold out what the Accord
+actually meant," `belt-political-structure.md`): OSL settled for
+crumbs because it lacked the leverage to demand more.
+
+**Jupiter is the opposite posture: defending an existing seat, not
+courting a new population.** The UN isn't trying to bring the Jovian
+system into its orbit — it's already a founding party of both the
+Tripartite Ganymede Commission and the Europa Allocation Council
+(`ganymede-condominium.md`, `europa.md`). Its real goal there is not
+getting pushed out by the United Moons' independence push. The
+Concord Settlement (`callisto.md`) is exactly this: the UN extending
+a formal position it already holds elsewhere in the Jovian system
+onto the one piece — Callisto — that isn't shared yet, rather than
+risk losing the whole system to full independence.
 
 ## Military teeth
 
@@ -317,5 +486,13 @@ underneath it, not despite knowing it.
   section produced.
 - No named figures anywhere in this file — the UN Secretary-General,
   the Proportionality Caucus's leadership, any bloc's own UN
-  delegation heads, and the Fleet's own command structure are all
-  open (added to `people-pass-queue.md`).
+  delegation heads, the Joint Military Council's nine seats, and
+  OSL's own UN ambassador, are all open (added to
+  `people-pass-queue.md`).
+- Whether Bharat still actively backs the Proportionality Caucus now
+  that it holds a veto seat, or has quietly stopped pushing further —
+  deliberately left open as a live question about Bharat's own
+  character.
+- This entire section is explicitly a work in progress, by the
+  user's own framing — more UN mechanics are still being worked out
+  and will land here as they're confirmed, not a closed design.
