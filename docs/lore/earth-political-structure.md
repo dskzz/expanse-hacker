@@ -2,7 +2,11 @@
 
 Status: locked naming decision, 2026-11-21; massively expanded
 2026-11-25 with the nine-bloc structure, UN governance, and the
-UN's actual military "teeth." Earth had the same "one org speaks for
+UN's actual military "teeth," then again the same day with the
+Committee of the Whole, money/lobbying/corruption, the Fleet Staff/
+Joint Military Council split, and Mars's peer-power footing. Each
+bloc's own internal governance now has its own file,
+`earth-blocs.md`. Earth had the same "one org speaks for
 everyone" thinness the Belt had before OSL/ASA and Mars had before
 the Commonwealth of Elysium: the UN with total, unchallenged control
 and no organized opposition of any kind. Real populations that large
@@ -89,9 +93,8 @@ membership status in ASEAN and Others; North Africa's dual identity
 between the African Union and the OIC bloc (the same real ambiguity
 today's actual AU and OIC both just live with); Mongolia and North
 Korea as true leftovers nobody's bothered to resolve. Each bloc's own
-detailed internal governance — "dreamed up based loosely on
-historical politics," per the standing instruction — is a large,
-separate follow-up task, not attempted here.
+detailed internal governance is covered separately in
+`earth-blocs.md`.
 
 ## Representation: appointed, not directly elected
 
@@ -116,6 +119,30 @@ be nothing for the Proportionality Caucus to push for — the flat
 inequality is the grievance, made concrete rather than abstract.
 Voting happens only among these appointed delegates; there is no
 popular, planet-wide "assembly of the whole."
+
+## The Committee of the Whole: where the pointless stuff happens, on purpose
+
+A separate, much larger body from the 63-delegate caucus above, and
+deliberately so. Convened at New York (below), it's where each bloc's
+same seven caucus delegates sit *alongside* up to three additional
+delegates each individual member nation sends in its own right —
+dozens of nations across nine blocs, each entitled to its own voice,
+producing a body that can run into the hundreds. The name is real
+parliamentary terminology, not invented: a legislature's full
+membership convening as a single committee rather than through its
+normal smaller structure.
+
+This is where the UN does the real-world UN's actual, recognizable
+day job — non-binding resolutions, declarations, grandstanding
+speeches, the "pointless stupid stuff" every real international body
+produces in volume. That's not wasted motion. It's standing
+infrastructure for the one moment it actually matters: when a genuine
+crisis forces real consensus (the OPRA-shaped pattern already
+established), the Committee of the Whole is the only body already
+built at planetary scale to produce and legitimize it fast. The
+machinery that looks useless in peacetime is exactly what gets used
+when an emergency needs the whole system's visible buy-in, not just
+the four veto powers' private agreement.
 
 ## Permanent veto power: four seats, not nine
 
@@ -213,18 +240,57 @@ sympathy for reform), but culturally and historically closer to the
 Atlantic Zone's own orientation than to the African Union or Patria
 Grande — torn between its formal interest and its actual alignment.
 
-## Command structure: the Joint Military Council
+## Command structure: the Fleet Staff and the Joint Military Council
 
 The Secretary-General is not the Fleet's commander-in-chief —
 concentrating that authority in one civilian office would recreate
 exactly the single point of failure the whole rogue-command design
 (below) exists to avoid. Real operational and authorization authority
-sits with the **Joint Military Council**: one military liaison seat
-per bloc, mirroring the General Assembly's own equal structure,
-nine seats regardless of veto status. The Secretary-General is a
-civilian political coordinator, not a military one — the same real
-principle of civilian control of the military most actual governments
-already run on.
+splits across two deliberately different bodies instead: a small
+professional command staff that actually runs the Fleet, and a larger
+civilian body that decides whether it's allowed to act.
+
+**The Fleet Staff** holds real operational command, and stays small
+and professional on purpose: a **Home Fleet Admiral** (Earth-system
+defense), a **Frontier Fleet Admiral** (everything further out — the
+same home-fleet/distant-fleet split real historical navies have used,
+borrowed as free generic structure, not any one franchise's specific
+invention), a **Marine Commandant** commanding the Delhi Protocol's
+treaty-capped expeditionary forces, and a **Merchant Marine liaison**
+representing civilian shipping's own real stake in Fleet policy. These
+four run day-to-day operations. They do not decide, on their own
+authority, to use force.
+
+**The Joint Military Council** is the civilian oversight and consent
+body sitting above the Fleet Staff: one seat per bloc, nine total,
+mirroring the General Assembly-style body's own equal structure
+regardless of veto status. Nothing beyond routine operations — any
+real use of force, any blockade — happens without the Council's
+consensus-gated authorization (below). Each bloc chooses its own
+seat-holder by its own process, civilian by default, and that choice
+is itself characterization: a bloc with a strong civilian-control
+tradition sends a career civilian, while the Zhongguo-descended bloc,
+reflecting its own more militarized political culture, might just as
+plausibly send a retired general instead. The Secretary-General sits
+over neither body directly — a civilian political coordinator, not a
+military one, the same real principle of civilian control of the
+military most actual governments already run on.
+
+## Mars: a peer power, not a tenth bloc
+
+MDR is not one of the nine blocs and never has been — it isn't an
+Earth constituency to fold in, it's a separate sovereign power with
+its own government, its own military, and its own seat at no one
+else's table. Its relationship to the UN runs through ordinary
+sovereign-to-sovereign diplomacy — treaties and ambassadors — rather
+than through any bloc's internal caucus process, the Committee of the
+Whole, or the Joint Military Council. The MRN's own command structure
+(Admiralty House, the Ballista-class, `mars-political-structure.md`,
+`ship-class-codex.md`) is entirely separate from the UN Fleet and
+answers to no UN body at all. Given Mars's real demonstrated military
+and economic power, it plausibly holds something more substantial in
+practice than the Belt's Permanent Observer status — but that's not
+pinned down further than this yet.
 
 ## Selecting, and removing, the Secretary-General
 
@@ -239,6 +305,67 @@ the rogue-leader scenario (below) dangerous rather than merely
 theoretical — legitimate removal failing is the reason any real
 opposition to a rogue Secretary-General would have to look for a
 technical answer instead of a political one.
+
+**The Secretary-General's own cabinet**, real Under-Secretary-General-
+style deputy posts below the top office, is informally expected to
+balance across the nine blocs for legitimacy — the same real practice
+the actual UN already follows today. Not detailed further than that
+yet; individual deputy portfolios are a future task.
+
+## Money, lobbying, and corruption
+
+**Lobbying exists, but it has no UN-level campaign to target, since no
+one runs for a UN seat.** It aims at two things instead: shaping which
+individuals a bloc's own internal process actually appoints as
+delegates, and influencing those delegates' negotiating positions once
+seated — Lattimer & Cross's own established business (`corporations.md`)
+operates at exactly this level. Real electoral campaign finance, where
+it exists at all, lives one level down, inside each bloc's own
+domestic politics, and its character varies with that bloc's own
+political system rather than following one planetary pattern:
+
+- **The Atlantic Zone** runs the most money-saturated democratic
+  politics of the nine, a direct extension of its established old-
+  money character — real PAC-style and corporate-donation patterns,
+  the same old capital that already buys it disproportionate UN
+  funding leverage (below) buying domestic influence too.
+- **Bharat** runs real, massively expensive elections — extrapolated
+  directly from India's actual present-day elections, already among
+  the costliest in the world in absolute terms — but through scale
+  and patronage networks more than concentrated corporate money.
+- **The Zhongguo-descended bloc and the Eurasian Union**, both far
+  less competitively electoral, see money matter through elite and
+  patronage channels instead of public campaign finance — state-
+  directed and oligarch-adjacent rather than vote-buying in the
+  Western sense.
+- The remaining blocs (African Union, Three Seas, Patria Grande, ASEAN
+  and Others, the OIC bloc) each plausibly have their own distinct,
+  real-grounded character here too, not yet detailed.
+
+**The UN is genuinely, substantially corrupt — the mundane,
+bureaucratic kind, not a cartoon.** It splits cleanly by the same two
+tiers that already split ceremony from power (below): New York's
+ceremonial layer runs on lower-stakes, almost petty corruption —
+sinecure appointments, expense-account abuse, blue-ribbon committees
+used for calculated delay as often as genuine inquiry. New Delhi's
+real-power layer runs on higher-stakes, far better-hidden corruption —
+the same category as the Sol Industrial Trust's own suspected
+collusion (`corporations.md`), and old money's funding leverage
+(below) buying influence no formal vote grants, legally and in plain
+sight.
+
+## Other UN departments
+
+Kept light rather than fully built out — only what's load-bearing for
+threads already in motion: a **Peacekeeping/Expeditionary Forces**
+department overseeing the Delhi Protocol's treaty-capped ground units
+(below); an **Off-World Development** department formalizing the
+Frontier Opportunity Program and Ceres's MFN arrangement
+(`ceres.md`); and a **Conformance and Standards** oversight body,
+distinct from OPRA — OPRA stays the neutral technical standards body
+everyone has to use regardless of politics, this is the UN's own
+compliance-auditing arm checking RAP/SPERB adherence. More departments
+can be added as specific scenarios need them rather than up front.
 
 ## The New International
 
@@ -474,8 +601,11 @@ underneath it, not despite knowing it.
 - No specific founding date or founding grievance has been drafted yet
   for the New International — just the name, positioning, and
   dual-mode (open political movement / clandestine network) structure.
-- Each bloc's own detailed internal governance — explicitly deferred,
-  a substantial task of its own.
+- Each bloc's own detailed internal governance now has a first pass in
+  `earth-blocs.md`; its own "Still open" items (named figures, how
+  stable each rotating-presidency/appointment mechanism really is,
+  whether internal regional sub-structure has ever actually erupted)
+  carry forward from there.
 - Turkey's actual membership status in ASEAN and Others, and North
   Africa's dual African-Union/OIC identity — genuinely unresolved.
 - Whether the UN's rare, OPRA-shaped binding-consensus moments have
@@ -486,9 +616,12 @@ underneath it, not despite knowing it.
   section produced.
 - No named figures anywhere in this file — the UN Secretary-General,
   the Proportionality Caucus's leadership, any bloc's own UN
-  delegation heads, the Joint Military Council's nine seats, and
-  OSL's own UN ambassador, are all open (added to
-  `people-pass-queue.md`).
+  delegation heads, the Fleet Staff's four officers, the Joint
+  Military Council's nine seats, and OSL's own UN ambassador, are all
+  open (added to `people-pass-queue.md`).
+- What exactly Mars's diplomatic footing with the UN actually is,
+  beyond "more substantial than the Belt's Observer status" — not
+  pinned down.
 - Whether Bharat still actively backs the Proportionality Caucus now
   that it holds a veto seat, or has quietly stopped pushing further —
   deliberately left open as a live question about Bharat's own

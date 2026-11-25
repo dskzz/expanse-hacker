@@ -129,8 +129,31 @@ any existing or future name that turns out just as hard to place.
   Council instead of an SG-as-CINC, symmetric selection/removal
   thresholds for the Secretary-General, and the UN's genuinely
   different postures toward the Belt (co-option via Permanent
-  Observer status) versus Jupiter (defending an existing seat). Still
-  explicitly a work in progress.
+  Observer status) versus Jupiter (defending an existing seat). Now
+  also: the Committee of the Whole at New York (each bloc's seven
+  caucus delegates plus up to three delegates per individual member
+  nation — the UN's deliberately oversized, mostly-ceremonial body
+  that doubles as crisis-response infrastructure), money/lobbying/
+  corruption mechanics (varying by bloc, two-tier corruption split
+  between NYC's petty version and New Delhi's well-hidden version), a
+  short list of other UN departments, a command structure revised into
+  two layers (the small professional Fleet Staff — Home Fleet Admiral,
+  Frontier Fleet Admiral, Marine Commandant, Merchant Marine liaison —
+  under the nine-seat civilian Joint Military Council), and Mars's
+  explicit footing as a peer sovereign power outside the bloc system
+  entirely, not a tenth bloc. Still explicitly a work in progress.
+- **`earth-blocs.md`** — the deferred follow-up: each of the nine
+  blocs' own internal governance, one real institutional ancestor per
+  bloc rather than a shared template (the Atlantic Zone's EU-style
+  rotating-Presidency Council, the African Union's matured real AU
+  structure, Bharat's genuinely competitive parliamentary democracy,
+  the Zhongguo bloc's centralized unitary state, the Three Seas bloc's
+  deliberately loose summit-based governance, the Eurasian Union's
+  Russia-anchored formal-equality-masking-real-dominance structure,
+  Patria Grande's Brazil-anchored Mercosur-descended rotating
+  presidency, ASEAN and Others' consensus-bound "ASEAN Way" with
+  Turkey's awkward fit, and the OIC bloc's Iran/Saudi rivalry brokered
+  by Pakistan's own neutral position).
 - **`armstrong-city.md`** — Armstrong City and Shackleton Base: the
   DC/Congress governance model, the UN's two-tier geography
   (prestige on Earth, bureaucracy on Luna), and the corporate HQ tax

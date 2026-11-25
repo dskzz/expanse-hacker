@@ -127,11 +127,25 @@ starts:
 - **Bloc UN delegation heads** (`earth-political-structure.md`) — each
   of the nine blocs sends its own appointed delegation; none named yet
   for any bloc.
+- **The Fleet Staff** (`earth-political-structure.md`) — the UN's
+  actual operational command, four seats: a Home Fleet Admiral, a
+  Frontier Fleet Admiral, a Marine Commandant, and a Merchant Marine
+  liaison; none named yet.
 - **The Joint Military Council** (`earth-political-structure.md`) —
   nine seats, one per bloc, deliberately multi-bloc and consensus-
-  gated by design; none named yet, and whoever eventually exploits
-  (or discovers) the rogue-command technical vulnerability is a
-  natural future figure.
+  gated by design; none named yet, though each bloc's own political
+  character (`earth-blocs.md`) suggests whether its seat-holder is a
+  civilian or, as with the Zhongguo bloc, plausibly a retired general.
+  Whoever eventually exploits (or discovers) the rogue-command
+  technical vulnerability is a natural future figure.
+- **Each bloc's head of government and UN delegation head**
+  (`earth-blocs.md`) — nine blocs, none named: the Atlantic Zone's
+  rotating-Presidency holder, the African Union's Assembly chair, the
+  Zhongguo bloc's paramount leader, Bharat's Prime Minister, the
+  Eurasian Union's Supreme Council chair, Patria Grande's pro-tempore
+  president, the Three Seas bloc's rotating host, ASEAN and Others'
+  rotating chair, and the OIC bloc's own Iran/Saudi/Pakistan-brokered
+  leadership.
 - **OSL's own UN ambassador** (`earth-political-structure.md`,
   `belt-political-structure.md`) — the Belt's Permanent Observer
   mission at New Delhi has no named head yet.
