@@ -176,10 +176,13 @@ independence movements used:
   corpus, one organized from genuine poverty and exploitation, the
   other from a comparatively privileged administrative class that
   simply wants out from under someone else's charter.
-- **The Concord Clarion** — the League's own press organ, carrying
-  its case across SolNet rather than just around Concord's own
-  corridors — a real lever in a setting built on network trust and
-  information control, not just a newsletter.
+- **The Concord Tocsin** — the League's own press organ, named for
+  the real historical alarm bell rung to warn and rally people,
+  carrying its case across SolNet rather than just around Concord's
+  own corridors. Deliberately not "Clarion" — that name is already
+  spoken for by `corporations.md`'s own Earth media giant, a Trust-
+  compromised outlet the sincere, independent Tocsin shouldn't echo
+  even by accident.
 
 **This is existential for the JDC in a way it isn't for anyone
 else.** Callisto is the company's last real stronghold; losing it
@@ -444,6 +447,15 @@ for violence it doesn't need:
   ownership section). Whoever's paperwork the network itself defaults
   to trusting has a real, quiet advantage nobody's had to win a vote
   to get.
+- **The information war runs on the same split as everything else.**
+  JBS (`corporations.md`) is the JDC's own legacy broadcaster,
+  straining to hold a credible claim to neutral, official coverage
+  while the ground under it visibly shifts toward the League; the
+  Concord Tocsin is the League's own sincere, explicitly partisan
+  answer. Neither one is lying outright — which makes the real fight
+  about whose framing the system's own population actually trusts by
+  default, the same underlying question as whose certificate a relay
+  trusts, just playing out in coverage instead of cross-cert chains.
 
 ## Open threads
 
@@ -468,8 +480,11 @@ for violence it doesn't need:
   rather than territory) — deliberately left unresolved.
 - No named figures — the JDC's current administrator, the League's
   and United Moons' leadership, JTA's and JTC's heads, the Concord
-  Settlement's delegates, and whoever runs the Emporium Zone's
-  licensing authority, all open (added to `people-pass-queue.md`).
+  Settlement's delegates, whoever runs the Emporium Zone's licensing
+  authority, and JBS's editor-in-chief or news director (the one role
+  whose actual loyalties — JDC line versus quiet League sympathy —
+  would matter most once named), all open (added to
+  `people-pass-queue.md`).
 - Settled: four operators split the Strip (`corporations.md`) —
   Seneschal House (JDC's own favored legacy licensee), Tradewind
   Leisure (grew out of JTA merchant money), Nova Court (looks

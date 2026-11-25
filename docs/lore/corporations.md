@@ -397,8 +397,8 @@ Media splits into three real tiers, not one flat list:
 - **Driftcast Media** (Belt) — the Belt's own independent press,
   deliberate contrast to Earth-based Clarion.
 
-**State/public broadcasters** (both lean into the same ironic-naming
-logic already established for their governments):
+**State/public broadcasters** (lean into the same ironic-naming logic
+already established for their governments):
 - **UNBC** (United Nations Broadcasting Corporation, Earth) — direct
   echo of the real BBC/CBC/ABC public-broadcaster naming convention.
 - **MPA** (Martian Public Access, Mars) — the state broadcaster
@@ -406,6 +406,17 @@ logic already established for their governments):
   the way BBC doesn't say "United Kingdom" — a small, deliberate
   detail that the one institution supposed to perform openness the
   hardest didn't bother including the legitimizing words at all.
+- **JBS** (Jovian Broadcasting Service, Callisto) — the JDC's own
+  flagship broadcaster, same naming family as UNBC/MPA and the same
+  "Jovian [function]" convention already used for the JDC itself, the
+  JTA, JTC, the Sentinel Survey, and the Exposure Registry
+  (`callisto.md`). Its actual tension isn't ironic naming, it's live
+  newsroom politics: a legacy, JDC-chartered outlet trying to hold a
+  claim to neutral, official coverage while the political ground it
+  reports on visibly shifts toward the Home Rule League underneath
+  it — a contested claim to credibility, not a settled one, distinct
+  from the Concord Tocsin's own explicit, sincere advocacy
+  (`callisto.md`).
 
 **Independent/pirate (long tail):** numerous, scrappy, mostly Belt-
 flavored, not individually named any more than the sector-10

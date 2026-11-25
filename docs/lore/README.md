@@ -162,6 +162,13 @@ any existing or future name that turns out just as hard to place.
 
 ## Shared/cross-cutting
 
+- **`relay-outposts.md`** — a reusable template, not a location: how
+  and when a bare relay installation (RFC-2353's own hop-point
+  infrastructure) organically grows into something resembling a
+  town, with four tiers from pure hardware up to genuine settlement
+  and the technical-core/social-periphery split that lets any future
+  instance vary without redoing the underlying pattern. Resolves the
+  long-flagged "relay-town archetype" thread below.
 - **`people-pass-queue.md`** — a running list of every unnamed role
   or figure the corpus has flagged as needing a name once the
   deferred people pass actually starts. Add to it as new ones come
@@ -208,9 +215,9 @@ any existing or future name that turns out just as hard to place.
 
 - Interlocking directorates (`corporations.md`) are unblocked now
   that `demographics.md` exists, but not yet built.
-- The relay-town archetype (maintenance crews → bar → organic
-  settlement, tied to RFC-2353's own hop-count mechanics) was
-  discussed but never written up.
+- Resolved: the relay-town archetype (maintenance crews → bar →
+  organic settlement, tied to RFC-2353's own hop-count mechanics) now
+  has a proper writeup, `relay-outposts.md`.
 - Black sites (R&D, surveillance, prison, weapons placement, across
   Mariner Valley, Elysium, and Earth) remain a flagged future pass.
 - An outer-system pass (Hidalgo, Adonis, Amor, the Jupiter Trojans/
