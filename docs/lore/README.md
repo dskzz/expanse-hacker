@@ -147,6 +147,12 @@ any existing or future name that turns out just as hard to place.
   negotiated partition (the ironically-named Concord Settlement) —
   three real, mutually exclusive outcomes left deliberately open as
   this pass's biggest live political thread.
+- **`jovian-irregular-moons.md`** — the pass's fourth entry, and
+  deliberately light-touch: the four real debris families beyond the
+  Galileans (Himalia, Ananke, Carme, Pasiphae), treated as Jupiter's
+  own mini-belts — genuinely clustered, unlike the real Belt's
+  isolation, functionally ungoverned rather than formally free, and a
+  natural landing spot for VPH's and Psyche's Belt diaspora.
 
 ## Shared/cross-cutting
 
