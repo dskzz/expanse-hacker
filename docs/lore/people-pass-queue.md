@@ -178,7 +178,9 @@ starts:
 - **Venus's habitat cluster** (`venus.md`) — no named lead for the
   atmospheric research program, the wellness/resort side, the
   maintenance crew's own working habitat, the reservoir-beach
-  platform, or Mars's own modest facilities there.
+  platform, any golf-club patron, the research platform's own
+  professional birding expeditions, a famous gas-yacht-flying amateur
+  birder, or Mars's own modest facilities there.
 - **Verdant Loom and Albion Weave** (`corporations.md`) — no named
   executives for either.
 - **Perihelion Traders and the Sunbirds** (`mercury.md`,

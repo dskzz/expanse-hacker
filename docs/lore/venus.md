@@ -232,19 +232,140 @@ elite, nowhere near Earth's scale — consistent with Mars's own
 deliberate, non-wasteful resource culture rather than a lack of
 interest.
 
+## Venusian golf: real physics, deliberately pushed past what gravity alone gives
+
+**Gravity alone is genuinely modest here — worth being precise rather
+than overselling it.** At 0.904g, a given swing travels only about
+10% farther than on Earth, nothing like the dramatic boost Mars's
+0.38g would give, or the real historical precedent this corpus can
+point to directly: Alan Shepard actually hit golf balls on the Moon
+during Apollo 14 in 1971, a real, documented six-fold-ish distance
+effect at 0.166g. Venus's own gravity is the least dramatic of
+anywhere in this corpus that isn't Earth itself.
+
+**The real "crazy yardage" comes from engineering the course's own
+atmosphere, not from gravity — a flex, not a freebie.** This is
+already a real, documented golf phenomenon: real high-altitude
+courses on Earth (Denver, for instance) see measurably longer drives
+because thinner air means less aerodynamic drag. Every Venus
+platform's atmosphere is already artificial and tightly controlled
+regardless, so a dedicated golf platform deliberately running its
+internal air thinner than anywhere else in the colony — purely for
+the sport — stacks a real drag-reduction effect on top of the modest
+gravity boost, producing genuinely absurd yardage through real,
+expensive engineering rather than a fact of the planet. That
+expense is the point: nobody but the obscenely wealthy would bother
+paying for custom-thinned air just to drive a ball farther.
+
+**A few competing courses, not one — status, not redundancy.**
+Different wealthy patrons or clubs each running their own platform,
+bragging rights over whose air is thinner and whose record drive is
+longer, the same status-competition logic already running through
+old money elsewhere in this corpus. A real, grounded design
+constraint worth keeping: with yardage like that, courses need to be
+enormous and/or use real containment — netting, out-of-bounds
+barriers — so an errant drive doesn't put a ball through the
+comparatively delicate envelope wall, a genuine problem a course
+architect would actually have to solve.
+
+## Gas yachting, rowboats, and engineered wind: the full leisure-water picture
+
+**Gas yachting** — personal, pilot-it-yourself aerostats, a direct
+and well-precedented culture rather than a stretch: real hot-air
+ballooning is already a genuine Earth hobby tied to leisure and
+status, and the same "breathable air as free lifting gas" principle
+already established scales down naturally to something an individual
+owns and flies, the same real boating/yachting-culture analog applied
+to the cloud deck instead of open water.
+
+**The reservoir platform's own water gets the same leisure treatment
+as everything else here, pushed as far as engineering allows.** Small
+rowboats on the reservoir lake are the obvious, low-tech extension of
+the beach already established. **Engineered wind for actual sailboats
+inside the luxury domes is the more interesting one** — these are
+already deliberately controlled atmospheric environments (the golf
+platforms' own thinned air proves the colony is willing to engineer
+atmosphere purely for sport), so directed air circulation purpose-
+built for sailing, tuned to ideal conditions rather than subject to
+Earth's own unpredictable weather, is a consistent extension rather
+than a new kind of claim: there's no bad sailing day inside a Venus
+dome, the wind is custom-tuned for whoever's paying.
+
+## Health and rehabilitation: a second real economic pillar, not a flourish
+
+**This follows directly from medicine already established rather
+than needing new invention.** If sudden full-gravity exposure after
+low-g adaptation is a real, documented danger
+(`equipment-codex.md`'s Loadframe entry), and Venus's 0.904g sits in
+the genuine physiological sweet spot already established above, then
+Venus is the obvious place to build **supervised gravity-
+reacclimation medicine** — a real, gradual step between low-g
+adaptation and full Earth gravity, medically safer than jumping
+straight from one to the other. Hospitals, PT clinics specifically
+for gravity-adaptation syndrome, and laboratories studying the
+condition itself as real medical science, not just atmospheric
+chemistry — a genuine second pillar alongside pure leisure tourism.
+
+**This gives Mars's own modest presence real operational weight
+rather than just research access.** Mars's real 0.38g means Martian
+officials or travelers bound for Earth face exactly this risk — a
+Martian delegation plausibly stops at Venus deliberately, as a
+supervised readaptation layover before continuing on to Earth, not
+just elite leisure parity with Earth's own wealthy.
+
+## Venusian birding: real science, romanticized by a popular nickname
+
+**Worth being precise here, the same discipline already applied to
+the phosphine question itself:** the real, serious scientific
+hypothesis about Venusian cloud life (actual astrobiology papers,
+e.g. Seager and Petkowski's real proposed work) is about **microbial**
+organisms suspended in cloud droplets, not literal birds or
+macroscopic creatures. "Birding" works as the popular, romanticized
+nickname for that search rather than a literal biological claim — the
+same way "little green men" became shorthand for SETI's search for
+intelligent life even though no serious SETI researcher is actually
+looking for little green men.
+
+**The scale is the real difference from its closest real-world
+analog — the user's own framing lands exactly right: like the Loch
+Ness hunt, but mobile.** Loch Ness is one fixed lake; Venus's cloud
+deck is a vast, three-dimensional, constantly shifting volume with no
+single spot to stake out, which changes the whole shape of the hunt
+from stakeout to genuine exploration — a natural use for gas yachts
+(above), amateur hobbyists roaming the cloud deck chasing ambiguous
+sensor readings and sample catches that are mostly ordinary cloud
+chemistry or instrument artifacts.
+
+**Two real tiers, not one, coexisting rather than competing directly:**
+amateur "birders" — citizen science, tourist novelty, genuine
+obsessive hobby culture, grounded in real scientific ambiguity rather
+than pure fringe belief the way most real cryptid-hunting is — and
+separate, rigorous **professional scientific expeditions** run out of
+the research platform itself, serious sampling missions with real
+institutional backing (plausibly the UN Space Survey Directorate,
+`earth-political-structure.md`). The culture persists specifically
+because the real science is genuinely still open and the prize —
+actually finding it first — is enormous.
+
 ## Open threads
 
 - No company or specific administrative body named for running the
-  maintenance/working habitat, the reservoir platform, or Mars's own
-  modest facilities — deferred.
+  maintenance/working habitat, the reservoir platform, any golf
+  platform, Mars's own modest facilities, or the research platform's
+  own professional birding expeditions — deferred.
 - Whether the phosphine question has actually been answered
   in-universe, or stays a live, unresolved mystery indefinitely —
   deliberately left open, matching its real-world status.
+- Whether any amateur birder has ever actually caught something real,
+  or whether every catch so far has turned out to be cloud chemistry
+  or instrument noise — deliberately left open, the same unresolved
+  shape as the phosphine question itself.
 - No named figures — whoever leads the atmospheric research program,
   whoever administers the wellness/resort side, whoever actually runs
   the maintenance crew's own working habitat, whoever manages the
-  reservoir platform, and Mars's own facility heads, are all natural
-  future roles (added to `people-pass-queue.md`).
+  reservoir platform, any golf-club patron, a famous gas-yacht-flying
+  birder, and Mars's own facility heads, are all natural future roles
+  (added to `people-pass-queue.md`).
 - Whether Venus needs its own threshold ceremony
   (`belt-political-structure.md`'s growing family) or is fittingly
   the one location that doesn't, given it's the one genuinely

@@ -216,7 +216,16 @@ any existing or future name that turns out just as hard to place.
   beach — precious imported water flaunted rather than conserved, the
   deliberate opposite of Mercury's own waste-ballast relationship to
   scarce mass; and Mars's own small, deliberate toehold alongside
-  Earth's sprawl.
+  Earth's sprawl. Now also: Venusian golf, real gravity's own modest
+  distance boost deliberately stacked with custom-thinned-air drag
+  reduction for genuinely absurd yardage (a flex, not a planetary
+  freebie); gas yachting, rowboats, and engineered-wind sailing on
+  the reservoir; a second real economic pillar in gravity-
+  reacclimation medicine, giving Mars's own presence real operational
+  weight as a readaptation layover en route to Earth; and "Venusian
+  birding" — real, serious microbial-astrobiology science underneath
+  a romanticized popular nickname, like the Loch Ness hunt but mobile
+  across a vast shifting volume instead of one fixed lake.
 
 ## Earth
 
