@@ -140,7 +140,24 @@ echo of the actual Highland Clearances, where absentee landlords
 displaced small tenant holdings in favor of larger, more profitable
 operations dressed in the language of efficiency and modernization.
 No clan has a real seat in how it's run or who profits. Structural for
-now, not yet a named incident.
+now, not yet a named incident. Now sharper still: Lowland merchant
+houses out of Mercat - Dione already broker much of the outside trade
+in processed ring ice and skimmed fuel, making them the consortium's
+natural, profiting local partner — a live, specific grievance for
+Highland clans, not an abstract principle.
+
+### The Highland/Lowland split over chartering
+
+Home file: `saturn.md`. Distinct from clan-on-clan rivalry: a regional,
+cultural fault line cutting across it, the real Highland/Lowland
+divide ported directly rather than invented fresh. Lowland merchant
+houses out of Mercat want a Jovian Development Company-style charter
+from the UN or MDR (`callisto.md`) and keep pushing the Gathering
+toward becoming something closer to a standing government to get it;
+Highland clans see both moves as trading real clan sovereignty for
+outside legitimacy, and block both. Neither side has won. Whether the
+charter is ever actually granted, and what it would cost the Gathering
+if it is, stays deliberately open.
 
 ### Saturn as the system's second practical helium-3 source
 

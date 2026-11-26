@@ -435,7 +435,17 @@ any existing or future name that turns out just as hard to place.
   itself is now fully built out — crossing the real heliocentric
   distance of Saturn's orbit outbound, literally through one of the
   plow ships' own lane gates, into the deep, nearly empty system
-  Lassell Relay alone occupies beyond it.
+  Lassell Relay alone occupies beyond it. Also now a second political
+  axis layered across clan rivalry, the real Highland/Lowland divide
+  ported directly: Highland clans working the rings themselves around
+  Mimas and Tethys, clan-first and Gathering-loyal, against a Lowland
+  side clustered around Dione and Rhea openly aping the Jovian
+  system's own commercial sophistication — Mercat - Dione, the
+  Lowlands' own capital (nowhere near Callisto's level), its leading
+  merchant houses quietly chasing an as-yet-ungranted JDC-style charter
+  the Highland side blocks on principle, sharpened by those same
+  merchant houses already brokering the atmospheric consortium's trade
+  in processed ice and fuel.
 
 ## Beyond Saturn
 

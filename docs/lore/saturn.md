@@ -137,6 +137,53 @@ pattern as the Jovian irregular moons' own clan families
 specific names waited for the people pass. Added to
 `people-pass-queue.md`.
 
+## The Lowlands and the Highlands
+
+Clan rivalry isn't the only axis Ringer politics runs on — there's a
+second, regional one layered across it, the same way real Scotland
+had both a clan system *and* a genuinely distinct Highland/Lowland
+cultural divide that didn't map cleanly onto any single clan boundary.
+Clans working the rings directly — the harder, more exposed,
+more purely clan-governed life, oriented around Mimas and Tethys and
+the ring-breaking operations themselves — are the Highland side:
+clan-first, Gathering-loyal, and genuinely contemptuous of anything
+that looks like trading clan sovereignty for outside legitimacy.
+Clans and settlements further out, clustered around Dione and bleeding
+into Rhea's own orbit, are the Lowland side: more urbanized, more
+comfortable doing business with the wider system, and openly
+ambitious about **aping the Jovian system's own commercial
+sophistication** — the Jovian Development Company's chartered-
+monopoly model above all (`callisto.md`) — dressed up as modernization
+the same way the atmospheric skimming consortium already is.
+
+**Mercat - Dione.** `SATURN:DIONE:MERCAT` — the Lowland side's own
+capital, real courts and real markets, genuinely the biggest thing
+the Ringers have built for themselves — and nowhere near Callisto's
+level. No chartered monopoly, no Jovian Trade Association equivalent,
+no Jovian Sentinel Survey; a handful of leading Lowland merchant
+houses have been quietly pursuing exactly that kind of charter from
+the UN or MDR, and haven't gotten it yet. Named for the real historic
+Scots word for a market — Edinburgh's own Mercat Cross marked the
+heart of its trading city for centuries — a free, real piece of
+vocabulary doing the naming work rather than a borrowed proper name.
+Sited at Dione deliberately: the real crossroads moon, sitting between
+the ring-adjacent Highland territory and Rhea's own trade corridor out
+toward Titan, the same geographic logic that put the real Edinburgh
+where it sits relative to Scotland's own Highland line.
+
+**What the Highlanders want no part of:** a charter would mean
+answering to an impersonal outside authority instead of a clan and the
+Gathering, exactly the subordination the atmospheric skimming
+consortium already represents at smaller scale (above) — and
+Highlanders already watch Lowland merchant houses broker much of the
+outside trade in processed ring ice and skimmed fuel, which makes a
+willing, profiting local partner for that consortium a live and
+specific resentment, not an abstract principle. The Gathering's own
+future is contested on exactly this line: Lowland delegates keep
+pushing, without success so far, for it to formalize into something
+closer to a standing government; Highland clans keep blocking it.
+Nothing says which way that goes.
+
 ## The three occupations
 
 Ring material isn't discrete, haulable rock the way Belt asteroids
@@ -270,6 +317,10 @@ the set, matching how little lies beyond it.
   Gathering, running Cassini Works, administering Huygens Landing or
   Herschel Station, or crewing a Rorqual-class ship — added to
   `people-pass-queue.md`.
+- No named Lowland merchant houses, no named Mercat court or council
+  figure, and no outcome yet on whether the UN or MDR ever actually
+  grants the charter the Lowland side is pursuing — a live, deliberately
+  unresolved thread, not a foregone conclusion either way.
 - No named UN/MDR consortium or operator for the atmospheric skimming
   operation yet, nor any specific clan caught up in a specific
   Clearances-style displacement dispute — the tension is structural

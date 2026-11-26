@@ -231,7 +231,10 @@ starts:
   and no named Rorqual-class vessel or commanding officer
   (`ship-class-codex.md`). Also open: whoever runs the UN/MDR-licensed
   atmospheric skimming consortium, and any specific clan caught up in
-  a specific Clearances-style displacement dispute with it.
+  a specific Clearances-style displacement dispute with it; no named
+  Lowland merchant house out of Mercat - Dione, no named court or
+  council figure there, and no named Highland clan leading the
+  resistance to chartering.
 
 ## Already named (reference only — not part of the queue)
 
