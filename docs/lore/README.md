@@ -99,8 +99,7 @@ any existing or future name that turns out just as hard to place.
   (`armstrong-city.md`), Mars's "Beyond the Moons"
   (`mars-political-structure.md`), and the two genuinely Sol-wide
   ones belonging to no one's home, Diving the Furnace
-  (`mercury.md`) and Saturn's Gate (name only, pending Saturn's own
-  pass).
+  (`mercury.md`) and Saturn's Gate, now fully built out (`saturn.md`).
 - **`belter-pidgin.md`** — Rock Talk/Kamenya, the original
   constructed pidgin replacing Lang Belta. (The `Lang Belta
   2022-02-15.pdf` in this same folder is old external reference
@@ -393,6 +392,50 @@ any existing or future name that turns out just as hard to place.
   reinventing. Also now: "Leaving the Cradle," an Earth-born spacer's
   own first-departure-beyond-Luna threshold ceremony, named directly
   for the real Tsiolkovsky quote.
+
+## Saturn
+
+- **`saturn.md`** — the outer-planets pass's anchor entry, and the
+  corpus's first genuinely clan-based polity: the Ringers, modeled
+  directly on real Highland clan politics (constant real inter-clan
+  feuding and shifting alliances existing alongside a shared identity
+  that's mostly how outsiders see them, becoming real unity only in
+  rare moments of genuine shared threat — the Wars of Scottish
+  Independence against Edward I — and conspicuously absent even then
+  in the moments that mattered most, the Jacobite risings' own
+  clan-on-clan split). No standing government — the Gathering convenes
+  periodically without ever holding authority between gatherings — and
+  no named clans yet, deliberately. Real Saturn-system grounding
+  throughout: a surprisingly Earth-like ~1.07g at the real 1-bar
+  reference level, genuinely weaker radiation belts than Jupiter's,
+  real helium rain explaining Saturn's own measured excess heat, and
+  the real scale gap between the ring/E-ring debris zone and Titan's
+  own much more distant, genuinely clear orbit. Three occupations: the
+  Rorqual-class (`ship-class-codex.md`) break-and-scoop ice-harvesting
+  fleets, clan-controlled, working the rings themselves; a genuinely
+  practical atmospheric skimming operation for hydrogen and helium-3 —
+  Saturn's shallower gravity well succeeding exactly where Ganymede's
+  own Jupiter-atmosphere research stays impractical
+  (`ganymede-condominium.md`) — run by an outside UN/MDR consortium in
+  a deliberate, uncomfortable echo of the real Highland Clearances, the
+  one occupation the clans don't control; and plow ships maintaining
+  marked, buoyed lanes through the real debris-choked zone near Saturn
+  itself (the actual shape of real icebreaker escort services, which
+  clear one hazardous stretch, not an entire voyage), with outside
+  haulers cutting reckless real gravity-assist slingshot lines through
+  those lanes as the one hazard every clan actually despises. Also:
+  Cassini Works - Rhea (refineries and forges for both resource
+  streams), Huygens Landing - Titan (a genuinely "better Venus" built
+  on human-powered flight — real physics, given Titan's ~0.14g and
+  thicker-than-Earth atmosphere — and sailing the real liquid-methane
+  Kraken Mare and Ligeia Mare), and Herschel Station - Enceladus (the
+  outer system's own flagship unresolved-biosignature question, real
+  geyser-sampled organics and phosphates playing the same role Venus's
+  phosphine and Europa's ocean evidence play elsewhere). Saturn's Gate
+  itself is now fully built out — crossing the real heliocentric
+  distance of Saturn's orbit outbound, literally through one of the
+  plow ships' own lane gates, into the deep, nearly empty system
+  Lassell Relay alone occupies beyond it.
 
 ## Beyond Saturn
 

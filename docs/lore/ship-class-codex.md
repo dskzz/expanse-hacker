@@ -54,6 +54,21 @@ the safe room's real water/consumables shielding, the Corona Watch,
 and the waste-ballast mechanic — lives in `mercury.md`**, not
 duplicated here; this entry stays the hull-type summary.
 
+## Rorqual-class (the Ringers, Saturn)
+
+The Ringers' signature ring-working hull, named for the real baleen
+whale family known for lunge-feeding — break the target first, then
+take in the resulting slush through a wide intake maw, rather than
+grapple-and-haul a discrete chunk the way a Belt rock-hopper would.
+Fits the real physical difference between the two environments: Belt
+asteroids are discrete, haulable bodies; Saturn's rings are a dense
+field of ice from dust to boulders, which break-and-scoop handles far
+better than grappling ever could. Full operational and political
+detail — clan-held claim boundaries, the plow ships that keep lanes
+clear for them, and the separately-run atmospheric skimming operation
+that doesn't use this hull at all — lives in `saturn.md`, not
+duplicated here.
+
 ## What the UN deliberately doesn't have
 
 Worth recording as its own entry, not just an absence: the UN has no
@@ -76,5 +91,10 @@ can't afford to build.
   vessels, troop transports, and anything MDR fields beyond
   Ballista-class are all still open for whenever a scenario needs
   one.
-- No named Ballista-class or Zephyr-class vessels or commanding
-  officers yet (added to `people-pass-queue.md`).
+- No named Ballista-class, Zephyr-class, or Rorqual-class vessels or
+  commanding officers yet (added to `people-pass-queue.md`).
+- Saturn's other two occupations — plow ships maintaining the
+  ring-plane/E-ring lanes, and the atmospheric skimmers working
+  Saturn's upper cloud layers — are functional/role categories rather
+  than a single distinctive hull type each, and stay in `saturn.md`
+  rather than getting their own codex entry, at least for now.

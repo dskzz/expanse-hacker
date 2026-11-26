@@ -170,8 +170,8 @@ Cradle" beyond Lunar orbit (`armstrong-city.md`) and Mars's own
 than anyone's home: Diving the Furnace at Mercury's perihelion
 (`mercury.md`) and **Saturn's Gate**, crossing the real heliocentric
 distance of Saturn's own orbit into the deep outer system — the
-innermost and outermost extremes of the whole set, not built out
-further until Saturn itself gets its own pass.
+innermost and outermost extremes of the whole set, now fully built
+out in `saturn.md`.
 
 ## Relationship to OPRA
 
@@ -182,8 +182,6 @@ never going to rebrand into either of these; that idea is retired.
 
 ## Still open
 
-- Saturn's Gate stays a name only, not built out further, until
-  Saturn itself gets its own pass.
 - No named figures for whoever first went Down the Well, past the
   Rocks, through Saturn's Gate, or Diving the Furnace — added to
   `people-pass-queue.md`.

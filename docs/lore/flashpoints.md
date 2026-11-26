@@ -127,6 +127,38 @@ the open question of who currently leads the cooperative and what
 they actually decide to do with the discovery remain unresolved,
 decades after the massacre itself.
 
+## Saturn
+
+### Saturn's atmospheric skimming operation as a Clearances-style displacement
+
+Home file: `saturn.md`. The one Ringer occupation the clans don't
+really control: skimming Saturn's upper atmosphere for hydrogen and,
+more valuably, helium-3 demands capital and engineering depth no
+single clan fields alone, so it runs as a UN/MDR-licensed consortium
+operating over the Ringers' own nominal claims — a real, uncomfortable
+echo of the actual Highland Clearances, where absentee landlords
+displaced small tenant holdings in favor of larger, more profitable
+operations dressed in the language of efficiency and modernization.
+No clan has a real seat in how it's run or who profits. Structural for
+now, not yet a named incident.
+
+### Saturn as the system's second practical helium-3 source
+
+Home file: `saturn.md`. Distinct from the tension above: this is about
+what Saturn's atmospheric operation *means* for everyone else, not who
+controls it locally. Ganymede's own long-term research into mining
+Jupiter's atmosphere stays deliberately impractical
+(`ganymede-condominium.md`) because Jupiter's gravity well is too
+deep — Saturn's shallower well is the one real difference that tips
+the same idea from research dream to marginally viable operation now,
+making it the second genuinely practical helium-3/fusion-fuel source
+in the system after Luna's own reserves, right as those reserves are
+plausibly running thin (Lunar resource depletion, below). That's real
+strategic weight landing on a place with no standing government and no
+unified voice to negotiate with — exactly the condition every outside
+power courting an individual Ringer clan is already positioned to
+exploit.
+
 ## Cross-cutting / Earth
 
 ### The OIC bloc's fusion-era anxiety
@@ -368,4 +400,9 @@ Also now the explicit funding motive behind Ganymede's own long-term,
 currently-impractical research into mining helium-3 straight from
 Jupiter's atmosphere (`ganymede-condominium.md`) — the one reservoir
 in the system big enough to actually end this crisis, decades before
-the energy economics might ever make it real.
+the energy economics might ever make it real. Also now the real,
+present-day reason Saturn's own atmospheric skimming operation
+(`saturn.md`) draws outside capital and attention well out of
+proportion to how remote the place is — a smaller reservoir than
+Jupiter's, but the one gas giant where the extraction economics
+already work.
