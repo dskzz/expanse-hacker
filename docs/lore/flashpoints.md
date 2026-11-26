@@ -186,6 +186,36 @@ political consensus by finding one cached credential instead. Nothing
 confirms this has ever actually been exploited — deliberately left
 open as the sharpest mechanically-real hook this whole pass produced.
 
+### ODS versus the Brocade Guard on Elysium's own ground
+
+Home file: `mars-political-structure.md`. A concrete, institutional
+extension of Elysium's devolution friction with MDR, not a new
+invented conflict: Mariner Valley's Office of Doctrinal Security
+claims jurisdiction over Elysium alongside Elysium's own Brocade
+Guard, two very differently-coded security services (Western-
+coalition-flavored versus Sino-Russian-flavored) both operating on the
+same ground, neither trusting the other, neither able to fully
+dismiss the other's claim. Live and unresolved — nothing confirms
+they've ever actually clashed openly.
+
+### The New International's own open/underground split
+
+Home file: `earth-political-structure.md`. The open, legal wing
+increasingly worried the underground's actions hand the UN a ready
+pretext for crackdowns; the underground increasingly views the open
+wing as a legitimacy-laundering dead end. Live tension inside one
+organization for now, not yet a clean split — whether it becomes one
+is a real, undecided question.
+
+### The Free Commerce Alliance's hidden funding
+
+Home file: `earth-political-structure.md`. Reads exactly like a
+small-business/consumer-advocacy group opposing the Interstation Tax
+Compact's enforcement and the Proportionality Caucus's reapportionment
+push — secretly funded by the Sol Industrial Trust. A clean,
+discoverable investigation hook: nothing confirms the funding trail
+has ever actually been exposed.
+
 ### The Directorate of Security Services' own capture
 
 Home file: `earth-political-structure.md`. DSS is funded by all nine

@@ -536,6 +536,57 @@ same kind of two-track dissent already running through MDR via the
 Mariner Valley Caucus (reformist-adjacent) and Elysium's deeper
 devolution question (closer to rupture).
 
+**The New International's own internal fault line.** Every real
+revolutionary movement in history splits between a legal/parliamentary
+wing willing to work within existing institutions and a radical
+underground that views legal participation as compromise — a real,
+generic historical pattern, not derivative of any one specific
+movement, and this corpus's own version of it has been missing until
+now. Kept as live tension inside one organization rather than a clean
+split, for now: the open wing increasingly worried the underground's
+actions hand the UN a ready pretext for crackdowns; the underground
+increasingly views the open wing as a legitimacy-laundering dead end
+that will never produce real structural change. Whether it actually
+splits is a live, undecided question, not a foregone conclusion.
+
+## The Sovereignty League
+
+The missing right-wing counterpart to the New International — real
+nationalist-populist opposition to supranational governance exists
+across the political spectrum today (Brexit and the EU's own
+euroskeptic parties are the direct real ancestors), and this corpus's
+UN had generated only a left-wing reaction until now, which was
+lopsided rather than a deliberate choice. The Sovereignty League
+targets further UN integration specifically — the rare domestic-
+binding mechanic (above) is its favorite example of "dangerous
+precedent," the UN Convention Against Torture chief among them.
+Strongest in the Atlantic Zone and the Three Seas bloc
+(`earth-blocs.md`), where it's also each bloc's own leading domestic
+opposition voice, not just an abstraction layered on top.
+
+**The sharp part: its genuine grassroots sentiment happens to serve
+the same old-money interest in weak UN enforcement already
+established elsewhere** (the Interstation Tax Compact's own capture
+via Doris, `space-law-compacts.md`) — not bought off, just unwittingly
+useful, a more realistic form of elite capture than outright
+astroturfing. Which is also exactly why it's worth distinguishing from
+the next one.
+
+## The Free Commerce Alliance
+
+The outright astroturf case, kept deliberately distinct from the
+Sovereignty League's genuine populism above — this corpus's rich
+corporate-cynicism toolkit (the Sol Industrial Trust, the Rockline
+Compact's suspicions, Doris) had never actually been pointed at
+"opposition" specifically until now. Reads exactly like a small-
+business/consumer-advocacy group, genuinely effective at opposing the
+Interstation Tax Compact's enforcement and the Proportionality
+Caucus's reapportionment push by dressing both up as government
+overreach — secretly funded by the Sol Industrial Trust
+(`corporations.md`). A clean, discoverable "is this group what it
+claims to be" investigation hook, not a settled reveal — nothing here
+confirms the funding trail has ever actually been exposed.
+
 ## Where the UN actually sits
 
 Three tiers, each doing a different real job rather than one capital
@@ -937,6 +988,12 @@ underneath it, not despite knowing it.
 - Whether the New International has any presence in the Belt or on
   Mars, or is strictly an Earth-internal movement — leaning toward
   "mostly Earth, with sympathizers elsewhere," but not decided.
+- Whether the New International's own open/underground tension has
+  ever actually produced a split, and whether the Free Commerce
+  Alliance's Trust funding has ever actually been exposed — both
+  deliberately left open rather than resolved.
+- No named figures for the Sovereignty League or the Free Commerce
+  Alliance yet (added to `people-pass-queue.md`).
 - No specific founding date or founding grievance has been drafted yet
   for the New International — just the name, positioning, and
   dual-mode (open political movement / clandestine network) structure.

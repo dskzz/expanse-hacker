@@ -59,7 +59,15 @@ any existing or future name that turns out just as hard to place.
   and off any fixed body (real kinetic-bombardment logic), its exact
   host ship rotated and treated as classified rather than published
   through the usual LocationChain honesty this corpus otherwise
-  holds to everywhere else.
+  holds to everywhere else. Now also: four intelligence services, not
+  one — ODS (domestic/doctrinal, "a bit fascistic," Mariner-Valley-
+  wide), MVBI (conventional federal law enforcement, deliberate
+  coup-proofing rival to ODS), MRN Intelligence out of Admiralty House
+  (external/military), and Elysium's own Brocade Guard (named for the
+  real Ming Dynasty's Jinyiwei, Cheka-style methods, a far more honest
+  fit for Elysium's Sino-Russian lineage than copying Mariner Valley's
+  own naming register) — with ODS and the Brocade Guard both claiming
+  Elysium's own ground.
 - **`mariner-valley.md`** — the capital itself: founding history (a
   dozen underground starter colonies), capability-is-authority, the
   Presidency, the Martian Congress's malapportionment problem, and
@@ -68,7 +76,13 @@ any existing or future name that turns out just as hard to place.
 ## The Belt
 
 - **`belt-political-structure.md`** — OSL/ASA and the shared
-  Anti-Solar Accord they both claim to descend from.
+  Anti-Solar Accord they both claim to descend from. Now also: OSL's
+  own seat, nominal at Ceres but actually a monthly rotating circuit
+  among notable rocks (sometimes Jupiter) — a quiet, continuous
+  rebuke of Hetman Piast's own claimed centrality, and the same
+  rotating-seat logic already used for the Three Seas bloc and Patria
+  Grande, applied to physical location instead of just who holds the
+  chair.
 - **`belter-pidgin.md`** — Rock Talk/Kamenya, the original
   constructed pidgin replacing Lang Belta. (The `Lang Belta
   2022-02-15.pdf` in this same folder is old external reference
@@ -188,7 +202,14 @@ any existing or future name that turns out just as hard to place.
   all with guarding the Fleet's own authorization systems against the
   rogue-command vulnerability — and just as plausibly the likeliest
   vector for exploiting it, captured by the four veto powers the same
-  way everything else here is. Still explicitly a work in progress.
+  way everything else here is. Now also: the opposition landscape
+rounded out beyond just the New International and Proportionality
+Caucus — the New International's own open/underground internal split
+(live tension, not yet a clean break), the Sovereignty League (the
+missing right-wing, anti-UN-integration counterpart, strongest in the
+Atlantic Zone and Three Seas bloc), and the Free Commerce Alliance
+(an outright astroturf group, secretly Sol-Industrial-Trust-funded).
+Still explicitly a work in progress.
 - **`space-law-compacts.md`** — the real maritime-law family, ported
   compact by compact: the Sol Tripartite Process (UN proposes, then
   Mars/UN/OSL negotiate — ASA structurally excluded by having no seat
@@ -237,7 +258,15 @@ any existing or future name that turns out just as hard to place.
   Patria Grande's Brazil-anchored Mercosur-descended rotating
   presidency, ASEAN and Others' consensus-bound "ASEAN Way" with
   Turkey's awkward fit, and the OIC bloc's Iran/Saudi rivalry brokered
-  by Pakistan's own neutral position).
+  by Pakistan's own neutral position). Now also: named zone-level
+  domestic opposition for each bloc, distinct from the Earth-wide
+  Sovereignty League/New International/Proportionality Caucus
+  (`earth-political-structure.md`) — the Lagos Compact (AU
+  regionalism), the Kisan Front (Bharat, real farmer-protest-grounded),
+  the Steppe Accord (Eurasian Union junior-member autonomy), the
+  Patria Front (ironic-naming Peronist opposition to Brazilian
+  dominance), and a fusion-economy "diversify now" reformist faction
+  inside the OIC bloc, kept deliberately non-sectarian.
 - **`armstrong-city.md`** — Armstrong City and Shackleton Base: the
   DC/Congress governance model, the UN's two-tier geography
   (prestige on Earth, bureaucracy on Luna), and the corporate HQ tax

@@ -39,6 +39,43 @@ meant. "Anti-Solar" works as both a literal direction (away from the
 sun) and a political identity (against inner-system/establishment
 control) — the double meaning is intentional and free, not borrowed.
 
+## OSL's own seat: nominal at Ceres, actually the Circuit
+
+OSL's formal diplomatic address is Ceres — its UN Permanent Observer
+mission's own correspondence routes there, and that's the only sense
+in which Ceres is OSL's "capital." The real governing body never
+actually settles there, or anywhere else: it runs a deliberate,
+recurring circuit, meeting at a different notable rock roughly once a
+month, occasionally extending all the way to the Jovian system. Belters
+just call it **the Circuit** — plain, functional naming, same register
+as everything else OSL does.
+
+**Why not just settle at Ceres, given it's the Belt's biggest hub:**
+because Ceres's own local government is compromised — Hetman Piast,
+"owned lock, stock, and barrel by Earth" (`ceres.md`), personally
+leveraged by Hauptmann & Voskuijlen. OSL physically refusing to
+headquarter itself there, while still using Ceres as its nominal
+address for Earth's own diplomatic convenience, is a continuous, quiet
+rebuke of Piast's claimed centrality — not a neutral administrative
+choice. It's the same rotating-seat logic already used twice elsewhere
+in this corpus (the Three Seas bloc's rotating host presidency, Patria
+Grande's rotating pro-tempore presidency, `earth-blocs.md`), just
+applied to physical location instead of only to who holds the chair —
+a real, recognized way smaller or more fractious bodies keep any one
+member's own turf from becoming the de facto center of gravity.
+
+**Regular stops worth naming, without pinning the whole itinerary:**
+Vesta, deliberately and repeatedly, despite — or because of — being
+ASA's own stronghold (`asteroid-bases.md`): OSL insisting on including
+it reads as refusing to concede the rock entirely to ASA's own
+narrative. Thisbe Station, periodically, carrying exactly the
+founding-trauma weight you'd expect. And sometimes Jupiter — most
+plausibly Callisto — which means OSL's investment in the Jovian
+sovereignty crisis, the Europa Allocation Council, and the Concord
+Settlement (`callisto.md`, `europa.md`) isn't abstract diplomatic
+interest; its own itinerant leadership physically shows up there as a
+normal part of how it governs.
+
 ## Relationship to OPRA
 
 OPRA (Operational Relay Authority) stays explicitly separate from both —

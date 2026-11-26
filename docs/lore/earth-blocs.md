@@ -34,6 +34,12 @@ in any given year. A bloc this comfortable with civilian-led technocracy
 most plausibly sends a civilian career diplomat to the Joint Military
 Council, not a soldier.
 
+**Zone-level opposition:** this is also where the Earth-wide
+Sovereignty League (`earth-political-structure.md`) is most at home as a genuine
+domestic movement, not just a cross-bloc abstraction — nativist,
+anti-further-integration, strongest exactly where the declining
+industrial cities already sit (`earth-resources-and-pressures.md`).
+
 ## The African Union
 
 The real, currently-existing AU, given centuries to actually become what
@@ -57,6 +63,15 @@ Atlantic Zone's own member nations never stopped being nations. This is
 also the bloc the Proportionality Caucus's own case rests hardest on
 (`earth-political-structure.md`) — real demographic and economic weight,
 no veto seat to show for it.
+
+**Zone-level opposition:** the old regional blocs are also where
+domestic opposition actually organizes — regionalist coalitions
+pushing for real devolved authority rather than deeper continental
+centralization. Call the leading one **the Lagos Compact**, West
+African regionalists pushing back against Addis Ababa's own
+continental center — direct real ancestor: ECOWAS-style
+sub-regionalism never actually disappearing just because the AU
+matured.
 
 ## Bharat
 
@@ -84,6 +99,16 @@ domestic politics as its foreign policy: a different governing coalition
 could plausibly answer it differently than the one that won the veto
 seat in the first place.
 
+**Zone-level opposition:** real India's actual opposition politics are
+genuinely multi-party and highly contested, and the sharpest current
+real axis is agricultural — the real 2020–21 Indian farmers' protests
+are recent enough to extrapolate directly. Call the opposition
+coalition **the Kisan Front** ("kisan," a real term already in use in
+actual Indian politics, meaning farmer) — pushing back on whatever
+food-security policy the ruling coalition pursues, a direct, current,
+well-grounded fit for the agricultural-policy axis already flagged
+above.
+
 ## The Zhongguo-descended bloc
 
 A unitary, centralized state projected forward, standalone by its own
@@ -108,6 +133,12 @@ runs on not sharing status it considers rightfully its own. Given that
 same political culture, this is the bloc most plausibly sending a
 retired general rather than a civilian to the Joint Military Council.
 
+**Zone-level opposition:** kept deliberately light and structural
+rather than invented — real organized public opposition doesn't
+really exist given the centralized character. What passes for
+opposition here is quiet elite factionalism inside the leadership
+itself over economic priorities, not a public movement with a name.
+
 ## The Three Seas-descended bloc
 
 The loosest governance of all nine, deliberately — the real,
@@ -131,6 +162,13 @@ Grande — a bloc whose formal interest and actual alignment pull in
 different directions, with no governance strong enough to resolve that
 tension even if it wanted to.
 
+**Zone-level opposition:** no new named movement needed — the
+already-established internal split does the work. Sovereignty-League-
+aligned Atlantic-leaners on one side, members wanting deeper
+Three-Seas-only integration on the other, the same "sharpest swing
+case" tension just expressed as domestic politics instead of bloc-
+level alignment.
+
 ## The Eurasian Union
 
 The real, currently-existing Eurasian Economic Union, matured: formal
@@ -148,6 +186,11 @@ Economic Union today: junior members' own genuine wariness of Russian
 dominance, persisting even while their own economies stay bound to it —
 close enough to need the arrangement, uneasy enough never to fully trust
 it.
+
+**Zone-level opposition:** that same junior-member wariness, given an
+actual name and coalition — **the Steppe Accord**, Kazakhstan/
+Armenia/Kyrgyzstan-anchored, pushing for real autonomy within the
+Union rather than exit.
 
 ## Patria Grande
 
@@ -168,6 +211,12 @@ a formal structure that insists every member is equal, the same quiet
 mismatch between paper and practice running through nearly every bloc
 in this list.
 
+**Zone-level opposition:** real Latin American politics' actual
+populist tradition, Peronism above all, is the direct ancestor. Call
+it **the Patria Front** — an ironic name, claiming to be the true
+voice of Bolívar's founding dream against what it frames as Brazilian
+dominance dressed up as regional unity, Buenos Aires-anchored.
+
 ## ASEAN and Others
 
 Southeast Asia's own real "ASEAN Way" carried forward essentially
@@ -187,6 +236,13 @@ everything the ASEAN Way was actually built to manage. Its seat on the
 seven-delegate caucus is real, but its actual standing inside the
 bloc's own consensus culture is still the unresolved question
 `earth-political-structure.md` already flags.
+
+**Zone-level opposition:** the ASEAN Way's own consensus requirement
+is a real double edge already flagged above — its domestic opposition
+is a reformist push for faster, majority-vote decision-making,
+frustrated with consensus paralysis, plus Turkey's own domestic
+factions genuinely split on whether membership is worth it at all,
+echoing its already-unresolved status.
 
 ## The OIC-descended bloc
 
@@ -212,6 +268,15 @@ its Committee of the Whole contingent are a genuine negotiation among
 all five members (plus Bangladesh and Afghanistan), not a Saudi or
 Iranian rubber stamp — which is exactly why forming one unified
 position is real, recurring work rather than a formality.
+
+**Zone-level opposition:** deliberately not sectarian — not the right
+place to invent something that could read as commentary on real
+religious politics. The sharpest live internal split instead tracks
+the bloc's own signature issue: a "diversify now" reformist faction
+arguing the bloc should invest in the fusion economy rather than
+resist it, breaking from the dominant fusion-era-anxiety posture
+(`earth-resources-and-pressures.md`) along economic lines, not
+religious ones.
 
 ## Still open
 

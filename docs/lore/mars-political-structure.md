@@ -195,6 +195,67 @@ Belt interests in the Thisbe helium-3 dispute (`thisbe-station.md`) —
 the issue that actually activates this split rather than leaving it
 as background texture.
 
+## Four intelligence services, not one
+
+Real coup-proofing logic, not an accident of bureaucratic sprawl:
+maintaining two domestic security services that can't fully trust or
+dominate each other is a classic, recognized tactic for a regime
+worried about internal plotting, and MDR's own disciplined,
+militarized culture is exactly the kind that would do this on purpose.
+
+**The Office of Doctrinal Security (ODS)** — domestic, ideological,
+Mariner-Valley-wide, and the one that earns "a bit fascistic." Mars's
+whole culture already runs on doctrinal purity (the capability-fork
+lineage literally froze at one paradigm shift and never moved past it,
+`os-lineages.md` §2) — ODS's actual job isn't catching foreign spies,
+it's catching Martians who've gone doctrinally soft: insufficient
+commitment to Martian identity, Earth or Belt sympathies, doctrinal
+backsliding. Informants, loyalty oaths, doctrinal re-education rather
+than due process for anything minor — genuinely unsettling by design,
+and Western-coalition-coded the same way Mariner Valley's own founding
+is.
+
+**The Mariner Valley Bureau of Investigation (MVBI)** — the
+conventional one: real federal law enforcement and counterintelligence,
+real crimes, real (if Mars-rigorous) process. Its whole institutional
+purpose is to be the legitimate, rule-of-law-adjacent counterweight ODS
+deliberately isn't. The two bodies share domestic turf and do not
+trust each other, by design, not by oversight failure.
+
+**MRN Intelligence** (formally the Office of Fleet Intelligence), run
+out of Admiralty House — external-facing: foreign threat assessment
+(Earth's blocs, the Belt, the UN's own Directorate of Security
+Services, `earth-political-structure.md`), and counterintelligence
+specifically within MRN's own ranks. Watches DS exactly as warily as
+DS watches Mars.
+
+**The Brocade Guard** — Elysium's own, and deliberately not a copy of
+MVBI's structure. Named for the real Ming Dynasty's **Jinyiwei
+(锦衣卫)**, an actual historical imperial secret police and palace
+guard force famous for surveillance, interrogation, and enforcing
+loyalty to the throne — the same move "Datong" already makes, a real,
+specific, honored historical term rather than an invented one, and a
+far more honest fit for Elysium's own Sino-Russian/Eurasian lineage
+than borrowing Mariner Valley's own naming register would be. Its
+operating character is the actual mashup: Jinyiwei's own imperial-
+loyalty-enforcement tradition fused with Cheka-style revolutionary
+zeal and political-commissar methods — which tracks exactly with how
+Elysium is already described (`mars-political-structure.md`, above):
+it didn't hide its authoritarian-corporatist evolution, it stopped
+performing otherwise, and the Brocade Guard is precisely the
+institution that evolution would produce.
+
+**The live friction this creates:** ODS still claims jurisdiction over
+Elysium too, since it enforces loyalty to Martian doctrine generally,
+not just to Mariner Valley specifically — meaning Elysium's own
+population answers to two very differently-coded security services at
+once, one Western-coalition-flavored and locally unaccountable (ODS),
+one Sino-Russian-flavored and actually Elysium's own (the Brocade
+Guard). Neither trusts the other, and neither can fully dismiss the
+other's claim — a concrete, institutional extension of the devolution-
+vs-central-authority tension already running through this whole file,
+not a new invented conflict.
+
 ## Fusion fuel independence: Phobos and Deimos
 
 Mars's own surface is a poor native source of helium-3 — its thin
@@ -242,3 +303,9 @@ earned independence, not an accident.
 - Whether Admiralty House's deliberately-obscured LocationChain
   practice has ever actually been compromised or spoofed — a clean,
   mechanically real hook for whenever a scenario needs one.
+- No named figures for any of the four intelligence services (ODS,
+  MVBI, MRN Intelligence, the Brocade Guard) — added to
+  `people-pass-queue.md`.
+- Whether ODS and the Brocade Guard have ever actually clashed openly
+  on Elysium's own ground, or stayed in an uneasy, unresolved
+  standoff — deliberately left open.
