@@ -225,7 +225,14 @@ any existing or future name that turns out just as hard to place.
   weight as a readaptation layover en route to Earth; and "Venusian
   birding" — real, serious microbial-astrobiology science underneath
   a romanticized popular nickname, like the Loch Ness hunt but mobile
-  across a vast shifting volume instead of one fixed lake.
+  across a vast shifting volume instead of one fixed lake. Now also:
+  Earth-Venus transit as a genuinely casual run rather than a delta-v
+  trap (comparable cost to a Mars transfer, real aerobraking/
+  aerocapture available given the thick atmosphere, a ~584-day real
+  synodic launch window), and the real cause behind the station-
+  keeping hazard — Venus's actual atmospheric super-rotation, circling
+  the whole planet in ~4-5 days versus the solid planet's 243-day
+  rotation, also giving residents a genuinely alien day/night rhythm.
 
 ## Earth
 

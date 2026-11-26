@@ -347,6 +347,46 @@ institutional backing (plausibly the UN Space Survey Directorate,
 because the real science is genuinely still open and the prize —
 actually finding it first — is enormous.
 
+## Earth-Venus transit: a casual run, close to the opposite of Mercury's
+
+**Venus is literally Earth's nearest planetary neighbor, and the
+orbital mechanics reflect that directly rather than needing a separate
+justification.** A real Hohmann-type transfer costs delta-v roughly
+comparable to a Mars transfer — nothing like Mercury's genuine trap
+(`mercury.md`) — because Venus isn't anywhere near as deep in the
+Sun's gravity well; Mercury's whole problem is cancelling an enormous
+amount of orbital velocity to fall that far in, and Venus just isn't
+that far in. Transit time runs roughly 100–150 days one-way for a
+real minimum-energy transfer, actually shorter than a typical Mars
+transfer since Venus's own transfer orbit is smaller.
+
+**Launch windows recur roughly every 584 days (~19 months)** — the
+real Earth-Venus synodic period, famously precise enough that ancient
+Mayan and Babylonian astronomers tracked it directly. Less frequent
+than Mercury's quarterly cadence, considerably more frequent than
+Mars's ~26-month cycle — a workable rhythm for an ongoing tourist and
+medical trade rather than a rare pilgrimage.
+
+**A further, genuine cost saving specific to Venus: real aerobraking/
+aerocapture is a live option here.** A ship can shed a meaningful
+chunk of its arrival velocity by dipping through the upper atmosphere
+itself rather than burning propellant for the whole capture — real
+orbital-mechanics technique, and one Mercury can't use at all given
+how little atmosphere it has. Reinforces, rather than merely
+restates, how much more casual this destination is.
+
+**A real mechanism now grounds the already-established "atmospheric
+dynamics" station-keeping hazard, rather than leaving it abstract.**
+Venus's real atmosphere super-rotates — the whole cloud layer circles
+the entire planet in only about 4–5 Earth days, dramatically faster
+than the solid planet's own glacial 243-day rotation, a genuine,
+well-documented planetary-science puzzle. That's almost certainly
+the actual cause of the station-keeping hazard, not an unrelated
+abstraction. It also means platform residents experience a genuinely
+alien day/night rhythm — swept around the entire planet every few
+days by the wind itself, nothing like Earth's 24-hour cycle or
+Venus's own absurdly slow solid-body day.
+
 ## Open threads
 
 - No company or specific administrative body named for running the
