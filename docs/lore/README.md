@@ -88,7 +88,13 @@ any existing or future name that turns out just as hard to place.
   as the clean unclaimed-by-neglect example; VPH (Vesta/Pallas/
   Hygiea, `asteroid-bases.md`) stays confirmed ASA territory in three
   real flavors, corrected here after an earlier pass mistakenly
-  treated Pallas as neutral ground.
+  treated Pallas as neutral ground. Now also: two threshold
+  ceremonies in opposite directions — "Going Down the Well" (a
+  Belter's first real trip into a gravity well, genuinely risky
+  rather than festive) and "the Line" (the Belt's own outer edge,
+  reusing real nautical terminology with a completely different
+  referent than a sailor's own Equator crossing) — with a Saturn-
+  rings ceremony logged as a future hook.
 - **`belter-pidgin.md`** — Rock Talk/Kamenya, the original
   constructed pidgin replacing Lang Belta. (The `Lang Belta
   2022-02-15.pdf` in this same folder is old external reference
@@ -178,7 +184,12 @@ any existing or future name that turns out just as hard to place.
   the dive before getting "ballasted" sunward on the way out for a
   free reaction-thrust assist; and the Corona Watch, a human
   coronagraph-watch role backing up the Parker Array's own
-  early-warning network.
+  early-warning network. Also now: why the Sunbirds are the one crew
+  with a real reason to revive old sailing-era rigging vocabulary
+  everyone else dropped, a flagged future RFC hook (a veteran
+  Sunbird's own voiced section on real solar-conjunction comms
+  blackouts), and "Diving the Furnace" as their own Crossing-the-
+  Line-style threshold ceremony.
 - **`venus.md`** — Landis Habitat(s) - Venus: real floating aerostat cities
   in the one altitude band where Venus's atmosphere is nearly Earth-
   like, using ordinary breathable air as the lifting gas. The one

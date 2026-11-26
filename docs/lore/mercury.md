@@ -439,6 +439,56 @@ solar-particle event can force sheltering for hours to over a day,
 and a ship can't afford to lose all situational awareness during
 precisely the period it needs it most.
 
+## Sunbird culture: the one crew with a real reason to talk like sailors
+
+**Everyone else in this corpus's spacefaring culture already dropped
+the nautical vocabulary that didn't survive the sailing era, and for
+a real, consistent reason, not an inconsistency to paper over.** Port,
+starboard, aft, forward, head, galley, bridge, deck all survived into
+universal modern usage — including real actual spaceflight
+terminology today — because they solve a genuinely perennial problem
+(unambiguous spatial reference) independent of whether a vessel ever
+had sails. Rigging-specific vocabulary (mast, mainsail, halyard, gaff,
+reefing) died with the technology it described: nobody needed to say
+"halyard" once no ship had a sail to trim. The same "solves a truly
+general problem, survives; solves a one-off problem, dies with the
+technology" principle already running through `os-lineages.md` §0.
+
+**The Sunbirds are the one crew in the entire setting with a genuine,
+present-tense reason to need that vocabulary back.** Not nostalgia —
+correct terminology for equipment they actually operate. The Zephyr-
+class's deployable boom structure is the mast; the lines trimming
+sail angle are halyards; adjusting the sail's angle is trimming;
+reducing sail area in a problem is reefing. A real, lived-in jargon
+rather than invented flavor, left as an open thread to grow specific
+terms as specific scenes need them rather than front-loading a full
+glossary now.
+
+**That jargon is exactly the kind of thing that would bleed into a
+technical RFC through a veteran Sunbird's own contributed section —
+and there's a real, specific, well-grounded topic that would plausibly
+draw one.** Real solar conjunction — when the Sun sits directly
+between a transmitter and receiver — is an actual, documented
+spaceflight communications problem; real Mars missions go quiet
+during conjunction blackouts today. A comms RFC or companion
+specifically addressing degraded propagation during close solar
+approach is exactly the kind of document a Sunbird would have
+hard-won, personal expertise to contribute a section to, old-timey
+rigging language bleeding through otherwise dry technical prose — the
+same "voice card" treatment already given to OPRA and Belter Creole.
+Not written yet; flagged as a strong, specific future hook rather
+than a vague one.
+
+**"Diving the Furnace" is the Sunbirds' own Crossing the Line.** Real
+navies still keep genuine threshold-crossing ceremonies today — not
+just the Equator ("Crossing the Line" itself), but separately the
+"Golden Dragon" ceremony for the International Date Line and the
+"Blue Nose" ceremony for the Arctic Circle, real, distinct, still
+practiced traditions. A Sunbird's first dive into the Furnace is the
+same function — marking the transition from green to initiated — on
+a line that's more literally dangerous to cross than any ocean
+parallel ever was.
+
 ## Open threads
 
 - No company or authority assigned to run Lawrence Station's own
@@ -452,6 +502,12 @@ precisely the period it needs it most.
 - Whether any Zephyr-class ship has ever actually had to shelter
   through a real solar-particle event mid-run, or whether the safe
   room has stayed theoretical so far — a natural, not-yet-used hook.
+- The solar-conjunction comms RFC a veteran Sunbird would plausibly
+  contribute to hasn't actually been written — flagged as a strong,
+  specific future hook, not drafted here.
+- No named figures for whoever first dove the Furnace, or for any
+  specific RFC and its own Sunbird-voiced section — added to
+  `people-pass-queue.md`.
 - No named figures — whoever leads Lawrence Station's remote
   operations team, whoever directs the Deep Ring's own research
   program, and Mars's own liaison under the research agreement, are

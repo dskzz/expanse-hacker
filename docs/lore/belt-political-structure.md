@@ -134,6 +134,36 @@ unclaimed, neither faction's politics ever found a reason to land
 there) — real variation across the Belt rather than one politics
 repeated at every station.
 
+## Two threshold ceremonies, in opposite directions
+
+Real modern navies still keep genuine threshold-crossing traditions
+today, more than one of them — the Equator ("Crossing the Line"),
+the International Date Line ("Golden Dragon"), the Arctic Circle
+("Blue Nose"). The real function underneath all of them is marking a
+notable first relative to your own normal frame of reference, which
+is exactly why Belters don't have one for entering the Belt itself —
+it's home, not a threshold. But the same logic, run in both
+directions away from that home, gives them two real ones instead.
+
+**"Going Down the Well"** — a Belter's first real trip into a
+planetary gravity well (Earth or Mars), genuinely risky rather than
+festive: sudden full-gravity exposure after a life adapted to low or
+no gravity is a real, documented spaceflight-medicine danger, not
+mere discomfort (`equipment-codex.md`'s Loadframe entry). Consistent
+with Belter culture's own dry, hardship-normalizing register (the
+"[X] be" tautology, `os-lineages.md` §11), this reads as a grim badge
+of having survived an ordeal, not a party.
+
+**"The Line"** — reusing real nautical terminology with a completely
+different referent, the same layered-reuse trick already working
+elsewhere in this corpus (Hetman/Hauptmann, `ceres.md`): where a
+sailor's Line means the Equator, a Belter's Line means the Main
+Belt's own outer edge, beyond which lies the sparser, lonelier reach
+toward Jupiter's system and beyond — already established elsewhere as
+a real step change in isolation (Lassell Relay's own four-hour
+light-lag, `lassell-relay.md`). Still a real "further than normal"
+milestone even for someone the Belt itself never threshold-marks.
+
 ## Relationship to OPRA
 
 OPRA (Operational Relay Authority) stays explicitly separate from both —
@@ -143,6 +173,12 @@ never going to rebrand into either of these; that idea is retired.
 
 ## Still open
 
+- A third threshold ceremony, marking first passage into Saturn's
+  rings, is a natural future addition once Saturn gets its own pass —
+  not built now since Saturn itself doesn't exist in this corpus yet.
+- No named figures for whoever first went Down the Well, or first
+  crossed the Line in either direction — added to
+  `people-pass-queue.md`.
 - Exactly when the split happened relative to the rest of the corpus's
   timeline (the Seven Day War / the Massacre at Thisbe Station / the
   "trickling out" RFC era) isn't pinned down yet. Matters for the eventual rename sweep:
