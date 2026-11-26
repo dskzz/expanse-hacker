@@ -487,7 +487,14 @@ just the Equator ("Crossing the Line" itself), but separately the
 practiced traditions. A Sunbird's first dive into the Furnace is the
 same function — marking the transition from green to initiated — on
 a line that's more literally dangerous to cross than any ocean
-parallel ever was.
+parallel ever was. Unlike the Belt's own home-territory pair or
+Earth's and Mars's own moon-orbit thresholds, this one belongs to no
+one's home — it's genuinely Sol-wide, any traveler's own first time
+regardless of origin, with the Sunbirds simply being the ones who do
+it as a career rather than once. **Saturn's Gate**
+(`belt-political-structure.md`) is its structural sibling at the
+opposite extreme — innermost heat, outermost cold and distance — not
+built out further until Saturn gets its own pass.
 
 ## Open threads
 

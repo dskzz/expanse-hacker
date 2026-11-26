@@ -175,11 +175,34 @@ playing several powers against each other. Three real options for
 where a company actually registers, three genuinely different
 tradeoffs, not just three names on a list.
 
+## "Leaving the Cradle": an Earth-born spacer's own threshold
+
+One of a small, growing family of real threshold-crossing ceremonies
+across this corpus (`belt-political-structure.md`'s Down the Well/
+Past the Rocks pair, `mercury.md`'s Diving the Furnace, Mars's own
+Beyond the Moons, `mars-political-structure.md`) — the same real
+function real navies still mark today (Crossing the Line, Golden
+Dragon, Blue Nose), applied to a first departure beyond Lunar orbit
+rather than a planetary one.
+
+**The name is a direct, real quote, not an invented metaphor:**
+Tsiolkovsky's own famous line, "Earth is the cradle of humanity, but
+one cannot live in a cradle forever," is already the most-reached-for
+real framing for exactly this milestone — fitting, given this corpus
+already treats Earthstock's own culture as ceremony-heavy and
+comfortable reaching for grander language than Mars's own plain,
+undecorated register ever would (`os-lineages.md` §2, §4). The same
+structural milestone, named completely differently depending on
+whose culture is doing the naming — Earth reaches for poetry, Mars
+reaches for function, Belters reach for plain physical description.
+
 ## Open threads
 
 - No specific named UN agency or bureaucratic structure for Armstrong
   City yet — the "General Assembly oversight causes agency sprawl"
   framing is established, specific agency names aren't.
+- No named figure for whoever first left the Cradle — added to
+  `people-pass-queue.md`.
 - Whether Shackleton's dissolution pressure ever actually succeeds, or
   the holdout wins out indefinitely — genuinely open, not resolved
   here on purpose.

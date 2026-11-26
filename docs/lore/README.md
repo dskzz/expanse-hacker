@@ -67,7 +67,10 @@ any existing or future name that turns out just as hard to place.
   Dynasty's imperial secret police, Cheka-style methods, a far more
   honest fit for Elysium's Sino-Russian lineage than copying Mariner
   Valley's own naming register, colloquially "the Jinis") — with ODS
-  and the Jinyiwei both claiming Elysium's own ground.
+  and the Jinyiwei both claiming Elysium's own ground. Also now:
+  "Beyond the Moons," a Mars-born spacer's own first-departure-past-
+  Phobos/Deimos threshold ceremony, named in Mars's own plain,
+  undecorated register rather than Earth's borrowed poetry.
 - **`mariner-valley.md`** — the capital itself: founding history (a
   dozen underground starter colonies), capability-is-authority, the
   Presidency, the Martian Congress's malapportionment problem, and
@@ -88,13 +91,16 @@ any existing or future name that turns out just as hard to place.
   as the clean unclaimed-by-neglect example; VPH (Vesta/Pallas/
   Hygiea, `asteroid-bases.md`) stays confirmed ASA territory in three
   real flavors, corrected here after an earlier pass mistakenly
-  treated Pallas as neutral ground. Now also: two threshold
-  ceremonies in opposite directions — "Going Down the Well" (a
-  Belter's first real trip into a gravity well, genuinely risky
-  rather than festive) and "the Line" (the Belt's own outer edge,
-  reusing real nautical terminology with a completely different
-  referent than a sailor's own Equator crossing) — with a Saturn-
-  rings ceremony logged as a future hook.
+  treated Pallas as neutral ground. Now also: "Down the Well" and
+  "Past the Rocks," the Belt's own pair of threshold ceremonies in
+  opposite directions (home has two edges when you live in the
+  middle), plus a full small family of related ceremonies tied to
+  other homes and extremes — Earth's "Leaving the Cradle"
+  (`armstrong-city.md`), Mars's "Beyond the Moons"
+  (`mars-political-structure.md`), and the two genuinely Sol-wide
+  ones belonging to no one's home, Diving the Furnace
+  (`mercury.md`) and Saturn's Gate (name only, pending Saturn's own
+  pass).
 - **`belter-pidgin.md`** — Rock Talk/Kamenya, the original
   constructed pidgin replacing Lang Belta. (The `Lang Belta
   2022-02-15.pdf` in this same folder is old external reference
@@ -343,7 +349,9 @@ any existing or future name that turns out just as hard to place.
   engineering) as the likely mechanism moving bulk regolith from
   Luna's surface mining sites up to orbit — the proven precedent
   Lawrence Station - Mercury (`mercury.md`) later reuses rather than
-  reinventing.
+  reinventing. Also now: "Leaving the Cradle," an Earth-born spacer's
+  own first-departure-beyond-Luna threshold ceremony, named directly
+  for the real Tsiolkovsky quote.
 
 ## Beyond Saturn
 

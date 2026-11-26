@@ -185,11 +185,12 @@ starts:
   Zephyr-class vessel or its commanding officer, no named Corona
   Watch stander, and no named Hauptmann & Voskuijlen liaison if that
   financing stake is ever confirmed.
-- **Threshold-ceremony firsts** (`mercury.md`, `belt-political-structure.md`)
-  — whoever first dove the Furnace, whoever first went Down the Well,
-  and whoever first crossed the Line in either direction are all
-  unnamed; so is any specific RFC and its own Sunbird-voiced section
-  on solar-conjunction comms.
+- **Threshold-ceremony firsts** (`mercury.md`, `belt-political-structure.md`,
+  `armstrong-city.md`, `mars-political-structure.md`) — whoever first
+  dove the Furnace, went Down the Well, went past the Rocks, left the
+  Cradle, went Beyond the Moons, or passed through Saturn's Gate are
+  all unnamed; so is any specific RFC and its own Sunbird-voiced
+  section on solar-conjunction comms.
 - **The Good Neighbor Understanding** (`earth-political-structure.md`)
   — no named figures on either side; whoever first publicly accuses a
   veto power of it (plausibly a Patria Front leader) is a natural

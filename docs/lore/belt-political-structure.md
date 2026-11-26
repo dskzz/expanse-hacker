@@ -145,24 +145,33 @@ is exactly why Belters don't have one for entering the Belt itself —
 it's home, not a threshold. But the same logic, run in both
 directions away from that home, gives them two real ones instead.
 
-**"Going Down the Well"** — a Belter's first real trip into a
-planetary gravity well (Earth or Mars), genuinely risky rather than
-festive: sudden full-gravity exposure after a life adapted to low or
-no gravity is a real, documented spaceflight-medicine danger, not
-mere discomfort (`equipment-codex.md`'s Loadframe entry). Consistent
-with Belter culture's own dry, hardship-normalizing register (the
-"[X] be" tautology, `os-lineages.md` §11), this reads as a grim badge
-of having survived an ordeal, not a party.
+**"Down the Well"** — a Belter's first real trip into a planetary
+gravity well (Earth or Mars), genuinely risky rather than festive:
+sudden full-gravity exposure after a life adapted to low or no
+gravity is a real, documented spaceflight-medicine danger, not mere
+discomfort (`equipment-codex.md`'s Loadframe entry). Consistent with
+Belter culture's own dry, hardship-normalizing register (the "[X] be"
+tautology, `os-lineages.md` §11), this reads as a grim badge of
+having survived an ordeal, not a party.
 
-**"The Line"** — reusing real nautical terminology with a completely
-different referent, the same layered-reuse trick already working
-elsewhere in this corpus (Hetman/Hauptmann, `ceres.md`): where a
-sailor's Line means the Equator, a Belter's Line means the Main
-Belt's own outer edge, beyond which lies the sparser, lonelier reach
-toward Jupiter's system and beyond — already established elsewhere as
-a real step change in isolation (Lassell Relay's own four-hour
-light-lag, `lassell-relay.md`). Still a real "further than normal"
-milestone even for someone the Belt itself never threshold-marks.
+**"Past the Rocks"** — plain, Belter-coded naming rather than a
+borrowed nautical term, playing on literally living among asteroids:
+leaving them behind for the sparser, lonelier reach toward Jupiter's
+system and beyond — already established elsewhere as a real step
+change in isolation (Lassell Relay's own four-hour light-lag,
+`lassell-relay.md`). Still a real "further than normal" milestone
+even for someone the Belt itself never threshold-marks.
+
+**Two more ceremonies sit outside this Belt-specific pair, each tied
+to a home territory rather than the Belt** — Earth's own "Leaving the
+Cradle" beyond Lunar orbit (`armstrong-city.md`) and Mars's own
+"Beyond the Moons" past Phobos/Deimos (`mars-political-structure.md`)
+— plus two genuinely Sol-wide ones tied to a specific extreme rather
+than anyone's home: Diving the Furnace at Mercury's perihelion
+(`mercury.md`) and **Saturn's Gate**, crossing the real heliocentric
+distance of Saturn's own orbit into the deep outer system — the
+innermost and outermost extremes of the whole set, not built out
+further until Saturn itself gets its own pass.
 
 ## Relationship to OPRA
 
@@ -173,11 +182,10 @@ never going to rebrand into either of these; that idea is retired.
 
 ## Still open
 
-- A third threshold ceremony, marking first passage into Saturn's
-  rings, is a natural future addition once Saturn gets its own pass —
-  not built now since Saturn itself doesn't exist in this corpus yet.
-- No named figures for whoever first went Down the Well, or first
-  crossed the Line in either direction — added to
+- Saturn's Gate stays a name only, not built out further, until
+  Saturn itself gets its own pass.
+- No named figures for whoever first went Down the Well, past the
+  Rocks, through Saturn's Gate, or Diving the Furnace — added to
   `people-pass-queue.md`.
 - Exactly when the split happened relative to the rest of the corpus's
   timeline (the Seven Day War / the Massacre at Thisbe Station / the

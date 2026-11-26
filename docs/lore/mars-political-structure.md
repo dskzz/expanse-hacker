@@ -289,6 +289,20 @@ relationship with Earth would have prioritized early. Mars isn't
 vulnerable to an Earth fuel chokehold the way it might otherwise be —
 earned independence, not an accident.
 
+## "Beyond the Moons": a Mars-born spacer's own threshold
+
+Mars's own entry in a small, growing family of real threshold-
+crossing ceremonies across this corpus (`belt-political-structure.md`'s
+Down the Well/Past the Rocks pair, `mercury.md`'s Diving the Furnace,
+Earth's own Leaving the Cradle, `armstrong-city.md`) — a first
+departure past Phobos and Deimos, the same structural milestone
+Earth marks with a borrowed Tsiolkovsky quote, named here in Mars's
+own plain, undecorated register instead (`os-lineages.md` §2, §4):
+no poetry, just the physical fact of what's been cleared. The same
+contrast already running through everything else distinguishing
+Earthstock's ceremony-heavy culture from Mars's doctrinal one, just
+showing up in a threshold ceremony instead of a root-of-trust model.
+
 ## Still open
 
 - Exact unification date relative to the rest of the corpus's timeline
@@ -308,6 +322,8 @@ earned independence, not an accident.
   whoever actually knows which ship holds it this rotation, and
   whether that knowledge is itself compartmentalized even within the
   MRN, are all open (added to `people-pass-queue.md`).
+- No named figure for whoever first went Beyond the Moons — added to
+  `people-pass-queue.md`.
 - Whether Admiralty House's deliberately-obscured LocationChain
   practice has ever actually been compromised or spoofed — a clean,
   mechanically real hook for whenever a scenario needs one.
