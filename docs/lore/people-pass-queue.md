@@ -163,8 +163,8 @@ starts:
   Station's helium-3 program or ASA's fissile-material status
   covertly is a natural future figure.
 - **Mars's four intelligence services** (`mars-political-structure.md`)
-  — no named head for ODS, MVBI, MRN Intelligence, or the Brocade
-  Guard.
+  — no named head for ODS, MVBI, MRN Intelligence, or the
+  Jinyiwei.
 - **OSL's Circuit** (`belt-political-structure.md`) — whoever actually
   leads OSL's own governing body as it rotates stop to stop is still
   unnamed.

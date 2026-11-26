@@ -63,11 +63,11 @@ any existing or future name that turns out just as hard to place.
   one — ODS (domestic/doctrinal, "a bit fascistic," Mariner-Valley-
   wide), MVBI (conventional federal law enforcement, deliberate
   coup-proofing rival to ODS), MRN Intelligence out of Admiralty House
-  (external/military), and Elysium's own Brocade Guard (named for the
-  real Ming Dynasty's Jinyiwei, Cheka-style methods, a far more honest
-  fit for Elysium's Sino-Russian lineage than copying Mariner Valley's
-  own naming register) — with ODS and the Brocade Guard both claiming
-  Elysium's own ground.
+  (external/military), and Elysium's own Jinyiwei (the real Ming
+  Dynasty's imperial secret police, Cheka-style methods, a far more
+  honest fit for Elysium's Sino-Russian lineage than copying Mariner
+  Valley's own naming register) — with ODS and the Jinyiwei both
+  claiming Elysium's own ground.
 - **`mariner-valley.md`** — the capital itself: founding history (a
   dozen underground starter colonies), capability-is-authority, the
   Presidency, the Martian Congress's malapportionment problem, and

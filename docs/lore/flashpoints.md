@@ -186,13 +186,13 @@ political consensus by finding one cached credential instead. Nothing
 confirms this has ever actually been exploited — deliberately left
 open as the sharpest mechanically-real hook this whole pass produced.
 
-### ODS versus the Brocade Guard on Elysium's own ground
+### ODS versus the Jinyiwei on Elysium's own ground
 
 Home file: `mars-political-structure.md`. A concrete, institutional
 extension of Elysium's devolution friction with MDR, not a new
 invented conflict: Mariner Valley's Office of Doctrinal Security
-claims jurisdiction over Elysium alongside Elysium's own Brocade
-Guard, two very differently-coded security services (Western-
+claims jurisdiction over Elysium alongside Elysium's own Jinyiwei,
+two very differently-coded security services (Western-
 coalition-flavored versus Sino-Russian-flavored) both operating on the
 same ground, neither trusting the other, neither able to fully
 dismiss the other's claim. Live and unresolved — nothing confirms

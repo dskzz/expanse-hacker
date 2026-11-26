@@ -229,29 +229,31 @@ Services, `earth-political-structure.md`), and counterintelligence
 specifically within MRN's own ranks. Watches DS exactly as warily as
 DS watches Mars.
 
-**The Brocade Guard** — Elysium's own, and deliberately not a copy of
-MVBI's structure. Named for the real Ming Dynasty's **Jinyiwei
-(锦衣卫)**, an actual historical imperial secret police and palace
+**The Jinyiwei (锦衣卫)** — Elysium's own, and deliberately not a copy
+of MVBI's structure. Named directly for the real Ming Dynasty
+institution, an actual historical imperial secret police and palace
 guard force famous for surveillance, interrogation, and enforcing
-loyalty to the throne — the same move "Datong" already makes, a real,
+loyalty to the throne, sometimes rendered in English as "the Brocade
+Guard" but kept here in its own real name for the sharper, more
+ominous edge — the same move "Datong" already makes, a real,
 specific, honored historical term rather than an invented one, and a
 far more honest fit for Elysium's own Sino-Russian/Eurasian lineage
 than borrowing Mariner Valley's own naming register would be. Its
-operating character is the actual mashup: Jinyiwei's own imperial-
+operating character is the actual mashup: the Jinyiwei's own imperial-
 loyalty-enforcement tradition fused with Cheka-style revolutionary
 zeal and political-commissar methods — which tracks exactly with how
 Elysium is already described (`mars-political-structure.md`, above):
 it didn't hide its authoritarian-corporatist evolution, it stopped
-performing otherwise, and the Brocade Guard is precisely the
-institution that evolution would produce.
+performing otherwise, and the Jinyiwei is precisely the institution
+that evolution would produce.
 
 **The live friction this creates:** ODS still claims jurisdiction over
 Elysium too, since it enforces loyalty to Martian doctrine generally,
 not just to Mariner Valley specifically — meaning Elysium's own
 population answers to two very differently-coded security services at
 once, one Western-coalition-flavored and locally unaccountable (ODS),
-one Sino-Russian-flavored and actually Elysium's own (the Brocade
-Guard). Neither trusts the other, and neither can fully dismiss the
+one Sino-Russian-flavored and actually Elysium's own (the
+Jinyiwei). Neither trusts the other, and neither can fully dismiss the
 other's claim — a concrete, institutional extension of the devolution-
 vs-central-authority tension already running through this whole file,
 not a new invented conflict.
@@ -304,8 +306,8 @@ earned independence, not an accident.
   practice has ever actually been compromised or spoofed — a clean,
   mechanically real hook for whenever a scenario needs one.
 - No named figures for any of the four intelligence services (ODS,
-  MVBI, MRN Intelligence, the Brocade Guard) — added to
+  MVBI, MRN Intelligence, the Jinyiwei) — added to
   `people-pass-queue.md`.
-- Whether ODS and the Brocade Guard have ever actually clashed openly
+- Whether ODS and the Jinyiwei have ever actually clashed openly
   on Elysium's own ground, or stayed in an uneasy, unresolved
   standoff — deliberately left open.
