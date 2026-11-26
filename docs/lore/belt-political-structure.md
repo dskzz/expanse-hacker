@@ -76,6 +76,64 @@ Settlement (`callisto.md`, `europa.md`) isn't abstract diplomatic
 interest; its own itinerant leadership physically shows up there as a
 normal part of how it governs.
 
+## A third axis: "unclaimed"
+
+OSL and ASA are a binary, but not every station or person in the
+Belt actually sits inside it — and unlike Earth, where a third
+ideological axis meant standing up new organizations (the Sovereignty
+League, the Free Commerce Alliance, `earth-political-structure.md`),
+the consistent move here is different, because it has to be: an
+organized third faction would contradict the thing it's trying to
+express. **"Unclaimed"** is real salvage-law vocabulary
+(`space-law-compacts.md`) borrowed for political standing instead of
+property — a station or person who flies neither League nor Alliance
+colors, by choice or by circumstance. No faction's flag, for better
+and worse: no formal backing from either side if trouble comes, and
+no obligations to either side either.
+
+**Deliberately not a standing organization**, consistent with the
+same "ancap in networking" character already established for SolNet
+itself (`os-lineages.md` §12) — a political structure claiming to
+speak for the unclaimed would defeat the point. It can still coalesce
+informally around one moment or one station without ever becoming
+permanent, the same way SolNet's own minimal, unenforceable standards
+never needed a standing authority to work.
+
+**Two genuinely different flavors of unclaimed, not one:** chosen
+unclaimed status, a deliberate rejection of both factions' claims to
+speak for the Belt — and unclaimed by simple remove, where neither
+faction has ever bothered to show up in the first place. **Davida**
+(`asteroid-bases.md`) is the clean example of the second kind:
+already established as "genuinely ordinary... no distinctive
+political character," which is exactly what unclaimed-by-neglect
+actually looks like on the ground — not a principled rejection of
+OSL and ASA, just a rock nobody's politics ever found a reason to
+reach.
+
+**Correction worth stating plainly: Pallas is not that example, and
+an earlier pass here got this wrong before catching it.** Pallas,
+Vesta, and Hygiea (VPH, `asteroid-bases.md`) are all already
+established as ASA territory, not neutral ground — Vesta organized
+and angry, Pallas quiet and self-reliant ("arguably the closest thing
+in the Belt to genuine ASA self-governance in practice"), Hygiea
+quietest and most overlooked. Pallas's own real orbital inclination
+(~34° off the main belt's plane) is already doing real work in
+`asteroid-bases.md` — it's *why* Pallas never drew flagship
+investment and became the stepchild of the three, not evidence that
+neither faction reached it. Worth being honest about the correction
+rather than quietly fixing it: VPH stays ASA's territory in three
+real flavors; Davida does the unclaimed-by-neglect work instead.
+
+**Placed together, the Belt's own station-level map reads as a real
+spread rather than one flat "the Belt opposes Earth" story:** Ceres
+(Imara Oduya's "Ceres for Belters," OSL-aligned reform, `ceres.md`),
+Vesta (organized worker councils, ASA's angriest cell,
+`asteroid-bases.md`), Pallas and Hygiea (quieter ASA territory, two
+different flavors of the same alignment), and Davida (genuinely
+unclaimed, neither faction's politics ever found a reason to land
+there) — real variation across the Belt rather than one politics
+repeated at every station.
+
 ## Relationship to OPRA
 
 OPRA (Operational Relay Authority) stays explicitly separate from both —

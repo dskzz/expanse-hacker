@@ -187,14 +187,46 @@ cooperative's own leadership — the exact corruption it was built to
 avoid, approached from a different direction than Animal Farm's
 internal betrayal, but a live risk all the same?
 
+## The cooperative isn't one voice on the discovery — a real three-way split
+
+Resolving part of the open question above, not the whole thing: the
+helium-3 find doesn't land on a unified leadership with one plan, it
+lands on a cooperative that disagrees with itself, a real internal
+opposition dynamic rather than Thisbe speaking as one voice for the
+first time in this corpus.
+
+- **A develop-carefully faction** wants to work the discovery slowly,
+  on the cooperative's own terms, specifically to build the kind of
+  real leverage Mars built with Phobos and Deimos (above) — autonomy
+  through fuel independence, not a quick payout.
+- **A keep-it-hidden faction** wants the opposite: the discovery kept
+  as quiet as possible, specifically to avoid drawing exactly the
+  outside attention already built into this corpus — the UN Nuclear
+  Safeguards Directorate's own fuel-cycle inspection regime and the
+  OIC bloc's fusion-era anxiety (`space-law-compacts.md`,
+  `earth-resources-and-pressures.md`) both have a real, concrete
+  reason to come looking the moment Thisbe's helium-3 becomes
+  official rather than rumored.
+- **A cash-out faction** wants to sell the leverage for maximum
+  immediate material gain, politics aside — the cooperative's
+  chronic underinvestment and underemployment (above) make this
+  faction's appeal genuinely sympathetic, not cynical for its own
+  sake.
+
+None of the three has named leadership yet, and none has won — a live
+split, not a resolved internal debate, sitting underneath the
+already-established three-way external pressure (UN/OSL/ASA/MDR)
+above it.
+
 ## Open threads
 
 - Whether any specific Trust member or inner-system finance house has
   a named role in the historical squeeze, or whether it stays
   deliberately diffuse/structural the way the Rockline Compact's own
   suspicion of the Trust does.
-- Who currently leads the cooperative, and what they actually decide
-  to do with the helium-3 discovery — not named or decided.
+- No named figures for any of the three internal factions above, or
+  for whoever currently holds nominal leadership while they contest
+  it — added to `people-pass-queue.md`.
 - Whether the New International has any live, present-day
   relationship with Thisbe, or whether the connection is purely
   historical origin with no current contact.

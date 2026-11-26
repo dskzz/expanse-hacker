@@ -82,7 +82,13 @@ any existing or future name that turns out just as hard to place.
   rebuke of Hetman Piast's own claimed centrality, and the same
   rotating-seat logic already used for the Three Seas bloc and Patria
   Grande, applied to physical location instead of just who holds the
-  chair.
+  chair. Also now: a third axis beyond OSL/ASA, "unclaimed" — real
+  salvage-law vocabulary borrowed for political standing, not a
+  standing organization (that would defeat the point), with Davida
+  as the clean unclaimed-by-neglect example; VPH (Vesta/Pallas/
+  Hygiea, `asteroid-bases.md`) stays confirmed ASA territory in three
+  real flavors, corrected here after an earlier pass mistakenly
+  treated Pallas as neutral ground.
 - **`belter-pidgin.md`** — Rock Talk/Kamenya, the original
   constructed pidgin replacing Lang Belta. (The `Lang Belta
   2022-02-15.pdf` in this same folder is old external reference
@@ -92,7 +98,11 @@ any existing or future name that turns out just as hard to place.
   Magnate class, and Imara Oduya's opposition.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
-  stalemate, and the live, unresolved helium-3 crisis.
+  stalemate, and the live, unresolved helium-3 crisis. Now also: the
+  cooperative's own internal three-way split over what to do with the
+  discovery (develop-carefully, keep-it-hidden, cash-out), a real
+  internal opposition dynamic underneath the already-established
+  external UN/OSL/ASA/MDR pressure.
 - **`slayton-construction-yards.md`** — the deliberate, better-
   reasoned replacement for Expanse's Tycho Station: a real Kirkwood
   gap siting, an early corporate-by-necessity founding, and the
@@ -129,14 +139,26 @@ any existing or future name that turns out just as hard to place.
   by Mercury's own permanently-shadowed craters, paired with
   exceptional solar collection from the same planet's extreme flux.
   Automated for a fourth distinct reason beyond everywhere else built
-  so far — brutal thermal cycling, not radiation or light-lag.
+  so far — brutal thermal cycling, not radiation or light-lag. Now
+  also: why that solar power doesn't get exported as power (real
+  energy-density economics, the same logic that keeps aluminum
+  smelting near cheap hydro power) — instead it runs the Deep Ring,
+  an underground particle-accelerator complex fed by the Parker
+  Array on a nearby "peak of eternal light" ridge, under old Earth
+  university consortia with a formal Mars research agreement tied to
+  MDR's own fusion-fuel-independence program.
 - **`venus.md`** — Landis Habitat(s) - Venus: real floating aerostat cities
   in the one altitude band where Venus's atmosphere is nearly Earth-
   like, using ordinary breathable air as the lifting gas. The one
   genuinely pleasant place in the whole corpus — atmospheric/
   biosignature research (the real, still-disputed phosphine question)
   alongside a luxury wellness destination, with altitude-keeping as
-  the actual hazard instead of survival.
+  the actual hazard instead of survival. Now also: a genuine cluster
+  of three habitats, not one, with a real class divide between
+  wealthy guests and the maintenance crew (plausibly Atlantic Zone
+  labor migrants) doing the actually dangerous buoyancy/station-
+  keeping work, and governance split between the UN Space Survey
+  Directorate (research) and Off-World Development (the resort side).
 
 ## Earth
 
@@ -383,12 +405,15 @@ Still explicitly a work in progress.
   atmosphere — motivated directly by Lunar resource depletion
   (`flashpoints.md`), the one reservoir big enough to actually solve
   that crisis, decades before the energy economics might ever work.
-- **`corporations.md`** — the full corporate landscape: 38 sectors,
-  ~50 companies, the Sol Industrial Trust, the Rockline Compact, the
+- **`corporations.md`** — the full corporate landscape: 39 sectors,
+  ~50+ companies, the Sol Industrial Trust, the Rockline Compact, the
   passive giants (Bedrock/Longview), credit raters, hidden ownership,
-  Doris (the flag-of-convenience jurisdiction), and — newest —
-  hospitality & entertainment, Callisto's Emporium Zone casino
-  operators.
+  Doris (the flag-of-convenience jurisdiction), hospitality &
+  entertainment (Callisto's Emporium Zone casino operators), and —
+  newest — textiles & advanced fabrics: Verdant Loom (Ganymede,
+  grown out of its agricultural program, genuinely better space-
+  relevant tech) versus Albion Weave (Earth, old Atlantic Zone
+  capital winning on market power rather than product).
 
 ## Open threads worth knowing about before adding more
 

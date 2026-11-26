@@ -15,12 +15,15 @@ of nominally-separate players who either genuinely compete or quietly
 agree not to.
 
 What follows is the full result of mapping that out properly: a
-38-sector taxonomy loosely checked against the real GICS sector
+39-sector taxonomy loosely checked against the real GICS sector
 standard (hospitality & entertainment added 2026-11-25 once Callisto's
-Emporium Zone needed it, `callisto.md`), a ~50-company roster against
-it, home locations (Earth, Mars, Belt, Ganymede, Callisto, or a joint
-venture between two), and one dominant cartel sitting on top of all
-of it.
+Emporium Zone needed it, `callisto.md`; textiles & advanced fabrics
+added the same way once Ganymede's agricultural program and this
+corpus's own technical-fabric needs — radiation shielding, pressure
+garments, Loadframe-compatible wearables — made the gap obvious), a
+~50-company roster against it, home locations (Earth, Mars, Belt,
+Ganymede, Callisto, or a joint venture between two), and one dominant
+cartel sitting on top of all of it.
 
 ## Sector taxonomy
 
@@ -57,6 +60,7 @@ detention infrastructure
 
 **Consumer goods & retail:** consumer staples/mass manufacture ·
 retail/distribution · hospitality & entertainment (hoteliers, casinos)
+· textiles & advanced fabrics
 
 **Reclamation:** salvage, recycling & waste management
 
@@ -621,6 +625,8 @@ a scenario needs one.
 | Tradewind Leisure | Hospitality & entertainment (rival) | Callisto | Grew directly out of JTA merchant money diversifying into the Strip once the Emporium Zone opened — free trade's own hospitality wing |
 | Nova Court | Hospitality & entertainment (rival) | Callisto | Looks fully independent. Isn't — see Hidden ownership below |
 | Four Moons Hospitality | Hospitality & entertainment (rival) | Callisto | The name reads as "the four Galilean moons" to anyone who doesn't look closer — convenient camouflage, since it's actually a coalition of clans from the four irregular-moon families (`jovian-irregular-moons.md`) pooling resources for a real foothold at Concord. Operates under the Concord Assembly's rival license rather than the JDC's official one, the live test case for whether the Assembly's authority actually holds up in practice |
+| Verdant Loom | Textiles & advanced fabrics | Ganymede | Grew directly out of Ganymede's own agricultural program (`ganymede-condominium.md`) — bio-engineered and agricultural-byproduct fibers, including real technical/performance fabrics (radiation shielding, pressure-garment material, Loadframe-compatible wearables, `equipment-codex.md`), not just clothes. The disruptive upstart with genuinely better space-relevant tech |
+| Albion Weave | Textiles & advanced fabrics (rival) | Earth | Old-money heritage industry, Atlantic Zone-coded — the entrenched incumbent Verdant Loom is actually disrupting: real industrial-revolution-era textile capital, slower to innovate, leaning on market power and old contracts rather than better fabric |
 
 ## Regulatory arbitrage: Doris
 

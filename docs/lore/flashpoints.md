@@ -186,6 +186,16 @@ political consensus by finding one cached credential instead. Nothing
 confirms this has ever actually been exploited — deliberately left
 open as the sharpest mechanically-real hook this whole pass produced.
 
+### Verdant Loom versus Albion Weave
+
+Home file: `corporations.md`. A real-market instance of "formal
+legitimacy vs. real power," not a boardroom rivalry invented for its
+own sake: Verdant Loom's Ganymede-grown technical fabrics are
+genuinely better for space-relevant use than anything Albion Weave's
+old Atlantic Zone capital produces, and Albion Weave is winning on
+market power and old contracts anyway. Live and ongoing, outcome
+undecided.
+
 ### ODS versus the Jinyiwei on Elysium's own ground
 
 Home file: `mars-political-structure.md`. A concrete, institutional

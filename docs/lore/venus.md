@@ -80,13 +80,59 @@ atmospheric dynamics, toward the crushing heat below or the thinner,
 colder air above. A station-keeping problem, not a shielding one —
 genuinely different engineering from everywhere else built so far.
 
+## A cluster, not one habitat — and genuinely class-stratified
+
+The name was already plural; this is the follow-through. Three
+distinct habitats rather than one: a luxury-wellness habitat for
+Earth's wealthy, close enough, comfortable enough, and spectacular
+enough that it needs no competing pitch against Saturn's own eventual
+resort angle; a research habitat working the phosphine question and
+broader atmospheric chemistry; and a working habitat housing the
+maintenance crew actually doing the dangerous work — buoyancy
+control, hull integrity, tethering between habitats.
+
+**That maintenance crew is a direct, physical expression of
+inequality already built elsewhere in this corpus, not a new
+invention.** Plausibly recruited heavily from the Atlantic Zone's own
+declining industrial cities (`earth-resources-and-pressures.md`) —
+genuinely hazardous off-world labor taken specifically because home
+doesn't offer much better. Old money's wealth not reaching the people
+living near it is already an established Atlantic Zone theme; Venus
+gives it an actual physical address, guests in one habitat and the
+people keeping them aloft in another.
+
+**Altitude-keeping's real stakes, stated plainly rather than left
+implicit:** there is no safe fallback. Losing buoyancy control doesn't
+mean an emergency descent to some tolerable lower altitude — the
+atmosphere below the cloud deck is as lethal as the surface. A
+genuinely different failure shape from Io's radiation or Mercury's
+thermal cycling: those are constant hazards to be shielded against;
+this is a single structural failure with no partial-survival outcome.
+
+**The phosphine question stays genuinely unresolved, with a cynical
+edge worth keeping:** an ambiguous, headline-grabbing result plausibly
+draws more research funding and tourist curiosity than a boring
+definitive answer would — a quiet, structural incentive for nobody in
+particular to actually want it settled. If it were ever confirmed, it
+would trigger real planetary-protection obligations — the actual,
+currently-existing COSPAR planetary protection framework is directly
+adaptable here, a live institutional question nobody's had to answer.
+
+**Governance splits the same way science and commerce already split
+elsewhere in this corpus:** the UN Space Survey Directorate
+(`earth-political-structure.md`) oversees the research side; Off-World
+Development oversees the resort/economic side — the same two-headed
+tension already visible between OPRA and political bodies, not a new
+mechanic invented for Venus specifically.
+
 ## Open threads
 
 - No company or specific administrative body named for running the
-  Landis habitats — deferred.
+  maintenance/working habitat specifically — deferred.
 - Whether the phosphine question has actually been answered
   in-universe, or stays a live, unresolved mystery indefinitely —
   deliberately left open, matching its real-world status.
 - No named figures — whoever leads the atmospheric research program,
-  and whoever administers the wellness/resort side, are natural
-  future roles (added to `people-pass-queue.md`).
+  whoever administers the wellness/resort side, and whoever actually
+  runs the maintenance crew's own working habitat, are natural future
+  roles (added to `people-pass-queue.md`).

@@ -53,19 +53,19 @@ compact exactly as written; no separate treaty needed for that case.
 **The founding incident:** the colony transport *Amaranth*, Mars-bound,
 suffers a reactor/life-support casualty mid-transit and transmits
 genuine distress. A nearby independent bulk hauler — remembered to
-history only by its own ship's name, the *Ondine* — detects the
+history only by its own ship's name, the *Solace* — detects the
 signal, and its master calculates that diverting would blow a
 penalty-laden delivery contract and burn propellant margin they
-weren't confident they could spare. The *Ondine*'s own log officially
+weren't confident they could spare. The *Solace*'s own log officially
 flags the signal "unconfirmed, low-confidence" and holds course. By
 the time a second, more distant ship answers, most of the *Amaranth*'s
-complement is dead. The *Ondine*'s own flight recorder survives and
+complement is dead. The *Solace*'s own flight recorder survives and
 gets subpoenaed — this corpus's "logs are testimony, not truth" theme
 (`os-lineages.md`) applying two centuries before SolNet even existed —
 showing the crew knew the signal was real and chose the schedule
 anyway. Public outrage forces the UN to codify a hard legal duty
 rather than a professional courtesy. The hauler's owning company is
-bankrupted by the resulting liability; "doing an *Ondine*" is a clean,
+bankrupted by the resulting liability; "doing a *Solace*" is a clean,
 usable in-universe idiom for coldly calculating a life against a
 schedule and choosing the schedule.
 
@@ -81,7 +81,7 @@ one genuinely harder, space-specific addition):
   power, or life-support reserve to secure its own safe return. Open
   ocean, a diversion is almost always survivable with enough fuel and
   patience; in space it can be an irreversible commitment with no
-  do-over. This is the exception the *Ondine*'s master should have
+  do-over. This is the exception the *Solace*'s master should have
   been able to invoke honestly and didn't — the record showed they had
   the margin and lied about it.
 - **The refusal exception** (real, direct): a master can't have
@@ -368,7 +368,7 @@ invented flaw:**
 - No named figures anywhere in this file (added to
   `people-pass-queue.md`): the UN Nuclear Safeguards Directorate's own
   head and inspectors, any major marine insurance underwriter or P&I
-  club, the *Ondine*'s own master and owning company, any Freedom of
+  club, the *Solace*'s own master and owning company, any Freedom of
   Transit dispute's named parties.
 - Whether the Non-Proliferation Agreement's fuel-cycle inspection
   regime has ever actually been applied to Thisbe Station, and what

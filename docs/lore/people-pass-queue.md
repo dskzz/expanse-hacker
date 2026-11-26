@@ -168,6 +168,18 @@ starts:
 - **OSL's Circuit** (`belt-political-structure.md`) — whoever actually
   leads OSL's own governing body as it rotates stop to stop is still
   unnamed.
+- **Thisbe Station's three internal factions** (`thisbe-station.md`)
+  — the develop-carefully, keep-it-hidden, and cash-out factions all
+  lack named leadership, as does whoever currently holds nominal
+  leadership while they contest it.
+- **Lawrence Station's Deep Ring and Parker Array** (`mercury.md`) —
+  no named research director, remote-operations lead, or Mars liaison
+  under the research agreement.
+- **Venus's habitat cluster** (`venus.md`) — no named lead for the
+  atmospheric research program, the wellness/resort side, or the
+  maintenance crew's own working habitat.
+- **Verdant Loom and Albion Weave** (`corporations.md`) — no named
+  executives for either.
 - **The Sovereignty League and the Free Commerce Alliance**
   (`earth-political-structure.md`) — no named leadership for either.
 - **Zone-level opposition leadership** (`earth-blocs.md`) — the Lagos
@@ -178,7 +190,7 @@ starts:
   — no named head or inspectors yet.
 - **Marine insurance underwriters and P&I clubs** (`space-law-compacts.md`)
   — no named major underwriter on the Earth/UN side yet.
-- **The *Ondine*'s master and owning company** (`space-law-compacts.md`)
+- **The *Solace*'s master and owning company** (`space-law-compacts.md`)
   — the ship's own name is the lasting historical shorthand; the
   people responsible are still unnamed.
 - **Each bloc's own domestic party leadership tied to its pet-issue
