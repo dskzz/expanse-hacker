@@ -186,6 +186,19 @@ political consensus by finding one cached credential instead. Nothing
 confirms this has ever actually been exploited — deliberately left
 open as the sharpest mechanically-real hook this whole pass produced.
 
+### The Patria Front versus the Good Neighbor Understanding
+
+Home file: `earth-political-structure.md`. An informal, deliberately
+unwritten norm among the four veto powers — none of them will admit
+to it on paper, the same way the Sol Industrial Trust's own collusion
+stays suspected rather than proven — but the Patria Front doesn't need
+a signed document to name what it sees: the Atlantic Zone's own
+regional primacy over Patria Grande, dressed in cooperative-sounding
+language the same way the real Good Neighbor Policy softened the
+Monroe Doctrine's own teeth without changing what it actually meant.
+Live and unresolved, aimed at a different target than the Patria
+Front's own rivalry with Brazilian dominance, not a restatement of it.
+
 ### Verdant Loom versus Albion Weave
 
 Home file: `corporations.md`. A real-market instance of "formal

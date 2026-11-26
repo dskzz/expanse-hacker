@@ -158,7 +158,14 @@ any existing or future name that turns out just as hard to place.
   not the trip itself; and why a Mercury-bound ship needs its own
   dedicated thermal/radiation outfitting (sunshades, oversized
   radiators, a flare/CME storm shelter, with the Parker Array
-  doubling as early-warning infrastructure).
+  doubling as early-warning infrastructure). Now also: the Mercury
+  Run gets its own Earthstock-exclusive merchant house, Perihelion
+  Traders, running sail-assisted Zephyr-class haulers
+  (`ship-class-codex.md`) crewed by the Sunbirds on 6-months-on/
+  3-off dosimetry-driven rotations through "the Furnace" — the real
+  tea-clipper trade as direct ancestor, real solar-sail physics
+  (outbound direct thrust, inbound angled angular-momentum-shedding),
+  and real rocket-equation limits on what fusion drives actually buy.
 - **`venus.md`** — Landis Habitat(s) - Venus: real floating aerostat cities
   in the one altitude band where Venus's atmosphere is nearly Earth-
   like, using ordinary breathable air as the lifting gas. The one
@@ -237,13 +244,17 @@ any existing or future name that turns out just as hard to place.
   rogue-command vulnerability — and just as plausibly the likeliest
   vector for exploiting it, captured by the four veto powers the same
   way everything else here is. Now also: the opposition landscape
-rounded out beyond just the New International and Proportionality
-Caucus — the New International's own open/underground internal split
-(live tension, not yet a clean break), the Sovereignty League (the
-missing right-wing, anti-UN-integration counterpart, strongest in the
-Atlantic Zone and Three Seas bloc), and the Free Commerce Alliance
-(an outright astroturf group, secretly Sol-Industrial-Trust-funded).
-Still explicitly a work in progress.
+  rounded out beyond just the New International and Proportionality
+  Caucus — the New International's own open/underground internal split
+  (live tension, not yet a clean break), the Sovereignty League (the
+  missing right-wing, anti-UN-integration counterpart, strongest in the
+  Atlantic Zone and Three Seas bloc), and the Free Commerce Alliance
+  (an outright astroturf group, secretly Sol-Industrial-Trust-funded).
+  Also now: the Good Neighbor Understanding, an informal, unwritten
+  spheres-of-influence norm among all four veto powers (the real
+  Monroe Doctrine/Good Neighbor Policy as direct ancestor), giving the
+  Patria Front a second, sharper grievance beyond Brazilian dominance
+  (`earth-blocs.md`). Still explicitly a work in progress.
 - **`space-law-compacts.md`** — the real maritime-law family, ported
   compact by compact: the Sol Tripartite Process (UN proposes, then
   Mars/UN/OSL negotiate — ASA structurally excluded by having no seat
@@ -408,10 +419,12 @@ Still explicitly a work in progress.
   genuine medical necessity for anyone long-adapted to low gravity
   visiting somewhere like Earth.
 - **`ship-class-codex.md`** — the same idea for named ship classes.
-  First entry: Mars's Ballista-class precision-bombardment ships,
-  alongside the UN's own deliberate, logged absence of an equivalent
-  — refining a kinetic deterrent into an actual weapon system would
-  undercut the "unthinkable last resort" logic it depends on.
+  Mars's Ballista-class precision-bombardment ships, alongside the
+  UN's own deliberate, logged absence of an equivalent — refining a
+  kinetic deterrent into an actual weapon system would undercut the
+  "unthinkable last resort" logic it depends on. Now also: the
+  Zephyr-class, Perihelion Traders' sail-assisted fusion haulers for
+  the Mercury Run, crewed by the Sunbirds (`mercury.md`).
 
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
@@ -429,7 +442,9 @@ Still explicitly a work in progress.
   newest — textiles & advanced fabrics: Verdant Loom (Ganymede,
   grown out of its agricultural program, genuinely better space-
   relevant tech) versus Albion Weave (Earth, old Atlantic Zone
-  capital winning on market power rather than product).
+  capital winning on market power rather than product). Also now:
+  Perihelion Traders, the Mercury Run's own Earthstock-exclusive
+  merchant house (`mercury.md`, `ship-class-codex.md`).
 
 ## Open threads worth knowing about before adding more
 

@@ -255,6 +255,44 @@ sympathy for reform), but culturally and historically closer to the
 Atlantic Zone's own orientation than to the African Union or Patria
 Grande — torn between its formal interest and its actual alignment.
 
+## The Good Neighbor Understanding
+
+**The real precedent isn't the Marshall Plan — it's the Monroe
+Doctrine, softened into the Good Neighbor Policy's own friendlier
+branding**, both genuine, real US foreign-policy history: the 1823
+Monroe Doctrine's blunt "this hemisphere is ours, stay out," later
+dressed up in the 1930s as cooperative-sounding rhetoric while the
+underlying primacy stayed intact. The same "friendly name for a
+power-political reality" move running through everything else in this
+corpus (the Mariner Valley Caucus, the Sol Industrial Trust's own
+name).
+
+**Generalized across all four veto powers, not kept as one bloc's
+privilege** — the same symmetry every other great-power mechanic here
+already applies evenly: an informal, deliberately *unwritten* norm,
+not a signed treaty, since formally admitting to carving up spheres of
+influence would be exactly the kind of diplomatically radioactive
+admission the Sol Industrial Trust's own suspected-but-unproven
+collusion already shows this corpus avoids putting on paper. Each
+veto power's own traditional regional primacy goes informally
+unchallenged by the other three: the Atlantic Zone over Patria Grande
+(the direct Monroe Doctrine descent), the Eurasian Union over its own
+traditional near-abroad, the Zhongguo bloc over its own regional
+periphery. **Bharat's own equivalent claim is deliberately left
+open** rather than forced to parallel the other three — it chose not
+to lead a SAARC-style regional bloc in the first place
+(`earth-political-structure.md`, above), so whether it has a
+comparable sphere at all is a live, unanswered question, not a clean
+fourth parallel.
+
+**This gives the Patria Front a second, sharper grievance, not a
+repeated one** (`earth-blocs.md`): already resentful of Brazilian
+dominance dressed up as regional unity, it can now also target the
+Good Neighbor Understanding directly — the exact neo-colonial
+continuation Bolívar's real Patria Grande dream was supposed to escape
+in the first place, aimed at the Atlantic Zone this time instead of
+Brazil.
+
 ## Command structure: the Fleet Staff and the Joint Military Council
 
 The Secretary-General is not the Fleet's commander-in-chief —

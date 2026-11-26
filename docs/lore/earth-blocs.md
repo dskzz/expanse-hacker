@@ -215,7 +215,12 @@ in this list.
 populist tradition, Peronism above all, is the direct ancestor. Call
 it **the Patria Front** — an ironic name, claiming to be the true
 voice of Bolívar's founding dream against what it frames as Brazilian
-dominance dressed up as regional unity, Buenos Aires-anchored.
+dominance dressed up as regional unity, Buenos Aires-anchored. A
+second, sharper grievance now aims outward rather than inward: the
+Atlantic Zone's own informal Good Neighbor Understanding
+(`earth-political-structure.md`), the Patria Front's own name for
+exactly the neo-colonial continuation Bolívar's dream was supposed to
+escape in the first place.
 
 ## ASEAN and Others
 

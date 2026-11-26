@@ -241,15 +241,101 @@ infrastructure serving two jobs, the same pattern already used
 elsewhere in this corpus (Palisade Security's election-security
 double-duty on Ceres, `ceres.md`).
 
+## Perihelion Traders and the Zephyr-class: the Mercury Run gets its own merchant house
+
+**The real tea-clipper trade is the direct ancestor, and it's an
+unusually good fit now that sails are genuinely back in the
+picture.** 19th-century tea clippers were fast, purpose-built ships
+racing each other on exactly one lucrative, dangerous, single route —
+the same shape as this one, right down to the fact that history's
+fastest ships on its most competitive single route happened to be
+wind-powered too. **Perihelion Traders** (the company; "the Perihelion
+Run" and "the Mercury Run" both work as the trade's informal name) is
+the dedicated merchant house built around it, named for the real
+orbital-mechanics term for an orbit's closest solar approach — clean
+and technical, not mythological.
+
+**Earthstock-exclusive, and deliberately so.** This is a genuinely
+new, strategically critical corner of the fuel economy — directly
+tied to the same crisis driving Lunar depletion, Thisbe's discovery,
+and Ganymede's own long-shot program — which is exactly the kind of
+thing Atlantic Zone capital and institutional reach move fast to lock
+down rather than risk the Belt's fragmented, informally-governed
+culture getting anywhere near. Perihelion Traders runs Earthstock
+CoreOS top to bottom, no Belt subcontracting. Plausibly backed, at
+least partly, by Hauptmann & Voskuijlen — consistent with their
+established pattern of quietly financing exactly this kind of
+strategically important venture (the Frontier Opportunity Program,
+Hetman Piast's own leverage, `ceres.md`) — though full certainty of
+that stake stays genuinely unresolved rather than confirmed, the same
+suspected-not-proven texture as the Trust's other holdings.
+
+**The Zephyr-class ships are genuinely distinct from ordinary
+haulers, not just rebranded ones** — a standard fusion drive for
+primary propulsion, plus a real deployable solar-sail array no
+ordinary interplanetary ship would bother carrying, because nowhere
+else in the system is the flux good enough to make the extra mass
+worth it. The sail physics work two different ways depending on
+direction, and both are real: **outbound** (climbing back away from
+Mercury), straightforward direct thrust — sail thrust always pushes
+away from the Sun, and Mercury's 6.5x flux makes that push unusually
+strong. **Inbound** (falling sunward), direct thrust can't help —
+radiation pressure never points toward the Sun — but a sail angled
+nearly edge-on at the right point in the orbit can shed tangential
+velocity instead, the real, seriously studied "spiral inward by
+bleeding angular momentum" maneuver, the same logic as a sailing ship
+tacking at an angle into a wind that only ever pushes one way. Mercury
+turns out to be close to the best place in the solar system to be
+doing either.
+
+**Fusion drives make the run economically possible, not economically
+free — the rocket equation doesn't go away.** Propellant mass still
+grows exponentially with required delta-v relative to exhaust
+velocity, whatever the engine; a fusion torch drive raises exhaust
+velocity dramatically over chemical propulsion, making a given
+delta-v cost far less propellant in absolute terms, but Mercury still
+costs more delta-v than anywhere else worth visiting, preserving the
+"only exceptional cargo justifies it" economics above at a feasible
+scale instead of an impossible one. High-exhaust-velocity drives also
+tend to trade off against raw thrust, meaning burn durations — and
+total time spent in the Furnace (below) — stay meaningfully long
+regardless of how affordable the propellant is. That's the real,
+independent reason speed is worth paying for here: not fuel economy,
+risk reduction. Less time exposed to flares and thermal load means
+less cumulative wear and crew risk, which is exactly what a dedicated
+sail-assisted ship class buys that an ordinary hauler can't.
+
+**"The Furnace"** is the formal slang — shows up in incident reports
+and insurance paperwork (`space-law-compacts.md`'s own marine
+insurance framework) as readily as in a Sunbird's own complaints —
+for the perihelion-proximate leg specifically, the hottest and most
+dangerous stretch of the run. Zephyr crews themselves are **the
+Sunbirds** — real, generic bird-family naming (Nectariniidae, found
+across Africa and Asia), sun-associated and fast, giving the crews
+their own distinct identity separate from the company and ship-class
+names, the same way real specialized crews earn their own slang.
+
+**Crew rotation runs six months on, three off.** Real precedent lines
+up cleanly: ISS rotations run roughly six months, already balancing
+radiation-dose budgets against psychological isolation limits; a full
+year would push into record-setting territory on a run with a worse
+radiation profile than the ISS, not a better one. Three months off —
+a clean 2:1 ratio — covers dosimetry monitoring, decontamination, and
+medical clearance before the next rotation, not just downtime. Real
+texture worth keeping rather than flattening: the actual 11-year
+solar cycle means some rotations are genuinely more dangerous than
+others, flare frequency rising and falling with it, giving hazard pay
+and tour risk a believable cyclical shape instead of a flat constant.
+
 ## Open threads
 
 - No company or authority assigned to run Lawrence Station's own
   ice-mining side yet — deferred, consistent with Peale's own
   ownership staying open.
-- Whether a named ship class or standard outfitting package exists yet
-  for Mercury transit specifically (`ship-class-codex.md`,
-  `equipment-codex.md`) — not decided, a natural future addition
-  rather than built out here.
+- No named figures for Perihelion Traders' own leadership, any named
+  Zephyr-class vessel or its Sunbird crew, or Hauptmann &
+  Voskuijlen's own liaison if that financing stake is ever confirmed
+  — added to `people-pass-queue.md`.
 - No named figures — whoever leads Lawrence Station's remote
   operations team, whoever directs the Deep Ring's own research
   program, and Mars's own liaison under the research agreement, are

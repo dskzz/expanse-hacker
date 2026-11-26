@@ -180,6 +180,15 @@ starts:
   maintenance crew's own working habitat.
 - **Verdant Loom and Albion Weave** (`corporations.md`) — no named
   executives for either.
+- **Perihelion Traders and the Sunbirds** (`mercury.md`,
+  `ship-class-codex.md`) — no named company leadership, no named
+  Zephyr-class vessel or its commanding officer, and no named
+  Hauptmann & Voskuijlen liaison if that financing stake is ever
+  confirmed.
+- **The Good Neighbor Understanding** (`earth-political-structure.md`)
+  — no named figures on either side; whoever first publicly accuses a
+  veto power of it (plausibly a Patria Front leader) is a natural
+  future role.
 - **The Sovereignty League and the Free Commerce Alliance**
   (`earth-political-structure.md`) — no named leadership for either.
 - **Zone-level opposition leadership** (`earth-blocs.md`) — the Lagos

@@ -28,6 +28,26 @@ capability the way the UN does (below) — MDR is a sovereign military
 power, not a fragile multilateral body whose legitimacy depends on
 never looking like it's preparing to use force.
 
+## Zephyr-class (Perihelion Traders, Earth)
+
+A dedicated Mercury Run merchant vessel, named for the real generic
+word for a light, favorable wind — fitting, now that sails are
+genuinely part of the design, without leaning on mythology the way
+"Icarus" or similar would. Full commercial and route detail lives in
+`mercury.md`; recorded here because it's a genuinely distinct hull
+type, not a flavor label on an ordinary hauler.
+
+**What makes it a real, separate class:** a standard fusion drive for
+primary propulsion, plus a deployable solar-sail array no ordinary
+interplanetary ship bothers carrying, because nowhere else in the
+system has enough flux to make the extra mass worth it. The sail does
+two different jobs depending on direction — direct outward thrust on
+the departure leg, and the real "shed angular momentum by angling
+nearly edge-on" spiral-in maneuver on the inbound leg, since radiation
+pressure can never push toward the Sun directly. Crewed by **the
+Sunbirds**, rotating six months on, three off, dosimetry-driven
+rather than arbitrary.
+
 ## What the UN deliberately doesn't have
 
 Worth recording as its own entry, not just an absence: the UN has no
@@ -46,9 +66,9 @@ can't afford to build.
 
 ## Open threads
 
-- No other ship classes have been named yet — Belt smuggling/light
-  craft, the UN's own more mundane fleet vessels, troop transports,
-  and anything MDR fields beyond Ballista-class are all open for
-  whenever a scenario needs one.
-- No named Ballista-class vessels or commanding officers yet (added
-  to `people-pass-queue.md`).
+- Belt smuggling/light craft, the UN's own more mundane fleet
+  vessels, troop transports, and anything MDR fields beyond
+  Ballista-class are all still open for whenever a scenario needs
+  one.
+- No named Ballista-class or Zephyr-class vessels or commanding
+  officers yet (added to `people-pass-queue.md`).
