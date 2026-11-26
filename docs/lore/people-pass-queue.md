@@ -176,8 +176,9 @@ starts:
   no named research director, remote-operations lead, or Mars liaison
   under the research agreement.
 - **Venus's habitat cluster** (`venus.md`) — no named lead for the
-  atmospheric research program, the wellness/resort side, or the
-  maintenance crew's own working habitat.
+  atmospheric research program, the wellness/resort side, the
+  maintenance crew's own working habitat, the reservoir-beach
+  platform, or Mars's own modest facilities there.
 - **Verdant Loom and Albion Weave** (`corporations.md`) — no named
   executives for either.
 - **Perihelion Traders and the Sunbirds** (`mercury.md`,

@@ -80,16 +80,28 @@ atmospheric dynamics, toward the crushing heat below or the thinner,
 colder air above. A station-keeping problem, not a shielding one —
 genuinely different engineering from everywhere else built so far.
 
-## A cluster, not one habitat — and genuinely class-stratified
+## A real cluster of platforms, not three habitats — and genuinely class-stratified
 
-The name was already plural; this is the follow-through. Three
-distinct habitats rather than one: a luxury-wellness habitat for
-Earth's wealthy, close enough, comfortable enough, and spectacular
-enough that it needs no competing pitch against Saturn's own eventual
-resort angle; a research habitat working the phosphine question and
-broader atmospheric chemistry; and a working habitat housing the
-maintenance crew actually doing the dangerous work — buoyancy
-control, hull integrity, tethering between habitats.
+The name was already plural; this is the full follow-through. Not
+three isolated habitats but a genuine cluster of independently-
+operated platforms — a luxury-wellness platform for Earth's wealthy;
+a research platform working the phosphine question and broader
+atmospheric chemistry; a working platform housing the maintenance
+crew; a dedicated reservoir platform (below); and a central
+spaceport, functionally distinct from all of them.
+
+**Networking the platforms together solves the "no safe fallback"
+problem stated below, directly rather than by accident.** A single
+platform losing buoyancy is still catastrophic for that platform, but
+tethering the cluster closely enough gives the colony real redundancy
+a single isolated habitat never had — a platform in trouble has
+somewhere nearby to actually go, the same mutual-support logic behind
+why real ships travel in company rather than alone. **The spaceport
+is its own platform, not a function bolted onto another one** — the
+one place interplanetary ships actually dock, with smaller,
+atmosphere-only shuttles handling the hop to whichever platform a
+passenger or cargo is actually bound for, the same hub-and-spoke
+logic any real airport runs on.
 
 **That maintenance crew is a direct, physical expression of
 inequality already built elsewhere in this corpus, not a new
@@ -109,6 +121,26 @@ genuinely different failure shape from Io's radiation or Mercury's
 thermal cycling: those are constant hazards to be shielded against;
 this is a single structural failure with no partial-survival outcome.
 
+**Enclosed, but not the way anywhere else in this corpus is — a real
+distinction worth stating precisely rather than leaving vague.** At
+cloud-deck altitude, pressure and temperature are Earth-normal, so a
+platform doesn't need a pressure-vessel hull fighting a huge
+differential or thermal shielding fighting hundreds of degrees of
+swing the way Mercury or a vacuum station does. But the outside air
+at that altitude is still Venus's own atmosphere — overwhelmingly
+CO2, unbreathable, and that band actually overlaps the real sulfuric
+acid cloud layer, genuinely corrosive. So a sealed barrier is still
+required, just a dramatically lighter one: closer to a real
+greenhouse or the actual HAVOC envelope concept than a hull, which is
+exactly why it can feel open and bright — large clear panels, real
+daylight, lawns under canopy — rather than claustrophobic, even
+though it's technically enclosed the whole time. Brief open-air
+balcony exposure is plausible too, with lightweight protective
+gear — a respirator, eye protection, an acid-resistant layer, not a
+full pressure suit — a genuinely distinct equipment niche of its own,
+lighter than the Sunbirds' solar gear or Peale's radiation suits
+(`mercury.md`, `peale-extraction.md`).
+
 **The phosphine question stays genuinely unresolved, with a cynical
 edge worth keeping:** an ambiguous, headline-grabbing result plausibly
 draws more research funding and tourist curiosity than a boring
@@ -125,14 +157,95 @@ Development oversees the resort/economic side — the same two-headed
 tension already visible between OPRA and political bodies, not a new
 mechanic invented for Venus specifically.
 
+## A real niche: senior housing, and the medicine actually backs it
+
+**The gravity math is a genuine sweet spot, not just a pleasant
+coincidence.** 0.904g sits close enough to Earth-normal to avoid the
+long-term bone/muscle atrophy risk this corpus already built the
+Loadframe around (`equipment-codex.md`), but slightly below 1g,
+genuinely easier on aging joints — real geriatric medicine already
+treats reduced weight-bearing load as beneficial for arthritis and
+fracture-risk patients. **The sharper point is the spin, or rather
+the lack of it.** Real spin-gravity habitats produce genuine Coriolis
+effects from interaction with the inner ear's vestibular system, and
+age-related vestibular decline is a real, documented driver of fall
+risk specifically in elderly populations — a spin station would make
+this worse, not better, for exactly the demographic most likely to
+want it. Venus's gravity is the real thing, no rotation involved,
+which makes it uniquely suited among everywhere else built in this
+corpus. The already-established better radiation shielding matters
+far more to someone retiring here for decades than to a short-term
+tourist, reinforcing rather than duplicating the pitch.
+
+## The reservoir-beach: precious imported water, flaunted rather than conserved
+
+**The real irony underneath this is sharper than it first looks:**
+Venus's atmosphere is actually one of the driest in the solar
+system — the real planet lost most of its primordial water billions
+of years ago to a runaway greenhouse effect and hydrogen escape to
+space, so despite being famous for its clouds, there's essentially no
+locally accessible water up there at all. Every drop in the colony is
+imported, inverting the pattern everywhere else in this corpus runs
+on (Lawrence Station, Luna, and Thisbe are all about *mining* local
+ice, `mercury.md`, `armstrong-city.md`, `thisbe-station.md`).
+
+**That scarcity is exactly what makes a dedicated reservoir platform
+real, necessary infrastructure — and exactly what makes doubling it
+as a beach land as something extraordinary rather than merely
+pleasant.** A literal beach built from water that had to be shipped
+in from off-world is about as vivid and decadent a display of wealth
+as this corpus has anywhere — "look how much precious, imported water
+we can afford to waste on leisure," sharper than any abstract
+inequality framing could manage alone. Kept exclusive to the luxury-
+wellness platform specifically, not shared casually with the
+research or maintenance crews — the workers keeping the whole system
+aloft don't get to swim in the thing they maintain.
+
+**A large standing body of water also does real structural work, the
+same category of engineering already established for Mercury, with a
+deliberately opposite relationship to it.** Water mass is genuinely
+useful ballast for buoyancy and stability, the same real engineering
+principle behind the Zephyr-class's own water/consumables shielding
+and waste-ballast mechanic (`mercury.md`). But where the Sunbirds
+treat precious mass as something to shed the moment it's not
+needed — a dry, utilitarian relationship to scarcity — Venus's
+reservoir does the opposite: keeps the mass, builds a beach on top of
+it, flaunts it. Same underlying engineering concern, opposite culture
+built on top of it.
+
+## Earth's sprawl, Mars's toehold
+
+**Earth's dominance stays exactly what proximity already explains**
+(above) — the UN's own backyard project, the bulk of the platform
+cluster. **Mars's own presence is real but deliberately small — a
+facility or two, not a real foothold,** for two distinct reasons
+rather than one: the same logic that got Mars a seat in the Thisbe
+mediation and the Deep Ring research agreement (wanting access to
+relevant research rather than total dependence on Earth's monopoly
+on it, `thisbe-station.md`, `mercury.md`), and a genuine parallel to
+the senior-housing pitch above — Mars's own real surface gravity
+(0.38g) carries its own long-term bone/muscle cost, giving a wealthy,
+aging Martian at least as much reason to want Venus's near-Earth
+gravity as an aging Earther does, arguably more. One modest research
+platform, plausibly one small wellness platform for Mars's own
+elite, nowhere near Earth's scale — consistent with Mars's own
+deliberate, non-wasteful resource culture rather than a lack of
+interest.
+
 ## Open threads
 
 - No company or specific administrative body named for running the
-  maintenance/working habitat specifically — deferred.
+  maintenance/working habitat, the reservoir platform, or Mars's own
+  modest facilities — deferred.
 - Whether the phosphine question has actually been answered
   in-universe, or stays a live, unresolved mystery indefinitely —
   deliberately left open, matching its real-world status.
 - No named figures — whoever leads the atmospheric research program,
-  whoever administers the wellness/resort side, and whoever actually
-  runs the maintenance crew's own working habitat, are natural future
-  roles (added to `people-pass-queue.md`).
+  whoever administers the wellness/resort side, whoever actually runs
+  the maintenance crew's own working habitat, whoever manages the
+  reservoir platform, and Mars's own facility heads, are all natural
+  future roles (added to `people-pass-queue.md`).
+- Whether Venus needs its own threshold ceremony
+  (`belt-political-structure.md`'s growing family) or is fittingly
+  the one location that doesn't, given it's the one genuinely
+  pleasant place in the system — left open rather than decided.

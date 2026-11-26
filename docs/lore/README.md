@@ -202,12 +202,21 @@ any existing or future name that turns out just as hard to place.
   genuinely pleasant place in the whole corpus — atmospheric/
   biosignature research (the real, still-disputed phosphine question)
   alongside a luxury wellness destination, with altitude-keeping as
-  the actual hazard instead of survival. Now also: a genuine cluster
-  of three habitats, not one, with a real class divide between
-  wealthy guests and the maintenance crew (plausibly Atlantic Zone
-  labor migrants) doing the actually dangerous buoyancy/station-
-  keeping work, and governance split between the UN Space Survey
-  Directorate (research) and Off-World Development (the resort side).
+  the actual hazard instead of survival. Now also: a real cluster of
+  independently-operated, mutually-tethered platforms (not three
+  isolated habitats) plus a dedicated spaceport, with a real class
+  divide between wealthy guests and the maintenance crew (plausibly
+  Atlantic Zone labor migrants) doing the actually dangerous
+  buoyancy/station-keeping work; governance split between the UN
+  Space Survey Directorate (research) and Off-World Development (the
+  resort side); a precise clarification of what "enclosed" actually
+  means here (a light greenhouse-style envelope, not a pressure hull
+  or thermal shield); a real senior-housing niche backed by actual
+  gravity/vestibular medicine; a reservoir platform doubling as a
+  beach — precious imported water flaunted rather than conserved, the
+  deliberate opposite of Mercury's own waste-ballast relationship to
+  scarce mass; and Mars's own small, deliberate toehold alongside
+  Earth's sprawl.
 
 ## Earth
 
