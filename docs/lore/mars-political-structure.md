@@ -247,6 +247,12 @@ it didn't hide its authoritarian-corporatist evolution, it stopped
 performing otherwise, and the Jinyiwei is precisely the institution
 that evolution would produce.
 
+**Colloquially, "the Jinis"** — the real, lived-in erosion a name like
+this actually undergoes in everyday speech rather than staying
+formally intact, the same folk-erosion mechanic already established
+for `/etc` becoming "Everyone's To-Change" (`os-lineages.md` §5).
+Said quietly, as a warning: "shut up, the Jinis are coming."
+
 **The live friction this creates:** ODS still claims jurisdiction over
 Elysium too, since it enforces loyalty to Martian doctrine generally,
 not just to Mariner Valley specifically — meaning Elysium's own
