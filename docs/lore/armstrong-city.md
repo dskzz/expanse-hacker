@@ -83,6 +83,22 @@ administers, and distributes — a real economic geography, periphery
 and center doing genuinely different jobs instead of one location
 trying to be everything.
 
+**Getting bulk regolith off the surface and up to orbit plausibly runs
+on mass drivers** — genuinely real engineering, not speculative tech:
+Gerard O'Neill's actual 1970s proposals for electromagnetic lunar
+launchers are the direct real ancestor, a stationary, electrically-
+powered linear accelerator that throws bulk cargo to orbital velocity
+without expending any propellant of its own. This is specifically the
+problem the technology was always meant for — O'Neill's own proposal
+was Moon-surface-to-lunar-orbit, full stop, handing off to separate
+propulsion for anything beyond that, since a payload with no engine of
+its own can't reliably hit a precise, distant catch point after a long
+interplanetary transit. Luna's own operation is the plausible place
+this technology actually proved itself first; Lawrence Station -
+Mercury (`mercury.md`) later adopting the same solved approach for its
+own ice/helium-3-rich regolith is reusing proven tech, not reinventing
+it.
+
 ## Government: run like DC is run by Congress, with the same real problems
 
 A real, deliberate contrast to Ceres's MFN trade framework and the

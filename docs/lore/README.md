@@ -146,7 +146,19 @@ any existing or future name that turns out just as hard to place.
   an underground particle-accelerator complex fed by the Parker
   Array on a nearby "peak of eternal light" ridge, under old Earth
   university consortia with a formal Mars research agreement tied to
-  MDR's own fusion-fuel-independence program.
+  MDR's own fusion-fuel-independence program. Now also: the same
+  polar cold traps are plausibly the richest helium-3 deposit in the
+  solar system by concentration (Mercury's weak field doesn't shield
+  the surface, and it's far closer to the Sun than Luna); a second,
+  non-polar site for platinum-group metals tied to the core-stripping
+  mystery; real delta-v economics explaining why only those two
+  justify the genuinely brutal trip (Mercury orbit costs more delta-v
+  than Pluto in some real mission profiles); mass drivers as the
+  real-engineering answer for the local surface-to-orbit leg only,
+  not the trip itself; and why a Mercury-bound ship needs its own
+  dedicated thermal/radiation outfitting (sunshades, oversized
+  radiators, a flare/CME storm shelter, with the Parker Array
+  doubling as early-warning infrastructure).
 - **`venus.md`** — Landis Habitat(s) - Venus: real floating aerostat cities
   in the one altitude band where Venus's atmosphere is nearly Earth-
   like, using ordinary breathable air as the lifting gas. The one
@@ -292,7 +304,11 @@ Still explicitly a work in progress.
 - **`armstrong-city.md`** — Armstrong City and Shackleton Base: the
   DC/Congress governance model, the UN's two-tier geography
   (prestige on Earth, bureaucracy on Luna), and the corporate HQ tax
-  incentive.
+  incentive. Now also: mass drivers (real O'Neill-proposal
+  engineering) as the likely mechanism moving bulk regolith from
+  Luna's surface mining sites up to orbit — the proven precedent
+  Lawrence Station - Mercury (`mercury.md`) later reuses rather than
+  reinventing.
 
 ## Beyond Saturn
 

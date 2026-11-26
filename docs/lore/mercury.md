@@ -124,11 +124,132 @@ Ganymede's own long-shot Jupiter-atmosphere research
 rather than leaving it isolated. A formal research agreement, not
 joint ownership — the facility stays under the university consortium.
 
+## Beyond water and power: helium-3 and platinum-group metals
+
+**The same polar cold traps already mining water ice are plausibly the
+richest helium-3 deposit in the solar system by concentration, not a
+separate discovery.** Mercury's own magnetic field is real but weak
+enough that it doesn't effectively shield most of the surface — the
+real MESSENGER mission confirmed solar wind reaches Mercury's surface
+directly across much of it — and Mercury sits dramatically closer to
+the Sun than Luna or any Belt body ever does, meaning far higher
+solar-wind flux. The limiting factor everywhere else on the surface is
+retention: anywhere baking at 430°C, implanted light volatiles diffuse
+back out over time, which is exactly why the water ice itself only
+survives in permanent polar shadow. Put the two facts together and the
+same cold traps Lawrence Station already works are the plausible
+answer — not a new site, the existing one turning out to matter more
+than first stated, and a direct, free tie into the Lunar-depletion
+fusion-crisis thread already running through `earth-resources-and-
+pressures.md`, `thisbe-station.md`, and Ganymede's own long-shot
+program (`ganymede-condominium.md`).
+
+**A second resource ties directly to Mercury's own unresolved core
+mystery (above) rather than inventing a new one.** If the giant-impact
+hypothesis for Mercury's oversized core is right, the same impact that
+stripped away most of its rocky mantle could plausibly have left
+anomalously high surface concentrations of siderophile elements —
+platinum-group metals above all, normally sunk into a planet's core
+during differentiation and scarce everywhere else for exactly that
+reason. A separate, non-polar robotic site, automated for the same
+thermal-cycling reason already established for Lawrence Station
+itself, not a new justification.
+
+**Why either is worth the genuinely brutal trip, and why bulk cargo
+never would be.** Mercury is a real delta-v trap, not just a long
+way away — reaching Mercury orbit costs more delta-v than reaching
+Pluto in some real mission profiles, because getting there means
+cancelling an enormous amount of a ship's own orbital velocity to fall
+that deep into the Sun's well, exactly why the real MESSENGER and
+BepiColombo missions both needed years of gravity-assist maneuvering
+rather than a direct transfer. Getting back out costs just as much.
+Only exceptionally high-value-per-unit-mass cargo — helium-3, platinum-
+group metals — ever justifies the round trip; bulk ore or water never
+would, a hard physical ceiling rather than a market preference.
+
+## Mass drivers: real technology, solving the local leg, not the trip itself
+
+**Genuinely real engineering, not speculative tech** — Gerard O'Neill's
+actual 1970s proposals for electromagnetic lunar launchers are the
+direct real ancestor: a stationary, electrically-powered linear
+accelerator throws bulk cargo to orbital velocity without carrying any
+propellant of its own, using Mercury's own abundant solar power
+instead of reaction mass.
+
+**But the real constraints point at a specific, narrower job.** A
+mass driver only ever solves the surface-to-orbit leg — O'Neill's own
+proposal was always Moon-surface-to-lunar-orbit specifically, handing
+off to separate propulsion beyond that, because a payload with no
+engine of its own accumulates too much gravitational-perturbation
+error over an interplanetary transit to reliably hit a distant,
+precise catch point months or years later. The payload also has to be
+genuinely robust — real mass-driver acceleration profiles are high-g
+over a short track, fine for ore or sintered metal slugs, lethal for
+anything fragile. And both ends need matched, expensive, fixed
+infrastructure, which only pays for itself on a sustained, high-volume
+route.
+
+**Luna's own already-established helium-3 operation
+(`armstrong-city.md`) is the plausible place this technology proved
+itself first**, for exactly the problem it was always meant for; Lawrence
+Station adopting the same solved approach for its own ice/helium-3-rich
+regolith is reusing proven tech, not reinventing it. It cuts the local
+launch cost, but doesn't touch the dominant cost — the interplanetary
+leg still needs a hauler burning real delta-v to come fetch the
+material and climb back out of the Sun's well, which is exactly why
+the economics above hold regardless of how cheaply material reaches
+Mercury orbit.
+
+## Why a Mercury-bound ship needs its own dedicated outfitting
+
+**Heat is the dominant, well-precedented problem.** Both real
+MESSENGER and BepiColombo needed dedicated thermal engineering for
+Mercury transit specifically — MESSENGER's own ceramic-cloth sunshade
+kept its bus in shadow while angled, heat-tolerant solar cells stayed
+exposed; BepiColombo uses extensive multi-layer insulation and
+high-emissivity white coatings for the same reason. A ship built for
+this route needs the same category of kit. **The less obvious half:**
+waste-heat rejection in space depends on the difference between a
+ship's own temperature and its surroundings, and bathed in 6.5x
+Earth's solar flux, ordinary internal waste heat (electronics, life
+support) becomes much harder to radiate away even before counting
+the heat absorbed from outside — Mercury-bound ships need oversized,
+carefully angled radiator arrays for this reason specifically, not
+just a bigger sunshade.
+
+**Radiation here is a genuinely different hazard than Peale's own, not
+a repeat of it.** Peale's hazard (`peale-extraction.md`) is Jupiter's
+magnetosphere — constant, ambient, trapped-particle radiation.
+Mercury has no comparable belt; its weak field doesn't meaningfully
+shield anything nearby. The real hazard close to the Sun is solar
+flares and coronal mass ejections instead — episodic, not constant,
+and genuinely worse this close to the source: less warning time
+between an event and its arrival, and a bigger dose when it hits. The
+engineering answer is correspondingly different — a hardened storm-
+shelter compartment paired with real-time solar-weather monitoring,
+not heavier shielding everywhere. (Worth keeping for rigor: galactic
+cosmic ray exposure is actually somewhat *lower* near the Sun, since
+the heliosphere deflects some of it — proximity is specifically worse
+for solar-sourced radiation, not radiation in general.)
+
+**The Parker Array (above) is a free, natural dual-purpose fit for
+that early-warning function** — the same real role actual solar-
+weather-monitoring missions like SOHO and DSCOVR, and agencies like
+NOAA's real Space Weather Prediction Center, already serve today, just
+relocated to where it matters most for shipping. One piece of
+infrastructure serving two jobs, the same pattern already used
+elsewhere in this corpus (Palisade Security's election-security
+double-duty on Ceres, `ceres.md`).
+
 ## Open threads
 
 - No company or authority assigned to run Lawrence Station's own
   ice-mining side yet — deferred, consistent with Peale's own
   ownership staying open.
+- Whether a named ship class or standard outfitting package exists yet
+  for Mercury transit specifically (`ship-class-codex.md`,
+  `equipment-codex.md`) — not decided, a natural future addition
+  rather than built out here.
 - No named figures — whoever leads Lawrence Station's remote
   operations team, whoever directs the Deep Ring's own research
   program, and Mars's own liaison under the research agreement, are
