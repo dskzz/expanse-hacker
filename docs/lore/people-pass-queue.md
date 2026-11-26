@@ -182,9 +182,9 @@ starts:
   executives for either.
 - **Perihelion Traders and the Sunbirds** (`mercury.md`,
   `ship-class-codex.md`) — no named company leadership, no named
-  Zephyr-class vessel or its commanding officer, and no named
-  Hauptmann & Voskuijlen liaison if that financing stake is ever
-  confirmed.
+  Zephyr-class vessel or its commanding officer, no named Corona
+  Watch stander, and no named Hauptmann & Voskuijlen liaison if that
+  financing stake is ever confirmed.
 - **The Good Neighbor Understanding** (`earth-political-structure.md`)
   — no named figures on either side; whoever first publicly accuses a
   veto power of it (plausibly a Patria Front leader) is a natural

@@ -45,8 +45,14 @@ two different jobs depending on direction — direct outward thrust on
 the departure leg, and the real "shed angular momentum by angling
 nearly edge-on" spiral-in maneuver on the inbound leg, since radiation
 pressure can never push toward the Sun directly. Crewed by **the
-Sunbirds**, rotating six months on, three off, dosimetry-driven
-rather than arbitrary.
+Sunbirds**, rotating on a dose-budget-driven cycle rather than a
+fixed calendar figure — roughly one round trip per tour, shorter
+during solar maximum, longer during solar minimum (`mercury.md`).
+
+**Full system-by-system detail — rigging, suits, active shielding,
+the safe room's real water/consumables shielding, the Corona Watch,
+and the waste-ballast mechanic — lives in `mercury.md`**, not
+duplicated here; this entry stays the hull-type summary.
 
 ## What the UN deliberately doesn't have
 

@@ -315,17 +315,129 @@ across Africa and Asia), sun-associated and fast, giving the crews
 their own distinct identity separate from the company and ship-class
 names, the same way real specialized crews earn their own slang.
 
-**Crew rotation runs six months on, three off.** Real precedent lines
-up cleanly: ISS rotations run roughly six months, already balancing
-radiation-dose budgets against psychological isolation limits; a full
-year would push into record-setting territory on a run with a worse
-radiation profile than the ISS, not a better one. Three months off —
-a clean 2:1 ratio — covers dosimetry monitoring, decontamination, and
-medical clearance before the next rotation, not just downtime. Real
-texture worth keeping rather than flattening: the actual 11-year
-solar cycle means some rotations are genuinely more dangerous than
-others, flare frequency rising and falling with it, giving hazard pay
-and tour risk a believable cyclical shape instead of a flat constant.
+**Crew rotation is dose-budget-driven, not a fixed calendar
+figure — "six months on" is really "about one round trip," corrected
+against the real transit math.** A real minimum-energy Hohmann-type
+transfer between Earth's and Mercury's orbits runs roughly 105–115
+days one-way, not six months — real MESSENGER/BepiColombo-style
+missions take years only because they fly gravity-assist trajectories
+specifically to manage delta-v within chemical/ion propulsion limits;
+a fusion-drive ship with real delta-v to spare doesn't need that
+trade and can fly closer to the direct ballistic time, or faster still
+if it can sustain meaningful continuous thrust. So a Sunbird's "six
+months on" is best read as roughly one round trip plus on-site dwell
+time (out, work the handoff, back), not a one-way flight — and the
+real governing limit is **cumulative radiation dose**, not the
+calendar: a rotation ends when the dosimetry budget says so, which
+in practice lands around one round trip under ordinary solar
+conditions, shorter during solar maximum (more flares, hitting the
+ceiling faster) and stretching to fit more of a second run during
+solar minimum. The real 11-year solar cycle gives hazard pay and tour
+length a believable cyclical shape rather than a flat constant.
+**Three months off** — a clean 2:1 ratio against the typical tour —
+covers dosimetry monitoring, decontamination, and medical clearance,
+not just downtime.
+
+**Launch windows recur on a real, predictable cadence — the synodic
+period, about 116 days (~3.8 months).** The right mental model isn't
+"same side of the Sun" — that's actually a poor alignment for a
+transfer — it's a lead angle: because Mercury orbits much faster than
+Earth, you launch when Mercury is positioned so its own faster motion
+carries it to meet the ship's arrival point, the same logic as
+leading a moving target. A genuinely interesting real wrinkle:
+Mercury's 88-day year is shorter than a typical transfer time, so
+Mercury can complete more than one full lap during the transit,
+meaning more than one valid phase-angle solution can exist within a
+single window rather than just one. Mercury's own fast orbit works in
+the trade's favor regardless: a roughly quarterly cadence of windows,
+not the ~26-month wait a Mars-bound mission has to live with — and a
+fusion-drive ship with delta-v to spare can tolerate launching off
+the ideal date and correcting with a bit more burn, widening the
+practical window further than a minimum-energy-only mission would
+ever get.
+
+## The Furnace, worked through system by system
+
+**Rigging, not just a deployable sail.** Real deployable-sail
+engineering (the actual IKAROS and LightSail designs) uses lightweight
+composite or metal booms with cable tensioning for trim — angling the
+sail is exactly how both the outbound thrust and the inbound
+angular-momentum-shedding maneuver (above) actually get steered.
+Metal cable, not rope — real UV/thermal degradation and fire risk
+rule rope out. That gives the Sunbirds real, dangerous EVA work:
+going out to tension, adjust, or free a tangled line, scheduled
+around the Corona Watch's own forecast (below) for when it's actually
+safe to be outside.
+
+**Suits built for the specific hazard, not generic EVA gear.**
+Reflective/insulating outer layers matching the hull's own sunshade
+material; extreme glare protection for the visor, since direct
+unfiltered sunlight at 6.5x Earth intensity is a real eye hazard, not
+an inconvenience; solar cells woven into the suit fabric for
+supplementary life-support power, straight from the same abundant
+light the ship itself profits from.
+
+**Active shielding makes real sense here specifically, not
+everywhere.** A generated magnetic or electrostatic field only
+deflects *charged* particles — useless against gamma radiation, but
+solar energetic particles from flares and CMEs are overwhelmingly
+protons and charged ions, a genuinely good real candidate for active
+deflection, unlike galactic cosmic rays (too high-energy for a
+practical field) or gamma radiation (unaffected either way). It's
+real-world power-hungry, which is exactly why Mercury is a sensible
+place to field it: the same abundant solar power that runs the Deep
+Ring also bankrolls the one ship system that defends against the
+same sun.
+
+**The safe room's shielding is water and consumables, not a lead
+box — the correct real material, not the first intuitive guess.**
+Dense, high-Z shielding like lead is good against gamma rays, but
+against high-energy charged particles it can make things *worse*
+through a real, documented effect: particles striking dense material
+produce a shower of secondary radiation (bremsstrahlung), sometimes
+raising effective dose instead of lowering it. The actual real NASA/
+ISS protocol for solar-particle-event shelters uses hydrogen-rich
+mass instead — water and food stores the ship already carries,
+wrapped around the shelter rather than built as dedicated dead
+weight. Active shielding, where fitted, layers on top rather than
+replacing it.
+
+**Waste mass earns its keep the same way, with a dry joke built into
+the terminology rather than anything crass.** Collected through the
+dive as the ship falls deeper into the Furnace, waste mass does real
+shielding work exactly as exposure ramps up — then, once past the
+worst of it and outbound, it gets expelled sunward, officially logged
+as **"dumping ballast"** (real, centuries-old maritime and
+aeronautical terminology for exactly this: mass carried for
+stability, released when no longer needed). The euphemism holds a
+straight face; everyone aboard knows exactly what it is. It isn't
+only disposal — ejecting mass sunward, opposite the ship's own
+outbound direction, gives a small, genuine reaction-thrust assist
+right when the climb back out needs it, and nothing drifts back into
+a shipping lane from a trajectory headed into the Sun.
+
+**The onboard Corona Watch is a human, on-ship redundant layer under
+the Parker Array's own network, not a duplicate of it.** A real
+coronagraph — the same instrument real missions like SOHO use,
+blocking the Sun's blinding disk to watch the much fainter corona
+around it for flare precursors — staffed by a Sunbird whose job is
+continuous solar observation, the same relationship a ship's own
+lookout has to shore-based radar.
+
+**The bridge is protected, not hardened to shelter-grade — the safe
+room is the separate answer for an actual event, with its own minimal
+secondary control station.** The right submarine parallel isn't the
+conning tower, which is actually the exposed, less-protected
+structure when surfaced — it's the control room deep inside the
+pressure hull, reasonably shielded by the ship's own structure, good
+visibility for normal operations. During a real event, the crew
+shelters in the safe room instead, which carries its own basic
+monitoring and piloting instrumentation (not full bridge
+functionality), plus bunks and emergency rations — real NASA deep-
+space shelter planning already assumes exactly this, since a
+solar-particle event can force sheltering for hours to over a day,
+and a ship can't afford to lose all situational awareness during
+precisely the period it needs it most.
 
 ## Open threads
 
@@ -333,9 +445,13 @@ and tour risk a believable cyclical shape instead of a flat constant.
   ice-mining side yet — deferred, consistent with Peale's own
   ownership staying open.
 - No named figures for Perihelion Traders' own leadership, any named
-  Zephyr-class vessel or its Sunbird crew, or Hauptmann &
-  Voskuijlen's own liaison if that financing stake is ever confirmed
-  — added to `people-pass-queue.md`.
+  Zephyr-class vessel or its Sunbird crew, whoever stands a given
+  ship's own Corona Watch, or Hauptmann & Voskuijlen's own liaison if
+  that financing stake is ever confirmed — added to
+  `people-pass-queue.md`.
+- Whether any Zephyr-class ship has ever actually had to shelter
+  through a real solar-particle event mid-run, or whether the safe
+  room has stayed theoretical so far — a natural, not-yet-used hook.
 - No named figures — whoever leads Lawrence Station's remote
   operations team, whoever directs the Deep Ring's own research
   program, and Mars's own liaison under the research agreement, are

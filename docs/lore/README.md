@@ -161,11 +161,24 @@ any existing or future name that turns out just as hard to place.
   doubling as early-warning infrastructure). Now also: the Mercury
   Run gets its own Earthstock-exclusive merchant house, Perihelion
   Traders, running sail-assisted Zephyr-class haulers
-  (`ship-class-codex.md`) crewed by the Sunbirds on 6-months-on/
-  3-off dosimetry-driven rotations through "the Furnace" — the real
-  tea-clipper trade as direct ancestor, real solar-sail physics
-  (outbound direct thrust, inbound angled angular-momentum-shedding),
-  and real rocket-equation limits on what fusion drives actually buy.
+  (`ship-class-codex.md`) crewed by the Sunbirds on dose-budget-
+  driven rotations (roughly one round trip per tour, not a fixed
+  calendar figure) through "the Furnace" — the real tea-clipper trade
+  as direct ancestor, real solar-sail physics (outbound direct
+  thrust, inbound angled angular-momentum-shedding), real rocket-
+  equation limits on what fusion drives actually buy, and real
+  Earth-Mercury launch-window mechanics (a ~116-day synodic cadence,
+  a lead-angle targeting model rather than "same side of the Sun").
+  Now also, system by system: metal-cable sail rigging and EVA
+  maintenance work; suits with solar-cell fabric and extreme glare
+  protection; active electromagnetic shielding against solar
+  energetic particles specifically (not cosmic rays or gamma
+  radiation); a safe room shielded by real water/consumables mass
+  rather than a lead box, plus waste mass doing the same job through
+  the dive before getting "ballasted" sunward on the way out for a
+  free reaction-thrust assist; and the Corona Watch, a human
+  coronagraph-watch role backing up the Parker Array's own
+  early-warning network.
 - **`venus.md`** — Landis Habitat(s) - Venus: real floating aerostat cities
   in the one altitude band where Venus's atmosphere is nearly Earth-
   like, using ordinary breathable air as the lifting gas. The one
