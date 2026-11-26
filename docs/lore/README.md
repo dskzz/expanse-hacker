@@ -233,6 +233,22 @@ any existing or future name that turns out just as hard to place.
   keeping hazard — Venus's actual atmospheric super-rotation, circling
   the whole planet in ~4-5 days versus the solid planet's 243-day
   rotation, also giving residents a genuinely alien day/night rhythm.
+  Now also a full institutional layer: a Spaceguard node and a DSS
+  listening post hiding under a basic UN embassy; a real Berlin-
+  situation counterpart, MRN Intelligence's own post hiding inside
+  Mars's research platform, both sides' posts a known, unspoken
+  secret, concentrated at "the Embassy Platform"; Venus's own
+  Monaco/Switzerland-style registrar appeal (distinct from Doris's
+  obscurity model), with Hauptmann & Voskuijlen running the private-
+  banking side; a weather service and small meteorology university;
+  real sightseeing appeal including an engineered, bespoke "safe tan"
+  (natural cloud-filtered light is actually UV-poor, not UV-rich); a
+  stakeholders'-council governance model distinct from Armstrong
+  City's or Ceres's; OSL's own modest gravity-remediation presence
+  tied to the Belt's "Down the Well" ceremony; and a live cross-
+  platform unionization fight the New International is organizing,
+  resisted hard because a win on one platform threatens to cascade to
+  all of them.
 
 ## Earth
 

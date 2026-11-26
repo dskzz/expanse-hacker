@@ -387,12 +387,174 @@ alien day/night rhythm — swept around the entire planet every few
 days by the wind itself, nothing like Earth's 24-hour cycle or
 Venus's own absurdly slow solid-body day.
 
+## Conjunction, not retrograde — the real event that actually matters
+
+**Apparent retrograde motion is purely optical, not physically
+significant** — Venus never actually reverses its real orbital
+direction, it only looks that way from Earth, the same parallax
+effect as a faster inner-lane car briefly appearing to slip backward
+relative to a slower one. The real, significant event it clusters
+around is **inferior conjunction** — Venus passing between Earth and
+the Sun, their closest real approach (~0.28 AU) — which gives
+residents the fastest communications window of the whole cycle, no
+solar interference at all. The one actually worth worrying about is
+**superior conjunction**, Venus on the far side of the Sun from
+Earth: maximum distance *and* the Sun sitting directly in the way,
+the same real solar-conjunction blackout risk already established for
+Mercury (`mercury.md`), just on Venus's own cycle.
+
+**A related, genuinely fun piece of real astronomy worth keeping as
+color:** averaged over time Earth stays Venus's much closer neighbor,
+but at specific moments — Earth far around its own orbit from Venus
+while Mars happens to be swinging through perihelion on Venus's
+side — Venus-Mars distance can briefly come out smaller than
+Venus-Earth distance. A real 2019 study (Stockman, Monroe, Cox)
+found, by a related but distinct averaging method, that Mercury is
+actually the closest planet to *every* other planet on average,
+including Earth — real, published, genuinely counterintuitive
+orbital-mechanics trivia in the same family as the question itself.
+
+## Spaceguard node and DSS listening post: Venus joins two networks already built
+
+**An impact spotter here is a natural Spaceguard Directorate node**
+(`earth-political-structure.md`), the same dual-purpose near-object
+detection already established for Mercury, giving the network another
+sensor site rather than inventing a new institution. **A UN
+listening post fits as a Directorate of Security Services field
+installation** for a more pointed reason: Venus's occasional
+favorable geometry relative to Mars (above) gives DSS a genuine,
+concrete reason to watch from here specifically, not just convenient
+proximity.
+
+## A Berlin situation: Mars watches back from the same ground
+
+**Mars maintains its own listening post here too, and the real Cold
+War Berlin model is the direct, deliberate precedent, not a loose
+comparison.** MRN Intelligence (`mars-political-structure.md`) hides
+its own watching post inside Mars's already-established modest
+research platform — reusing existing cover rather than inventing a
+new one — the same way the UN's post hides under a basic UN embassy.
+**Both are open secrets, exactly like real Cold War Berlin's own
+"trade missions" and "cultural attachés": everyone who matters knows
+exactly what both postings really are, and neither side says so
+officially**, because naming it costs more than tolerating it. This
+gives the already-established DSS/MRN Intelligence mutual surveillance
+(`mars-political-structure.md`: "MRN Intelligence... watches DS
+exactly as warily as DS watches Mars") a real physical stage instead
+of staying abstract.
+
+**That same neutral, glamorous, high-traffic character makes Venus a
+genuine informal and semi-formal diplomatic venue, not just a
+backdrop for one** — the real Geneva/Vienna role during the actual
+Cold War, nobody raising an eyebrow at who's visiting. The ongoing
+Mercury Run access dispute (`mercury.md`, the UN's roadblocks against
+Mars's own push for a third helium-3 source) is exactly the kind of
+delicate matter that plausibly gets worked informally here, alongside
+the real bilateral diplomacy continuing elsewhere. Call the specific
+site **the Embassy Platform** — plain, functional naming in the same
+register as the spaceport and the reservoir, the one place both
+postings and whatever back-channel diplomacy happens around them
+actually concentrate.
+
+## A Swiss Bank: Hauptmann & Voskuijlen's own tendril, not a new entity
+
+**The registrar/tax-haven appeal here is a genuinely different model
+from Doris, not a repeat of it.** Doris works by obscurity — nobody's
+heard of it, which is the whole point. Venus is already glamorous and
+famous, so its own version is the real Monaco/Switzerland pattern
+instead: hiding in plain sight behind genuine luxury and real economic
+activity people are already drawn here for anyway. A dedicated
+private-banking operation — numbered accounts, real discretion for
+ultra-wealthy clients — fits as **Hauptmann & Voskuijlen's own**
+specifically, since private banking is already their established
+specialty (`corporations.md`), one more tendril of their already-
+extensive quiet reach (Doris's hidden ownership, Piast's leverage,
+FOP's financing, plausibly Perihelion Traders) rather than a new
+company diluting the roster. Earth-adjacent registration now has
+three genuinely distinct real models: Doris (obscure), Luna (real
+oversight, real tax break, `armstrong-city.md`), and Venus (visible,
+glamorous, a corporate veil hiding behind legitimate wealth).
+
+## Weather service and a small university
+
+A dedicated weather-tracking service follows directly from the real
+hazard mechanics already established (super-rotation, virga, possible
+lightning, planetary wave systems) — paired with a small, specialized
+university focused on Venusian meteorology specifically, the same
+GaiaOS-coded academic-consortium character already established for
+Mercury's Deep Ring (`os-lineages.md`), just far smaller given Venus
+doesn't need that scale of institutional backing.
+
+## Sightseeing weather, and the "safe tan" is an engineered flex, not a freebie
+
+**Worth being precise rather than just reassuring:** Venus's clouds do
+genuinely scatter light with a yellowish cast, and sulfuric acid
+droplets actually absorb a meaningful amount of UV — real orbital
+imagery studies the cloud dynamics specifically through UV absorption
+patterns. That means natural filtered light at cloud-deck altitude is
+probably UV-*poor*, not UV-rich. **A "safe tan" isn't simple
+filtering, it's engineering a precisely controlled, safe dose of UV
+the natural light doesn't actually have enough of**, plus correcting
+the color balance away from the hazy yellow cast — a genuinely
+bespoke feature only possible because this colony already engineers
+its own atmosphere and light for sport and leisure (the golf
+platforms' thinned air, the sailing domes' engineered wind), not a
+freebie.
+
+## Governance: a stakeholders' council, not a government
+
+A loose corporate council — each major platform operator holding a
+seat, decisions by negotiation among stakeholders rather than real
+government — fits Venus's character far better than Armstrong City's
+DC/Congress model or Ceres's Hetman system (`armstrong-city.md`,
+`ceres.md`). Closer to a business-park management consortium or a
+homeowners' association than a government, a sharp, consistent
+expression of "mostly corporate" ownership rather than a new mechanic.
+
+## The Belt's own presence: gravity remediation, tied to Down the Well
+
+OSL plausibly maintains or at least heavily uses a modest arrangement
+here for exactly one purpose: a Belter's own "Down the Well" threshold
+ceremony (`belt-political-structure.md`) is exactly the genuinely
+risky transition Venus's gravity-reacclimation medicine (above)
+already exists to make safer. A real, motivated, if modest presence
+alongside Mars's own token facilities, not an arbitrary addition.
+
+## The opposition: cross-platform unionization, and the contagion fear is the real logic
+
+**The platforms being physically tethered together for mutual
+buoyancy (above) is exactly what makes this a live threat rather than
+an isolated labor dispute.** Maintenance workers across different
+platforms can organize and communicate with each other far more
+easily than if they were isolated, meaning a successful union win on
+any one platform is a credible, visible precedent that could spread
+to all of them — a real, well-grounded management fear, not an
+invented one; actual corporate anti-union strategy is very often
+explicitly about preventing precedent-setting wins elsewhere. Every
+wealthy platform operator faces a genuine collective-action problem:
+nobody wants to be the first to concede, specifically because of what
+happens if they do. **The New International** (`earth-political-
+structure.md`), already positioned against corporate concentration of
+power, is the obvious organizing force behind it — a live, specific
+campaign rather than staying purely abstract.
+
 ## Open threads
 
 - No company or specific administrative body named for running the
   maintenance/working habitat, the reservoir platform, any golf
-  platform, Mars's own modest facilities, or the research platform's
-  own professional birding expeditions — deferred.
+  platform, Mars's own modest facilities, the weather university, the
+  stakeholders' council, or the research platform's own professional
+  birding expeditions — deferred.
+- No named figures for the UN embassy's own cover staff, MRN
+  Intelligence's own post at the research platform, Hauptmann &
+  Voskuijlen's Venus banking liaison, or OSL's own gravity-
+  remediation arrangement — added to `people-pass-queue.md`.
+- Whether the Embassy Platform's "known secret" has ever actually
+  been tested — a leak, a confrontation, a moment either side had to
+  acknowledge what the other already knew — deliberately left open.
+- Whether the New International's own organizing effort on the
+  platforms has ever actually won a real concession, or is still a
+  live, unresolved fight — left open rather than decided.
 - Whether the phosphine question has actually been answered
   in-universe, or stays a live, unresolved mystery indefinitely —
   deliberately left open, matching its real-world status.

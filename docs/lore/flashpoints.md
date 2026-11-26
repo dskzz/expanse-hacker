@@ -199,6 +199,27 @@ Monroe Doctrine's own teeth without changing what it actually meant.
 Live and unresolved, aimed at a different target than the Patria
 Front's own rivalry with Brazilian dominance, not a restatement of it.
 
+### Venus's unionization fight
+
+Home file: `venus.md`. The platforms being physically tethered
+together for mutual buoyancy makes the whole cluster's wealthy
+operators face a real collective-action problem: a successful union
+win on any one platform's maintenance crew is a credible, visible
+precedent that could spread to all of them, so nobody wants to
+concede first. The New International is the obvious organizing force
+behind the push. Live and unresolved — no concession won yet, not
+settled either way.
+
+### The Embassy Platform's known secret
+
+Home file: `venus.md`. A real Cold War Berlin dynamic transplanted
+intact: the UN's own DSS listening post hides under a basic UN
+embassy, Mars's own MRN Intelligence post hides inside its already-
+established research platform, and both sides know exactly what the
+other's posting really is without either saying so officially.
+Stable precisely because naming it costs more than tolerating it —
+nothing confirms that equilibrium has ever actually been tested.
+
 ### Verdant Loom versus Albion Weave
 
 Home file: `corporations.md`. A real-market instance of "formal

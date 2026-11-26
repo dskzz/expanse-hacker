@@ -180,7 +180,10 @@ starts:
   maintenance crew's own working habitat, the reservoir-beach
   platform, any golf-club patron, the research platform's own
   professional birding expeditions, a famous gas-yacht-flying amateur
-  birder, or Mars's own modest facilities there.
+  birder, Mars's own modest facilities, the Embassy Platform's own UN
+  cover staff and embedded MRN Intelligence post, Hauptmann &
+  Voskuijlen's Venus banking liaison, OSL's own gravity-remediation
+  arrangement, or the weather university and stakeholders' council.
 - **Verdant Loom and Albion Weave** (`corporations.md`) — no named
   executives for either.
 - **Perihelion Traders and the Sunbirds** (`mercury.md`,

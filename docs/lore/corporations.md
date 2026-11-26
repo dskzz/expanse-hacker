@@ -148,6 +148,13 @@ elsewhere in the corpus — a financial obligation that outlives the
 ship, the job, or the reason someone took it on, and that someone
 else can inherit, forge, or erase.
 
+**Also runs Venus's own private banking operation** (`venus.md`) —
+numbered accounts, real discretion for the ultra-wealthy, the
+Monaco/Switzerland model rather than Doris's own obscurity-based one.
+One more tendril of the same quiet reach already running through
+Doris's hidden ownership, Piast's leverage, and FOP's financing,
+rather than a new company diluting the roster.
+
 ### Meridiani Systems — Mars terraforming (Mars, residual Earth stake)
 
 **Sells:** Mars atmospheric processors and terraforming
