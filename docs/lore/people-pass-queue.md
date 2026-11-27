@@ -65,6 +65,13 @@ here).
 - **The Jupiter atmospheric helium-3 research line** (`ganymede-condominium.md`)
   — no program name or lead scientist named yet for this long-term,
   currently-impractical research effort.
+- **Ganymede's own settlement history** (`ganymede-condominium.md`) —
+  the embezzling researcher who pirated Terebra's tunnel-boring tech
+  and the theft itself; Heinlein Dome's own founding administrator;
+  the UN-grant-funded exobiology program's lead; the native water
+  drilling project's own chief engineer (plausibly a Terebra figure);
+  and whoever runs House Dalreoch's end of the Saturnite influence
+  campaign against it.
 - **Callisto / the Jovian Development Company** (`callisto.md`) —
   the JDC's current administrator; the Callisto Home Rule League's
   leadership and the United Moons wing's leadership (possibly the
@@ -89,7 +96,9 @@ every one of these is a named-person-shaped gap once the people pass
 starts:
 
 - **MDR's President** (`mariner-valley.md`) — real elections, a real
-  person wins them; unnamed.
+  person wins them; unnamed. Whoever actually held the office at
+  Severance Day, ~2265 (`frontier-timeline.md`), and chose to declare
+  unilaterally, is a natural future figure specifically.
 - **The Consular College's First Consul** (`mariner-valley.md`) —
   elected by the College; unnamed.
 - **The Commonwealth of Elysium's Consul**, the 13th seat

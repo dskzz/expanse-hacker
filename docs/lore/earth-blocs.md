@@ -222,6 +222,16 @@ Atlantic Zone's own informal Good Neighbor Understanding
 exactly the neo-colonial continuation Bolívar's dream was supposed to
 escape in the first place.
 
+**A genuine flagship piece of orbital infrastructure, finally, and an
+Ecuadorian one rather than Brazil's own:** the Equatorial Bulk Export
+Program's mass-driver complex at Chimborazo
+(`earth-resources-and-pressures.md`), real, specific geography (the
+equatorial bulge making Chimborazo's summit the farthest point from
+Earth's center of any mountain) doing work no other bloc's own
+territory could. A rare point of bloc-wide pride that doesn't run
+through Brazil at all, even if the program itself is a joint UN
+venture rather than Patria Grande's alone.
+
 ## ASEAN and Others
 
 Southeast Asia's own real "ASEAN Way" carried forward essentially

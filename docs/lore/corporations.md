@@ -588,6 +588,13 @@ this whole roster.
 forged abandonment timestamp legitimizes what's actually theft, the
 mirror image of Frostline's survey-claim mechanic below.
 
+**Also the receiving end of Earth's own Equatorial Bulk Export
+Program** (`earth-resources-and-pressures.md`) — the Chimborazo mass
+driver's outbound cargo, popularly mocked as "the Trash Train," isn't
+disposed of once it reaches the Belt, it's genuine raw feedstock,
+making Driftwood (and the informal waste-picker labor underneath it)
+the actual other end of Earth's own waste problem.
+
 ## Full roster reference
 
 Everything else, organized by sector — lighter treatment than the

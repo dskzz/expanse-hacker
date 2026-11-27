@@ -21,6 +21,35 @@ live at once, with three mutually exclusive endings on the table and
 nothing deciding which wins. The single largest unresolved political
 thread in the corpus right now.
 
+### Ganymede's native water drilling project, and who's quietly against it
+
+Home file: `ganymede-condominium.md`. A real drilling project to tap
+Ganymede's own deep water table is finally starting, after decades of
+being stalled by the legitimate-sounding objection that Europa's own
+protected ocean (`europa.md`) should already be precedent enough — but
+some of that opposition traces back to a quiet Saturnite influence
+campaign, plausibly run through House Dalreoch's own outside contacts
+(`saturn.md`), protecting Saturn's own water-export revenue from a
+success that would undercut Jupiter's dependency on it entirely. A
+rare point where Saturn's own rival Highland and Lowland sides share
+real interest rather than feuding. No outcome decided — whether the
+drilling succeeds, and what happens to Jupiter/Saturn's own mutual
+dependency if it does, is deliberately open.
+
+### Jupiter and Saturn's own cold war, with a real twenty-year rhythm
+
+Home file: `ganymede-condominium.md`, `saturn.md`. Real interdependency
+(Jupiter needs Saturn's water, Saturn needs Jupiter's market access
+and manufactured goods) keeps this a cold war rather than a hot one,
+the same structural shape as a real rival-but-interdependent regional
+power pair — but the real ~19.86-year Jupiter/Saturn synodic period
+(the actual astronomical basis for the real "Great Conjunction") gives
+it an actual tempo: long quiet stretches, then windows roughly every
+twenty years where cheap transit makes mutual raiding and poaching
+worth the risk, a real historical Border Reivers dynamic rather than
+one-sided villainy on either side. The native-water fight above is a
+proxy for this deeper anxiety, not a separate dispute.
+
 ### The Ganymede Condominium's three-way tensions
 
 Home file: `ganymede-condominium.md`. Distinct from the sovereignty

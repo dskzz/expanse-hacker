@@ -99,7 +99,13 @@ any existing or future name that turns out just as hard to place.
 - **`mariner-valley.md`** — the capital itself: founding history (a
   dozen underground starter colonies), capability-is-authority, the
   Presidency, the Martian Congress's malapportionment problem, and
-  the Consular College.
+  the Consular College. Now also: **Severance Day, ~2265**
+  (`frontier-timeline.md`) — MDR's own actual independence date, pinned
+  down rather than left open, with the UN choosing not to contest it
+  by force during the same stretch of overreach driving Saturn's
+  settlement — the real root of Mars's own standing insecurity, not
+  just a dating detail, and named plainly rather than triumphantly on
+  purpose.
 
 ## The Belt
 
@@ -397,7 +403,20 @@ any existing or future name that turns out just as hard to place.
   Bharat competing for mass manufacturing). The OIC bloc's fusion
   anxiety ties directly into a new, second motive behind the Europa
   Allocation Council's quota fight and standing UN-level pressure
-  against expanding Thisbe Station's helium-3 discovery.
+  against expanding Thisbe Station's helium-3 discovery. Now also:
+  waste as an export rather than a burial problem — the real orbital
+  mechanics ruling out literally firing garbage into the Sun (it costs
+  more delta-v than leaving the solar system outright), and the real
+  reason a mass driver at Ecuador's Chimborazo works instead (the
+  equatorial bulge making its summit the single point on Earth
+  farthest from Earth's center, plus the equator's own free rotational
+  boost). Officially the Equatorial Bulk Export Program, popularly "the
+  Trash Train" — outbound cargo becomes genuine Belt-side salvage
+  feedstock for Driftwood Salvage & Reclamation (`corporations.md`),
+  received and sorted by a real, grim waste-picker labor economy with
+  a direct real-world precedent in India's own informal waste-picking
+  cities, traveling outward with the same diaspora already established
+  (`frontier-timeline.md`).
 - **`earth-blocs.md`** — the deferred follow-up: each of the nine
   blocs' own internal governance, one real institutional ancestor per
   bloc rather than a shared template (the Atlantic Zone's EU-style
@@ -417,7 +436,10 @@ any existing or future name that turns out just as hard to place.
   the Steppe Accord (Eurasian Union junior-member autonomy), the
   Patria Front (ironic-naming Peronist opposition to Brazilian
   dominance), and a fusion-economy "diversify now" reformist faction
-  inside the OIC bloc, kept deliberately non-sectarian.
+  inside the OIC bloc, kept deliberately non-sectarian. Now also:
+  Patria Grande's own flagship orbital infrastructure, finally, and an
+  Ecuadorian one rather than Brazil's — the Chimborazo mass-driver
+  complex (`earth-resources-and-pressures.md`).
 - **`armstrong-city.md`** — Armstrong City and Shackleton Base: the
   DC/Congress governance model, the UN's two-tier geography
   (prestige on Earth, bureaucracy on Luna), and the corporate HQ tax
@@ -611,15 +633,33 @@ any existing or future name that turns out just as hard to place.
 - **`ganymede-condominium.md`** — the one place Earth, Mars, and the
   Belt all hold a real stake: orbital infrastructure, joint defense,
   research IP, and the Belt's informal technical backdoor into it.
-  Its universities also fund a long-term, currently-impractical
-  research line into mining helium-3 straight from Jupiter's
-  atmosphere — motivated directly by Lunar resource depletion
-  (`flashpoints.md`), the one reservoir big enough to actually solve
-  that crisis, decades before the energy economics might ever work.
-  Now also: Ganymede's own agricultural growth is the real,
-  chronological reason Saturn exists at all — its rising water demand
-  outstripping what the Jovian system could supply locally is Saturn's
-  own first, mundane reason for being settled (`frontier-timeline.md`).
+  Now substantially deepened to match Mercury/Venus/Saturn's own
+  rigor: real grounding (the largest moon in the solar system, the
+  only one with its own magnetic field — a partial, not total,
+  radiation shield — strong subsurface-ocean evidence, the real
+  Laplace 1:2:4 resonance with Europa and Io, ESA's real JUICE mission
+  as the present-day anchor); a real settlement history as Jupiter's
+  gateway moon (~2180–2200, the magnetosphere mattering because
+  reliable active rad-shielding didn't exist yet), first tunnels dug
+  with pirated Terebra tunnel-boring tech (an embezzling researcher,
+  unnamed), then **Heinlein Dome** — a direct tribute, and the
+  settlement's own named anchor point — followed by a plain
+  bureaucratic numbering grid (Ag Dome [Quadrant]-[Ring]-[Number]) as
+  domes proliferated past any reasonable naming budget; a real power
+  mechanism (electrodynamic tether satellites tapping Ganymede's own
+  field, beaming power down by microwave, both real studied concepts
+  stacked rather than invented); a UN-funded exobiology program as this
+  corpus's fourth running unresolved-biosignature candidate; and a real
+  native-water drilling project, finally viable, running into a
+  legitimate-sounding Europa-precedent objection that doubles as cover
+  for a quiet Saturnite influence campaign protecting Saturn's own
+  water-export economy — the same economy Ganymede's own agricultural
+  growth created in the first place (`frontier-timeline.md`). Also now
+  a real Jupiter/Saturn cold war with an actual ~19.86-year tempo (the
+  real Great Conjunction's synodic period), mutual Border-Reivers-style
+  raiding during cheap-transit windows, and real interdependency
+  (Jupiter's water needs, Saturn's market needs) keeping it cold rather
+  than hot.
 - **`corporations.md`** — the full corporate landscape: 39 sectors,
   ~50+ companies, the Sol Industrial Trust, the Rockline Compact, the
   passive giants (Bedrock/Longview), credit raters, hidden ownership,
@@ -637,7 +677,12 @@ any existing or future name that turns out just as hard to place.
   H&V's oldest hidden-ownership tendril, predating Doris, Piast's
   leverage, the Frontier Opportunity Program, Venus's bank, and Nova
   Court combined) and Terebra Subsurface (Mars, tunnel-boring, built
-  Mercury's Deep Ring) — `frontier-timeline.md`.
+  Mercury's Deep Ring, pirated to dig Ganymede's own first tunnels, and
+  now drilling for Ganymede's native water table too —
+  `frontier-timeline.md`, `ganymede-condominium.md`). Also now:
+  Driftwood Salvage & Reclamation is the receiving end of Earth's own
+  Equatorial Bulk Export Program, "the Trash Train"
+  (`earth-resources-and-pressures.md`).
 
 ## Open threads worth knowing about before adding more
 

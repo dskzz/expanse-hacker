@@ -102,6 +102,29 @@ failure, not a single trick repeated.
 
 ## Independence, insecurity, and the military buildup
 
+**Severance Day, ~2265** (`frontier-timeline.md`) — not "Independence
+Day," deliberately: Mars's own plain, undecorated political register
+(the same one that names a plain "Beyond the Moons" against Earth's
+poetic "Leaving the Cradle") picks a sober, slightly bitter name over
+a triumphant one, because the thing it names was never a clean win.
+MDR, by this point unified and genuinely self-sufficient — real
+terraforming progress, a real capability-based military-industrial
+base — declares independence unilaterally during the same stretch of
+UN overreach already driving Saturn's own settlement boom and the
+Global South's rise on Earth (`frontier-timeline.md`, `saturn.md`).
+The UN, genuinely furious but stretched thin holding its grip
+everywhere else and newly wary of large-scale force (the same
+"unthinkable last resort" kinetic-deterrent logic already on the
+books at `earth-political-structure.md`), chooses not to contest it —
+not necessarily because it couldn't have, but because it judged the
+cost not worth paying that particular year. **That's the actual root
+of Mars's own standing insecurity, not just a dating detail:** Mars
+never gets to feel it won independence outright, only that Earth let
+it go, and fifteen years isn't long enough for a nation that unsure of
+its own founding moment to stop being touchy about it before the
+Seven Day War arrives and makes the insecurity a budget line instead
+of an undertone (below).
+
 MDR broke away from Earth outright at some point before the Seven Day
 War — a genuine breakaway nation, not a colony that simply drifted
 apart administratively. But independence left Mars in a structurally

@@ -177,6 +177,54 @@ established for ordinary UN-level influence
 pressure on any future UN decision about Thisbe's discovery rather
 than a one-time objection.
 
+## Waste as an export, not a burial problem
+
+A standing, real-world-grounded pressure none of the above quite
+covers: a crowded, resource-strained Earth genuinely needs somewhere
+to put what it can't recycle or bury safely. The popular image of
+firing it straight into the Sun doesn't survive real orbital
+mechanics — canceling Earth's own 29.8 km/s orbital velocity costs
+more delta-v than escaping the solar system outright, making the Sun
+one of the single most expensive destinations anywhere in it. The
+actual answer is cheaper and more useful: a mass-driver launch complex
+sited on **Chimborazo**, Ecuador — a real, specific, deliberately-
+chosen site, not an arbitrary one. Because of Earth's own equatorial
+bulge, Chimborazo's summit is the single point on Earth's surface
+farthest from Earth's center (farther than Everest, despite being
+shorter in raw elevation), and it sits almost exactly on the equator,
+giving it both the thinnest practical atmosphere to punch through and
+the planet's maximum free rotational velocity boost (~465 m/s
+eastward) for anything launched with the spin rather than against it.
+Real, if speculative, engineering lineage — electromagnetic launch-
+assist concepts (real studies like "StarTram") have proposed exactly
+this combination for exactly this reason.
+
+**Officially the Equatorial Bulk Export Program, a joint UN/Patria
+Grande venture** — Ecuador provides the geography, the UN provides the
+system-wide waste-management mandate — compacted, inert waste gets
+launched outbound on a cheap trajectory toward the Belt, where it's
+genuinely useful raw bulk material rather than garbage at all: direct
+feedstock for Driftwood Salvage & Reclamation
+(`corporations.md`) and the broader scrapshell salvage economy that
+already runs on hand-me-down and reclaimed material. Not a disposal
+scheme dressed up as recycling — a real, if grim, economic chain, the
+same "formal legitimacy vs. real power" throughline this corpus runs
+on everywhere else: officially a bulk-materials program, popularly
+mocked as **the Trash Train**.
+
+**Receiving, sorting, and reclaiming it is real, grim, low-status
+labor** — a genuine Belt-side waste-picker economy, with a direct
+real-world precedent: several real Indian cities run substantial
+informal waste-picking economies today, and that same hard-won
+expertise plausibly travels outward with India's own already-
+established diaspora (`frontier-timeline.md`), making the Belt's own
+garbage pickers a continuation of a real labor tradition rather than
+an invented one. Gives Ecuador/Patria Grande a genuine flagship piece
+of orbital infrastructure to be proud of, the same way other blocs
+already have one, while the actual dirty, dangerous end of the chain
+lands, as it usually does in this corpus, on whoever has the least
+leverage to refuse it.
+
 ## Still open
 
 - Whether the Eurasian Union and the OIC bloc's shared fossil-fuel
@@ -190,4 +238,7 @@ than a one-time objection.
   `people-pass-queue.md`): any bloc's own domestic party leaders tied
   to its pet-issue cleavage, Patria Grande's or the Eurasian Union's
   own agricultural-export ministries, the OIC bloc's own lead voice at
-  the Europa Allocation Council or on Thisbe's discovery.
+  the Europa Allocation Council or on Thisbe's discovery, the
+  Equatorial Bulk Export Program's own administrator, and no named
+  Belt-side waste-picker community or representative figure yet
+  either.
