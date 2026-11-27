@@ -1,6 +1,7 @@
 # Saturn: the Ringers, the Rings, and the Gate
 
-Status: locked, 2026-11-26. The outer-planets pass's anchor entry —
+Status: locked, 2026-11-26, settlement history and demographics added
+2026-11-27. The outer-planets pass's anchor entry —
 Saturn's own system, distinct in character from everywhere else built
 so far: not a radiation hazard like Jupiter, not a thermal extreme
 like Mercury, not a pleasant luxury outlier like Venus. Its defining
@@ -147,13 +148,22 @@ elsewhere in this corpus.
   through a Highland clan's buoys — real leverage a real historical
   toll-charging clan controlling a mountain pass would recognize
   immediately.
-- **Clan Glenshiel** — smaller and deliberately not fixed to one claim,
-  the toughest and most mobile breaker crews, following the richest
-  ice veins rather than defending one stretch. Named for the real
-  Scottish glen where Jacobite and government forces actually fought
-  in 1719 — a real Jacobite-era battle site, not an invented one,
-  fitting a clan whose whole identity is combat-readiness rather than
-  settled territory.
+- **The Stanitsa** — smaller in territory but not in cohesion,
+  deliberately not fixed to one claim, the toughest and most mobile
+  breaker crews, following the richest ice veins rather than defending
+  one stretch. Not Scottish or Irish like the other two — Russian and
+  Cossack-descended, and named for the real historical term for a
+  Cossack settlement (same naming logic as Mercat using the real word
+  for "market," not an invented one). The deliberate outlier: where the
+  Scottish and Irish population scattered across two separate Combines
+  that merely allied with various smaller Families over generations,
+  the Russian/Cossack contingent consolidated into one tight, cohesive
+  bloc from early on, reading less like a federation and more like one
+  real, unified community that never needed to split — mobility and
+  combat-readiness over fixed territory maps directly onto the actual
+  historical Cossack Host tradition (`frontier-timeline.md`), a
+  genuinely better fit than it would have been for either Dunmore or
+  Ardcarrick.
 
 **The three Lowland houses**, clustered around Mercat and Rhea — still
 called clans by blood and by habit, but openly restyling themselves as
@@ -183,6 +193,41 @@ Huygens Landing and Herschel Station both sit outside this rivalry
 entirely — Titan's distance and outside financing, and Enceladus's
 UN-run science mandate, keep both genuinely neutral ground rather than
 contested territory.
+
+## Why Saturn settled when it did, and who actually came
+
+Saturn's first reason for existing, chronologically, was mundane:
+Jupiter's own growth, specifically Ganymede's rise to agricultural
+centrality in the outer system, eventually outstripped the water Jupiter's
+own system could supply locally, and Saturn's rings became the answer
+(`ganymede-condominium.md`, `frontier-timeline.md`). A water tap, not a
+project of its own — which is also why Saturn's real settlement boom
+lagged Jupiter's by a real margin.
+
+The actual surge came later, and for a different reason. By the time
+it arrived, the UN — flush with India's post-veto-seat funding and
+effectively unchecked for half a century — had turned genuinely
+heavy-handed, and the solar "highlands" became the natural draw for
+people who wanted nothing to do with its dominion. A platinum-group-
+metals "gold rush" rumor, someone claiming to have scooped raw PGMs
+straight out of the rings, never conclusively confirmed and
+deliberately legend-shaped rather than settled fact, is what actually
+triggered the real wave of settlement rather than the slow trickle
+before it.
+
+The resulting population is genuinely mixed, with Scottish and Irish
+settlers giving the whole political culture its founding vocabulary
+and clan structure. The Stanitsa, above, is where the Russian/Cossack
+contingent landed. Bible Belt American and South American religious
+settlers converge into the same broad anti-authority current for a
+related but distinct reason — genuine, if less acute, discomfort with
+Earth's shifting religious center of gravity during the same stretch
+(`frontier-timeline.md`) — without (yet) needing a Combine of their
+own. Jupiter and Ganymede, by contrast, drew the system's more
+conforming settlers over the same decades — comply-and-prosper against
+Saturn's own don't-tread-on-me character, the same real contrast as
+the actual historical Highlands and Lowlands, just restaged one planet
+out.
 
 ## The Lowlands and the Highlands
 
@@ -378,3 +423,14 @@ the set, matching how little lies beyond it.
   against an outside threat, or whether that's stayed theoretical so
   far the way the Jacobite risings' own "unity" mostly wasn't, is
   deliberately undecided.
+- The PGM "gold rush" rumor that actually triggered Saturn's real
+  settlement boom was never conclusively confirmed — whether raw
+  platinum-group metals genuinely turn up in the rings in any
+  economically meaningful way, separate from the atmospheric
+  consortium's own helium-3/hydrogen operation, is deliberately left
+  open rather than settled either way.
+- Bible Belt American and South American religious settlers are
+  named as part of Saturn's population (`frontier-timeline.md`) but
+  don't have their own Combine or Syndicate yet — whether they stay
+  folded into the existing six houses or eventually produce their own
+  seventh isn't decided.

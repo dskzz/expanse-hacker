@@ -145,7 +145,7 @@ House Dalreoch, based at Rhea itself and enmeshed day-to-day with
 Cassini Works, already brokers much of the outside trade in processed
 ring ice and skimmed fuel — the consortium's natural, profiting local
 partner, and a live, specific grievance for Highland clans (Dunmore,
-Ardcarrick, Glenshiel), not an abstract principle.
+Ardcarrick, the Stanitsa), not an abstract principle.
 
 ### The Highland/Lowland split over chartering
 
@@ -363,6 +363,20 @@ specifically to claim transit rights its true operator's actual bloc
 identity wouldn't get. No confirmed instance yet — a live, unexercised
 mechanism rather than a past event, same as the Compact's other four
 loopholes.
+
+### Hauptmann & Voskuijlen's quiet grip on propulsion and life support
+
+Home file: `corporations.md`, `frontier-timeline.md`. Older and
+bigger than any of H&V's other known tendrils (Doris, Piast's
+leverage, the Frontier Opportunity Program's financing, Venus's own
+private bank, Nova Court's casino stake): real, quiet equity in both
+Korolev Propulsion and Vernadsky Systems, financed into existence on
+H&V credit before the first colony ship ever burned for Mars, debt
+that never fully cleared because neither propulsion nor life support
+ever stopped being essential. No single ship or habitat anywhere in
+known space is untouched by it, and nothing confirms anyone outside
+H&V itself has ever actually mapped how far this specific tendril
+reaches.
 
 ### Haven Corrections Group's jurisdictional seam under the Torture Convention
 

@@ -91,6 +91,22 @@ permanently-shadowed polar crater, not a new pattern. Call the
 accelerator complex **the Deep Ring**, plain functional naming in the
 same register as the Circuit or the Quiet Service.
 
+**Who actually dug it:** Mars's own tunnel-boring expertise, already
+developed and patented building Mariner Valley's dozen underground
+starter colonies, gets contracted out through **Terebra Subsurface**
+(`corporations.md`) to build the Deep Ring in a joint UN venture —
+the UN's own test, flush with India's post-veto-seat funding
+(`frontier-timeline.md`), of its newly grown capacity to organize
+capital on something hard before trying anything bigger.
+
+**Founding timing, now pinned down:** Mercury is settled late in the
+first wave (~2190–2200), explicitly as research, not extraction — the
+Deep Ring and the Parker Array are the actual founding reason. The
+He-3 and platinum-group economy below is a real, but later, upgrade
+layered on once Lunar resource depletion (`flashpoints.md`) makes the
+brutal trip here newly worth making, roughly a century afterward, not
+the reason Lawrence Station exists in the first place.
+
 **The array has to sit somewhere else, and Mercury's real polar
 geometry provides it for free.** A habitat in permanent shadow can't
 also host a solar array — but Mercury's poles, like Luna's own

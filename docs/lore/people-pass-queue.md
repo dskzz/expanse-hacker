@@ -224,7 +224,7 @@ starts:
   `mars-political-structure.md`) — none named yet.
 
 - **The Ringers** (`saturn.md`) — the six named clans/houses (Highland:
-  Clan Dunmore, Clan Ardcarrick, Clan Glenshiel; Lowland: House
+  Clan Dunmore, Clan Ardcarrick, the Stanitsa; Lowland: House
   Fennick, House Kerrow, House Dalreoch) have no individual leader,
   chief, or council figure named yet for any of them; no one named
   who's ever hosted or led a Gathering, no named Cassini Works
@@ -234,6 +234,22 @@ starts:
   atmospheric skimming consortium (House Dalreoch's own counterpart on
   the outside), and whether any Highland clan ever gets a toehold in
   it.
+
+- **The frontier-timeline era** (`frontier-timeline.md`) — no named
+  figures anywhere in this file yet: whoever ran the early L4
+  refinery before India's takeover, whoever led that takeover and
+  gave Vishvakarma its name, the Luddite saboteurs or accident
+  investigators from the ~2130 disaster, Armstrong City's own founding
+  UN committee, Korolev Propulsion's and Vernadsky Systems's own
+  founding engineers, Terebra Subsurface's leadership (and whoever
+  actually ran the Deep Ring's construction on the ground), and
+  whoever first claimed to have scooped raw platinum-group metals out
+  of Saturn's rings — the rumor that triggered Saturn's real
+  settlement boom, never confirmed, and a natural future figure or
+  natural future hoax either way.
+- **The old Western Belt refinery** (`frontier-timeline.md`) — the
+  one genuinely distinct from Vishvakarma's own L4 site — has no name
+  at all yet, let alone a named operator.
 
 ## Already named (reference only — not part of the queue)
 

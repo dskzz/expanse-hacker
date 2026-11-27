@@ -47,7 +47,32 @@ any existing or future name that turns out just as hard to place.
 - **`demographics.md`** — how Sol's population map actually shifted:
   Earth's non-nuclear decline, old capital surviving state collapse,
   and which cultural threads are load-bearing where (West African,
-  Slavic, Chinese, Indian, Dutch/Germanic, French).
+  Slavic, Chinese, Indian, Dutch/Germanic, French). Now also: the
+  Slavic thread's second, earlier seed (Korolev Propulsion and
+  Vernadsky Systems, decades before the later religious-discomfort
+  wave) and a new, deliberately niche Scottish/Irish thread anchored
+  to Saturn's own Highland-coded clans, earned the same way Hauptmann
+  & Voskuijlen's Dutch/Germanic thread is — old hardship's thread, not
+  a national one.
+- **`frontier-timeline.md`** — companion to this file and to
+  `os-lineages.md`'s own §1: not which cultural threads are load-
+  bearing, but *when* each settlement wave actually happened and what
+  real, Earth-side condition pushed it outward, each one explaining
+  why the next became necessary. Four phases — ambition and rivalry
+  (~2095–2180, nobody fleeing anything yet), release valve (India's
+  own exodus and Vishvakarma's real founding, ~2150–2180), the
+  diasporas multiplying and Jupiter filling up (~2180–2250, Saturn
+  lagging behind it as Jupiter's own water supplier before its real
+  settlement boom), and scarcity (the 2330s to now, Luna's own
+  depletion pushing Mercury's economic upgrade, Saturn's charter fight,
+  and Venus's very recent wealth-funded luxury boom) — with the
+  Rupture (`os-lineages.md`) sitting fixed between the first two.
+  Also: Spitzer Station, Korolev Propulsion, and Vernadsky Systems
+  (the actual engineering origin of fusion-torch propulsion and
+  closed-loop life support, both carrying genuinely old Hauptmann &
+  Voskuijlen equity — `corporations.md`); Armstrong City's real
+  founding trigger; and Terebra Subsurface, the Mars tunneling firm
+  that built Mercury's Deep Ring.
 
 ## Mars
 
@@ -194,7 +219,12 @@ any existing or future name that turns out just as hard to place.
   everyone else dropped, a flagged future RFC hook (a veteran
   Sunbird's own voiced section on real solar-conjunction comms
   blackouts), and "Diving the Furnace" as their own Crossing-the-
-  Line-style threshold ceremony.
+  Line-style threshold ceremony. Also now: Terebra Subsurface, the
+  Mars tunneling firm that actually built the Deep Ring in a joint UN
+  venture, and Lawrence Station's own founding pinned down as research-
+  first (~2190–2200), with the He-3/platinum-group economy above a
+  real but later upgrade once Lunar depletion made the trip newly
+  worth making (`frontier-timeline.md`).
 - **`venus.md`** — Landis Habitat(s) - Venus: real floating aerostat cities
   in the one altitude band where Venus's atmosphere is nearly Earth-
   like, using ordinary breathable air as the lifting gas. The one
@@ -247,7 +277,13 @@ any existing or future name that turns out just as hard to place.
   tied to the Belt's "Down the Well" ceremony; and a live cross-
   platform unionization fight the New International is organizing,
   resisted hard because a win on one platform threatens to cascade to
-  all of them.
+  all of them. Now also a real, two-stage settlement history
+  (`frontier-timeline.md`): a modest, unglamorous research-platform
+  presence going back to the 2200s, and the luxury-wellness cluster
+  above as a very recent addition within the last 50 years, funded by
+  wealth concentrated from Saturn's own platinum rush and Mercury's
+  Sunbird trade — the real reason Venus reads as the newest and least
+  lived-in major development in the whole corpus.
 
 ## Earth
 
@@ -391,7 +427,12 @@ any existing or future name that turns out just as hard to place.
   Lawrence Station - Mercury (`mercury.md`) later reuses rather than
   reinventing. Also now: "Leaving the Cradle," an Earth-born spacer's
   own first-departure-beyond-Luna threshold ceremony, named directly
-  for the real Tsiolkovsky quote.
+  for the real Tsiolkovsky quote. Also now: Armstrong City's actual
+  founding trigger (`frontier-timeline.md`) — a UN confidence-
+  restoring tourism project after an early refinery disaster, India's
+  own ring of hydroponic farms, and a mass driver originally built to
+  launch grain down to Earth before its later regolith-to-orbit
+  repurposing above.
 
 ## Saturn
 
@@ -439,8 +480,10 @@ any existing or future name that turns out just as hard to place.
   ported directly, with all six houses now named: three Highland
   clans working the rings themselves — Dunmore (innermost, fiercest
   holdout), Ardcarrick (Tethys, holding the one plow-ship lane all
-  Lowland trade actually depends on), and Glenshiel (mobile, named for
-  the real 1719 Jacobite-era battle site) — against three Lowland
+  Lowland trade actually depends on), and the Stanitsa (mobile,
+  Russian/Cossack-descended and deliberately consolidated rather than
+  scattered, the real exception to the other two's Scottish/Irish
+  coding) — against three Lowland
   houses clustered around Mercat - Dione and Rhea, openly aping the
   Jovian system's own commercial sophistication: Fennick (cautious,
   established), Kerrow (aggressive, impatient with Fennick), and
@@ -449,7 +492,16 @@ any existing or future name that turns out just as hard to place.
   Mercat itself is the Lowlands' own capital, nowhere near Callisto's
   level, its houses chasing an as-yet-ungranted JDC-style charter the
   Highland side blocks on principle — with Ardcarrick's own lane as
-  its real, physical leverage.
+  its real, physical leverage. Now also a real settlement history
+  (`frontier-timeline.md`): Saturn's first reason for existing was as
+  Jupiter's own water supplier, lagging Jupiter's own settlement
+  accordingly, and its real population boom came later, triggered by
+  an unconfirmed platinum-group-metals "gold rush" rumor during the
+  UN's own heavy-handed stretch — with Scottish and Irish settlers
+  giving the whole culture its vocabulary, the Stanitsa's Russian/
+  Cossack contingent converging into the same structure, and Bible
+  Belt American and South American religious threads folded in
+  without their own Combine yet.
 
 ## Beyond Saturn
 
@@ -564,6 +616,10 @@ any existing or future name that turns out just as hard to place.
   atmosphere — motivated directly by Lunar resource depletion
   (`flashpoints.md`), the one reservoir big enough to actually solve
   that crisis, decades before the energy economics might ever work.
+  Now also: Ganymede's own agricultural growth is the real,
+  chronological reason Saturn exists at all — its rising water demand
+  outstripping what the Jovian system could supply locally is Saturn's
+  own first, mundane reason for being settled (`frontier-timeline.md`).
 - **`corporations.md`** — the full corporate landscape: 39 sectors,
   ~50+ companies, the Sol Industrial Trust, the Rockline Compact, the
   passive giants (Bedrock/Longview), credit raters, hidden ownership,
@@ -574,7 +630,14 @@ any existing or future name that turns out just as hard to place.
   relevant tech) versus Albion Weave (Earth, old Atlantic Zone
   capital winning on market power rather than product). Also now:
   Perihelion Traders, the Mercury Run's own Earthstock-exclusive
-  merchant house (`mercury.md`, `ship-class-codex.md`).
+  merchant house (`mercury.md`, `ship-class-codex.md`). Also now:
+  Korolev Propulsion and Vernadsky Systems (Earth orbit, the actual
+  historical origin of fusion-torch propulsion and closed-loop life
+  support, both carrying real, old Hauptmann & Voskuijlen equity —
+  H&V's oldest hidden-ownership tendril, predating Doris, Piast's
+  leverage, the Frontier Opportunity Program, Venus's bank, and Nova
+  Court combined) and Terebra Subsurface (Mars, tunnel-boring, built
+  Mercury's Deep Ring) — `frontier-timeline.md`.
 
 ## Open threads worth knowing about before adding more
 

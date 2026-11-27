@@ -70,10 +70,25 @@ footprints on the Moon rather than on any resource the site itself
 produced.
 
 That symbolic weight is exactly what let it become something much
-bigger than a monument: disproportionate investment and development
-followed its historical importance the way real capitals sometimes
-get sited for symbolic rather than purely practical reasons, and over
-time it grew into **Luna's actual vital hub** — a sprawling office
+bigger than a monument — and now has an actual trigger
+(`frontier-timeline.md`), not just gradual accumulated prestige: after
+an early, unnamed Belt-adjacent refinery was nearly destroyed by
+industrial accident or Luddite sabotage (~2130), with Mars visibly
+rising at the same time, the UN poured sudden, disproportionate
+investment into the small existing heritage site specifically to
+restore public faith in space travel — a tourism and confidence
+project, timed and motivated, not just symbolic weight accumulating on
+its own. India's own direct contribution in the same push, leaning on
+its own hard-won orbital-farm expertise, was a full ring of hydroponic
+farms — the real seed of the "domed farms" below — paired with the
+system's own early mass driver, built first to launch India's grain
+*down* to Earth (genuinely cheap, Harsh-Mistress-style, since the
+cargo is falling into Earth's own gravity well rather than fighting out
+of one) and only later repurposed the other direction once the acute
+food crisis eased, below. Disproportionate investment and development
+followed from there the way real capitals sometimes get sited for
+symbolic rather than purely practical reasons, and over time it grew
+into **Luna's actual vital hub** — a sprawling office
 complex, habs, recyclers, domed farms, refineries and processing
 plants, the endpoint of dozens of pipelines carrying material in from
 Shackleton's remaining ice operations and the diffuse regolith-mining
@@ -84,7 +99,9 @@ and center doing genuinely different jobs instead of one location
 trying to be everything.
 
 **Getting bulk regolith off the surface and up to orbit plausibly runs
-on mass drivers** — genuinely real engineering, not speculative tech:
+on the same mass driver, repurposed** — its second job, not its
+original one (above) — and the engineering itself is genuinely real,
+not speculative tech:
 Gerard O'Neill's actual 1970s proposals for electromagnetic lunar
 launchers are the direct real ancestor, a stationary, electrically-
 powered linear accelerator that throws bulk cargo to orbital velocity

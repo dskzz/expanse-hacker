@@ -81,6 +81,16 @@ ground-level labor and agricultural output, run day-to-day by Belters
 regardless of whose paper sits upstream. No formal seat on the
 Commission proportional to this — see the backdoor, below.
 
+**Ganymede's own growth is the real reason Saturn exists at all,
+chronologically (`frontier-timeline.md`).** As Ganymede became more
+and more central to outer-system food production, its water demand
+eventually outstripped what was local to the Jovian system — Saturn's
+rings became the answer, and Saturn's first reason for existing was as
+Jupiter's own water supplier, not a project in its own right. That's
+also why Saturn's settlement visibly lags Jupiter's: it couldn't start
+mattering until Ganymede's own agricultural program had already grown
+large enough to need it.
+
 ## The Tripartite Ganymede Commission (TGC)
 
 The standing coordinating body, where MDR and UN representatives (and

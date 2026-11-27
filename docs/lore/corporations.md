@@ -240,6 +240,14 @@ real design attention.
   holds the controlling equity today — a glossy, independent-looking
   casino brand with a Trust finance house as its actual owner, and
   nothing about its storefront gives that away.
+- **Hauptmann & Voskuijlen** also holds the oldest instance of this
+  same pattern, decades before Nova Court or even the Frontier
+  Opportunity Program existed: real equity in both **Korolev
+  Propulsion** and **Vernadsky Systems** (`frontier-timeline.md`),
+  financed into existence on H&V credit because no ordinary lender
+  would touch propulsion and life-support R&D this early or this
+  speculative. Neither technology ever stopped being essential enough
+  to let the debt fully clear.
 
 ## The Rockline Compact
 
@@ -598,6 +606,9 @@ a scenario needs one.
 | Standard Fabrication Co. | Industrial components + robotics/heavy equipment | Mars | Covers both — assembling machines is the natural next step from making the parts |
 | Cole Spindle Works | Asteroid spin-habitat engineering | Earth–Belt joint venture | Named for Dandridge Cole, a real but genuinely obscure aerospace engineer who proposed hollowing out and spinning asteroids for artificial-gravity habitats in 1964 — arguably the actual originator of the concept, predating the far more famous (and so, deliberately avoided) O'Neill cylinder. A distinct engineering discipline from Domewright's station/dome construction: orbital mechanics and spin-stabilization, not architecture |
 | Domewright Habitats | Real estate/habitat | Belt | A lot of "independent" stations are Domewright property with another name painted over the lease |
+| Korolev Propulsion | Propulsion/engines — historical/legacy | Earth orbit | The actual engineering origin of every fusion-torch drive in the system, financed into existence on early Hauptmann & Voskuijlen credit alongside Spitzer Station's own physics breakthroughs (`frontier-timeline.md`). H&V never let the debt fully clear — real, quiet equity, 250-plus years old. Named for Sergei Korolev, the real chief engineer behind the actual Soviet space program |
+| Vernadsky Systems | Space-environmental/life-support engineering | Earth orbit | Closed-loop air, water, and biological-cycle engineering — the companion discipline to Korolev's propulsion work, same early H&V financing, same quiet equity. Named for Vladimir Vernadsky, the real originator of the biosphere concept |
+| Terebra Subsurface | Tunneling/subsurface construction | Mars | Built Mars's own dozen underground starter colonies, then took its patented tunnel-boring expertise off-world to build Mercury's Deep Ring in a joint UN venture (`mercury.md`, `frontier-timeline.md`). Named for the real Latin word for a boring tool — a small, deliberate etymological joke, same spirit as Lawrence Station's own cyclotron coincidence |
 | Helion Power | Power generation | Mars | Technically excellent, genuinely trusted — certified-parts lock-in feels less extractive than VARS's until an emergency hits |
 | Aurora Fusion Co. | Power generation (rival) | Mars–Earth joint venture | — |
 | Beaconward Systems | Comms hardware (rival) | Belt | — |

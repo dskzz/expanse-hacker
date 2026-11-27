@@ -69,7 +69,33 @@ plausible rising power this corpus's own logic points to.
 and the Commonwealth of Elysium's Russian half.** Hetman **Stanislav
 Piast** anchors it directly. Real logic: Russia's historical
 engineering/technical education tradition and actual cosmonaut
-heritage.
+heritage — now with two distinct historical seeds rather than one
+asserted outright (`frontier-timeline.md`): an early technical elite
+(Korolev Propulsion and Vernadsky Systems, clustered around Spitzer
+Station's own fusion-physics breakthrough decades before anyone was
+fleeing anything), and a later, separate wave of mostly old-first-
+world and Russian/Eastern-European emigration during the religious-
+discomfort stretch of the Global South's own rise. Also the main
+population behind Saturn's own Russian/Cossack-descended **Stanitsa**
+(`saturn.md`) — consolidated into one cohesive bloc rather than
+scattered, a genuinely different pattern from how the same wave
+settled everywhere else.
+
+**Scottish/Irish: a new, specifically niche thread, anchored to
+Saturn's Highland-coded clans rather than a broad population center.**
+Not a claim that the Atlantic Zone broadly dominates anywhere — the
+opposite of this corpus's own decline thesis would be the wrong read.
+The real logic is continuity with real history: Highland emigration
+has always run hardest during hardship (the actual Clearances and
+famine drove Highland Scots to Canada, Australia, the Carolinas, and
+notably the real Hudson's Bay Company's own North American frontier
+operations), and a declining Atlantic Zone experiencing its own
+version of that displacement, centuries later, plausibly produces
+another wave that ends up taking the single hardest, least desirable
+posting in the solar system (`frontier-timeline.md`). A niche thread
+earned the same way Hauptmann & Voskuijlen's own Dutch/Germanic thread
+is — old money's thread, not a national one, just this time it's old
+hardship's thread instead.
 
 **East Asian (Chinese): major, anchored to Elysium's other founding
 half.** Already established via the Commonwealth of Elysium's
