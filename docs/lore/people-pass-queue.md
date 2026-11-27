@@ -70,8 +70,12 @@ here).
   and the theft itself; Heinlein Dome's own founding administrator;
   the UN-grant-funded exobiology program's lead; the native water
   drilling project's own chief engineer (plausibly a Terebra figure);
-  and whoever runs House Dalreoch's end of the Saturnite influence
-  campaign against it.
+  whoever runs House Dalreoch's end of the Saturnite influence
+  campaign against it; the architect of the TGC's own joint-venture
+  structure, plausibly deceased by now and due a posthumous honor
+  (the Commission's own seat or the orbital mirror/tether network
+  itself a plausible candidate once named); whoever actually bottles
+  Heinlein Reserve; and Muller Center's own lead.
 - **Callisto / the Jovian Development Company** (`callisto.md`) —
   the JDC's current administrator; the Callisto Home Rule League's
   leadership and the United Moons wing's leadership (possibly the

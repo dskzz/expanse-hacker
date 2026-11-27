@@ -657,9 +657,37 @@ any existing or future name that turns out just as hard to place.
   growth created in the first place (`frontier-timeline.md`). Also now
   a real Jupiter/Saturn cold war with an actual ~19.86-year tempo (the
   real Great Conjunction's synodic period), mutual Border-Reivers-style
-  raiding during cheap-transit windows, and real interdependency
-  (Jupiter's water needs, Saturn's market needs) keeping it cold rather
-  than hot.
+  raiding during cheap-transit windows (two-register slang: "the
+  Reivers" for anyone sounding historically literate, "Ring Rats" as
+  the actual everyday slur), and real interdependency (Jupiter's water
+  needs, Saturn's market needs) keeping it cold rather than hot. Also
+  now: the Condominium's own real founding, dated ~2270 rather than to
+  Ganymede's own settlement — Mars's new sovereignty creating the
+  diplomatic room, a major orbital-expansion phase's sheer cost
+  creating the practical pressure, both converging almost by accident,
+  with the actual joint-venture architect plausibly dead by now and
+  due a posthumous honor rather than a hand-waved centenarian cameo; a
+  genuinely tamer population by deliberate UN/MDR institutional
+  selection, "the chillest of the chillest" of the Belt's own already-
+  diverse population, with a mellow sideline in normalized marijuana
+  cultivation and a distilling/winemaking culture reflecting that same
+  mix (an India-diaspora whiskey informally branded Heinlein Reserve,
+  a scatter of other Belt-coded distillers, and one numbered Ag Dome
+  that's earned the actual nickname "the Vineyard"); a second medical
+  pillar built on genuinely triple-layered radiation shielding — Muller
+  Center (named for the real Nobel laureate behind the actual science
+  of radiation-induced mutation) anchoring Ganymede as the safest place
+  in the outer system to gestate a child, and Ganymede's own ~0.146g
+  as the gentlest rung of a real system-wide gravity-rehab ladder
+  (Ganymede, Mars, Venus, Earth) rather than Venus's own isolated
+  niche, giving Ganymede a second, distinct senior-housing market
+  (`venus.md`); Greenhollow's own physical footprint fleshed out (a
+  half-buried pyramid HQ, Palisade Security, its own private satellite
+  dome network and tunnels); a gentle exoagritourism niche; and the
+  single sharpest everyday local grievance — the best food getting
+  licensed away to off-world buyers rather than reaching Ganymede's own
+  table — alongside loyal, Proportionality-Caucus-shaped political
+  opposition rather than anything separatist.
 - **`corporations.md`** — the full corporate landscape: 39 sectors,
   ~50+ companies, the Sol Industrial Trust, the Rockline Compact, the
   passive giants (Bedrock/Longview), credit raters, hidden ownership,

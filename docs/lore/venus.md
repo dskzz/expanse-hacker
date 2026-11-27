@@ -189,6 +189,18 @@ corpus. The already-established better radiation shielding matters
 far more to someone retiring here for decades than to a short-term
 tourist, reinforcing rather than duplicating the pitch.
 
+**Not this corpus's only senior-housing niche, and the two are
+distinct rather than competing.** Ganymede's own much lower gravity
+(~0.146g, `ganymede-condominium.md`) makes it the gentlest rung of a
+real system-wide rehabilitation ladder — Ganymede, then Mars (0.38g),
+then Venus (0.904g), then Earth (1g) — and gives it a second,
+genuinely different retiree market: Venus sells near-Earth comfort for
+people still invested in staying conditioned, where Ganymede sells
+immediate relief for frailer, lower-mobility retirees who'd rather
+have daily comfort now than long-term conditioning, even knowing that
+choice accelerates the same atrophy. Two honest, different pitches,
+not a duplicate.
+
 ## The reservoir-beach: precious imported water, flaunted rather than conserved
 
 **The real irony underneath this is sharper than it first looks:**

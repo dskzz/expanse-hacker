@@ -1,7 +1,8 @@
 # The Ganymede Condominium
 
 Status: locked, 2026-11-24, real-science grounding and settlement
-history added 2026-11-27. First full write-up in the stations pass
+history added 2026-11-27, political texture and a second medical
+pillar added the same day. First full write-up in the stations pass
 following the corporate-landscape work (`corporations.md`). Fixes a
 gap the same way the Belt's OSL/ASA split and Mars's Commonwealth of
 Elysium did: Ganymede isn't a monolith, and no single power ever
@@ -112,6 +113,45 @@ infrastructure buildout.
 
 ## The three-way division
 
+**It wasn't a condominium from the start — the actual TGC dates to
+~2270, not to Ganymede's own founding.** Through the whole ~2180–2265
+settlement arc above, this was simply a UN colonial project: Mars's
+own tunneling and dome contributions happened *as a UN colony's
+engineering arm*, not as an independent party, and Belt labor was
+present but entirely informal, with zero diplomatic standing. Two
+things converged right around Severance Day to actually force a
+three-way negotiation into existence. First, the diplomatic opening:
+Mars's sudden shift from colony to sovereign peer meant its own
+already-substantial orbital infrastructure here was suddenly a
+foreign power's property sitting on UN territory, not an internal UN
+asset anymore — that couldn't just continue on the old informal
+footing. Second, and sharper: a major new phase of orbital expansion
+(bigger mirrors and lenses, the tether/rectenna network, Terebra's own
+tunnel work for the habs under the growing dome grid) was expensive
+enough, right at that moment, that no single party could staff or
+capitalize it alone. The diplomatic room created by independence and
+the practical pressure created by the expansion's cost landed in the
+same few years almost by accident, and the TGC is the actual
+negotiated result — making Ganymede a quiet proof-of-concept, a full
+decade before OPRA's own far more famous crisis-driven cooperation,
+that Earth and a newly-sovereign Mars could share something valuable
+without fighting over it.
+
+**Whoever actually designed that joint-venture structure deserves
+real credit**, and plausibly isn't alive to receive it — eighty-plus
+years between the plan (~2270) and "now" (~2350) is a long gap for an
+ordinary human lifespan to bridge, nothing in this corpus has
+established the kind of life-extension tech that would change that
+math, so treating them as long since gone and posthumously honored is
+the more honest assumption than hand-waving a centenarian into the
+present day. Fittingly, the honor this corpus usually saves for
+scientific discovery instead goes to pulling off a negotiation: the
+Commission's own seat, or the orbital mirror/tether network itself,
+plausibly carries their name once they're actually named
+(`people-pass-queue.md`) — a genuine administrative/organizational
+visionary, not a scientist, the one honorific in the corpus of that
+specific kind.
+
 Lines are fluid, not absolute silos — general tendencies the
 Condominium breaks down over, not hard walls. Nobody's presence
 anywhere is strictly zero.
@@ -192,6 +232,96 @@ Jupiter's own water supplier, not a project in its own right. That's
 also why Saturn's settlement visibly lags Jupiter's: it couldn't start
 mattering until Ganymede's own agricultural program had already grown
 large enough to need it.
+
+## Who actually lives here: the chillest of the chillest
+
+**UN/MDR institutional sponsorship selected for a genuinely tamer
+population from the start**, and that selection compounds on itself.
+Belt labor recruited through formal UN/Mars channels, rather than
+organic frontier self-selection, skews toward people already
+comfortable working inside an institution — the Belt's own already-
+diverse population (`demographics.md`), but specifically its most
+inner-friendly, least radical end, not a cross-section of it.
+Earth and Mars's own recruits run the same way. The resulting culture
+reads as the mirror image of Saturn's own anti-authority Ringers: a
+genuinely mellow, well-fed, comply-and-prosper population with real
+reason to be content rather than performing contentment.
+
+**That mellowness has a natural sideline: marijuana cultivation and
+distilling, both normalized rather than stigmatized.** A real,
+well-precedented agricultural moon growing a recreational crop
+alongside its staples — not a unique idea worth worrying about
+originality over, just the obvious consequence of this specific
+population having both the botanical infrastructure and the
+temperament for it. The distilling culture reflects the population's
+own genuine mix rather than one dominant tradition: India's own
+already-established load-bearing role in Ganymede's founding
+agriculture (above) gives it a real whiskey culture of its own —
+informally branded **Heinlein Reserve** by whoever's actually
+bottling it, trading on the dome's own prestige the way a real
+distillery trades on its home address — alongside a scatter of other
+notable Belt-coded distillers reflecting the same West African,
+Slavic, and French threads already load-bearing in Belt culture
+generally (`demographics.md`). One Ag Dome, somewhere in the otherwise
+impersonal numbered grid, earns an actual nickname — **"the
+Vineyard"** — for growing grapes and producing a genuine, if modest,
+wine: the rare numbered dome distinctive enough to escape its own
+bureaucratic designation in everyday speech, the same exception that
+proves the Heinlein/grid contrast rather than undermining it. Also,
+unsurprisingly, exactly the kind of premium product that tends to get
+licensed away to off-world buyers rather than staying local (below).
+
+## A second medical pillar: gestation, and a gentler rung on the rehab ladder
+
+**Ganymede's own radiation protection is genuinely triple-layered**,
+and it makes the colony a real candidate for the safest place to
+gestate a child anywhere beyond Earth: hydrogen-rich biodome mass
+above the housing (the same real shielding principle already
+established for Mercury's own safe room, water and consumables mass
+rather than lead), Ganymede's own partial magnetic shielding (above),
+and subterranean siting, stacked three deep. Fetal tissue is real-
+world substantially more radiosensitive than adult tissue, which makes
+"safest place in the outer system to have a child" a genuinely earned
+niche rather than a marketing claim. **Muller Center** — named for
+Hermann Muller, the real Nobel laureate whose work on X-ray-induced
+mutation is the actual scientific foundation for why radiation and
+reproduction don't mix, appropriately obscure the same way Lawrence,
+Peale, and Kivelson are — anchors this work, and has quietly become a
+real pioneer in next-generation medical research more broadly as a
+result.
+
+**Ganymede's own low gravity (~0.146g) makes it the gentlest rung on a
+real system-wide rehabilitation ladder, not Venus's own isolated
+niche.** Ganymede (0.146g), then Mars (0.38g), then Venus (0.904g),
+then Earth (1g) — a real, structured progression for severely
+atrophied patients stepping up gradually rather than all at once
+(`venus.md`). That gives Ganymede a second, distinct senior-housing
+market from Venus's own: Venus sells near-Earth comfort for retirees
+still invested in staying conditioned; Ganymede's own much lower
+gravity sells immediate relief for frailer, lower-mobility retirees
+for whom daily comfort matters more than long-term conditioning,
+even knowing that choice accelerates the same bone and muscle atrophy
+this corpus already treats as real (`equipment-codex.md`'s own
+Loadframe entry) — a genuine, honestly-held tradeoff, not a flaw in
+the pitch.
+
+**Greenhollow's own physical footprint is bigger than one building.**
+Its headquarters is a half-buried pyramid complex, labs and testing
+running through underground warrens below it, guarded by a real
+contracted security presence — **Palisade Security** (`corporations.md`,
+already established, Earth, corporate-facing, legitimate), the better
+tonal fit than a mercenary outfit for a ruthless-but-legitimate
+chartered company protecting its own patents. Greenhollow also runs
+its own private mini-satellite network of specialized growing domes
+plus its own private tunnels, distinct from the general Ag Dome
+grid — a company-within-a-company, running parallel infrastructure
+rather than sharing the public kind.
+
+**Exoagritourism is a real, gentle recreational niche in its own
+right** — garden walks through the dome grid, genuine educational
+tourism built on "come see where your food actually comes from," a
+pastoral, low-key counterpoint to Titan's adventure tourism and
+Venus's luxury-wellness tourism rather than a competitor to either.
 
 ## The native water question: the real holy grail, and who doesn't want it found
 
@@ -299,6 +429,24 @@ text.
   real internal disagreement over whether the Europa-precedent
   objection deserves to be taken at face value at all once it's known
   to double as cover for someone else's economic self-interest.
+- **The best food gets licensed away, not grown for home consumption
+  first** — the single sharpest everyday grievance, and a direct
+  consequence of Greenhollow's own IP-licensing leverage (above)
+  rather than any political decision anyone local actually made: the
+  wine, "Heinlein Reserve," and whatever else carries real export
+  value tends to go to whoever pays most, not to Ganymede's own
+  table.
+- **The twenty-year raiding problem** (above) gets its own two-
+  register slang — "the Reivers," reached for by anyone who wants to
+  sound like they know the actual history, and **"Ring Rats,"** the
+  real, everyday dismissive slur dockworkers and crews actually use.
+- **Local opposition reads as loyal and political, not separatist** —
+  the natural shape for a genuinely well-fed, comply-and-prosper
+  population (above): a real local push for TGC representation
+  proportional to what Ganymede actually produces, the same basic
+  shape as the Proportionality Caucus's own fight at the Earth level
+  (`earth-political-structure.md`), not a rejection of the Condominium
+  itself.
 - **The Belt's real leverage is technical, not political — and it's
   informal, possibly unknown to the other two parties.** Belter
   technicians physically maintain the ground-level power, comms, and
@@ -331,8 +479,11 @@ setting already runs on everywhere else.
   embezzling researcher and the theft itself, Heinlein Dome's own
   founding administrator, the exobiology program's lead, the native-
   water drilling project's own chief engineer (plausibly a Terebra
-  figure), and whoever runs House Dalreoch's end of the Saturnite
-  influence campaign — all added to `people-pass-queue.md`.
+  figure), whoever runs House Dalreoch's end of the Saturnite
+  influence campaign, the architect of the TGC's own joint-venture
+  structure (posthumously honored once named, above), whoever actually
+  bottles Heinlein Reserve, and Muller Center's own lead — all added to
+  `people-pass-queue.md`.
 - Whether the native water drilling project actually succeeds, and
   what that does to Jupiter/Saturn's own mutual dependency if it does,
   is deliberately left open rather than resolved here.
