@@ -131,11 +131,58 @@ with enough current standing plausibly hosts, the same logic Vesta
 and Patria Grande's own rotating-seat conventions already use
 elsewhere in this corpus.
 
-No specific clans are named yet — deliberately, following the same
-pattern as the Jovian irregular moons' own clan families
-(`jovian-irregular-moons.md`), where the *structure* came first and
-specific names waited for the people pass. Added to
-`people-pass-queue.md`.
+**The three Highland clans**, working the rings themselves:
+
+- **Clan Dunmore** — innermost and oldest, claimed along the A/B ring
+  working-face nearest Mimas, and the fiercest holdout against any
+  Lowland influence at all. "Dunmore" is the real Scots word for a
+  great fort, a common Highland place-name element — an organic,
+  real-vocabulary name in the same spirit as Mercat's own, not a
+  borrowed proper name.
+- **Clan Ardcarrick** — claimed near Tethys, and the clan that matters
+  most to the Lowlands whether the Lowlands like it or not: Ardcarrick
+  holds the single busiest plow-ship lane, the one carrying most
+  Lowland-bound trade out toward Rhea and Titan. Every bit of outside
+  legitimacy Mercat's merchant houses chase still runs, physically,
+  through a Highland clan's buoys — real leverage a real historical
+  toll-charging clan controlling a mountain pass would recognize
+  immediately.
+- **Clan Glenshiel** — smaller and deliberately not fixed to one claim,
+  the toughest and most mobile breaker crews, following the richest
+  ice veins rather than defending one stretch. Named for the real
+  Scottish glen where Jacobite and government forces actually fought
+  in 1719 — a real Jacobite-era battle site, not an invented one,
+  fitting a clan whose whole identity is combat-readiness rather than
+  settled territory.
+
+**The three Lowland houses**, clustered around Mercat and Rhea — still
+called clans by blood and by habit, but openly restyling themselves as
+houses, the same real erosion Lowland Scotland's own clan system went
+through earlier and faster than the Highlands' did:
+
+- **House Fennick** — Mercat's oldest and most established house,
+  effectively running much of its court and council, and the most
+  cautious of the three about the charter push: Fennick wants
+  legitimacy earned slowly, not grabbed in a way that could blow back.
+- **House Kerrow** — newer, more aggressive, and openly impatient with
+  Fennick's caution — Kerrow would incorporate outright tomorrow if the
+  UN or MDR let it, and needles Fennick for dragging the whole charter
+  push out. The Lowland side's own internal rivalry, parallel to and
+  just as real as any Highland clan feud.
+- **House Dalreoch** — based at Rhea itself, enmeshed day-to-day with
+  Cassini Works and the single biggest beneficiary of brokering the
+  atmospheric consortium's trade — the specific, named face of the
+  Clearances-style grievance Highland clans already hold against the
+  Lowlands in general.
+
+No individual leader is named for any of the six yet — the clans and
+houses are structure, the same way the Jovian irregular moons' own
+families were named before any specific clan or figure inside them
+was (`jovian-irregular-moons.md`). Added to `people-pass-queue.md`.
+Huygens Landing and Herschel Station both sit outside this rivalry
+entirely — Titan's distance and outside financing, and Enceladus's
+UN-run science mandate, keep both genuinely neutral ground rather than
+contested territory.
 
 ## The Lowlands and the Highlands
 
@@ -313,21 +360,20 @@ the set, matching how little lies beyond it.
 
 ## Open threads
 
-- No named clans yet, nor any named figure leading one, hosting a
-  Gathering, running Cassini Works, administering Huygens Landing or
-  Herschel Station, or crewing a Rorqual-class ship — added to
-  `people-pass-queue.md`.
-- No named Lowland merchant houses, no named Mercat court or council
-  figure, and no outcome yet on whether the UN or MDR ever actually
-  grants the charter the Lowland side is pursuing — a live, deliberately
-  unresolved thread, not a foregone conclusion either way.
-- No named UN/MDR consortium or operator for the atmospheric skimming
-  operation yet, nor any specific clan caught up in a specific
-  Clearances-style displacement dispute — the tension is structural
-  for now, not yet a concrete incident.
-- Whether any clan has its own toehold in the atmospheric operation,
-  or whether it's uniformly outside-run, isn't settled — left open
-  rather than flattened into a clean answer.
+- The three Highland clans and three Lowland houses are named and
+  sited, but no individual leader, chief, or council figure is named
+  for any of them yet, nor anyone hosting a Gathering, running Cassini
+  Works, administering Huygens Landing or Herschel Station, or crewing
+  a Rorqual-class ship — added to `people-pass-queue.md`.
+- No outcome yet on whether the UN or MDR ever actually grants the
+  charter House Fennick and House Kerrow are both chasing, nor on
+  House Dalreoch's own exposure as the atmospheric consortium's named
+  local partner ever actually becoming an open incident rather than a
+  known resentment — both live, deliberately unresolved.
+- Whether any Highland clan has its own toehold in the atmospheric
+  operation, or whether House Dalreoch's brokering role is uniformly
+  exclusive, isn't settled — left open rather than flattened into a
+  clean answer.
 - Whether the Gathering has ever actually produced real unified action
   against an outside threat, or whether that's stayed theoretical so
   far the way the Jacobite risings' own "unity" mostly wasn't, is

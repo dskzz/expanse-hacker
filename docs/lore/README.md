@@ -404,9 +404,8 @@ any existing or future name that turns out just as hard to place.
   Independence against Edward I — and conspicuously absent even then
   in the moments that mattered most, the Jacobite risings' own
   clan-on-clan split). No standing government — the Gathering convenes
-  periodically without ever holding authority between gatherings — and
-  no named clans yet, deliberately. Real Saturn-system grounding
-  throughout: a surprisingly Earth-like ~1.07g at the real 1-bar
+  periodically without ever holding authority between gatherings.
+  Real Saturn-system grounding throughout: a surprisingly Earth-like ~1.07g at the real 1-bar
   reference level, genuinely weaker radiation belts than Jupiter's,
   real helium rain explaining Saturn's own measured excess heat, and
   the real scale gap between the ring/E-ring debris zone and Titan's
@@ -437,15 +436,20 @@ any existing or future name that turns out just as hard to place.
   plow ships' own lane gates, into the deep, nearly empty system
   Lassell Relay alone occupies beyond it. Also now a second political
   axis layered across clan rivalry, the real Highland/Lowland divide
-  ported directly: Highland clans working the rings themselves around
-  Mimas and Tethys, clan-first and Gathering-loyal, against a Lowland
-  side clustered around Dione and Rhea openly aping the Jovian
-  system's own commercial sophistication — Mercat - Dione, the
-  Lowlands' own capital (nowhere near Callisto's level), its leading
-  merchant houses quietly chasing an as-yet-ungranted JDC-style charter
-  the Highland side blocks on principle, sharpened by those same
-  merchant houses already brokering the atmospheric consortium's trade
-  in processed ice and fuel.
+  ported directly, with all six houses now named: three Highland
+  clans working the rings themselves — Dunmore (innermost, fiercest
+  holdout), Ardcarrick (Tethys, holding the one plow-ship lane all
+  Lowland trade actually depends on), and Glenshiel (mobile, named for
+  the real 1719 Jacobite-era battle site) — against three Lowland
+  houses clustered around Mercat - Dione and Rhea, openly aping the
+  Jovian system's own commercial sophistication: Fennick (cautious,
+  established), Kerrow (aggressive, impatient with Fennick), and
+  Dalreoch (Rhea-based, enmeshed with Cassini Works, the named local
+  face of the atmospheric consortium's own Clearances-style grievance).
+  Mercat itself is the Lowlands' own capital, nowhere near Callisto's
+  level, its houses chasing an as-yet-ungranted JDC-style charter the
+  Highland side blocks on principle — with Ardcarrick's own lane as
+  its real, physical leverage.
 
 ## Beyond Saturn
 

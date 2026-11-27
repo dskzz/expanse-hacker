@@ -140,24 +140,28 @@ echo of the actual Highland Clearances, where absentee landlords
 displaced small tenant holdings in favor of larger, more profitable
 operations dressed in the language of efficiency and modernization.
 No clan has a real seat in how it's run or who profits. Structural for
-now, not yet a named incident. Now sharper still: Lowland merchant
-houses out of Mercat - Dione already broker much of the outside trade
-in processed ring ice and skimmed fuel, making them the consortium's
-natural, profiting local partner — a live, specific grievance for
-Highland clans, not an abstract principle.
+now, not yet a named incident. Now sharper still, with a named face:
+House Dalreoch, based at Rhea itself and enmeshed day-to-day with
+Cassini Works, already brokers much of the outside trade in processed
+ring ice and skimmed fuel — the consortium's natural, profiting local
+partner, and a live, specific grievance for Highland clans (Dunmore,
+Ardcarrick, Glenshiel), not an abstract principle.
 
 ### The Highland/Lowland split over chartering
 
 Home file: `saturn.md`. Distinct from clan-on-clan rivalry: a regional,
 cultural fault line cutting across it, the real Highland/Lowland
-divide ported directly rather than invented fresh. Lowland merchant
-houses out of Mercat want a Jovian Development Company-style charter
-from the UN or MDR (`callisto.md`) and keep pushing the Gathering
-toward becoming something closer to a standing government to get it;
-Highland clans see both moves as trading real clan sovereignty for
-outside legitimacy, and block both. Neither side has won. Whether the
-charter is ever actually granted, and what it would cost the Gathering
-if it is, stays deliberately open.
+divide ported directly rather than invented fresh. Mercat's own two
+leading houses don't even agree on tactics — House Fennick wants a
+Jovian Development Company-style charter (`callisto.md`) earned slowly,
+House Kerrow wants it grabbed outright — but both keep pushing the
+Gathering toward becoming something closer to a standing government to
+get there. The three Highland clans see both moves as trading real
+clan sovereignty for outside legitimacy, and Ardcarrick in particular
+has real leverage to make that resistance stick: it holds the single
+busiest plow-ship lane Lowland trade actually depends on. Neither side
+has won. Whether the charter is ever actually granted, and what it
+would cost the Gathering if it is, stays deliberately open.
 
 ### Saturn as the system's second practical helium-3 source
 

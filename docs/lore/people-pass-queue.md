@@ -223,18 +223,17 @@ starts:
 - **Ballista-class vessels and commanding officers** (`ship-class-codex.md`,
   `mars-political-structure.md`) — none named yet.
 
-- **The Ringers** (`saturn.md`) — no named clans at all yet,
-  deliberately, following the same structure-first pattern as the
-  Jovian irregular moons' own clan families; no named clan leader, no
-  one who's ever hosted or led a Gathering, no named Cassini Works
+- **The Ringers** (`saturn.md`) — the six named clans/houses (Highland:
+  Clan Dunmore, Clan Ardcarrick, Clan Glenshiel; Lowland: House
+  Fennick, House Kerrow, House Dalreoch) have no individual leader,
+  chief, or council figure named yet for any of them; no one named
+  who's ever hosted or led a Gathering, no named Cassini Works
   administrator, Huygens Landing operator, or Herschel Station lead,
   and no named Rorqual-class vessel or commanding officer
   (`ship-class-codex.md`). Also open: whoever runs the UN/MDR-licensed
-  atmospheric skimming consortium, and any specific clan caught up in
-  a specific Clearances-style displacement dispute with it; no named
-  Lowland merchant house out of Mercat - Dione, no named court or
-  council figure there, and no named Highland clan leading the
-  resistance to chartering.
+  atmospheric skimming consortium (House Dalreoch's own counterpart on
+  the outside), and whether any Highland clan ever gets a toehold in
+  it.
 
 ## Already named (reference only — not part of the queue)
 
