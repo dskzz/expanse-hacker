@@ -32,10 +32,13 @@ here).
   (the Commission-equivalent seat or the drive network itself a
   plausible candidate once named); the engineers behind the three-ring
   drive redundancy design; whoever actually leads the resettlement
-  effort once Piast's spin-up decree lands; and whoever within Oduya's
+  effort once Piast's spin-up decree lands; whoever within Oduya's
   own movement actually worked out the real ~298m/0.3g new-module
   proposal underneath the "Point Three G!" chant — plausibly a named
-  engineer-advisor figure distinct from Oduya herself.
+  engineer-advisor figure distinct from Oduya herself; and the
+  consultant who commissions the theft of that same proposal's white
+  paper, deliberately left unnamed and unaffiliated (ASA's hardline
+  wing is the obvious candidate, not confirmed).
 - **Davida** (`asteroid-bases.md`) — no named figures or tenants at
   all beyond the shipbuilding-supply-chain companies already anchored
   there.

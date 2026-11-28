@@ -170,13 +170,19 @@ any existing or future name that turns out just as hard to place.
   spinning a single module (not the physics-sound paired version) up to
   its full 0.75g for Earth immigrants who haven't arrived yet,
   defending it by pointing out the poor already live at a third of a g
-  in his own building. A literal Berlin-Wall-shaped gravity fight
-  results, with the movement's own catchy, technically-unworkable-if-
-  taken-literally chant ("Slow down the drums! Point Three G!") sitting
-  over Oduya's real, cheaper, purpose-built 0.3g new-module platform
-  underneath it, plus a genuine three-tier Belter-body spectrum, with
-  Ceres itself — the Belt's own capital — ending up the place "Belter
-  bodies" are least common, not most.
+  in his own building — a decree that earns its own lasting nickname,
+  "Piast's Ugly Spin," from day one. A literal Berlin-Wall-shaped
+  gravity fight results, with the movement's own catchy, technically-
+  unworkable-if-taken-literally chant ("Slow down the drums! Point
+  Three G!") sitting over Oduya's real platform: let Piast keep his
+  Ugly Spin, and build a new, cheaper, purpose-built 0.3g module as its
+  counter-rotating partner, fixing his own structural recklessness for
+  free. That real compromise, stolen from an internal white paper by a
+  hired, deliberately unnamed consultant and leaked stripped of
+  context, becomes the next day's "Oduya Sells Out to Piast" — plus a
+  genuine three-tier Belter-body spectrum, with Ceres itself — the
+  Belt's own capital — ending up the place "Belter bodies" are least
+  common, not most.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
   stalemate, and the live, unresolved helium-3 crisis. Now also: the

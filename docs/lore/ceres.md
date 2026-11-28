@@ -247,7 +247,12 @@ reluctance is exactly what later gives Piast a conveniently plausible
 **Piast's decree, and he does it alone.** Hetman Piast — recent 1g
 stock himself, not multi-generational Belt stock — genuinely finds
 the gentler 0.5g operating point uncomfortable, and decrees spinning
-a single module up to the full 0.75g it was engineered for — reckless,
+a single module up to the full 0.75g it was engineered for —
+**"Piast's Ugly Spin,"** the decree's own lasting popular nickname,
+catching the double meaning (the literal rotation, and the obvious
+self-serving political spin in how he defends it, below) from the day
+it's announced, the same way a real political nickname calcifies out
+of one specific moment and just sticks. Reckless,
 not the physics-sound paired version: it breaks the counter-rotation
 balance and leaves a real, continuing unbalanced gyroscopic load on
 the surrounding rock, a latent structural vulnerability nobody's
@@ -306,6 +311,27 @@ pitch and much more consistent with "Ceres for Belters" always having
 been a concrete economic plan rather than a grievance. The chant
 captures the crowd; this is the plan only the people paying attention
 know she's actually pushing.
+
+**The real compromise, and the document that gets her hurt.** Oduya's
+actual negotiating position isn't to fight Piast's Ugly Spin at all —
+it's to let him keep it, and build her own new module as its
+counter-rotating partner, which happens to also be the real fix for
+the structural vulnerability his recklessness left dangling. Smart,
+cheap, and solves two problems with one build. It exists as an
+internal document — dry, bureaucratic, something like a *"Core Complex
+Load Mitigation & Housing Expansion Proposal"* — genuinely competent
+policy work, which is exactly what makes it so damaging once it stops
+being internal. A hired consultant — client deliberately unclear, even
+to whoever actually does the job, though ASA's own hardline wing
+(already on record considering her whole approach "too compromised")
+is the obvious candidate — contracts a hacker to retrieve it. Stripped
+of the cost comparison, the structural-safety rationale, and the fact
+that she's getting an entire new module out of it, the leak runs the
+next day as **"Oduya Sells Out to Piast"** in the blunter outlets and
+**"Oduya Backs Down on Piast's Ugly Spin"** in the more "respectable"
+ones — both built entirely out of her own real words, both omitting
+every piece of context that would make the compromise look like what
+it actually is.
 
 **A genuine three-tier physical/class spectrum results.** Frontier
 Belters (true microgravity adaptation, Loadframe-dependent even
@@ -474,6 +500,15 @@ character.
 - Whether Oduya's own new-module proposal ever actually gets funded
   and built, or stays a policy position she can't get past Piast's
   own leverage over the Commission-equivalent budget, is left open.
+- The consultant who commissions the white paper's theft is
+  deliberately left unnamed and unaffiliated — ASA's hardline wing is
+  the obvious candidate but not confirmed, and whether the hacker who
+  does the job ever actually learns who they really worked for is its
+  own open question.
+- Whether the leak permanently damages "Ceres for Belters" or Oduya
+  manages to get the real compromise's own merits back out in front of
+  the story is left open — a live, unresolved reputational fight, not
+  a settled outcome.
 - Whether any other major corp (Meridiani Systems, VARS, Tanager)
   warrants its own named Ceres Magnate beyond the three above isn't
   decided — the three given are a deliberate minimum, not an

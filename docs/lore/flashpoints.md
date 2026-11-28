@@ -164,11 +164,19 @@ because it isn't the real policy — taken literally it would push the
 worst-off residents down toward a genuinely debilitating ~0.13–0.2g,
 and actually fixing it without that own-goal would mean tearing down
 and rebuilding the premium tier's own ceilings, an unrealistic
-retrofit. Oduya's real platform underneath the chant is smarter: a
-brand-new, purpose-built 0.3g module, smaller and cheaper than Piast's
-own project by the same cost logic that justified his overspend. Live,
-unresolved, and already Ceres's own flashpoint subset, not a
-hypothetical.
+retrofit. Oduya's real platform underneath the chant is smarter: let
+Piast keep his Ugly Spin, and build a brand-new, purpose-built 0.3g
+module as its counter-rotating partner — cheaper than Piast's own
+project and the real fix for the structural vulnerability he left
+dangling, solving two problems with one build. That real compromise
+exists as an internal white paper, dry and bureaucratic on its face —
+exactly what makes it so damaging once a hired consultant (client
+deliberately unclear; ASA's own hardline wing, already on record
+considering her approach "too compromised," is the obvious candidate)
+has it stolen and leaked stripped of context, running the next day as
+"Oduya Sells Out to Piast" and "Oduya Backs Down on Piast's Ugly
+Spin." Live, unresolved, and already Ceres's own flashpoint subset,
+not a hypothetical.
 
 ### Psyche's live ASA asset among the holdouts
 
