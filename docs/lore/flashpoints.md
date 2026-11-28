@@ -133,7 +133,7 @@ reasons rather than assigned ones.
 
 ### Ceres: Oduya versus Piast
 
-Home file: `ceres.md`. Hetman Folarin Piast, a Belter owned lock,
+Home file: `ceres.md`. Hetman Sulayman Piast, a Belter owned lock,
 stock, and barrel by Earth, carrot-and-stick, running rigged-but-real
 elections — against Imara Oduya's standing opposition. Live, ongoing,
 and the Belt's most visible single political rivalry.

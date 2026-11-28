@@ -67,12 +67,15 @@ plausible rising power this corpus's own logic points to.
 
 **Slavic/Eastern European: major, concentrated specifically at Ceres
 and the Commonwealth of Elysium's Russian half.** The Polish-dynastic
-surname of Ceres's own Hetman, **Folarin Piast**, anchors it directly
-— and his own West African first name, a genuine product of over a
-century of intermarriage between Ceres's founding Slavic technical
-elite and its West African community (`ceres.md`), is a better, more
-realistic reflection of a multi-generational mixed hub than assuming
-either thread stayed cleanly separate that long. Real logic: Russia's
+surname of Ceres's own Hetman, **Sulayman Piast**, anchors it
+directly — and his own West African first name has a specific,
+concrete origin rather than a generic multi-generational blend: one
+parent, Hausa-Fulani Nigerian born, built a career in the UN's own
+civil service and drew a posting to Ceres's own standing
+nominal-sovereignty administration (`ceres.md`'s MFN framework —
+already real UN infrastructure physically present on the rock, not a
+new thread), meeting and marrying into the Piast line there (`ceres.md`).
+Real logic: Russia's
 historical engineering/technical education tradition and actual
 cosmonaut heritage — now with two distinct historical seeds rather than one
 asserted outright (`frontier-timeline.md`): an early technical elite

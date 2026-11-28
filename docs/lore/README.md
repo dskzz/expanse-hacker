@@ -136,7 +136,7 @@ any existing or future name that turns out just as hard to place.
   2022-02-15.pdf` in this same folder is old external reference
   material, not canonical — superseded by this file.)
 - **`ceres.md`** — the Belt's biggest hub: the UN's MFN trade
-  framework, Hetman Folarin Piast, the Consular-College-style
+  framework, Hetman Sulayman Piast, the Consular-College-style
   Magnate class, and Imara Oduya's opposition. Now substantially
   deepened: real grounding (largest Belt object, Occator Crater,
   Ahuna Mons, Dawn as the completed-mission anchor); one of the
@@ -195,11 +195,26 @@ any existing or future name that turns out just as hard to place.
   rock buffers, plausibly riddled with unofficial, unmapped bores
   perfect for smuggling; a real carbonaceous/C-type mineral profile
   (water ice, ammoniated clays, Occator's brine-salt deposits) deliberately
-  contrasted with Psyche's own metal-rich claim; a modest **Belt
-  University**; a low-g sports arena at the Zone 2/3 boundary; and a
-  second, genuinely distinct grav-rehab pitch — not a single fixed
-  gravity like Venus or Ganymede, but the whole ladder, continuously,
-  in one station.
+  contrasted with Psyche's own metal-rich claim, plus a stated real
+  reason Ceres isn't a helium-3 source either (young, wet, resurfaced
+  rock, the opposite of the Moon's own old-dry-regolith profile); a
+  modest **Belt University**; a low-g sports arena at the Zone 2/3
+  boundary; and a second, genuinely distinct grav-rehab pitch — not a
+  single fixed gravity like Venus or Ganymede, but the whole ladder,
+  continuously, in one station. A full tunnel network now backs the
+  Core Complex's own infrastructure: gear-wheel chambers sized to
+  swap drive hardware whole, maintenance bores honeycombing the zone
+  stack's own buffer layers, a rotating internal spine-and-four-
+  radial-tunnels system (kept deliberately distinct from the
+  external, non-rotating bypass tube), polar-ice pipes with melting
+  stations at the source, and surface shafts for antennas, comms, and
+  observatories — all of it also cover for the Margins' own
+  unofficial smuggling bores. And the Hetman's own name and office
+  both now trace to one real mechanism: a Hausa-Fulani Nigerian
+  parent in the UN's own civil service, posted to Ceres's standing
+  nominal-sovereignty administration, married into the Piast line —
+  Earth's interests had a known, pre-vetted quantity to cultivate
+  decades before H&V's own debt leverage ever entered the picture.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
   stalemate, and the live, unresolved helium-3 crisis. Now also: the

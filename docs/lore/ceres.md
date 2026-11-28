@@ -232,6 +232,20 @@ economic case always ran on water, volatiles, and simply being first
 and biggest, not on anything buried in its own rock being especially
 valuable to dig up.
 
+**No, Ceres isn't a helium-3 source either, and the real reason is
+worth stating outright rather than leaving as an obvious gap.**
+Solar-wind-implanted He-3 — the corpus's own actual fusion-fuel basis
+(Lunar depletion driving the whole scramble, Thisbe Station's
+discovery, Saturn's atmospheric skimming, Europa's deuterium,
+`earth-resources-and-pressures.md`) — needs old, dry, undisturbed
+regolith that's sat there soaking up solar wind for billions of
+unbroken years, the Moon's own real profile. Ceres is the opposite of
+that on every count: young-resurfaced (Ahuna Mons is a real
+cryovolcano active within the last few million years), water-rich, and
+geologically alive in a way that keeps erasing whatever implanted gas
+might otherwise accumulate. Water and simply being first, not fusion
+fuel, stay the real story here.
+
 **Belt University.** Modest on purpose — a working technical and
 administrative college, not a flagship research institution (the
 corpus's actual heavyweight research niches already belong elsewhere:
@@ -355,6 +369,64 @@ through the full hub-and-spoke-and-rail system from a distant end —
 that wait is a clear win, and **zero-g emergency response stations**
 along this bypass tube are worth building for exactly that reason.
 
+## Tunnels, warrens, and the lower tube system
+
+**The gear-wheel chambers are destinations, not corridors.** Each of
+a module's three drive rings (above) sits inside its own large
+excavated chamber — sized to bring the actual gear-track hardware in
+and out whole for replacement, not just service it in place through a
+hatch. Three chambers per module, one per ring, the biggest single
+voids in the rock outside the Core Complex itself.
+
+**Maintenance tunnels thread the buffer layers that were already
+load-bearing.** The structural/utility buffer layers in the radial
+zone stack (above) aren't abstract boundaries, they're honeycombed
+with the real network servicing them — one-or-two-abreast bores
+running the module's full circumference, carrying the gear chambers'
+own service access and each can's structural and environmental
+sensor net. Unglamorous, constant, and rotating with the rest of the
+module, same as everything outside the Core Complex's own near-axis
+zone.
+
+**The lower tube system: one spine, four quarters.** The Core
+Complex's own central corridor doubles as a **main spinal tube**
+running the module's full length along the rotation axis; **four
+radial tunnels, set 90° apart**, branch off it at intervals, tying the
+spine to the drive-ring chambers and the buffer-layer maintenance
+network at specific points around the circumference. All of this
+rotates together with the module — a genuinely different structure
+from the **external, non-rotating bypass tube** (above), which is
+anchored outside the module entirely and only periodically aligns
+with it. Easy to conflate the two; worth keeping distinct.
+
+**Where rock tunnels actually stop.** The inter-module connector
+tunnels and surface access shafts (above) are bored through the
+Margins' own stationary rock and terminate at each module's hub in
+built, engineered structure — the rock tunnel ends exactly at that
+boundary, and everything on the hub side of it is construction, not
+excavation. Worth being precise about: it's the real dividing line
+between "something Terebra Subsurface bored" and "something Cole
+Spindle Works built."
+
+**Water, surface, and listening-post tunnels.** Dedicated bores run
+from the Margins and the module buffers out to subsurface water
+deposits, including pipes running up to Ceres's own polar ice
+reserves — plausible the same real way the Moon's permanently
+shadowed polar craters hold ice, consistent with Dawn's own confirmed
+water ice (above) — with melting stations sited at the source rather
+than hauling raw ice inward. Other surface shafts carry antennas,
+comms relays, listening posts, and a modest observatory or two —
+legitimate, logged reasons for a bore to reach daylight.
+
+**Smuggling tunnels hide in exactly this crowd.** An unofficial,
+unmapped bore connecting Downtown's own docks to anywhere else on
+Ceres (`flashpoints.md`) doesn't need to look suspicious — it just
+needs to look like one more maintenance run, water tap, or abandoned
+survey shaft among dozens of legitimate ones nobody's fully
+catalogued. The real security problem isn't that the tunnels exist,
+it's that there are too many legitimate reasons for them to exist to
+ever finish mapping which is which.
+
 ## The gravity fight: Piast, Oduya, and a fight over a problem that was already solved
 
 **The real joke underneath the whole fight: Cole Spindle Works'
@@ -376,7 +448,7 @@ adaptation cost and a real identity cost, pride included, and that
 reluctance is exactly what later gives Piast a conveniently plausible
 "we're just consolidating underused capacity" cover story.
 
-**Piast's decree, and he does it alone.** Hetman Folarin Piast —
+**Piast's decree, and he does it alone.** Hetman Sulayman Piast —
 genuinely multi-generational Ceres stock himself, low-g adapted like
 everyone else, not an outsider imposing Earth comfort on anyone —
 decrees spinning a single module up to the full 0.75g it was
@@ -529,7 +601,7 @@ in.
 
 ## The Hetman
 
-**Hetman Folarin Piast** — elected, and real elections are held, but
+**Hetman Sulayman Piast** — elected, and real elections are held, but
 the office has drifted into something closer to its actual historical
 root than its ballot-box veneer suggests: real Cossack Hetmans were
 genuinely elected by council, then wielded near-autocratic authority
@@ -541,6 +613,22 @@ supposed to come with it. (Worth noting for anyone curious: "Hetman"
 is widely believed to derive from the German *Hauptmann* — the same
 root as **Hauptmann & Voskuijlen** — a coincidence neither name was
 chosen to set up, but a real one now sitting in the corpus either way.)
+
+**Where the name, and the office, both actually come from.** One
+parent — Hausa-Fulani Nigerian born — built a career in the UN's own
+civil service and drew a posting to Ceres's own standing
+nominal-sovereignty administration: the UN's "paper ownership" (above)
+was never just an abstraction, it's a real, physically-present
+bureaucracy, and someone has to staff it. That parent met and married
+into the Piast line on Ceres itself; Sulayman is genuinely Ceres-born
+and -raised, reads as authentic Belter stock to anyone who meets
+him, and still grew up with real, early, legitimate exposure inside
+the UN's own administrative apparatus — not a cover story, an actual
+childhood. That's what made him legible decades later, long before
+H&V's own debt leverage ever entered the picture: a known, pre-vetted
+quantity Earth's interests could recognize and quietly cultivate once
+he showed real political ambition, rather than a stranger they had to
+take a risk on.
 
 **The leash is carrot-and-stick, and both halves are already-built
 mechanisms, not new invention:**

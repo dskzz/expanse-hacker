@@ -284,7 +284,7 @@ starts:
 
 ## Already named (reference only — not part of the queue)
 
-- **Hetman Folarin Piast** — Ceres (`ceres.md`).
+- **Hetman Sulayman Piast** — Ceres (`ceres.md`).
 - **Imara Oduya** — Ceres's opposition voice (`ceres.md`).
 - **Elias Voss** — the Massacre at Thisbe Station's central figure,
   later Slayton Construction Yards' manager (`os-lineages.md`,
