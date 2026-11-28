@@ -223,33 +223,46 @@ through the full hub-and-spoke-and-rail system from a distant end —
 that wait is a clear win, and **zero-g emergency response stations**
 along this bypass tube are worth building for exactly that reason.
 
-## The gravity fight: Piast, Oduya, and a political fault line nobody designed on purpose
+## The gravity fight: Piast, Oduya, and a fight over a problem that was already solved
 
-**The population shortfall that makes this possible.** The whole
-four-module project came in under its original one-million
+**The real joke underneath the whole fight: Cole Spindle Works'
+engineers had already solved it, quietly, as a side effect of the
+geometry.** At the original 0.5g operating point, Zone 3's own outer
+edge — where most of that tier's population actually lives — already
+sits at roughly **0.31g**, essentially a third of a gravity, with
+nobody having had to fight for it. The compromise setting already did
+the right thing. The entire political fight that follows exists only
+because someone disturbs that quiet, working arrangement, not because
+there was a real problem to solve.
+
+**The population shortfall that makes disturbing it possible.** The
+whole four-module project came in under its original one-million
 projection — plausibly because existing low-g-adapted Belters simply
-didn't move in as eagerly as planners hoped, even into the more
-accessible original 0.5g operating point. Any move into unfamiliar
-gravity carries a real physical adaptation cost and a real identity
-cost, pride included, and that reluctance is exactly what later gives
-Piast a conveniently plausible "we're just consolidating underused
-capacity" cover story.
+didn't move in as eagerly as planners hoped, even into the accessible
+0.5g point. Any move into unfamiliar gravity carries a real physical
+adaptation cost and a real identity cost, pride included, and that
+reluctance is exactly what later gives Piast a conveniently plausible
+"we're just consolidating underused capacity" cover story.
 
-**Piast's decree.** Hetman Piast — recent 1g stock himself, not
-multi-generational Belt stock — genuinely finds the gentler 0.5g
-operating point uncomfortable, and decrees spinning one module (or a
-full counter-rotating pair) up to the full 0.75g the structures were
-always engineered for. Publicly framed as modernization and a signal
-to attract further Earth investment; actually, in real substance, new
+**Piast's decree, and he does it alone.** Hetman Piast — recent 1g
+stock himself, not multi-generational Belt stock — genuinely finds
+the gentler 0.5g operating point uncomfortable, and decrees spinning
+a single module up to the full 0.75g it was engineered for — reckless,
+not the physics-sound paired version: it breaks the counter-rotation
+balance and leaves a real, continuing unbalanced gyroscopic load on
+the surrounding rock, a latent structural vulnerability nobody's
+actually dealt with. Publicly framed as modernization and a signal to
+attract further Earth investment; actually, in real substance, new
 housing stock built for immigrants who haven't arrived yet rather
 than the existing population whose labor and generations-long
-presence built Ceres into something worth investing in at all.
-Whether he spins up a single module alone — reckless, breaking the
-counter-rotation balance and leaving a real, continuing unbalanced
-gyroscopic load on the surrounding rock, a latent structural
-vulnerability nobody's actually dealt with — or a full pair, physics-
-sound but still displacing twice the population, is deliberately left
-open as a live characterization choice, not resolved here.
+presence built Ceres into something worth investing in at all. His
+own real cynicism surfaces directly in how he defends it: at 0.75g,
+Zone 3's own gravity range (~0.29–0.46g) is close to what it always
+was, so he can — and does — publicly ask what everyone's so upset
+about, since "the poor already live fine at a third of a g in my own
+building." That's not a defense of equality, it's a quiet assertion
+that low gravity is simply the natural, acceptable condition *for the
+poor specifically*, dressed up as a factual observation.
 
 **The real, literal Berlin Wall underneath the metaphor.** A
 population that's spent four to six generations adapted to lower
@@ -262,32 +275,48 @@ slower modules follows, softened only by the project's own population
 shortfall meaning fewer people are actually displaced than if the
 colony had filled to its original projection.
 
-**Oduya's counter-demand: spin the remaining modules down to 1/3 g,
-not just defend the status quo 0.5g.** A deliberate callback to the
-original first-generation gravity — the environment the actual
-founding population was raised in — reframing her demand from mere
-accessibility into a statement of authenticity: a return to what real
-Belters are actually adapted to, an explicit rejection of drift toward
-Earth-likeness. That gives the fight a genuine third pole rather than
-a flat binary — Piast's 0.75g (Earth-comfort, serves future
-immigrants), the original planners' 0.5g (a technocratic middle
-nobody's passionate about), and Oduya's 1/3 g (assertively Belter,
-explicitly political). It also happens to be the safer, cheaper
-engineering choice: spinning down only pushes further under the
-Coriolis safety margin, never against it, where spinning up is the
-one gambling with the hardware — a real, concrete fact Oduya can use
-publicly against Piast's own self-serving comfort-seeking.
+**"Slow down the drums! Point Three G!"** — call and response, the
+movement's actual street-level chant, catchy and rhythmic precisely
+*because* it isn't the real policy underneath it. The slogan calls for
+spinning the existing modules down; taken literally, that doesn't
+work without a genuinely unrealistic retrofit: since gravity is tied
+to a fixed radius at a single shared rotation rate, simply spinning
+the whole rim down to a real 1/3 g would push the *worst-off* part of
+Zone 3 down toward ~0.13–0.2g — worse than anything residents have
+now, and squarely in the range this corpus already treats as a real
+developmental risk (the same concern behind Muller Center's own
+reason for existing, `ganymede-condominium.md`). Actually fixing it
+without that own-goal means physically moving the boundary between
+tiers outward — tearing down and rebuilding Zone 1's own high ceilings
+to push everyone else out and down — a massive, realistically
+impossible undertaking once the structure is already built and
+populated. The crowd chants the simple version because the real
+version was never going to fit on a banner.
+
+**Oduya's actual platform, underneath the chant: build new, not
+retrofit.** Rather than touching anything already standing, a
+genuinely feasible counter-proposal — a brand-new module, purpose-built
+from the ground up for a true 0.3g at the same 1 RPM safety ceiling,
+which works out to only about **298m radius**, under half the Cole
+Standard's own 670m. By the same A=2V/r economics that justified
+0.75g as Piast's own deliberate overspend, a smaller, lower-gravity
+module is a deliberate *saving* — meaning her real platform isn't just
+more principled than his, it's cheaper, a genuinely strong combined
+pitch and much more consistent with "Ceres for Belters" always having
+been a concrete economic plan rather than a grievance. The chant
+captures the crowd; this is the plan only the people paying attention
+know she's actually pushing.
 
 **A genuine three-tier physical/class spectrum results.** Frontier
 Belters (true microgravity adaptation, Loadframe-dependent even
 inside Ceres's own 0.5g modules), Ceres's own cylinder population
 (mild adaptation at whatever operating gravity they live at — real,
 measurable difference from Earth natives, nowhere near frontier
-severity), and anyone actually living in a spun-up 0.75g module
+severity), and anyone actually living in Piast's spun-up 0.75g module
 (closest to Earth-normal of anyone born in the Belt). Ceres, the
 Belt's own capital, ends up the place "Belter bodies" are *least*
 common, not most — a real, ironic inversion worth keeping sharp. A
-true frontier Belter visiting a 0.75g module would plausibly need
+true frontier Belter visiting the 0.75g module would plausibly need
 real Loadframe-adjacent support to move comfortably there, the same
 equipment they'd need on Earth itself.
 
@@ -438,10 +467,13 @@ character.
 
 ## Open threads
 
-- Whether Piast goes reckless (single module, a latent structural
-  vulnerability nobody's dealt with) or merely self-serving (a full
-  pair, physics-sound but doubly displacing) is a deliberate open
-  characterization choice, not resolved here.
+- Whether the latent structural vulnerability Piast's reckless
+  single-module spin-up leaves behind ever actually surfaces as a
+  real crisis, or stays a known, unaddressed risk indefinitely, is
+  left open.
+- Whether Oduya's own new-module proposal ever actually gets funded
+  and built, or stays a policy position she can't get past Piast's
+  own leverage over the Commission-equivalent budget, is left open.
 - Whether any other major corp (Meridiani Systems, VARS, Tanager)
   warrants its own named Ceres Magnate beyond the three above isn't
   decided — the three given are a deliberate minimum, not an

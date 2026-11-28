@@ -162,14 +162,21 @@ any existing or future name that turns out just as hard to place.
   fifth genuine use in this corpus); and a non-rotating bypass tube
   with zero-g emergency stations trading a sub-minute rotational wait
   for a much faster response than the main transit network. All of
-  which feeds a real, sharpened version of the Oduya/Piast rivalry: a
-  literal Berlin-Wall-shaped gravity fight (Piast spinning a module up
-  to full 0.75g for new Earth immigrants, displacing a
-  generations-adapted population; Oduya countering with a call to spin
-  the rest down to 1/3 g, an explicit return to the founding
-  generation's own gravity) and a genuine three-tier Belter-body
-  spectrum, with Ceres itself — the Belt's own capital — ending up the
-  place "Belter bodies" are least common, not most.
+  which feeds a real, sharpened version of the Oduya/Piast rivalry: the
+  joke underneath it is that Cole Spindle Works' engineers had already
+  solved the fight quietly, as a side effect of the geometry — the
+  original 0.5g setting already puts the lower-class tier near a third
+  of a g — until Piast breaks that working compromise by recklessly
+  spinning a single module (not the physics-sound paired version) up to
+  its full 0.75g for Earth immigrants who haven't arrived yet,
+  defending it by pointing out the poor already live at a third of a g
+  in his own building. A literal Berlin-Wall-shaped gravity fight
+  results, with the movement's own catchy, technically-unworkable-if-
+  taken-literally chant ("Slow down the drums! Point Three G!") sitting
+  over Oduya's real, cheaper, purpose-built 0.3g new-module platform
+  underneath it, plus a genuine three-tier Belter-body spectrum, with
+  Ceres itself — the Belt's own capital — ending up the place "Belter
+  bodies" are least common, not most.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
   stalemate, and the live, unresolved helium-3 crisis. Now also: the

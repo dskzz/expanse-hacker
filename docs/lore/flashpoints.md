@@ -138,26 +138,35 @@ stock, and barrel by Earth, carrot-and-stick, running rigged-but-real
 elections — against Imara Oduya's standing opposition. Live, ongoing,
 and the Belt's most visible single political rivalry.
 
-### Ceres's gravity fight: a literal Berlin Wall, not just a metaphor
+### Ceres's gravity fight: a problem that was already solved, broken on purpose
 
 Home file: `ceres.md`. The sharpest, most physical instance yet of
-Oduya versus Piast, not a separate dispute: Piast, recent 1g stock
-himself, decrees spinning one of Ceres's own spin-habitat modules (or
-a full counter-rotating pair) up to its full 0.75g design capacity,
-publicly framed as modernization, actually new housing stock built
-for Earth immigrants who haven't arrived yet rather than the existing,
-generations-adapted population whose labor built the colony. A real,
-literal physical barrier results — residents adapted to lower gravity
-for four to six generations can't simply move into the upgraded
-module, meaning a Belter family could genuinely split across the two
-gravity regimes and never visit each other again without real health
-risk. Oduya counters by demanding the remaining modules spin *down* to
-1/3 g instead — a deliberate callback to the original founding
-generation's own gravity, reframing accessibility into an assertion of
-authentic Belter identity against Piast's drift toward Earth-likeness.
-Whether Piast's decree targets one module alone (reckless, leaving a
-real unbalanced structural load nobody's addressed) or a physics-sound
-full pair (merely self-serving) is deliberately left open. Live,
+Oduya versus Piast, not a separate dispute — and the real joke
+underneath it is that Cole Spindle Works' engineers had already solved
+it: at the original 0.5g operating point, the lower-class tier's own
+gravity already sits close to a third of a g, quietly, as a side
+effect of the geometry, with nobody having had to fight for it. Piast,
+recent 1g stock himself, breaks that working compromise by decreeing
+a single module (reckless, not the physics-sound paired version,
+leaving a real unbalanced structural load on the surrounding rock
+nobody's addressed) spun up to its full 0.75g design capacity,
+publicly framed as modernization, actually new housing stock for Earth
+immigrants who haven't arrived yet. He defends it by pointing out that
+the poor already live at roughly a third of a g in his own upgraded
+building — a quiet assertion that low gravity is simply the natural
+condition for the poor, not a real defense. A literal physical barrier
+results: residents adapted to lower gravity for four to six
+generations can't simply move into the upgraded module, meaning a
+Belter family could genuinely split across the two gravity regimes and
+never visit each other again without real health risk. The movement's
+own chant, "Slow down the drums! Point Three G!", is catchy precisely
+because it isn't the real policy — taken literally it would push the
+worst-off residents down toward a genuinely debilitating ~0.13–0.2g,
+and actually fixing it without that own-goal would mean tearing down
+and rebuilding the premium tier's own ceilings, an unrealistic
+retrofit. Oduya's real platform underneath the chant is smarter: a
+brand-new, purpose-built 0.3g module, smaller and cheaper than Piast's
+own project by the same cost logic that justified his overspend. Live,
 unresolved, and already Ceres's own flashpoint subset, not a
 hypothetical.
 
