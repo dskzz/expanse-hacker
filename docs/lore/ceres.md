@@ -1,7 +1,9 @@
 # Ceres
 
-Status: locked, 2026-11-24. Second full write-up in the stations
-pass, after the Ganymede Condominium (`ganymede-condominium.md`). The
+Status: locked, 2026-11-24; real-science grounding, settlement history,
+and the full Cole Spindle Works spin-habitat engineering/political
+pass added 2026-11-28. Second full write-up in the stations pass,
+after the Ganymede Condominium (`ganymede-condominium.md`). The
 Belt's biggest hub, close to a de facto capital even though no single
 government formally owns it — except, on paper, one does.
 
@@ -10,6 +12,285 @@ no intermediate region needed, added as part of the corpus-wide
 LocationChain retrofit pass (`industrial-stations.md` established
 the convention).
 
+## Real facts: the Belt's one real dwarf planet
+
+Ceres is a genuine dwarf planet and the largest object in the entire
+asteroid belt — roughly a third of the Belt's total mass sits in
+Ceres alone, real hub-siting logic rather than an arbitrary choice.
+Real surface gravity is tiny (~0.029g, ~0.284 m/s²), real rotation is
+fast (~9 hours), and real NASA Dawn-mission data (2015–2018, the first
+mission ever to orbit two separate bodies — Vesta, then Ceres — using
+real ion propulsion, a legitimate ancestor technology to this corpus's
+own fusion-torch drives) confirmed genuine water ice and two
+specific, strange, real landmarks: **Occator Crater**, with its real
+bright sodium-carbonate salt deposits pointing to a relatively recent
+subsurface brine reservoir, and **Ahuna Mons**, a real ~4km cryovolcanic
+dome — one of the odder landscapes in the solar system. Dawn, a
+completed rather than currently-flying mission, plays the same
+present-day-anchor role here that Cassini-Huygens already plays for
+Saturn.
+
+## Settlement history: one of the very first
+
+Ceres is one of the earliest Belt settlements in the whole corpus —
+Phase 1's ambition-and-rivalry corporate-charter wave (~2100–2130,
+`frontier-timeline.md`), predating even VPH, already established as
+"the first settled Belt bodies *after* Ceres." An early Slavic
+technical elite — the same engineering culture Korolev Propulsion and
+Vernadsky Systems seeded — got in on the ground floor, and over a
+century-plus that population grew its own organic political culture
+rather than being a recent transplant, which is exactly why Piast's
+Cossack-Hetman framing (below) lands as real inherited tradition
+rather than costume.
+
+## Why nobody actually spun up the rock itself
+
+The obvious-sounding idea — hollow out Ceres and spin the whole body
+for gravity — runs into a hard physical wall, not just a hard
+engineering one. Ceres's real radius is ~470 km and its real escape
+velocity is only ~510 m/s. Reaching even a modest 0.3g at the
+equator would need a ~42-minute rotation period and a surface speed
+over double escape velocity — material at the rim would already have
+left before "spinning up" meant anything. Worse, the real breakup
+threshold (where spin-induced force first matches Ceres's own tiny
+natural gravity, and loose surface material starts lifting off on its
+own) arrives at a much gentler ~2.25-hour rotation period — a number
+that lines up almost exactly with the real, observed "spin barrier"
+measured across actual rubble-pile asteroids, none of which are ever
+found spinning faster than about 2.2 hours for exactly this reason.
+Closing that gap down to 42 minutes would mean re-engineering the
+entire body into something closer to a solid pressure vessel than an
+icy dwarf planet — at that point you haven't spun up an asteroid, you've
+built a different, far more expensive structure that happens to be
+made of one.
+
+**The actually-correct version of the idea already existed in this
+corpus.** `corporations.md`'s **Cole Spindle Works** — named for
+Dandridge Cole, a real, genuinely obscure 1964 proposal predating and
+arguably originating the far more famous O'Neill cylinder — never
+called for spinning the asteroid itself. Cole's real design hollows
+out an interior cavity and spins a much smaller, separate structure
+inside it, decoupled entirely from the parent body's own rotation.
+The asteroid's shell does structural and radiation-shielding work; the
+actual gravity comes from spinning a drum a few kilometers across, not
+fighting Ceres's own escape velocity at all.
+
+## Two generations, not one
+
+**First generation (~2100–2130, built alongside the founding itself):**
+a modest pair of small cylinders, ~150–200m radius, operating
+somewhere in the 0.3–0.7g range — gravity comfort wasn't the
+priority, basic habitability was. Built as a counter-rotating pair
+from the start even at this small scale, since the momentum-balance
+problem doesn't wait for a colony to get rich before it matters.
+
+**Second generation, the Cole Standard (~2220–2250):** financed and
+populated by the already-established second Slavic-coded wave — the
+religious-discomfort-driven emigration of mostly old-first-world and
+Russian/Eastern-European population (`frontier-timeline.md`) — landing
+100–150 years, four to six generations, after the original settlers.
+That gap matters: the people this generation's design choices affect
+aren't recent arrivals who chose low gravity, they're descendants of
+people who've been adapted to it for the colony's entire existence.
+
+**The real economics behind the Cole Standard's numbers.** For a
+spin habitat at a fixed, safety-margined rotation rate, usable floor
+area scales with radius while excavated volume (the real cost driver)
+scales with radius squared — meaning floor space per dollar, A = 2V/r,
+*always* favors a smaller radius and lower gravity, without limit.
+Pure cost-minimization would have pushed toward the lowest gravity
+level already treated as acceptable for permanent habitation anywhere
+in this corpus — Mars's own established 0.38g, lived at permanently
+with no spin correction and no special medical intervention. The Cole
+Standard's actual target, **0.75g**, is a deliberate spend past that
+floor, not the economically optimal choice — Ceres's planners
+reused the same real geriatric-medicine logic already established for
+Venus (gravity just under 1g measurably reduces long-term bone and
+joint strain) and designed for a lifetime of residents aging in place,
+not just the retirees that insight was first applied to. That's a
+real, earned detail about Ceres specifically: wealthy enough, via the
+MFN framework's Earth capital, to build past the bare minimum on
+purpose.
+
+**Dimensions, locked:** radius **670m**, chosen so that 0.75g and a
+rotation rate of **~1 RPM** — the real threshold below which Coriolis
+effects are essentially imperceptible even for residents with real
+vestibular decline — land on the same design point simultaneously.
+Length **1,500m**, a clean round figure chosen deliberately over the
+slightly-closer-to-a-mile 1,600m for easier engineering subdivision.
+Built as **four modules — two counter-rotating pairs** — each
+individually smaller, cheaper, safer, and faster to bring online than
+one giant structure would have been, consistent with Belt engineering
+culture's own standing preference for proven, reusable specs over
+bespoke megaprojects. Designed target: **~250,000 residents per
+module** (up to ~300k under normal conditions, ~500k with
+reconfiguration), for a planned total of roughly **one million** —
+though the project came in under that projection (below).
+
+**Drive design: three rings per module, not one.** A single drive
+ring risks a localized fault building into real torsional stress
+before anyone downstream notices; two rings (one at each end) gives
+redundancy; a **third ring at the midpoint** is both a backup and a
+diagnostic — if the two end rings' torque readings ever disagree, the
+middle ring's own readings tell you *where* along the module a
+problem is developing, catching it before it becomes structural.
+
+## Inside a module: the radial zone stack
+
+Gravity here is strictly proportional to radius (fixed rotation
+rate), so climbing toward the axis is climbing down both gravity and,
+deliberately, class:
+
+| Zone | Radius | Thickness | Character |
+|---|---|---|---|
+| 1 — Premium/Admin | 670→570m | 100m | Real houses, garden apartments, boutique agriculture, government — bright, dome-lit streets |
+| *buffer* | 570→550m | 20m | Structural/utility layer, doubling as a radial transit spoke |
+| 2 — Mid-tier residential | 550→430m | 120m | Decent, green, apartment-dominant |
+| *buffer* | 430→410m | 20m | Structural/utility/transit spoke |
+| 3 — Lower-class/mixed industrial | 410→260m | 150m | Dense, cramped, packed in alongside light industry |
+| *buffer* | 260→240m | 20m | Structural/utility/transit spoke |
+| Core Complex | 260→0m | 260m | Docking, traffic lanes, heavy industrial/storage, near-zero-g — see below |
+
+**Belter stories, not Earth stories.** Real developmental biology
+supports a genuinely taller population raised under reduced loading —
+~4.5m floor-to-floor, not Earth's typical 3–4m. Using that figure:
+the theoretical climb to the axis is ~149 floors; half of whatever
+the rim's own gravity is arrives at ~74 floors up; a quarter at ~112.
+In practice nobody's building that tall — the gradient only matters
+at a scale realistic buildings never reach, which is exactly why a
+genuinely separate low-g deck (Zone 3 and the Core Complex) has to be
+built deliberately rather than just "upstairs."
+
+**Agriculture, scaled against population, not assumed.** Real
+intensive hydroponic agriculture, continuous-cycle, optimized
+lighting, plausibly needs ~75 m² of growing area per person for a
+full diet. At ~250k residents, that's ~19 km² needed — comfortably
+covered by a dedicated agricultural band running part of the module's
+length at the outer rim, stacked two to three layers deep within its
+own height allowance, the same math that works at the larger original
+one-million-colony scale. Recreation, markets, eateries, and health
+facilities are folded into the existing residential tiers rather than
+needing dedicated separate cylinders — there's real room to spare even
+at this modest length.
+
+## The Core Complex: docking, traffic, and the hub
+
+**Ship dimensions, anchored to something real:** a representative
+"average" ship docking inside the hub is frigate/destroyer-scale —
+~150m long, ~20m across. Anything larger (ice haulers, bulk cargo)
+docks at Ceres's own established surface facilities instead, with
+shuttles ferrying people and smaller cargo in — the internal hub was
+never meant to handle true bulk-freighter scale.
+
+**Two traffic lanes plus a docking lane, each ~55–60m of real
+functional radius (ship width plus maneuvering clearance), plus a
+genuinely generous safety margin — ~220–260m total**, which lines up
+almost exactly with the already-necessary 260m boundary above. Rather
+than shrinking the habitable zones to fit a separately-sized hub, the
+whole inner 260m radius is one integrated **Core Complex**: docking
+collars and traffic lanes nearest the center, heavy industrial and
+bulk storage built right up against it (minimizing the distance cargo
+travels from ship to warehouse), with real margin left over for
+inter-module wiring, comms, and control systems — the hub isn't just
+traffic, it's the whole module's nervous system. **Automated tug
+drones**, the same real harbor-tug principle scaled to vacuum, assist
+docking at both ends.
+
+**Inter-module connector tunnels** run hub-to-hub through the rock
+buffers (~700m–1km of deliberately conservative, undisturbed rock
+left between adjacent cylinders, since nobody's ever actually
+excavated at this scale before) — Terebra Subsurface's work again, a
+fifth genuine use for that company across this corpus.
+
+**Surface access shafts land in the buffer zones, not the hubs
+directly.** A vertical shaft drilled straight down from Ceres's real
+surface into the stationary rock buffer between modules, then a
+short horizontal bore into the (also stationary) hub core, means the
+shaft never has to interface with anything actually rotating —
+cleaner and more buildable than trying to hit a moving target.
+Ceres's own near-negligible gravity makes vertical boring genuinely
+easier here than it would be anywhere with real gravity, not harder.
+
+**A parallel, non-rotating bypass tube** runs alongside each module
+(below the rim, if "up" is defined as outward) as an alternate
+hub-to-hub route that doesn't contend with normal hub traffic. The
+real trade-off: any fixed docking point on this stationary tube can
+only align with the rotating structure once per rotation — at 1 RPM,
+a worst-case 60-second wait, averaging ~30 seconds with one docking
+port, down to ~15 seconds worst-case with four evenly spaced ports.
+Against a genuine emergency's alternative — several minutes of transit
+through the full hub-and-spoke-and-rail system from a distant end —
+that wait is a clear win, and **zero-g emergency response stations**
+along this bypass tube are worth building for exactly that reason.
+
+## The gravity fight: Piast, Oduya, and a political fault line nobody designed on purpose
+
+**The population shortfall that makes this possible.** The whole
+four-module project came in under its original one-million
+projection — plausibly because existing low-g-adapted Belters simply
+didn't move in as eagerly as planners hoped, even into the more
+accessible original 0.5g operating point. Any move into unfamiliar
+gravity carries a real physical adaptation cost and a real identity
+cost, pride included, and that reluctance is exactly what later gives
+Piast a conveniently plausible "we're just consolidating underused
+capacity" cover story.
+
+**Piast's decree.** Hetman Piast — recent 1g stock himself, not
+multi-generational Belt stock — genuinely finds the gentler 0.5g
+operating point uncomfortable, and decrees spinning one module (or a
+full counter-rotating pair) up to the full 0.75g the structures were
+always engineered for. Publicly framed as modernization and a signal
+to attract further Earth investment; actually, in real substance, new
+housing stock built for immigrants who haven't arrived yet rather
+than the existing population whose labor and generations-long
+presence built Ceres into something worth investing in at all.
+Whether he spins up a single module alone — reckless, breaking the
+counter-rotation balance and leaving a real, continuing unbalanced
+gyroscopic load on the surrounding rock, a latent structural
+vulnerability nobody's actually dealt with — or a full pair, physics-
+sound but still displacing twice the population, is deliberately left
+open as a live characterization choice, not resolved here.
+
+**The real, literal Berlin Wall underneath the metaphor.** A
+population that's spent four to six generations adapted to lower
+gravity can't simply move into the newly-spun-up module — their own
+bodies were shaped by exactly the environment the upgrade erases. A
+Belter family could genuinely split across the two gravity regimes
+and never be able to casually visit each other again without real
+physical risk, not metaphorically. Resettlement to the remaining
+slower modules follows, softened only by the project's own population
+shortfall meaning fewer people are actually displaced than if the
+colony had filled to its original projection.
+
+**Oduya's counter-demand: spin the remaining modules down to 1/3 g,
+not just defend the status quo 0.5g.** A deliberate callback to the
+original first-generation gravity — the environment the actual
+founding population was raised in — reframing her demand from mere
+accessibility into a statement of authenticity: a return to what real
+Belters are actually adapted to, an explicit rejection of drift toward
+Earth-likeness. That gives the fight a genuine third pole rather than
+a flat binary — Piast's 0.75g (Earth-comfort, serves future
+immigrants), the original planners' 0.5g (a technocratic middle
+nobody's passionate about), and Oduya's 1/3 g (assertively Belter,
+explicitly political). It also happens to be the safer, cheaper
+engineering choice: spinning down only pushes further under the
+Coriolis safety margin, never against it, where spinning up is the
+one gambling with the hardware — a real, concrete fact Oduya can use
+publicly against Piast's own self-serving comfort-seeking.
+
+**A genuine three-tier physical/class spectrum results.** Frontier
+Belters (true microgravity adaptation, Loadframe-dependent even
+inside Ceres's own 0.5g modules), Ceres's own cylinder population
+(mild adaptation at whatever operating gravity they live at — real,
+measurable difference from Earth natives, nowhere near frontier
+severity), and anyone actually living in a spun-up 0.75g module
+(closest to Earth-normal of anyone born in the Belt). Ceres, the
+Belt's own capital, ends up the place "Belter bodies" are *least*
+common, not most — a real, ironic inversion worth keeping sharp. A
+true frontier Belter visiting a 0.75g module would plausibly need
+real Loadframe-adjacent support to move comfortably there, the same
+equipment they'd need on Earth itself.
+
 ## Physical structure
 
 A real zoned layout, inherited as structure rather than reinvented —
@@ -17,7 +298,8 @@ a government/administrative core, the docks, a public-net commons,
 and a rougher outer-ring industrial zone where oversight thins out
 fast. Already load-bearing: Elias Voss and Imara Oduya's Ceres
 Broadcast (`os-lineages.md` §1) happened here, decades before anything
-below.
+above. The spin-habitat modules above sit alongside, not instead of,
+Ceres's own native-gravity surface facilities and docks.
 
 ## Formal ownership: the UN, on paper
 
@@ -45,7 +327,11 @@ Earth corporations can simply outcapitalize local Belter competition
 without needing to cheat; the agreement makes sure nothing stops them.
 Same shape as Bedrock and Longview's passive-ownership effect, or
 Doris's regulatory arbitrage (`corporations.md`): nothing about it is
-explicitly rigged, the asymmetry does the work on its own.
+explicitly rigged, the asymmetry does the work on its own. The same
+capital asymmetry that lets Earth outcapitalize local business is the
+direct ancestor of the Cole Standard's own financing — Earth money
+built the comfort Belters themselves can't necessarily afford to live
+in.
 
 ## The Hetman
 
@@ -131,11 +417,14 @@ cut across backgrounds, not split along one line:
 economic platform: real tariff and trade-policy autonomy, the ability
 to set terms that actually favor local Belter businesses instead of
 being locked into "equal" treatment that structurally favors whoever
-already has more capital. Oduya is the only plausible figure to lead
-it — already Ceres-based, already a respected Belter elder, already
-carrying the exact right history (the Ceres Broadcast, decades
-earlier) for a movement to have rallied around her rather than needing
-an invented new leader.
+already has more capital. The gravity fight above is now the single
+sharpest, most physical instance of that same platform — not a new
+grievance, the clearest possible expression of the one she's always
+run on. Oduya is the only plausible figure to lead it — already
+Ceres-based, already a respected Belter elder, already carrying the
+exact right history (the Ceres Broadcast, decades earlier) for a
+movement to have rallied around her rather than needing an invented
+new leader.
 
 **OSL** channels the push diplomatically — petitions, formal
 recognition requests, the kind of thing that actually shows up in
@@ -149,6 +438,10 @@ character.
 
 ## Open threads
 
+- Whether Piast goes reckless (single module, a latent structural
+  vulnerability nobody's dealt with) or merely self-serving (a full
+  pair, physics-sound but doubly displacing) is a deliberate open
+  characterization choice, not resolved here.
 - Whether any other major corp (Meridiani Systems, VARS, Tanager)
   warrants its own named Ceres Magnate beyond the three above isn't
   decided — the three given are a deliberate minimum, not an
@@ -158,3 +451,13 @@ character.
   secret leverage nobody's proven yet — left open, same uncertainty
   that makes the Rockline Compact's own suspicion of the Trust
   interesting rather than a settled fact.
+- No named figures anywhere in the new spin-habitat material: the
+  Cole Standard's own architect (plausibly deceased by now, eighty-
+  plus years being a long gap for an ordinary lifespan, due a
+  posthumous honor rather than a hand-waved centenarian), the
+  engineers who designed the three-ring drive redundancy, and whoever
+  actually leads the resettlement effort once Piast's decree lands —
+  all added to `people-pass-queue.md`.
+- How the fight actually resolves — whether Piast's decree stands,
+  gets walked back, or sparks something neither side intended — is
+  deliberately left open rather than settled.

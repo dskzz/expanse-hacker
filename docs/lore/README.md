@@ -137,7 +137,39 @@ any existing or future name that turns out just as hard to place.
   material, not canonical — superseded by this file.)
 - **`ceres.md`** — the Belt's biggest hub: the UN's MFN trade
   framework, Hetman Stanislav Piast, the Consular-College-style
-  Magnate class, and Imara Oduya's opposition.
+  Magnate class, and Imara Oduya's opposition. Now substantially
+  deepened: real grounding (largest Belt object, Occator Crater,
+  Ahuna Mons, Dawn as the completed-mission anchor); one of the
+  earliest Belt settlements (~2100–2130, `frontier-timeline.md`), an
+  early Slavic technical-elite population growing its own organic
+  political culture over a century-plus rather than a recent
+  transplant; the real physics ruling out spinning the asteroid itself
+  (escape velocity, the real asteroid "spin barrier"); and **Cole
+  Spindle Works'** real, two-generation spin-habitat solution instead
+  — a small original pair (~2100s) and the much larger **Cole
+  Standard** (~2220–2250): four modules (two counter-rotating pairs),
+  670m radius, 1,500m length, 1 RPM, built to a 0.75g capacity
+  deliberately exceeding Mars's own already-accepted 0.38g floor (a
+  real economic analysis, A=2V/r, showing that choice was a deliberate
+  spend past the bare minimum, not the cost-optimal one), operated at
+  a gentler 0.5g for accessibility. Full internal design worked out:
+  a radial zone stack doubling as a class gradient (premium/admin at
+  the rim, down through mid-tier and lower-class/industrial to a
+  260m-radius Core Complex of docking, traffic, and heavy industry);
+  population and agriculture scaled against each other; Belter-scale
+  (~4.5m) stories; three-ring drive redundancy; inter-module connector
+  tunnels and buffer-zone surface access shafts (Terebra Subsurface's
+  fifth genuine use in this corpus); and a non-rotating bypass tube
+  with zero-g emergency stations trading a sub-minute rotational wait
+  for a much faster response than the main transit network. All of
+  which feeds a real, sharpened version of the Oduya/Piast rivalry: a
+  literal Berlin-Wall-shaped gravity fight (Piast spinning a module up
+  to full 0.75g for new Earth immigrants, displacing a
+  generations-adapted population; Oduya countering with a call to spin
+  the rest down to 1/3 g, an explicit return to the founding
+  generation's own gravity) and a genuine three-tier Belter-body
+  spectrum, with Ceres itself — the Belt's own capital — ending up the
+  place "Belter bodies" are least common, not most.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
   stalemate, and the live, unresolved helium-3 crisis. Now also: the

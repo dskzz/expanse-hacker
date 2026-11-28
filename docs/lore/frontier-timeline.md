@@ -85,7 +85,12 @@ industrial anchor at the stable Earth-Moon L4 point.** A Western-led,
 Chinese-partnered refinery/forge goes up — informally run, not yet
 carrying the name it'll be known by — feeding Earth-orbital shipyards
 as the industry pivots toward ships built from space material rather
-than launched whole out of Earth's well. **Earth-orbital and lunar
+than launched whole out of Earth's well. **Ceres itself gets settled
+in this same window** — one of the very earliest Belt footholds, an
+early Slavic technical-elite population (the same engineering culture
+Korolev Propulsion and Vernadsky Systems seeded, below) getting in
+early enough that VPH's own later founding reads as "generations"
+afterward rather than concurrent (`ceres.md`). **Earth-orbital and lunar
 hydroponic farming**, directly Harsh-Mistress-shaped, becomes real
 infrastructure in this same window — grain genuinely cheap to ship
 *because* a mass driver is launching it downhill into Earth's own

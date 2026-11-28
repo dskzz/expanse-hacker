@@ -27,6 +27,12 @@ here).
   squeeze, or whether that stays deliberately diffuse.
 - **Sylvia's Reach** (`asteroid-bases.md`) — its specific "owner," if
   it has one at all given its lawless character.
+- **Ceres's spin-habitat modules** (`ceres.md`) — the Cole Standard's
+  own architect, plausibly deceased by now and due a posthumous honor
+  (the Commission-equivalent seat or the drive network itself a
+  plausible candidate once named); the engineers behind the three-ring
+  drive redundancy design; and whoever actually leads the resettlement
+  effort once Piast's spin-up decree lands.
 - **Davida** (`asteroid-bases.md`) — no named figures or tenants at
   all beyond the shipbuilding-supply-chain companies already anchored
   there.

@@ -138,6 +138,29 @@ stock, and barrel by Earth, carrot-and-stick, running rigged-but-real
 elections — against Imara Oduya's standing opposition. Live, ongoing,
 and the Belt's most visible single political rivalry.
 
+### Ceres's gravity fight: a literal Berlin Wall, not just a metaphor
+
+Home file: `ceres.md`. The sharpest, most physical instance yet of
+Oduya versus Piast, not a separate dispute: Piast, recent 1g stock
+himself, decrees spinning one of Ceres's own spin-habitat modules (or
+a full counter-rotating pair) up to its full 0.75g design capacity,
+publicly framed as modernization, actually new housing stock built
+for Earth immigrants who haven't arrived yet rather than the existing,
+generations-adapted population whose labor built the colony. A real,
+literal physical barrier results — residents adapted to lower gravity
+for four to six generations can't simply move into the upgraded
+module, meaning a Belter family could genuinely split across the two
+gravity regimes and never visit each other again without real health
+risk. Oduya counters by demanding the remaining modules spin *down* to
+1/3 g instead — a deliberate callback to the original founding
+generation's own gravity, reframing accessibility into an assertion of
+authentic Belter identity against Piast's drift toward Earth-likeness.
+Whether Piast's decree targets one module alone (reckless, leaving a
+real unbalanced structural load nobody's addressed) or a physics-sound
+full pair (merely self-serving) is deliberately left open. Live,
+unresolved, and already Ceres's own flashpoint subset, not a
+hypothetical.
+
 ### Psyche's live ASA asset among the holdouts
 
 Home file: `psyche.md`. A standing intelligence exposure, not a
