@@ -182,7 +182,24 @@ any existing or future name that turns out just as hard to place.
   context, becomes the next day's "Oduya Sells Out to Piast" — plus a
   genuine three-tier Belter-body spectrum, with Ceres itself — the
   Belt's own capital — ending up the place "Belter bodies" are least
-  common, not most.
+  common, not most. Also now a full cultural identity beyond the
+  politics: **Old Ceres**, the shoddy, aging **Twin Cans** (the
+  original pair, docked via exposed shaft-and-hub masts now doubling
+  as lightly-regulated small-hauler docks), with **Canward/Downtown**
+  growing an accepted, unlicensed vice economy around them; **New
+  Ceres/Uptown**, the Cole Standard's four named cans (**Royal
+  Warsaw**, **Golden Ife**, Meridian Reach, Vista Crown) — "**the
+  Point Fives**" and "**the Heavies**" as local slang, Palisade's real
+  enforcement effort being zoning rather than prohibition; **the
+  Margins**, the formal/informal name for the stationary inter-module
+  rock buffers, plausibly riddled with unofficial, unmapped bores
+  perfect for smuggling; a real carbonaceous/C-type mineral profile
+  (water ice, ammoniated clays, Occator's brine-salt deposits) deliberately
+  contrasted with Psyche's own metal-rich claim; a modest **Belt
+  University**; a low-g sports arena at the Zone 2/3 boundary; and a
+  second, genuinely distinct grav-rehab pitch — not a single fixed
+  gravity like Venus or Ganymede, but the whole ladder, continuously,
+  in one station.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
   stalemate, and the live, unresolved helium-3 crisis. Now also: the
@@ -429,9 +446,14 @@ any existing or future name that turns out just as hard to place.
   nuclear-armed by the time it's negotiated — the real teeth is
   keeping weapons out of space and barring proliferation to new
   actors, not Earth's own already-settled proliferation); the
-  Interstation Tax Compact (captured by design via Doris, not just
-  weakly enforced); and the Freedom of Transit Compact, deliberately
-  loaded with five real-world-grounded loopholes.
+  Interplanetary Ballistic Weapons Control Compact (real precedent:
+  the Hague Code of Conduct and the MTCR, controlling delivery systems
+  rather than warheads — the live arms-race track Mars/OSL's own
+  non-nuclear commitment left open — with an explicit, bounded
+  asteroid-killer/planetary-defense exemption rather than a blank
+  check); the Interstation Tax Compact (captured by design via Doris,
+  not just weakly enforced); and the Freedom of Transit Compact,
+  deliberately loaded with five real-world-grounded loopholes.
 - **`earth-resources-and-pressures.md`** — Earth's own "double studs":
   real demographic/social pressure per bloc (the Atlantic Zone's
   decline-and-urban-decay, the African Union's youth-bulge double

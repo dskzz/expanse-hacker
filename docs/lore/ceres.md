@@ -135,6 +135,138 @@ diagnostic — if the two end rings' torque readings ever disagree, the
 middle ring's own readings tell you *where* along the module a
 problem is developing, catching it before it becomes structural.
 
+## Old Ceres and New Ceres: two cultures, one station
+
+**Old Ceres, the Twin Cans.** The original first-generation pair
+(above) never stopped being exactly what they were built as — modest,
+0.3–0.7g, now well over a century old and showing it: load-bearing
+patchwork, deferred maintenance, air recyclers well past their rated
+service life. "Tin can" is generic Belt slang for any small,
+old-style spin module; **the Twin Cans**, capitalized, means
+specifically this pair, Ceres's own founding habitat. Officially still
+*Spindle One* and *Spindle Two* — Cole Spindle Works' own original,
+utilitarian naming convention, the registry name nobody but a clerk
+actually uses.
+
+**The docks that never got modernized.** Built too small at the time
+for anything like the Cole Standard's own integrated hub, each Twin
+Can docks through a **shaft-and-hub** instead — a non-rotating mast
+projecting from the cylinder's own spin axis, a despun coupling at its
+base, a small docking hub at the tip, the crude ancestor of what the
+Core Complex later did properly. Superseded for anything serious by
+the Cole Standard's own hub traffic, the two shafts found a second
+life instead: lightly regulated, slightly-below-notice docking for
+small independent haulers and bulk traders who'd rather not queue for
+a slot in the newer, better-supervised hub. That's also exactly the
+kind of entry point a dock-town vice economy grows up around.
+
+**Canward, or Downtown.** The district built up around the Twin Cans'
+own docks — gambling halls, brothels, the kind of trade every real
+naval or garrison town eventually grows once enough transient traffic
+and loose oversight accumulate in one place (the same real pattern
+already in play at Callisto's own licensed gambling core,
+`callisto.md`, just unlicensed and unzoned here). Not illegal, not
+hidden — accepted, even locally proud of itself, just concentrated
+exactly where the people and money that want it actually are.
+
+**Uptown, New Ceres, the Point Fives.** The Cole Standard's four
+modules, by contrast, read as the respectable address — "the Point
+Fives," a real local joke riffing on New York's historical Five
+Points slum, inverted into a mark of status rather than its original
+meaning. Locals needle Royal Warsaw (below) over the name's own fine
+print: spun up to a genuine 0.75g, it technically isn't a "Point
+Five" at all anymore, which hasn't stopped anyone from using the name
+anyway. **The Heavies** is the broader term — Old Ceres's lower,
+founders'-era gravity against New Ceres's deliberately overspent
+comfort (`A = 2V/r`, above), heavier gravity as a status marker,
+openly, the same inversion that makes Ceres the one place in the Belt
+where "Belter body" reads as working-class rather than universal.
+Palisade's actual enforcement effort here isn't a law against vice —
+there isn't one — it's active, routine policing to keep Downtown's own
+trade from setting up shop uptown, a zoning preference enforced at the
+end of a contract rather than a statute.
+
+**Each New Can gets a proper name, and the names tell you
+something.** Cole Standard financing came overwhelmingly from Earth
+capital (above), and Earth capital markets real estate the same way
+it always has — a cheap unit sells better with a name like *Vista
+Crown* or *Meridian Reach* stamped over the dock than a bare module
+number ever could. **Royal Warsaw** is Piast's own — the name on the
+ballot long before the spin-up ever made it infamous, not chosen to
+match the later politics. **Golden Ife**, named for the historic
+Yoruba city rather than any living figure (a deliberate choice, the
+same instinct that keeps the Magnate roster split on individual
+character rather than heritage, below — a can named after a modern
+politician ages badly the moment that politician does something
+embarrassing; a city that's stood for a thousand years doesn't),
+carries New Ceres's own strongest West African-coded neighborhood
+identity. **Meridian Reach** and **Vista Crown** round out the four —
+no dominant heritage, no particular legend, just Earth-financed
+real-estate branding doing exactly what it always does.
+
+**The Margins.** The formal name and the street name turn out to be
+the same word: the ~700m–1km of deliberately conservative, unexcavated
+rock left standing between every pair of modules (already established,
+above) is officially the colony's own **margin of structural safety**,
+and everyone just calls the whole zone **the Margins** — stationary
+rock, honestly necessary engineering, and the one part of Ceres
+genuinely outside the reach of any single module's own policing. The
+Core Complex's sanctioned connector tunnels and bypass tube (above)
+run through it under full supervision; the Margins' own real size
+means they're also plausibly riddled with older, unofficial bores —
+exploratory shafts from the original settlement surveys, abandoned
+utility runs, the odd hand-dug connection nobody ever filed paperwork
+for — exactly the kind of half-mapped space a determined smuggling
+operation between Downtown and anywhere else on Ceres would want.
+
+**What Ceres actually has under its own rock, and what it doesn't.**
+The real Ceres is a genuine C-type carbonaceous body — water ice and
+hydrated, ammoniated clays make up a large fraction of its real
+composition, with Occator Crater's own famous bright spots being real
+sodium-carbonate salt deposits left behind by evaporated subsurface
+brine (already named, above) rather than anything metallic. That's a
+deliberate, useful contrast with **Psyche** (`psyche.md`,
+`corporations.md`) — a genuinely metal-rich body under Oberth
+Extraction's claim. Ceres was never the metals play; its own real
+economic case always ran on water, volatiles, and simply being first
+and biggest, not on anything buried in its own rock being especially
+valuable to dig up.
+
+**Belt University.** Modest on purpose — a working technical and
+administrative college, not a flagship research institution (the
+corpus's actual heavyweight research niches already belong elsewhere:
+Spitzer Station's fusion work, Muller Center's radiation medicine,
+`ganymede-condominium.md`). Sited in Meridian Reach's own Zone 1, it
+trains the engineers, administrators, and dock officials every Belt
+institution from the Commission down actually needs a steady supply
+of — Ceres's own capital-city standing makes it the obvious place for
+that pipeline to sit, rather than any one corporate sponsor's own
+campus.
+
+**A low-g arena, sited exactly where the gravity gets fun.** Built at
+the Zone 2/3 boundary — gravity low enough for genuinely spectacular
+low-g athletics, still high enough for a packed crowd to sit through a
+match in comfort — home turf for whatever Ceres's own signature sport
+turns out to be (left open, deliberately, for whenever a station needs
+one named). A real draw in its own right, and a quieter rebuttal to
+Piast's own "the poor already live fine at a third of a g" line: the
+low gravity he's happy to leave Zone 3 sitting in is the same low
+gravity that makes this arena worth building at all.
+
+**A second grav-rehab destination, and a genuinely different pitch
+from Venus's or Ganymede's.** Venus sells near-Earth comfort for
+retirees staying conditioned; Ganymede sells immediate relief at the
+gentle end of the ladder (`ganymede-condominium.md`). Ceres sells
+neither — it sells the whole ladder in one place. A single cylinder's
+own radial gradient already runs continuously from near-zero at the
+Core Complex up to its own rim gravity, and the station's broader
+spread (Old Ceres's aging 0.3–0.7g pair, New Ceres's 0.5g standard,
+Royal Warsaw's 0.75g, Oduya's proposed 0.3g module, below) means a
+patient can step gravity up or down in much finer, more continuous
+increments than relocating between planets ever allows, without ever
+leaving the station. A real, earned niche distinct from either of the
+other two rungs, not a weaker copy of either.
+
 ## Inside a module: the radial zone stack
 
 Gravity here is strictly proportional to radius (fixed rotation
@@ -535,3 +667,12 @@ character.
 - How the fight actually resolves — whether Piast's decree stands,
   gets walked back, or sparks something neither side intended — is
   deliberately left open rather than settled.
+- Ceres's own signature low-g sport is deliberately left unnamed —
+  the arena (above) exists before the game does.
+- Whether the Margins' unofficial, unmapped bores (above) are common
+  local knowledge in Downtown or a closely-held smuggling secret a
+  hacker could actually be hired to protect or expose is left open.
+- Belt University's actual size, prestige, and whether it ever
+  produces a graduate notable enough to name isn't decided — it's
+  deliberately a working pipeline institution, not yet a character
+  source.

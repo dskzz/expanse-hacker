@@ -269,6 +269,45 @@ Placement: roughly the 2140s, a few decades after the Good Samaritan
 Compact, once Mars had enough independent industrial capacity to make
 proliferation a real rather than hypothetical concern. Adjustable.
 
+## The Interplanetary Ballistic Weapons Control Compact
+
+**Real precedent, adapted directly: the actual Hague Code of Conduct
+and the Missile Technology Control Regime** — both real-world
+instruments built specifically to restrict ballistic-missile and
+delivery-vehicle proliferation independent of the warhead question,
+the right shape to reach for here. Mars and OSL's own voluntary
+non-nuclear commitment (above) closes one proliferation track without
+closing the other: a high-delta-v guided kinetic vehicle is still a
+real, usable weapon with no warhead required, and once nuclear status
+stopped being the live arms-race axis here, ballistic/kinetic delivery
+systems became it instead.
+
+**What's actually controlled:** surface-to-surface and station-to-
+station guided ballistic systems above a real, negotiated
+delta-v/payload threshold, plus any mass-driver or similar bulk
+accelerator reconfigured for targeted rather than bulk-cargo use —
+already a live, named risk given Armstrong City's own mass driver
+(`armstrong-city.md`). Declared stockpiles, inspection rights, and a
+notification regime for any new system crossing the threshold run
+through the same UN Nuclear Safeguards Directorate (above) rather
+than standing up a parallel bureaucracy.
+
+**The asteroid-killer exemption, and why it's real rather than a
+loophole.** Dedicated planetary-defense and debris/rogue-body
+deflection platforms are explicitly carved out — the corpus's own
+asteroid-mining and Belt-transit economy has a real, legitimate,
+continuing need for genuine kinetic-intercept hardware that looks
+identical to a weapon on paper, and banning it outright would be
+banning a real safety function the Belt actually depends on. The
+exemption is bounded the way real dual-use carve-outs always are: a
+registered platform, a declared target-acquisition profile that can't
+be quietly repointed at an inhabited body without tripping the same
+UN inspection regime — not a blank check.
+
+**Placement:** mid-2150s, once Mars and OSL's own non-nuclear
+commitment (above) had been in effect long enough for everyone to
+notice what the next arms race was actually going to look like.
+
 ## The Interstation Tax Compact
 
 A direct adaptation of the real 2021 global minimum corporate tax

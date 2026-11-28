@@ -38,7 +38,13 @@ here).
   engineer-advisor figure distinct from Oduya herself; and the
   consultant who commissions the theft of that same proposal's white
   paper, deliberately left unnamed and unaffiliated (ASA's hardline
-  wing is the obvious candidate, not confirmed).
+  wing is the obvious candidate, not confirmed); Belt University's own
+  chancellor or dean, a natural future role once the institution needs
+  a face; whoever runs or fronts Canward/Downtown's vice trade — a
+  fixer or boss figure Palisade tolerates rather than one it actually
+  controls; and whoever actually knows the Margins' unofficial,
+  unmapped bores well enough to run contraband through them, a natural
+  smuggler/guide role distinct from anyone named above.
 - **Davida** (`asteroid-bases.md`) — no named figures or tenants at
   all beyond the shipbuilding-supply-chain companies already anchored
   there.

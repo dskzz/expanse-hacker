@@ -181,6 +181,19 @@ has it stolen and leaked stripped of context, running the next day as
 Spin." Live, unresolved, and already Ceres's own flashpoint subset,
 not a hypothetical.
 
+### Ceres's Margins: unmapped rock, unlicensed trade
+
+Home file: `ceres.md`. The ~700m–1km of stationary rock left standing
+between every pair of modules is honest engineering, a real margin of
+structural safety — but its own real size plausibly hides older,
+unofficial bores nobody's ever filed paperwork for, running straight
+into Downtown's own accepted-but-unlicensed vice trade at the Twin
+Cans' shoddy, lightly-regulated shaft-and-hub docks. Nobody in
+authority has mapped it fully, Palisade included, which is exactly
+what makes it useful to whoever already knows it — and exactly the
+kind of half-mapped space a hacker could get pulled into either
+charting or protecting, for very different clients.
+
 ### Psyche's live ASA asset among the holdouts
 
 Home file: `psyche.md`. A standing intelligence exposure, not a
