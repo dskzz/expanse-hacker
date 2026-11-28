@@ -42,9 +42,14 @@ here).
   chancellor or dean, a natural future role once the institution needs
   a face; whoever runs or fronts Canward/Downtown's vice trade — a
   fixer or boss figure Palisade tolerates rather than one it actually
-  controls; and whoever actually knows the Margins' unofficial,
-  unmapped bores well enough to run contraband through them, a natural
-  smuggler/guide role distinct from anyone named above.
+  controls; whoever actually knows the Margins' unofficial, unmapped
+  bores well enough to run contraband through them, a natural
+  smuggler/guide role distinct from anyone named above; the six Rada
+  seats (Old Ceres, each of New Ceres's four cans, the outer-ring
+  industrial zone), all currently unnamed, with whether Oduya herself
+  holds one left open; and any prior Hetman worth naming — a
+  disgraced one, or a reformer who tried and failed against the same
+  H&V/Palisade capture Piast inherited — none confirmed yet.
 - **Davida** (`asteroid-bases.md`) — no named figures or tenants at
   all beyond the shipbuilding-supply-chain companies already anchored
   there.

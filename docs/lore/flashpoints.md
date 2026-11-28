@@ -134,9 +134,13 @@ reasons rather than assigned ones.
 ### Ceres: Oduya versus Piast
 
 Home file: `ceres.md`. Hetman Sulayman Piast, a Belter owned lock,
-stock, and barrel by Earth, carrot-and-stick, running rigged-but-real
-elections — against Imara Oduya's standing opposition. Live, ongoing,
-and the Belt's most visible single political rivalry.
+stock, and barrel by Earth, carrot-and-stick, confirmed by a Rada
+whose own capture by H&V and Palisade plausibly predates him by
+multiple terms — against Imara Oduya's standing opposition. Live,
+ongoing, and the Belt's most visible single political rivalry, with a
+sharper edge underneath it: beating Piast doesn't actually fix the
+Rada's own structural vulnerability to the same capture, a systemic
+fight neither side has fully engaged yet.
 
 ### Ceres's gravity fight: a problem that was already solved, broken on purpose
 

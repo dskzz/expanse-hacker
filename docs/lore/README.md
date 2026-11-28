@@ -211,10 +211,28 @@ any existing or future name that turns out just as hard to place.
   observatories — all of it also cover for the Margins' own
   unofficial smuggling bores. And the Hetman's own name and office
   both now trace to one real mechanism: a Hausa-Fulani Nigerian
-  parent in the UN's own civil service, posted to Ceres's standing
-  nominal-sovereignty administration, married into the Piast line —
-  Earth's interests had a known, pre-vetted quantity to cultivate
-  decades before H&V's own debt leverage ever entered the picture.
+  parent in the UN's own civil service, posted to **the UN Ceres
+  Mission** (the real civil administration behind the MFN framework's
+  paper ownership, a genuine trusteeship-style office), married into
+  the Piast line — Earth's interests had a known, pre-vetted quantity
+  to cultivate decades before H&V's own debt leverage ever entered the
+  picture. Piast himself leans hard into the Slavic half of that
+  heritage over the West African half — Royal Warsaw, his own can
+  name, is that lean made literal. The government itself now has real
+  shape: **the Ceres Rada**, a genuine self-governing council
+  predating Piast by generations (organized out of the earliest
+  Slavic technical-elite wave in the 2140s, nearly a century before
+  the Cole Standard existed), seated by district (Old Ceres, each New
+  Ceres can, the outer-ring industrial zone), confirms the Hetman and
+  passes local ordinances — with "Hetman" itself a title the Rada
+  adopted generations later, not an imposed one. The real point: H&V's
+  debt leverage and Palisade's election-security contract are the
+  Rada's own generations-old institutional capture, not Piast's
+  invention — toppling him alone doesn't fix it. No formal political
+  parties exist (consistent with OSL/ASA's own faction-coded, not
+  party-coded, politics) — "Ceres for Belters" is Oduya's opposition
+  faction within the Rada, not a registered party — and no local
+  judiciary exists yet beyond the Belt-wide admiralty court.
 - **`thisbe-station.md`** — the founding-trauma site: the real
   asteroid, the workers' cooperative, the space-Cuba diplomatic
   stalemate, and the live, unresolved helium-3 crisis. Now also: the

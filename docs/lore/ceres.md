@@ -576,6 +576,15 @@ Voskuijlen, Bedrock, Longview are all Earth-based). What actually
 keeps that ownership functional isn't a governor or an occupying
 force — it's trade.
 
+**That ownership is staffed, not just claimed on paper.** **The UN
+Ceres Mission** runs the real civil administration behind it — a
+genuine trusteeship-style office, the actual, now-defunct real UN
+Trusteeship Council the direct precedent: administering a territory's
+own trade terms without the territory being sovereign. It's also,
+not coincidentally, where Hetman Sulayman Piast's own UN-civil-servant
+parent built a career (The Hetman, below) — the Mission was never
+an abstraction, it's a real place with real desks.
+
 ## The mechanism: a most-favored-nation framework
 
 A real trade-law term used directly: "most favored nation" status
@@ -599,52 +608,115 @@ direct ancestor of the Cole Standard's own financing — Earth money
 built the comfort Belters themselves can't necessarily afford to live
 in.
 
+## The Ceres Rada: older than the Hetman's own office
+
+**The council came first, generations before anyone called its chief
+executive "Hetman."** A real self-governing council organized itself
+out of Ceres's earliest dominant population — the Slavic
+technical elite clustered around Korolev Propulsion, Vernadsky
+Systems, and Spitzer Station's own fusion-physics breakthrough
+(`frontier-timeline.md`) — sometime in the 2140s, decades after
+Ceres's own ~2100–2130 founding and nearly a century before the Cole
+Standard (2220–2250) was ever built. The Rada is genuinely older than
+most of the physical station it now has nominal authority over, and
+that gap matters: by the time anyone had to decide how to govern four
+giant spin-habitat modules, the governing body making that decision
+had already been running Ceres for generations.
+
+**"Hetman" was the Rada's own later choice, not an imposed title.**
+Real Cossack Hetmans were elected by exactly this kind of council — a
+General Council, itself sometimes called a Rada — then wielded
+near-autocratic authority with very little practical check on them
+once in power. Ceres's own Rada adopted the title generations after
+its own founding, reaching for its first wave's own Cossack-descended
+heritage for an elected chief executive's name, and reproduced the
+real pattern's actual weakness right along with its name: a council
+that elects a strongman and then struggles to actually check him once
+he's seated.
+
+**Seated by district, which is exactly where its own capture lives.**
+Old Ceres (the Twin Cans) holds a seat, each of New Ceres's four cans
+holds its own, and the outer-ring industrial zone holds a seat too —
+real geographic representation, and exactly as capturable as that
+implies: whoever controls the richest districts' own seats controls
+the Rada's own vote, the same asymmetry already running through the
+MFN framework above. The Rada confirms the Hetman, passes local
+ordinances (zoning — Palisade's own Uptown/Downtown vice-enforcement
+preference, above, runs on a real Rada ordinance, not just a
+corporate whim), and handles whatever local civil administration
+isn't already claimed by the UN Ceres Mission's own trade authority
+or by corporate ownership of the habitats themselves.
+
+**The real point: the capture is generations old, not Piast's own
+invention.** Hauptmann & Voskuijlen's debt-leverage trick and
+Palisade's own "election security" contract (below) have plausibly
+run through more than one Hetman's own term by now — a system that
+keeps capturing itself regardless of who's currently sitting in the
+chair, not one corrupt man's personal architecture. Toppling Piast
+alone doesn't touch that; the Rada's own structural vulnerability to
+exactly this kind of capture outlives whoever currently holds the
+office.
+
 ## The Hetman
 
-**Hetman Sulayman Piast** — elected, and real elections are held, but
-the office has drifted into something closer to its actual historical
-root than its ballot-box veneer suggests: real Cossack Hetmans were
-genuinely elected by council, then wielded near-autocratic authority
-with very little practical check on them once in power. Piast's
-surname carries its own quiet irony — the real first ruling dynasty of
-Poland (~960–1370), "founding dynasty" as a name worn by a man who
-holds nominal supreme power and none of the genuine authority that's
-supposed to come with it. (Worth noting for anyone curious: "Hetman"
-is widely believed to derive from the German *Hauptmann* — the same
-root as **Hauptmann & Voskuijlen** — a coincidence neither name was
-chosen to set up, but a real one now sitting in the corpus either way.)
+**Hetman Sulayman Piast** — the Rada's own current pick, confirmed
+within the last several years, not the architect of anything above,
+just the latest name in a line of Hetmen the same old machine has
+leashed the same old way. Piast's surname carries its own quiet
+irony — the real first ruling dynasty of Poland (~960–1370), "founding
+dynasty" as a name worn by a man who holds nominal supreme power and
+none of the genuine authority that's supposed to come with it.
+(Worth noting for anyone curious: "Hetman" is widely believed to
+derive from the German *Hauptmann* — the same root as **Hauptmann &
+Voskuijlen** — a coincidence neither name was chosen to set up, but a
+real one now sitting in the corpus either way.)
 
 **Where the name, and the office, both actually come from.** One
 parent — Hausa-Fulani Nigerian born — built a career in the UN's own
-civil service and drew a posting to Ceres's own standing
-nominal-sovereignty administration: the UN's "paper ownership" (above)
-was never just an abstraction, it's a real, physically-present
-bureaucracy, and someone has to staff it. That parent met and married
-into the Piast line on Ceres itself; Sulayman is genuinely Ceres-born
-and -raised, reads as authentic Belter stock to anyone who meets
-him, and still grew up with real, early, legitimate exposure inside
-the UN's own administrative apparatus — not a cover story, an actual
-childhood. That's what made him legible decades later, long before
-H&V's own debt leverage ever entered the picture: a known, pre-vetted
-quantity Earth's interests could recognize and quietly cultivate once
-he showed real political ambition, rather than a stranger they had to
-take a risk on.
+civil service and drew a posting to the UN Ceres Mission (above):
+the UN's "paper ownership" was never just an abstraction, it's a real,
+physically-present bureaucracy, and someone has to staff it. That
+parent met and married into the Piast line on Ceres itself; Sulayman
+is genuinely Ceres-born and -raised, reads as authentic Belter stock
+to anyone who meets him, and still grew up with real, early,
+legitimate exposure inside the UN's own administrative apparatus —
+not a cover story, an actual childhood. That's what made him legible
+decades later, long before H&V's own debt leverage ever entered the
+picture: a known, pre-vetted quantity Earth's interests could
+recognize and quietly cultivate once he showed real political
+ambition, rather than a stranger they had to take a risk on.
 
-**The leash is carrot-and-stick, and both halves are already-built
-mechanisms, not new invention:**
+**Torn between the two halves of his own heritage, and visibly
+leaning one way.** Piast resolves that tension by leaning hard into
+the Slavic half — the surname, the dynastic grandiosity, the whole
+self-image of a man entitled to something grander than an elected
+administrator's chair — and treating the West African half of his own
+parentage as the quieter, less-claimed one. **Royal Warsaw**, the
+name he pushes for his own can (above), is that lean made literal: not
+a neutral real-estate marketing choice, his own personal pick,
+reaching for exactly the kind of grandeur his own surname's history
+promises and his actual office never delivers.
+
+**The leash is carrot-and-stick, and both halves are the Rada's own
+generations-old institutional patterns — not something Piast
+invented, just the latest to be caught by:**
 - **The stick:** personal debt to Hauptmann & Voskuijlen — not a
   corporate contract, personal leverage, the same mechanism already
   established for how H&V ends up quietly owning things it never set
-  out to own (`corporations.md`, "Hidden ownership"). A compromising
-  debt, or the live threat of calling it, is the actual grip.
+  out to own (`corporations.md`, "Hidden ownership"), and plausibly
+  the same leverage that's caught more than one Hetman before him. A
+  compromising debt, or the live threat of calling it, is the actual
+  grip.
 - **The carrot:** a comfortable retirement off-Belt once his term's
   up — Armstrong City, most plausibly. A very human corruption: wanting
   an escape into the very system he nominally represents against.
 
-**Elections are held, and more or less fixed** — Palisade Security,
-already Ceres's contracted police, is the natural double-duty fit for
-"election security" too. Same company, same contract family, quietly
-deciding how clean the count actually is.
+**The Rada's own confirmation vote is held, and more or less
+fixed** — Palisade Security, already Ceres's contracted police, is
+the natural double-duty fit for "election security" too, and
+plausibly has been for longer than Piast's own tenure. Same company,
+same contract family, quietly deciding how clean the count actually
+is, term after term, Hetman after Hetman.
 
 ## Policing: privatized, not a real government force
 
@@ -745,6 +817,22 @@ character.
   secret leverage nobody's proven yet — left open, same uncertainty
   that makes the Rockline Compact's own suspicion of the Trust
   interesting rather than a settled fact.
+- No prior Hetmen are named — only that the Rada's own capture by H&V
+  and Palisade plausibly predates Piast by multiple terms. Whether any
+  predecessor is ever worth naming (a disgraced one, a reformer who
+  tried and failed) is left open.
+- The Rada's own seats are unnamed beyond their districts (Old Ceres,
+  the four New Ceres cans, the outer-ring industrial zone) — whether
+  Oduya herself holds one, or operates entirely outside it, isn't
+  decided.
+- Whether "Ceres for Belters" ever becomes a fight to reform the Rada
+  and the election-security contract themselves, rather than just a
+  fight over who currently holds the Hetman's chair, is left open —
+  the systemic version of the same fight, not yet engaged.
+- No local judiciary exists yet — only the Belt-wide International
+  Court's admiralty jurisdiction (`space-law-compacts.md`) for salvage
+  disputes. Whether Ceres ever needs its own courts for ordinary civil
+  and criminal matters is left open.
 - No named figures anywhere in the new spin-habitat material: the
   Cole Standard's own architect (plausibly deceased by now, eighty-
   plus years being a long gap for an ordinary lifespan, due a
