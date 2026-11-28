@@ -244,10 +244,17 @@ adaptation cost and a real identity cost, pride included, and that
 reluctance is exactly what later gives Piast a conveniently plausible
 "we're just consolidating underused capacity" cover story.
 
-**Piast's decree, and he does it alone.** Hetman Piast — recent 1g
-stock himself, not multi-generational Belt stock — genuinely finds
-the gentler 0.5g operating point uncomfortable, and decrees spinning
-a single module up to the full 0.75g it was engineered for —
+**Piast's decree, and he does it alone.** Hetman Folarin Piast —
+genuinely multi-generational Ceres stock himself, low-g adapted like
+everyone else, not an outsider imposing Earth comfort on anyone —
+decrees spinning a single module up to the full 0.75g it was
+engineered for anyway, and his real motive is sharper and more
+cynical than simple discomfort: quiet, publicly-funded training wheels
+for his own body, beginning the re-adaptation toward higher gravity
+he'll need for the comfortable off-Belt retirement at Armstrong City
+he's already established as wanting. Using his own people's
+displacement to prepare his own eventual exit is the real story, not
+his own comfort in the present —
 **"Piast's Ugly Spin,"** the decree's own lasting popular nickname,
 catching the double meaning (the literal rotation, and the obvious
 self-serving political spin in how he defends it, below) from the day
@@ -390,7 +397,7 @@ in.
 
 ## The Hetman
 
-**Hetman Stanislav Piast** — elected, and real elections are held, but
+**Hetman Folarin Piast** — elected, and real elections are held, but
 the office has drifted into something closer to its actual historical
 root than its ballot-box veneer suggests: real Cossack Hetmans were
 genuinely elected by council, then wielded near-autocratic authority

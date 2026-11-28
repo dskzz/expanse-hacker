@@ -66,10 +66,15 @@ sector, an already-large global diaspora — makes this the single most
 plausible rising power this corpus's own logic points to.
 
 **Slavic/Eastern European: major, concentrated specifically at Ceres
-and the Commonwealth of Elysium's Russian half.** Hetman **Stanislav
-Piast** anchors it directly. Real logic: Russia's historical
-engineering/technical education tradition and actual cosmonaut
-heritage — now with two distinct historical seeds rather than one
+and the Commonwealth of Elysium's Russian half.** The Polish-dynastic
+surname of Ceres's own Hetman, **Folarin Piast**, anchors it directly
+— and his own West African first name, a genuine product of over a
+century of intermarriage between Ceres's founding Slavic technical
+elite and its West African community (`ceres.md`), is a better, more
+realistic reflection of a multi-generational mixed hub than assuming
+either thread stayed cleanly separate that long. Real logic: Russia's
+historical engineering/technical education tradition and actual
+cosmonaut heritage — now with two distinct historical seeds rather than one
 asserted outright (`frontier-timeline.md`): an early technical elite
 (Korolev Propulsion and Vernadsky Systems, clustered around Spitzer
 Station's own fusion-physics breakthrough decades before anyone was

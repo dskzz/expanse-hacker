@@ -133,7 +133,7 @@ reasons rather than assigned ones.
 
 ### Ceres: Oduya versus Piast
 
-Home file: `ceres.md`. Hetman Stanislav Piast, a Belter owned lock,
+Home file: `ceres.md`. Hetman Folarin Piast, a Belter owned lock,
 stock, and barrel by Earth, carrot-and-stick, running rigged-but-real
 elections — against Imara Oduya's standing opposition. Live, ongoing,
 and the Belt's most visible single political rivalry.
@@ -145,13 +145,16 @@ Oduya versus Piast, not a separate dispute — and the real joke
 underneath it is that Cole Spindle Works' engineers had already solved
 it: at the original 0.5g operating point, the lower-class tier's own
 gravity already sits close to a third of a g, quietly, as a side
-effect of the geometry, with nobody having had to fight for it. Piast,
-recent 1g stock himself, breaks that working compromise by decreeing
-a single module (reckless, not the physics-sound paired version,
-leaving a real unbalanced structural load on the surrounding rock
-nobody's addressed) spun up to its full 0.75g design capacity,
-publicly framed as modernization, actually new housing stock for Earth
-immigrants who haven't arrived yet. He defends it by pointing out that
+effect of the geometry, with nobody having had to fight for it. Piast
+— genuinely multi-generational Ceres stock himself, not an outsider —
+breaks that working compromise anyway by decreeing a single module
+(reckless, not the physics-sound paired version, leaving a real
+unbalanced structural load on the surrounding rock nobody's addressed)
+spun up to its full 0.75g design capacity, publicly framed as
+modernization, actually quiet training wheels for his own body ahead
+of the comfortable off-Belt retirement he's already after, at the cost
+of housing stock for Earth immigrants who haven't even arrived yet. He
+defends it by pointing out that
 the poor already live at roughly a third of a g in his own upgraded
 building — a quiet assertion that low gravity is simply the natural
 condition for the poor, not a real defense. A literal physical barrier

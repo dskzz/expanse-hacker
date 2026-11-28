@@ -136,7 +136,7 @@ any existing or future name that turns out just as hard to place.
   2022-02-15.pdf` in this same folder is old external reference
   material, not canonical — superseded by this file.)
 - **`ceres.md`** — the Belt's biggest hub: the UN's MFN trade
-  framework, Hetman Stanislav Piast, the Consular-College-style
+  framework, Hetman Folarin Piast, the Consular-College-style
   Magnate class, and Imara Oduya's opposition. Now substantially
   deepened: real grounding (largest Belt object, Occator Crater,
   Ahuna Mons, Dawn as the completed-mission anchor); one of the
